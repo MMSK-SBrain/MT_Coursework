@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 34,
+  "week": 7,
+  "session_title": "Vehicle Safety Systems & ADAS",
+  "questions": [
+    {
+      "id": "D34-Q01",
+      "question": "What is the function of the clock spring (spiral cable) in a vehicle's steering column?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "It provides the return-to-centre force for the power steering system",
+        "B": "It maintains a continuous electrical connection between the rotating steering wheel and the fixed vehicle wiring for the airbag, horn, and steering wheel controls",
+        "C": "It measures the steering angle for the Electronic Stability Control system",
+        "D": "It tensions the seatbelt pretensioner mechanism during a crash"
+      },
+      "correct_answer": "B",
+      "explanation": "The clock spring is a flat ribbon cable wound in a spiral inside a plastic housing, mounted between the steering column (fixed) and the steering wheel hub (rotating). It allows continuous electrical contact through the full range of steering rotation, typically about 5 turns in each direction. The clock spring carries circuits for the driver's airbag squib, the horn, and any steering wheel-mounted controls such as audio, cruise control, and phone buttons. When the clock spring fails, the most common symptoms are the airbag warning light illuminating and the horn becoming inoperative simultaneously.",
+      "topic": "Clock spring function",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D34-Q02",
+      "question": "The squib in an airbag module is best described as:",
+      "difficulty": "easy",
+      "choices": {
+        "A": "An electronic pressure sensor that detects crash severity",
+        "B": "A small electrically-fired pyrotechnic initiator that ignites the gas generant to inflate the airbag",
+        "C": "A microprocessor within the airbag that decides deployment timing",
+        "D": "A fabric vent that controls the airbag deflation rate after deployment"
+      },
+      "correct_answer": "B",
+      "explanation": "The squib (also called an initiator) is a small pyrotechnic device inside every airbag inflator module. When the Airbag Control Module (ACM) sends a precise firing current of 1 to 2 amps through the squib's bridge wire, the wire heats and ignites a primary charge, which in turn ignites the gas generant. The gas generant rapidly produces nitrogen gas that inflates the airbag fabric in approximately 20 milliseconds. The squib is a one-shot device; once fired, the entire airbag module must be replaced. Because the squib is an explosive, technicians must never apply external voltage to squib circuits and must always disconnect the battery and wait for capacitor discharge before working near any SRS components.",
+      "topic": "Airbag squib function",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D34-Q03",
+      "question": "What is the fundamental difference between passive safety systems and active safety (ADAS) systems?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Passive systems are electronic and active systems are mechanical",
+        "B": "Passive systems activate during a crash to minimise injury, while active systems activate before a crash to prevent or reduce its severity",
+        "C": "Passive systems require driver input and active systems operate automatically",
+        "D": "Passive systems are optional extras and active systems are legally mandated"
+      },
+      "correct_answer": "B",
+      "explanation": "Passive safety systems, including airbags, seatbelts with pretensioners, crumple zones, and the safety cell, are designed to protect occupants during a crash by minimising injury severity. They activate in response to a collision that is already happening. Active safety and ADAS systems, including AEB, LKA, ACC, and ESC, work before a crash occurs by detecting potential hazards and either warning the driver or autonomously intervening to prevent the collision or reduce its severity. Modern vehicles use both approaches together for comprehensive protection.",
+      "topic": "Passive vs active safety",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D34-Q04",
+      "question": "Which ADAS sensor type uses radio waves and the Doppler effect to measure both the distance and closing speed of objects ahead, and continues to function effectively in rain, fog, and darkness?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Monocular camera",
+        "B": "Ultrasonic sensor",
+        "C": "Radar",
+        "D": "Lidar"
+      },
+      "correct_answer": "C",
+      "explanation": "Radar (Radio Detection and Ranging) transmits radio waves that reflect off objects and return to the sensor. The time delay gives distance, and the Doppler frequency shift reveals the relative speed of the target (whether it is approaching or receding and how fast). Radar's key advantage is its all-weather capability: radio waves pass through rain, fog, snow, and darkness with minimal attenuation, unlike cameras and lidar which rely on light. Long-range forward radar typically reaches 200 metres or more and is the primary sensor for Adaptive Cruise Control and Automatic Emergency Braking. Short-range radar in the rear bumper corners enables Blind Spot Monitoring and Rear Cross-Traffic Alert.",
+      "topic": "ADAS sensor types — radar",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D34-Q05",
+      "question": "What is the difference between static and dynamic ADAS sensor calibration?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Static calibration uses moving targets while dynamic calibration uses stationary targets",
+        "B": "Static calibration is performed in the workshop using precisely positioned target boards, while dynamic calibration is performed by driving the vehicle on a road with clear lane markings at a specified speed",
+        "C": "Static calibration applies only to cameras and dynamic calibration applies only to radar",
+        "D": "Static calibration is done at the factory and can never be repeated in the field"
+      },
+      "correct_answer": "B",
+      "explanation": "Static calibration is performed in the workshop with the vehicle positioned on a level surface at a precise distance and alignment from a calibration target board with a specific geometric pattern. The scan tool initiates a calibration routine and the sensor learns its correct aim point. Requirements include level floor, correct tyre pressures, no extra vehicle load, and exact target positioning. Dynamic calibration is performed by driving the vehicle at a specified speed (typically 60 to 100 km/h) on a road with clear lane markings while the scan tool has the sensor in calibration mode. The sensor self-calibrates from the observed road environment over 10 to 30 minutes of driving. The required method depends on the sensor type and vehicle manufacturer.",
+      "topic": "Static vs dynamic ADAS calibration",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D34-Q06",
+      "question": "After a windscreen replacement on a vehicle equipped with a forward-facing camera for Lane Keep Assist and Automatic Emergency Braking, the workshop returns the vehicle to the customer without performing any recalibration. Three days later, the customer reports that the LKA system steers the vehicle toward the lane edge rather than keeping it centred. What has gone wrong?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The new windscreen has a manufacturing defect that distorts the camera image",
+        "B": "The forward camera mounting angle has changed by even a fraction of a degree due to the windscreen replacement, and without recalibration the camera's aim no longer corresponds to the vehicle's true centreline, causing LKA to misinterpret lane position",
+        "C": "The LKA software needs a firmware update to recognise the new windscreen glass type",
+        "D": "The windscreen adhesive is interfering with the camera's infrared sensor"
+      },
+      "correct_answer": "B",
+      "explanation": "The forward-facing camera is bonded to the windscreen glass. When the windscreen is replaced, even a minute difference in glass curvature, mounting bracket position, or adhesive thickness can shift the camera's optical axis by a fraction of a degree. At a detection range of 150 metres, even a 0.5-degree misalignment translates to over a metre of positional error. Without recalibration, the camera believes the vehicle is in a different position relative to the lane markings than it actually is, causing LKA to steer in the wrong direction. ADAS recalibration after windscreen replacement is mandatory, and failure to perform it is a serious safety and liability issue. The workshop is responsible for this error.",
+      "topic": "ADAS recalibration after windscreen replacement",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D34-Q07",
+      "question": "A scan tool shows airbag DTC B0095: 'Spiral cable / clock spring circuit open.' The customer confirms that the airbag light illuminated the day after the vehicle had a steering rack replacement at another workshop. What is the most probable root cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The new steering rack has an incompatible electrical connector for the clock spring",
+        "B": "The clock spring was not re-centred during steering wheel refitting after the rack replacement, and subsequent full-lock steering has torn the ribbon cable inside the clock spring housing",
+        "C": "The airbag control module was damaged during the rack replacement and is falsely reporting the fault",
+        "D": "The steering angle sensor needs recalibration, which is triggering the airbag code"
+      },
+      "correct_answer": "B",
+      "explanation": "When the steering wheel is removed and refitted (which is necessary during steering rack replacement), the clock spring must be precisely re-centred. The correct procedure is: with the wheels pointing straight ahead, turn the clock spring fully in one direction counting the turns, then rotate it back exactly half the total number of turns to the midpoint. If the clock spring is installed off-centre, it will reach its physical end-stop before the steering reaches full lock in one direction. When the driver turns to full lock, the ribbon cable inside the clock spring is stretched beyond its travel and tears, creating an open circuit. The DTC B0095 confirms this: the airbag squib circuit to the driver's airbag through the clock spring is now open. The clock spring must be replaced and correctly centred.",
+      "topic": "Clock spring failure after steering work",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D34-Q08",
+      "question": "A customer's vehicle has Adaptive Cruise Control that intermittently disengages with a 'radar blocked' message on rainy days, but functions normally in dry conditions. Physical inspection shows no visible damage to the front bumper or radar sensor area. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The radar module has an internal fault that is moisture-sensitive",
+        "B": "Rain water accumulating on the bumper fascia directly in front of the radar sensor creates a layer that attenuates the radar signal enough to reduce effective range below the system's minimum threshold, triggering a blockage warning",
+        "C": "The ACC system is designed to automatically disable in rain for safety reasons",
+        "D": "The windscreen wipers are creating electrical interference that disrupts the radar signal"
+      },
+      "correct_answer": "B",
+      "explanation": "Forward-facing radar sensors are typically mounted behind a plastic bumper fascia. Water film, road spray, ice, or mud accumulating on the bumper surface directly in front of the radar can attenuate the signal enough to reduce detection range or create false reflections. When the signal quality drops below the system's threshold, it reports 'radar blocked' and disables ACC for safety. This is an inherent limitation, but excessive occurrence may indicate that the bumper fascia has been replaced with aftermarket material that has different radar transparency, the sensor is slightly recessed creating a pocket where water collects, or a protective coating has been applied to the bumper that interferes with radar transmission. The technician should check that the bumper area in front of the radar is clean, undamaged, unpainted with metallic paint, and that no aftermarket accessories are obstructing the sensor's field of view.",
+      "topic": "ACC radar obstruction diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D34-Q09",
+      "question": "During a frontal crash, the seatbelt pretensioner fires first, followed by the airbag deployment. What is the engineering reason for this specific sequence?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The pretensioner fires first because it is physically closer to the crash sensor than the airbag module",
+        "B": "The pretensioner removes 100 to 150 mm of seatbelt slack to pull the occupant firmly against the seat back before the airbag inflates, ensuring the occupant is in the correct position relative to the deploying airbag for optimal cushioning",
+        "C": "The pretensioner needs to fire first to unlock the airbag deployment mechanism",
+        "D": "The pretensioner uses less electrical energy, so the ACM fires it while the capacitor is still charging to full voltage for the airbag squib"
+      },
+      "correct_answer": "B",
+      "explanation": "The seatbelt pretensioner fires approximately 5 milliseconds before the airbag deploys. Its role is to remove the 100 to 150 mm of slack that naturally exists in a worn seatbelt, pulling the occupant's torso firmly back into the seat. This ensures the occupant is in the correct position — seated upright against the seat back — when the airbag reaches full inflation at approximately 40 milliseconds. If the airbag deployed while the occupant was still moving forward through the belt slack, they could contact the airbag too early during its inflation phase, which can cause injury rather than protection. The pretensioner-then-airbag sequence is precisely engineered: tight first, then cushion. After the pretensioner fires, the load limiter allows controlled belt extension to manage the deceleration force on the occupant's chest.",
+      "topic": "Pretensioner and airbag deployment sequence",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D34-Q10",
+      "question": "A workshop performs a front bumper respray with metallic paint on a vehicle equipped with front long-range radar for ACC and AEB. After the respray, both ACC and AEB are completely inoperative with a 'forward sensor performance degraded' fault code. What caused this failure?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The heat from the paint drying process damaged the radar module electronics",
+        "B": "The metallic particles in the paint create a reflective shield that blocks or severely attenuates the radar signal, which must pass through the bumper fascia to detect vehicles ahead",
+        "C": "The new paint colour has changed the vehicle's radar cross-section, confusing the ADAS calibration",
+        "D": "The masking tape residue left on the bumper is absorbing the radar signal"
+      },
+      "correct_answer": "B",
+      "explanation": "Radar waves must pass through the bumper fascia to reach the road ahead and return. The bumper area directly in front of the radar sensor is designed to be radar-transparent, typically using specific non-metallic paint and a precise paint thickness. Metallic paint contains aluminium or other metal flakes that reflect and scatter radio waves, effectively creating a shield that blocks the radar signal. Even a single coat of metallic paint over the radar window area can reduce signal strength enough to make the system inoperative. The repair requires stripping the metallic paint from the radar window area and repainting it with a manufacturer-approved non-metallic basecoat. After the paint correction, radar recalibration is required. This is a common and expensive error when body shops are unaware of ADAS sensor locations behind bumper fascias.",
+      "topic": "Radar blockage from metallic bumper paint",
+      "bloom_level": "Evaluate"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 41,
+  "week": 9,
+  "session_title": "Engine Strip-Down",
+  "questions": [
+    {
+      "id": "D41-Q01",
+      "question": "What is the correct general sequence when disassembling an engine?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Block internals first, then cylinder head, then accessories",
+        "B": "Cylinder head first, then accessories, then block internals",
+        "C": "Accessories and externals first, then cylinder head, then block internals",
+        "D": "Oil pan and crankshaft first, then pistons, then cylinder head"
+      },
+      "correct_answer": "C",
+      "explanation": "Engine disassembly follows a layered approach working from the outside in. Layer 1 removes accessories and externals (alternator, manifolds, sensors, wiring). Layer 2 removes the cylinder head and valve train. Layer 3 removes block internals (oil pan, pistons, crankshaft). This sequence prevents damage to components that are still load-bearing or connected, and ensures hidden fasteners are accessible at each stage.",
+      "topic": "Disassembly sequence",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D41-Q02",
+      "question": "When disconnecting the battery during engine strip-down, which terminal must be disconnected first?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Positive terminal first, then negative",
+        "B": "Negative terminal first, then positive",
+        "C": "Either terminal can be disconnected first",
+        "D": "Both terminals should be disconnected simultaneously"
+      },
+      "correct_answer": "B",
+      "explanation": "The negative terminal is always disconnected first. This breaks the ground circuit, so if your tool accidentally contacts the vehicle body while removing the positive terminal, no short circuit occurs. If the positive terminal were removed first and the tool touched the body (which is grounded through the negative cable), it would create a short circuit causing sparks, potential burns, and battery damage.",
+      "topic": "Electrical safety",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D41-Q03",
+      "question": "Why must cam bearing cap bolts be loosened gradually from the outside caps working inward, half a turn at a time?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To prevent the camshaft from falling out of the head",
+        "B": "To allow the oil to drain evenly from the cam journals",
+        "C": "Because valve spring pressure pushing up on the camshaft can bend the shaft and crack caps if released unevenly",
+        "D": "To ensure the timing chain stays properly tensioned during removal"
+      },
+      "correct_answer": "C",
+      "explanation": "Valve springs exert significant upward force on the camshaft through the cam followers. If one cap is fully removed while adjacent caps are still tight, the concentrated spring pressure can bend the camshaft and crack the bearing cap. The outside-in, gradual-loosening pattern distributes the spring load evenly as clamping force is progressively reduced. Cam caps are also position-specific and cannot be swapped between journals.",
+      "topic": "Camshaft removal",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D41-Q04",
+      "question": "What information should be written on each labelled bag during the tagging and bagging process?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Only the component name is needed since the parts are recognisable",
+        "B": "Sequential number, component name, fastener count and size, torque specification, and location notes",
+        "C": "The date of removal and the technician's name",
+        "D": "A general description such as 'engine bolts' is sufficient for each bag"
+      },
+      "correct_answer": "B",
+      "explanation": "Professional tagging requires a sequential bag number, the component name (e.g., 'Alternator mounting bolts'), the fastener count and size (e.g., '3x M10 x 30mm'), the torque specification for reassembly, and any location notes (e.g., 'lower left = longer bolt'). This level of detail ensures that during reassembly, every fastener returns to its exact original position with the correct torque, eliminating guesswork and preventing leftover or misplaced hardware.",
+      "topic": "Component tagging system",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D41-Q05",
+      "question": "When removing old gasket material from an aluminium cylinder head surface, which tool should be used?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "A sharp metal scraper held at a steep angle",
+        "B": "A wire wheel on an angle grinder",
+        "C": "A plastic scraper and Scotch-Brite pad with gasket remover spray",
+        "D": "A chisel and hammer to chip off stubborn residue"
+      },
+      "correct_answer": "C",
+      "explanation": "Aluminium is a soft metal that is easily gouged by metal tools. A gouge on a gasket sealing surface creates a leak path that no gasket can seal. Plastic scrapers and non-metallic Scotch-Brite pads remove gasket residue without damaging the surface. Chemical gasket remover spray softens the material first, making removal easier. Metal scrapers, wire wheels, and chisels will all damage aluminium surfaces and should never be used on them.",
+      "topic": "Gasket surface preparation",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D41-Q06",
+      "question": "A technician is stripping a 4-cylinder engine and reaches the cylinder head bolts. They begin loosening from bolt number 1 (centre) and work outward to the corners, one bolt at a time to full removal before moving to the next. What is wrong with this approach?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Nothing is wrong — centre-outward is the correct loosening sequence",
+        "B": "The bolts should be loosened from the outside inward, a quarter turn per pass across all bolts, to prevent head warpage from uneven release of clamping force",
+        "C": "Head bolts should always be removed with an impact wrench to avoid applying excessive lateral force",
+        "D": "The sequence is correct, but the technician should lubricate each bolt before removal"
+      },
+      "correct_answer": "B",
+      "explanation": "Head bolt loosening must reverse the tightening sequence: start at the outside corners and work inward, loosening each bolt only a quarter turn per pass. This gradually and evenly releases the clamping force across the head gasket. Fully removing bolts one at a time from the centre outward creates localised stress concentrations — the corners of the head are still clamped while the centre is free, which can warp an aluminium head. A warped head requires expensive machine-shop resurfacing.",
+      "topic": "Head bolt removal technique",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D41-Q07",
+      "question": "During connecting rod and piston removal, a technician pushes the piston out through the top of the bore without protecting the crankshaft journal from the rod bolt threads. What is the most likely consequence?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The piston rings will be damaged during extraction",
+        "B": "The rod bolt threads will score and damage the crankshaft journal surface, creating a wear point that leads to premature bearing failure",
+        "C": "The connecting rod cap will separate from the rod during removal",
+        "D": "The bore wall will be scratched by the piston skirt"
+      },
+      "correct_answer": "B",
+      "explanation": "Rod bolt threads are hardened steel with sharp edges. As the piston and rod assembly is pushed upward through the bore, the rod swings on the crankshaft journal. Without protection, the bolt threads drag across the precision-finished journal surface and cut grooves into it. These grooves destroy the oil film at that point, causing localised bearing overheating and premature failure. The standard practice is to slip short lengths of rubber hose over the rod bolt threads before pushing the piston out, protecting the journal.",
+      "topic": "Connecting rod removal",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D41-Q08",
+      "question": "A technician is removing an exhaust manifold and finds that two studs are seized with heavy corrosion. Applying penetrating oil has not freed them after 15 minutes. What is the most appropriate next step?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Use a large adjustable wrench and maximum force to break them free immediately",
+        "B": "Apply controlled heat with an oxy-acetylene torch to the nut area to expand it and break the corrosion bond, then use a six-point socket with steady pressure",
+        "C": "Cut through the manifold with an angle grinder to avoid dealing with the studs",
+        "D": "Leave the studs in place and remove the manifold with the studs still attached to the head"
+      },
+      "correct_answer": "B",
+      "explanation": "Seized exhaust fasteners are a common challenge due to the extreme heat cycling they endure. Controlled heat application expands the nut faster than the stud, breaking the corrosion bond at the thread interface. A six-point socket provides maximum contact area to prevent rounding the nut. Maximum brute force risks snapping the stud, which then requires extraction — a much more difficult repair. Cutting the manifold is destructive and unnecessary. Leaving studs in place may work sometimes, but seized nuts need to be addressed to allow proper manifold reinstallation. Heat application should be performed only by experienced personnel due to fire risk.",
+      "topic": "Seized fastener management",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D41-Q09",
+      "question": "After completing the accessory removal phase, a technician counts 14 labelled bags on the bench but their photo documentation shows connections for 16 distinct components. What should the technician do?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Proceed to the cylinder head removal since two bags are a minor discrepancy",
+        "B": "Stop and reconcile the discrepancy immediately — identify the two missing items by comparing photos to bags, locate the missing hardware, and label it correctly before proceeding",
+        "C": "Make a note to sort it out during reassembly when the missing parts become obvious",
+        "D": "Combine some smaller bags together to simplify the numbering system"
+      },
+      "correct_answer": "B",
+      "explanation": "A discrepancy between photo documentation and bag count must be resolved immediately before proceeding deeper into the disassembly. Sorting 14-16 bags is straightforward. By the time the block internals are stripped, there may be 40-50 bags, and tracing two missing items becomes exponentially harder. The missing hardware could be loose on the engine, on the floor, or accidentally combined into another bag. Reconciling now takes minutes; reconciling later during reassembly can take hours and may result in incorrect hardware placement or leftover parts.",
+      "topic": "Documentation discipline",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D41-Q10",
+      "question": "During head gasket removal after lifting the cylinder head, a technician observes a dark burn track between the fire rings of cylinders 2 and 3, with no damage visible at any coolant or oil passages. What does this evidence indicate, and what additional check should be performed on the block deck?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Coolant has been leaking into the cylinders — perform a coolant pressure test on the block",
+        "B": "Combustion gases burned through between cylinders 2 and 3, indicating head gasket failure due to insufficient clamping or deck warpage — check block deck flatness with a straightedge and feeler gauge at that location",
+        "C": "Oil has been leaking externally — check the oil gallery plugs near those cylinders",
+        "D": "The gasket was installed upside down — no further block inspection is needed as the gasket simply needs to be replaced correctly"
+      },
+      "correct_answer": "B",
+      "explanation": "A burn track between two adjacent fire rings is the classic indicator of a blown head gasket where high-pressure combustion gas from one cylinder breached the gasket seal and eroded a path to the adjacent cylinder. This causes compression loss and cross-contamination between those cylinders. The most common root cause is insufficient clamping force, which can result from head warpage, block deck warpage, or incorrect torque. The block deck must be checked with a straightedge and feeler gauge across that area — if warpage exceeds the specification (typically 0.05mm), the deck must be machined before reassembly with a new gasket.",
+      "topic": "Head gasket forensic analysis",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

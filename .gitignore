@@ -1,0 +1,79 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Excel temporary files
+~$*.xlsx
+~$*.xls
+
+# Output directories (can be regenerated)
+# Uncomment these if you don't want to track generated outputs
+# courses/
+# storytelling-outputs/
+
+# Claude Code
+.claude/debug/
+.claude/file-history/
+.claude/history.jsonl
+.claude/plans/
+.claude/projects/
+.claude/session-env/
+.claude/shell-snapshots/
+.claude/todos/
+.claude/stats-cache.json
+
+# Keep skills directory
+!.claude/skills/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (if you add any tooling)
+node_modules/
+
+# Python (if you add any scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Handout Generator Specific
+.env
+logs/
+*.log
+question_banks/staging/*.json
+question_banks/rejected/*.json
+courses/*/handouts/
+.pytest_cache/
+.coverage
+htmlcov/

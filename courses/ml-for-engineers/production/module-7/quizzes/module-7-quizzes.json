@@ -1,0 +1,261 @@
+{
+  "module": "Module 7: Computer Vision",
+  "total_questions": 48,
+  "sessions": {
+    "session_7_1": {
+      "title": "CNN Fundamentals",
+      "questions": [
+        {
+          "id": "7.1.1",
+          "question": "What is the primary advantage of using convolution over fully connected layers for images?",
+          "options": [
+            "A) Faster training time",
+            "B) Local connectivity and parameter sharing",
+            "C) Simpler architecture",
+            "D) Better for small datasets"
+          ],
+          "correct": "B",
+          "explanation": "Convolution uses local connectivity (each neuron connects to small region) and parameter sharing (same filters across image), making it efficient and effective for spatial data."
+        },
+        {
+          "id": "7.1.2",
+          "question": "In a Conv2D(32, 3x3) layer, what does '32' represent?",
+          "options": [
+            "A) Image size",
+            "B) Number of filters/kernels",
+            "C) Filter size",
+            "D) Stride value"
+          ],
+          "correct": "B",
+          "explanation": "32 is the number of filters. Each filter learns to detect different features."
+        },
+        {
+          "id": "7.1.3",
+          "question": "What is the purpose of Max Pooling in CNNs?",
+          "options": [
+            "A) Increase image resolution",
+            "B) Add more parameters",
+            "C) Reduce spatial dimensions while retaining important features",
+            "D) Normalize pixel values"
+          ],
+          "correct": "C",
+          "explanation": "Max pooling downsamples the feature maps, reducing spatial dimensions and computation while maintaining the most important features (maximum values)."
+        },
+        {
+          "id": "7.1.4",
+          "question": "For MNIST (28x28 images), what shape should the input to a CNN be?",
+          "options": [
+            "A) (28, 28)",
+            "B) (784,)",
+            "C) (28, 28, 1)",
+            "D) (1, 28, 28)"
+          ],
+          "correct": "C",
+          "explanation": "CNNs expect input shape (height, width, channels). MNIST is grayscale, so 1 channel: (28, 28, 1)."
+        },
+        {
+          "id": "7.1.5",
+          "question": "Why do CNNs work better than dense networks for images?",
+          "options": [
+            "A) Fewer parameters through weight sharing",
+            "B) Translation invariance",
+            "C) Hierarchical feature learning",
+            "D) All of the above"
+          ],
+          "correct": "D",
+          "explanation": "CNNs excel at images due to: parameter sharing (efficiency), translation invariance (detect features anywhere), and hierarchical learning (edges→textures→objects)."
+        },
+        {
+          "id": "7.1.6",
+          "question": "What activation function is typically used after Conv2D layers?",
+          "options": [
+            "A) Sigmoid",
+            "B) ReLU",
+            "C) Tanh",
+            "D) Softmax"
+          ],
+          "correct": "B",
+          "explanation": "ReLU is standard after convolutional layers for non-linearity, faster training, and avoiding vanishing gradients."
+        },
+        {
+          "id": "7.1.7",
+          "question": "In a CNN, what happens in the Flatten layer?",
+          "options": [
+            "A) Reduces image size",
+            "B) Converts 2D feature maps to 1D vector for dense layers",
+            "C) Normalizes features",
+            "D) Applies pooling"
+          ],
+          "correct": "B",
+          "explanation": "Flatten converts multi-dimensional feature maps into a 1D vector so they can be fed to fully connected (Dense) layers."
+        },
+        {
+          "id": "7.1.8",
+          "question": "What does 'padding=same' do in a Conv2D layer?",
+          "options": [
+            "A) Increases output size",
+            "B) Maintains the input spatial dimensions in output",
+            "C) Reduces parameters",
+            "D) Applies dropout"
+          ],
+          "correct": "B",
+          "explanation": "padding='same' adds zeros around the input so the output has the same height/width as the input (assuming stride=1)."
+          }
+      ]
+    },
+    "session_7_2": {
+      "title": "Advanced CNNs - CIFAR-10",
+      "questions": [
+        {
+          "id": "7.2.1",
+          "question": "Why is CIFAR-10 more challenging than MNIST?",
+          "options": [
+            "A) More classes",
+            "B) Color images with more complex features",
+            "C) Larger images",
+            "D) Less training data"
+          ],
+          "correct": "B",
+          "explanation": "CIFAR-10 has color images (3 channels) with natural objects requiring complex feature detection. MNIST is simpler grayscale digits."
+        },
+        {
+          "id": "7.2.2",
+          "question": "What is the typical filter depth progression in CNNs?",
+          "options": [
+            "A) Constant (e.g., 64, 64, 64)",
+            "B) Decreasing (e.g., 128, 64, 32)",
+            "C) Increasing (e.g., 32, 64, 128)",
+            "D) Random"
+          ],
+          "correct": "C",
+          "explanation": "Filter depth typically increases (32→64→128) as spatial dimensions decrease, allowing the network to learn increasingly complex features."
+        },
+        {
+          "id": "7.2.3",
+          "question": "What is the purpose of Batch Normalization in CNNs?",
+          "options": [
+            "A) Reduce overfitting",
+            "B) Speed up training and improve convergence",
+            "C) Increase model size",
+            "D) Replace activation functions"
+          ],
+          "correct": "B",
+          "explanation": "Batch Normalization normalizes layer inputs, leading to faster training, better convergence, and acts as regularization."
+        },
+        {
+          "id": "7.2.4",
+          "question": "Data augmentation for images typically includes:",
+          "options": [
+            "A) Rotation, flip, zoom only",
+            "B) Adding noise only",
+            "C) Rotation, flip, shift, zoom, brightness adjustments",
+            "D) Changing image formats"
+          ],
+          "correct": "C",
+          "explanation": "Common augmentation techniques: rotation, horizontal/vertical flip, shifts, zoom, brightness/contrast changes to increase dataset diversity."
+        },
+        {
+          "id": "7.2.5",
+          "question": "Why use progressive dropout (0.2 → 0.3 → 0.5) in deeper layers?",
+          "options": [
+            "A) Saves computation",
+            "B) Early layers learn general features, later layers need more regularization",
+            "C) Required by Keras",
+            "D) Random choice"
+          ],
+          "correct": "B",
+          "explanation": "Early layers learn general features (edges) that transfer well. Later layers learn task-specific features prone to overfitting, needing stronger dropout."
+        },
+        {
+          "id": "7.2.6",
+          "question": "What is the purpose of ReduceLROnPlateau callback?",
+          "options": [
+            "A) Stop training early",
+            "B) Reduce learning rate when validation loss plateaus",
+            "C) Save best model",
+            "D) Visualize training"
+          ],
+          "correct": "B",
+          "explanation": "ReduceLROnPlateau monitors validation loss and reduces learning rate when improvement stalls, helping escape local minima."
+        }
+      ]
+    },
+    "session_7_3": {
+      "title": "Transfer Learning",
+      "questions": [
+        {
+          "id": "7.3.1",
+          "question": "What is transfer learning?",
+          "options": [
+            "A) Training multiple models simultaneously",
+            "B) Using pre-trained model weights as starting point for new task",
+            "C) Transferring data between servers",
+            "D) Converting models between frameworks"
+          ],
+          "correct": "B",
+          "explanation": "Transfer learning uses knowledge (weights) from a model trained on one task (e.g., ImageNet) as starting point for a new related task."
+        },
+        {
+          "id": "7.3.2",
+          "question": "Why is VGG16 useful for transfer learning?",
+          "options": [
+            "A) Smallest model available",
+            "B) Trained on ImageNet with rich visual features",
+            "C) Fastest inference",
+            "D) Requires no fine-tuning"
+          ],
+          "correct": "B",
+          "explanation": "VGG16 was trained on ImageNet (1.2M images, 1000 classes), learning rich hierarchical visual features useful for many vision tasks."
+        },
+        {
+          "id": "7.3.3",
+          "question": "In two-phase transfer learning, what's the correct order?",
+          "options": [
+            "A) Fine-tune first, then feature extraction",
+            "B) Feature extraction (frozen base), then fine-tuning (unfreeze top layers)",
+            "C) Train from scratch, then transfer",
+            "D) Both phases simultaneously"
+          ],
+          "correct": "B",
+          "explanation": "Phase 1: Freeze base model, train classifier. Phase 2: Unfreeze top layers, fine-tune with small learning rate."
+        },
+        {
+          "id": "7.3.4",
+          "question": "Why use a smaller learning rate (1e-5) during fine-tuning?",
+          "options": [
+            "A) Save computation",
+            "B) Prevent catastrophic forgetting of pre-trained features",
+            "C) Required by Keras",
+            "D) Speed up training"
+          ],
+          "correct": "B",
+          "explanation": "Small learning rate prevents large updates that could destroy useful pre-trained features while allowing task-specific adaptation."
+        },
+        {
+          "id": "7.3.5",
+          "question": "When should you use transfer learning?",
+          "options": [
+            "A) Always",
+            "B) Limited data and similar domain to pre-training",
+            "C) Only for image classification",
+            "D) Never for medical images"
+          ],
+          "correct": "B",
+          "explanation": "Transfer learning excels with limited data when the new task is similar to the pre-training domain (e.g., natural images)."
+        },
+        {
+          "id": "7.3.6",
+          "question": "What does include_top=False mean when loading VGG16?",
+          "options": [
+            "A) Remove first layers",
+            "B) Remove final classification layers",
+            "C) Load half the model",
+            "D) Remove pooling layers"
+          ],
+          "correct": "B",
+          "explanation": "include_top=False removes the final fully connected layers (classifier), keeping only convolutional feature extractor."
+        }
+      ]
+    }
+  }
+}

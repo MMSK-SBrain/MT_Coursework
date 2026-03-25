@@ -1,0 +1,29 @@
+# Module 4: Model Evaluation & Optimization
+# Required Python packages
+
+# Core Data Science Libraries
+pandas>=1.3.0
+numpy>=1.21.0
+
+# Machine Learning
+scikit-learn>=1.0.0
+
+# Visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Imbalanced Data Handling
+imbalanced-learn>=0.8.0
+
+# Jupyter Notebooks
+jupyter>=1.0.0
+ipywidgets>=7.6.0
+
+# Hyperparameter Optimization (Optional but Recommended)
+optuna>=2.10.0
+
+# Progress Bars
+tqdm>=4.62.0
+
+# Additional Utilities
+scipy>=1.7.0

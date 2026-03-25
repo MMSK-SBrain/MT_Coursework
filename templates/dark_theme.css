@@ -1,0 +1,447 @@
+/* Dark Theme Stylesheet for Student Handouts */
+/* Version: 2.0 */
+/* Based on PRD Appendix G */
+
+/* ========== Page Setup ========== */
+@page {
+  size: A4;
+  margin: 20mm 25mm;
+  background: #0D1117;
+
+  @top-center {
+    content: string(module-title);
+    font-family: "Inter", sans-serif;
+    font-size: 10pt;
+    color: #8B949E;
+    border-bottom: 1px solid #30363D;
+    padding-bottom: 8mm;
+  }
+
+  @bottom-center {
+    content: "Page " counter(page);
+    font-family: "Inter", sans-serif;
+    font-size: 9pt;
+    color: #484F58;
+  }
+}
+
+/* ========== Base Styles ========== */
+body {
+  font-family: "Inter", -apple-system, sans-serif;
+  font-size: 11pt;
+  line-height: 1.6;
+  color: #E6EDF3;
+  background: #0D1117;
+}
+
+/* ========== Typography ========== */
+h1 {
+  font-size: 28pt;
+  font-weight: 600;
+  color: #E6EDF3;
+  margin: 0 0 24px 0;
+  string-set: module-title content();
+}
+
+h2 {
+  font-size: 22pt;
+  font-weight: 600;
+  color: #E6EDF3;
+  margin: 32px 0 16px 0;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 16pt;
+  font-weight: 600;
+  color: #E6EDF3;
+  margin: 24px 0 12px 0;
+}
+
+h4 {
+  font-size: 14pt;
+  font-weight: 600;
+  color: #8B949E;
+  margin: 20px 0 8px 0;
+}
+
+h5 {
+  font-size: 12pt;
+  font-weight: 600;
+  color: #8B949E;
+  margin: 16px 0 8px 0;
+}
+
+h6 {
+  font-size: 11pt;
+  font-weight: 600;
+  color: #8B949E;
+  margin: 12px 0 6px 0;
+}
+
+p {
+  margin: 0 0 12pt 0;
+}
+
+a {
+  color: #58A6FF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Lists ========== */
+ul, ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+li {
+  margin: 4px 0;
+}
+
+/* ========== Code ========== */
+code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10pt;
+  background: #161B22;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+pre {
+  background: #161B22;
+  border: 1px solid #30363D;
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: 10pt;
+  line-height: 1.4;
+}
+
+/* Syntax Highlighting */
+.highlight .k, .keyword { color: #FF7B72; }  /* Keyword */
+.highlight .s, .string { color: #A5D6FF; }  /* String */
+.highlight .c, .comment { color: #8B949E; }  /* Comment */
+.highlight .nf, .function { color: #D2A8FF; } /* Function */
+.highlight .mi, .number { color: #79C0FF; } /* Number */
+.highlight .o, .operator { color: #FF7B72; } /* Operator */
+
+/* ========== Tables ========== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #30363D;
+}
+
+th {
+  background: #161B22;
+  font-weight: 600;
+  color: #E6EDF3;
+}
+
+td {
+  background: #0D1117;
+}
+
+tr:nth-child(even) td {
+  background: #161B22;
+}
+
+/* ========== Images ========== */
+img {
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 16px auto;
+  border-radius: 4px;
+}
+
+.image-caption {
+  text-align: center;
+  font-size: 9pt;
+  color: #8B949E;
+  margin-top: 8px;
+}
+
+.image-placeholder {
+  background: #21262D;
+  border: 1px dashed #30363D;
+  border-radius: 4px;
+  padding: 40px;
+  text-align: center;
+  color: #484F58;
+  font-size: 10pt;
+}
+
+/* ========== Question Boxes ========== */
+.question-box {
+  background: #161B22;
+  border-left: 3px solid #58A6FF;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 24px 0;
+  page-break-inside: avoid;
+}
+
+.question-box.reflection {
+  border-left-color: #A371F7;
+}
+
+.question-box.application,
+.question-box.short_answer {
+  border-left-color: #3FB950;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.question-number {
+  background: #58A6FF;
+  color: #0D1117;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10pt;
+  font-weight: 600;
+}
+
+.question-box.reflection .question-number {
+  background: #A371F7;
+}
+
+.question-box.application .question-number,
+.question-box.short_answer .question-number {
+  background: #3FB950;
+}
+
+.question-type {
+  color: #8B949E;
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.question-text {
+  color: #E6EDF3;
+  font-size: 11pt;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.question-options {
+  margin-left: 20px;
+}
+
+.question-option {
+  color: #E6EDF3;
+  padding: 6px 0;
+}
+
+.answer-line {
+  border-bottom: 1px solid #30363D;
+  margin: 8px 0;
+  height: 24px;
+}
+
+.answer-box {
+  border: 1px solid #30363D;
+  border-radius: 4px;
+  min-height: 80px;
+  margin-top: 12px;
+}
+
+.answer-space {
+  margin-top: 16px;
+}
+
+/* ========== Note Boxes ========== */
+.note-box {
+  background: #161B22;
+  border-left: 3px solid #D29922;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 16px 0;
+}
+
+.note-box.warning {
+  border-left-color: #F85149;
+}
+
+.note-box.tip {
+  border-left-color: #3FB950;
+}
+
+.note-label {
+  font-size: 10pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.note-box .note-label {
+  color: #D29922;
+}
+
+.note-box.warning .note-label {
+  color: #F85149;
+}
+
+.note-box.tip .note-label {
+  color: #3FB950;
+}
+
+/* ========== Table of Contents ========== */
+.toc {
+  background: #161B22;
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+.toc-title {
+  color: #E6EDF3;
+  font-size: 16pt;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #30363D;
+}
+
+.toc-item {
+  display: block;
+  color: #58A6FF;
+  padding: 4px 0;
+  text-decoration: none;
+}
+
+.toc-item-h1 {
+  margin-left: 0;
+  font-weight: 600;
+}
+
+.toc-item-h2 {
+  margin-left: 20px;
+}
+
+.toc-item-h3 {
+  margin-left: 40px;
+  font-size: 10pt;
+}
+
+.toc-page {
+  color: #8B949E;
+  float: right;
+}
+
+/* ========== Self-Study Section ========== */
+.self-study-section {
+  background: #161B22;
+  border-radius: 6px;
+  padding: 20px;
+  margin: 32px 0;
+}
+
+.self-study-title {
+  color: #58A6FF;
+  font-size: 14pt;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #30363D;
+}
+
+/* ========== Cover Page ========== */
+.cover-page {
+  text-align: center;
+  padding: 100px 0;
+  page-break-after: always;
+}
+
+.cover-page h1 {
+  font-size: 36pt;
+  margin-bottom: 40px;
+}
+
+.cover-metadata {
+  margin-top: 40px;
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cover-metadata p {
+  margin: 8px 0;
+}
+
+/* ========== Utility Classes ========== */
+.text-muted {
+  color: #8B949E;
+}
+
+.text-small {
+  font-size: 9pt;
+}
+
+.page-break {
+  page-break-before: always;
+}
+
+.no-break {
+  page-break-inside: avoid;
+  page-break-after: avoid;
+}
+
+/* ========== Content Layout ========== */
+.content {
+  margin: 0;
+}
+
+.section-content {
+  margin-bottom: 24px;
+}
+
+/* ========== Blockquotes ========== */
+blockquote {
+  border-left: 3px solid #30363D;
+  padding-left: 16px;
+  margin: 16px 0;
+  color: #8B949E;
+  font-style: italic;
+}
+
+/* ========== Horizontal Rules ========== */
+hr {
+  border: none;
+  border-top: 1px solid #30363D;
+  margin: 24px 0;
+}
+
+/* ========== Strong and Emphasis ========== */
+strong {
+  font-weight: 600;
+  color: #E6EDF3;
+}
+
+em {
+  font-style: italic;
+  color: #E6EDF3;
+}

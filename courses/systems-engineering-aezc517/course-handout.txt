@@ -1,0 +1,238 @@
+
+
+Birla Institute of Technology & Science, Pilani
+Work Integrated Learning Programmes Division
+M.Tech. Automotive Engineering/Electronics
+Digital Learning Handout
+Part A: Content Design
+Course Title
+AUTOMOTIVE SYSTEMS ENGINEERING
+Course No(s)
+AE ZG517 / AEL ZG517
+Credit Units
+
+Credit Model
+32-0-0
+ (XX Hours of Class-room Instruction + XX Hours of Case-studies/Tutorials/Laboratories + XX Hours of Student Preparation)
+Instructors 
+SAJEETH KUMAR
+Version No:
+6.2
+Date:
+12-Jan-2025
+Course Description:
+
+Course Objectives
+No
+Course Objective
+CO1
+Introduce hard and soft skills that are required of good automotive systems engineers
+CO2
+Impart the knowledge about foundations of systems engineering to gain an in-depth knowledge of system engineering principles, processes, and methods
+CO3
+Help engineers to learn and apply the systems engineering (SE) methodologies in modern complex automotive system development environments
+CO4
+
+CO5
+
+
+Text Book(s):
+T1
+Systems Engineering Handbook, A guide for system life cycle processes and activities, John Wiley & Sons, Inc., Hoboken, New Jersey, 4th Edition, 2015.
+
+T2
+
+
+Reference Book(s) & other resources:
+R1
+Systems Engineering and Analysis, by Benjamin S Blanchard, Wolter J Fabrycky, Pearson, 5th Edition, 2013
+R2
+Automotive Systems Engineering, Markus Maurer, Hermann Winner (eds.), Springer-Verlag Berlin Heidelberg, 2013
+R3
+
+Learning Outcomes: Students will be able to 
+LO1
+Describe processes, methods, and practices of systems engineering
+LO2
+Develop requirements, architectures, specifications, verifications, and tests 
+LO3
+Recognize important systems engineering and systems thinking strategies and practices
+LO4
+Apply systems engineering practices and methods in automotive systems
+LO5
+Analyse automotive systems using systems engineering approaches to increase performance
+
+
+Part B: Learning Plan
+Contact Session
+List of Topic Title
+Sub-Topics
+Reference
+1
+Introduction to Systems Engineering
+- Engineering failures case studies  - Importance of systems engineering in avoiding failures
+
+2
+Systems Engineering Fundamentals
+- INCOSE definition  - Systems thinking  - ISO/IEC 15288 life cycle processes
+
+3
+Traditional vs Model-Based Systems Engineering
+- Differences between traditional and MBSE  - MBSE tools (SysML, Simulink)
+
+4
+Requirements Engineering
+- Stakeholder identification  - Needs vs requirements  - Requirements traceability
+
+5
+System Design and Architecture
+- Concept of operations (CONOPS)  - High-level design  - System architecture and freeze
+
+6
+Case Study 1
+- Analysis of real-world systems engineering failure or success related to requirements and design
+
+7
+Operational and Functional Analysis (Combined)
+- Operational scenarios  - Capability gap analysis  - Defining system functions  - Requirements allocation
+
+8
+System Integration, Verification & Validation
+- Integration process  - Verification & Validation (V&V) plans  - Testing types
+
+9
+Project and Risk Management (Combined)
+- Project estimation and control  - Work breakdown structure  - Agile systems development  - Risk identification  - DFMEA
+
+10
+Decision and Quality Management (Combined)
+- Decision analysis techniques  - Quality assurance  - Critical parameter management
+
+11
+Agreement and Infrastructure Management (Combined)
+- Supplier engagement and contracts  - Vendor selection criteria  - Infrastructure requirements  - Life cycle management plans
+
+12
+Specialty Engineering (Safety & Security)
+- Safety analysis  - Security requirements engineering  - Interoperability
+
+13
+Life Cycle Cost (LCC) & Total Cost of Ownership (TCO)
+- LCC analysis methods  - Total cost of ownership analysis
+
+14
+Case Study 2
+- Advanced case study analysis related to safety, security, and specialty engineering aspects
+
+15
+Technical Management & Enabling Processes
+- Project planning  - Decision Management  - Enabling processes like HR management and infrastructure
+
+16
+Emerging Trends in Systems Engineering
+- Emerging tools and practices  - Future of agile systems engineering  - MBSE in practice
+
+
+
+
+
+Experiential Learning Components:
+Describe objective, outcome of Experiential Learning Component and the lab infrastructure needed (virtual, remote, open source etc..) number of lab exercises needed, etc.
+	•	Lab work:
+	•	Project work: 
+	•	Case Study:
+	•	Simulation:
+	•	Work Integrated Learning Assignment
+	•	Design work/ Field work: 
+
+
+Objective of Experiential Learning Component:
+
+Case Study – 20%
+
+The case studies will focus on application of systems engineering principles to an industry relevant problem in the automotive domain. Evaluation will be based on the application of systems engineering practises to solve the problem.
+
+Scope of Experiential Learning Component:
+
+
+Lab Infrastructure:
+
+
+List of Experiments:
+
+Exp No.
+Case Study
+Reference to handout module/section
+1.
+Will be delivered via elearn portal post mid semester
+
+2.
+
+
+3.
+
+
+4.
+
+
+5.
+
+
+
+
+
+
+
+
+Evaluation Scheme: 
+
+Legend: EC = Evaluation Component; AN = After Noon Session; FN = Fore Noon Session
+Evaluation Component
+Name
+(Quiz, Lab, Project, Mid-term exam, End semester exam, etc.)
+Type (Open book, Closed book, Online, etc.)
+Weight
+Duration
+Day, Date, Session, Time
+EC – 1*
+Quiz
+Online
+10%
+1 week
+
+
+Assignment
+Online
+20 %
+10 days
+
+EC - 2
+Mid-Semester Test
+Closed Book
+30%
+2 hours 
+
+EC - 3
+Comprehensive Exam
+Open Book
+40%
+2 ½ Hours
+
+
+EC1* (20% - 30%): Quiz (optional): 5-10 %, Lab Assignment/Assignment: 20% - 30%
+Syllabus for Mid-Semester Test (Closed Book): Topics in Contact session:  1 to 8
+Syllabus for Comprehensive Exam (Open Book): All topics 
+
+Important Links and Information:
+eLearn Portal: https://elearn.bits-pilani.ac.in
+Students must visit the eLearn portal regularly and stay updated with the latest announcements and deadlines.
+Contact Sessions: Students should attend the online lectures as per the schedule provided on the eLearn portal.
+Evaluation Guidelines:
+	•	EC-1 consists of either two Assignments or three Quizzes. Students will attempt them through the course pages on the eLearn portal. Announcements will be made on the portal in a timely manner.
+	•	For Closed Book tests: No books or reference material of any kind will be permitted.
+	•	For Open Book exams: “open book” means text/ reference books (publisher copy only) and does not include any other learning material. No other learning material will be permitted during the open book examinations. For Detailed Guidelines refer to the attached document. 
+  EC3 Guidelines 
+	•	If a student is unable to appear for the Regular Test/Exam due to genuine exigencies, the student should follow the procedure to apply for the Make-Up Test/Exam, which will be made available on the eLearn portal. The Make-Up Test/Exam will be conducted only at selected exam centres on the dates to be announced later.
+It shall be the responsibility of the individual student to be regular in maintaining the self-study schedule as given in the course handout, attend the online lectures, and take all the prescribed evaluation components such as Assignments/Quizzes, Mid-Semester Tests and Comprehensive Exams according to the evaluation scheme provided in the handout.
+
+********************

@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 44,
+  "week": 9,
+  "session_title": "Turbo Strip-Down, Inspection & Rebuild",
+  "questions": [
+    {
+      "id": "D44-Q01",
+      "question": "What are the three main assemblies of a turbocharger?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Intake housing, exhaust housing, and wastegate actuator",
+        "B": "Compressor housing (cold side), turbine housing (hot side), and CHRA (Centre Housing Rotating Assembly)",
+        "C": "Compressor wheel, turbine wheel, and oil pump",
+        "D": "Boost controller, intercooler, and blow-off valve"
+      },
+      "correct_answer": "B",
+      "explanation": "A turbocharger consists of three main assemblies: the compressor housing (cold side, aluminium, connected to the intake), the turbine housing (hot side, cast iron, connected to the exhaust manifold), and the CHRA (Centre Housing Rotating Assembly) which contains the bearing housing, shaft, and both wheels. The CHRA is the 'cartridge' that gets replaced or rebuilt during a turbo service. V-band clamps or bolted flanges connect these three assemblies together.",
+      "topic": "Turbocharger anatomy",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D44-Q02",
+      "question": "What is the typical maximum acceptable limit for turbocharger shaft radial play (side-to-side)?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "0.5 - 0.8mm",
+        "B": "0.25 - 0.50mm",
+        "C": "0.05 - 0.08mm",
+        "D": "1.0 - 2.0mm"
+      },
+      "correct_answer": "C",
+      "explanation": "Turbocharger shaft radial play (perpendicular to the shaft axis) is typically limited to 0.05-0.08mm depending on the turbo specification. This is measured with a dial gauge mounted on the bearing housing with the plunger on the shaft, pushing the shaft fully one way then the other. Excessive radial play means the bearings are worn, and the compressor or turbine wheel will eventually contact the housing — a catastrophic failure at 150,000 RPM.",
+      "topic": "Turbo shaft play limits",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D44-Q03",
+      "question": "When inspecting a compressor wheel, what does the presence of bent blade tips indicate?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Normal wear from high-speed operation over time",
+        "B": "Foreign object damage — something was ingested through the intake system such as a filter fragment, nut, or debris",
+        "C": "The compressor wheel is made of the wrong material",
+        "D": "The turbo was over-boosted and the blades flexed from excessive air pressure"
+      },
+      "correct_answer": "B",
+      "explanation": "Bent blade tips on a compressor wheel are the signature of foreign object damage (FOD). At the compressor wheel's operating speeds (up to 150,000 RPM), even small objects ingested through the intake — pieces of air filter, loose bolts, gasket fragments, or debris left in the intake tract during servicing — strike the aluminium blades with enormous force. The blade tips bend on impact. Any compressor wheel with bent tips must be replaced (as part of a CHRA replacement) because the balance is destroyed. Prevention includes ensuring the air filter and intake tract are always clean and free of debris.",
+      "topic": "Compressor wheel inspection",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D44-Q04",
+      "question": "What is the most common cause of VGT (Variable Geometry Turbocharger) vanes becoming stuck on a diesel engine?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Excessive engine oil pressure forcing oil past the turbo seals",
+        "B": "Carbon and soot buildup from EGR gases coating the vane mechanism and restricting its movement",
+        "C": "Incorrect boost pressure from a faulty boost control solenoid",
+        "D": "Over-tightening the V-band clamp during turbo installation"
+      },
+      "correct_answer": "B",
+      "explanation": "VGT stuck vanes is the single most common turbo fault on diesel engines. The VGT mechanism sits in the turbine housing where it is exposed to exhaust gas containing soot and carbon particles, particularly from EGR (Exhaust Gas Recirculation) gas that is re-routed through the intake. Over time, this carbon builds up on the vane pivots and ring mechanism, restricting movement. Stuck vanes cause either permanent over-boost (vanes stuck closed) or lack of boost (vanes stuck open). In some cases, penetrating oil and manual exercise can free the mechanism, but often the turbine housing must be cleaned professionally or replaced.",
+      "topic": "VGT stuck vanes diagnosis",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D44-Q05",
+      "question": "Why is it essential to pre-lube a turbocharger with clean engine oil before the first engine start after any turbo or oil system work?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To prevent the compressor wheel from seizing in the housing",
+        "B": "Because the turbo bearings have zero oil film after sitting idle, and the shaft accelerates to tens of thousands of RPM within seconds of engine start — dry bearings will score and fail within 2-3 seconds",
+        "C": "To wash out any manufacturing residue from a new CHRA",
+        "D": "To test that the oil feed line is not blocked before starting"
+      },
+      "correct_answer": "B",
+      "explanation": "Turbocharger journal bearings rely on a thin hydrodynamic oil film to separate the shaft from the bearing housing at speeds up to 150,000 RPM. After a rebuild or any period of sitting, this oil film has completely drained away. On first engine start, the turbo shaft accelerates extremely rapidly — driven by exhaust gas. Without oil already present on the bearing surfaces, metal contacts metal at high speed, scoring the shaft and bearings in just 2-3 seconds. Pre-lubing (filling the oil feed with clean oil, or cranking with fuel disabled to build oil pressure before combustion) ensures the bearings are coated before the shaft reaches damaging speeds.",
+      "topic": "Turbo pre-lube requirement",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D44-Q06",
+      "question": "A technician measures turbo shaft radial play at 0.12mm and axial play at 0.06mm. The specifications state radial play limit is 0.08mm and axial play limit is 0.05mm. The compressor wheel shows no blade damage and the turbine wheel has no cracks. What is the correct rebuild decision?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The turbo is serviceable because the wheels are undamaged — the play will not cause problems",
+        "B": "Only the thrust bearing needs replacement since axial play is the only concern, and the turbo can continue with the current radial clearance",
+        "C": "Both radial and axial play exceed their limits, indicating worn journal and thrust bearings — the CHRA must be replaced or professionally rebuilt regardless of wheel condition, because excessive play will cause wheel-to-housing contact",
+        "D": "The readings are within normal variation for a used turbocharger and no action is needed"
+      },
+      "correct_answer": "C",
+      "explanation": "Both measurements exceed specification: radial play is 0.12mm versus the 0.08mm limit (0.04mm over), and axial play is 0.06mm versus the 0.05mm limit (0.01mm over). Even though the wheels are physically undamaged, excessive bearing play means the shaft is orbiting off-centre during operation. At 150,000 RPM, this play translates to the wheel tips sweeping closer to the housing walls. Eventually, the tips contact the housing — this is catastrophic because it destroys the wheel, housing, and sends metal fragments downstream. The CHRA must be replaced with a pre-balanced unit, or the complete turbo must be replaced. Wheel condition is irrelevant if bearing play is excessive — the wheels will be damaged soon.",
+      "topic": "Turbo shaft play interpretation and decision",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D44-Q07",
+      "question": "During turbo disassembly, the technician separates the compressor housing and finds visible rub marks — circular scoring on the inside bore of the compressor housing near the wheel tips. What does this evidence tell you about the turbo's failure mode?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The compressor housing was manufactured with an undersized bore",
+        "B": "The rub marks indicate that the shaft bearings had worn to the point where radial play allowed the compressor wheel to contact the housing during operation — the bearings failed first, and wheel contact was a secondary consequence",
+        "C": "The V-band clamp was overtightened, squeezing the housing inward",
+        "D": "Condensation inside the housing caused corrosion that looks like rub marks"
+      },
+      "correct_answer": "B",
+      "explanation": "Rub marks on the inside of the compressor housing, corresponding to the compressor wheel tip path, are definitive evidence of bearing failure. The failure sequence is: bearing wear increases radial play, the shaft orbit grows, the wheel tips contact the housing at high speed, creating circular scoring. This is progressive — early stages show light polishing marks, advanced stages show deep grooves. By the time rub marks are visible, the bearings are severely worn. This confirms that the root cause was bearing degradation (possibly from oil starvation, contaminated oil, or excessive heat), not a wheel or housing manufacturing defect. The CHRA must be replaced, and both housings must be inspected for damage — if scoring is too deep, the housing must also be replaced.",
+      "topic": "Turbo failure mode analysis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D44-Q08",
+      "question": "A diesel vehicle owner complains of intermittent loss of power followed by a check engine light. The technician finds DTC P0299 (turbo underboost) stored. Scan tool live data shows boost pressure fluctuating between 0.5 and 1.8 bar during steady-state cruising where the target is 1.6 bar. Manually moving the VGT actuator linkage with the engine off reveals the vanes move but feel stiff with gritty resistance. What is the most likely diagnosis?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The boost pressure sensor is faulty and giving erratic readings",
+        "B": "The turbo wastegate spring is weak and allowing premature opening",
+        "C": "The VGT vane mechanism has partial carbon buildup — the vanes can move but stick intermittently during operation, causing inconsistent boost control that triggers underboost when the vanes stick in a partially open position",
+        "D": "The turbo oil feed line is blocked, causing intermittent shaft seizure"
+      },
+      "correct_answer": "C",
+      "explanation": "The combination of intermittent underboost, fluctuating boost pressure, and stiff/gritty VGT vane movement points clearly to partial carbon fouling of the VGT mechanism. The vanes can still move (unlike a fully seized unit), but carbon deposits on the vane pivots create enough friction that the vanes stick during operation when exhaust heat and gas flow loads act on them. When stuck partially open, the turbine housing volume is too large, exhaust gas velocity across the turbine drops, and boost falls below target — triggering P0299. When the vanes break free momentarily, boost surges back. The gritty feel confirms carbon contamination. Treatment may include specialist cleaning, penetrating oil and manual exercising, or in severe cases, turbine housing replacement.",
+      "topic": "VGT diagnosis scenario",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D44-Q09",
+      "question": "A turbocharger's oil drain line was found kinked during removal. The vehicle owner reported blue exhaust smoke at idle that cleared at higher RPM. How does a restricted oil drain cause this symptom?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The restricted drain causes oil pressure to build up in the turbo bearing housing, forcing oil past the compressor-side seal into the intake tract — at idle, low intake airflow cannot clear the oil so it burns as blue smoke; at higher RPM, increased airflow dilutes the oil and smoke disappears",
+        "B": "The restricted drain causes the turbo shaft to overheat, burning the oil inside the turbo and producing blue smoke from the exhaust",
+        "C": "The kinked line restricts exhaust flow, causing rich running and blue smoke",
+        "D": "Oil backs up into the engine crankcase, raising the oil level and causing windage that produces smoke"
+      },
+      "correct_answer": "A",
+      "explanation": "The turbo oil drain line operates on gravity — oil flows from the bearing housing downward to the engine sump. If this line is kinked or restricted, oil cannot drain fast enough and pressure builds inside the bearing housing. This excess pressure pushes oil past the compressor-side shaft seal (seals are designed for normal pressures, not elevated ones). The oil enters the compressor housing and is carried into the intake tract. At idle, the volume of airflow through the intake is low, so the oil concentration in the charge air is high — it enters the combustion chamber and burns as visible blue smoke. At higher RPM, the massively increased airflow volume dilutes the oil to a concentration below the visible smoke threshold. Correcting the drain line routing resolves the issue.",
+      "topic": "Turbo oil drain restriction diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D44-Q10",
+      "question": "After replacing a CHRA on a turbocharger, the technician reassembles the housings, installs new oil feed and drain line gaskets, and bolts the turbo back onto the exhaust manifold. They then start the engine immediately without performing any pre-lube procedure. Within 30 seconds of running, a high-pitched whine develops from the turbo area and oil smoke appears from the intake. What has happened, and was this preventable?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The new CHRA was defective from the manufacturer — this would have happened regardless of pre-lube",
+        "B": "The exhaust manifold gasket is leaking, causing the whine and smoke",
+        "C": "The new CHRA bearings were destroyed by dry-start damage — the oil galleries and turbo feed line were empty after rebuild, and the first 5-10 seconds of operation spun the shaft at high speed with no oil film, scoring the brand-new bearings; this was entirely preventable with the pre-lube procedure",
+        "D": "The V-band clamp was overtightened, misaligning the housings and causing the shaft to bind"
+      },
+      "correct_answer": "C",
+      "explanation": "This is a textbook dry-start turbo failure. After CHRA replacement, the oil galleries, turbo oil feed line, and the new bearing housing are completely dry. When the engine starts, the turbo shaft begins spinning immediately — driven by exhaust gas from the first combustion events. The oil pump is running, but it takes 5-15 seconds for oil to travel from the sump, through the pump, through the filter, through the main gallery, through the turbo feed line, and into the bearing housing. During those seconds, the new journal bearings are running metal-on-metal at rapidly increasing speed. The shaft scores the bearings, radial play increases instantly, the shaft wobbles, and oil begins leaking past the damaged seals into the intake (smoke) and the bearing damage creates the whine. A $500+ CHRA destroyed in seconds. The pre-lube procedure (cranking with fuel disabled to build oil pressure before combustion) would have prevented this entirely.",
+      "topic": "Dry-start turbo failure analysis",
+      "bloom_level": "Evaluate"
+    }
+  ]
+}

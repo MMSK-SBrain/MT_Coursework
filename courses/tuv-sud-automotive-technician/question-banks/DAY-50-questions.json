@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 50,
+  "week": 10,
+  "session_title": "Rebuild Verification & Road Test",
+  "questions": [
+    {
+      "id": "D50-Q01",
+      "question": "Why is a structured road test necessary after a gearbox rebuild and suspension component replacement?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To increase the odometer reading for warranty records",
+        "B": "To verify that the rebuilt and replaced components function correctly and safely under real driving conditions",
+        "C": "To break in the new gear oil",
+        "D": "To allow the customer to test the vehicle themselves"
+      },
+      "correct_answer": "B",
+      "explanation": "Bench tests verify individual function, but only a road test validates that all systems work correctly together under real driving conditions. A gearbox that shifts cleanly on the bench may pop out of gear under acceleration load. Suspension that looks correct on the lift may clunk over real road imperfections. The road test is the final proof that the work is correct and safe.",
+      "topic": "Road test purpose",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D50-Q02",
+      "question": "During a gearbox function test, what does 'pop-out' mean?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The clutch pedal springs back too quickly",
+        "B": "The gearbox jumps out of an engaged gear under load, returning to neutral without driver input",
+        "C": "The gear lever vibrates at high RPM",
+        "D": "A clicking noise when shifting into reverse"
+      },
+      "correct_answer": "B",
+      "explanation": "Gear pop-out occurs when the gearbox spontaneously disengages from a selected gear under load, returning the transmission to neutral. This is caused by worn detent mechanisms, bent selector forks, or worn synchro dog teeth. It is a safety-critical failure because it results in sudden loss of drive, which is dangerous especially at motorway speeds.",
+      "topic": "Gear pop-out definition",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D50-Q03",
+      "question": "During a road test, what technique is used to determine whether a noise is speed-dependent or engine-RPM-dependent?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Turn the radio up and down while driving",
+        "B": "Coast in neutral at the problem speed; if the noise persists, it is speed-dependent; if it stops, it is RPM-dependent",
+        "C": "Rev the engine while stationary and listen",
+        "D": "Drive only on smooth roads to isolate the noise"
+      },
+      "correct_answer": "B",
+      "explanation": "Coasting in neutral disconnects the engine from the drivetrain. If the noise continues at the same road speed, it is linked to rotating components that turn with the wheels (wheel bearings, tyres, driveshaft). If the noise stops when coasting, it is linked to engine-driven components (gearbox gears, auxiliary belt, exhaust). This isolation technique is fundamental to NVH diagnosis.",
+      "topic": "Noise isolation technique",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D50-Q04",
+      "question": "What does steering returnability test during a road test?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Whether the power steering pump is working",
+        "B": "Whether the steering wheel automatically returns to the straight-ahead position after a turn is released",
+        "C": "Whether the steering wheel can be turned lock-to-lock",
+        "D": "Whether the steering column is correctly adjusted for the driver"
+      },
+      "correct_answer": "B",
+      "explanation": "Steering returnability is the ability of the steering to self-centre after a turn when the driver releases the wheel. This is one of the best indicators of correct suspension geometry, particularly castor angle and strut top mount bearing condition. Poor returnability after suspension work indicates geometry errors or a binding top mount bearing.",
+      "topic": "Steering returnability assessment",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D50-Q05",
+      "question": "What information must be included in a road test checklist document?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Only the overall pass or fail verdict",
+        "B": "Vehicle identification, date, tester name, specific observations per system, pass/fail ratings, and the tester's signature",
+        "C": "The route taken and fuel consumption",
+        "D": "The customer's phone number and payment method"
+      },
+      "correct_answer": "B",
+      "explanation": "A professional road test checklist is a formal document that includes vehicle ID (registration, VIN), date, tester name, specific observations for each system (gearbox, suspension, steering, brakes, NVH), pass/fail ratings per item, and the tester's signature. This document goes in the job file as evidence that the work was verified to standard.",
+      "topic": "Road test documentation",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D50-Q06",
+      "question": "During a road test after a gearbox rebuild, the technician notices a whine from the gearbox that changes pitch with road speed in all forward gears but disappears when coasting in neutral. What does this indicate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "A wheel bearing is failing on the drive axle",
+        "B": "The output shaft bearing has excessive preload or is damaged, since it carries load in all forward gears but is unloaded in neutral",
+        "C": "The gear oil level is too high, causing churning",
+        "D": "The clutch release bearing is worn"
+      },
+      "correct_answer": "B",
+      "explanation": "A whine present in all forward gears but absent in neutral points to a component that carries load whenever power flows through the gearbox. The output shaft bearing is loaded in every forward gear ratio. In neutral with the clutch engaged, the output shaft is driven by the wheels but under minimal load. Excessive preload or bearing damage creates the whine under power transmission loads.",
+      "topic": "Post-rebuild bearing noise diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D50-Q07",
+      "question": "A road test reveals that the vehicle pulls to the left under braking after strut and control arm replacement on the front suspension. All brake components are original and were not disturbed. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "A brake pad has been contaminated with oil",
+        "B": "The brake hose on one side was kinked or restricted during reassembly, preventing full calliper pressure release or application on that side",
+        "C": "The new struts have different damping rates left to right",
+        "D": "The steering rack has been damaged during the suspension work"
+      },
+      "correct_answer": "B",
+      "explanation": "During suspension work, brake hoses are often unclipped from strut brackets and rerouted. If a hose is kinked, twisted, or trapped during reassembly, it can restrict hydraulic flow to one calliper. This causes uneven braking force between sides, pulling the vehicle toward the side with more braking force. Checking brake hose routing is part of the post-installation verification checklist.",
+      "topic": "Brake pull diagnosis after suspension work",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D50-Q08",
+      "question": "During the road test rough-road phase, the technician hears a single clunk from the front left when driving over speed bumps. The noise is not present on smooth roads. The left front strut and control arm were both replaced during the week. What systematic approach should be used to identify the source?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the strut again, as it is the most recently installed component",
+        "B": "Return to the workshop and check all fastener torques on the left front suspension, then perform a bounce test with hands on each component to feel for play, starting with the stabiliser link, ball joint, and strut top mount",
+        "C": "Increase tyre pressure to reduce the impact force over bumps",
+        "D": "Drive faster over the bumps to see if the noise changes"
+      },
+      "correct_answer": "B",
+      "explanation": "A single clunk over bumps from a recently worked-on corner requires systematic verification. First, check all fastener torques (a hand-tight bolt missed during the ride-height torque step is a common cause). Then bounce the corner while placing hands on each component to feel for movement. Stabiliser links, ball joints, and top mounts are the most common sources. Systematic elimination is faster and more reliable than guessing and replacing.",
+      "topic": "Post-repair clunk diagnosis methodology",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D50-Q09",
+      "question": "The road test checklist shows the rebuilt gearbox pops out of 5th gear under acceleration on a motorway. The technician considers releasing the vehicle with an advisory note to the customer. Is this acceptable?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Yes, as long as the customer is informed in writing",
+        "B": "Yes, because 5th gear is only used at high speed and can be avoided",
+        "C": "No; gear pop-out under load is a safety-critical failure and the vehicle must not leave the workshop until the fault is repaired",
+        "D": "Yes, if the customer signs a liability waiver"
+      },
+      "correct_answer": "C",
+      "explanation": "Gear pop-out under load is classified as a safety-critical failure. On a motorway, sudden loss of drive in 5th gear leaves the vehicle decelerating in traffic with no engine braking. This creates a collision risk. A vehicle with a known safety defect must never be released, regardless of customer pressure or documentation. The technician's name on the road test checklist is their professional guarantee.",
+      "topic": "Safety-critical failure release policy",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D50-Q10",
+      "question": "A technician performs a visual ride height check after suspension work and measures 385 mm from hub centre to arch lip on the left front and 370 mm on the right front. The vehicle appears to lean slightly to the right. What should the technician investigate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The tyre pressures are probably different left to right",
+        "B": "The 15 mm difference exceeds the acceptable tolerance and indicates a possible spring not seated correctly, wrong spring installed, or a mount not located properly on the right side",
+        "C": "This is within normal tolerance and requires no further action",
+        "D": "The left side is too high and needs a shorter spring"
+      },
+      "correct_answer": "B",
+      "explanation": "A 15 mm side-to-side ride height difference exceeds the typical 10-15 mm acceptable tolerance and represents a visible lean. After recent suspension work, the most likely causes are a spring not fully seated in its locating step, a strut top mount not properly located in the strut tower, or (less likely) the wrong spring fitted to one side. The right side must be investigated and corrected before the vehicle is released.",
+      "topic": "Ride height discrepancy diagnosis",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

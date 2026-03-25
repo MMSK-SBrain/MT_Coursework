@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 55,
+  "week": 11,
+  "session_title": "Car Audio, NVH & Program Wrap-Up",
+  "questions": [
+    {
+      "id": "D55-Q01",
+      "question": "What does NVH stand for in automotive diagnostics?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Normal Vehicle Handling",
+        "B": "Noise, Vibration, and Harshness",
+        "C": "Non-Volatile Hardware",
+        "D": "Neutral Valve Hysteresis"
+      },
+      "correct_answer": "B",
+      "explanation": "NVH stands for Noise (unwanted sounds), Vibration (unwanted oscillation felt through steering wheel, seat, or pedals), and Harshness (severity of road impacts transmitted to the cabin). NVH complaints are the most common customer issue in many workshops and require systematic diagnostic methodology to resolve.",
+      "topic": "NVH definition",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D55-Q02",
+      "question": "In a car audio system, what is the correct routing rule for power cables relative to RCA signal cables?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Run them together in the same loom for neatness",
+        "B": "Route power cables on one side of the vehicle and signal cables on the opposite side; if they must cross, they cross at 90 degrees",
+        "C": "Run signal cables closer to the engine for better grounding",
+        "D": "It does not matter as long as both are secured with cable ties"
+      },
+      "correct_answer": "B",
+      "explanation": "Power cables carrying high current create electromagnetic fields that induce noise into low-level RCA signal cables. Routing them on opposite sides of the vehicle prevents interference. If crossing is unavoidable, a 90-degree crossing minimises the coupling distance. Running them parallel is the primary cause of alternator whine in audio installations.",
+      "topic": "Audio wiring separation rule",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D55-Q03",
+      "question": "What is the most important first diagnostic question to ask a customer about an NVH complaint?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "How long has the vehicle been making this noise?",
+        "B": "When does it happen? At what speed, under what conditions, and from what part of the vehicle?",
+        "C": "Has the vehicle been in an accident recently?",
+        "D": "What brand of tyres are on the vehicle?"
+      },
+      "correct_answer": "B",
+      "explanation": "The question 'When does it happen?' immediately classifies the NVH complaint into speed-dependent (wheel/driveline), load-dependent (engine/transmission), or road-surface-dependent (suspension/trim). This single question narrows the search area by approximately 70%, making it the most valuable diagnostic question for NVH complaints.",
+      "topic": "NVH diagnostic questioning",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D55-Q04",
+      "question": "What inexpensive tool is considered essential for every technician's toolbox when diagnosing NVH complaints?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "An infrared thermometer",
+        "B": "A chassis stethoscope (mechanical listening probe)",
+        "C": "A borescope camera",
+        "D": "A digital sound level meter"
+      },
+      "correct_answer": "B",
+      "explanation": "A chassis stethoscope (costing approximately 10-20 euros) is a metal probe with a diaphragm that transmits vibration to earpieces. By touching the probe to different components while the engine runs or wheels spin, a technician can pinpoint noisy bearings, buzzing heat shields, or clicking CV joints. It is the best value diagnostic tool for NVH work.",
+      "topic": "NVH diagnostic tools",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D55-Q05",
+      "question": "Why must an amplifier power cable be fused within 300 mm of the battery terminal?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To protect the amplifier from voltage spikes",
+        "B": "To protect the power cable from a short circuit; an unfused cable that shorts could melt and cause a vehicle fire",
+        "C": "To meet radio frequency emission regulations",
+        "D": "To prevent the battery from overcharging"
+      },
+      "correct_answer": "B",
+      "explanation": "The amplifier power cable carries high current directly from the battery. If this cable is damaged or shorts to ground anywhere along its length, the full battery current flows through the short. Without a fuse near the battery, the cable can overheat and melt, igniting surrounding materials. The fuse within 300 mm of the battery terminal ensures the circuit is protected at the closest possible point to the power source.",
+      "topic": "Audio power cable safety",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D55-Q06",
+      "question": "A customer complains of a constant drone that gets louder with vehicle speed and changes character when turning left (gets quieter on left turns, louder on right turns). What is the most likely source?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Exhaust resonance at cruising speed",
+        "B": "A failing right-side wheel bearing, because turning left shifts load onto the right wheel, increasing noise from the worn bearing",
+        "C": "Uneven tyre wear on the left front tyre",
+        "D": "A loose exhaust heat shield vibrating at speed"
+      },
+      "correct_answer": "B",
+      "explanation": "A drone that changes with turning direction is the classic wheel bearing diagnostic signature. When turning left, the vehicle weight transfers to the right side, loading the right wheel bearing more. A failing right bearing produces more noise under increased load (louder on right turns/right bearing loaded, quieter on left turns/right bearing unloaded). This speed-dependent, cornering-dependent pattern isolates the bearing and the side.",
+      "topic": "Wheel bearing NVH diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D55-Q07",
+      "question": "A technician installs an aftermarket head unit by cutting the factory wiring harness and splicing directly to the new unit's wires. The installation works perfectly. Why is this approach still considered unprofessional?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Cutting factory wiring takes longer than using an adapter",
+        "B": "Cutting factory wires is irreversible, reduces the vehicle's resale value, prevents easy return to factory configuration, and may cause issues with factory diagnostic systems that expect original connector pin-outs",
+        "C": "The wire colours do not match between factory and aftermarket units",
+        "D": "Aftermarket head units cannot be spliced to factory wiring"
+      },
+      "correct_answer": "B",
+      "explanation": "Professional audio installation uses wiring harness adapters that plug into the factory connector without cutting any wires. This preserves the vehicle's factory wiring, allows easy reversal to standard configuration (important for resale), and maintains compatibility with diagnostic systems. Cutting factory wires is irreversible, creates potential failure points at every splice, and reduces vehicle value. The professional standard is: adapters, not wire cutting.",
+      "topic": "Professional audio installation standards",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D55-Q08",
+      "question": "During an NVH road test, a technician hears a metallic rattle from under the vehicle that occurs only at 2,500 RPM regardless of vehicle speed or gear selection. What does this pattern suggest, and what is the likely source?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "A speed-dependent rattle indicating a wheel balance issue",
+        "B": "A load-dependent rattle from a loose engine mount",
+        "C": "An RPM-dependent rattle indicating a resonance in the exhaust system, most likely a loose heat shield vibrating at a frequency that matches 2,500 RPM engine vibration",
+        "D": "A road-surface-dependent rattle from worn suspension"
+      },
+      "correct_answer": "C",
+      "explanation": "A noise that occurs at a specific RPM regardless of speed or gear is RPM-dependent, pointing to engine or exhaust-related sources. A loose exhaust heat shield is the most common cause of RPM-specific rattles. The sheet metal shield has a natural resonant frequency, and when engine vibration at a specific RPM matches that frequency, the shield buzzes. A chassis stethoscope touched to heat shields while the engine is revved to 2,500 RPM will identify the offending shield.",
+      "topic": "RPM-dependent NVH diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D55-Q09",
+      "question": "A customer reports a high-pitched whine through their car speakers that increases in pitch with engine RPM. The whine is present on all audio sources (radio, Bluetooth, USB). What is the most likely cause and the first diagnostic step?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "A faulty head unit that needs replacement",
+        "B": "Alternator whine caused by electromagnetic interference between power and signal cables; the first step is to disconnect the RCA cables from the amplifier input and check if the whine stops",
+        "C": "A blown speaker causing distortion at all frequencies",
+        "D": "The antenna cable is picking up engine noise"
+      },
+      "correct_answer": "B",
+      "explanation": "A whine that tracks engine RPM across all sources is alternator whine, caused by the alternator's AC ripple coupling into the audio signal path. The first diagnostic step is to disconnect the RCA signal cables from the amplifier. If the whine stops, the interference is entering through the RCA routing (running parallel to power cables). If it continues, the ground connection is the issue. The fix is to re-route cables for proper separation or improve the amplifier ground.",
+      "topic": "Alternator whine diagnosis",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D55-Q10",
+      "question": "A graduate of this 11-week program is considering career paths. Which path typically offers the highest earning potential over a 10-year career for a technician who invests in continuous professional development?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Remaining as a general service technician at an independent workshop",
+        "B": "Specialising in a high-demand area such as EV/hybrid diagnostics, ADAS calibration, or manufacturer-certified master technician status at a main dealer, where specialist skills command premium labour rates",
+        "C": "Moving into parts sales and counter work",
+        "D": "Focusing exclusively on tyre and exhaust fast-fit work"
+      },
+      "correct_answer": "B",
+      "explanation": "Technicians who invest in continuous professional development and specialise in emerging technologies (EV/hybrid systems, ADAS calibration, advanced diagnostics) or achieve manufacturer master technician certification command the highest labour rates and are in the greatest demand. The automotive industry is experiencing a shortage of technicians skilled in these areas, creating premium earning opportunities for those who continue developing their expertise beyond foundational training.",
+      "topic": "Career development paths",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

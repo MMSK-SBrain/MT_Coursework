@@ -1,0 +1,355 @@
+{
+  "module": "Module 10: Capstone Project",
+  "quizzes": [
+    {
+      "quiz_id": "m10_planning",
+      "title": "Project Planning & Scoping",
+      "description": "Reflection questions on project selection and planning",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "multiple_choice",
+          "question": "Which factor is MOST critical when choosing a capstone project?",
+          "options": [
+            "Choosing the most complex algorithms possible",
+            "Verifying data availability before committing",
+            "Selecting the newest ML techniques",
+            "Maximizing the number of features"
+          ],
+          "correct_answer": 1,
+          "explanation": "Data availability is critical - you can't build a model without data! Always verify data exists and is accessible before committing to a project."
+        },
+        {
+          "id": "q2",
+          "type": "multiple_choice",
+          "question": "What makes a good Minimum Viable Product (MVP) for a capstone?",
+          "options": [
+            "All planned features implemented perfectly",
+            "Core functionality working with room to expand",
+            "The most complex features only",
+            "Everything automated end-to-end"
+          ],
+          "correct_answer": 1,
+          "explanation": "A good MVP focuses on core functionality that works well. You can always add features later if time permits."
+        },
+        {
+          "id": "q3",
+          "type": "true_false",
+          "question": "You should leave deployment until Week 3 to focus on perfecting the model first.",
+          "correct_answer": false,
+          "explanation": "False! Deploy early (Week 2) to catch deployment issues early. Debugging deployment on the last day is stressful and risky."
+        },
+        {
+          "id": "q4",
+          "type": "multiple_choice",
+          "question": "How many different ML techniques should your capstone project include at minimum?",
+          "options": [
+            "1 technique done very well",
+            "2 techniques from different modules",
+            "3+ techniques including supervised and (unsupervised OR deep learning)",
+            "5+ techniques to show breadth"
+          ],
+          "correct_answer": 2,
+          "explanation": "Minimum 3 techniques required, including supervised learning and at least one of unsupervised OR deep learning."
+        }
+      ]
+    },
+    {
+      "quiz_id": "m10_data_eda",
+      "title": "Data Collection & EDA",
+      "description": "Questions about data quality and exploratory analysis",
+      "questions": [
+        {
+          "id": "q5",
+          "type": "multiple_choice",
+          "question": "What's the first thing you should do after collecting your dataset?",
+          "options": [
+            "Immediately start training models",
+            "Perform thorough EDA to understand the data",
+            "Deploy the data to production",
+            "Tune hyperparameters"
+          ],
+          "correct_answer": 1,
+          "explanation": "Always start with EDA! Understanding your data through visualization and statistics is crucial before modeling."
+        },
+        {
+          "id": "q6",
+          "type": "multiple_choice",
+          "question": "What's a red flag in your dataset that could cause problems?",
+          "options": [
+            "10% missing values in one column",
+            "Class imbalance (80/20 split)",
+            "Data leakage (future information in training data)",
+            "Categorical variables present"
+          ],
+          "correct_answer": 2,
+          "explanation": "Data leakage is a critical issue that will make your model look great in training but fail in production. Always watch for future information leaking into training data."
+        },
+        {
+          "id": "q7",
+          "type": "true_false",
+          "question": "It's acceptable to use the test set to make decisions about feature engineering.",
+          "correct_answer": false,
+          "explanation": "False! Never touch the test set until final evaluation. Using it for decisions causes data leakage and inflated performance metrics."
+        }
+      ]
+    },
+    {
+      "quiz_id": "m10_modeling",
+      "title": "Model Development & Evaluation",
+      "description": "Questions about ML model development process",
+      "questions": [
+        {
+          "id": "q8",
+          "type": "multiple_choice",
+          "question": "What's the best approach when starting model development?",
+          "options": [
+            "Start with the most complex deep learning model",
+            "Start with a simple baseline model, then iterate",
+            "Use the model that's most popular currently",
+            "Skip baseline and go directly to ensemble methods"
+          ],
+          "correct_answer": 1,
+          "explanation": "Always start with a simple baseline! It establishes minimum acceptable performance and helps you understand if complex models are actually helping."
+        },
+        {
+          "id": "q9",
+          "type": "multiple_choice",
+          "question": "Your model achieves 95% accuracy on the test set. What should you check next?",
+          "options": [
+            "Nothing, 95% is great - deploy immediately",
+            "Check confusion matrix and per-class metrics",
+            "Start working on documentation",
+            "Add more features to get 100%"
+          ],
+          "correct_answer": 1,
+          "explanation": "Accuracy alone can be misleading! Check the confusion matrix, precision, recall, and per-class performance to understand where the model succeeds and fails."
+        },
+        {
+          "id": "q10",
+          "type": "true_false",
+          "question": "Overfitting occurs when your model performs much better on training data than test data.",
+          "correct_answer": true,
+          "explanation": "True! Overfitting means the model has memorized the training data but doesn't generalize well to new data."
+        },
+        {
+          "id": "q11",
+          "type": "multiple_choice",
+          "question": "What's the purpose of hyperparameter tuning?",
+          "options": [
+            "To make the model more complex",
+            "To optimize model performance on validation data",
+            "To increase the size of the dataset",
+            "To reduce the number of features"
+          ],
+          "correct_answer": 1,
+          "explanation": "Hyperparameter tuning optimizes model configuration to achieve best performance on validation data."
+        }
+      ]
+    },
+    {
+      "quiz_id": "m10_deployment",
+      "title": "Deployment & Production",
+      "description": "Questions about deploying ML models",
+      "questions": [
+        {
+          "id": "q12",
+          "type": "multiple_choice",
+          "question": "What should your API include for production readiness?",
+          "options": [
+            "Only the /predict endpoint",
+            "/predict, /health, error handling, input validation",
+            "As many endpoints as possible",
+            "Just the prediction endpoint with no validation"
+          ],
+          "correct_answer": 1,
+          "explanation": "Production APIs need prediction endpoints, health checks, proper error handling, and input validation for reliability."
+        },
+        {
+          "id": "q13",
+          "type": "true_false",
+          "question": "It's fine to hardcode API keys and credentials in your GitHub repository.",
+          "correct_answer": false,
+          "explanation": "False! NEVER commit credentials to git. Use environment variables and .env files (in .gitignore) instead."
+        },
+        {
+          "id": "q14",
+          "type": "multiple_choice",
+          "question": "What's the best way to handle missing values during prediction in production?",
+          "options": [
+            "Return an error immediately",
+            "Use the same imputation strategy as training",
+            "Remove the sample",
+            "Ignore missing values"
+          ],
+          "correct_answer": 1,
+          "explanation": "Apply the same preprocessing (including imputation) used during training to ensure consistency."
+        }
+      ]
+    },
+    {
+      "quiz_id": "m10_documentation",
+      "title": "Documentation & Communication",
+      "description": "Questions about project documentation",
+      "questions": [
+        {
+          "id": "q15",
+          "type": "multiple_choice",
+          "question": "What should a good README.md include?",
+          "options": [
+            "Just the project title",
+            "Only installation instructions",
+            "Problem statement, features, installation, usage, architecture, performance, contact",
+            "Only the code itself"
+          ],
+          "correct_answer": 2,
+          "explanation": "A comprehensive README should cover all aspects: problem, solution, setup, usage, architecture, metrics, and contact information."
+        },
+        {
+          "id": "q16",
+          "type": "true_false",
+          "question": "Code comments and docstrings are optional if the code is self-explanatory.",
+          "correct_answer": false,
+          "explanation": "False! Always document your functions with docstrings. What's obvious to you now may not be obvious to others (or future you)."
+        },
+        {
+          "id": "q17",
+          "type": "multiple_choice",
+          "question": "When creating a demo video, what's the ideal length?",
+          "options": [
+            "30 seconds",
+            "2-3 minutes",
+            "10-15 minutes",
+            "As long as needed to show everything"
+          ],
+          "correct_answer": 1,
+          "explanation": "2-3 minutes is ideal - long enough to show key features, short enough to keep viewer attention."
+        }
+      ]
+    },
+    {
+      "quiz_id": "m10_best_practices",
+      "title": "ML Best Practices",
+      "description": "General ML engineering best practices",
+      "questions": [
+        {
+          "id": "q18",
+          "type": "multiple_choice",
+          "question": "How should you split time series data for training and testing?",
+          "options": [
+            "Random 80/20 split",
+            "Time-based split (train on past, test on future)",
+            "Stratified split",
+            "K-fold cross-validation"
+          ],
+          "correct_answer": 1,
+          "explanation": "Time series requires time-based splits to avoid looking into the future. Random splits cause data leakage."
+        },
+        {
+          "id": "q19",
+          "type": "true_false",
+          "question": "Feature scaling (normalization/standardization) should be fit on the entire dataset before splitting.",
+          "correct_answer": false,
+          "explanation": "False! Fit scaling only on training data to avoid data leakage. Then apply the same transformation to test data."
+        },
+        {
+          "id": "q20",
+          "type": "multiple_choice",
+          "question": "What's the purpose of cross-validation?",
+          "options": [
+            "To make the model train faster",
+            "To get more robust performance estimates",
+            "To increase dataset size",
+            "To replace the test set"
+          ],
+          "correct_answer": 1,
+          "explanation": "Cross-validation provides more reliable performance estimates by testing on multiple different subsets of the data."
+        }
+      ]
+    },
+    {
+      "quiz_id": "m10_ethics",
+      "title": "Ethics & Responsible AI",
+      "description": "Ethical considerations in ML projects",
+      "questions": [
+        {
+          "id": "q21",
+          "type": "true_false",
+          "question": "A healthcare ML model with 95% accuracy is ready for clinical use.",
+          "correct_answer": false,
+          "explanation": "False! High accuracy alone doesn't mean clinical readiness. Need regulatory approval, extensive validation, safety studies, and proper disclaimers."
+        },
+        {
+          "id": "q22",
+          "type": "multiple_choice",
+          "question": "If your model will impact people's lives (healthcare, finance, hiring), what's essential?",
+          "options": [
+            "Achieving the highest possible accuracy",
+            "Explainability and transparency about how decisions are made",
+            "Using the most complex model available",
+            "Keeping the model's workings secret"
+          ],
+          "correct_answer": 1,
+          "explanation": "For high-stakes decisions, explainability is crucial. People deserve to understand how decisions affecting them are made."
+        },
+        {
+          "id": "q23",
+          "type": "multiple_choice",
+          "question": "What should you include in a stock trading ML project?",
+          "options": [
+            "Guarantee of profits",
+            "Disclaimer that it's educational only and not financial advice",
+            "Promise of specific returns",
+            "Nothing special - just the model"
+          ],
+          "correct_answer": 1,
+          "explanation": "Always include disclaimers for financial ML projects. You're not providing financial advice and past performance doesn't guarantee future results."
+        }
+      ]
+    },
+    {
+      "quiz_id": "m10_reflection",
+      "title": "Project Reflection",
+      "description": "Reflective questions about your capstone experience",
+      "questions": [
+        {
+          "id": "q24",
+          "type": "open_ended",
+          "question": "What was the biggest technical challenge you faced in your capstone project and how did you overcome it?",
+          "guidance": "Reflect on specific challenges (data issues, model performance, deployment problems) and the steps you took to solve them."
+        },
+        {
+          "id": "q25",
+          "type": "open_ended",
+          "question": "If you were to start this project over, what would you do differently?",
+          "guidance": "Consider planning, technical decisions, time management, and scope."
+        },
+        {
+          "id": "q26",
+          "type": "open_ended",
+          "question": "How did this capstone project integrate concepts from multiple modules of the course?",
+          "guidance": "Identify specific techniques from different modules and how they worked together in your project."
+        },
+        {
+          "id": "q27",
+          "type": "open_ended",
+          "question": "What surprised you most during the development of your capstone?",
+          "guidance": "Could be technical surprises, time estimates, complexity, or insights gained."
+        },
+        {
+          "id": "q28",
+          "type": "open_ended",
+          "question": "How will you explain this project to a potential employer in an interview?",
+          "guidance": "Practice your elevator pitch focusing on problem, solution, impact, and technical depth."
+        }
+      ]
+    }
+  ],
+  "assessment_guidelines": {
+    "multiple_choice": "1 point per correct answer",
+    "true_false": "1 point per correct answer",
+    "open_ended": "Graded on depth of reflection and learning demonstrated (0-3 points each)",
+    "total_possible": "28 points (20 MC/TF + 15 open-ended)",
+    "passing_score": "20 points (71%)"
+  }
+}

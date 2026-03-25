@@ -1,0 +1,870 @@
+{
+  "module": "Module 4: Model Evaluation & Optimization",
+  "total_quizzes": 6,
+  "total_questions": 54,
+  "description": "Assessment questions for Module 4 covering metrics, cross-validation, overfitting, hyperparameter tuning, and fraud detection",
+
+  "session_1_quiz": {
+    "session": 1,
+    "title": "Classification Metrics Deep Dive",
+    "duration_minutes": 15,
+    "passing_score": 70,
+    "questions": [
+      {
+        "quiz_id": "M4-S1-Q01",
+        "question": "In a fraud detection system with 0.2% fraud rate, a model that always predicts 'no fraud' achieves 99.8% accuracy. What does this demonstrate?",
+        "options": [
+          "The model is excellent and ready for production",
+          "Accuracy is misleading for imbalanced datasets",
+          "The model has achieved optimal performance",
+          "The dataset is too small for training"
+        ],
+        "correct_answer": 1,
+        "explanation": "This demonstrates that accuracy is misleading for imbalanced datasets. A model that catches zero fraud cases but has 99.8% accuracy is useless. For imbalanced data, precision, recall, and F1-score are more informative metrics.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "analyze"
+      },
+      {
+        "quiz_id": "M4-S1-Q02",
+        "question": "What is precision in classification?",
+        "options": [
+          "The percentage of actual positives correctly identified",
+          "The percentage of predicted positives that are actually positive",
+          "The overall percentage of correct predictions",
+          "The area under the ROC curve"
+        ],
+        "correct_answer": 1,
+        "explanation": "Precision measures: Of all instances we predicted as positive, how many were actually positive? Formula: TP/(TP+FP). It answers: 'When I predict positive, am I right?' High precision means few false alarms.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S1-Q03",
+        "question": "What is recall in classification?",
+        "options": [
+          "The percentage of predicted positives that are actually positive",
+          "The percentage of actual positives correctly identified",
+          "The harmonic mean of precision and specificity",
+          "The ratio of true positives to false positives"
+        ],
+        "correct_answer": 1,
+        "explanation": "Recall measures: Of all actual positive instances, how many did we correctly identify? Formula: TP/(TP+FN). It answers: 'Did I catch all the positives?' High recall means few missed cases.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S1-Q04",
+        "question": "For a spam filter, which metric is typically more important?",
+        "options": [
+          "Recall (catch all spam)",
+          "Precision (avoid marking legitimate emails as spam)",
+          "Accuracy (overall correctness)",
+          "Specificity (identify legitimate emails)"
+        ],
+        "correct_answer": 1,
+        "explanation": "For spam filters, precision is typically more important because false positives (legitimate emails marked as spam) are very costly - users might miss important messages. It's better to let some spam through (lower recall) than to wrongly flag legitimate emails.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "apply"
+      },
+      {
+        "quiz_id": "M4-S1-Q05",
+        "question": "What is the F1-score?",
+        "options": [
+          "The arithmetic mean of precision and recall",
+          "The harmonic mean of precision and recall",
+          "The geometric mean of precision and recall",
+          "The weighted sum of precision and recall"
+        ],
+        "correct_answer": 1,
+        "explanation": "F1-score is the harmonic mean of precision and recall: F1 = 2 × (Precision × Recall) / (Precision + Recall). The harmonic mean gives more weight to lower values, so F1 is only high when both precision and recall are high. It provides a single score that balances both metrics.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S1-Q06",
+        "question": "In a confusion matrix, what are True Positives (TP)?",
+        "options": [
+          "Positive cases incorrectly predicted as negative",
+          "Negative cases incorrectly predicted as positive",
+          "Positive cases correctly predicted as positive",
+          "Negative cases correctly predicted as negative"
+        ],
+        "correct_answer": 2,
+        "explanation": "True Positives (TP) are cases where the model correctly predicted positive for actually positive instances. Example: Correctly identifying a fraudulent transaction as fraud. TP appears in the top-left cell of a confusion matrix.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 45,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M4-S1-Q07",
+        "question": "What does ROC stand for, and what does the curve plot?",
+        "options": [
+          "Receiver Operating Characteristic; plots precision vs recall",
+          "Receiver Operating Characteristic; plots true positive rate vs false positive rate",
+          "Rate of Correct Classification; plots accuracy vs threshold",
+          "Random Optimization Curve; plots model performance over time"
+        ],
+        "correct_answer": 1,
+        "explanation": "ROC stands for Receiver Operating Characteristic. The ROC curve plots True Positive Rate (TPR/Recall) on the y-axis versus False Positive Rate (FPR) on the x-axis, showing the tradeoff between sensitivity and specificity across different classification thresholds.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S1-Q08",
+        "question": "What does an AUC (Area Under ROC Curve) of 0.5 indicate?",
+        "options": [
+          "Perfect classification",
+          "Better than random classification",
+          "Random classification (no better than guessing)",
+          "Worst possible classification"
+        ],
+        "correct_answer": 2,
+        "explanation": "AUC = 0.5 means the model performs no better than random guessing. The diagonal line in ROC space (from 0,0 to 1,1) represents random classification with AUC = 0.5. Good models have AUC > 0.7, excellent models have AUC > 0.9.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S1-Q09",
+        "question": "When should you use a Precision-Recall curve instead of an ROC curve?",
+        "options": [
+          "When you have balanced classes",
+          "When you have severely imbalanced classes",
+          "When you want to maximize accuracy",
+          "When you have multi-class classification"
+        ],
+        "correct_answer": 1,
+        "explanation": "Precision-Recall curves are more informative than ROC curves for severely imbalanced datasets. ROC curves can be overly optimistic for imbalanced data because the large number of true negatives can make FPR look artificially low. PR curves focus on the positive class performance.",
+        "difficulty": "hard",
+        "estimated_time_seconds": 90,
+        "bloom_level": "analyze"
+      }
+    ]
+  },
+
+  "session_2_quiz": {
+    "session": 2,
+    "title": "Regression Metrics Deep Dive",
+    "duration_minutes": 15,
+    "passing_score": 70,
+    "questions": [
+      {
+        "quiz_id": "M4-S2-Q01",
+        "question": "What is the key difference between MAE and MSE?",
+        "options": [
+          "MAE uses absolute errors, MSE squares the errors",
+          "MAE is always larger than MSE",
+          "MAE is for classification, MSE is for regression",
+          "There is no difference, they measure the same thing"
+        ],
+        "correct_answer": 0,
+        "explanation": "MAE (Mean Absolute Error) takes the absolute value of errors: mean(|y_true - y_pred|). MSE (Mean Squared Error) squares the errors: mean((y_true - y_pred)²). Squaring penalizes large errors more heavily than small errors.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S2-Q02",
+        "question": "Why would you choose RMSE over MSE?",
+        "options": [
+          "RMSE is computationally faster",
+          "RMSE is in the same units as the target variable",
+          "RMSE is always more accurate",
+          "RMSE works better for small datasets"
+        ],
+        "correct_answer": 1,
+        "explanation": "RMSE (Root Mean Squared Error) is the square root of MSE, which brings the error back to the same units as the target variable. This makes RMSE easier to interpret. For example, if predicting house prices in dollars, RMSE is in dollars while MSE is in dollars².",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S2-Q03",
+        "question": "What does an R² (R-squared) value of 0.8 mean?",
+        "options": [
+          "The model is 80% accurate",
+          "80% of predictions are correct",
+          "The model explains 80% of the variance in the target variable",
+          "The model makes errors 20% of the time"
+        ],
+        "correct_answer": 2,
+        "explanation": "R² = 0.8 means the model explains 80% of the variance in the target variable. It does NOT mean '80% accurate' or '80% correct'. R² compares your model to a baseline that always predicts the mean. R² = 1 means perfect prediction, R² = 0 means no better than predicting the mean.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S2-Q04",
+        "question": "Can R² be negative?",
+        "options": [
+          "No, R² is always between 0 and 1",
+          "Yes, negative R² means the model is worse than predicting the mean",
+          "No, but it can be 0",
+          "Yes, but only for classification problems"
+        ],
+        "correct_answer": 1,
+        "explanation": "Yes, R² can be negative! This happens when your model performs worse than simply predicting the mean value for all instances. A negative R² indicates a very poor model that you should not use. R² = 0 means predicting the mean, negative R² means worse than that.",
+        "difficulty": "hard",
+        "estimated_time_seconds": 90,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S2-Q05",
+        "question": "What are residuals in regression?",
+        "options": [
+          "The predicted values",
+          "The difference between actual and predicted values",
+          "The model parameters",
+          "The input features"
+        ],
+        "correct_answer": 1,
+        "explanation": "Residuals are the differences between actual values and predicted values: residual = y_actual - y_predicted. Analyzing residuals helps identify patterns in model errors, detect outliers, and check assumptions like linearity and homoscedasticity.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 45,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M4-S2-Q06",
+        "question": "In a residual plot, what pattern indicates a good model?",
+        "options": [
+          "Residuals increasing with predicted values",
+          "Residuals forming a clear pattern",
+          "Residuals randomly scattered around zero",
+          "All residuals equal to zero"
+        ],
+        "correct_answer": 2,
+        "explanation": "Good models show residuals randomly scattered around zero with no clear pattern. Patterns in residual plots indicate problems: funnel shape = heteroscedasticity, curved pattern = non-linearity, clusters = missing variables. Random scatter means the model has captured the underlying relationship.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "analyze"
+      },
+      {
+        "quiz_id": "M4-S2-Q07",
+        "question": "What does MAPE (Mean Absolute Percentage Error) measure?",
+        "options": [
+          "The absolute errors in original units",
+          "The average percentage deviation from actual values",
+          "The squared errors",
+          "The correlation between predictions and actuals"
+        ],
+        "correct_answer": 1,
+        "explanation": "MAPE measures the average percentage deviation: mean(|actual - predicted| / |actual|) × 100%. For example, MAPE = 10% means predictions are off by 10% on average. MAPE is scale-independent, making it useful for comparing models across different datasets.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S2-Q08",
+        "question": "What is heteroscedasticity?",
+        "options": [
+          "When residual variance is constant across predictions",
+          "When residual variance changes across predictions",
+          "When predictions are always accurate",
+          "When features are highly correlated"
+        ],
+        "correct_answer": 1,
+        "explanation": "Heteroscedasticity occurs when the variance of residuals is not constant across different levels of predicted values. It appears as a funnel or cone shape in residual plots. This violates linear regression assumptions and suggests the model's accuracy varies across the prediction range.",
+        "difficulty": "hard",
+        "estimated_time_seconds": 90,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S2-Q09",
+        "question": "What does a Q-Q plot show?",
+        "options": [
+          "The relationship between predictions and actuals",
+          "Whether residuals follow a normal distribution",
+          "The correlation between features",
+          "The model's accuracy over time"
+        ],
+        "correct_answer": 1,
+        "explanation": "A Q-Q (Quantile-Quantile) plot compares the distribution of residuals to a theoretical normal distribution. If points fall along a straight diagonal line, residuals are normally distributed. Deviations indicate skewness, outliers, or non-normality, which may violate regression assumptions.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      }
+    ]
+  },
+
+  "session_3_quiz": {
+    "session": 3,
+    "title": "Cross-Validation",
+    "duration_minutes": 15,
+    "passing_score": 70,
+    "questions": [
+      {
+        "quiz_id": "M4-S3-Q01",
+        "question": "Why is cross-validation better than a single train/test split?",
+        "options": [
+          "It's faster to compute",
+          "It provides more reliable performance estimates by using multiple splits",
+          "It always gives better accuracy",
+          "It eliminates the need for a test set"
+        ],
+        "correct_answer": 1,
+        "explanation": "Cross-validation provides more reliable performance estimates by averaging results across multiple train/test splits. A single split might be lucky or unlucky depending on which data points end up in train vs test. CV reduces this variance and gives you mean ± standard deviation.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S3-Q02",
+        "question": "In 5-fold cross-validation, how much data is used for training in each fold?",
+        "options": [
+          "20% (1/5)",
+          "80% (4/5)",
+          "50% (1/2)",
+          "100%"
+        ],
+        "correct_answer": 1,
+        "explanation": "In 5-fold CV, the data is split into 5 equal parts. In each fold, 4 parts (80%) are used for training and 1 part (20%) is used for validation. This process repeats 5 times, with each part serving as validation once. Final score is the average across all 5 folds.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S3-Q03",
+        "question": "What is the main advantage of Stratified K-Fold over regular K-Fold?",
+        "options": [
+          "It's faster to compute",
+          "It maintains the class distribution in each fold",
+          "It uses more data for training",
+          "It prevents overfitting"
+        ],
+        "correct_answer": 1,
+        "explanation": "Stratified K-Fold maintains the same class distribution in each fold as in the original dataset. This is crucial for imbalanced data. For example, if you have 10% fraud, stratified CV ensures each fold also has ~10% fraud, preventing folds with no fraud cases.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S3-Q04",
+        "question": "Why is regular cross-validation inappropriate for time-series data?",
+        "options": [
+          "It's too slow for time-series",
+          "It can cause data leakage by training on future data to predict past data",
+          "Time-series data doesn't need validation",
+          "It requires too much memory"
+        ],
+        "correct_answer": 1,
+        "explanation": "Regular CV randomly shuffles data, which causes data leakage in time-series. You might train on 2024 data and test on 2023 data, which is unrealistic - you can't use future information to predict the past! Time Series CV uses forward-chaining: always train on past, test on future.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "analyze"
+      },
+      {
+        "quiz_id": "M4-S3-Q05",
+        "question": "In Time Series Cross-Validation with 5 splits, how does it differ from regular 5-fold CV?",
+        "options": [
+          "It uses the same amount of data in each split",
+          "Training set grows progressively larger in each split",
+          "It shuffles the data randomly",
+          "It uses future data to train"
+        ],
+        "correct_answer": 1,
+        "explanation": "In Time Series CV (forward-chaining), the training set grows progressively. Split 1: train on 20%, test on next 20%. Split 2: train on 40%, test on next 20%. This continues, always training on past data and testing on future, simulating real-world deployment.",
+        "difficulty": "hard",
+        "estimated_time_seconds": 90,
+        "bloom_level": "analyze"
+      },
+      {
+        "quiz_id": "M4-S3-Q06",
+        "question": "What does a high standard deviation in cross-validation scores indicate?",
+        "options": [
+          "The model is very accurate",
+          "The model's performance is unstable/inconsistent across different data subsets",
+          "The model is overfitting",
+          "The model needs more features"
+        ],
+        "correct_answer": 1,
+        "explanation": "High standard deviation in CV scores (e.g., 0.85 ± 0.15) indicates instability - the model performs very differently on different data subsets. This suggests the model is sensitive to training data selection and may not generalize well. Low std (e.g., 0.85 ± 0.02) indicates stable, reliable performance.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "analyze"
+      },
+      {
+        "quiz_id": "M4-S3-Q07",
+        "question": "How many times is each data point used for validation in 10-fold CV?",
+        "options": [
+          "0 times (never used for validation)",
+          "1 time (used exactly once)",
+          "10 times (used in every fold)",
+          "9 times (used in all but one fold)"
+        ],
+        "correct_answer": 1,
+        "explanation": "In K-fold CV, each data point is used for validation exactly once. The data is divided into K parts, and each part serves as the validation set exactly once while the other K-1 parts are used for training. This ensures every data point contributes to both training and validation.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S3-Q08",
+        "question": "What is Leave-One-Out Cross-Validation (LOOCV)?",
+        "options": [
+          "Training on all data and testing on all data",
+          "K-fold CV where K equals the number of samples",
+          "Using only one fold for validation",
+          "Leaving out outliers from training"
+        ],
+        "correct_answer": 1,
+        "explanation": "LOOCV is an extreme case of K-fold CV where K equals the number of samples (n). Each iteration trains on n-1 samples and tests on 1 sample. This repeats n times. While it maximizes training data, it's computationally expensive and can have high variance in results.",
+        "difficulty": "hard",
+        "estimated_time_seconds": 90,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S3-Q09",
+        "question": "When should you use 5-fold vs 10-fold cross-validation?",
+        "options": [
+          "Always use 10-fold for better results",
+          "5-fold is faster, 10-fold gives slightly more reliable estimates",
+          "Use 5-fold for small datasets, 10-fold for large datasets",
+          "It makes no practical difference"
+        ],
+        "correct_answer": 1,
+        "explanation": "5-fold CV is computationally faster (trains 5 models vs 10). 10-fold CV gives slightly more reliable estimates because each fold uses more training data (90% vs 80%). For most cases, both work well. Use 5-fold when computation is expensive, 10-fold when you want maximum reliability.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "apply"
+      }
+    ]
+  },
+
+  "session_4_quiz": {
+    "session": 4,
+    "title": "Diagnosing Overfitting & Underfitting",
+    "duration_minutes": 15,
+    "passing_score": 70,
+    "questions": [
+      {
+        "quiz_id": "M4-S4-Q01",
+        "question": "What are the signs of overfitting?",
+        "options": [
+          "Low training accuracy and low test accuracy",
+          "High training accuracy and high test accuracy",
+          "High training accuracy but low test accuracy",
+          "Low training accuracy but high test accuracy"
+        ],
+        "correct_answer": 2,
+        "explanation": "Overfitting occurs when a model performs well on training data (high training accuracy) but poorly on test data (low test accuracy). The model has memorized the training data instead of learning generalizable patterns. Example: 98% train accuracy, 70% test accuracy = overfitting.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S4-Q02",
+        "question": "What are the signs of underfitting?",
+        "options": [
+          "High training accuracy and low test accuracy",
+          "Low training accuracy and low test accuracy",
+          "High training accuracy and high test accuracy",
+          "Low training accuracy but high test accuracy"
+        ],
+        "correct_answer": 1,
+        "explanation": "Underfitting occurs when a model performs poorly on both training and test data (both low accuracy). The model is too simple to capture the underlying patterns. Example: 65% train accuracy, 63% test accuracy = underfitting. The model needs more complexity or better features.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S4-Q03",
+        "question": "In a learning curve, what does it mean when training and validation curves converge at a low value?",
+        "options": [
+          "Overfitting",
+          "Underfitting",
+          "Perfect fit",
+          "Need more validation data"
+        ],
+        "correct_answer": 1,
+        "explanation": "When both training and validation curves converge at a low value (e.g., both plateau at 70% accuracy), this indicates underfitting. The model has learned as much as it can, but performance is still poor. Solutions: increase model complexity, add more features, or try a different algorithm.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "analyze"
+      },
+      {
+        "quiz_id": "M4-S4-Q04",
+        "question": "In a learning curve, what does it mean when training curve is high but validation curve is low with a large gap?",
+        "options": [
+          "Underfitting",
+          "Overfitting",
+          "Perfect fit",
+          "Need less training data"
+        ],
+        "correct_answer": 1,
+        "explanation": "A large gap between high training curve and low validation curve indicates overfitting. The model performs well on training data but fails to generalize. Solutions: regularization, more training data, reduce model complexity, or use dropout (for neural networks).",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "analyze"
+      },
+      {
+        "quiz_id": "M4-S4-Q05",
+        "question": "What does L2 regularization (Ridge) do?",
+        "options": [
+          "Removes features by setting weights to exactly zero",
+          "Penalizes large weights by adding squared weight sum to loss",
+          "Increases model complexity",
+          "Speeds up training"
+        ],
+        "correct_answer": 1,
+        "explanation": "L2 regularization (Ridge) adds the squared sum of weights to the loss function: Loss = Original Loss + λ×(sum of weights²). This penalizes large weights, encouraging the model to distribute importance more evenly across features. It reduces overfitting but doesn't eliminate features.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S4-Q06",
+        "question": "What is the main difference between L1 (Lasso) and L2 (Ridge) regularization?",
+        "options": [
+          "L1 is faster than L2",
+          "L1 can set weights to zero (feature selection), L2 only shrinks weights",
+          "L2 is stronger than L1",
+          "L1 is for classification, L2 is for regression"
+        ],
+        "correct_answer": 1,
+        "explanation": "L1 regularization (Lasso) can set weights to exactly zero, effectively performing feature selection. L2 regularization (Ridge) only shrinks weights toward zero but never reaches exactly zero. Use L1 when you want automatic feature selection, L2 when you want to keep all features with reduced influence.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S4-Q07",
+        "question": "What is Elastic Net regularization?",
+        "options": [
+          "Only L1 regularization",
+          "Only L2 regularization",
+          "Combination of L1 and L2 regularization",
+          "A type of cross-validation"
+        ],
+        "correct_answer": 2,
+        "explanation": "Elastic Net combines both L1 and L2 regularization: Loss = Original Loss + λ₁×(sum of |weights|) + λ₂×(sum of weights²). This gives you both feature selection (from L1) and weight shrinkage (from L2). Useful when you have many correlated features.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S4-Q08",
+        "question": "In a validation curve, you plot model performance vs. max_depth for a decision tree. Performance peaks at depth=10 and decreases after. What does this indicate?",
+        "options": [
+          "The model needs more depth",
+          "Optimal complexity is around depth=10, deeper trees overfit",
+          "The model is underfitting",
+          "You need more training data"
+        ],
+        "correct_answer": 1,
+        "explanation": "The validation curve shows optimal model complexity at max_depth=10. Performance decreasing after this point indicates overfitting with deeper trees - they memorize training data. This is the sweet spot: simple enough to generalize but complex enough to capture patterns.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "analyze"
+      },
+      {
+        "quiz_id": "M4-S4-Q09",
+        "question": "What is the bias-variance tradeoff?",
+        "options": [
+          "The tradeoff between model speed and accuracy",
+          "The tradeoff between underfitting (high bias) and overfitting (high variance)",
+          "The tradeoff between training time and test time",
+          "The tradeoff between precision and recall"
+        ],
+        "correct_answer": 1,
+        "explanation": "Bias-variance tradeoff: Simple models have high bias (underfitting) - they make strong assumptions and miss patterns. Complex models have high variance (overfitting) - they're sensitive to training data noise. The goal is to find the sweet spot with low bias and low variance for good generalization.",
+        "difficulty": "hard",
+        "estimated_time_seconds": 90,
+        "bloom_level": "understand"
+      }
+    ]
+  },
+
+  "session_5_quiz": {
+    "session": 5,
+    "title": "Hyperparameter Tuning",
+    "duration_minutes": 15,
+    "passing_score": 70,
+    "questions": [
+      {
+        "quiz_id": "M4-S5-Q01",
+        "question": "What is the difference between parameters and hyperparameters?",
+        "options": [
+          "There is no difference, they're the same thing",
+          "Parameters are learned from data, hyperparameters are set before training",
+          "Hyperparameters are learned from data, parameters are set before training",
+          "Parameters are for classification, hyperparameters are for regression"
+        ],
+        "correct_answer": 1,
+        "explanation": "Parameters are learned from data during training (e.g., weights in linear regression, tree splits in decision trees). Hyperparameters are set before training and control the learning process (e.g., learning rate, max_depth, n_estimators). You tune hyperparameters to find optimal values.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S5-Q02",
+        "question": "How does Grid Search work?",
+        "options": [
+          "It randomly samples hyperparameter combinations",
+          "It tries all possible combinations in a predefined grid",
+          "It uses gradient descent to find optimal hyperparameters",
+          "It only tries one hyperparameter at a time"
+        ],
+        "correct_answer": 1,
+        "explanation": "Grid Search exhaustively tries all possible combinations in a predefined grid. For example, if you specify max_depth=[5,10,15] and min_samples_split=[2,5,10], it tries all 3×3=9 combinations. This guarantees finding the best combination in your grid but can be computationally expensive.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S5-Q03",
+        "question": "What is the main advantage of Random Search over Grid Search?",
+        "options": [
+          "Random Search always finds better hyperparameters",
+          "Random Search is more likely to find good values when some hyperparameters don't matter much",
+          "Random Search is slower but more accurate",
+          "Random Search uses less memory"
+        ],
+        "correct_answer": 1,
+        "explanation": "Random Search samples random combinations from the hyperparameter space. When some hyperparameters have little effect, Random Search explores more values of important hyperparameters in the same number of trials. Grid Search wastes trials on unimportant parameter combinations.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "analyze"
+      },
+      {
+        "quiz_id": "M4-S5-Q04",
+        "question": "You're tuning 4 hyperparameters with 4 values each using Grid Search with 5-fold CV. How many models will be trained?",
+        "options": [
+          "20 models (4×5)",
+          "80 models (4×4×5)",
+          "256 models (4^4)",
+          "1,280 models (4^4×5)"
+        ],
+        "correct_answer": 3,
+        "explanation": "Grid Search trains: (combinations) × (CV folds) = 4^4 × 5 = 256 × 5 = 1,280 models. This demonstrates why Grid Search becomes expensive with many hyperparameters. Each combination (256) is evaluated with 5-fold CV (5 models per combination).",
+        "difficulty": "hard",
+        "estimated_time_seconds": 90,
+        "bloom_level": "apply"
+      },
+      {
+        "quiz_id": "M4-S5-Q05",
+        "question": "What is Bayesian Optimization for hyperparameter tuning?",
+        "options": [
+          "It randomly searches the hyperparameter space",
+          "It uses previous trial results to inform where to search next",
+          "It tries all possible combinations systematically",
+          "It uses Bayes theorem to classify hyperparameters"
+        ],
+        "correct_answer": 1,
+        "explanation": "Bayesian Optimization builds a probabilistic model of the objective function (model performance) and uses it to select promising hyperparameters to try next. It balances exploration (trying new areas) with exploitation (refining known good areas), making it more efficient than random search.",
+        "difficulty": "hard",
+        "estimated_time_seconds": 90,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S5-Q06",
+        "question": "Why should you always use cross-validation during hyperparameter tuning?",
+        "options": [
+          "It makes tuning faster",
+          "It prevents overfitting the hyperparameters to a single validation set",
+          "It's required by Grid Search",
+          "It finds better hyperparameters"
+        ],
+        "correct_answer": 1,
+        "explanation": "Using CV during tuning prevents overfitting hyperparameters to a single validation set. If you tune on one val set, you might find hyperparameters that work well on that specific set but don't generalize. CV averages performance across multiple folds, giving more robust hyperparameter selection.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "analyze"
+      },
+      {
+        "quiz_id": "M4-S5-Q07",
+        "question": "For a Random Forest, which hyperparameters typically have the biggest impact on performance?",
+        "options": [
+          "random_state only",
+          "n_estimators (number of trees) and max_depth",
+          "Only max_features",
+          "verbose and n_jobs"
+        ],
+        "correct_answer": 1,
+        "explanation": "n_estimators (number of trees) and max_depth are typically most important for Random Forests. n_estimators affects model stability (more trees = more stable), max_depth controls individual tree complexity (affects overfitting). Other important parameters: min_samples_split, min_samples_leaf, max_features.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "apply"
+      },
+      {
+        "quiz_id": "M4-S5-Q08",
+        "question": "What is nested cross-validation?",
+        "options": [
+          "Running CV multiple times",
+          "Using CV for both hyperparameter tuning (inner loop) and model evaluation (outer loop)",
+          "Using different CV folds for training and testing",
+          "A faster version of regular CV"
+        ],
+        "correct_answer": 1,
+        "explanation": "Nested CV uses two CV loops: inner loop for hyperparameter tuning, outer loop for model evaluation. This prevents information leakage between tuning and evaluation. Without nested CV, you get overly optimistic performance estimates because you're testing on data that influenced hyperparameter selection.",
+        "difficulty": "hard",
+        "estimated_time_seconds": 90,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S5-Q09",
+        "question": "After hyperparameter tuning, you improved test accuracy from 82% to 92%. What should you be cautious about?",
+        "options": [
+          "Nothing, this is always a good result",
+          "Potential overfitting to the validation set used during tuning",
+          "The model is now too simple",
+          "You need more hyperparameters"
+        ],
+        "correct_answer": 1,
+        "explanation": "A 10% improvement is great, but be cautious: you might have overfit to your validation set during extensive tuning. The improvement might not hold on completely new data. Best practice: use a held-out test set that was NEVER used during tuning to get an honest final performance estimate.",
+        "difficulty": "hard",
+        "estimated_time_seconds": 90,
+        "bloom_level": "analyze"
+      }
+    ]
+  },
+
+  "session_6_quiz": {
+    "session": 6,
+    "title": "Fraud Detection Capstone",
+    "duration_minutes": 20,
+    "passing_score": 70,
+    "questions": [
+      {
+        "quiz_id": "M4-S6-Q01",
+        "question": "For fraud detection with 0.172% fraud rate, why is SMOTE (Synthetic Minority Over-sampling Technique) useful?",
+        "options": [
+          "It removes fraudulent transactions",
+          "It creates synthetic fraud examples to balance the dataset",
+          "It makes the model faster",
+          "It increases the fraud rate in test data"
+        ],
+        "correct_answer": 1,
+        "explanation": "SMOTE creates synthetic minority class (fraud) examples by interpolating between existing fraud cases. This helps balance the severe class imbalance (0.172% fraud), allowing models to learn fraud patterns better. Important: ONLY apply SMOTE to training data, NEVER to test data.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S6-Q02",
+        "question": "In fraud detection, why is precision typically prioritized over recall?",
+        "options": [
+          "Precision is easier to calculate",
+          "False positives (blocking legitimate transactions) frustrate customers",
+          "Recall is not important for fraud",
+          "Precision is always more important than recall"
+        ],
+        "correct_answer": 1,
+        "explanation": "High precision minimizes false positives - legitimate transactions incorrectly flagged as fraud. Blocking a customer's legitimate transaction creates friction and frustration. While high recall (catching all fraud) is also important, the balance depends on business costs: customer frustration vs. fraud losses.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "apply"
+      },
+      {
+        "quiz_id": "M4-S6-Q03",
+        "question": "Why must fraud detection use time-aware cross-validation instead of random CV?",
+        "options": [
+          "Time-aware CV is faster",
+          "Random CV would train on future fraud patterns to predict past fraud (data leakage)",
+          "Time-aware CV gives better accuracy",
+          "Random CV doesn't work with imbalanced data"
+        ],
+        "correct_answer": 1,
+        "explanation": "Fraud detection is time-series data. Random CV shuffles data, potentially training on 2024 fraud to predict 2023 fraud - unrealistic data leakage. Time-aware CV (forward-chaining) always trains on past data and tests on future data, simulating real-world deployment where you can't see future fraud patterns.",
+        "difficulty": "hard",
+        "estimated_time_seconds": 90,
+        "bloom_level": "analyze"
+      },
+      {
+        "quiz_id": "M4-S6-Q04",
+        "question": "Your fraud detector achieves 99.5% accuracy, 50% precision, and 60% recall. What does this tell you?",
+        "options": [
+          "The model is excellent and ready for production",
+          "Accuracy is misleading; half of fraud alerts are false alarms",
+          "The model catches all fraud perfectly",
+          "You need to improve accuracy first"
+        ],
+        "correct_answer": 1,
+        "explanation": "Despite 99.5% accuracy (misleading for imbalanced data), the 50% precision means half of all fraud alerts are false positives - frustrating customers. 60% recall means you're missing 40% of actual fraud. This model needs improvement in both precision and recall before production deployment.",
+        "difficulty": "hard",
+        "estimated_time_seconds": 90,
+        "bloom_level": "analyze"
+      },
+      {
+        "quiz_id": "M4-S6-Q05",
+        "question": "What does threshold optimization in fraud detection involve?",
+        "options": [
+          "Training more models",
+          "Adjusting the probability cutoff for classifying a transaction as fraud",
+          "Adding more features",
+          "Using a different algorithm"
+        ],
+        "correct_answer": 1,
+        "explanation": "Threshold optimization adjusts the probability cutoff for fraud classification. Default is 0.5, but you can increase it (e.g., 0.8) for higher precision (fewer false alarms) or decrease it (e.g., 0.3) for higher recall (catch more fraud). Choose based on business priorities: customer experience vs. fraud losses.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "apply"
+      },
+      {
+        "quiz_id": "M4-S6-Q06",
+        "question": "Why is AUC-ROC particularly useful for fraud detection evaluation?",
+        "options": [
+          "It's the fastest metric to calculate",
+          "It evaluates performance across all possible classification thresholds",
+          "It's easier to explain to stakeholders",
+          "It only considers fraud cases"
+        ],
+        "correct_answer": 1,
+        "explanation": "AUC-ROC measures model performance across ALL possible classification thresholds, not just one. This is valuable because you can adjust the threshold based on business needs without retraining. AUC > 0.95 means the model effectively separates fraud from normal transactions regardless of threshold choice.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M4-S6-Q07",
+        "question": "In the fraud detection capstone, which features are typically most important?",
+        "options": [
+          "Only the transaction amount",
+          "Only the time of transaction",
+          "PCA-transformed features (V1-V28) that capture transaction patterns",
+          "Only the customer ID"
+        ],
+        "correct_answer": 2,
+        "explanation": "The Credit Card Fraud dataset uses PCA-transformed features (V1-V28) that capture important transaction patterns while protecting privacy. Feature importance analysis reveals that certain V features (like V14, V4, V11) are strong fraud indicators, along with Amount. These capture behavioral patterns that distinguish fraud from normal transactions.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "apply"
+      },
+      {
+        "quiz_id": "M4-S6-Q08",
+        "question": "What is a practical deployment strategy for a fraud detection system?",
+        "options": [
+          "Block all transactions predicted as fraud",
+          "Ignore all predictions and manually review everything",
+          "Use a two-tier system: auto-block high-confidence fraud, flag medium-confidence for review",
+          "Only use the model for analysis, not real-time decisions"
+        ],
+        "correct_answer": 2,
+        "explanation": "A two-tier system balances automation and safety: (1) Auto-block very high-confidence fraud (>0.9 probability) - clear fraud, (2) Flag medium-confidence (0.5-0.9) for manual review - uncertain cases, (3) Allow low-confidence (<0.5) - likely legitimate. This maximizes fraud prevention while minimizing customer friction.",
+        "difficulty": "hard",
+        "estimated_time_seconds": 90,
+        "bloom_level": "apply"
+      },
+      {
+        "quiz_id": "M4-S6-Q09",
+        "question": "Why is model retraining important for fraud detection systems?",
+        "options": [
+          "Models never degrade over time",
+          "Fraudsters adapt their tactics, causing model drift",
+          "Retraining makes models slower",
+          "It's not important, initial training is sufficient"
+        ],
+        "correct_answer": 1,
+        "explanation": "Fraudsters constantly adapt their tactics to evade detection, causing model drift - model performance degrades over time as fraud patterns change. Regular retraining (e.g., monthly) with recent data helps the model learn new fraud patterns. Monitor precision/recall weekly to detect performance drops.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 60,
+        "bloom_level": "analyze"
+      }
+    ]
+  }
+}

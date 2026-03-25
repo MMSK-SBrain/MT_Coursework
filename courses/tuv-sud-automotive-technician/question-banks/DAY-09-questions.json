@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 9,
+  "week": 2,
+  "session_title": "Multimeter Mastery & Battery Systems",
+  "questions": [
+    {
+      "id": "D09-Q01",
+      "question": "What is the minimum CAT (Category) safety rating required for a multimeter used in automotive electrical work?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "CAT I",
+        "B": "CAT II",
+        "C": "CAT IV",
+        "D": "CAT III"
+      },
+      "correct_answer": "D",
+      "explanation": "CAT III is the minimum required for automotive work because a car battery can deliver up to 1,000A of short-circuit current. A cheap CAT I or CAT II meter can fail catastrophically under automotive fault conditions. Option A (CAT I) is only suitable for low-energy electronics like phone chargers.",
+      "topic": "Multimeter safety and CAT ratings",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D09-Q02",
+      "question": "When measuring resistance with a multimeter, the circuit must be in which state?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "De-energised — power off and component disconnected",
+        "B": "Powered on with ignition in the accessory position",
+        "C": "Powered on with the engine running",
+        "D": "In starting/cranking mode"
+      },
+      "correct_answer": "A",
+      "explanation": "Resistance must always be measured on a de-energised circuit. The meter sends a small test current to measure resistance; external voltage from a live circuit produces garbage readings and can damage the meter. Option C is dangerous because measuring resistance on a live circuit could blow the meter's internal fuse.",
+      "topic": "Multimeter measurement techniques",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D09-Q03",
+      "question": "A fully charged 12V lead-acid car battery at rest (no load) should read approximately what voltage?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "10.5 V",
+        "B": "12.6 V",
+        "C": "14.4 V",
+        "D": "11.8 V"
+      },
+      "correct_answer": "B",
+      "explanation": "A fully charged lead-acid battery has six cells at 2.1V each, giving 12.6V at rest. Option C (14.4V) is the expected voltage when the engine is running and the alternator is charging. Option A (10.5V) is the minimum acceptable voltage during cranking under starter load.",
+      "topic": "Battery state of charge",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D09-Q04",
+      "question": "A battery reads 12.2V at rest with no load. What is its approximate state of charge?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "100% — fully charged",
+        "B": "75% — good condition",
+        "C": "50% — needs charging",
+        "D": "25% — deeply discharged"
+      },
+      "correct_answer": "C",
+      "explanation": "At 12.2V resting voltage, the battery is approximately 50% charged and needs recharging. The scale is: 12.6V = 100%, 12.4V = 75%, 12.2V = 50%, 12.0V = 25%. Option B (75%) corresponds to 12.4V, not 12.2V.",
+      "topic": "Battery voltage and state of charge",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D09-Q05",
+      "question": "What does a voltage drop test across a connection measure?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The total battery voltage available at rest",
+        "B": "The voltage consumed by unwanted resistance in a connection while current is flowing",
+        "C": "The alternator output voltage under load",
+        "D": "The resistance of the connection in ohms"
+      },
+      "correct_answer": "B",
+      "explanation": "A voltage drop test measures the voltage lost across a connection or wire while current flows through it. A good connection drops less than 0.1V; more than 0.5V indicates high resistance from corrosion, loose terminals, or damage. Option D describes a resistance measurement, which requires a de-energised circuit and uses a different technique.",
+      "topic": "Voltage drop testing",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D09-Q06",
+      "question": "A technician measures the AC voltage at the battery terminals with the engine running at idle and reads 0.8V AC. What does this indicate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "This is normal; all alternators produce some AC ripple",
+        "B": "The battery is overcharged and needs to be replaced",
+        "C": "The multimeter is in the wrong mode and needs to be switched to DC",
+        "D": "One or more diodes in the alternator rectifier bridge have failed, allowing AC ripple into the DC system"
+      },
+      "correct_answer": "D",
+      "explanation": "A healthy alternator produces less than 0.3V AC ripple at the battery. Readings above 0.5V AC indicate a failed diode in the rectifier bridge, which allows AC to leak into the DC system. This can cause erratic sensor readings, flickering lights, and premature battery failure. Option A is incorrect because 0.8V AC significantly exceeds the healthy threshold of 0.3V.",
+      "topic": "Alternator AC ripple testing",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D09-Q07",
+      "question": "A vehicle battery is being replaced. Which terminal must be disconnected first and reconnected last?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The negative terminal, to prevent accidental short circuits if a tool touches the body",
+        "B": "The positive terminal, to prevent overcurrent to the ECU",
+        "C": "Either terminal — the order does not matter",
+        "D": "The smaller terminal, regardless of polarity"
+      },
+      "correct_answer": "A",
+      "explanation": "The negative terminal is disconnected first because the entire vehicle body is the negative ground path. If you disconnect the positive first and your wrench accidentally touches the body while still on the positive terminal, it creates a direct short circuit through the wrench. Disconnecting negative first eliminates this risk. Option B reverses the correct sequence and creates a short circuit hazard.",
+      "topic": "Battery replacement procedure",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D09-Q08",
+      "question": "A technician performs a parasitic drain test: with the key off, doors closed, and all modules asleep (after 20 minutes), the clamp meter reads 350 mA on the battery negative cable. What is the correct interpretation?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "This is normal; modern vehicles draw up to 500 mA at rest",
+        "B": "This is excessive; normal drain is 20-50 mA, and there is likely a module or circuit that is not entering sleep mode",
+        "C": "The clamp meter is faulty because no current should flow with the key off",
+        "D": "The battery is internally shorted and must be replaced immediately"
+      },
+      "correct_answer": "B",
+      "explanation": "Normal parasitic drain is 20-50 mA for clock, alarm, and module keep-alive functions. A reading of 350 mA is approximately 7 times the normal level and will flatten a battery overnight. A module failing to sleep, a stuck interior light, or a faulty aftermarket accessory is the likely cause. Option A is incorrect because 350 mA would drain a typical 60 Ah battery within a few days.",
+      "topic": "Parasitic drain testing",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D09-Q09",
+      "question": "A vehicle originally equipped with an AGM battery needs a battery replacement. The customer asks for a cheaper standard flooded battery. What should the technician advise?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Any 12V battery with the same physical size will work fine",
+        "B": "An EFB battery is a cheaper alternative that is always compatible with AGM systems",
+        "C": "An AGM must be replaced with an AGM; downgrading to a standard flooded battery will not withstand the start-stop cycling demands and will fail prematurely",
+        "D": "A standard flooded battery is acceptable as long as the CCA rating matches"
+      },
+      "correct_answer": "C",
+      "explanation": "AGM batteries are fitted to vehicles with start-stop systems and regenerative braking that require deep cycling capability. A standard flooded battery cannot handle the repeated deep discharge/recharge cycles and will fail prematurely. The rule is: never downgrade from AGM. Option B is also incorrect because EFB batteries are only suitable for basic start-stop, not for vehicles with regenerative braking that require AGM.",
+      "topic": "Battery types and replacement rules",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D09-Q10",
+      "question": "A technician measures voltage drop across the battery positive cable connection while cranking and reads 1.2V. The starter cranks slowly. What does this measurement reveal?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The battery is fully charged and the reading is normal during cranking",
+        "B": "The alternator is not producing enough voltage during cranking",
+        "C": "There is excessive resistance at the battery positive connection, likely from corrosion or a loose terminal, stealing voltage from the starter motor",
+        "D": "The starter motor windings are shorted and drawing too much current"
+      },
+      "correct_answer": "C",
+      "explanation": "A voltage drop of 1.2V across a single cable connection is far above the 0.1V maximum for a good connection. This means unwanted resistance (corrosion, loose clamp) is converting electrical energy to heat and reducing the voltage reaching the starter. With 200A cranking current and 1.2V drop, the connection is wasting 240W as heat. Option B is irrelevant because the alternator does not charge during cranking.",
+      "topic": "Voltage drop testing and starter circuit diagnosis",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

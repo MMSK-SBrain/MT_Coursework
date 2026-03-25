@@ -1,0 +1,298 @@
+{
+  "module": 3,
+  "title": "Regression - THE PAYOFF",
+  "description": "Detailed rubrics for all 6 sessions in Module 3: Regression",
+  "total_sessions": 6,
+  "points_per_session": 15,
+  "sessions": [
+    {
+      "session": "3.1",
+      "title": "Introduction to Regression",
+      "total_points": 15,
+      "description": "Foundational regression concepts and evaluation metrics",
+      "criteria": [
+        {
+          "category": "Regression Understanding",
+          "points": 5,
+          "description": "Demonstrates clear understanding of regression vs classification, continuous prediction, and use cases",
+          "levels": {
+            "excellent_5": "Clearly articulates regression vs classification differences, explains multiple regression metrics (MAE, MSE, RMSE, R²) with examples, identifies appropriate regression use cases",
+            "good_4": "Explains regression concept well, understands most metrics with minor gaps, can identify regression problems",
+            "adequate_3": "Basic understanding of regression, some confusion on metric interpretation, limited examples",
+            "poor_1-2": "Significant misunderstandings of regression concept or metrics, cannot distinguish from classification"
+          }
+        },
+        {
+          "category": "Code Implementation",
+          "points": 6,
+          "description": "Successfully implements linear regression model with proper evaluation",
+          "levels": {
+            "excellent_6": "Code runs perfectly, achieves R² > 0.7 on test data, proper train-test split, all metrics calculated (MAE, MSE, RMSE, R²), well-commented code",
+            "good_5": "Code runs with minor issues, R² > 0.6, most metrics calculated, adequate comments",
+            "adequate_3-4": "Code runs but R² < 0.6 or missing some metrics, limited comments, some implementation issues",
+            "poor_1-2": "Code has significant errors, very poor performance, incomplete implementation"
+          }
+        },
+        {
+          "category": "Analysis & Insights",
+          "points": 4,
+          "description": "Analyzes model performance and draws meaningful conclusions",
+          "levels": {
+            "excellent_4": "Deep analysis comparing multiple metrics, interprets R² correctly, discusses model strengths/weaknesses, identifies improvement areas with specific suggestions",
+            "good_3": "Good analysis with insights about model performance, compares metrics, mentions improvements",
+            "adequate_2": "Basic analysis, mostly descriptive, limited interpretation",
+            "poor_1": "Little to no meaningful analysis, just reports numbers"
+          }
+        }
+      ]
+    },
+    {
+      "session": "3.2",
+      "title": "Multiple Regression & Feature Engineering",
+      "total_points": 15,
+      "description": "Multiple features, polynomial regression, regularization, and feature scaling",
+      "criteria": [
+        {
+          "category": "Feature Engineering",
+          "points": 5,
+          "description": "Creates meaningful features and applies proper scaling/transformation",
+          "levels": {
+            "excellent_5": "Creates 3+ new features (polynomial, interactions, or domain-specific), applies appropriate scaling (StandardScaler/MinMaxScaler), justifies feature choices, removes redundant features",
+            "good_4": "Creates 2+ features, applies scaling correctly, reasonable feature choices",
+            "adequate_3": "Creates 1-2 basic features, applies scaling with minor issues",
+            "poor_1-2": "Minimal feature engineering, no scaling, or incorrect application"
+          }
+        },
+        {
+          "category": "Model Complexity & Regularization",
+          "points": 6,
+          "description": "Demonstrates understanding of overfitting and uses regularization appropriately",
+          "levels": {
+            "excellent_6": "Implements and compares Linear Regression, Ridge, and Lasso, tests different regularization strengths, identifies optimal model, explains overfitting risks, shows train vs test performance",
+            "good_5": "Implements 2+ regularization approaches, compares performance, discusses overfitting",
+            "adequate_3-4": "Implements one regularization method, basic comparison, limited discussion",
+            "poor_1-2": "No regularization or incorrect implementation, no overfitting consideration"
+          }
+        },
+        {
+          "category": "Technical Execution",
+          "points": 4,
+          "description": "Code quality, proper implementation, and results presentation",
+          "levels": {
+            "excellent_4": "Clean, well-organized code, proper use of sklearn pipelines or systematic workflow, clear visualizations comparing models, comprehensive results table",
+            "good_3": "Good code structure, successful implementation, adequate visualization",
+            "adequate_2": "Working code with some organization issues, basic results presentation",
+            "poor_1": "Poorly organized code, incomplete implementation, unclear results"
+          }
+        }
+      ]
+    },
+    {
+      "session": "3.3",
+      "title": "Time Series Basics",
+      "total_points": 15,
+      "description": "Time series concepts, proper splitting, temporal features, and trend/seasonality",
+      "criteria": [
+        {
+          "category": "Time Series Understanding",
+          "points": 5,
+          "description": "Demonstrates understanding of temporal dependencies and time series concepts",
+          "levels": {
+            "excellent_5": "Clearly explains why order matters, identifies trends and seasonality, understands autocorrelation, describes appropriate time series models, explains why standard CV doesn't work",
+            "good_4": "Good grasp of temporal dependencies, identifies trends or seasonality, knows about proper splitting",
+            "adequate_3": "Basic understanding of time series, some confusion on key concepts",
+            "poor_1-2": "Treats time series like regular tabular data, doesn't understand temporal aspects"
+          }
+        },
+        {
+          "category": "Proper Data Handling",
+          "points": 6,
+          "description": "Implements chronological train-test split and prevents data leakage",
+          "levels": {
+            "excellent_6": "Perfect chronological split (train on old, test on recent), no data leakage, creates lag features correctly, validates no future information in features, documents split rationale",
+            "good_5": "Correct chronological split, mostly prevents leakage, creates some lag features",
+            "adequate_3-4": "Attempts chronological split with minor issues, some potential leakage concerns",
+            "poor_1-2": "Uses random split (wrong!), clear data leakage, future information in features"
+          }
+        },
+        {
+          "category": "Feature Creation & Analysis",
+          "points": 4,
+          "description": "Creates time-based features and analyzes temporal patterns",
+          "levels": {
+            "excellent_4": "Creates multiple temporal features (lags, rolling stats, date features), visualizes trends and seasonality, decomposes time series, analyzes ACF/PACF",
+            "good_3": "Creates lag and rolling features, basic trend visualization, identifies patterns",
+            "adequate_2": "Creates basic lag features, minimal analysis",
+            "poor_1": "No temporal features or incorrect implementation"
+          }
+        }
+      ]
+    },
+    {
+      "session": "3.4",
+      "title": "Feature Engineering for Stocks",
+      "total_points": 15,
+      "description": "Technical indicators, domain knowledge application, and financial feature engineering",
+      "criteria": [
+        {
+          "category": "Technical Indicators",
+          "points": 6,
+          "description": "Implements multiple technical indicators correctly",
+          "levels": {
+            "excellent_6": "Implements 5+ indicators correctly (SMA, EMA, RSI, MACD, Bollinger Bands, volatility, etc.), all calculations verified, proper handling of NaN values, visualizes indicators",
+            "good_5": "Implements 3-4 indicators correctly, proper calculations, handles NaN",
+            "adequate_3-4": "Implements 2-3 indicators with minor calculation issues",
+            "poor_1-2": "Implements <2 indicators or major calculation errors"
+          }
+        },
+        {
+          "category": "Domain Knowledge Application",
+          "points": 5,
+          "description": "Applies financial domain knowledge to feature engineering and explains indicator significance",
+          "levels": {
+            "excellent_5": "Explains what each indicator measures and why it matters for prediction, discusses overbought/oversold conditions, trend identification, momentum, demonstrates understanding of trading concepts",
+            "good_4": "Explains most indicators, shows understanding of financial concepts",
+            "adequate_3": "Basic explanation of indicators, limited domain knowledge",
+            "poor_1-2": "No explanation or understanding of financial concepts, just mechanical implementation"
+          }
+        },
+        {
+          "category": "Feature Analysis",
+          "points": 4,
+          "description": "Analyzes feature correlations and importance for stock prediction",
+          "levels": {
+            "excellent_4": "Creates correlation matrix, identifies multicollinearity issues, analyzes feature-target relationships, removes redundant features, explains which features should be predictive and why",
+            "good_3": "Analyzes correlations, identifies some important features",
+            "adequate_2": "Basic correlation analysis, limited interpretation",
+            "poor_1": "No feature analysis or incorrect interpretation"
+          }
+        }
+      ]
+    },
+    {
+      "session": "3.5",
+      "title": "Advanced Regression Models",
+      "total_points": 15,
+      "description": "Decision trees, Random Forest, Gradient Boosting, and ensemble methods",
+      "criteria": [
+        {
+          "category": "Model Implementation",
+          "points": 6,
+          "description": "Successfully implements and compares multiple advanced regression algorithms",
+          "levels": {
+            "excellent_6": "Implements all three models (Decision Tree, Random Forest, Gradient Boosting) with appropriate hyperparameters, includes baseline for comparison, tests multiple configurations, documents choices",
+            "good_5": "Implements 2-3 models successfully, reasonable hyperparameters, compares to baseline",
+            "adequate_3-4": "Implements 1-2 models, basic configuration, limited comparison",
+            "poor_1-2": "Incomplete implementation or significant errors"
+          }
+        },
+        {
+          "category": "Model Comparison & Selection",
+          "points": 5,
+          "description": "Systematically compares models and selects best performer with justification",
+          "levels": {
+            "excellent_5": "Creates comprehensive comparison table (RMSE, R², MAE, training time), visualizes predictions for all models, analyzes overfitting (train vs test), selects best model with clear justification considering accuracy AND complexity",
+            "good_4": "Compares models on multiple metrics, good visualization, reasonable selection",
+            "adequate_3": "Basic comparison on 1-2 metrics, identifies best model",
+            "poor_1-2": "Minimal comparison, no clear selection rationale"
+          }
+        },
+        {
+          "category": "Feature Importance & Insights",
+          "points": 4,
+          "description": "Analyzes feature importance and provides model insights",
+          "levels": {
+            "excellent_4": "Extracts and visualizes feature importance from tree-based models, interprets which features drive predictions, compares importance across models, validates findings against domain knowledge",
+            "good_3": "Extracts feature importance, basic visualization and interpretation",
+            "adequate_2": "Shows feature importance, limited interpretation",
+            "poor_1": "No feature importance analysis"
+          }
+        }
+      ]
+    },
+    {
+      "session": "3.6",
+      "title": "Stock Predictor PAYOFF - Building the Module 0 Demo",
+      "total_points": 15,
+      "description": "THE PAYOFF SESSION - Complete stock predictor with advanced models and deployment readiness",
+      "criteria": [
+        {
+          "category": "Complete Pipeline Implementation",
+          "points": 6,
+          "description": "Builds end-to-end stock prediction system integrating all learned concepts",
+          "levels": {
+            "excellent_6": "Complete pipeline: data download, 10+ technical indicators, proper time series split, 3+ models trained, best model selected, predictions generated, model saved, all code runs flawlessly, production-quality code",
+            "good_5": "Complete pipeline with minor gaps, 5+ indicators, 2+ models, working predictions",
+            "adequate_3-4": "Mostly complete pipeline, some components missing or poorly implemented",
+            "poor_1-2": "Incomplete pipeline, major components missing or broken"
+          }
+        },
+        {
+          "category": "THE PAYOFF Recognition",
+          "points": 4,
+          "description": "Explicitly connects to Module 0 demo and demonstrates achievement of the original goal",
+          "levels": {
+            "excellent_4": "Clearly documents connection to Module 0, compares implementation to original demo, reflects on learning journey, celebrates achievement with specific examples of growth, articulates 'I built this!' moment",
+            "good_3": "Mentions Module 0 connection, shows awareness of achievement",
+            "adequate_2": "Brief Module 0 reference, limited reflection",
+            "poor_1": "No connection made to Module 0 or course journey"
+          }
+        },
+        {
+          "category": "Model Performance & Validation",
+          "points": 3,
+          "description": "Achieves strong performance with proper validation",
+          "levels": {
+            "excellent_3": "R² > 0.75, RMSE significantly better than baseline, includes backtesting, realistic performance assessment, acknowledges limitations",
+            "good_2": "R² > 0.65, beats baseline, proper evaluation, realistic expectations",
+            "adequate_1": "R² > 0.50 or beats baseline, basic evaluation"
+          }
+        },
+        {
+          "category": "Production Readiness & Documentation",
+          "points": 2,
+          "description": "Model deployment preparation and comprehensive documentation",
+          "levels": {
+            "excellent_2": "Model saved with versioning, clear README with setup instructions, results documented, requirements.txt included, reproducible workflow",
+            "good_1": "Model saved, basic documentation, mostly reproducible",
+            "poor_0": "No model saving or documentation"
+          }
+        }
+      ],
+      "special_notes": [
+        "This is THE most important session - the emotional and technical culmination",
+        "Grade generously for effort and completion - celebrate the achievement!",
+        "The 'PAYOFF Recognition' criterion is unique to this session",
+        "Even if performance isn't perfect, recognize the journey and learning",
+        "This session integrates everything from Module 1 (data), Module 2 (ML), and Module 3 (regression)"
+      ]
+    }
+  ],
+  "grading_guidelines": {
+    "points_scale": {
+      "excellent": "90-100% of points (13.5-15)",
+      "good": "80-89% of points (12-13.4)",
+      "adequate": "70-79% of points (10.5-11.9)",
+      "needs_improvement": "Below 70% (<10.5)"
+    },
+    "passing_threshold": {
+      "per_session": "10.5/15 points (70%)",
+      "special_note": "Session 3.6 should be graded with appreciation for the complete journey"
+    },
+    "evaluation_principles": [
+      "Focus on understanding, not perfection",
+      "Reward effort and learning progression",
+      "Recognize domain knowledge application",
+      "Value proper methodology over high scores",
+      "Celebrate achievements, especially in Session 3.6",
+      "Prevent data leakage is MORE important than perfect R² scores",
+      "Code clarity and documentation matter for real-world readiness"
+    ]
+  },
+  "metadata": {
+    "total_points_all_sessions": 90,
+    "emphasis": "Session 3.6 is THE PAYOFF - weight emotional and technical achievement equally",
+    "learning_progression": "Sessions build from fundamentals (3.1) to complete application (3.6)",
+    "real_world_focus": "All sessions emphasize practical application and production considerations"
+  }
+}

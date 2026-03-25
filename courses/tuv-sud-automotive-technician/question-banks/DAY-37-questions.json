@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 37,
+  "week": 8,
+  "session_title": "Body Electronics — The BCM and Everything It Controls",
+  "questions": [
+    {
+      "id": "D37-Q01",
+      "question": "In a vehicle immobiliser system, what happens when the BCM does not recognise the transponder code in the key?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The starter motor is disabled and the engine will not crank",
+        "B": "The engine cranks normally but will not start because fuel injection and ignition are disabled",
+        "C": "The vehicle alarm sounds continuously until the correct key is used",
+        "D": "The steering lock engages and all electrical systems are shut down"
+      },
+      "correct_answer": "B",
+      "explanation": "When the BCM/immobiliser ECU fails to authenticate the key transponder, it sends a 'do not authorise start' message to the engine ECU via CAN bus. The engine ECU then disables fuel injection and ignition. However, the starter motor circuit is typically separate and unaffected — the engine will crank freely but will not fire. The immobiliser warning light on the dashboard will flash, indicating an authentication failure. This is a deliberate design: the cranking sound tells the driver the battery and starter are fine, directing diagnosis toward the immobiliser system.",
+      "topic": "Immobiliser system operation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D37-Q02",
+      "question": "What type of motor is typically used in a power window mechanism, and why?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "A stepper motor, because it allows precise positioning of the window glass",
+        "B": "A DC motor with a worm gear, because the worm gear provides self-locking so the window stays in position when the motor is off",
+        "C": "An AC induction motor, because it runs directly from the alternator output",
+        "D": "A brushless DC motor with encoder feedback for anti-pinch control"
+      },
+      "correct_answer": "B",
+      "explanation": "Power window motors are permanent magnet DC motors fitted with a worm gear reduction. The worm gear serves two critical purposes: it provides high torque from a small motor (the gear reduction multiplies torque), and it is self-locking — the window glass cannot push the worm gear backward, so the window stays exactly where the driver positions it without any holding current. This self-locking property is inherent to the worm gear geometry and requires no electrical power to maintain window position.",
+      "topic": "Power window motor design",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D37-Q03",
+      "question": "What safety feature is legally required on automatic (one-touch) power windows to protect vehicle occupants?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "A thermal fuse that shuts off the motor if the window jams",
+        "B": "An anti-pinch (anti-trap) function that reverses the window if it detects an obstruction during automatic closing",
+        "C": "A speed limiter that prevents the window from closing faster than 5 cm per second",
+        "D": "A secondary manual crank handle as a backup"
+      },
+      "correct_answer": "B",
+      "explanation": "All vehicles with automatic (one-touch up) power windows must have an anti-pinch or anti-trap function. The BCM or window motor module monitors motor current or uses a Hall effect sensor to detect motor speed. If an obstruction (such as a child's hand or arm) is encountered during automatic closing, the increased resistance causes a spike in motor current or a drop in motor speed. The system detects this within milliseconds and immediately reverses the window direction, opening it by approximately 5-10 cm. This is a legal safety requirement under ECE regulations to prevent serious injury.",
+      "topic": "Power window anti-pinch safety",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D37-Q04",
+      "question": "A rain sensor mounted on the windscreen uses which operating principle to detect water on the glass?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "It measures the electrical conductivity of water droplets on the glass surface",
+        "B": "It uses an infrared LED that shines light into the glass via total internal reflection — water on the surface changes the reflection angle, reducing the light received by the photodiode",
+        "C": "It measures the capacitance change between two plates embedded in the windscreen",
+        "D": "It uses an ultrasonic sensor to detect the impact frequency of raindrops"
+      },
+      "correct_answer": "B",
+      "explanation": "An optical rain sensor contains an infrared LED and a photodiode mounted on the inner surface of the windscreen. The LED shines infrared light into the glass at an angle. On a dry windscreen, total internal reflection keeps the light bouncing inside the glass until it reaches the photodiode at full intensity. When water lands on the outer surface, it disrupts the total internal reflection — the light refracts out through the water instead of reflecting back. The photodiode receives less light, and the BCM interprets this reduction as rain. More water equals more light loss equals faster wiper speed.",
+      "topic": "Rain sensor operating principle",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D37-Q05",
+      "question": "What is the purpose of a 'deadlock' function in a central locking system?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "It locks all doors automatically when the vehicle exceeds 15 km/h",
+        "B": "It disables the interior door handles and lock buttons so the doors cannot be opened from inside, even if a thief breaks a window and reaches in",
+        "C": "It engages a secondary mechanical lock on the boot/trunk to protect valuables",
+        "D": "It activates the alarm system siren after a 30-second delay"
+      },
+      "correct_answer": "B",
+      "explanation": "Deadlock (also called double-lock or super-lock) is a security feature that disables the interior door handles and lock buttons when activated. In normal lock mode, a person inside the vehicle can still open the door using the interior handle. In deadlock mode, even if a thief breaks a window and reaches inside, pulling the interior handle or pressing the lock button will not open the door. Deadlock is typically activated by pressing the lock button on the remote fob twice, or by one long press. An important safety note: deadlock must never be activated when occupants are inside the vehicle, as they would be trapped in an emergency.",
+      "topic": "Central locking deadlock function",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D37-Q06",
+      "question": "A customer reports that their power windows no longer operate using the one-touch automatic function — they must hold the button continuously to raise or lower the window. All four windows behave the same way. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "All four window motor regulators have worn out simultaneously",
+        "B": "The battery was recently disconnected or replaced, and the window ECU/BCM has lost its anti-pinch calibration — the windows need to be re-initialised by performing a full open-close-open learning cycle",
+        "C": "The CAN bus has a communication fault preventing the BCM from receiving window switch signals",
+        "D": "The anti-pinch sensors on all four doors have failed due to water ingress"
+      },
+      "correct_answer": "B",
+      "explanation": "When battery power is disconnected (for battery replacement, jump-starting, or an ECU reset), the BCM or window control module loses its stored reference position for each window. The anti-pinch function requires the module to know the exact position of the glass throughout its travel — this is learned during an initialisation procedure. Without this calibration, the module disables the one-touch automatic function as a safety precaution (it cannot detect obstructions without position reference). The initialisation procedure typically involves: close the window fully using the manual hold function, continue holding the button for 2-3 seconds after the window reaches the top, then open fully and hold for 2-3 seconds at the bottom. This teaches the module the full travel range.",
+      "topic": "Power window initialisation after battery disconnect",
+      "bloom_level": "Analyse"
+    },
+    {
+      "id": "D37-Q07",
+      "question": "A vehicle's horn does not sound when the steering wheel button is pressed, but all other steering wheel controls (audio, cruise control) work correctly. The horn relay clicks audibly when the button is pressed. Where is the fault most likely located?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The clock spring has an open circuit on the horn wire",
+        "B": "The horn itself or the wiring between the horn relay output and the horn unit is faulty",
+        "C": "The BCM has a software fault and is not sending the horn activation command",
+        "D": "The fuse for all steering wheel controls has partially failed"
+      },
+      "correct_answer": "B",
+      "explanation": "The diagnostic logic here uses elimination. The fact that other steering wheel controls work confirms the clock spring (spiral cable) is intact — if the clock spring were broken, multiple functions would be affected, not just the horn. The fact that the relay clicks confirms that the button signal is reaching the relay coil circuit and energising it. Since the relay is activating (clicking) but the horn does not sound, the fault is downstream of the relay — either the horn unit itself has failed (corrosion, internal open circuit), or the wiring from the relay output terminal to the horn is broken or has a poor ground connection. Testing: check for 12V at the horn connector when the button is pressed. If voltage is present, the horn unit is faulty. If no voltage, trace the wire from the relay.",
+      "topic": "Horn circuit diagnostic logic",
+      "bloom_level": "Analyse"
+    },
+    {
+      "id": "D37-Q08",
+      "question": "A customer complains of a musty smell inside the cabin and water pooling in the rear footwell during heavy rain. The sunroof glass seals appear intact with no visible damage. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The sunroof motor has failed, leaving the glass slightly ajar",
+        "B": "The sunroof drain tubes are blocked with debris, causing water that enters the drain channels to overflow inside the headliner and run down the pillars into the footwell",
+        "C": "The windscreen seal has failed and water is entering above the dashboard",
+        "D": "The HVAC evaporator drain is blocked, causing condensation to overflow into the cabin"
+      },
+      "correct_answer": "B",
+      "explanation": "Sunroofs are not designed to be watertight at the glass seal — a deliberate drainage channel around the sunroof aperture collects water that passes the seal and routes it through four drain tubes (typically one at each corner) down through the A-pillars and C-pillars to exit beneath the vehicle. Over time, these narrow drain tubes become blocked with leaves, dirt, pollen, and insect debris. When blocked, water accumulates in the drain channel until it overflows inside the headliner, runs down the interior trim, and pools in the footwell. The musty smell is from damp carpet and padding that cannot dry. The fix is to clear the drain tubes using compressed air or a flexible wire, then test with water to confirm flow. This is one of the most common body-related warranty complaints.",
+      "topic": "Sunroof drainage system diagnosis",
+      "bloom_level": "Analyse"
+    },
+    {
+      "id": "D37-Q09",
+      "question": "A technician measures the resistance of a heated door mirror element and reads OL (open line / infinite resistance). The mirror does not heat up when the heated mirror button is pressed. What does this measurement confirm?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The mirror heating element has an internal open circuit and must be replaced",
+        "B": "The BCM is not supplying power to the mirror circuit",
+        "C": "The wiring harness between the BCM and the mirror connector has a short circuit",
+        "D": "The mirror switch on the dashboard has failed"
+      },
+      "correct_answer": "A",
+      "explanation": "An OL (over limit / open line) resistance reading means there is no continuity through the heating element — the resistive wire inside the mirror has broken. A functioning heated mirror element typically reads between 5 and 15 ohms, depending on the vehicle. This is a component-level test performed directly at the mirror connector with the wiring disconnected, so it isolates the element from the rest of the circuit. If the element had a short circuit, you would read near 0 ohms. If the element were good, you would read the specified resistance value. The OL reading definitively confirms the heating element has failed and the mirror glass/heating element assembly must be replaced.",
+      "topic": "Mirror heating element testing",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D37-Q10",
+      "question": "A vehicle equipped with keyless entry and push-button start intermittently fails to detect the key fob when the driver attempts to open the door or start the engine. The key fob battery has been replaced and the mechanical backup key still works in the door lock. Which diagnostic step should be performed first?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the BCM because its internal keyless receiver has failed",
+        "B": "Check whether the key fob is stored near devices that emit radio frequency interference (mobile phones, other fobs, RFID shielding wallets), and test with a second key fob to determine if the fault follows the fob or the vehicle",
+        "C": "Reprogram all key fobs to the vehicle using the scan tool",
+        "D": "Replace the antenna ring around the ignition barrel"
+      },
+      "correct_answer": "B",
+      "explanation": "Intermittent keyless entry failure is commonly caused by radio frequency (RF) interference from nearby devices. Mobile phones, other key fobs, aftermarket keychain accessories, and especially RFID-blocking wallets or pouches can attenuate or block the low-frequency signal between the vehicle's antenna and the key fob. The most efficient diagnostic step is to test with the second (spare) key fob. If the spare works reliably, the original fob has an internal issue. If both fobs exhibit the same intermittent behavior, the fault is on the vehicle side — possibly an antenna, BCM, or wiring issue. Jumping to BCM replacement or reprogramming without first isolating whether the fault is fob-related or vehicle-related violates the principle of testing before replacing.",
+      "topic": "Keyless entry intermittent fault diagnosis",
+      "bloom_level": "Evaluate"
+    }
+  ]
+}

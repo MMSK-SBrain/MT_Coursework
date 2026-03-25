@@ -1,0 +1,799 @@
+{
+  "module": 4,
+  "title": "Model Evaluation & Optimization",
+  "total_sessions": 6,
+  "points_per_session": 15,
+  "total_points": 90,
+  "grading_philosophy": "Module 4 emphasizes technical rigor and systematic optimization. Students should demonstrate: proper metric selection, cross-validation mastery, overfitting diagnosis, hyperparameter tuning, and comprehensive model evaluation. Quality of process matters as much as final results.",
+  "created": "2026-01-06",
+  "version": "1.0",
+
+  "sessions": [
+    {
+      "session": "4.1",
+      "title": "Classification Metrics Deep Dive",
+      "total_points": 15,
+      "purpose": "Master precision, recall, F1, confusion matrices, and ROC curves",
+      "assessment_type": "Re-evaluation of Module 2 models with comprehensive metrics",
+
+      "criteria": [
+        {
+          "category": "Comprehensive Metrics Calculation",
+          "points": 6,
+          "description": "Calculates all classification metrics correctly for spam detector",
+          "levels": {
+            "excellent": {
+              "points": 6,
+              "description": "Correctly calculates accuracy, precision, recall, F1-score for spam detector. Generates confusion matrix. Creates ROC curve with AUC score. All metrics interpreted correctly in business context."
+            },
+            "good": {
+              "points": 4-5,
+              "description": "Calculates 4-5 metrics correctly. Creates confusion matrix or ROC curve. Basic interpretation provided."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Calculates 2-3 metrics. Confusion matrix present. Minimal interpretation."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "Fewer than 2 metrics calculated or incorrect calculations."
+            }
+          },
+          "evidence_required": [
+            "Accuracy score",
+            "Precision, Recall, F1-score",
+            "Confusion matrix heatmap",
+            "ROC curve with AUC annotation",
+            "Code showing calculations"
+          ],
+          "technical_requirements": {
+            "metrics": ["accuracy", "precision", "recall", "f1_score"],
+            "visualizations": ["confusion_matrix_heatmap", "roc_curve"],
+            "sklearn_imports": ["from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, roc_auc_score, roc_curve"]
+          }
+        },
+        {
+          "category": "Business Context Analysis",
+          "points": 5,
+          "description": "Selects appropriate metric for business context and justifies choice",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Clearly identifies which metric matters most for spam detection (precision to avoid false positives). Justifies threshold selection. Discusses tradeoffs. Provides business recommendations."
+            },
+            "good": {
+              "points": 4,
+              "description": "Identifies appropriate metric. Provides justification. Discusses one tradeoff."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Identifies metric with basic reasoning. Minimal tradeoff discussion."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "Wrong metric selected or no business justification."
+            }
+          },
+          "evidence_required": [
+            "Metric selection with justification",
+            "Threshold recommendation",
+            "Precision-recall tradeoff discussed",
+            "Business impact analysis"
+          ]
+        },
+        {
+          "category": "Visualization Quality",
+          "points": 4,
+          "description": "Creates clear, professional visualizations of metrics",
+          "levels": {
+            "excellent": {
+              "points": 4,
+              "description": "Creates: (1) Confusion matrix heatmap with annotations, (2) ROC curve with AUC, (3) Precision-Recall curve, (4) Metrics comparison bar chart. All well-formatted with titles and labels."
+            },
+            "good": {
+              "points": 3,
+              "description": "Creates 3 of 4 required visualizations with proper formatting."
+            },
+            "adequate": {
+              "points": 2,
+              "description": "Creates 2 visualizations with basic formatting."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "Fewer than 2 visualizations or poor formatting."
+            }
+          },
+          "evidence_required": [
+            "Confusion matrix heatmap (seaborn or matplotlib)",
+            "ROC curve with diagonal reference line",
+            "Precision-Recall curve",
+            "Metrics comparison visualization"
+          ]
+        }
+      ],
+
+      "grading_notes": "This session reuses spam detector from Module 2. Focus on whether student can apply advanced metrics beyond basic accuracy. Look for understanding of when precision vs recall matters."
+    },
+
+    {
+      "session": "4.2",
+      "title": "Regression Metrics Deep Dive",
+      "total_points": 15,
+      "purpose": "Master MAE, MSE, RMSE, R², and residual analysis",
+      "assessment_type": "Re-evaluation of Module 3 stock predictor with comprehensive metrics",
+
+      "criteria": [
+        {
+          "category": "Regression Metrics Calculation",
+          "points": 5,
+          "description": "Calculates all regression metrics correctly for stock predictor",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Correctly calculates MAE, MSE, RMSE, R², and MAPE. Interprets each metric correctly. Explains differences between metrics."
+            },
+            "good": {
+              "points": 4,
+              "description": "Calculates 4 of 5 metrics correctly with basic interpretation."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Calculates 2-3 metrics correctly."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "Fewer than 2 metrics or incorrect calculations."
+            }
+          },
+          "evidence_required": [
+            "MAE calculation and interpretation",
+            "MSE and RMSE calculations",
+            "R² score with correct interpretation (not 'percentage correct')",
+            "MAPE calculation",
+            "Code showing all calculations"
+          ],
+          "technical_requirements": {
+            "metrics": ["mean_absolute_error", "mean_squared_error", "r2_score"],
+            "custom_calculations": ["RMSE = sqrt(MSE)", "MAPE = mean(|actual-pred|/|actual|) * 100"]
+          }
+        },
+        {
+          "category": "Residual Analysis",
+          "points": 6,
+          "description": "Performs comprehensive residual analysis to diagnose model issues",
+          "levels": {
+            "excellent": {
+              "points": 6,
+              "description": "Creates: (1) Actual vs Predicted scatter, (2) Residuals plot, (3) Residual distribution histogram, (4) Q-Q plot. Identifies patterns (heteroscedasticity, non-linearity, outliers). Documents findings."
+            },
+            "good": {
+              "points": 4-5,
+              "description": "Creates 3 of 4 residual plots. Identifies one pattern. Basic documentation."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Creates 1-2 residual plots. Minimal pattern analysis."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "No residual analysis or one incomplete plot."
+            }
+          },
+          "evidence_required": [
+            "Actual vs Predicted scatter plot",
+            "Residuals over time plot",
+            "Residual distribution histogram",
+            "Q-Q plot for normality check",
+            "Outlier identification (with indices or dates)",
+            "Pattern analysis documentation"
+          ]
+        },
+        {
+          "category": "Error Analysis by Stock",
+          "points": 4,
+          "description": "Analyzes which stocks predict well vs poorly and explains why",
+          "levels": {
+            "excellent": {
+              "points": 4,
+              "description": "Calculates metrics for each stock separately. Identifies best and worst performers. Provides hypotheses for performance differences (volatility, market sector, data quality). Creates comparison visualization."
+            },
+            "good": {
+              "points": 3,
+              "description": "Analyzes 3+ stocks. Identifies best/worst. Basic reasoning provided."
+            },
+            "adequate": {
+              "points": 2,
+              "description": "Analyzes 2 stocks. Identifies best/worst only."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "No per-stock analysis or single stock only."
+            }
+          },
+          "evidence_required": [
+            "Per-stock performance table",
+            "Best and worst stocks identified",
+            "Hypotheses for performance differences",
+            "Comparison visualization"
+          ]
+        }
+      ],
+
+      "grading_notes": "Residual analysis is new for students. Focus on whether they can create the plots and identify basic patterns. Don't expect statistical expertise, but reward thoughtful observations."
+    },
+
+    {
+      "session": "4.3",
+      "title": "Cross-Validation",
+      "total_points": 15,
+      "purpose": "Implement K-Fold, Stratified, and Time Series CV correctly",
+      "assessment_type": "Apply CV to previous models and interpret results",
+
+      "criteria": [
+        {
+          "category": "K-Fold Cross-Validation Implementation",
+          "points": 5,
+          "description": "Correctly implements 5-fold CV on spam detector",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Implements 5-fold CV using sklearn. Reports mean ± std for all metrics (accuracy, precision, recall, F1). Creates box plot showing score distribution across folds. Interprets variance."
+            },
+            "good": {
+              "points": 4,
+              "description": "Implements CV correctly. Reports mean ± std for 2-3 metrics. Basic visualization."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Implements CV. Reports mean scores only."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "CV implementation incorrect or incomplete."
+            }
+          },
+          "evidence_required": [
+            "Code using cross_val_score or cross_validate",
+            "Mean and standard deviation for each metric",
+            "Box plot of CV scores",
+            "Interpretation of variance (high std = unstable)"
+          ],
+          "technical_requirements": {
+            "sklearn_function": "from sklearn.model_selection import cross_val_score, cross_validate",
+            "folds": 5,
+            "scoring_metrics": ["accuracy", "precision", "recall", "f1"]
+          }
+        },
+        {
+          "category": "Stratified K-Fold for Imbalanced Data",
+          "points": 5,
+          "description": "Applies stratified CV to churn predictor and compares to regular CV",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Implements both regular and stratified K-Fold. Shows class distribution in each fold for both methods. Demonstrates stratified maintains class balance. Compares results. Explains why stratification matters for imbalanced data."
+            },
+            "good": {
+              "points": 4,
+              "description": "Implements both methods. Shows class distribution. Basic comparison."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Implements stratified CV only. Shows it maintains balance."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "Incorrect implementation or no comparison."
+            }
+          },
+          "evidence_required": [
+            "Regular K-Fold results",
+            "Stratified K-Fold results",
+            "Class distribution verification per fold",
+            "Performance comparison",
+            "Explanation of importance"
+          ]
+        },
+        {
+          "category": "Time Series Cross-Validation",
+          "points": 5,
+          "description": "Implements forward-chaining CV for stock predictor without data leakage",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Implements TimeSeriesSplit correctly. Shows training set grows in each split. Verifies no future data used for training (no leakage). Compares to random split showing problem. Creates visualization of splits."
+            },
+            "good": {
+              "points": 4,
+              "description": "Implements TimeSeriesSplit correctly. Shows growing training sets. Compares to random split."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Implements TimeSeriesSplit. Basic verification of correctness."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "Uses random CV on time series (data leakage!) or incorrect implementation."
+            }
+          },
+          "evidence_required": [
+            "TimeSeriesSplit implementation",
+            "Visualization of split structure (training/test sizes per fold)",
+            "Verification of no data leakage",
+            "Comparison to random split results",
+            "Explanation of why time-aware CV matters"
+          ],
+          "technical_requirements": {
+            "sklearn_function": "from sklearn.model_selection import TimeSeriesSplit",
+            "no_shuffle": "Must NOT shuffle data before splitting",
+            "train_grows": "Training set should grow progressively"
+          }
+        }
+      ],
+
+      "grading_notes": "Time series CV is crucial and commonly done wrong. Award full points only if student demonstrates understanding of no-future-data principle. Partial credit if implementation works but lacks understanding of why."
+    },
+
+    {
+      "session": "4.4",
+      "title": "Diagnosing Overfitting & Underfitting",
+      "total_points": 15,
+      "purpose": "Identify and fix overfitting using learning curves and regularization",
+      "assessment_type": "Fix overfitted spam detector model",
+
+      "criteria": [
+        {
+          "category": "Learning Curve Analysis",
+          "points": 5,
+          "description": "Generates and interprets learning curves correctly",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Creates learning curves showing training and validation scores vs training size. Correctly identifies overfitting (large gap) or underfitting (converged at low value). Plots are well-formatted with legend. Provides interpretation with recommendations."
+            },
+            "good": {
+              "points": 4,
+              "description": "Creates learning curves. Identifies overfitting or underfitting. Basic interpretation."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Creates learning curves but misinterprets or provides minimal analysis."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "No learning curves or completely misinterprets."
+            }
+          },
+          "evidence_required": [
+            "Learning curve plot (train and val scores)",
+            "Identification of overfitting/underfitting",
+            "Gap analysis between train and val curves",
+            "Recommendation for improvement"
+          ],
+          "technical_requirements": {
+            "sklearn_function": "from sklearn.model_selection import learning_curve",
+            "plot_elements": "Both training and validation curves on same plot"
+          }
+        },
+        {
+          "category": "Validation Curve for Complexity Tuning",
+          "points": 4,
+          "description": "Creates validation curve to find optimal model complexity",
+          "levels": {
+            "excellent": {
+              "points": 4,
+              "description": "Creates validation curve varying complexity parameter (e.g., max_depth for tree). Identifies optimal complexity where validation score peaks. Shows overfitting after this point. Clear visualization with train/val curves."
+            },
+            "good": {
+              "points": 3,
+              "description": "Creates validation curve. Identifies approximate optimal point. Basic visualization."
+            },
+            "adequate": {
+              "points": 2,
+              "description": "Creates validation curve but unclear optimal point or minimal interpretation."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "No validation curve or completely misinterprets."
+            }
+          },
+          "evidence_required": [
+            "Validation curve plot",
+            "Optimal complexity parameter identified",
+            "Explanation of overfitting at high complexity",
+            "Updated model with optimal parameter"
+          ]
+        },
+        {
+          "category": "Regularization Application",
+          "points": 6,
+          "description": "Applies L1, L2, or Elastic Net regularization to reduce overfitting",
+          "levels": {
+            "excellent": {
+              "points": 6,
+              "description": "Tests all three regularization types (L1/Lasso, L2/Ridge, Elastic Net). Compares performance of each. Shows reduced overfitting (smaller train/test gap). Selects best approach. Creates before/after comparison showing improvement."
+            },
+            "good": {
+              "points": 4-5,
+              "description": "Tests 2 regularization types. Shows reduced overfitting. Basic comparison."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Tests 1 regularization type. Shows some improvement."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "No regularization applied or incorrect implementation."
+            }
+          },
+          "evidence_required": [
+            "L1 (Lasso) results",
+            "L2 (Ridge) results",
+            "Elastic Net results (optional for good)",
+            "Before/after comparison (original vs regularized)",
+            "Train/test gap reduction shown",
+            "Performance metrics comparison table"
+          ],
+          "technical_requirements": {
+            "sklearn_models": ["LogisticRegression(penalty='l1')", "LogisticRegression(penalty='l2')", "ElasticNet"],
+            "alpha_tuning": "Should experiment with different regularization strengths"
+          }
+        }
+      ],
+
+      "grading_notes": "This session is about diagnosis AND fixing. Don't give full credit if student only identifies overfitting but doesn't successfully reduce it. Look for train/test gap reduction after regularization."
+    },
+
+    {
+      "session": "4.5",
+      "title": "Hyperparameter Tuning",
+      "total_points": 15,
+      "purpose": "Systematically optimize hyperparameters using Grid Search and Random Search",
+      "assessment_type": "Optimize stock predictor Random Forest model",
+
+      "criteria": [
+        {
+          "category": "Grid Search Implementation",
+          "points": 6,
+          "description": "Implements Grid Search with 5-fold CV to find optimal hyperparameters",
+          "levels": {
+            "excellent": {
+              "points": 6,
+              "description": "Implements GridSearchCV with: (1) 3+ hyperparameters (n_estimators, max_depth, min_samples_split), (2) 3+ values per parameter, (3) 5-fold CV, (4) Appropriate scoring metric. Reports best parameters, best score, and improvement over default. Creates hyperparameter importance visualization."
+            },
+            "good": {
+              "points": 4-5,
+              "description": "Implements GridSearchCV with 2-3 hyperparameters. Uses CV. Reports best parameters and score. Basic improvement shown."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Implements GridSearchCV with 1-2 hyperparameters. Basic results reported."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "No Grid Search or incorrect implementation (e.g., no CV)."
+            }
+          },
+          "evidence_required": [
+            "GridSearchCV code with parameter grid",
+            "Best hyperparameters found",
+            "Best cross-validation score",
+            "Improvement percentage over default",
+            "Hyperparameter importance plot (optional for excellent)"
+          ],
+          "technical_requirements": {
+            "sklearn_function": "from sklearn.model_selection import GridSearchCV",
+            "cv_folds": 5,
+            "param_grid_example": {
+              "n_estimators": [50, 100, 200],
+              "max_depth": [10, 20, 30, null],
+              "min_samples_split": [2, 5, 10]
+            },
+            "scoring": "neg_mean_squared_error or r2 for regression"
+          }
+        },
+        {
+          "category": "Random Search Comparison",
+          "points": 5,
+          "description": "Implements Random Search and compares efficiency to Grid Search",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Implements RandomizedSearchCV with same parameter space. Sets n_iter=30. Compares: (1) Best scores found, (2) Computation time, (3) Parameters explored. Creates optimization history plot. Discusses when Random Search is better."
+            },
+            "good": {
+              "points": 4,
+              "description": "Implements RandomizedSearchCV. Compares best scores and time. Basic discussion."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Implements Random Search. Reports best score only."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "No Random Search or no comparison to Grid Search."
+            }
+          },
+          "evidence_required": [
+            "RandomizedSearchCV implementation",
+            "Best parameters and score",
+            "Computation time comparison",
+            "Optimization history visualization",
+            "Discussion of Grid vs Random Search tradeoffs"
+          ],
+          "technical_requirements": {
+            "sklearn_function": "from sklearn.model_selection import RandomizedSearchCV",
+            "n_iter": "At least 30 iterations",
+            "same_param_space": "Use same parameters as Grid Search for fair comparison"
+          }
+        },
+        {
+          "category": "Performance Improvement Documentation",
+          "points": 4,
+          "description": "Documents clear improvement from hyperparameter tuning",
+          "levels": {
+            "excellent": {
+              "points": 4,
+              "description": "Creates comparison table showing: (1) Default model performance, (2) Grid Search optimized, (3) Random Search optimized. Shows 10%+ improvement in primary metric (R² or RMSE). Creates before/after visualization. Explains which hyperparameters had biggest impact."
+            },
+            "good": {
+              "points": 3,
+              "description": "Shows clear improvement (5-10%). Comparison table present. Basic visualization."
+            },
+            "adequate": {
+              "points": 2,
+              "description": "Shows some improvement (<5%). Basic comparison."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "No improvement shown or performance decreased (suggests error in implementation)."
+            }
+          },
+          "evidence_required": [
+            "Performance comparison table",
+            "Improvement percentage calculation",
+            "Before/after prediction plots",
+            "Parameter importance analysis"
+          ],
+          "performance_targets": {
+            "minimum_improvement": "5% improvement in R² or 5% reduction in RMSE",
+            "excellent_improvement": "10%+ improvement",
+            "concerning_result": "Performance decrease suggests overfitting to validation set"
+          }
+        }
+      ],
+
+      "grading_notes": "Hyperparameter tuning should lead to measurable improvement. If student shows no improvement or decrease, discuss potential issues: (1) Default parameters already optimal, (2) Search space too narrow, (3) Overfitting to validation set. Award partial credit if implementation correct even if improvement minimal."
+    },
+
+    {
+      "session": "4.6",
+      "title": "Feature Selection & Model Comparison",
+      "total_points": 15,
+      "purpose": "Select optimal features and systematically compare models",
+      "assessment_type": "Feature selection lab + Fraud Detection Capstone introduction",
+
+      "criteria": [
+        {
+          "category": "Feature Importance Analysis",
+          "points": 5,
+          "description": "Analyzes feature importance and removes low-importance features",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Calculates feature importance for Random Forest model. Visualizes top 20 features. Identifies threshold for low-importance features. Creates reduced feature set. Compares model performance: full features vs selected features. Documents speed and accuracy tradeoff."
+            },
+            "good": {
+              "points": 4,
+              "description": "Calculates and visualizes feature importance. Removes low-importance features. Basic comparison."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Calculates feature importance. Basic visualization. Minimal comparison."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "No feature importance analysis or incorrect implementation."
+            }
+          },
+          "evidence_required": [
+            "Feature importance calculation",
+            "Top 20 features bar plot",
+            "Threshold selection for removal",
+            "Performance comparison (full vs reduced features)",
+            "Training time comparison"
+          ]
+        },
+        {
+          "category": "Recursive Feature Elimination",
+          "points": 5,
+          "description": "Applies RFE to find optimal feature subset",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Implements RFE using sklearn. Tests different numbers of features (e.g., 5, 10, 15, 20). Creates plot showing performance vs number of features. Identifies optimal subset. Compares RFE results to importance-based selection. Lists selected features with interpretation."
+            },
+            "good": {
+              "points": 4,
+              "description": "Implements RFE. Tests 2-3 feature counts. Identifies optimal subset. Basic comparison."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Implements RFE with one feature count. Basic results."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "No RFE or incorrect implementation."
+            }
+          },
+          "evidence_required": [
+            "RFE implementation code",
+            "Performance vs number of features plot",
+            "Optimal feature count identified",
+            "Selected features list",
+            "Comparison to other selection methods"
+          ],
+          "technical_requirements": {
+            "sklearn_function": "from sklearn.feature_selection import RFE, RFECV",
+            "estimator": "Use model with feature_importances_ or coef_ attribute",
+            "cv": "Use RFECV for automatic optimal feature count selection"
+          }
+        },
+        {
+          "category": "Correlation-Based Feature Selection",
+          "points": 5,
+          "description": "Removes highly correlated features and analyzes impact",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Creates correlation matrix heatmap. Identifies feature pairs with correlation > 0.9. Removes redundant features from each pair. Compares model performance before/after removal. Shows reduction in model complexity without sacrificing accuracy. Documents which features were removed and why."
+            },
+            "good": {
+              "points": 4,
+              "description": "Creates correlation matrix. Identifies high correlations. Removes features. Basic comparison."
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Creates correlation matrix. Identifies some correlations. Minimal removal."
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "No correlation analysis or incorrect implementation."
+            }
+          },
+          "evidence_required": [
+            "Correlation matrix heatmap",
+            "High correlation pairs identified (>0.9 threshold)",
+            "List of removed features with justification",
+            "Performance comparison before/after",
+            "Discussion of multicollinearity impact"
+          ]
+        }
+      ],
+
+      "grading_notes": "Feature selection is an important optimization step. Focus on systematic approach rather than achieving specific performance targets. Award full credit if student demonstrates all three methods correctly even if improvement is minimal."
+    }
+  ],
+
+  "module_completion_criteria": {
+    "minimum_total_points": 63,
+    "minimum_percentage": 70,
+    "required_completions": [
+      "All 6 session quizzes passed (70%+ each)",
+      "Fraud Detection Capstone completed (separate 200-point rubric)",
+      "All Module 4 techniques applied to previous models",
+      "Cross-validation correctly implemented (no data leakage)",
+      "At least 10% model improvement shown through optimization"
+    ],
+    "bonus_opportunities": [
+      "Implements Bayesian Optimization (Optuna) successfully (+3 points)",
+      "Exceeds 15% improvement in optimized model (+2 points)",
+      "Creates interactive dashboard for model comparison (+2 points)"
+    ],
+    "max_bonus_points": 7
+  },
+
+  "instructor_guidelines": {
+    "grading_approach": "Module 4 is technical and rigorous. Look for: (1) Correct implementation of techniques, (2) Proper use of cross-validation, (3) Demonstrated improvement, (4) Clear documentation of process. Don't penalize if improvement is modest - ML is inherently uncertain.",
+
+    "common_issues": {
+      "session_1": "Students may confuse precision with accuracy. Use confusion matrix to clarify. Remind that for imbalanced data, accuracy is misleading.",
+      "session_2": "R² interpretation is often wrong ('not percentage correct'). Emphasize variance explained concept.",
+      "session_3": "Time series CV is frequently done incorrectly. CRITICAL: No shuffling, training on past only. Award partial credit if conceptually correct even if sklearn usage has minor bugs.",
+      "session_4": "Learning curves may show different patterns than expected. Focus on whether student can interpret their results, not match textbook patterns.",
+      "session_5": "Grid Search can be computationally expensive. If student uses smaller parameter grid due to compute constraints, that's acceptable with documentation.",
+      "session_6": "Feature selection may not always improve performance. Award full credit if methods applied correctly even if 'no improvement' is the valid conclusion."
+    },
+
+    "time_expectations": {
+      "fast_students": "20-25 hours total",
+      "average_students": "28-35 hours total",
+      "struggling_students": "40-50 hours (encourage focusing on key techniques, can skip optional advanced topics)"
+    },
+
+    "what_to_look_for": {
+      "excellent_work_indicators": [
+        "Systematic approach to optimization",
+        "Clear before/after comparisons",
+        "All techniques correctly implemented",
+        "Cross-validation used consistently",
+        "Documented improvement >10%",
+        "Thoughtful interpretation of results",
+        "Professional visualizations showing process"
+      ],
+      "revision_needed_indicators": [
+        "Data leakage in cross-validation (CRITICAL ERROR)",
+        "No improvement or performance decrease without explanation",
+        "Hyperparameter tuning without CV (overfitting to validation)",
+        "Incorrect metric calculations",
+        "Code doesn't run or has major errors",
+        "No comparison to baseline performance"
+      ]
+    },
+
+    "critical_concepts": {
+      "must_understand": [
+        "Precision vs Recall tradeoff and when each matters",
+        "Time series CV must not use future data",
+        "R² is NOT 'percentage correct'",
+        "Learning curves diagnose overfitting/underfitting",
+        "Hyperparameter tuning requires CV to prevent overfitting"
+      ],
+      "common_misconceptions": [
+        "'Accuracy is always the best metric' - FALSE for imbalanced data",
+        "'More features = better performance' - FALSE, can cause overfitting",
+        "'Grid Search always finds best hyperparameters' - FALSE, limited to search space",
+        "'Regularization always improves performance' - FALSE, can cause underfitting"
+      ]
+    },
+
+    "feedback_guidelines": {
+      "praise": "Highlight systematic approach, correct technique application, thoughtful interpretation",
+      "improve": "Guide toward proper CV usage, better metric selection, clearer documentation",
+      "encourage": "Module 4 is challenging but essential for production ML. Mastery here separates hobbyists from professionals."
+    }
+  },
+
+  "alignment_with_quizzes": {
+    "session_1_quiz": "9 questions on precision, recall, F1, confusion matrix, ROC/AUC (70% passing)",
+    "session_2_quiz": "9 questions on MAE, MSE, RMSE, R², residual analysis (70% passing)",
+    "session_3_quiz": "9 questions on K-Fold, stratified, time series CV (70% passing)",
+    "session_4_quiz": "9 questions on overfitting, learning curves, regularization (70% passing)",
+    "session_5_quiz": "9 questions on hyperparameters, Grid/Random Search, Bayesian optimization (70% passing)",
+    "session_6_quiz": "9 questions on feature importance, RFE, model selection (70% passing)",
+    "total_quiz_questions": 54,
+    "combined_quiz_weight": "30% of final module grade (excluding capstone)"
+  },
+
+  "integration_with_fraud_detection_capstone": {
+    "capstone_points": 200,
+    "capstone_weight": "Separate major project grade",
+    "skills_required": [
+      "All classification metrics from Session 4.1",
+      "Cross-validation from Session 4.3",
+      "Overfitting diagnosis from Session 4.4",
+      "Hyperparameter tuning from Session 4.5",
+      "Feature selection from Session 4.6"
+    ],
+    "success_criteria": [
+      "Precision > 90% (minimize false positives)",
+      "Recall > 70% (catch most fraud)",
+      "AUC > 0.95 (excellent discriminative ability)",
+      "Proper handling of 0.172% fraud rate (severe imbalance)",
+      "Time-aware cross-validation (no data leakage)",
+      "Multiple algorithms compared",
+      "Optimization process documented",
+      "Business recommendations provided"
+    ]
+  },
+
+  "preparation_for_module_5": {
+    "skills_carried_forward": [
+      "Cross-validation mastery (used in unsupervised learning evaluation)",
+      "Feature selection techniques (useful for dimensionality reduction)",
+      "Model comparison framework (compare clustering methods)",
+      "Systematic optimization approach (applies to clustering parameter tuning)"
+    ],
+    "mindset_shift": "Module 4: 'Optimize supervised models' → Module 5: 'Discover patterns without labels'"
+  }
+}

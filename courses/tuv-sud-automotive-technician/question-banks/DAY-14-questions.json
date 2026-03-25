@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 14,
+  "week": 3,
+  "session_title": "Inside the Engine — Valve Train, Timing & Assembly",
+  "questions": [
+    {
+      "id": "D14-Q01",
+      "question": "At what speed does the camshaft rotate relative to the crankshaft in a four-stroke engine?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The same speed as the crankshaft (1:1 ratio)",
+        "B": "Half the speed of the crankshaft (1:2 ratio)",
+        "C": "Twice the speed of the crankshaft (2:1 ratio)",
+        "D": "Four times the speed of the crankshaft (4:1 ratio)"
+      },
+      "correct_answer": "B",
+      "explanation": "In a four-stroke engine, the complete cycle takes two crankshaft revolutions (720 degrees). Each valve needs to open only once per cycle, so the camshaft turns at exactly half the crankshaft speed — one camshaft revolution for every two crankshaft revolutions. This 2:1 ratio is maintained by the timing belt or chain.",
+      "topic": "Camshaft-Crankshaft Relationship",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D14-Q02",
+      "question": "What is the main advantage of hydraulic lifters over solid lifters in a valve train?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Hydraulic lifters produce more valve lift for better engine performance",
+        "B": "Hydraulic lifters automatically maintain zero valve clearance, eliminating the need for periodic adjustment",
+        "C": "Hydraulic lifters are lighter, reducing the overall engine weight",
+        "D": "Hydraulic lifters allow the engine to run without engine oil"
+      },
+      "correct_answer": "B",
+      "explanation": "Hydraulic lifters contain an internal oil-filled chamber with a check ball valve that automatically takes up any clearance as the engine heats up and components expand. This self-adjusting mechanism eliminates the need for periodic valve clearance checks and adjustments that solid lifters require, making them quieter and maintenance-free under normal conditions.",
+      "topic": "Hydraulic vs Solid Lifters",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D14-Q03",
+      "question": "What is the typical service interval for a timing belt replacement?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Every 10,000 to 20,000 km or annually",
+        "B": "Every 60,000 to 120,000 km or 5 to 7 years",
+        "C": "Timing belts are lifetime components and never need replacement",
+        "D": "Every 200,000 to 300,000 km or 15 years"
+      },
+      "correct_answer": "B",
+      "explanation": "Timing belts are made of rubber reinforced with fiberglass or Kevlar, and they degrade over time from heat, age, and contamination. Manufacturers specify replacement intervals typically between 60,000 and 120,000 km or 5 to 7 years, whichever comes first. Missing this interval risks belt failure, which can cause catastrophic engine damage in interference designs.",
+      "topic": "Timing Belt Service Intervals",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D14-Q04",
+      "question": "What is the purpose of Variable Valve Timing (VVT) systems?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To eliminate the need for a timing belt or chain by using electronic valve actuation",
+        "B": "To allow the ECU to advance or retard camshaft timing while the engine runs, optimizing performance at different speeds and loads",
+        "C": "To increase the maximum RPM limit of the engine by reducing valve spring pressure",
+        "D": "To replace the ignition system by using valve timing to control when combustion occurs"
+      },
+      "correct_answer": "B",
+      "explanation": "VVT systems use oil-controlled cam phasers to rotate the camshaft relative to the crankshaft while the engine is running. By advancing cam timing at low RPM, the ECU improves fuel economy and torque. By retarding timing at high RPM, it improves power and exhaust scavenging. This allows the engine to optimize across the entire operating range rather than being locked to a single fixed compromise.",
+      "topic": "Variable Valve Timing Function",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D14-Q05",
+      "question": "In a DOHC (Dual Overhead Cam) engine, how are the camshafts arranged?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "One camshaft in the engine block operates both intake and exhaust valves via pushrods",
+        "B": "Two camshafts are located in the cylinder head — one dedicated to intake valves and one to exhaust valves",
+        "C": "Two camshafts are located in the engine block, connected by a transfer gear",
+        "D": "One camshaft is in the cylinder head and one is in the engine block for redundancy"
+      },
+      "correct_answer": "B",
+      "explanation": "DOHC stands for Dual Overhead Cam. Both camshafts are mounted in the cylinder head — one operates the intake valves and the other operates the exhaust valves. This arrangement allows independent control of intake and exhaust valve events, enabling advanced VVT on both cams and optimal valve placement in the combustion chamber for better breathing and performance.",
+      "topic": "Engine Valve Train Layouts",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D14-Q06",
+      "question": "An interference engine's timing belt breaks while the engine is running at 3,000 RPM. What is the most likely consequence?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The engine will simply stop running and can be restarted after the belt is replaced with no damage",
+        "B": "The camshaft stops turning while the crankshaft continues momentarily, causing pistons to strike open valves, bending them and potentially cracking pistons — catastrophic engine damage",
+        "C": "The engine will switch to a backup timing mode using the ECU to maintain safe operation until repairs are made",
+        "D": "The alternator will stop charging, causing the battery to drain and the engine to stall gently"
+      },
+      "correct_answer": "B",
+      "explanation": "In an interference engine, the piston's travel path overlaps with the valve's open position. The timing belt/chain keeps them synchronized so they never occupy the same space at the same time. If the belt breaks, the camshaft stops but the crankshaft continues due to momentum. Pistons collide with open valves, bending valve stems, breaking valve guides, and potentially cracking pistons or damaging the cylinder head. This is why timing belt service is one of the highest-stakes maintenance items.",
+      "topic": "Interference vs Non-Interference Engines",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D14-Q07",
+      "question": "A technician hears a persistent ticking noise from the top of a gasoline engine with hydraulic lifters. The noise is present at idle and does not fade after the engine is fully warmed up. Oil level and pressure are confirmed normal. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The timing chain has stretched beyond its service limit and is slapping against the guides",
+        "B": "One or more hydraulic lifters have collapsed due to internal wear or contaminated oil, and they can no longer maintain zero lash despite adequate oil supply",
+        "C": "The spark plugs are loose in the cylinder head, causing combustion gas to escape and create a ticking sound",
+        "D": "The exhaust manifold bolts have loosened, creating an exhaust leak that sounds like a valve train tick"
+      },
+      "correct_answer": "B",
+      "explanation": "Hydraulic lifters depend on an internal oil chamber to maintain zero clearance. A ticking that persists when warm with normal oil level and pressure indicates the lifter's internal check ball or plunger is worn. It cannot hold hydraulic pressure, so it collapses slightly under load, creating a clearance gap that produces the ticking sound. A brief cold-start tick that fades is normal (oil draining from lifters overnight), but a persistent warm tick indicates internal lifter failure.",
+      "topic": "Hydraulic Lifter Diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D14-Q08",
+      "question": "A scan tool shows DTCs P0011 (Intake Camshaft Position Timing Over-Advanced, Bank 1) and P0014 (Exhaust Camshaft Position Timing Over-Advanced, Bank 1) on an engine with dual VVT. The engine has rough idle and poor fuel economy. What should the technician check FIRST?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace both camshaft position sensors, as they are providing incorrect timing feedback",
+        "B": "Check engine oil level, oil condition, and the oil control valve filter screens, since VVT systems depend entirely on clean oil at correct pressure to function",
+        "C": "Remove the timing cover and inspect the timing chain for wear, as a stretched chain is the only cause of these codes",
+        "D": "Replace the ECU because it is commanding incorrect cam phaser positions"
+      },
+      "correct_answer": "B",
+      "explanation": "VVT cam phasers are hydraulic devices controlled by engine oil pressure directed through oil control valves (OCVs). The most common cause of VVT-related DTCs is oil-related: low oil level, degraded oil viscosity, sludge blocking the OCV filter screens, or insufficient oil pressure. Since oil issues affect the entire system and explain codes on both intake and exhaust cams simultaneously, checking oil first follows the diagnostic principle of verifying the simplest and most common cause before pursuing more complex possibilities.",
+      "topic": "VVT System Diagnostics",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D14-Q09",
+      "question": "A technician is measuring valve clearance on an engine with solid lifters using a feeler gauge. The specification calls for 0.20 mm on the intake valves. The measured clearance is 0.05 mm. What problem will this too-tight clearance cause if not corrected?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Excessive valve train noise (ticking) because the cam lobe is striking the lifter too hard",
+        "B": "The intake valve may not fully close when hot due to thermal expansion, causing compression loss, burnt valve faces, and misfires",
+        "C": "The valve spring will overheat and break due to increased tension from the reduced clearance",
+        "D": "The camshaft will rotate faster than intended because the tight clearance reduces friction"
+      },
+      "correct_answer": "B",
+      "explanation": "Valve clearance exists to compensate for thermal expansion of the valve stem as the engine heats up. If the cold clearance is too tight (0.05 mm vs the specified 0.20 mm), the valve stem will expand enough when hot to hold the valve slightly off its seat. An intake valve that cannot fully close leaks compression, runs hot because it cannot transfer heat to the seat, and will eventually burn. Symptoms include misfire, loss of power, and possible DTC for low compression on that cylinder.",
+      "topic": "Valve Clearance Measurement and Consequences",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D14-Q10",
+      "question": "When replacing a timing belt on a DOHC engine, the technician must align timing marks on the crankshaft sprocket and both camshaft sprockets before installing the new belt. What would happen if the intake camshaft sprocket were positioned one tooth off (retarded)?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "No noticeable effect — one tooth is within the normal VVT adjustment range",
+        "B": "The engine would run but with retarded intake valve timing, causing reduced low-RPM torque, possible rough idle, and increased fuel consumption because cylinder filling is mistimed",
+        "C": "The engine would not crank because the starter motor would be mechanically blocked by piston-valve interference",
+        "D": "Only the exhaust emissions would be affected; driveability would remain normal"
+      },
+      "correct_answer": "B",
+      "explanation": "One tooth off on the camshaft sprocket shifts valve timing by several crankshaft degrees. With the intake cam retarded by one tooth, the intake valves open and close later than designed. This means the intake valve opens too late to catch the full intake stroke and closes after the piston starts compressing, pushing some of the charge back out. The result is poor volumetric efficiency (reduced cylinder filling), loss of low-RPM torque, rough idle, and increased fuel consumption. The engine may run but poorly, and DTCs related to cam position timing may appear.",
+      "topic": "Timing Mark Alignment Consequences",
+      "bloom_level": "Apply"
+    }
+  ]
+}

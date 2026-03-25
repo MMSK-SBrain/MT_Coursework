@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 54,
+  "week": 11,
+  "session_title": "Body Structure, Panels & Trim",
+  "questions": [
+    {
+      "id": "D54-Q01",
+      "question": "What is the fundamental difference between unibody (monocoque) and body-on-frame vehicle construction?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Unibody vehicles are made of aluminium while body-on-frame vehicles use steel",
+        "B": "In unibody construction, the body and frame are one integrated welded structure; in body-on-frame, a separate ladder chassis carries the drivetrain and the body bolts on top",
+        "C": "Unibody vehicles have no crumple zones while body-on-frame vehicles do",
+        "D": "Body-on-frame is used only for electric vehicles"
+      },
+      "correct_answer": "B",
+      "explanation": "Unibody (monocoque) integrates the body shell and frame into a single welded structure where the floor pan, pillars, and roof all contribute to rigidity. Body-on-frame uses a separate ladder frame with the body shell bolted on top through rubber mounts. Approximately 95% of modern passenger cars use unibody construction. Trucks and large SUVs typically use body-on-frame.",
+      "topic": "Vehicle construction types",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D54-Q02",
+      "question": "Which body panels are typically bolt-on (removable by a service technician) rather than welded?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Rear quarter panels and roof panel",
+        "B": "A-pillars and sill panels",
+        "C": "Bonnet, doors, boot lid, and front wings/fenders",
+        "D": "Floor pan sections and cross members"
+      },
+      "correct_answer": "C",
+      "explanation": "Bolt-on panels include the bonnet (hinged/bolted), doors (hinged/bolted), boot lid/tailgate (hinged/bolted), and front wings/fenders (bolted to inner structure). These can be removed and replaced by a service technician. Welded panels (quarter panels, roof, sills, pillars, floor pan) are part of the body structure and require body shop cutting and welding to replace.",
+      "topic": "Bolt-on versus welded panels",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D54-Q03",
+      "question": "What are the three layers of a modern bumper system from outside to inside?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Paint layer, primer layer, and metal substrate",
+        "B": "Plastic bumper cover, energy absorber (foam/honeycomb), and steel or aluminium reinforcement bar",
+        "C": "Chrome strip, rubber strip, and steel beam",
+        "D": "Fibreglass shell, polyurethane foam, and aluminium plate"
+      },
+      "correct_answer": "B",
+      "explanation": "Modern bumper systems have three distinct layers: the outer plastic cover (polypropylene or TPO) for aesthetics and minor impact flex, the middle energy absorber (EPP foam or plastic honeycomb) that crushes during low-speed impacts to protect the structure, and the inner reinforcement bar (steel or aluminium) that distributes impact forces to the front or rear rails.",
+      "topic": "Bumper system components",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D54-Q04",
+      "question": "What are the four factory corrosion protection layers applied to a body panel from inside to outside?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Wax, paint, lacquer, and polish",
+        "B": "E-coat (electrocoat), primer, basecoat (colour), and clearcoat",
+        "C": "Zinc plating, powder coat, vinyl wrap, and ceramic coating",
+        "D": "Phosphate wash, epoxy, polyester, and acrylic"
+      },
+      "correct_answer": "B",
+      "explanation": "Factory corrosion protection is a four-layer system: (1) E-coat/electrocoat (cathodic dip coating providing primary corrosion barrier), (2) primer/surfacer (fills imperfections, provides adhesion), (3) basecoat (colour layer), and (4) clearcoat (UV protection, gloss, scratch resistance). This system provides the 12+ year corrosion warranties offered by manufacturers.",
+      "topic": "Factory corrosion protection layers",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D54-Q05",
+      "question": "What is the typical panel gap specification for modern passenger vehicles?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "1-2 mm with zero variation",
+        "B": "3-5 mm even gap with less than 1 mm variation along the joint length",
+        "C": "8-10 mm with up to 3 mm variation",
+        "D": "Any gap is acceptable as long as the panel is secure"
+      },
+      "correct_answer": "B",
+      "explanation": "The typical panel gap specification is 3-5 mm with less than 1 mm variation along the entire length of the joint. Panel surfaces should be flush (level) within plus or minus 1 mm. These tolerances are measured with gap gauges or feeler gauges and represent the quality standard customers and manufacturers expect after any panel adjustment or replacement.",
+      "topic": "Panel gap specifications",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D54-Q06",
+      "question": "A technician needs to remove a door trim panel (door card) to access the window regulator behind it. They attempt to pull the panel off by hand but hear a cracking sound as a hidden clip breaks. What should they have done differently?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Used more force to pull the panel off in one quick motion",
+        "B": "Used a dedicated trim removal tool to release each clip individually, starting from the bottom edge and working upward, prying gently at each clip location",
+        "C": "Heated the panel with a heat gun to soften the clips before pulling",
+        "D": "Drilled out the clip locations to remove the panel non-destructively"
+      },
+      "correct_answer": "B",
+      "explanation": "Interior trim panels are held by push-fit clips at specific locations. A trim removal tool (plastic pry lever) is inserted between the panel and the door frame at each clip location, gently releasing the clip without breaking it. Starting from the bottom (where clips are typically more accessible) and working upward prevents the panel from hanging on upper clips and cracking. Forcing the panel risks breaking clips, cracking the trim panel itself, and creating rattles when refitted.",
+      "topic": "Trim removal technique",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D54-Q07",
+      "question": "A vehicle comes in after minor front-end damage. The front wing has a deep crease. A colleague suggests just using body filler to fill the crease rather than replacing the wing. The filler area would be approximately 200 mm by 100 mm. Why is this approach problematic?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Body filler is too expensive for such a large area",
+        "B": "Body filler over a crease on a bolt-on panel is poor practice because the creased metal has stretched and weakened, filler will crack over the flex point with temperature changes and vibration, and a replacement bolt-on wing gives a permanent, factory-quality repair",
+        "C": "The wing colour will not match after filling",
+        "D": "Body filler is only approved for use on welded panels"
+      },
+      "correct_answer": "B",
+      "explanation": "A deep crease means the metal has permanently stretched and work-hardened. Body filler applied over stressed metal is prone to cracking as the panel flexes with temperature changes and road vibration. Since front wings are bolt-on panels, replacement is straightforward, provides a factory-quality result, and eliminates the risk of filler failure. Professional body repair reserves filler for minor surface imperfections, not structural creases.",
+      "topic": "Panel repair versus replacement decision",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D54-Q08",
+      "question": "A technician is replacing a front wing and adjusting its position. The gap between the wing and the bonnet measures 3 mm at the front and 6 mm at the rear. What adjustment is needed?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Adjust the bonnet position forward",
+        "B": "Loosen the wing bolts and shift the wing rearward to even out the gap, then retighten and verify the gap is 3-5 mm consistently along the entire joint",
+        "C": "Add packing shims behind the wing at the front",
+        "D": "The gap variation is within acceptable tolerance"
+      },
+      "correct_answer": "B",
+      "explanation": "A 3 mm gap at the front and 6 mm at the rear indicates the wing is positioned too far forward. The 3 mm variation along the joint exceeds the 1 mm maximum allowed variation. The correction is to loosen all wing mounting bolts, shift the wing rearward until the gap is even (within 3-5 mm and less than 1 mm variation), then retighten in sequence. Flush alignment (surface level) must also be checked after repositioning.",
+      "topic": "Panel gap adjustment",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D54-Q09",
+      "question": "Why should a service technician never cut, weld, or modify structural body members such as A-pillars, B-pillars, or floor cross-members without manufacturer-approved procedures?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Because it voids the paint warranty",
+        "B": "Because structural members are designed with specific crash load paths and material strengths; unauthorised modification alters crash performance, potentially making the safety cell unable to protect occupants in a collision",
+        "C": "Because the metal is too thick to cut with workshop tools",
+        "D": "Because spot welds cannot be replicated with MIG welding"
+      },
+      "correct_answer": "B",
+      "explanation": "Modern unibody structures are engineered with precise crash load paths, crumple zone deformation sequences, and ultra-high-strength steel in the safety cell (up to 1,500 MPa). Cutting or welding these members changes their metallurgical properties (heat-affected zones), alters deformation patterns, and can compromise the safety cell's ability to maintain survival space in a crash. Only manufacturer-approved repair procedures with correct materials and techniques should be used.",
+      "topic": "Structural integrity preservation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D54-Q10",
+      "question": "During a routine service, a technician notices bubbling paint on the lower edge of a rear quarter panel where it meets the sill. The bubbling is approximately 50 mm in diameter. What does this indicate and what is the appropriate action?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "A minor paint defect that can be polished out",
+        "B": "Corrosion has penetrated from inside the panel, pushing through the factory paint layers from below; the technician should document the finding, inform the customer, and recommend a body shop inspection to assess structural integrity before the corrosion compromises the welded joint between the quarter panel and sill",
+        "C": "The panel was repainted at some point with incompatible paint",
+        "D": "Moisture trapped during the factory paint process that is now evaporating"
+      },
+      "correct_answer": "B",
+      "explanation": "Bubbling paint at a panel joint indicates corrosion growing underneath the paint from the inside out. Moisture enters through compromised cavity wax, blocked drain holes, or damaged stone chip protection and corrodes the steel from within. By the time bubbling is visible externally, the internal corrosion is typically much more extensive. At the quarter panel-to-sill joint, this is particularly concerning because it is a structural weld area. Early detection and professional repair prevents structural compromise.",
+      "topic": "Corrosion detection and assessment",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

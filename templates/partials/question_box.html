@@ -1,0 +1,44 @@
+<!-- Question Box Partial Template -->
+<!-- Renders a single question with type-specific styling -->
+
+<div class="question-box {{ question.type.value }}">
+  <div class="question-header">
+    <span class="question-number">Q{% if loop %}{{ loop.index }}{% else %}{{ question.id.split('-')[-1] }}{% endif %}</span>
+    <span class="question-type">{{ question.type.value|upper|replace('_', ' ') }}</span>
+  </div>
+
+  <div class="question-text">{{ question.question_text }}</div>
+
+  <!-- Options for Multiple Choice and True/False questions -->
+  {% if question.options %}
+  <div class="question-options">
+    {% for option in question.options %}
+    <div class="question-option">{{ option }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Answer space based on question type -->
+  {% if question.type.value in ['multiple_choice', 'true_false'] %}
+  <div class="answer-space">
+    <div class="answer-line"></div>
+  </div>
+  {% elif question.type.value == 'short_answer' %}
+  <div class="answer-space">
+    <div class="answer-line"></div>
+    <div class="answer-line"></div>
+    <div class="answer-line"></div>
+  </div>
+  {% elif question.type.value in ['reflection', 'application'] %}
+  <div class="answer-space">
+    <div class="answer-box"></div>
+  </div>
+  {% endif %}
+
+  <!-- Optional: Show difficulty and points (commented out for student version) -->
+  <!--
+  <div class="question-metadata text-muted text-small">
+    Difficulty: {{ question.difficulty.value }} | Points: {{ question.points }}
+  </div>
+  -->
+</div>

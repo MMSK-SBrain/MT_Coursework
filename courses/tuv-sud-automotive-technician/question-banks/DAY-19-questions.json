@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 19,
+  "week": 4,
+  "session_title": "Turbocharger & Intercooler — Exhaust Energy to Intake Boost",
+  "questions": [
+    {
+      "id": "D19-Q01",
+      "question": "What connects the turbine wheel and the compressor wheel inside a turbocharger?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "A belt drive with a clutch mechanism",
+        "B": "An electromagnetic coupling controlled by the ECU",
+        "C": "A shared shaft running through the centre bearing housing",
+        "D": "A chain drive similar to the engine timing chain"
+      },
+      "correct_answer": "C",
+      "explanation": "The turbine wheel and compressor wheel are mounted on opposite ends of a single shared shaft that passes through the centre bearing housing. When exhaust gas spins the turbine wheel, the shaft transfers that rotation directly to the compressor wheel. This shaft can spin at speeds exceeding 150,000 RPM.",
+      "topic": "Turbocharger Construction",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D19-Q02",
+      "question": "What is the primary purpose of the intercooler in a turbocharged engine?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To cool the engine oil returning from the turbocharger",
+        "B": "To cool the compressed intake air so it is denser, providing more oxygen for combustion",
+        "C": "To reduce exhaust gas temperature before it reaches the catalytic converter",
+        "D": "To pre-heat the intake air during cold starts for better combustion"
+      },
+      "correct_answer": "B",
+      "explanation": "Compressing air heats it — air leaving the compressor can be 100-200 degrees C. Hot air is less dense, containing fewer oxygen molecules per litre. The intercooler cools this compressed air (typically from 150 degrees C down to 40-50 degrees C), making it denser so the engine receives more oxygen mass, resulting in more complete combustion and more power.",
+      "topic": "Intercooler Function",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D19-Q03",
+      "question": "What does a wastegate do in a turbocharger system?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "It recirculates compressed air back to the compressor inlet during deceleration",
+        "B": "It drains condensation from the intercooler to prevent water ingestion",
+        "C": "It filters debris from the exhaust gas before it reaches the turbine",
+        "D": "It bypasses exhaust gas around the turbine to limit boost pressure and prevent over-boost"
+      },
+      "correct_answer": "D",
+      "explanation": "The wastegate is a valve that opens to divert some exhaust gas around the turbine wheel, bypassing it. This limits how fast the turbine spins and prevents boost pressure from exceeding the target. Without a wastegate, the turbo would continue to accelerate with rising RPM, potentially causing destructive over-boost.",
+      "topic": "Wastegate Operation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D19-Q04",
+      "question": "How does a Variable Geometry Turbocharger (VGT) reduce turbo lag at low engine RPM?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "It uses an electric motor to spin the compressor until exhaust flow is sufficient",
+        "B": "It opens the wastegate fully to reduce back-pressure on the engine",
+        "C": "It switches to a smaller secondary turbocharger designed for low-RPM operation",
+        "D": "It closes the movable guide vanes to a narrow angle, accelerating the small volume of exhaust gas to higher velocity to spin the turbine faster"
+      },
+      "correct_answer": "D",
+      "explanation": "At low RPM, exhaust gas flow is weak. The VGT closes its movable guide vanes to a narrow angle, creating a smaller opening around the turbine wheel. This accelerates the limited exhaust gas to a higher velocity before it hits the turbine blades — like putting your thumb over a garden hose to increase spray speed. The result is faster turbine spool-up and reduced lag at low RPM.",
+      "topic": "VGT Operation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D19-Q05",
+      "question": "Which type of intercooler uses a separate liquid coolant circuit with its own pump and radiator?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Air-to-air intercooler",
+        "B": "Oil-to-air intercooler",
+        "C": "Air-to-water intercooler",
+        "D": "Exhaust-to-air heat exchanger"
+      },
+      "correct_answer": "C",
+      "explanation": "An air-to-water intercooler uses a separate low-temperature coolant circuit (with its own electric pump and small radiator) to cool the compressed charge air. The intercooler core is typically compact and may be integrated into the intake manifold. Air-to-air intercoolers, by contrast, use ambient airflow and require no coolant circuit.",
+      "topic": "Intercooler Types",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D19-Q06",
+      "question": "A diesel vehicle with a VGT turbocharger shows DTC P0299 — Underboost Condition. The scan tool shows requested boost at 1.8 bar but actual boost at only 1.0 bar. A smoke test on the charge piping reveals no leaks. The air filter is clean. What is the MOST likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The VGT vanes are stuck open due to carbon build-up, unable to close and accelerate exhaust gas at the turbine",
+        "B": "The intercooler core is internally cracked, leaking boost into the engine bay",
+        "C": "The MAP sensor is reading incorrectly and the actual boost is within specification",
+        "D": "The engine oil is the wrong viscosity, starving the turbo bearings"
+      },
+      "correct_answer": "A",
+      "explanation": "With no charge piping leaks and a clean air filter, the underboost must originate at the turbocharger itself. VGT vanes stuck in the open position cannot narrow the exhaust gas path at the turbine, so the gas flows through at lower velocity without effectively spinning the turbine. This is the most common VGT failure on diesel engines — soot deposits on the vane pivots and unison ring cause the mechanism to seize. The technician should command the VGT to close via the scan tool and check for actual position movement.",
+      "topic": "VGT Stuck Vanes Diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D19-Q07",
+      "question": "A technician checks turbo shaft play and finds excessive radial movement — the compressor wheel touches the housing when pushed sideways. The oil return line from the turbo shows signs of restriction. What is the relationship between these two findings?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "They are unrelated — the radial play is caused by age and the restricted drain is a coincidence",
+        "B": "The excessive shaft play caused the oil return line to collapse from vibration",
+        "C": "The restricted oil drain line caused oil to back up in the bearing housing, reducing the hydrodynamic oil film support and accelerating bearing wear, which led to the excessive shaft play",
+        "D": "The compressor wheel touching the housing melted the oil return line, restricting it"
+      },
+      "correct_answer": "C",
+      "explanation": "Turbo bearings rely on a pressurised oil film for support. Oil enters from the engine gallery, lubricates the bearings, and must drain freely back to the sump by gravity. If the return line is restricted (kinked, blocked by carbon, or improperly routed uphill), oil backs up in the bearing housing, reducing the pressure differential that maintains the oil film. The bearings then experience metal-to-metal contact, accelerating wear and creating excessive radial play. The restricted drain is the root cause; the shaft play is the consequence.",
+      "topic": "Turbo Bearing Failure Analysis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D19-Q08",
+      "question": "A turbocharged petrol vehicle loses power under hard acceleration and the scan tool shows actual boost exceeding the requested target by 0.5 bar, with a DTC for overboost. What is the MOST likely mechanical cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "A split in the charge pipe between the intercooler and throttle body",
+        "B": "The wastegate is stuck closed or the wastegate actuator has failed, preventing exhaust gas from bypassing the turbine",
+        "C": "A blocked air filter restricting airflow into the compressor",
+        "D": "The intercooler is oversized and cooling the air too much, increasing density beyond the ECU's compensation range"
+      },
+      "correct_answer": "B",
+      "explanation": "When boost exceeds the target, the turbo is spinning faster than intended. The wastegate should open to divert exhaust around the turbine and limit boost. If the wastegate flap is stuck closed or the actuator (mechanical or electronic) has failed, all exhaust gas continues to drive the turbine with no relief. Boost builds unchecked beyond the target, triggering an overboost DTC. The ECU will typically enter limp mode to protect the engine. A charge pipe split would cause underboost, not overboost.",
+      "topic": "Overboost Diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D19-Q09",
+      "question": "A technician performs a boost leak test using a smoke tester connected to the intake system. Smoke is visible escaping from the intercooler end tank. The vehicle has DTC P0299 and the customer reports loss of power and a hissing noise under load. What should the technician do?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace only the silicone coupler at the intercooler connection, as the clamp is likely loose",
+        "B": "Seal the crack with high-temperature epoxy and retest",
+        "C": "Replace the turbocharger, as the excess pressure must have caused the intercooler to crack",
+        "D": "Replace the intercooler, as a cracked end tank cannot be reliably repaired, and inspect all remaining charge pipes for similar deterioration"
+      },
+      "correct_answer": "D",
+      "explanation": "Smoke escaping from the intercooler end tank indicates a crack in the tank itself — not at a coupler joint. Aluminium or plastic intercooler end tanks that have cracked from vibration, pressure cycling, or impact damage cannot be reliably repaired in a workshop. The intercooler should be replaced. Additionally, if one charge pipe component has failed from age and thermal cycling, other components in the same system may be degrading, so a thorough inspection of all remaining charge pipes and couplers is warranted.",
+      "topic": "Boost Leak Diagnosis",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D19-Q10",
+      "question": "After an engine oil change, a customer drives aggressively and the turbocharger fails within 500 km. Investigation reveals the replacement oil filter had a faulty anti-drainback valve. How could this have caused the turbo failure?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Without the anti-drainback valve, oil drained from the filter overnight, causing a brief period of zero oil pressure at each cold start that starved the turbo bearings of lubrication during spool-up",
+        "B": "The faulty valve allowed unfiltered oil to bypass the filter media, sending debris into the turbo bearing",
+        "C": "The missing valve caused oil to flow backward through the pump, reversing the turbo shaft rotation",
+        "D": "The anti-drainback valve failure caused the oil to overheat in the filter housing, degrading it before it reached the turbo"
+      },
+      "correct_answer": "A",
+      "explanation": "The anti-drainback valve in an oil filter prevents oil from draining back out of the filter and galleries when the engine is shut off. Without it, oil drains from the filter and upper galleries overnight. At the next cold start, it takes several seconds for the pump to refill the empty filter and repressurize the system. During those critical seconds, the turbocharger bearings receive no oil. If the driver revs the engine or drives off immediately, the turbo shaft (spinning on a dry bearing) suffers metal-to-metal contact. Repeated cold starts with dry-start conditions rapidly destroy the bearing surfaces.",
+      "topic": "Oil System and Turbo Reliability",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 18,
+  "week": 4,
+  "session_title": "Exhaust & Emissions Aftertreatment",
+  "questions": [
+    {
+      "id": "D18-Q01",
+      "question": "What three pollutants does a three-way catalytic converter treat in a gasoline engine?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "CO2, H2O, and N2",
+        "B": "PM (particulate matter), SO2 (sulphur dioxide), and CO2",
+        "C": "O2 (oxygen), CO2 (carbon dioxide), and H2 (hydrogen)",
+        "D": "CO (carbon monoxide), HC (hydrocarbons), and NOx (nitrogen oxides)"
+      },
+      "correct_answer": "D",
+      "explanation": "A three-way catalytic converter simultaneously treats three harmful pollutants: it oxidises CO into CO2, oxidises HC (unburned hydrocarbons) into CO2 and water, and reduces NOx back into nitrogen (N2) and oxygen (O2). It is called 'three-way' because it handles all three in a single device.",
+      "topic": "Catalytic Converter Operation",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D18-Q02",
+      "question": "What is the 'light-off temperature' of a catalytic converter?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The temperature at which the cat begins to glow red from excessive heat",
+        "B": "The temperature at which the cat's ceramic substrate melts",
+        "C": "The minimum temperature (250-300 degrees C) at which the catalyst begins to convert pollutants effectively",
+        "D": "The temperature displayed on the dashboard when the MIL illuminates"
+      },
+      "correct_answer": "C",
+      "explanation": "Light-off temperature is the minimum temperature at which the catalytic converter begins to function — typically 250 to 300 degrees Celsius. Below this temperature, the precious metal catalysts (platinum, palladium, rhodium) cannot initiate the chemical reactions needed to convert pollutants. This is why cold-start emissions are higher.",
+      "topic": "Catalytic Converter Operation",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D18-Q03",
+      "question": "A narrowband O2 sensor produces a voltage of approximately 0.1V. What does this indicate about the exhaust gas?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The mixture is rich (excess fuel, low oxygen)",
+        "B": "The catalytic converter is at light-off temperature",
+        "C": "The sensor has failed and is stuck at minimum voltage",
+        "D": "The mixture is lean (excess oxygen, less fuel)"
+      },
+      "correct_answer": "D",
+      "explanation": "A narrowband zirconia O2 sensor outputs approximately 0.1V when the exhaust has excess oxygen (lean condition) and approximately 0.9V when oxygen is low (rich condition). At 0.1V, the sensor is detecting a lean air-fuel mixture with plenty of residual oxygen in the exhaust stream.",
+      "topic": "Narrowband O2 Sensor",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D18-Q04",
+      "question": "How does a wideband O2 sensor differ from a narrowband O2 sensor?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The wideband sensor provides a precise linear lambda measurement across a wide range, while the narrowband only switches between rich and lean",
+        "B": "The wideband sensor only works on diesel engines while narrowband works on petrol",
+        "C": "The wideband sensor does not require a heater circuit while the narrowband does",
+        "D": "The wideband sensor measures exhaust temperature while the narrowband measures oxygen"
+      },
+      "correct_answer": "A",
+      "explanation": "A narrowband sensor only tells the ECU rich or lean — it switches sharply between 0.1V and 0.9V at stoichiometric. A wideband sensor uses a Nernst cell and pump cell to provide a precise, linear voltage output (0-5V) that corresponds to the exact lambda value across a wide range (0.7 to 2.0+). This gives the ECU precise air-fuel ratio control rather than just a rich/lean toggle.",
+      "topic": "O2 Sensor Types",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D18-Q05",
+      "question": "What is the difference between passive and active DPF regeneration?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Passive regeneration uses a chemical additive while active uses heat",
+        "B": "Passive regeneration cleans the DPF from the outside while active cleans from the inside",
+        "C": "Passive regeneration occurs naturally at highway speeds from exhaust heat, while active regeneration requires the ECU to inject extra fuel to raise exhaust temperature",
+        "D": "Passive regeneration happens at idle while active regeneration requires high RPM"
+      },
+      "correct_answer": "C",
+      "explanation": "Passive regeneration occurs naturally during sustained highway driving when exhaust gas temperatures are high enough (above approximately 350 degrees C with the catalytic effect of NO2) to burn off accumulated soot continuously. Active regeneration is triggered by the ECU when soot loading reaches a threshold — it injects extra fuel on the exhaust stroke or via a dedicated injector to raise exhaust temperatures to 550-600 degrees C and burn off the soot.",
+      "topic": "DPF Regeneration",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D18-Q06",
+      "question": "A scan tool shows DTC P0420 — Catalyst System Efficiency Below Threshold (Bank 1). The technician checks the upstream and downstream O2 sensor signals and finds that the downstream sensor waveform closely mirrors the upstream sensor's oscillation pattern. What does this confirm?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Both O2 sensors have failed simultaneously and need replacement",
+        "B": "The upstream sensor is contaminated and sending false lean readings that confuse the downstream sensor",
+        "C": "The exhaust system has a leak between the two sensors, allowing fresh air to reach the downstream sensor",
+        "D": "The catalytic converter has degraded and can no longer store and release oxygen effectively, confirming reduced conversion efficiency"
+      },
+      "correct_answer": "D",
+      "explanation": "A healthy catalytic converter acts as an oxygen storage buffer — it absorbs and releases oxygen, smoothing out the rich/lean fluctuations. This means the downstream sensor should show a nearly flat, steady voltage. When the downstream sensor mirrors the upstream oscillations, it indicates the cat can no longer buffer oxygen effectively. The oxygen passes through unconverted, confirming catalyst degradation — the root cause of P0420.",
+      "topic": "Catalyst Efficiency Diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D18-Q07",
+      "question": "A diesel vehicle displays DTC P2463 — DPF Soot Accumulation Excessive. The vehicle is primarily driven on short urban trips. A forced regeneration is performed successfully but the code returns within 2,000 km. What is the MOST effective long-term recommendation?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Delete the DPF and reprogram the ECU to remove regeneration monitoring",
+        "B": "Advise the customer that their driving pattern prevents passive regeneration, and recommend regular sustained motorway drives to allow the DPF to self-clean",
+        "C": "Replace the DPF with a new unit, as it must be physically damaged",
+        "D": "Switch to a higher viscosity oil to reduce soot production from the engine"
+      },
+      "correct_answer": "B",
+      "explanation": "Short urban trips never allow exhaust temperatures to reach the levels needed for passive regeneration. Soot accumulates faster than it can be burned. While the ECU triggers active regeneration, frequent short trips may even interrupt active regen cycles. The most effective long-term solution is educating the customer to include regular sustained motorway driving (20-30 minutes) to allow passive and active regeneration to complete. DPF deletion is illegal, and the DPF itself is likely not physically damaged.",
+      "topic": "DPF Regeneration Failure",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D18-Q08",
+      "question": "A diesel vehicle shows reduced power and white smoke from the exhaust that does not clear after warm-up. The coolant level has dropped over the past month with no visible external leaks. Which aftertreatment component could be damaged as a secondary consequence of this fault?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The EGR valve will corrode from exposure to steam",
+        "B": "The upstream wideband O2 sensor will short-circuit from moisture exposure",
+        "C": "The DPF can be damaged because coolant entering the combustion chamber produces steam that can thermally shock the ceramic substrate and contaminate it with silicates",
+        "D": "The AdBlue injector nozzle will crystallise from the increased humidity"
+      },
+      "correct_answer": "C",
+      "explanation": "White smoke that persists after warm-up combined with coolant loss and no external leaks strongly indicates a head gasket breach allowing coolant into the combustion chamber. The coolant burns as steam and enters the exhaust. This steam can carry silicates and glycol residues into the DPF, contaminating the ceramic substrate. Additionally, the thermal shock from coolant/steam on the hot DPF ceramic can cause cracking. The DPF may need replacement along with the head gasket repair.",
+      "topic": "Cross-System Exhaust Damage",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D18-Q09",
+      "question": "Why does a diesel engine use a separate Diesel Oxidation Catalyst (DOC) instead of a three-way catalytic converter like a petrol engine?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Diesel exhaust is too cool for a three-way catalyst to reach light-off temperature",
+        "B": "A three-way catalyst would melt from the higher soot content in diesel exhaust",
+        "C": "Diesel fuel contains sulphur that poisons the rhodium catalyst needed for the three-way reaction",
+        "D": "Diesel engines always run lean with excess oxygen, which prevents a three-way catalyst from reducing NOx, so NOx must be treated separately by the SCR system"
+      },
+      "correct_answer": "D",
+      "explanation": "A three-way catalytic converter requires stoichiometric conditions (lambda = 1.00) to simultaneously oxidise CO/HC and reduce NOx. Diesel engines always operate lean (lambda well above 1.00), with excess oxygen in the exhaust. In this oxygen-rich environment, the reduction of NOx to N2 cannot occur in a three-way cat. Therefore, diesels use a DOC for CO/HC oxidation only, and a separate SCR system with urea injection (AdBlue) to handle NOx reduction in the lean exhaust.",
+      "topic": "Diesel vs Petrol Aftertreatment",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D18-Q10",
+      "question": "A technician is diagnosing a gasoline vehicle with a sluggish upstream narrowband O2 sensor. The sensor voltage is stuck at 0.45V and barely oscillates. What effect will this have on fuel trim and engine performance?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The ECU will maintain a fixed stoichiometric mixture and performance will be unaffected",
+        "B": "The ECU will default to open-loop fuelling, ignoring the sensor, resulting in a fixed rich mixture with increased fuel consumption and elevated CO/HC emissions",
+        "C": "The ECU will interpret the steady 0.45V as a continuous lean condition and add fuel indefinitely until the engine floods",
+        "D": "The ECU will shut down the fuel injectors to protect the catalytic converter from overheating"
+      },
+      "correct_answer": "B",
+      "explanation": "A narrowband O2 sensor should oscillate rapidly between 0.1V and 0.9V. A sensor stuck at 0.45V (mid-range) indicates it is not responding to actual exhaust oxygen changes — it is electrically lazy or failed. The ECU detects this lack of switching activity and typically reverts to open-loop fuelling using a pre-programmed fuel map rather than closed-loop correction. This fixed map usually runs slightly rich for engine protection, resulting in higher fuel consumption and increased CO/HC emissions. A DTC for sensor response time will typically be set.",
+      "topic": "O2 Sensor Failure Effects",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

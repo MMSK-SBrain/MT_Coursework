@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 45,
+  "week": 9,
+  "session_title": "First Start & Verification",
+  "questions": [
+    {
+      "id": "D45-Q01",
+      "question": "What is the correct method for disabling fuel delivery during the turbo oil pre-lube procedure?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Disconnect the battery to prevent the fuel pump from running",
+        "B": "Remove the fuel pump relay or fuse so the engine cranks but does not fire",
+        "C": "Loosen the fuel rail to allow fuel to leak rather than pressurize",
+        "D": "Turn the ignition to the ON position but do not crank"
+      },
+      "correct_answer": "B",
+      "explanation": "Removing the fuel pump relay or fuse is the cleanest method to disable fuel delivery for the pre-lube procedure. With the relay removed, the engine cranks normally on the starter motor — turning the oil pump (which is mechanically driven) and building oil pressure — but no fuel is delivered so combustion does not occur. This allows oil to fill all galleries and reach the turbo bearings before the turbo shaft is subjected to the high speeds caused by exhaust gas from combustion. Disconnecting the battery would prevent cranking entirely, defeating the purpose.",
+      "topic": "Pre-lube procedure",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D45-Q02",
+      "question": "During the first start of a rebuilt engine, what is the FIRST thing the technician should monitor immediately after the engine fires?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Engine RPM to ensure correct idle speed",
+        "B": "Coolant temperature to check for overheating",
+        "C": "Oil pressure gauge — pressure must appear within 3-5 seconds or the engine must be shut down immediately",
+        "D": "The exhaust colour to check for smoke"
+      },
+      "correct_answer": "C",
+      "explanation": "Oil pressure is the absolute first priority after a rebuilt engine fires. If the oil pressure gauge does not show pressure (typically 1+ bar) within 3-5 seconds of the engine running, the engine must be shut down immediately. Running without oil pressure means the crankshaft bearings, rod bearings, camshaft journals, and turbo bearings are operating without lubrication, and catastrophic damage can occur within seconds. Coolant temperature, idle speed, and exhaust smoke are important monitoring points but are secondary to confirming oil pressure.",
+      "topic": "First-start oil pressure priority",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D45-Q03",
+      "question": "Why should a rebuilt engine NOT be run at a constant RPM during the break-in period?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Constant RPM overheats the exhaust manifold",
+        "B": "Constant RPM causes the piston rings to glaze against the cylinder wall crosshatch pattern, preventing proper seating and leading to permanent oil consumption",
+        "C": "Constant RPM damages the crankshaft bearings due to vibration harmonics",
+        "D": "Constant RPM prevents the ECU from learning the correct fuel trim values"
+      },
+      "correct_answer": "B",
+      "explanation": "During break-in, the piston rings must bed against the cylinder wall crosshatch hone pattern. This seating process requires varying pressure and speed across the ring face. If the engine runs at a constant RPM, the rings experience the same load pattern continuously, causing the contact surfaces to polish smooth (glaze) rather than properly wearing into each other. Glazed rings cannot form an effective seal, resulting in blow-by and oil consumption for the life of the engine. Varying RPM — accelerating, decelerating, using engine braking — constantly changes the pressure distribution on the rings, promoting even, progressive seating.",
+      "topic": "Break-in guidelines",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D45-Q04",
+      "question": "What is the recommended timing for the first oil change after an engine rebuild?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "At the standard service interval (e.g., 15,000 km or 12 months)",
+        "B": "At 500 km (or per manufacturer recommendation), because break-in oil contains microscopic metal particles from ring and bore seating",
+        "C": "At 5,000 km to allow the rings to fully bed in",
+        "D": "Only when the oil pressure drops below specification"
+      },
+      "correct_answer": "B",
+      "explanation": "The first oil change after a rebuild should occur at approximately 500 km. During the break-in period, the piston rings and cylinder walls undergo controlled micro-wear as they seat against each other. This process generates microscopic metal particles that contaminate the oil. These particles act as an abrasive if left in the oil, accelerating wear on bearings and other precision surfaces. Changing the oil and filter at 500 km removes these particles before they cause damage. Waiting for the standard service interval would leave abrasive-laden oil in the engine for thousands of kilometres.",
+      "topic": "First oil change timing",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D45-Q05",
+      "question": "During a compression test, what does it mean if all cylinders read within 10% of each other?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The engine has excessive compression and the head gasket is too thick",
+        "B": "The rings, valves, and head gasket are sealing uniformly across all cylinders, indicating a healthy rebuild",
+        "C": "The timing is correctly set",
+        "D": "The spark plugs are all in good condition"
+      },
+      "correct_answer": "B",
+      "explanation": "A compression test measures the ability of each cylinder to hold pressure during the compression stroke. When all cylinders read within 10% of each other, it confirms that the sealing components — piston rings against bore walls, intake and exhaust valves against their seats, and the head gasket between all cylinders — are functioning uniformly. This is the primary indicator of a successful mechanical rebuild. If one cylinder is significantly lower than the others, a leak-down test is used to identify whether the leak is past the rings, valves, or head gasket.",
+      "topic": "Compression test interpretation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D45-Q06",
+      "question": "A technician completes the pre-start checklist and begins the turbo oil pre-lube by cranking the engine with the fuel pump relay removed. After three 10-second crank cycles with 10-second pauses between them, the oil pressure gauge still shows zero. What should the technician investigate first?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The oil is too cold and needs to be pre-heated before it will flow",
+        "B": "The starter motor is too weak and not turning the engine fast enough to drive the oil pump",
+        "C": "The oil filter may be dry and air-locked, the oil pump may not be primed, or the oil pressure gauge connection may be faulty — verify gauge function first, then check that the oil pump drive is engaged and the filter is pre-filled",
+        "D": "Three crank cycles is not enough — continue cranking for 60 seconds continuously"
+      },
+      "correct_answer": "C",
+      "explanation": "After 30 seconds of cumulative cranking, a functioning oil system should show at least some pressure. Zero pressure after three cycles indicates a systemic issue. The most logical diagnostic sequence is: first, verify the gauge itself is connected and functioning (tap the gauge, check the sender connection). Second, check that the oil pump is actually being driven — on some engines, the oil pump is driven by the crankshaft directly, while on others it is chain-driven from the timing system; if the timing was just installed, the drive coupling could be disengaged. Third, a completely dry oil filter can create a significant air lock that the pump struggles to overcome — pre-filling the filter with oil before installation prevents this. Cranking continuously for 60 seconds will overheat and damage the starter motor without solving the root problem.",
+      "topic": "Pre-lube troubleshooting",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D45-Q07",
+      "question": "After a successful first start and 5-minute idle period, the technician performs a leak-down test. Cylinder 2 shows 22% leakage with air clearly audible at the exhaust tailpipe, while cylinders 1, 3, and 4 are all below 8%. What is the most likely cause, and what action should be taken?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The piston rings on cylinder 2 are not seated yet — the engine needs more break-in time before retesting",
+        "B": "The cylinder 2 exhaust valve is not sealing properly — it may not be fully seated on its seat, the seat may be damaged, or the valve clearance may be set too tight preventing full closure, and the valve train for that cylinder must be inspected and corrected",
+        "C": "The head gasket has failed between cylinder 2 and the exhaust port",
+        "D": "The compression test equipment is faulty on that cylinder"
+      },
+      "correct_answer": "B",
+      "explanation": "A leak-down test that shows air escaping from the exhaust tailpipe specifically indicates that the exhaust valve on that cylinder is not sealing. In a freshly rebuilt engine, the most likely causes are: incorrect valve clearance set too tight (the valve is held slightly open by the cam follower and cannot fully close), a damaged valve seat from the machining process, a bent exhaust valve (possibly from a timing error during assembly that went undetected), or carbon or debris on the valve seat preventing full closure. The technician should first check the valve clearance on cylinder 2's exhaust valve and adjust if necessary. If clearance is correct, the valve cover must be removed to inspect the valve for damage. Leak-down over 20% is a definitive problem requiring correction before the engine can be considered a successful rebuild.",
+      "topic": "Leak-down test diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D45-Q08",
+      "question": "During the first 5 minutes of idle after a successful start, the technician notices a small but steady drip of coolant forming at the junction between the thermostat housing and the cylinder head. The pre-start checklist confirmed the thermostat was installed and the housing bolts were tightened. What is the most likely cause and the correct response?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The coolant system has too much pressure — the radiator cap is rated too high",
+        "B": "The thermostat housing gasket or O-ring was either damaged during installation, missed entirely, or the housing bolts were not torqued to specification — shut down the engine, allow it to cool, drain sufficient coolant, remove the housing, inspect and replace the gasket/O-ring, reinstall with correct torque, refill and re-bleed the coolant system",
+        "C": "A small coolant drip is normal during break-in and will self-seal as the gasket compresses",
+        "D": "The engine block has a casting porosity issue that is leaking coolant"
+      },
+      "correct_answer": "B",
+      "explanation": "A steady coolant drip from a specific gasket joint on a freshly rebuilt engine is not a break-in issue that will self-seal. It indicates a sealing problem at that specific joint. The most common causes during a rebuild are: the gasket or O-ring was pinched, damaged, or forgotten during assembly; the mating surfaces were not properly cleaned of old gasket material; or the fasteners were not torqued to the correct specification. The correct response is to stop the engine before the leak worsens or the coolant level drops enough to create an air pocket (which could cause localised overheating). After cooling, the joint must be disassembled, the sealing surfaces and gasket inspected, the issue corrected, and the system reassembled, refilled, and bled properly.",
+      "topic": "Post-start leak diagnosis",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D45-Q09",
+      "question": "A scan tool connected after the first start shows DTC P0340 (Camshaft Position Sensor Circuit Malfunction). The engine starts and runs but is rough at idle. What is the most likely cause in the context of a rebuild?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The camshaft position sensor has failed internally and needs replacement",
+        "B": "The camshaft position sensor connector was not reconnected during reassembly, or it was damaged during the rebuild — the technician should locate the connector, verify it is fully seated and locked, and clear the DTC to see if it returns",
+        "C": "The engine timing is incorrect and the cam sensor is detecting the wrong position",
+        "D": "The replacement head gasket is interfering with the sensor signal"
+      },
+      "correct_answer": "B",
+      "explanation": "In the context of a rebuild where the engine was fully disassembled and reassembled, DTCs appearing on the first start are overwhelmingly caused by connectors that were not reconnected or were not fully seated during reassembly. P0340 is a circuit fault code, meaning the ECU is not receiving a valid signal from the camshaft position sensor. The first diagnostic step is to locate the CMP sensor connector, check that it is physically connected and the locking tab is engaged, and inspect the wiring for damage that may have occurred during the rebuild. The sensor itself is unlikely to have failed if it was working before the strip-down. After reconnecting or repairing, clear the code and verify it does not return. This is why the pre-start checklist emphasises a two-pass connector verification.",
+      "topic": "Post-rebuild DTC diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D45-Q10",
+      "question": "A rebuilt engine starts successfully, shows good oil pressure, and idles smoothly. However, during the post-rebuild oil pressure test at operating temperature, the technician records 0.6 bar at idle (specification minimum is 1.0 bar) and 2.8 bar at 3000 RPM (specification is 3.0-5.0 bar). All compression and leak-down results are normal. What is the most likely root cause, and what are the implications?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The oil filter is restricting flow — replace with a different filter brand",
+        "B": "The oil viscosity is too low — switch to a heavier grade oil",
+        "C": "The bearing clearances are at the upper end of or slightly beyond specification — the increased clearance volume allows oil to leak past the bearings faster than the pump can maintain pressure, and this is more pronounced at idle where pump output is lowest; the bearings may need to be re-evaluated with Plastigage",
+        "D": "The oil pressure relief valve is stuck open — disassemble and clean it"
+      },
+      "correct_answer": "C",
+      "explanation": "Oil pressure that is slightly below specification across the entire RPM range — worse at idle and marginally low at higher RPM — is the characteristic pattern of excessive bearing clearance. At idle, the oil pump turns slowly and produces minimum flow. If the total leakage past all bearings (due to slightly loose clearances) exceeds what the pump delivers at idle speed, pressure drops below specification. At higher RPM, the pump delivers more flow and partially compensates, but pressure is still at the low end. This can occur if bearings were fitted at the upper edge of the clearance tolerance, or if journal measurements were slightly inaccurate. With normal compression and leak-down results ruling out other internal issues, the bearing clearances should be re-checked using Plastigage. If confirmed excessive, the next undersize bearing shells may be needed, or if journals are worn, regrinding is required.",
+      "topic": "Low oil pressure diagnosis after rebuild",
+      "bloom_level": "Evaluate"
+    }
+  ]
+}

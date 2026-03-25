@@ -1,0 +1,1160 @@
+# Automotive Vehicles (AELZC441) - Complete Learning Outcomes
+# Generated: 2026-01-03
+# Format: YAML - Complete CO → MO → SO Hierarchy
+
+course:
+  name: "Automotive Vehicles"
+  code: "AELZC441"
+  credits: 3
+  duration_days: 20
+  total_sessions: 20
+  session_duration: "2 hours (90 min lecture + 30 min Q&A)"
+  institution: "BITS Pilani - M.Tech. Automotive Electronics"
+  description: "Comprehensive study of automotive vehicle systems including powertrain, transmission, electrical systems, vehicle dynamics, chassis systems, comfort systems, and safety systems with focus on engineering principles and performance analysis"
+
+# Course-Level Outcomes (CO)
+course_outcomes:
+  - id: "co-1"
+    code: "AELZC441-CO-1"
+    description: "Study main components/systems of an automobile (engine, transmission, drive-axle system, suspension system, brake system, etc.)"
+    category: "Knowledge"
+    bloom_level: "Understand"
+
+  - id: "co-2"
+    code: "AELZC441-CO-2"
+    description: "Understand fundamental working principles of different systems"
+    category: "Knowledge"
+    bloom_level: "Understand"
+
+  - id: "co-3"
+    code: "AELZC441-CO-3"
+    description: "Learn performance analysis along with working and important aspects of various components of automotive vehicles"
+    category: "Skill"
+    bloom_level: "Analyze"
+
+  - id: "co-4"
+    code: "AELZC441-CO-4"
+    description: "Get acquainted with advanced concepts through projects and assignments"
+    category: "Skill"
+    bloom_level: "Apply"
+
+# Module Structure with Module Outcomes (MO) and Session Outcomes (SO)
+modules:
+  # ========================================================================
+  # MODULE 1: Foundation & Vehicle Architecture
+  # ========================================================================
+  - number: 1
+    name: "Foundation & Vehicle Architecture"
+    description: "Understand complete vehicle architecture, classify automotive systems, and analyze vehicle design fundamentals"
+    sessions: [1, 2, 3]
+
+    module_outcome:
+      id: "mo-1"
+      code: "AELZC441-MO-1"
+      description: "Understand complete vehicle architecture, classify automotive systems, and analyze vehicle design fundamentals"
+      category: "Knowledge"
+      bloom_level: "Understand"
+      parent_co: "co-1"
+
+    lessons:
+      # Session 1
+      - number: 1
+        name: "Introduction to Automotive Systems"
+        day: 1
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-1-1-1"
+            code: "AELZC441-SO-1-1-1"
+            description: "Identify and classify different types of automobiles based on design, application, and fuel type"
+            category: "Knowledge"
+            bloom_level: "Remember"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-1-1-2"
+            code: "AELZC441-SO-1-1-2"
+            description: "Explain the homologation process and regulatory requirements for vehicle certification"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-1-1-3"
+            code: "AELZC441-SO-1-1-3"
+            description: "Describe the complete vehicle architecture and identify major subsystems and their interactions"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-1-1-4"
+            code: "AELZC441-SO-1-1-4"
+            description: "Explain modern vehicle development methodology including virtual engineering and CAE tools"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+      # Session 2
+      - number: 2
+        name: "Chassis & Body Systems"
+        day: 2
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-1-2-1"
+            code: "AELZC441-SO-1-2-1"
+            description: "Compare different types of chassis (monocoque, ladder frame, space frame) and their applications"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-1-2-2"
+            code: "AELZC441-SO-1-2-2"
+            description: "Analyze body construction methods and material selection for vehicle structures"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-1-2-3"
+            code: "AELZC441-SO-1-2-3"
+            description: "Calculate weight distribution and analyze its impact on vehicle performance and handling"
+            category: "Skill"
+            bloom_level: "Apply"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-1-2-4"
+            code: "AELZC441-SO-1-2-4"
+            description: "Explain crash structures, crumple zones, and their role in passenger safety"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+      # Session 3
+      - number: 3
+        name: "Powertrain Architecture & Requirements"
+        day: 3
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-1-3-1"
+            code: "AELZC441-SO-1-3-1"
+            description: "Identify vehicle propulsion system requirements based on application and performance targets"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-1-3-2"
+            code: "AELZC441-SO-1-3-2"
+            description: "Calculate tractive force, resistance forces (rolling, aerodynamic, gradient), and torque requirements"
+            category: "Skill"
+            bloom_level: "Apply"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-1-3-3"
+            code: "AELZC441-SO-1-3-3"
+            description: "Compare different powertrain configurations (FWD, RWD, AWD, 4WD) and analyze their characteristics"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-1-3-4"
+            code: "AELZC441-SO-1-3-4"
+            description: "Perform power flow analysis through vehicle drivetrain and calculate transmission requirements"
+            category: "Skill"
+            bloom_level: "Apply"
+            session_type: "lecture"
+            required: true
+
+  # ========================================================================
+  # MODULE 2: Powertrain & Engine Support Systems
+  # ========================================================================
+  - number: 2
+    name: "Powertrain & Engine Support Systems"
+    description: "Analyze IC engine operation, performance characteristics, emissions, and thermal management systems"
+    sessions: [4, 5, 6, 7, 8]
+
+    module_outcome:
+      id: "mo-2"
+      code: "AELZC441-MO-2"
+      description: "Analyze IC engine operation, performance characteristics, emissions, and thermal management systems"
+      category: "Skill"
+      bloom_level: "Analyze"
+      parent_co: "co-2"
+
+    lessons:
+      # Session 4
+      - number: 1
+        name: "IC Engine Fundamentals - Part 1"
+        day: 4
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-2-4-1"
+            code: "AELZC441-SO-2-4-1"
+            description: "Classify IC engines based on various criteria (fuel type, ignition, cycle, configuration)"
+            category: "Knowledge"
+            bloom_level: "Remember"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-4-2"
+            code: "AELZC441-SO-2-4-2"
+            description: "Explain engine terminology (bore, stroke, displacement, compression ratio, clearance volume)"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-4-3"
+            code: "AELZC441-SO-2-4-3"
+            description: "Describe thermodynamic cycles (Otto, Diesel, Dual) and analyze their P-V and T-S diagrams"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-4-4"
+            code: "AELZC441-SO-2-4-4"
+            description: "Identify major engine components (cylinder block, head, piston, crankshaft, camshaft) and explain their construction"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-4-5"
+            code: "AELZC441-SO-2-4-5"
+            description: "Interpret valve timing diagrams and explain valve overlap, lead, and lag"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+      # Session 5
+      - number: 2
+        name: "IC Engine Fundamentals - Part 2"
+        day: 5
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-2-5-1"
+            code: "AELZC441-SO-2-5-1"
+            description: "Explain the combustion process in SI and CI engines including flame propagation and heat release"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-5-2"
+            code: "AELZC441-SO-2-5-2"
+            description: "Compare fuel conversion techniques (carburetor, MPFI, GDI) and analyze their performance characteristics"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-5-3"
+            code: "AELZC441-SO-2-5-3"
+            description: "Describe turbocharging and supercharging systems and explain boost control mechanisms"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-5-4"
+            code: "AELZC441-SO-2-5-4"
+            description: "Calculate engine performance parameters (indicated power, brake power, mechanical efficiency, thermal efficiency)"
+            category: "Skill"
+            bloom_level: "Apply"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-5-5"
+            code: "AELZC441-SO-2-5-5"
+            description: "Analyze the effect of air-fuel ratio, ignition timing, and boost pressure on engine performance"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+      # Session 6
+      - number: 3
+        name: "Engine Performance & Emissions"
+        day: 6
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-2-6-1"
+            code: "AELZC441-SO-2-6-1"
+            description: "Interpret engine torque and power characteristic curves and analyze BSFC maps"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-6-2"
+            code: "AELZC441-SO-2-6-2"
+            description: "Explain engine mapping and calibration process for optimizing performance and emissions"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-6-3"
+            code: "AELZC441-SO-2-6-3"
+            description: "Describe emission formation mechanisms (NOx, HC, CO, PM) and their dependence on operating conditions"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-6-4"
+            code: "AELZC441-SO-2-6-4"
+            description: "Compare BS4 and BS6 emission standards and explain regulatory requirements"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-6-5"
+            code: "AELZC441-SO-2-6-5"
+            description: "Explain emission control technologies (three-way catalyst, DPF, SCR, EGR) and their operation"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+      # Session 7
+      - number: 4
+        name: "Cooling & Lubrication Systems"
+        day: 7
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-2-7-1"
+            code: "AELZC441-SO-2-7-1"
+            description: "Calculate heat generation in IC engines and explain heat balance in engine operation"
+            category: "Skill"
+            bloom_level: "Apply"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-7-2"
+            code: "AELZC441-SO-2-7-2"
+            description: "Compare air-cooled and liquid-cooled systems and analyze their suitability for different applications"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-7-3"
+            code: "AELZC441-SO-2-7-3"
+            description: "Explain cooling system components (radiator, thermostat, water pump, fan) and their operation"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-7-4"
+            code: "AELZC441-SO-2-7-4"
+            description: "Describe lubrication system components (oil pump, filter, galleries) and oil circulation path"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-7-5"
+            code: "AELZC441-SO-2-7-5"
+            description: "Explain engine oil specifications (viscosity grades, API classifications) and selection criteria"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-7-6"
+            code: "AELZC441-SO-2-7-6"
+            description: "Analyze thermal management strategies for engine efficiency and emissions"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+      # Session 8
+      - number: 5
+        name: "Introduction to Electric & Hybrid Vehicles"
+        day: 8
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-2-8-1"
+            code: "AELZC441-SO-2-8-1"
+            description: "Classify electric powertrains (BEV, HEV, PHEV, MHEV) and compare their architectures"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-8-2"
+            code: "AELZC441-SO-2-8-2"
+            description: "Identify key components of electric powertrains (battery, motor, inverter, DC-DC converter)"
+            category: "Knowledge"
+            bloom_level: "Remember"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-8-3"
+            code: "AELZC441-SO-2-8-3"
+            description: "Compare BEV and HEV configurations and analyze their advantages and limitations"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-8-4"
+            code: "AELZC441-SO-2-8-4"
+            description: "Explain alternate fuel vehicles (CNG, LPG) and their modifications over conventional engines"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-2-8-5"
+            code: "AELZC441-SO-2-8-5"
+            description: "Compare IC engine and electric powertrain characteristics (torque, efficiency, NVH)"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+  # ========================================================================
+  # MODULE 3: Power Transmission
+  # ========================================================================
+  - number: 3
+    name: "Power Transmission"
+    description: "Understand power transmission systems and analyze gearbox operation and final drive mechanisms"
+    sessions: [9, 10]
+
+    module_outcome:
+      id: "mo-3"
+      code: "AELZC441-MO-3"
+      description: "Understand power transmission systems and analyze gearbox operation and final drive mechanisms"
+      category: "Knowledge"
+      bloom_level: "Understand"
+      parent_co: "co-2"
+
+    lessons:
+      # Session 9
+      - number: 1
+        name: "Transmission Systems - Part 1"
+        day: 9
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-3-9-1"
+            code: "AELZC441-SO-3-9-1"
+            description: "Explain the need for transmission in automobiles and identify transmission requirements"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-3-9-2"
+            code: "AELZC441-SO-3-9-2"
+            description: "Describe clutch systems (single plate, multi-plate) and explain their operation and engagement mechanism"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-3-9-3"
+            code: "AELZC441-SO-3-9-3"
+            description: "Explain manual gearbox construction (constant mesh, synchromesh) and gear shifting mechanism"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-3-9-4"
+            code: "AELZC441-SO-3-9-4"
+            description: "Calculate gear ratios for different gears and analyze their effect on torque and speed"
+            category: "Skill"
+            bloom_level: "Apply"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-3-9-5"
+            code: "AELZC441-SO-3-9-5"
+            description: "Design basic transmission ratios for given vehicle performance requirements"
+            category: "Skill"
+            bloom_level: "Apply"
+            session_type: "lecture"
+            required: true
+
+      # Session 10
+      - number: 2
+        name: "Transmission Systems - Part 2"
+        day: 10
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-3-10-1"
+            code: "AELZC441-SO-3-10-1"
+            description: "Explain automatic transmission operation including torque converter and planetary gear sets"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-3-10-2"
+            code: "AELZC441-SO-3-10-2"
+            description: "Compare CVT, DCT/DSG, and AMT technologies and analyze their performance characteristics"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-3-10-3"
+            code: "AELZC441-SO-3-10-3"
+            description: "Describe transfer case operation and four-wheel drive/all-wheel drive systems"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-3-10-4"
+            code: "AELZC441-SO-3-10-4"
+            description: "Explain differential operation (open, limited slip, locking) and its role in power distribution"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-3-10-5"
+            code: "AELZC441-SO-3-10-5"
+            description: "Calculate final drive ratio and analyze its impact on vehicle performance and fuel economy"
+            category: "Skill"
+            bloom_level: "Apply"
+            session_type: "lecture"
+            required: true
+
+  # ========================================================================
+  # MODULE 4: Vehicle Electrical & Control Systems
+  # ========================================================================
+  - number: 4
+    name: "Vehicle Electrical & Control Systems"
+    description: "Understand vehicle electrical architecture, ECU-based control systems, and vehicle communication networks"
+    sessions: [11, 12, 13]
+
+    module_outcome:
+      id: "mo-4"
+      code: "AELZC441-MO-4"
+      description: "Understand vehicle electrical architecture, ECU-based control systems, and vehicle communication networks"
+      category: "Knowledge"
+      bloom_level: "Understand"
+      parent_co: "co-2"
+
+    lessons:
+      # Session 11
+      - number: 1
+        name: "Vehicle Electrical Systems"
+        day: 11
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-4-11-1"
+            code: "AELZC441-SO-4-11-1"
+            description: "Describe automotive electrical architecture and explain 12V and 24V system configurations"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-11-2"
+            code: "AELZC441-SO-4-11-2"
+            description: "Explain battery technology (lead-acid, AGM) and analyze battery specifications (capacity, CCA, reserve capacity)"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-11-3"
+            code: "AELZC441-SO-4-11-3"
+            description: "Describe charging system components (alternator, voltage regulator) and explain charging control"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-11-4"
+            code: "AELZC441-SO-4-11-4"
+            description: "Explain starting system operation (starter motor, solenoid, bendix drive) and cranking requirements"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-11-5"
+            code: "AELZC441-SO-4-11-5"
+            description: "Compare lighting system technologies (halogen, HID, LED, adaptive lighting) and their control"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-11-6"
+            code: "AELZC441-SO-4-11-6"
+            description: "Explain wiring system design, fuse and relay protection, and ground distribution"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+      # Session 12
+      - number: 2
+        name: "Vehicle Control Architecture"
+        day: 12
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-4-12-1"
+            code: "AELZC441-SO-4-12-1"
+            description: "Explain gasoline and diesel engine control architecture and ECU functions (fuel, ignition, air management)"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-12-2"
+            code: "AELZC441-SO-4-12-2"
+            description: "Describe transmission control unit (TCU) operation and shift control strategies"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-12-3"
+            code: "AELZC441-SO-4-12-3"
+            description: "Classify automotive sensors (temperature, pressure, position, speed, mass airflow, oxygen) and explain their operation"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-12-4"
+            code: "AELZC441-SO-4-12-4"
+            description: "Classify automotive actuators (injectors, throttle valve, VVT, EGR valve, wastegate) and explain their control"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-12-5"
+            code: "AELZC441-SO-4-12-5"
+            description: "Explain closed-loop control algorithms for engine management (lambda control, idle speed control)"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+      # Session 13
+      - number: 3
+        name: "Vehicle Communication Networks"
+        day: 13
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-4-13-1"
+            code: "AELZC441-SO-4-13-1"
+            description: "Explain the need for automotive communication networks and compare point-to-point vs networked architectures"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-13-2"
+            code: "AELZC441-SO-4-13-2"
+            description: "Describe CAN bus architecture, protocol layers, and message structure (identifier, data, CRC)"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-13-3"
+            code: "AELZC441-SO-4-13-3"
+            description: "Explain CAN bus arbitration, error detection mechanisms, and bus states"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-13-4"
+            code: "AELZC441-SO-4-13-4"
+            description: "Describe LIN bus operation and its application in body electronics and cost-sensitive modules"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-13-5"
+            code: "AELZC441-SO-4-13-5"
+            description: "Explain OBD-II standards, diagnostic trouble codes (DTC), and emission-related diagnostics"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-4-13-6"
+            code: "AELZC441-SO-4-13-6"
+            description: "Analyze network topology design and calculate bus load for CAN networks"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+  # ========================================================================
+  # MODULE 5: Vehicle Dynamics & Chassis Systems
+  # ========================================================================
+  - number: 5
+    name: "Vehicle Dynamics & Chassis Systems"
+    description: "Analyze vehicle dynamics and understand chassis system behavior including suspension, steering, and braking"
+    sessions: [14, 15, 16, 17]
+
+    module_outcome:
+      id: "mo-5"
+      code: "AELZC441-MO-5"
+      description: "Analyze vehicle dynamics and understand chassis system behavior including suspension, steering, and braking"
+      category: "Skill"
+      bloom_level: "Analyze"
+      parent_co: "co-3"
+
+    lessons:
+      # Session 14
+      - number: 1
+        name: "Vehicle Dynamics"
+        day: 14
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-5-14-1"
+            code: "AELZC441-SO-5-14-1"
+            description: "Explain fundamentals of vehicle dynamics and identify forces and moments acting on a vehicle"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-14-2"
+            code: "AELZC441-SO-5-14-2"
+            description: "Calculate longitudinal dynamics (acceleration, braking, gradeability) and analyze performance"
+            category: "Skill"
+            bloom_level: "Apply"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-14-3"
+            code: "AELZC441-SO-5-14-3"
+            description: "Analyze load transfer during acceleration, braking, and cornering and calculate weight distribution"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-14-4"
+            code: "AELZC441-SO-5-14-4"
+            description: "Explain lateral dynamics (cornering, slip angles, tire characteristics) and steady-state handling"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-14-5"
+            code: "AELZC441-SO-5-14-5"
+            description: "Describe understeer, oversteer, and neutral steer characteristics and their impact on vehicle behavior"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-14-6"
+            code: "AELZC441-SO-5-14-6"
+            description: "Perform numerical analysis of vehicle dynamics problems (acceleration time, braking distance, cornering radius)"
+            category: "Skill"
+            bloom_level: "Apply"
+            session_type: "lecture"
+            required: true
+
+      # Session 15
+      - number: 2
+        name: "Suspension Systems"
+        day: 15
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-5-15-1"
+            code: "AELZC441-SO-5-15-1"
+            description: "Explain suspension system functions (ride comfort, handling, road holding) and design requirements"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-15-2"
+            code: "AELZC441-SO-5-15-2"
+            description: "Compare suspension types (independent vs dependent, McPherson, double wishbone, multi-link, solid axle)"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-15-3"
+            code: "AELZC441-SO-5-15-3"
+            description: "Explain spring types (coil, leaf, torsion bar, air) and damper operation (twin-tube, monotube)"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-15-4"
+            code: "AELZC441-SO-5-15-4"
+            description: "Describe anti-roll bar operation and its effect on roll stiffness and handling"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-15-5"
+            code: "AELZC441-SO-5-15-5"
+            description: "Explain electronic suspension systems (adaptive damping, air suspension) and their control strategies"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-15-6"
+            code: "AELZC441-SO-5-15-6"
+            description: "Analyze suspension geometry parameters and their impact on ride and handling"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+      # Session 16
+      - number: 3
+        name: "Steering Systems"
+        day: 16
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-5-16-1"
+            code: "AELZC441-SO-5-16-1"
+            description: "Explain steering geometry parameters (Ackermann, caster, camber, toe, kingpin inclination) and their effects"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-16-2"
+            code: "AELZC441-SO-5-16-2"
+            description: "Describe manual steering systems (rack-and-pinion, recirculating ball) and steering ratio calculation"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-16-3"
+            code: "AELZC441-SO-5-16-3"
+            description: "Explain hydraulic power steering operation and analyze power assistance characteristics"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-16-4"
+            code: "AELZC441-SO-5-16-4"
+            description: "Describe Electric Power Assisted Steering (EPAS) architecture and control strategies"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-16-5"
+            code: "AELZC441-SO-5-16-5"
+            description: "Explain Steer-by-Wire (SBW) technology, redundancy requirements, and safety considerations"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-16-6"
+            code: "AELZC441-SO-5-16-6"
+            description: "Describe four-wheel steering systems and their benefits for maneuverability and stability"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+      # Session 17
+      - number: 4
+        name: "Brake Systems"
+        day: 17
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-5-17-1"
+            code: "AELZC441-SO-5-17-1"
+            description: "Explain braking system fundamentals and calculate braking force requirements and stopping distance"
+            category: "Skill"
+            bloom_level: "Apply"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-17-2"
+            code: "AELZC441-SO-5-17-2"
+            description: "Describe hydraulic brake system components (master cylinder, brake booster, proportioning valve) and operation"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-17-3"
+            code: "AELZC441-SO-5-17-3"
+            description: "Compare disc and drum brakes and analyze their performance characteristics"
+            category: "Skill"
+            bloom_level: "Analyze"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-17-4"
+            code: "AELZC441-SO-5-17-4"
+            description: "Explain Anti-lock Braking System (ABS) operation, control algorithm, and wheel slip control"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-17-5"
+            code: "AELZC441-SO-5-17-5"
+            description: "Describe Electronic Brakeforce Distribution (EBD) and its integration with ABS"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-5-17-6"
+            code: "AELZC441-SO-5-17-6"
+            description: "Explain Brake-by-Wire technology and electronic brake systems"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+  # ========================================================================
+  # MODULE 6: Comfort & Safety Systems
+  # ========================================================================
+  - number: 6
+    name: "Comfort & Safety Systems"
+    description: "Understand HVAC systems, passive safety systems, and introduction to active safety and ADAS"
+    sessions: [18, 19, 20]
+
+    module_outcome:
+      id: "mo-6"
+      code: "AELZC441-MO-6"
+      description: "Understand HVAC systems, passive safety systems, and introduction to active safety and ADAS"
+      category: "Knowledge"
+      bloom_level: "Understand"
+      parent_co: "co-4"
+
+    lessons:
+      # Session 18
+      - number: 1
+        name: "HVAC Systems"
+        day: 18
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-6-18-1"
+            code: "AELZC441-SO-6-18-1"
+            description: "Explain HVAC system fundamentals and describe the refrigeration thermodynamic cycle"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-18-2"
+            code: "AELZC441-SO-6-18-2"
+            description: "Identify HVAC components (compressor, condenser, evaporator, expansion valve) and explain their operation"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-18-3"
+            code: "AELZC441-SO-6-18-3"
+            description: "Compare compressor types (fixed displacement, variable displacement, electric) and their control"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-18-4"
+            code: "AELZC441-SO-6-18-4"
+            description: "Explain heating system operation and integration with engine cooling system"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-18-5"
+            code: "AELZC441-SO-6-18-5"
+            description: "Describe automatic climate control system and multi-zone temperature management"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-18-6"
+            code: "AELZC441-SO-6-18-6"
+            description: "Compare refrigerants (R134a, R1234yf) and explain environmental regulations and cabin air quality management"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+      # Session 19
+      - number: 2
+        name: "Passive Safety Systems"
+        day: 19
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-6-19-1"
+            code: "AELZC441-SO-6-19-1"
+            description: "Explain crash safety principles and describe occupant protection strategies (crumple zones, safety cage)"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-19-2"
+            code: "AELZC441-SO-6-19-2"
+            description: "Describe seatbelt systems (3-point, pretensioners, load limiters) and explain their operation"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-19-3"
+            code: "AELZC441-SO-6-19-3"
+            description: "Explain airbag systems (frontal, side, curtain, knee) and describe deployment strategies"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-19-4"
+            code: "AELZC441-SO-6-19-4"
+            description: "Describe airbag ECU operation, crash sensors (accelerometers), and deployment decision algorithms"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-19-5"
+            code: "AELZC441-SO-6-19-5"
+            description: "Explain pedestrian protection systems (active hood, exterior airbags) and their activation"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-19-6"
+            code: "AELZC441-SO-6-19-6"
+            description: "Describe safety testing standards (NCAP, Euro NCAP) and crash test evaluation criteria"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+      # Session 20
+      - number: 3
+        name: "Introduction to Active Safety & ADAS"
+        day: 20
+        duration: "2 hours"
+
+        session_outcomes:
+          - id: "so-6-20-1"
+            code: "AELZC441-SO-6-20-1"
+            description: "Explain Electronic Stability Control (ESC) operation and yaw moment control during cornering"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-20-2"
+            code: "AELZC441-SO-6-20-2"
+            description: "Describe Traction Control System (TCS) and wheel slip control during acceleration"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-20-3"
+            code: "AELZC441-SO-6-20-3"
+            description: "Introduce ADAS features: Adaptive Cruise Control (ACC), Lane Keeping Assist (LKA), Automatic Emergency Braking (AEB) - overview only"
+            category: "Knowledge"
+            bloom_level: "Remember"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-20-4"
+            code: "AELZC441-SO-6-20-4"
+            description: "Describe Blind Spot Detection (BSD) and parking assist systems - overview only"
+            category: "Knowledge"
+            bloom_level: "Remember"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-20-5"
+            code: "AELZC441-SO-6-20-5"
+            description: "Identify sensor types for ADAS (camera, radar, ultrasonic, LiDAR) and their basic principles - brief introduction"
+            category: "Knowledge"
+            bloom_level: "Remember"
+            session_type: "lecture"
+            required: true
+
+          - id: "so-6-20-6"
+            code: "AELZC441-SO-6-20-6"
+            description: "Explain SAE levels of vehicle autonomy (L0-L5) and describe current state of autonomous driving technology"
+            category: "Knowledge"
+            bloom_level: "Understand"
+            session_type: "lecture"
+            required: true
+
+# Summary Statistics
+summary:
+  total_course_outcomes: 4
+  total_module_outcomes: 6
+  total_session_outcomes: 120
+  total_modules: 6
+  total_sessions: 20
+
+  bloom_distribution:
+    Remember: 8
+    Understand: 82
+    Apply: 20
+    Analyze: 10
+    Evaluate: 0
+    Create: 0
+
+  category_distribution:
+    Knowledge: 92
+    Skill: 28
+    Attitude: 0

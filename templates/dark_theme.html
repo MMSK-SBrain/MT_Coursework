@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ metadata.module_title }}</title>
+    <link rel="stylesheet" href="dark_theme.css">
+</head>
+<body>
+    <!-- Macros must be defined first -->
+    {% macro render_section(section, questions_by_section, depth=0) %}
+        {% if section.include_in_handout %}
+            <!-- Section Heading -->
+            {% if section.level == 1 %}
+                <h1 id="{{ section.title|slugify }}" class="no-break">{{ section.title }}</h1>
+            {% elif section.level == 2 %}
+                <h2 id="{{ section.title|slugify }}" class="no-break">{{ section.title }}</h2>
+            {% elif section.level == 3 %}
+                <h3 id="{{ section.title|slugify }}">{{ section.title }}</h3>
+            {% elif section.level == 4 %}
+                <h4 id="{{ section.title|slugify }}">{{ section.title }}</h4>
+            {% elif section.level == 5 %}
+                <h5 id="{{ section.title|slugify }}">{{ section.title }}</h5>
+            {% elif section.level == 6 %}
+                <h6 id="{{ section.title|slugify }}">{{ section.title }}</h6>
+            {% endif %}
+
+            <!-- Section Content -->
+            {% if section.content %}
+                <div class="section-content">
+                    {{ section.content|markdown|safe }}
+                </div>
+            {% endif %}
+
+            <!-- Questions for this section -->
+            {% if section.id in questions_by_section %}
+                <div class="self-study-section">
+                    <div class="self-study-title">Self-Study Questions</div>
+                    {% for question in questions_by_section[section.id] %}
+                        {% include 'partials/question_box.html' %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- Subsections -->
+            {% if section.subsections %}
+                {% for subsection in section.subsections %}
+                    {{ render_section(subsection, questions_by_section, depth + 1) }}
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+    {% endmacro %}
+
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <h1>{{ metadata.module_title }}</h1>
+        <div class="cover-metadata">
+            <p><strong>Course:</strong> {{ metadata.course_code }}</p>
+            {% if metadata.duration %}
+            <p><strong>Duration:</strong> {{ metadata.duration }}</p>
+            {% endif %}
+            {% if metadata.video_content %}
+            <p><strong>Video Content:</strong> {{ metadata.video_content }}</p>
+            {% endif %}
+            {% if metadata.hands_on_time %}
+            <p><strong>Hands-on Time:</strong> {{ metadata.hands_on_time }}</p>
+            {% endif %}
+            <p class="text-muted text-small">Generated: {{ generation_timestamp.strftime('%Y-%m-%d %H:%M') }}</p>
+        </div>
+    </div>
+
+    <!-- Warning banner if questions not reviewed -->
+    {% if not question_review_complete %}
+    <div class="note-box warning">
+        <div class="note-label">Warning</div>
+        <p>This handout contains unreviewed AI-generated questions. Questions should be reviewed before distribution to students.</p>
+    </div>
+    {% endif %}
+
+    <!-- Warnings from generation -->
+    {% if warnings %}
+    <div class="note-box warning">
+        <div class="note-label">Generation Warnings</div>
+        <ul>
+        {% for warning in warnings %}
+            <li>{{ warning }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Table of Contents -->
+    {% if toc %}
+    <div class="toc page-break">
+        <div class="toc-title">Table of Contents</div>
+        {% for entry in toc %}
+            {% if entry.level == 1 %}
+            <a href="#{{ entry.anchor }}" class="toc-item toc-item-h1">
+                {{ entry.title }}
+                <span class="toc-page">...</span>
+            </a>
+            {% elif entry.level == 2 %}
+            <a href="#{{ entry.anchor }}" class="toc-item toc-item-h2">
+                {{ entry.title }}
+                <span class="toc-page">...</span>
+            </a>
+            {% elif entry.level == 3 %}
+            <a href="#{{ entry.anchor }}" class="toc-item toc-item-h3">
+                {{ entry.title }}
+                <span class="toc-page">...</span>
+            </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Content Sections -->
+    <div class="content">
+        {% for section in sections %}
+            {{ render_section(section, questions_by_section) }}
+        {% endfor %}
+    </div>
+</body>
+</html>

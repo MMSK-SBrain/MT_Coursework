@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 4,
+  "week": 1,
+  "session_title": "Precision Measurement & Fasteners",
+  "questions": [
+    {
+      "id": "D04-Q01",
+      "question": "What is the resolution (smallest readable increment) of a standard outside micrometer?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "0.1 mm",
+        "B": "0.05 mm",
+        "C": "0.02 mm",
+        "D": "0.01 mm"
+      },
+      "correct_answer": "D",
+      "explanation": "A standard outside micrometer has 50 divisions on its thimble, each representing 0.01 mm. A vernier caliper typically resolves to 0.02 mm, which is a common point of confusion between the two instruments.",
+      "topic": "Outside micrometer",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D04-Q02",
+      "question": "A vernier caliper can perform which three types of measurements?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Outside diameter, inside diameter, and depth",
+        "B": "Outside diameter, runout, and thread pitch",
+        "C": "Inside diameter, surface roughness, and depth",
+        "D": "Outside diameter, torque, and hardness"
+      },
+      "correct_answer": "A",
+      "explanation": "A vernier caliper has outside jaws for external measurements, inside jaws for internal measurements (bore diameters, slot widths), and a depth rod for measuring hole depths and step heights. Runout is measured with a dial gauge, not a caliper.",
+      "topic": "Vernier caliper",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D04-Q03",
+      "question": "What does a dial test indicator (DTI) measure?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The hardness of a metal surface",
+        "B": "The torque applied to a fastener",
+        "C": "Surface deviation or variation from a zero reference point",
+        "D": "Absolute size of a component"
+      },
+      "correct_answer": "C",
+      "explanation": "A DTI measures deviation or variation from a zeroed reference point, not absolute size. For example, it measures brake disc lateral runout by showing how much the surface varies as the disc rotates. Absolute size measurement is the role of a micrometer or caliper.",
+      "topic": "Dial test indicator",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D04-Q04",
+      "question": "A metric bolt is marked 'M8 x 1.25'. What does the '1.25' represent?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The bolt length in centimetres",
+        "B": "The thread pitch in millimetres (distance between threads)",
+        "C": "The maximum torque in Newton-metres",
+        "D": "The bolt grade (strength rating)"
+      },
+      "correct_answer": "B",
+      "explanation": "In the designation M8 x 1.25, M8 indicates 8 mm nominal diameter and 1.25 indicates the thread pitch of 1.25 mm (the distance between adjacent thread crests). This is a coarse thread; a fine thread variant would be M8 x 1.0.",
+      "topic": "Bolt anatomy and thread types",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D04-Q05",
+      "question": "What should a technician ALWAYS do after using a click torque wrench?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Wipe it down with solvent to remove oil",
+        "B": "Leave it at the last used setting for convenience",
+        "C": "Return it to the lowest setting before storage",
+        "D": "Calibrate it against a known reference"
+      },
+      "correct_answer": "C",
+      "explanation": "A click torque wrench must always be returned to its lowest setting after use. Leaving it set compresses the internal calibration spring, which causes it to lose accuracy over time. Calibration is done periodically (annually), not after every use.",
+      "topic": "Torque wrench procedure",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D04-Q06",
+      "question": "A technician measures a crankshaft journal with a micrometer and reads 49.95 mm. The specification calls for 50.00 mm with a wear limit of 49.97 mm. What should the technician conclude?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The journal is within specification and can be reused",
+        "B": "The micrometer is likely misread and should be checked",
+        "C": "The journal is acceptable if a thicker bearing shell is installed",
+        "D": "The journal is worn beyond the wear limit and the crankshaft must be reground or replaced"
+      },
+      "correct_answer": "D",
+      "explanation": "At 49.95 mm, the journal is 0.02 mm below the wear limit of 49.97 mm. This means the oil clearance is excessive, which would break down the oil film and cause bearing failure. The crankshaft must be reground to the next undersize or replaced. Installing a thicker bearing without regrinding would create incorrect clearance.",
+      "topic": "Micrometer measurement interpretation",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D04-Q07",
+      "question": "A technician is replacing cylinder head bolts on a modern engine. The workshop manual specifies torque-to-yield (TTY) bolts tightened to 40 Nm + 90 degrees. After completing the job, the technician stores the old bolts for potential reuse. Why is this incorrect?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Torque-to-yield bolts are intentionally stretched past their elastic limit and must be replaced every time — they cannot be safely reused",
+        "B": "The bolts should be stored in a different drawer to avoid confusion",
+        "C": "The bolts are still usable if they pass a visual inspection",
+        "D": "The bolts can be reused if they are re-torqued to a lower value"
+      },
+      "correct_answer": "A",
+      "explanation": "Torque-to-yield (TTY) bolts are designed to be stretched into their plastic deformation zone for maximum clamping force. Once stretched, they have permanently changed dimensions and cannot provide the correct clamping force a second time. Reuse risks head gasket failure, which is a far more expensive repair than new bolts.",
+      "topic": "Torque-to-yield fasteners",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D04-Q08",
+      "question": "A technician needs to replace a suspension bolt and finds an unmarked bolt of the correct diameter in the parts bin. The original bolt was marked 10.9. What is the risk of using the unmarked bolt?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "No risk — bolt diameter is the only factor that matters",
+        "B": "The unmarked bolt may be a lower grade (e.g., 8.8 or 4.6) that could fail under the suspension loads the 10.9 bolt was specified for",
+        "C": "Unmarked bolts are always higher grade than marked ones",
+        "D": "The risk is only cosmetic since the head markings are for identification purposes"
+      },
+      "correct_answer": "B",
+      "explanation": "A 10.9 bolt has 1,040 MPa tensile strength. An unmarked bolt may be grade 4.6 (400 MPa) or 8.8 (800 MPa) — significantly weaker. In a suspension application where the bolt experiences dynamic loads, a lower-grade bolt could yield or fracture, causing a potentially fatal loss of wheel control. Never substitute a lower-grade bolt for a higher-grade one.",
+      "topic": "Bolt grades and safety",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D04-Q09",
+      "question": "A technician applies a large bead of RTV silicone sealant around an oil pan mating surface, reasoning that more sealant provides a better seal. Why can this cause engine damage?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "RTV sealant is chemically incompatible with engine oil",
+        "B": "Too much sealant prevents the bolts from reaching proper torque",
+        "C": "Excess sealant can squeeze into the engine and block oil passages, starving bearings of lubrication",
+        "D": "RTV sealant expands when heated and will crack the oil pan"
+      },
+      "correct_answer": "C",
+      "explanation": "Excess RTV sealant squeezes inward when the pan bolts are tightened. Loose pieces can break off, travel through the oil system, and block oil pickup screens or oil galleries, starving bearings and causing catastrophic engine failure. The correct application is a thin, continuous bead.",
+      "topic": "Sealant application",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D04-Q10",
+      "question": "A technician uses feeler gauges to check a valve clearance and finds that the 0.25 mm blade slides in with a slight drag, but the 0.30 mm blade will not enter the gap. According to the go/no-go method, what is the measured clearance?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Exactly 0.30 mm",
+        "B": "Exactly 0.275 mm",
+        "C": "The measurement is inconclusive and requires a different tool",
+        "D": "0.25 mm (the 'go' gauge that fits with snug drag)"
+      },
+      "correct_answer": "D",
+      "explanation": "In the go/no-go method, the clearance is recorded as the largest blade that fits with a slight snug drag (the 'go' gauge). The next size up that does not fit confirms the measurement (the 'no-go' gauge). The clearance is therefore 0.25 mm. Averaging the two blades is not standard feeler gauge technique.",
+      "topic": "Feeler gauge technique",
+      "bloom_level": "Apply"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 35,
+  "week": 7,
+  "session_title": "EV, HVAC & Safety Diagnostics Consolidation",
+  "questions": [
+    {
+      "id": "D35-Q01",
+      "question": "In the structured diagnostic process taught in this course, what is the correct sequence of steps?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Read DTCs, replace component, clear codes, return vehicle",
+        "B": "Customer complaint, verify symptom, read DTCs, analyse data, form hypothesis, test hypothesis, confirm fix, clear codes, verify repair",
+        "C": "Connect scan tool, read all DTCs, replace all flagged components, road test",
+        "D": "Visual inspection, replace most likely component, road test, read DTCs if symptom persists"
+      },
+      "correct_answer": "B",
+      "explanation": "The complete structured diagnostic process follows nine steps in sequence: (1) customer complaint, (2) verify symptom, (3) read DTCs, (4) analyse data including freeze frame and live data, (5) form hypothesis, (6) test hypothesis through measurement and inspection, (7) confirm the fix resolves the fault, (8) clear codes, and (9) verify repair under the same conditions that caused the original complaint. Skipping any step leads to guesswork, which results in incorrect repairs, wasted parts, lost time, and unhappy customers.",
+      "topic": "Structured diagnostic process",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D35-Q02",
+      "question": "The Insulation Monitoring Device (IMD) in a BEV continuously measures the resistance between the HV bus and what reference point?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The 12-volt battery negative terminal",
+        "B": "The vehicle chassis (body ground)",
+        "C": "The electric motor stator winding",
+        "D": "The charge port connector shell"
+      },
+      "correct_answer": "B",
+      "explanation": "The Insulation Monitoring Device measures the electrical resistance between the HV bus (both positive and negative conductors) and the vehicle chassis (body ground). In a healthy HV system, the HV conductors are completely isolated from the vehicle body with very high resistance, typically above 500 ohms per volt of system voltage. If insulation degrades due to moisture, damage, or contamination, the resistance drops, and the IMD triggers a warning fault. For a 400V system, the minimum acceptable insulation resistance is 200 kilohms (400V multiplied by 500 ohms per volt).",
+      "topic": "Insulation Monitoring Device",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D35-Q03",
+      "question": "Which Week 7 session covered the four stages of the refrigeration cycle: evaporation, compression, condensation, and expansion?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Day 31 — Hybrid Architectures & EV Components",
+        "B": "Day 32 — High-Voltage Safety Protocols",
+        "C": "Day 33 — HVAC System",
+        "D": "Day 34 — Vehicle Safety Systems & ADAS"
+      },
+      "correct_answer": "C",
+      "explanation": "Day 33 covered the HVAC system in detail, including the complete refrigeration cycle with its four stages: (1) evaporation at the evaporator where low-pressure refrigerant absorbs cabin heat, (2) compression at the compressor which raises pressure and temperature, (3) condensation at the condenser where high-pressure gas releases heat to outside air and becomes liquid, and (4) expansion at the TXV or orifice tube where pressure drops creating cold low-pressure refrigerant. This session also covered heating, ventilation, refrigerant handling, and environmental regulations.",
+      "topic": "Week 7 content recall — HVAC",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D35-Q04",
+      "question": "A BEV scan tool shows the BMS reporting an HV battery State of Charge of 45%, but the vehicle will not enter ready mode and displays a 'high-voltage system fault' warning. The IMD reports insulation resistance of 80 kilohms on a 400V system. What does this indicate?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The battery is too depleted to start the vehicle and needs charging",
+        "B": "The IMD has detected dangerously low insulation resistance, well below the 200 kilohm minimum for a 400V system, indicating an insulation breach that could create a shock hazard",
+        "C": "The 12-volt battery is too weak to close the main contactors",
+        "D": "The motor has an internal short circuit preventing ready mode"
+      },
+      "correct_answer": "B",
+      "explanation": "For a 400V system with a 500 ohms per volt standard, the minimum acceptable insulation resistance is 200 kilohms (400 multiplied by 500). The measured 80 kilohms is well below this threshold, indicating a significant insulation breach between the HV bus and vehicle chassis. The BMS correctly prevents the vehicle from entering ready mode because energising the HV system with compromised insulation could create a shock hazard to occupants or service personnel. The battery SOC of 45% is adequate for driving, confirming that the issue is insulation, not charge level. The technician must locate the insulation fault, which commonly results from moisture ingress at connectors, damaged cable insulation, or contamination inside HV component housings.",
+      "topic": "IMD fault diagnosis",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D35-Q05",
+      "question": "A customer reports that their hybrid vehicle's engine starts immediately upon pressing the start button, even when the HV battery SOC shows 80% and conditions would normally allow EV-only departure. Which system should the technician investigate first?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The fuel injection system, which may be stuck in a continuous-run mode",
+        "B": "The HV system contactors and inverter status, as a failure in the contactor sequence or inverter fault prevents the electric motor from driving the wheels, forcing the vehicle to default to engine-only operation",
+        "C": "The climate control system, which may be demanding engine heat",
+        "D": "The transmission control module, which may not be selecting the EV gear ratio"
+      },
+      "correct_answer": "B",
+      "explanation": "In a hybrid vehicle, EV-only mode requires the HV system to be fully operational: the main contactors must close successfully (including the pre-charge sequence), the inverter must be fault-free and ready to convert DC to AC, and the electric motor must be responsive. If any component in this chain has a fault, the hybrid control module defaults to engine-only operation as a fallback mode, even when the battery SOC would normally permit EV driving. The technician should check for DTCs in the HV system, verify contactor operation (listen for the closing sequence), check inverter status via scan tool live data, and confirm the motor is receiving drive commands. Climate demand for engine heat is possible but would not override EV mode at 80% SOC in most calibrations.",
+      "topic": "Hybrid mode engagement failure",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D35-Q06",
+      "question": "A hybrid vehicle shows an insulation monitoring device fault code and the HV warning light is illuminated. The customer mentions they drove through a flooded road section three days ago. The technician measures insulation resistance and finds 35 kilohms between HV positive and chassis on a 400V system. Following the structured diagnostic process, what is the most logical next step after confirming the low insulation reading?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the entire HV battery pack, as water damage is not repairable",
+        "B": "Systematically inspect the most common water ingress points — charge port connector seals, HV cable pass-through grommets, and battery pack enclosure seals — looking for moisture, corrosion, or seal degradation to locate the specific insulation breach",
+        "C": "Clear the fault code and road test to see if the insulation resistance recovers as residual moisture evaporates",
+        "D": "Disconnect the HV battery and charge it externally to dry out any moisture"
+      },
+      "correct_answer": "B",
+      "explanation": "With the symptom verified and the DTC confirmed (low insulation resistance after water exposure), the next diagnostic step is to form and test a hypothesis. Water ingress is the prime suspect given the history. The technician should systematically inspect the known water entry points in the HV system: the charge port connector housing and its seals, HV wiring harness pass-through grommets at the firewall and underbody, and the battery pack enclosure seals. Visual inspection for moisture, water staining, corrosion, or degraded seals narrows the location. The specific failed seal or damaged point must be identified, repaired, and the affected connector dried before insulation resistance will recover. Simply clearing codes without addressing the root cause risks the fault recurring and leaves a potential shock hazard unresolved. Replacing the entire battery pack is premature without localising the fault.",
+      "topic": "HV insulation fault diagnosis after water exposure",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D35-Q07",
+      "question": "After a windscreen replacement, the lane keep assist system is completely inoperative and the forward collision warning does not function. The scan tool shows a forward camera calibration fault. The windscreen fitter states the camera was carefully transferred to the new windscreen. What must the workshop do to resolve the issue?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Update the camera software to recognise the new windscreen glass properties",
+        "B": "Replace the forward camera module, as removal and refitting damages the unit",
+        "C": "Perform a static calibration using the manufacturer's specified target board positioned at the exact distance and height from the vehicle, or a dynamic calibration by driving at the specified speed, to re-establish the camera's correct alignment to the vehicle centreline",
+        "D": "Reset the ADAS module by disconnecting the 12-volt battery for 30 minutes"
+      },
+      "correct_answer": "C",
+      "explanation": "Windscreen replacement mandates ADAS camera recalibration without exception. Even if the camera is carefully transferred, the new windscreen's glass curvature, thickness, and mounting position will differ minutely from the original, changing the camera's optical alignment relative to the vehicle's centreline. A fraction of a degree of misalignment translates to over a metre of positional error at 150 metres. The workshop must perform either static calibration (precise target board at manufacturer-specified distance and height on a level floor) or dynamic calibration (driving at specified speed on roads with clear lane markings), depending on the manufacturer's procedure. The camera hardware is typically undamaged and does not need replacement. Simply disconnecting the battery will not recalibrate the sensor. This is an increasingly common and commercially important workshop procedure.",
+      "topic": "ADAS recalibration after windscreen replacement",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D35-Q08",
+      "question": "A customer reports that their vehicle's ACC system works normally on clear days but frequently disengages with a 'sensor blocked' warning during winter months. There is no physical damage to the bumper. Considering the ADAS sensor knowledge from Day 34, what is the most likely cause and correct remedial action?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The radar module is failing due to cold temperatures and needs replacement",
+        "B": "Road salt spray, slush, or ice is accumulating on the bumper fascia directly in front of the radar sensor, attenuating the signal below the operational threshold; the remedial action is to clean the bumper area in front of the radar and advise the customer to keep this area clear in winter conditions",
+        "C": "The ACC system is programmed to automatically disable below a certain ambient temperature for safety",
+        "D": "The forward camera's heater element has failed, preventing the windscreen from staying clear in front of the camera lens"
+      },
+      "correct_answer": "B",
+      "explanation": "The forward-facing radar sensor is typically mounted behind the bumper fascia. During winter, road salt spray, slush, mud, and ice accumulate on the bumper surface directly in front of the radar. This contamination layer attenuates the radar signal enough to reduce detection range below the system's minimum operational threshold, triggering a 'sensor blocked' warning and disabling ACC and potentially AEB for safety. The immediate fix is cleaning the bumper area. The customer should be advised that this area needs regular cleaning in winter. If the problem persists after cleaning, the technician should verify the radar alignment and check that the bumper fascia in the radar window area is original specification material with no aftermarket coatings or paint that could worsen signal attenuation.",
+      "topic": "ACC radar obstruction in winter conditions",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D35-Q09",
+      "question": "A technician is diagnosing a no-cooling HVAC complaint on a BEV. The electric compressor does not engage. Scan tool data shows the compressor is commanded ON by the climate control module but the HV interlock circuit for the compressor shows 'open.' What does this indicate, and what is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The refrigerant is fully depleted, and the low-pressure switch has opened the interlock to protect the compressor from running dry, which would cause seizure due to lack of oil circulation",
+        "B": "The 12-volt fuse for the compressor relay has blown",
+        "C": "The condenser fan is inoperative, causing high-side pressure to trip the high-pressure safety switch",
+        "D": "The cabin temperature sensor is reading too cold, so the climate module is incorrectly not requesting cooling"
+      },
+      "correct_answer": "A",
+      "explanation": "The HV interlock circuit for an electric AC compressor includes safety switches that prevent compressor operation under unsafe conditions. When the scan tool shows the compressor is commanded ON but the interlock is open, a safety switch has intervened. The most common cause is the low-pressure switch opening due to insufficient refrigerant. When refrigerant is lost through a leak, system pressure drops below the low-pressure switch threshold (typically around 2 bar). The switch opens the interlock to prevent the compressor from running without adequate refrigerant and lubricating oil, as the oil circulates with the refrigerant. Running a compressor dry causes rapid seizure and destruction. The technician should check system pressures with a manifold gauge set, and if both sides read near zero or atmospheric, a significant refrigerant leak is confirmed. Leak detection, repair, evacuation, and recharge are required before the compressor will operate.",
+      "topic": "HV compressor interlock diagnosis",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D35-Q10",
+      "question": "A vehicle arrives with three simultaneous warning lights: the airbag warning, the horn is inoperative, and the steering wheel audio controls are dead. The vehicle had front suspension work completed two weeks ago at another workshop. Based on Week 7 knowledge, what single component failure explains all three symptoms, and what likely caused it?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The airbag control module has failed, causing all SRS-related circuits to shut down including the horn and steering controls",
+        "B": "The clock spring has failed because it was not re-centred when the steering wheel was refitted after the suspension work; subsequent full-lock steering tore the ribbon cable, severing the circuits for the driver airbag, horn, and steering wheel controls simultaneously",
+        "C": "The CAN bus gateway module has lost communication with the steering wheel module",
+        "D": "A fuse supplying the steering column electronics has blown due to a short circuit from the suspension work"
+      },
+      "correct_answer": "B",
+      "explanation": "The clock spring carries all electrical circuits between the rotating steering wheel and the fixed steering column, including the driver airbag squib circuit, the horn circuit, and all steering wheel-mounted control switches. When all three fail simultaneously, the clock spring is the single point of failure. The timing, two weeks after suspension work that likely required steering wheel removal, strongly suggests the clock spring was not re-centred during reinstallation. The correct procedure requires counting the total turns lock-to-lock and positioning the clock spring at the exact midpoint. If installed off-centre, the ribbon cable reaches its physical end-stop before the steering reaches full lock, and the cable tears on the first full-lock turn. The repair requires a new clock spring, correct centring procedure, and clearing the airbag DTC after verifying the new circuit integrity.",
+      "topic": "Clock spring failure — multi-symptom diagnosis",
+      "bloom_level": "Evaluate"
+    }
+  ]
+}

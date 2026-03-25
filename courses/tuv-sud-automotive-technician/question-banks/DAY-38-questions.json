@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 38,
+  "week": 8,
+  "session_title": "CAN Bus & Network Diagnostics Deep Dive",
+  "questions": [
+    {
+      "id": "D38-Q01",
+      "question": "In CAN bus differential signaling, what are the voltage levels of CAN-H and CAN-L during the dominant state (transmitting a binary '0')?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "CAN-H = 5.0V, CAN-L = 0V",
+        "B": "CAN-H = 3.5V, CAN-L = 1.5V",
+        "C": "CAN-H = 2.5V, CAN-L = 2.5V",
+        "D": "CAN-H = 12V, CAN-L = 0V"
+      },
+      "correct_answer": "B",
+      "explanation": "During the dominant state (binary '0'), CAN-H rises to approximately 3.5V and CAN-L drops to approximately 1.5V, creating a differential voltage of 2.0V. During the recessive state (binary '1'), both lines rest at 2.5V with a differential of 0V. The receiver measures the difference between the two lines — this differential signaling provides excellent noise immunity because electromagnetic interference affects both wires equally and cancels out when the difference is measured.",
+      "topic": "CAN bus voltage levels",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D38-Q02",
+      "question": "What is the expected total resistance when measuring between CAN-H and CAN-L at the OBD-II diagnostic connector on a properly functioning high-speed CAN bus?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "120 ohms",
+        "B": "60 ohms",
+        "C": "240 ohms",
+        "D": "0 ohms"
+      },
+      "correct_answer": "B",
+      "explanation": "A high-speed CAN bus has two 120-ohm termination resistors, one at each physical end of the bus. When measured from the OBD-II port (which connects to the bus between the two ends), these resistors appear in parallel. Two 120-ohm resistors in parallel give 60 ohms (1/R_total = 1/120 + 1/120 = 2/120, so R_total = 60 ohms). This 60-ohm reading is a critical first-check measurement when diagnosing CAN bus faults.",
+      "topic": "CAN bus termination resistance",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D38-Q03",
+      "question": "On a CAN bus, how is message priority determined when two ECUs attempt to transmit simultaneously?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The ECU that started transmitting first wins and the other must wait",
+        "B": "The message with the lower arbitration ID wins because dominant bits (0) overwrite recessive bits (1) on the bus",
+        "C": "A central gateway module assigns time slots to each ECU to prevent conflicts",
+        "D": "Both messages are destroyed and both ECUs retry after a random delay"
+      },
+      "correct_answer": "B",
+      "explanation": "CAN uses non-destructive bitwise arbitration. When multiple nodes start transmitting simultaneously, each sends its message ID bit by bit while monitoring the bus. A dominant bit (logic 0) always overwrites a recessive bit (logic 1) on the shared bus. If a node sends a recessive bit but reads a dominant bit on the bus, it knows another node with higher priority is transmitting — it immediately stops and waits. The message with the lowest numerical ID has the most dominant bits earliest in the arbitration field, giving it the highest priority. No data is lost and no collision occurs — this is one of the key design advantages of the CAN protocol.",
+      "topic": "CAN bus arbitration and priority",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D38-Q04",
+      "question": "What does the DTC prefix 'U' indicate when reading fault codes with a scan tool?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Universal fault — applies to all vehicle makes and models",
+        "B": "Network communication fault — a module has lost communication with another module or the bus itself",
+        "C": "Underbody fault — relates to chassis and suspension systems",
+        "D": "Unverified fault — the code has been set but not confirmed by the ECU"
+      },
+      "correct_answer": "B",
+      "explanation": "DTC prefixes follow the SAE J2012 standard: P = Powertrain, B = Body, C = Chassis, and U = Network Communication. U-codes indicate that an ECU has lost communication with another ECU or has detected a problem with the communication network itself. For example, U0100 means 'Lost Communication with ECM,' and U0073 means 'Control Module Communication Bus Off.' U-codes are critical diagnostic indicators because a single network fault can trigger U-codes in multiple modules simultaneously, creating cascading symptoms across many vehicle systems.",
+      "topic": "U-code DTC classification",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D38-Q05",
+      "question": "What is the typical bus speed of a high-speed CAN network used for powertrain communication, compared to a low-speed CAN network used for body electronics?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "High-speed: 500 kbps; Low-speed: 125 kbps",
+        "B": "High-speed: 1 Mbps; Low-speed: 500 kbps",
+        "C": "High-speed: 100 kbps; Low-speed: 10 kbps",
+        "D": "High-speed: 250 kbps; Low-speed: 50 kbps"
+      },
+      "correct_answer": "A",
+      "explanation": "High-speed CAN (ISO 11898-2) operates at up to 500 kbps (some newer implementations at 1 Mbps) and is used for time-critical powertrain and chassis communication — engine management, transmission, ABS, ESC, and airbag systems. Low-speed CAN (ISO 11898-3) operates at 125 kbps and is used for body electronics where data rates are less critical — lighting, windows, mirrors, HVAC, and instrument cluster. A gateway module typically bridges these networks, translating and routing messages between the high-speed and low-speed domains.",
+      "topic": "CAN bus speed classifications",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D38-Q06",
+      "question": "A technician measures 120 ohms between CAN-H and CAN-L at the OBD-II connector instead of the expected 60 ohms. What does this indicate, and what is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Both termination resistors are present but the bus wiring has a short circuit between CAN-H and CAN-L",
+        "B": "One of the two 120-ohm termination resistors is missing or its associated ECU is disconnected — only one resistor remains on the bus",
+        "C": "The bus is functioning normally — 120 ohms is the correct measurement when the ignition is off",
+        "D": "The multimeter is measuring incorrectly because CAN bus resistance can only be measured with the ignition on"
+      },
+      "correct_answer": "B",
+      "explanation": "The expected measurement is 60 ohms (two 120-ohm resistors in parallel). A reading of exactly 120 ohms means only one termination resistor is present on the bus. The termination resistors are located at the two physical ends of the CAN bus and are typically built into specific ECUs (commonly the ECM at one end and the instrument cluster or gateway at the other). If one of these ECUs is disconnected, unplugged, or has an internal fault that opens its termination resistor, the measurement at the OBD-II port will show 120 ohms. This missing termination causes signal reflections that can corrupt data, especially at higher bus speeds, leading to intermittent communication errors and U-codes across multiple modules.",
+      "topic": "CAN bus termination fault diagnosis",
+      "bloom_level": "Analyse"
+    },
+    {
+      "id": "D38-Q07",
+      "question": "A vehicle arrives with the engine warning light, ABS warning light, ESC warning light, airbag warning light, and power steering warning light all illuminated simultaneously. The engine runs normally and all systems appear to function correctly during a test drive. A scan tool reveals U-codes in multiple modules but no P, B, or C codes. What is the most likely root cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Five separate system failures occurred simultaneously due to a voltage spike from the alternator",
+        "B": "A CAN bus fault — such as a damaged wire, corroded connector, or faulty termination — is preventing ECUs from communicating, causing each module to report lost communication with others",
+        "C": "The instrument cluster has a software glitch and is displaying false warning lights",
+        "D": "The OBD-II port has a loose connection, which is generating phantom fault codes in all modules"
+      },
+      "correct_answer": "B",
+      "explanation": "Multiple warning lights illuminating simultaneously with U-codes across many modules is the classic signature of a CAN bus fault. When the communication network fails or degrades, each ECU loses the ability to exchange data with other modules. Each module independently detects the communication loss and sets its own U-code(s). The instrument cluster, which receives its warning light activation commands from other ECUs via CAN, lights up every warning because it cannot confirm that any system is functioning. The systems themselves may be mechanically and electrically fine — they simply cannot report their status. The root cause is typically a single physical fault on the bus: a damaged wire, water-corroded connector, chafed harness, or a faulty ECU dragging the bus down.",
+      "topic": "CAN bus fault cascading symptoms",
+      "bloom_level": "Analyse"
+    },
+    {
+      "id": "D38-Q08",
+      "question": "When viewing a CAN bus waveform on an oscilloscope, a technician observes that the CAN-H signal stays fixed at 2.5V and never rises to 3.5V, while CAN-L appears to function normally (toggling between 2.5V and 1.5V). What does this indicate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The CAN bus is operating in single-wire fault-tolerant mode on CAN-L only, indicating that the CAN-H line has an open circuit or is shorted to ground",
+        "B": "The oscilloscope probe is not properly connected to the CAN-H pin",
+        "C": "The bus is functioning normally — CAN-H only activates when the engine is running",
+        "D": "The termination resistors have been removed, causing CAN-H to remain at the bias voltage"
+      },
+      "correct_answer": "A",
+      "explanation": "On a healthy CAN bus, CAN-H should toggle between 2.5V (recessive) and 3.5V (dominant), while CAN-L toggles between 2.5V (recessive) and 1.5V (dominant). If CAN-H remains flat at 2.5V while CAN-L continues to toggle, the CAN-H line has a fault — either an open circuit (broken wire) or a short to a voltage that holds it at the bias level. Some CAN controllers have a fault-tolerant mode that can continue communicating on a single wire with degraded performance, which explains why CAN-L continues to show activity. However, communication reliability is severely compromised, and intermittent errors and U-codes will occur. The repair requires tracing the CAN-H wire to find the open circuit or short.",
+      "topic": "CAN bus oscilloscope waveform interpretation",
+      "bloom_level": "Analyse"
+    },
+    {
+      "id": "D38-Q09",
+      "question": "A technician needs to perform a service interval reset on a vehicle after completing a scheduled service. What is the purpose of this procedure?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To clear all stored DTCs from every module so the vehicle appears fault-free",
+        "B": "To reset the distance or time counter in the instrument cluster that tracks when the next service is due, so the service reminder stops displaying",
+        "C": "To reprogram the engine ECU with updated fuel maps after an oil change",
+        "D": "To recalibrate the odometer reading to account for new tyre sizes"
+      },
+      "correct_answer": "B",
+      "explanation": "Modern vehicles have a service interval counter that tracks mileage and/or time since the last service. When the counter reaches the manufacturer's specified interval (for example, every 15,000 km or 12 months), it triggers a service reminder message or indicator on the instrument cluster. After completing the scheduled maintenance (oil change, filter replacement, inspection), the technician must reset this counter using either a scan tool, a specific button combination on the instrument cluster, or a manufacturer-specific procedure. This tells the vehicle's software that the service has been performed and starts a new countdown to the next service. This is NOT the same as clearing DTCs — it is a separate maintenance function.",
+      "topic": "Service interval reset procedure",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D38-Q10",
+      "question": "A technician measures 0 ohms between CAN-H and CAN-L at the OBD-II connector. The scan tool cannot communicate with any module. What fault does this measurement indicate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Both termination resistors have failed open and the bus has no impedance",
+        "B": "The CAN-H and CAN-L wires are shorted together, which collapses the differential signal and prevents all communication on the bus",
+        "C": "The OBD-II port has a faulty ground pin, causing the multimeter to read zero",
+        "D": "All ECUs on the network have entered sleep mode and are not providing bus resistance"
+      },
+      "correct_answer": "B",
+      "explanation": "A reading of 0 ohms (or very near 0 ohms) between CAN-H and CAN-L means the two lines are shorted together — they are electrically connected with no resistance between them. This is catastrophic for CAN communication because the entire protocol depends on maintaining a voltage difference between the two lines. With a short circuit, both lines are always at the same voltage, so no differential signal can exist — the dominant state cannot be created. Every ECU on the bus loses all communication, which is why the scan tool cannot connect to any module. Common causes include chafed wiring where the CAN harness passes through a bulkhead or sharp body edge, water ingress into a connector causing conductive bridging, or a pinched harness. Finding the short typically requires disconnecting ECUs one at a time or sectioning the bus to isolate the shorted segment.",
+      "topic": "CAN bus short circuit diagnosis",
+      "bloom_level": "Analyse"
+    }
+  ]
+}

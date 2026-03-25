@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 8,
+  "week": 2,
+  "session_title": "Components, Protection & Wiring Craft",
+  "questions": [
+    {
+      "id": "D08-Q01",
+      "question": "What is the primary purpose of an automotive relay?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To increase the voltage of a circuit",
+        "B": "To convert AC voltage to DC voltage",
+        "C": "To store electrical energy when the engine is off",
+        "D": "To allow a small control current to switch a high load current"
+      },
+      "correct_answer": "D",
+      "explanation": "A relay is an electrically operated switch that allows a small control current (0.1-0.5 A) through the coil to switch a high load current (10-80 A) through the contacts. This keeps high current away from dashboard switches and ECUs. Option A is incorrect because relays do not change voltage; transformers and regulators do that.",
+      "topic": "Relay construction and operation",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D08-Q02",
+      "question": "On a standard ISO automotive relay, which terminal numbers correspond to the coil?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "30 and 87",
+        "B": "85 and 86",
+        "C": "87 and 87a",
+        "D": "30 and 86"
+      },
+      "correct_answer": "B",
+      "explanation": "On an ISO standard automotive relay, terminals 85 and 86 are the coil connections. Terminals 30 (common/battery) and 87 (normally open) are the load contacts. Option A (30 and 87) describes the load contact side, not the coil.",
+      "topic": "Relay terminal identification",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D08-Q03",
+      "question": "What is the standard colour of a 15-amp automotive blade fuse?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Red",
+        "B": "Yellow",
+        "C": "Blue",
+        "D": "Green"
+      },
+      "correct_answer": "C",
+      "explanation": "Per the ISO 8820 colour code, a 15-amp blade fuse is blue. Red is 10A, yellow is 20A, and green is 30A. Knowing common fuse colours allows quick identification in a dark engine bay.",
+      "topic": "Fuse colour coding",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D08-Q04",
+      "question": "Why must you never replace a blown fuse with one of a higher amperage rating?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "A higher-rated fuse will not blow before the wiring overheats, creating a fire risk",
+        "B": "A higher-rated fuse will reduce the voltage available to the load",
+        "C": "A higher-rated fuse causes the relay coil to burn out",
+        "D": "A higher-rated fuse will damage the OBD-II diagnostic system"
+      },
+      "correct_answer": "A",
+      "explanation": "A fuse is sized to protect the wiring in that circuit. A higher-rated fuse allows more current than the wire can safely carry before it blows. The wire overheats, insulation melts, and a fire can start. Option B is incorrect because fuse rating does not affect voltage; it only determines the current at which the fuse element melts.",
+      "topic": "Fuse safety and ratings",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D08-Q05",
+      "question": "When testing a relay coil with a multimeter set to resistance, what reading indicates the coil winding is intact?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "0 ohms exactly",
+        "B": "OL (over limit / infinite)",
+        "C": "50 to 120 ohms",
+        "D": "Exactly 12 ohms"
+      },
+      "correct_answer": "C",
+      "explanation": "A healthy automotive relay coil typically reads between 50 and 120 ohms. An OL (option B) reading means the coil winding is broken (open circuit) and the relay must be replaced. A reading of 0 ohms (option A) would suggest a short circuit within the coil, which is also a failure.",
+      "topic": "Relay testing with a multimeter",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D08-Q06",
+      "question": "A vehicle's headlights will not turn on. The technician removes the headlight relay and measures the coil resistance across pins 85 and 86: the meter reads OL. The contacts across pins 30 and 87 also read OL. What is the diagnosis and correct action?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The relay is functioning normally; the fault is elsewhere in the circuit",
+        "B": "The relay coil is burned out (open circuit); the contacts reading OL is expected since the coil is not energised. Replace the relay.",
+        "C": "The relay contacts are welded shut; replace the relay and check for overcurrent cause",
+        "D": "The multimeter is set incorrectly; switch to voltage mode and retest"
+      },
+      "correct_answer": "B",
+      "explanation": "An OL reading across the coil (pins 85/86) indicates the coil winding is broken and cannot generate a magnetic field. The contacts reading OL across 30/87 is the expected state for a normally-open relay when the coil is not energised. The coil failure is the root cause. Option A is incorrect because a healthy coil should read 50-120 ohms, not OL.",
+      "topic": "Relay fault diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D08-Q07",
+      "question": "A technician discovers that the fuel pump relay contacts read near 0 ohms across pins 30 and 87 even when the coil is NOT energised. The fuel pump runs continuously as soon as the battery is connected. What relay failure mode is this?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Coil burnout",
+        "B": "Terminal corrosion",
+        "C": "Internal short to ground",
+        "D": "Contact welding"
+      },
+      "correct_answer": "D",
+      "explanation": "When contacts read near 0 ohms without the coil being energised, the contacts have fused (welded) together. This commonly occurs in high-current relay circuits due to inrush current arcing. This is dangerous because the fuel pump runs uncontrolled. Option A (coil burnout) would prevent the relay from clicking, not cause permanent contact closure.",
+      "topic": "Relay failure modes",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D08-Q08",
+      "question": "A trainee produces a soldered wire joint that has a dull, grainy surface instead of a smooth, shiny appearance. What is this defect called and what is the risk?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "A cold solder joint; it has high resistance and may cause intermittent faults or overheat under load",
+        "B": "A rosin joint; it provides extra waterproofing and is acceptable",
+        "C": "A flux-core joint; it needs heat shrink but is otherwise acceptable",
+        "D": "An overheated joint; the wire insulation needs trimming but the joint is mechanically sound"
+      },
+      "correct_answer": "A",
+      "explanation": "A dull, grainy surface indicates a cold solder joint, where the solder did not flow properly due to insufficient heat or movement during cooling. Cold joints have high internal resistance, leading to voltage drops, intermittent contact, and heat buildup. Option B is incorrect because a dull, grainy surface is a defect, not a desirable characteristic.",
+      "topic": "Soldering quality and defects",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D08-Q09",
+      "question": "A vehicle's cooling fan circuit uses a 30A green fuse. The fuse keeps blowing. The technician inspects the wiring harness and finds a section where the insulation has worn through against a metal bracket. Applying Ohm's Law, if the bare wire contacts the grounded bracket with near-zero resistance on a 12V system, what approximate current would flow before the fuse blows?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "30 A, exactly at the fuse rating",
+        "B": "Hundreds of amps, limited only by the wire and battery internal resistance",
+        "C": "Zero amps, because the circuit is open",
+        "D": "12 A, limited by the wire gauge"
+      },
+      "correct_answer": "B",
+      "explanation": "With near-zero resistance in the short circuit path, Ohm's Law predicts extremely high current: I = V/R = 12/0.01 = 1,200A. In practice, the battery internal resistance and wire resistance limit this to hundreds of amps. The fuse blows rapidly to protect the wiring. Option A is incorrect because the fuse rating is the trip point, not the actual current flowing in a short circuit.",
+      "topic": "Short circuit analysis and fuse protection",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D08-Q10",
+      "question": "A technician needs to repair a wire in the engine bay that is subject to constant vibration and heat cycling. Which joining method is most appropriate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Twisting the wires together and wrapping with electrical tape",
+        "B": "A solder-only joint without any additional insulation",
+        "C": "A properly crimped terminal with adhesive-lined heat shrink tubing",
+        "D": "A wire nut connector as used in household wiring"
+      },
+      "correct_answer": "C",
+      "explanation": "In a vibrating, heat-cycling engine bay environment, a properly crimped terminal with adhesive-lined heat shrink provides both a gas-tight mechanical connection resistant to vibration and sealed insulation against moisture. Option A (twist and tape) will loosen from vibration and allow moisture ingress. Option B (solder only) creates a rigid joint that can fracture under vibration and lacks insulation.",
+      "topic": "Wiring repair methods and application context",
+      "bloom_level": "Apply"
+    }
+  ]
+}

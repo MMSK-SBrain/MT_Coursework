@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 29,
+  "week": 6,
+  "session_title": "Starting & Charging — The Deep Dive",
+  "questions": [
+    {
+      "id": "D29-Q01",
+      "question": "What is the function of the commutator in a starter motor?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To engage the pinion gear with the flywheel ring gear",
+        "B": "To reverse the current direction in the armature windings as it rotates, producing continuous rotation in one direction",
+        "C": "To regulate the voltage supplied to the starter motor",
+        "D": "To convert AC current into DC current for the motor"
+      },
+      "correct_answer": "B",
+      "explanation": "The commutator is a ring of copper segments separated by mica insulation at one end of the armature. As the armature rotates, each segment contacts the carbon brushes in sequence, reversing the current direction in the windings at precisely the right moment to maintain continuous rotation in one direction. Without the commutator, the armature would oscillate rather than rotate.",
+      "topic": "Starter motor commutator function",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D29-Q02",
+      "question": "What is the typical acceptable charging voltage range for a 12-volt vehicle alternator with the engine running?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "10.5 V to 12.0 V",
+        "B": "12.0 V to 12.6 V",
+        "C": "13.8 V to 14.8 V",
+        "D": "15.5 V to 16.5 V"
+      },
+      "correct_answer": "C",
+      "explanation": "A healthy alternator should maintain a charging voltage between 13.8 V and 14.8 V with the engine running. This range is sufficient to charge the battery and power all electrical loads. Below 13.8 V indicates undercharging (the battery will gradually discharge). Above 14.8 V indicates overcharging, which can boil the battery electrolyte, damage electronics, and shorten battery life.",
+      "topic": "Alternator output voltage",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D29-Q03",
+      "question": "Why does the starter solenoid have two separate windings (pull-in and hold-in)?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The pull-in winding provides initial strong magnetic force to move the plunger, then self-cancels once the contact disc closes, leaving only the lighter hold-in winding to maintain position and reduce current draw",
+        "B": "One winding is for forward rotation and the other for reverse rotation",
+        "C": "The two windings provide redundancy in case one fails",
+        "D": "One winding engages the Bendix gear and the other powers the motor"
+      },
+      "correct_answer": "A",
+      "explanation": "The pull-in winding is heavy and draws about 30-40 amps to generate enough force to pull the plunger against the return spring. Once the plunger closes the contact disc (bridging B to M terminals), the pull-in winding has battery voltage on both ends and self-cancels (zero current). The lighter hold-in winding (8-12 amps, wired to ground) then maintains the plunger in position. This two-winding design reduces continuous current draw through the ignition switch circuit.",
+      "topic": "Starter solenoid operation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D29-Q04",
+      "question": "In an alternator, how does the voltage regulator control the output voltage?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "By varying the speed of the alternator rotor",
+        "B": "By switching diodes on and off in the rectifier bridge",
+        "C": "By controlling the amount of current flowing through the rotor field winding, which changes the magnetic field strength",
+        "D": "By adjusting the tension of the serpentine belt"
+      },
+      "correct_answer": "C",
+      "explanation": "The voltage regulator controls the alternator output by varying the field current through the rotor winding. More field current creates a stronger electromagnetic field, inducing higher voltage in the stator windings. Less field current weakens the field and reduces output. The regulator rapidly switches the field current on and off (pulse-width modulation) to maintain the target voltage of 13.8-14.8 V regardless of engine speed or electrical load.",
+      "topic": "Alternator voltage regulation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D29-Q05",
+      "question": "What is the purpose of the overrunning clutch in a starter motor Bendix drive?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To allow the starter motor to spin faster than the engine during cranking",
+        "B": "To prevent the engine from spinning the starter motor at destructive speeds once the engine starts",
+        "C": "To engage reverse gear automatically",
+        "D": "To absorb torsional vibrations from the flywheel"
+      },
+      "correct_answer": "B",
+      "explanation": "The overrunning clutch locks in the drive direction (starter driving engine) but freewheels in the opposite direction (engine driving starter). Once the engine starts and accelerates, the ring gear would spin the starter pinion at 10-15 times engine speed without this clutch, destroying the armature. The overrunning clutch disengages the pinion from the ring gear as soon as the engine speed exceeds starter speed.",
+      "topic": "Bendix drive overrunning clutch",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D29-Q06",
+      "question": "A technician measures 14.8 V at the battery with the engine running at 2,000 RPM and all accessories off. When the headlights, blower motor, and heated rear screen are switched on, the voltage drops to 12.2 V. What is the most likely fault?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The battery has a dead cell and cannot accept charge",
+        "B": "The alternator is producing insufficient current under load, likely due to a failed diode in the rectifier bridge or a worn stator winding",
+        "C": "The voltage reading is normal because electrical loads always reduce system voltage",
+        "D": "The ignition switch has excessive resistance"
+      },
+      "correct_answer": "B",
+      "explanation": "A healthy alternator should maintain 13.8-14.8 V even under full electrical load. Dropping to 12.2 V (below battery resting voltage) means the alternator cannot supply enough current to meet demand. The no-load voltage of 14.8 V shows the regulator is working and the field circuit is functional. The failure under load points to reduced current capacity — most commonly a failed diode (losing one-third of output) or a damaged stator winding. An AC ripple test would confirm a diode failure (>0.5 V AC on the DC output).",
+      "topic": "Alternator load test diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D29-Q07",
+      "question": "A vehicle exhibits slow cranking. The battery tests good (SOH 95%, fully charged at 12.7 V). During cranking, the voltage at the battery drops to 10.2 V and the starter draws 310 amps on a 4-cylinder petrol engine (specification: 150-200 A). What should the technician check next?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the battery — it must have an internal fault despite the SOH reading",
+        "B": "Check for a mechanical cause of excessive cranking resistance such as engine timing issues or a seized component, as the excessive current draw suggests the starter is working against abnormal resistance",
+        "C": "Replace the alternator — it is not charging the battery properly",
+        "D": "Top up the engine coolant level"
+      },
+      "correct_answer": "B",
+      "explanation": "The battery is confirmed good (95% SOH, 12.7 V). The cranking current of 310 A is significantly above the 150-200 A specification for a 4-cylinder petrol engine, while the cranking voltage (10.2 V) is still above the 9.6 V minimum. Excessive current draw with a good battery means the starter motor is working harder than it should. This points to excessive mechanical resistance — possibilities include incorrect ignition timing, a hydrolocked cylinder, a partially seized bearing, or the starter motor itself binding internally. The technician should investigate the engine for mechanical resistance before condemning the starter.",
+      "topic": "Excessive cranking current diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D29-Q08",
+      "question": "A technician is performing a parasitic drain test with the engine off and all accessories turned off. The ammeter reads 350 mA after waiting 30 minutes for modules to enter sleep mode. The manufacturer's specification is a maximum of 50 mA. What is the correct next diagnostic step?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the battery because it has excessive internal leakage",
+        "B": "Replace the alternator diode bridge because a leaking diode causes reverse current flow",
+        "C": "Systematically remove fuses one at a time while monitoring the ammeter to identify which circuit is drawing the excessive current",
+        "D": "Disconnect the starter motor B terminal to stop the drain"
+      },
+      "correct_answer": "C",
+      "explanation": "A parasitic drain of 350 mA (vs. 50 mA specification) will flatten a typical 60 Ah battery in approximately 7 days. After confirming the drain is genuine (waiting for module sleep time), the next step is to identify the offending circuit by removing fuses one at a time while monitoring the ammeter. When the correct fuse is pulled and the reading drops to within specification, the technician has identified the circuit containing the fault. Common causes include stuck relays, faulty modules not entering sleep mode, or aftermarket accessories wired without proper switching.",
+      "topic": "Parasitic drain testing procedure",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D29-Q09",
+      "question": "When performing voltage drop testing on the starter circuit ground side, a technician measures 0.8 V between the starter motor housing and the battery negative terminal during cranking. What does this indicate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "This is normal — ground-side voltage drop is always higher than positive-side",
+        "B": "The battery is overcharged and producing excessive voltage",
+        "C": "There is excessive resistance in the ground path, likely from a corroded ground strap or poor connection at the engine block, which is stealing voltage from the starter motor",
+        "D": "The starter motor brushes are worn and need replacement"
+      },
+      "correct_answer": "C",
+      "explanation": "The total circuit voltage drop for the entire starter circuit should be less than 0.5 V. A ground-side drop of 0.8 V alone exceeds this limit, indicating excessive resistance in the ground path. This resistance reduces the voltage available to the starter motor and converts electrical energy to heat at the poor connection. Common causes include a corroded or loose ground strap between the engine block and the chassis/battery, or corrosion at the engine block ground point. This would cause slow cranking even with a good battery and a good starter motor.",
+      "topic": "Starter circuit voltage drop testing",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D29-Q10",
+      "question": "A customer's vehicle makes a rapid clicking sound when the key is turned to START, but the engine does not crank. The headlights dim significantly during each click. What is the most likely root cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The neutral safety switch is intermittently failing",
+        "B": "The starter motor armature windings are open-circuited",
+        "C": "The battery is too weak to sustain the voltage needed to hold the solenoid engaged and power the starter motor simultaneously",
+        "D": "The ignition switch START contact is corroded"
+      },
+      "correct_answer": "C",
+      "explanation": "Rapid clicking (solenoid chatter) with dimming headlights is the classic symptom of a weak battery or severely degraded connections. The solenoid pull-in winding energises and closes the contact disc, sending heavy current to the motor. This large current draw causes battery voltage to collapse below the hold-in winding's minimum operating voltage. The solenoid releases, load drops, voltage recovers, and the cycle repeats rapidly — creating the clicking sound. Each engagement attempt dims the headlights as voltage sags. A battery load test or state-of-health test would confirm the diagnosis.",
+      "topic": "Solenoid chatter — weak battery diagnosis",
+      "bloom_level": "Apply"
+    }
+  ]
+}

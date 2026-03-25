@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 36,
+  "week": 8,
+  "session_title": "Lighting Systems — From Halogen to Matrix LED",
+  "questions": [
+    {
+      "id": "D36-Q01",
+      "question": "Which halogen bulb type features a dual filament that provides both low beam and high beam from a single bulb?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "H1",
+        "B": "H4",
+        "C": "H7",
+        "D": "H11"
+      },
+      "correct_answer": "B",
+      "explanation": "The H4 bulb has two filaments — a 60W filament for high beam and a 55W filament for low beam — with a three-pin connector. The H1 and H7 are single-filament bulbs used for dedicated low beam, high beam, or fog light applications. H11 is also a single-filament bulb commonly used in fog lights.",
+      "topic": "Halogen headlight bulb types",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D36-Q02",
+      "question": "Why must a technician never touch the quartz glass envelope of a halogen bulb with bare fingers?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Static electricity from skin can damage the filament",
+        "B": "Skin oils create hot spots on the glass that cause premature bulb failure",
+        "C": "Body moisture can short-circuit the bulb when it is energised",
+        "D": "Fingerprints block the UV light output required for headlight operation"
+      },
+      "correct_answer": "B",
+      "explanation": "Natural oils from skin contaminate the quartz glass surface. When the bulb heats up during operation (the envelope reaches extremely high temperatures), the oil residue creates localised hot spots. These hot spots cause uneven thermal expansion of the quartz, leading to blistering, weakening, and premature failure of the envelope. If the glass is accidentally touched, it should be cleaned with isopropyl alcohol before installation.",
+      "topic": "Halogen bulb handling",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D36-Q03",
+      "question": "What additional component is legally required on vehicles equipped with HID/Xenon or LED headlights in the European Union?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "A manual beam height adjustment knob on the dashboard",
+        "B": "An automatic headlight levelling system",
+        "C": "A secondary halogen backup headlight",
+        "D": "An ultraviolet light filter on the headlight lens"
+      },
+      "correct_answer": "B",
+      "explanation": "EU regulations require automatic headlight levelling on all vehicles fitted with HID/Xenon or LED headlights. Because these light sources produce significantly higher intensity than halogen, even a small upward aim deviation caused by vehicle load changes (passengers, luggage) would severely dazzle oncoming drivers. The auto-levelling system uses ride height sensors on the suspension to continuously adjust the headlight beam angle and maintain correct aim regardless of vehicle loading.",
+      "topic": "Headlight regulations and auto-levelling",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D36-Q04",
+      "question": "An HID/Xenon headlight requires a ballast unit. What is the primary function of this ballast?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To reduce the 12V battery voltage down to 5V for the LED driver circuit",
+        "B": "To generate a high-voltage pulse (up to 25,000V) to strike the arc and then regulate the operating voltage at approximately 85V",
+        "C": "To convert AC power from the alternator into DC power for the headlight",
+        "D": "To monitor bulb temperature and reduce brightness if overheating occurs"
+      },
+      "correct_answer": "B",
+      "explanation": "An HID/Xenon bulb works by creating an electrical arc between two electrodes inside a gas-filled capsule. To initiate this arc, the ballast generates an ignition pulse of up to 25,000V. Once the arc is established, the ballast regulates the operating voltage to approximately 85V AC and controls current to maintain stable light output. This high-voltage requirement is also why HID headlights carry a safety warning — the ballast must be disconnected before servicing.",
+      "topic": "HID/Xenon headlight operation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D36-Q05",
+      "question": "What is the primary advantage of LED headlights over both halogen and HID/Xenon headlights?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "LED headlights produce a warmer colour temperature that is easier on the eyes",
+        "B": "LED headlights require no electrical connection and run on ambient light energy",
+        "C": "LED headlights offer significantly longer service life, lower power consumption, and instant full brightness with no warm-up time",
+        "D": "LED headlights are cheaper to manufacture and replace than halogen bulbs"
+      },
+      "correct_answer": "C",
+      "explanation": "LED headlights have a service life of 15,000-30,000 hours (compared to 500-1,000 for halogen and 2,000-3,000 for HID), consume 30-40W compared to 55W for halogen and 35W for HID, and reach full brightness instantly. HID bulbs require several seconds to reach full output. However, LED headlight assemblies are typically more expensive than halogen, and individual LED elements are often not user-replaceable — the entire module or assembly must be replaced.",
+      "topic": "LED headlight technology advantages",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D36-Q06",
+      "question": "A customer complains that their adaptive matrix LED headlights no longer create the shadow zone around oncoming vehicles — oncoming drivers are being dazzled. The headlights themselves illuminate the road normally. Which component failure is most likely responsible?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The headlight ballast has failed and is no longer regulating voltage to the LED array",
+        "B": "The windscreen-mounted camera that detects oncoming headlights has become obscured or has failed",
+        "C": "The CAN bus termination resistor on the lighting network has failed open",
+        "D": "The automatic headlight levelling motors have seized in the maximum-up position"
+      },
+      "correct_answer": "B",
+      "explanation": "Matrix LED headlights rely on a forward-facing camera (typically mounted behind the windscreen near the rear-view mirror) to detect oncoming vehicle headlights and preceding vehicle tail lights. The headlight control module uses this camera data to selectively deactivate individual LED segments, creating shadow zones that prevent dazzle while keeping the rest of the road fully illuminated. If the camera is obscured (dirty windscreen in camera zone, delamination, or aftermarket tint), damaged, or has failed, the system loses its ability to detect other vehicles and cannot create selective dimming patterns. The headlights default to a standard beam pattern without adaptive features.",
+      "topic": "Matrix LED adaptive headlight diagnosis",
+      "bloom_level": "Analyse"
+    },
+    {
+      "id": "D36-Q07",
+      "question": "A technician is aiming headlights using an alignment screen placed 10 metres from the vehicle. The low beam cut-off line on the left headlight is 15 cm higher than specification. What is the correct action?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the headlight assembly because the internal reflector has shifted",
+        "B": "Adjust the vertical aim adjuster screw on the headlight to lower the beam pattern until the cut-off line meets the specified height",
+        "C": "Recalibrate the automatic levelling sensor at the rear axle",
+        "D": "Reset the headlight ECU with a scan tool to restore factory aim settings"
+      },
+      "correct_answer": "B",
+      "explanation": "Headlight aim adjustment is performed using the vertical (and sometimes horizontal) adjuster screws or gears built into the headlight assembly. When the cut-off line is too high, the vertical adjuster is turned to tilt the beam downward. The specification typically calls for the cut-off line to be at or slightly below the headlight centre height at the specified distance (usually 1% drop at 10 metres, meaning approximately 10 cm below centre). A reading 15 cm too high means the beam is aimed upward and will dazzle oncoming traffic — this is a simple mechanical adjustment, not an electronic calibration or assembly replacement issue.",
+      "topic": "Headlight aiming procedure",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D36-Q08",
+      "question": "A vehicle has a 'bulb out' warning on the dashboard for the right rear tail light, but when the technician inspects the light, the bulb appears to be working. A multimeter confirms the bulb has correct resistance. What is the most likely explanation?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The bulb is the wrong wattage — the BCM detects the current draw does not match the expected value for that circuit",
+        "B": "The dashboard warning is a false alarm caused by a low battery voltage",
+        "C": "The tail light lens is cracked, allowing moisture in, which triggers the warning",
+        "D": "The fuse for the right rear tail light is partially blown, causing intermittent contact"
+      },
+      "correct_answer": "A",
+      "explanation": "Modern vehicles do not use traditional bulb-out relay detection. Instead, the BCM monitors the current draw of each lighting circuit. Each bulb type has an expected current value — for example, a 21W brake light bulb draws approximately 1.75A at 12V. If someone installs a 5W bulb in a 21W socket, or fits an LED replacement bulb in a halogen socket, the current draw is much lower than expected. The BCM interprets this reduced current as a failed bulb and triggers the warning. The bulb works visually, but the BCM sees wrong current. This is a very common complaint when customers fit aftermarket LED replacement bulbs without CAN bus compatible resistors.",
+      "topic": "BCM bulb monitoring and current detection",
+      "bloom_level": "Analyse"
+    },
+    {
+      "id": "D36-Q09",
+      "question": "A technician discovers that both daytime running lights (DRLs) on a vehicle have failed simultaneously. All other lighting functions operate correctly. Which diagnostic approach is most efficient?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace both DRL bulbs immediately since simultaneous failure indicates they have reached end of life together",
+        "B": "Check the DRL relay or BCM DRL output first, since a single shared control circuit is more likely to cause simultaneous failure than two independent bulbs failing at the same time",
+        "C": "Perform a full CAN bus network scan because DRL failure always indicates a communication fault",
+        "D": "Check the ambient light sensor because DRLs only activate when the sensor detects daylight"
+      },
+      "correct_answer": "B",
+      "explanation": "When two identical components fail simultaneously, the probability of both reaching end of life at the exact same moment is very low. The diagnostic principle of finding the common cause applies: both DRLs share a common power supply circuit, typically controlled by a DRL relay or a BCM output driver. A failed relay, blown fuse, broken ground wire, or faulty BCM driver would cause both DRLs to fail while leaving other circuits unaffected. Checking the shared control element first is faster and more logical than replacing two bulbs that are statistically unlikely to have failed together.",
+      "topic": "Lighting circuit diagnostic logic",
+      "bloom_level": "Analyse"
+    },
+    {
+      "id": "D36-Q10",
+      "question": "During a roadworthiness inspection, a technician notices that one HID/Xenon headlight has a noticeably pink/purple tint compared to the other side, which appears white. The light output also seems dimmer. What does this indicate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The ballast on the affected side is outputting incorrect voltage, and should be replaced",
+        "B": "The headlight lens has become UV-damaged and is filtering the light spectrum",
+        "C": "The HID bulb is nearing end of life — the gas mixture is depleted and the arc colour has shifted, requiring bulb replacement",
+        "D": "The headlight washer system has failed, and road grime on the lens is causing the colour shift"
+      },
+      "correct_answer": "C",
+      "explanation": "HID/Xenon bulbs produce light from an electrical arc through a xenon gas mixture with metal halide salts. As the bulb ages over thousands of hours, the metallic salts in the arc tube deplete and the electrode gap widens. This changes the arc characteristics, causing a visible colour shift — typically from white toward pink or purple — accompanied by reduced light output. The colour shift is a reliable indicator of a worn HID bulb approaching end of life. This is a bulb replacement, not a ballast or lens issue. HID bulbs should always be replaced as a pair to maintain even light output and colour matching.",
+      "topic": "HID/Xenon bulb degradation diagnosis",
+      "bloom_level": "Analyse"
+    }
+  ]
+}

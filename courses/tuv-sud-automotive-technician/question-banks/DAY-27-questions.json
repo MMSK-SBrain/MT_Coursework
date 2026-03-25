@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 27,
+  "week": 6,
+  "session_title": "Manual Transmission & Clutch",
+  "questions": [
+    {
+      "id": "D27-Q01",
+      "question": "In a constant-mesh manual gearbox, what is the function of the synchronizer assembly?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To pump transmission oil through the cooling circuit",
+        "B": "To match the speed of a free-spinning gear to the output shaft before locking them together",
+        "C": "To multiply engine torque at all gear ratios",
+        "D": "To reverse the direction of the output shaft for reverse gear"
+      },
+      "correct_answer": "B",
+      "explanation": "In a constant-mesh gearbox, all gears are always meshing but the output shaft gears spin freely. The synchronizer uses a brass cone to create friction that equalises the speed of the selected gear with the output shaft. Once speeds match, the hub sleeve slides over the dog teeth to lock the gear to the shaft, enabling smooth, silent gear changes.",
+      "topic": "Synchronizer function",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D27-Q02",
+      "question": "Which component in a clutch assembly provides the clamping force to press the clutch disc against the flywheel?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The release bearing",
+        "B": "The pilot bearing",
+        "C": "The diaphragm spring in the pressure plate",
+        "D": "The clutch fork"
+      },
+      "correct_answer": "C",
+      "explanation": "The diaphragm spring is an integral part of the pressure plate assembly. It exerts a clamping force of 300-500 kg that presses the clutch disc against the flywheel, creating a friction lock between the engine and gearbox. When the clutch pedal is pressed, the release bearing pushes the centre of the diaphragm spring, releasing this clamping force.",
+      "topic": "Clutch components",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D27-Q03",
+      "question": "Why are synchronizer rings typically made from brass?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Brass is harder than steel, so it lasts longer than the gear cone",
+        "B": "Brass is lighter than aluminium, reducing gearbox weight",
+        "C": "Brass has a high friction coefficient against steel, is softer so it wears instead of the gear, and its grooves channel oil away from the cone surface",
+        "D": "Brass is non-magnetic, which prevents electrical interference with the ECU"
+      },
+      "correct_answer": "C",
+      "explanation": "Brass is chosen for three reasons: it provides excellent friction against the hardened steel gear cone for effective speed matching, it is softer than steel so the synchro ring wears as a consumable part rather than damaging the expensive gear, and the machined grooves on the brass surface channel transmission oil away from the contact area to allow metal-to-metal friction to develop quickly.",
+      "topic": "Synchronizer ring material",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D27-Q04",
+      "question": "What are the three main shafts inside a typical manual gearbox?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Drive shaft, axle shaft, and steering shaft",
+        "B": "Input shaft, layshaft (countershaft), and output shaft",
+        "C": "Primary shaft, secondary shaft, and tertiary shaft",
+        "D": "Crankshaft, camshaft, and output shaft"
+      },
+      "correct_answer": "B",
+      "explanation": "A manual gearbox contains three main shafts: the input shaft (from the clutch, spinning at engine speed), the layshaft or countershaft (carrying fixed gears that are always meshing), and the output shaft (carrying free-spinning gears that are selectively locked by synchronizers). Power flows from input shaft to layshaft and then across to the selected gear on the output shaft.",
+      "topic": "Gearbox internal layout",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D27-Q05",
+      "question": "In the clutch hydraulic actuation system, what is the correct sequence of components from the clutch pedal to the release bearing?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Pedal, slave cylinder, hydraulic line, master cylinder, release bearing",
+        "B": "Pedal, master cylinder, hydraulic line, slave cylinder, release bearing",
+        "C": "Pedal, release bearing, master cylinder, slave cylinder, hydraulic line",
+        "D": "Pedal, hydraulic line, master cylinder, slave cylinder, release bearing"
+      },
+      "correct_answer": "B",
+      "explanation": "The clutch hydraulic system follows a logical sequence: the driver presses the pedal, which pushes the piston in the master cylinder. Hydraulic fluid is forced through the hydraulic line to the slave cylinder, which pushes a rod or directly acts on the clutch fork or release bearing. The release bearing then presses against the diaphragm spring centre to disengage the clutch.",
+      "topic": "Clutch hydraulic actuation path",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D27-Q06",
+      "question": "A customer reports a crunching noise when shifting into second gear, especially when the gearbox is cold. The noise diminishes once the car has warmed up. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The clutch disc friction material is contaminated with oil",
+        "B": "The second gear synchronizer ring is worn, and thicker cold oil makes speed matching slower",
+        "C": "The output shaft rear bearing has failed",
+        "D": "The shift fork for second gear is bent"
+      },
+      "correct_answer": "B",
+      "explanation": "Crunching on a specific gear that worsens when cold is a classic symptom of a worn synchronizer ring. When the brass ring wears, its grooves become shallow and cannot channel the thicker cold transmission oil away from the cone surface quickly enough. This prevents proper speed matching before engagement, causing the dog teeth to clash. As the oil warms and thins, the synchro can clear it more easily, reducing the crunch. Second gear synchros fail most often because second is heavily used during deceleration.",
+      "topic": "Synchronizer wear diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D27-Q07",
+      "question": "A technician is inspecting a clutch assembly during gearbox removal. The clutch disc friction material measures 6.2 mm thick, the specification is 8.0 mm new with a minimum limit of 5.5 mm. The pressure plate surface shows light heat discolouration but no cracks or scoring. What is the correct decision?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace both the disc and pressure plate immediately — they are beyond service limits",
+        "B": "Refit the existing components — both are within service limits and the vehicle will be fine for another 50,000 km",
+        "C": "Replace the clutch disc as it is approaching the wear limit, and reuse the pressure plate after confirming it meets flatness specifications",
+        "D": "Replace the pressure plate only and refit the existing disc"
+      },
+      "correct_answer": "C",
+      "explanation": "The disc at 6.2 mm is still above the minimum limit of 5.5 mm but has used most of its material (only 0.7 mm remaining before the limit). Since the gearbox must be removed for clutch access — a major labour operation — it is best practice to replace the disc now rather than risk needing another gearbox removal in the near future. The pressure plate with light discolouration but no cracks or scoring can be reused if it meets flatness specifications, but in practice many technicians recommend replacing the full kit for reliability.",
+      "topic": "Clutch inspection go/no-go decisions",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D27-Q08",
+      "question": "A driving gear has 18 teeth and meshes with a driven gear of 54 teeth. If the engine produces 250 Nm at 4,000 RPM through this gear pair, what are the output speed and torque?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "1,333 RPM and 750 Nm",
+        "B": "12,000 RPM and 83 Nm",
+        "C": "2,000 RPM and 500 Nm",
+        "D": "4,000 RPM and 250 Nm"
+      },
+      "correct_answer": "A",
+      "explanation": "The gear ratio is 54 / 18 = 3:1. Output speed = input speed / ratio = 4,000 / 3 = 1,333 RPM. Output torque = input torque x ratio = 250 x 3 = 750 Nm. The gear pair trades speed for torque — the output spins at one-third the input speed but delivers three times the torque. This is the fundamental speed-torque trade-off in all geared systems.",
+      "topic": "Gear ratio speed and torque calculation",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D27-Q09",
+      "question": "A vehicle with a manual gearbox jumps out of third gear under acceleration. The gearbox otherwise shifts smoothly into all gears. What is the most likely root cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The clutch master cylinder is leaking internally",
+        "B": "The third gear synchronizer ring is completely worn",
+        "C": "The third gear detent spring is weak or broken, allowing the hub sleeve to slide out of engagement under load",
+        "D": "The transmission oil level is too high"
+      },
+      "correct_answer": "C",
+      "explanation": "A gear that engages smoothly but pops out under load indicates the hub sleeve is not being held in the engaged position. The detent spring and ball mechanism is specifically designed to hold the sleeve in either the neutral or engaged position. If this spring is weak, broken, or the detent groove is worn, the reaction forces under acceleration can push the sleeve back to neutral. A worn synchro ring causes crunching during engagement, not popping out. A leaking clutch master cylinder would cause clutch slip, not gear disengagement.",
+      "topic": "Gearbox fault diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D27-Q10",
+      "question": "A technician notices excessive free play when rocking a dual-mass flywheel (DMF) by hand during clutch replacement. The rotational play measures 25 mm of arc at the outer edge, and the manufacturer's specification is a maximum of 15 mm. What action should be taken?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Refit the DMF — the play is within normal operating limits for a used component",
+        "B": "Resurface the DMF friction face and refit it",
+        "C": "Replace the DMF, as excessive play indicates worn internal springs and dampers that will cause vibration and potential clutch disc damage",
+        "D": "Add thicker transmission oil to compensate for the internal wear"
+      },
+      "correct_answer": "C",
+      "explanation": "A DMF with rotational play exceeding the manufacturer's specification (25 mm vs. 15 mm maximum) has worn internal springs and dampers. This excessive play cannot be repaired — the DMF must be replaced. If refitted, the worn DMF will transmit torsional vibrations to the new clutch assembly, causing premature disc wear, driveline shudder, and rattling noise. Since the gearbox is already removed for clutch replacement, it is cost-effective and technically correct to replace the DMF at the same time.",
+      "topic": "Dual-mass flywheel inspection",
+      "bloom_level": "Apply"
+    }
+  ]
+}

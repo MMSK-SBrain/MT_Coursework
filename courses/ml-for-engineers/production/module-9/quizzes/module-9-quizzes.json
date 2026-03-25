@@ -1,0 +1,697 @@
+{
+  "module": "Module 9: Deployment & MLOps",
+  "total_questions": 54,
+  "sessions": [
+    {
+      "session": "9.1 - Model Serialization & Version Control",
+      "questions": [
+        {
+          "id": "9.1.1",
+          "question": "What is the recommended library for saving scikit-learn models in production?",
+          "options": [
+            "pickle",
+            "joblib",
+            "json",
+            "csv"
+          ],
+          "correct": 1,
+          "explanation": "joblib is recommended for scikit-learn models because it's more efficient for large numpy arrays and provides better compression."
+        },
+        {
+          "id": "9.1.2",
+          "question": "What MUST be saved along with a trained model for production use?",
+          "options": [
+            "Only the model weights",
+            "The entire preprocessing pipeline",
+            "Just the training data",
+            "Only the model architecture"
+          ],
+          "correct": 1,
+          "explanation": "The entire preprocessing pipeline (scalers, encoders, vectorizers) must be saved with the model to ensure consistent transformations."
+        },
+        {
+          "id": "9.1.3",
+          "question": "In semantic versioning (v1.2.3), what does incrementing the MAJOR version indicate?",
+          "options": [
+            "Bug fixes only",
+            "Minor improvements",
+            "Breaking changes or complete retrain",
+            "Documentation updates"
+          ],
+          "correct": 2,
+          "explanation": "MAJOR version increments indicate breaking changes, such as a complete model retrain with different features or architecture."
+        },
+        {
+          "id": "9.1.4",
+          "question": "What is the recommended format for saving Keras/TensorFlow models in production?",
+          "options": [
+            "pickle",
+            "JSON",
+            "SavedModel format",
+            "CSV"
+          ],
+          "correct": 2,
+          "explanation": "SavedModel is TensorFlow's recommended format as it saves the complete model including architecture, weights, and computation graph."
+        },
+        {
+          "id": "9.1.5",
+          "question": "What should a model card include?",
+          "options": [
+            "Only the accuracy score",
+            "Performance metrics, intended use, and limitations",
+            "Just the code",
+            "Only training data statistics"
+          ],
+          "correct": 1,
+          "explanation": "A model card should document performance, intended use cases, limitations, ethical considerations, and training data details."
+        },
+        {
+          "id": "9.1.6",
+          "question": "Why is it important to version control ML models?",
+          "options": [
+            "To waste disk space",
+            "To track performance over time and enable rollbacks",
+            "It's not important",
+            "Only for regulatory compliance"
+          ],
+          "correct": 1,
+          "explanation": "Versioning allows you to track model performance over time, compare versions, and rollback to previous versions if needed."
+        },
+        {
+          "id": "9.1.7",
+          "question": "What happens if you forget to save the preprocessing scaler with your model?",
+          "options": [
+            "Nothing, the model will work fine",
+            "Predictions will be incorrect due to inconsistent scaling",
+            "The model will train faster",
+            "It automatically saves with the model"
+          ],
+          "correct": 1,
+          "explanation": "Without the same scaler, new data will have different scaling than training data, leading to poor predictions."
+        },
+        {
+          "id": "9.1.8",
+          "question": "What metadata should be saved with each model version?",
+          "options": [
+            "Only the creation date",
+            "Creation date, metrics, description, and model type",
+            "Just the model name",
+            "Only the accuracy score"
+          ],
+          "correct": 1,
+          "explanation": "Comprehensive metadata helps track model evolution and aids in model selection and debugging."
+        },
+        {
+          "id": "9.1.9",
+          "question": "In production, how should you handle model loading errors?",
+          "options": [
+            "Let the application crash",
+            "Ignore the error and continue",
+            "Use try-except blocks and return appropriate error messages",
+            "Restart the server"
+          ],
+          "correct": 2,
+          "explanation": "Graceful error handling with try-except blocks ensures the application can respond appropriately to users even when issues occur."
+        }
+      ]
+    },
+    {
+      "session": "9.2 - Flask API Basics",
+      "questions": [
+        {
+          "id": "9.2.1",
+          "question": "What does REST stand for in REST API?",
+          "options": [
+            "Rapid Execution Service Technology",
+            "Representational State Transfer",
+            "Remote Execution Service Transfer",
+            "Reliable State Technology"
+          ],
+          "correct": 1,
+          "explanation": "REST (Representational State Transfer) is an architectural style for designing networked applications."
+        },
+        {
+          "id": "9.2.2",
+          "question": "Which HTTP method should be used for ML prediction endpoints?",
+          "options": [
+            "GET",
+            "POST",
+            "DELETE",
+            "PUT"
+          ],
+          "correct": 1,
+          "explanation": "POST is used because we're sending data (input features) to the server for processing and getting predictions back."
+        },
+        {
+          "id": "9.2.3",
+          "question": "What HTTP status code indicates a successful API request?",
+          "options": [
+            "404",
+            "500",
+            "200",
+            "400"
+          ],
+          "correct": 2,
+          "explanation": "200 OK indicates that the request succeeded and the server returned the requested data."
+        },
+        {
+          "id": "9.2.4",
+          "question": "Why should you load the ML model once at startup rather than per request?",
+          "options": [
+            "It's required by Flask",
+            "To improve performance and reduce latency",
+            "To save disk space",
+            "It doesn't matter when you load it"
+          ],
+          "correct": 1,
+          "explanation": "Loading the model once at startup avoids the overhead of reloading for each request, significantly improving response time."
+        },
+        {
+          "id": "9.2.5",
+          "question": "What is the purpose of a health check endpoint (/health)?",
+          "options": [
+            "To make predictions",
+            "To monitor if the API is running and ready",
+            "To delete the model",
+            "To update the model"
+          ],
+          "correct": 1,
+          "explanation": "Health check endpoints allow monitoring systems to verify the API is running and the model is loaded."
+        },
+        {
+          "id": "9.2.6",
+          "question": "What should you return when a user sends invalid input to your API?",
+          "options": [
+            "200 OK with empty response",
+            "500 Internal Server Error",
+            "400 Bad Request with error message",
+            "Ignore the request"
+          ],
+          "correct": 2,
+          "explanation": "400 Bad Request indicates client error (invalid input) and should include a descriptive error message."
+        },
+        {
+          "id": "9.2.7",
+          "question": "What is CORS and why is it important for ML APIs?",
+          "options": [
+            "A security feature; important to allow web apps to call the API",
+            "A database system",
+            "A machine learning algorithm",
+            "It's not important"
+          ],
+          "correct": 0,
+          "explanation": "CORS (Cross-Origin Resource Sharing) allows web applications from different domains to make requests to your API."
+        },
+        {
+          "id": "9.2.8",
+          "question": "What format is commonly used for API request and response data?",
+          "options": [
+            "XML",
+            "CSV",
+            "JSON",
+            "Plain text"
+          ],
+          "correct": 2,
+          "explanation": "JSON (JavaScript Object Notation) is the standard format for modern REST APIs due to its simplicity and language independence."
+        },
+        {
+          "id": "9.2.9",
+          "question": "What should be included in API documentation?",
+          "options": [
+            "Only the base URL",
+            "Endpoints, request/response formats, and examples",
+            "Just the model accuracy",
+            "Only error codes"
+          ],
+          "correct": 1,
+          "explanation": "Good API documentation includes all endpoints, expected request formats, response formats, status codes, and usage examples."
+        }
+      ]
+    },
+    {
+      "session": "9.3 - FastAPI for ML",
+      "questions": [
+        {
+          "id": "9.3.1",
+          "question": "What is a key advantage of FastAPI over Flask?",
+          "options": [
+            "It's older and more stable",
+            "Automatic API documentation and data validation",
+            "It uses less memory",
+            "It requires no dependencies"
+          ],
+          "correct": 1,
+          "explanation": "FastAPI provides automatic interactive documentation (Swagger UI) and uses Pydantic for automatic data validation."
+        },
+        {
+          "id": "9.3.2",
+          "question": "What library does FastAPI use for data validation?",
+          "options": [
+            "jsonschema",
+            "Pydantic",
+            "marshmallow",
+            "cerberus"
+          ],
+          "correct": 1,
+          "explanation": "FastAPI uses Pydantic models for automatic request/response validation and serialization."
+        },
+        {
+          "id": "9.3.3",
+          "question": "Where can you find automatic interactive API documentation in FastAPI?",
+          "options": [
+            "/docs",
+            "/api",
+            "/swagger",
+            "/documentation"
+          ],
+          "correct": 0,
+          "explanation": "FastAPI automatically generates interactive documentation at the /docs endpoint using Swagger UI."
+        },
+        {
+          "id": "9.3.4",
+          "question": "What does 'async' support in FastAPI enable?",
+          "options": [
+            "Faster model training",
+            "Handling multiple requests concurrently",
+            "Automatic model updates",
+            "Better accuracy"
+          ],
+          "correct": 1,
+          "explanation": "Async support allows FastAPI to handle multiple requests concurrently without blocking, improving throughput."
+        },
+        {
+          "id": "9.3.5",
+          "question": "What happens if a request doesn't match the Pydantic model schema?",
+          "options": [
+            "The API crashes",
+            "FastAPI automatically returns 422 Unprocessable Entity with validation errors",
+            "The request is ignored",
+            "It accepts the request anyway"
+          ],
+          "correct": 1,
+          "explanation": "FastAPI automatically validates requests against Pydantic models and returns detailed validation errors for invalid data."
+        },
+        {
+          "id": "9.3.6",
+          "question": "Which type hints are used in FastAPI for automatic validation?",
+          "options": [
+            "No type hints needed",
+            "Python 3.6+ type hints with Pydantic",
+            "Custom validation functions only",
+            "JSON schema"
+          ],
+          "correct": 1,
+          "explanation": "FastAPI leverages Python type hints and Pydantic models for automatic validation and serialization."
+        },
+        {
+          "id": "9.3.7",
+          "question": "When should you choose Flask over FastAPI?",
+          "options": [
+            "Never, FastAPI is always better",
+            "When you need simple APIs and prefer familiar syntax",
+            "Only for desktop applications",
+            "When performance doesn't matter"
+          ],
+          "correct": 1,
+          "explanation": "Flask is still excellent for simple APIs, has more learning resources, and many developers are familiar with it."
+        },
+        {
+          "id": "9.3.8",
+          "question": "What is uvicorn in the context of FastAPI?",
+          "options": [
+            "A validation library",
+            "An ASGI server for running FastAPI apps",
+            "A database system",
+            "A frontend framework"
+          ],
+          "correct": 1,
+          "explanation": "Uvicorn is an ASGI (Asynchronous Server Gateway Interface) server used to run FastAPI applications."
+        },
+        {
+          "id": "9.3.9",
+          "question": "How does FastAPI handle API versioning?",
+          "options": [
+            "It doesn't support versioning",
+            "Through URL prefixes like /v1/predict",
+            "Automatically based on date",
+            "Only through headers"
+          ],
+          "correct": 1,
+          "explanation": "API versioning in FastAPI is typically handled through URL path prefixes like /api/v1/predict."
+        }
+      ]
+    },
+    {
+      "session": "9.4 - Cloud Deployment",
+      "questions": [
+        {
+          "id": "9.4.1",
+          "question": "What is the purpose of a Procfile in Heroku deployment?",
+          "options": [
+            "To list Python dependencies",
+            "To specify the command to run the application",
+            "To configure the database",
+            "To set environment variables"
+          ],
+          "correct": 1,
+          "explanation": "The Procfile tells Heroku what command to run to start your application (e.g., 'web: gunicorn app:app')."
+        },
+        {
+          "id": "9.4.2",
+          "question": "Why use gunicorn instead of Flask's built-in server in production?",
+          "options": [
+            "It's faster to install",
+            "Flask's server is only for development; gunicorn is production-grade",
+            "Gunicorn requires less memory",
+            "It's required by law"
+          ],
+          "correct": 1,
+          "explanation": "Flask's built-in server is single-threaded and not designed for production. Gunicorn is a production WSGI server."
+        },
+        {
+          "id": "9.4.3",
+          "question": "What should you NEVER commit to version control when deploying?",
+          "options": [
+            "requirements.txt",
+            "API keys and secrets",
+            "app.py",
+            "README.md"
+          ],
+          "correct": 1,
+          "explanation": "API keys and secrets should be stored as environment variables, never in code or version control."
+        },
+        {
+          "id": "9.4.4",
+          "question": "What is a cold start in cloud deployments?",
+          "options": [
+            "When the server crashes",
+            "The delay when an idle instance is activated",
+            "Starting the app in winter",
+            "A type of database"
+          ],
+          "correct": 1,
+          "explanation": "Cold start refers to the latency when a cloud platform spins up a new instance that has been idle."
+        },
+        {
+          "id": "9.4.5",
+          "question": "How can you test your deployed API?",
+          "options": [
+            "Only through a web browser",
+            "Using curl, Postman, or Python requests library",
+            "It's impossible to test deployed APIs",
+            "Only through the Heroku CLI"
+          ],
+          "correct": 1,
+          "explanation": "Deployed APIs can be tested with various tools including curl, Postman, Python requests, or any HTTP client."
+        },
+        {
+          "id": "9.4.6",
+          "question": "What is the purpose of runtime.txt in Heroku?",
+          "options": [
+            "To specify the Python version",
+            "To list dependencies",
+            "To configure the database",
+            "To set the app name"
+          ],
+          "correct": 0,
+          "explanation": "runtime.txt specifies which Python version Heroku should use to run your application."
+        },
+        {
+          "id": "9.4.7",
+          "question": "Where should you check for errors when your deployed app isn't working?",
+          "options": [
+            "Your local logs only",
+            "The cloud platform's logs (e.g., heroku logs)",
+            "Error logs don't exist in production",
+            "Only in the database"
+          ],
+          "correct": 1,
+          "explanation": "Cloud platforms provide logging systems (like 'heroku logs --tail') to help debug production issues."
+        },
+        {
+          "id": "9.4.8",
+          "question": "What is horizontal scaling?",
+          "options": [
+            "Making the server faster",
+            "Adding more server instances",
+            "Upgrading the CPU",
+            "Reducing memory usage"
+          ],
+          "correct": 1,
+          "explanation": "Horizontal scaling means adding more server instances to handle increased load, as opposed to vertical scaling (upgrading hardware)."
+        },
+        {
+          "id": "9.4.9",
+          "question": "Why might you need a .slugignore file in Heroku?",
+          "options": [
+            "To ignore Python files",
+            "To exclude unnecessary files and reduce slug size",
+            "To ignore all dependencies",
+            "It's not needed"
+          ],
+          "correct": 1,
+          "explanation": ".slugignore tells Heroku which files to exclude from the deployed app, reducing slug size and deployment time."
+        }
+      ]
+    },
+    {
+      "session": "9.5 - Model Monitoring & Logging",
+      "questions": [
+        {
+          "id": "9.5.1",
+          "question": "What is data drift in ML models?",
+          "options": [
+            "When the training data is lost",
+            "When the input data distribution changes over time",
+            "When the model file gets corrupted",
+            "When predictions are slow"
+          ],
+          "correct": 1,
+          "explanation": "Data drift occurs when the statistical distribution of input features changes from what the model was trained on."
+        },
+        {
+          "id": "9.5.2",
+          "question": "What should you log for each prediction request?",
+          "options": [
+            "Only the prediction",
+            "Timestamp, input features, prediction, confidence, and model version",
+            "Just the timestamp",
+            "Nothing - logging is unnecessary"
+          ],
+          "correct": 1,
+          "explanation": "Comprehensive logging helps with debugging, monitoring, and detecting issues like data drift or model degradation."
+        },
+        {
+          "id": "9.5.3",
+          "question": "What is concept drift?",
+          "options": [
+            "When programmers forget the model purpose",
+            "When the relationship between features and target changes",
+            "When the API endpoint changes",
+            "When documentation is outdated"
+          ],
+          "correct": 1,
+          "explanation": "Concept drift occurs when the relationship between input features and the target variable changes over time."
+        },
+        {
+          "id": "9.5.4",
+          "question": "What metric helps detect if your model's confidence is decreasing?",
+          "options": [
+            "Training accuracy",
+            "Average prediction confidence over time",
+            "Number of features",
+            "Model file size"
+          ],
+          "correct": 1,
+          "explanation": "Tracking average confidence scores over time can reveal if the model is becoming less certain, possibly indicating drift."
+        },
+        {
+          "id": "9.5.5",
+          "question": "When should you trigger an alert in production?",
+          "options": [
+            "Every hour regardless of metrics",
+            "When metrics cross predefined thresholds (e.g., low confidence, high error rate)",
+            "Never trigger alerts",
+            "Only on weekends"
+          ],
+          "correct": 1,
+          "explanation": "Alerts should trigger when important metrics exceed thresholds, such as low confidence, high latency, or increased errors."
+        },
+        {
+          "id": "9.5.6",
+          "question": "What is the purpose of a monitoring dashboard?",
+          "options": [
+            "To make the app look professional",
+            "To visualize key metrics and detect issues quickly",
+            "To slow down the API",
+            "To train new models"
+          ],
+          "correct": 1,
+          "explanation": "Monitoring dashboards provide real-time visibility into system health, helping teams detect and respond to issues quickly."
+        },
+        {
+          "id": "9.5.7",
+          "question": "Why is logging prediction inputs important?",
+          "options": [
+            "It's not important",
+            "For debugging, auditing, and detecting data drift",
+            "Only for regulatory compliance",
+            "To slow down the system"
+          ],
+          "correct": 1,
+          "explanation": "Logging inputs helps with debugging issues, auditing predictions, detecting drift, and potentially retraining models."
+        },
+        {
+          "id": "9.5.8",
+          "question": "What privacy considerations exist when logging prediction data?",
+          "options": [
+            "None - log everything",
+            "Must comply with privacy laws; avoid logging PII when possible",
+            "Only log on Tuesdays",
+            "Privacy doesn't apply to ML"
+          ],
+          "correct": 1,
+          "explanation": "Logging must comply with privacy regulations (GDPR, CCPA). Avoid logging personally identifiable information (PII) when possible."
+        },
+        {
+          "id": "9.5.9",
+          "question": "How often should you check monitoring dashboards in production?",
+          "options": [
+            "Once per year",
+            "Daily or configure automated alerts",
+            "Never",
+            "Only when users complain"
+          ],
+          "correct": 1,
+          "explanation": "Regular monitoring (daily at minimum) or automated alerts help catch issues before they impact users significantly."
+        }
+      ]
+    },
+    {
+      "session": "9.6 - A/B Testing & Model Updates",
+      "questions": [
+        {
+          "id": "9.6.1",
+          "question": "What is A/B testing in the context of ML models?",
+          "options": [
+            "Testing two different APIs",
+            "Comparing two model versions by showing each to different users",
+            "Testing the alphabet",
+            "Training two models simultaneously"
+          ],
+          "correct": 1,
+          "explanation": "A/B testing splits traffic between two model versions to compare their performance in production conditions."
+        },
+        {
+          "id": "9.6.2",
+          "question": "What is a typical traffic split for initial A/B testing?",
+          "options": [
+            "50/50",
+            "90/10 (90% old model, 10% new model)",
+            "100/0",
+            "Random every request"
+          ],
+          "correct": 1,
+          "explanation": "Starting with 90/10 or similar splits limits risk while testing the new model on real traffic."
+        },
+        {
+          "id": "9.6.3",
+          "question": "What is a canary deployment?",
+          "options": [
+            "Deploying models for bird detection",
+            "Gradually rolling out new model to small percentage of traffic first",
+            "Testing only on yellow servers",
+            "A type of database"
+          ],
+          "correct": 1,
+          "explanation": "Canary deployment releases changes to a small subset of users first, monitoring for issues before full rollout."
+        },
+        {
+          "id": "9.6.4",
+          "question": "When should you rollback to a previous model version?",
+          "options": [
+            "Every Monday",
+            "When new model performs worse or causes errors",
+            "Never rollback",
+            "Only during holidays"
+          ],
+          "correct": 1,
+          "explanation": "Rollback when the new model shows worse performance, increased errors, or other issues in production."
+        },
+        {
+          "id": "9.6.5",
+          "question": "What metrics should you compare in A/B testing?",
+          "options": [
+            "Only accuracy",
+            "Multiple metrics: accuracy, latency, user engagement, business KPIs",
+            "Only response time",
+            "Model file size"
+          ],
+          "correct": 1,
+          "explanation": "Compare multiple dimensions including model performance, system performance, and business impact."
+        },
+        {
+          "id": "9.6.6",
+          "question": "What is statistical significance in A/B testing?",
+          "options": [
+            "How important the model is",
+            "Confidence that observed differences aren't due to random chance",
+            "The model's accuracy",
+            "The number of features"
+          ],
+          "correct": 1,
+          "explanation": "Statistical significance indicates whether performance differences between models are real or just random variation."
+        },
+        {
+          "id": "9.6.7",
+          "question": "What is blue-green deployment?",
+          "options": [
+            "Deploying colorful models",
+            "Running two identical environments; switching traffic between them",
+            "A testing framework",
+            "A visualization technique"
+          ],
+          "correct": 1,
+          "explanation": "Blue-green deployment maintains two identical environments, allowing instant switching and easy rollback."
+        },
+        {
+          "id": "9.6.8",
+          "question": "How long should an A/B test typically run?",
+          "options": [
+            "5 minutes",
+            "Until you have enough data for statistical significance (days to weeks)",
+            "Forever",
+            "Exactly 24 hours"
+          ],
+          "correct": 1,
+          "explanation": "A/B tests need sufficient sample size and time to account for variability and achieve statistical significance."
+        },
+        {
+          "id": "9.6.9",
+          "question": "What should you do after a successful A/B test?",
+          "options": [
+            "Delete the old model immediately",
+            "Gradually increase traffic to new model, keeping old model ready for rollback",
+            "Start a new A/B test immediately",
+            "Turn off monitoring"
+          ],
+          "correct": 1,
+          "explanation": "Gradually increase traffic while keeping the old model available allows safe rollback if issues emerge."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "difficulty_distribution": {
+      "easy": 18,
+      "medium": 27,
+      "hard": 9
+    },
+    "question_types": {
+      "conceptual": 30,
+      "practical": 24
+    },
+    "created": "2026-01-06",
+    "version": "1.0"
+  }
+}

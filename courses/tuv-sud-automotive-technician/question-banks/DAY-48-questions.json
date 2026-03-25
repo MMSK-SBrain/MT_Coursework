@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 48,
+  "week": 10,
+  "session_title": "Strut & Damper Replacement",
+  "questions": [
+    {
+      "id": "D48-Q01",
+      "question": "Why is the spring compressor considered the most dangerous hand tool in a workshop?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "It is heavy and can fall on a technician's foot",
+        "B": "A compressed coil spring stores lethal amounts of energy that can cause fatal injuries if the compressor fails or slips",
+        "C": "The threads on the drive rods generate sparks",
+        "D": "It requires three-phase electrical power to operate"
+      },
+      "correct_answer": "B",
+      "explanation": "A typical MacPherson front spring stores approximately 2,200 Newtons of force when compressed. If a compressor jaw slips, a thread strips, or the spring is released unevenly, the spring launches like a projectile. Technicians have been killed by spring compressor failures. This is documented fact, not exaggeration.",
+      "topic": "Spring compressor hazard",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D48-Q02",
+      "question": "When using a spring compressor, what is the minimum number of coils that each jaw must engage?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "One coil",
+        "B": "Two coils",
+        "C": "Three coils",
+        "D": "Four coils"
+      },
+      "correct_answer": "B",
+      "explanation": "Each spring compressor jaw must engage a minimum of two full coils, seated deep onto the coil rather than perched on the edge. This ensures adequate grip and prevents the jaw from slipping under the significant forces involved in spring compression.",
+      "topic": "Spring compressor jaw placement",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D48-Q03",
+      "question": "What body positioning rule must be followed when operating a spring compressor?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Stand directly over the spring to see the compression clearly",
+        "B": "Lean in closely to monitor the jaw grip",
+        "C": "Never place your face or body directly over a compressed spring; always stand to the side",
+        "D": "Position yourself behind the compressor handle"
+      },
+      "correct_answer": "C",
+      "explanation": "If the spring releases unexpectedly, it launches in the direction of its axis. Standing to the side keeps the technician out of the launch path. This body positioning rule applies during both compression and release phases and is the single most important rule for preventing fatal spring compressor injuries.",
+      "topic": "Spring compressor body positioning",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D48-Q04",
+      "question": "After strut replacement, why is wheel alignment mandatory?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The new damper changes the spring rate",
+        "B": "Removing and reinstalling the strut-to-knuckle connection changes the camber and caster geometry",
+        "C": "The wheel bearings need to be reset after strut work",
+        "D": "Alignment is only recommended, not mandatory"
+      },
+      "correct_answer": "B",
+      "explanation": "The strut-to-knuckle connection directly determines camber and caster angles. Even reinstalling bolts in the same holes can result in slight positional shifts. Without alignment, the customer experiences uneven tyre wear, vehicle pull, and off-centre steering. Alignment is part of the job, not an optional add-on.",
+      "topic": "Post-strut alignment requirement",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D48-Q05",
+      "question": "When inspecting a top mount bearing during strut disassembly, how is the bearing tested?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Measure the bearing diameter with a micrometer",
+        "B": "Hold it flat and spin the inner race by hand, feeling for gritty or rough resistance",
+        "C": "Check for visible rust on the outer surface",
+        "D": "Bounce it on the bench to listen for rattle"
+      },
+      "correct_answer": "B",
+      "explanation": "The top mount bearing allows the strut to rotate when steering. To test it, hold the bearing flat and spin the inner race with your fingers. A good bearing spins smoothly and freely. A worn bearing feels gritty, rough, or notchy. Many technicians replace this bearing automatically whenever the strut is apart as low-cost insurance.",
+      "topic": "Top mount bearing inspection",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D48-Q06",
+      "question": "A technician is releasing the spring compressor after strut reassembly. Halfway through the release, they notice the spring is twisting and shifting off the lower spring seat locating step. What is the correct action?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Continue releasing quickly to minimize the time the spring is in the dangerous compressed state",
+        "B": "Remove the compressor immediately and reposition the spring by hand",
+        "C": "Stop releasing, recompress the spring, and correct the alignment before attempting the release again",
+        "D": "Tap the spring back into position with a rubber mallet while it is still compressed"
+      },
+      "correct_answer": "C",
+      "explanation": "If the spring is misaligning during release, continuing will result in the spring popping off the seat once the compressor is fully released, potentially causing injury or component damage. The safe procedure is to stop, recompress to regain control, correct the alignment, and then carefully resume the release. Never attempt to reposition a spring under tension by hand or with a mallet.",
+      "topic": "Spring compressor release emergency procedure",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D48-Q07",
+      "question": "A customer complains of a creaking noise when turning the steering wheel at low speed, especially during parking manoeuvres. The struts were replaced six months ago. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The dampers are already failing and need replacement again",
+        "B": "The top mount bearing was not replaced during the strut job, or the replacement bearing has failed",
+        "C": "The wheel alignment was not performed after the strut replacement",
+        "D": "The steering rack bushes have worn due to the new struts"
+      },
+      "correct_answer": "B",
+      "explanation": "A creaking or groaning noise during low-speed steering is the classic symptom of a failed top mount bearing. The bearing allows the strut to rotate with steering input. If it was not replaced during the strut job (a common shortcut), or if a poor-quality replacement was used, the bearing deteriorates and produces a creaking noise, especially noticeable at low speed or when stationary.",
+      "topic": "Post-repair NVH diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D48-Q08",
+      "question": "A technician reinstalls a MacPherson strut but forgets to reconnect the stabilizer bar link. During a test drive, what symptoms will the driver notice?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "No noticeable difference in normal driving",
+        "B": "A clunking noise from the disconnected link, excessive body roll in corners, and the vehicle feeling unstable during lane changes",
+        "C": "The steering will be heavier than normal",
+        "D": "The brake pedal will feel spongy"
+      },
+      "correct_answer": "B",
+      "explanation": "The stabilizer bar link connects the strut to the anti-roll bar. Without it, the disconnected link will rattle and clunk against the strut body over bumps. The anti-roll bar cannot function on that side, resulting in excessive body roll in corners and a noticeably unstable feeling during lane changes. This is a safety-critical oversight.",
+      "topic": "Stabilizer link omission consequences",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D48-Q09",
+      "question": "A technician compresses a coil spring using a spring compressor where the drive rod threads are visibly worn with shallow, rounded thread crests. The compression appears to proceed normally. What is the risk?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "No risk, as the threads only need to hold the jaws in position",
+        "B": "The worn threads may strip under load, causing sudden uncontrolled spring release and potentially fatal injury",
+        "C": "The compression will take longer but is otherwise safe",
+        "D": "The worn threads will prevent achieving full compression"
+      },
+      "correct_answer": "B",
+      "explanation": "Worn threads on spring compressor drive rods carry the full force of the compressed spring (potentially over 2,200 N). Shallow, rounded thread crests have reduced load-bearing area and can strip suddenly under tension. This causes instant, uncontrolled spring release. A compressor with worn threads must be scrapped. Inspection of threads before every use is a non-negotiable safety requirement.",
+      "topic": "Spring compressor tool inspection",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D48-Q10",
+      "question": "During strut reassembly, a technician installs the lower spring seat 180 degrees rotated from its correct orientation. The spring end does not sit in the seat's locating step. What will happen when the vehicle is driven?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Nothing noticeable since the spring is held by compression force alone",
+        "B": "The spring may shift under load, causing a sudden noise, misalignment of the strut geometry, premature top mount failure, and potential damage to the strut body",
+        "C": "The damper will leak oil from excessive side loading",
+        "D": "The vehicle will pull to one side during braking only"
+      },
+      "correct_answer": "B",
+      "explanation": "The spring seat locating step ensures the coil spring end is captured and cannot rotate or shift during operation. Without proper location, the spring can shift under cornering or braking loads, producing sudden metallic clunks, misaligning the strut geometry (affecting camber/caster), and applying uneven loads to the top mount bearing, causing premature failure.",
+      "topic": "Spring seat orientation error consequences",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

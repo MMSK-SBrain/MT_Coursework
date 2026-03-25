@@ -1,0 +1,338 @@
+course:
+  title: "Automotive Systems Engineering"
+  code: "AE ZG517 / AEL ZG517"
+  short_code: "AEZC517"
+  credits: 3
+  credit_model: "32-0-0"
+  version: "6.2"
+  date: "12-Jan-2025"
+  instructor: "Sajeeth Kumar"
+
+  description: >
+    This course introduces hard and soft skills required of good automotive systems engineers.
+    It imparts knowledge about foundations of systems engineering to gain an in-depth knowledge
+    of system engineering principles, processes, and methods. The course helps engineers learn
+    and apply systems engineering (SE) methodologies in modern complex automotive system
+    development environments.
+
+objectives:
+  - id: CO1
+    description: "Introduce hard and soft skills that are required of good automotive systems engineers"
+  - id: CO2
+    description: "Impart the knowledge about foundations of systems engineering to gain an in-depth knowledge of system engineering principles, processes, and methods"
+  - id: CO3
+    description: "Help engineers to learn and apply the systems engineering (SE) methodologies in modern complex automotive system development environments"
+
+learning_outcomes:
+  - id: LO1
+    description: "Describe processes, methods, and practices of systems engineering"
+    level: "Understand"
+  - id: LO2
+    description: "Develop requirements, architectures, specifications, verifications, and tests"
+    level: "Apply"
+  - id: LO3
+    description: "Recognize important systems engineering and systems thinking strategies and practices"
+    level: "Understand"
+  - id: LO4
+    description: "Apply systems engineering practices and methods in automotive systems"
+    level: "Apply"
+  - id: LO5
+    description: "Analyse automotive systems using systems engineering approaches to increase performance"
+    level: "Analyze"
+
+textbooks:
+  - id: T1
+    title: "Systems Engineering Handbook, A guide for system life cycle processes and activities"
+    authors: "INCOSE"
+    publisher: "John Wiley & Sons, Inc., Hoboken, New Jersey"
+    edition: "4th Edition"
+    year: 2015
+
+references:
+  - id: R1
+    title: "Systems Engineering and Analysis"
+    authors: "Benjamin S Blanchard, Wolter J Fabrycky"
+    publisher: "Pearson"
+    edition: "5th Edition"
+    year: 2013
+  - id: R2
+    title: "Automotive Systems Engineering"
+    authors: "Markus Maurer, Hermann Winner (eds.)"
+    publisher: "Springer-Verlag Berlin Heidelberg"
+    year: 2013
+
+modules:
+  - number: 1
+    title: "Foundations of Systems Engineering"
+    sessions: [1, 2, 3, 4]
+    description: "Introduction to systems engineering fundamentals, MBSE, and requirements engineering"
+
+  - number: 2
+    title: "System Design and Analysis"
+    sessions: [5, 6, 7, 8]
+    description: "System design, operational/functional analysis, integration, verification and validation"
+
+  - number: 3
+    title: "Technical and Project Management"
+    sessions: [9, 10, 11, 12]
+    description: "Project management, risk management, decision making, quality, agreements, and specialty engineering"
+
+  - number: 4
+    title: "Life Cycle and Emerging Trends"
+    sessions: [13, 14, 15, 16]
+    description: "Life cycle cost analysis, technical management, enabling processes, and emerging trends"
+
+sessions:
+  - number: 1
+    title: "Introduction to Systems Engineering"
+    duration: 120
+    approach: "Story-Based/Real-World Examples"
+    topics:
+      - "Engineering failures case studies"
+      - "Importance of systems engineering in avoiding failures"
+      - "Real-world examples: Apollo 13, Therac-25, Toyota recalls"
+      - "Cost of poor systems engineering"
+      - "What is a system? System characteristics"
+    learning_outcomes: ["LO1", "LO3"]
+    references: ["T1", "R1"]
+
+  - number: 2
+    title: "Systems Engineering Fundamentals"
+    duration: 120
+    approach: "Conceptual/Framework-Based"
+    topics:
+      - "INCOSE definition of systems engineering"
+      - "Systems thinking principles and mindset"
+      - "ISO/IEC 15288 life cycle processes"
+      - "System life cycle stages"
+      - "Stakeholder engagement"
+      - "V-model and its variations"
+    learning_outcomes: ["LO1", "LO3"]
+    references: ["T1"]
+
+  - number: 3
+    title: "Traditional vs Model-Based Systems Engineering"
+    duration: 120
+    approach: "Comparative/Tool-Based"
+    topics:
+      - "Document-centric traditional systems engineering"
+      - "Model-Based Systems Engineering (MBSE) fundamentals"
+      - "Benefits and challenges of MBSE"
+      - "MBSE tools: SysML, Simulink, MATLAB"
+      - "Digital twin concepts"
+      - "When to use traditional vs MBSE"
+    learning_outcomes: ["LO1", "LO4"]
+    references: ["T1", "R2"]
+
+  - number: 4
+    title: "Requirements Engineering"
+    duration: 120
+    approach: "Process-Based/Practical"
+    topics:
+      - "Stakeholder identification and analysis"
+      - "Needs vs requirements distinction"
+      - "Types of requirements: functional, non-functional, constraints"
+      - "Requirements attributes: verifiable, traceable, clear"
+      - "Requirements traceability matrix"
+      - "Requirements management tools"
+      - "Common requirements pitfalls"
+    learning_outcomes: ["LO2", "LO4"]
+    references: ["T1", "R1"]
+
+  - number: 5
+    title: "System Design and Architecture"
+    duration: 120
+    approach: "Design-Focused"
+    topics:
+      - "Concept of operations (CONOPS)"
+      - "System context and boundaries"
+      - "High-level design principles"
+      - "System architecture development"
+      - "Architecture patterns and frameworks"
+      - "Design freeze and configuration management"
+      - "Trade studies and alternatives analysis"
+    learning_outcomes: ["LO2", "LO4"]
+    references: ["T1", "R2"]
+
+  - number: 6
+    title: "Case Study 1"
+    duration: 120
+    approach: "Case-Study/Interactive"
+    topics:
+      - "Analysis of real-world systems engineering failure or success"
+      - "Requirements and design analysis"
+      - "Root cause identification"
+      - "Lessons learned and best practices"
+      - "Group discussion and presentation"
+    learning_outcomes: ["LO3", "LO4", "LO5"]
+    references: ["R2"]
+
+  - number: 7
+    title: "Operational and Functional Analysis"
+    duration: 120
+    approach: "Analytical/Process-Based"
+    topics:
+      - "Operational scenarios and use cases"
+      - "Capability gap analysis"
+      - "Defining system functions and behaviors"
+      - "Functional flow block diagrams (FFBD)"
+      - "Requirements allocation to functions"
+      - "Functional architecture"
+      - "Timeline analysis"
+    learning_outcomes: ["LO2", "LO5"]
+    references: ["T1", "R1"]
+
+  - number: 8
+    title: "System Integration, Verification & Validation"
+    duration: 120
+    approach: "Process-Focused/Technical"
+    topics:
+      - "Integration strategies: big bang vs incremental"
+      - "Integration process and planning"
+      - "Verification vs validation distinction"
+      - "V&V plans and test strategies"
+      - "Testing types: unit, integration, system, acceptance"
+      - "Test coverage and traceability"
+      - "Verification methods: test, analysis, inspection, demonstration"
+    learning_outcomes: ["LO2", "LO4"]
+    references: ["T1"]
+
+  - number: 9
+    title: "Project and Risk Management"
+    duration: 120
+    approach: "Management-Focused"
+    topics:
+      - "Project estimation techniques"
+      - "Work breakdown structure (WBS)"
+      - "Project scheduling and control"
+      - "Agile systems development"
+      - "Scrum and Kanban in systems engineering"
+      - "Risk identification and assessment"
+      - "Design Failure Mode and Effects Analysis (DFMEA)"
+      - "Risk mitigation strategies"
+    learning_outcomes: ["LO4", "LO5"]
+    references: ["T1", "R1"]
+
+  - number: 10
+    title: "Decision and Quality Management"
+    duration: 120
+    approach: "Decision-Science/Quality-Focused"
+    topics:
+      - "Decision analysis techniques"
+      - "Multi-criteria decision analysis (MCDA)"
+      - "Trade-off analysis"
+      - "Quality assurance vs quality control"
+      - "Quality management systems"
+      - "Critical parameter management"
+      - "Metrics and key performance indicators (KPIs)"
+    learning_outcomes: ["LO4", "LO5"]
+    references: ["T1"]
+
+  - number: 11
+    title: "Agreement and Infrastructure Management"
+    duration: 120
+    approach: "Business/Organizational"
+    topics:
+      - "Supplier engagement and contracts"
+      - "Vendor selection criteria"
+      - "Make vs buy decisions"
+      - "Infrastructure requirements planning"
+      - "Life cycle management plans"
+      - "Maintenance and support strategies"
+      - "Technology refresh planning"
+    learning_outcomes: ["LO3", "LO4"]
+    references: ["T1"]
+
+  - number: 12
+    title: "Specialty Engineering: Safety & Security"
+    duration: 120
+    approach: "Safety/Security-Focused"
+    topics:
+      - "Safety analysis methods"
+      - "Hazard analysis and risk assessment (HARA)"
+      - "Functional safety: ISO 26262"
+      - "Security requirements engineering"
+      - "Cybersecurity in automotive systems"
+      - "Interoperability requirements"
+      - "Human factors engineering"
+    learning_outcomes: ["LO4", "LO5"]
+    references: ["T1", "R2"]
+
+  - number: 13
+    title: "Life Cycle Cost (LCC) & Total Cost of Ownership (TCO)"
+    duration: 120
+    approach: "Economic/Analytical"
+    topics:
+      - "Life cycle cost analysis methods"
+      - "Cost breakdown structure"
+      - "Development, production, operation, disposal costs"
+      - "Total cost of ownership analysis"
+      - "Cost-benefit analysis"
+      - "Return on investment (ROI) calculations"
+      - "Affordability analysis"
+    learning_outcomes: ["LO5"]
+    references: ["R1"]
+
+  - number: 14
+    title: "Case Study 2"
+    duration: 120
+    approach: "Case-Study/Advanced"
+    topics:
+      - "Advanced case study analysis"
+      - "Safety, security, and specialty engineering aspects"
+      - "Application of SE principles to complex automotive system"
+      - "Group analysis and presentation"
+      - "Critical evaluation and recommendations"
+    learning_outcomes: ["LO3", "LO4", "LO5"]
+    references: ["R2"]
+
+  - number: 15
+    title: "Technical Management & Enabling Processes"
+    duration: 120
+    approach: "Management/Process-Focused"
+    topics:
+      - "Technical planning and control"
+      - "Configuration management"
+      - "Information management"
+      - "Measurement and analysis"
+      - "Decision management processes"
+      - "Enabling processes: HR management"
+      - "Infrastructure and knowledge management"
+    learning_outcomes: ["LO3", "LO4"]
+    references: ["T1"]
+
+  - number: 16
+    title: "Emerging Trends in Systems Engineering"
+    duration: 120
+    approach: "Forward-Looking/Industry Trends"
+    topics:
+      - "Digital engineering and digital thread"
+      - "AI/ML in systems engineering"
+      - "DevOps for systems engineering"
+      - "Future of agile systems engineering"
+      - "MBSE in practice: industry adoption"
+      - "Autonomous systems engineering challenges"
+      - "Sustainability and green systems engineering"
+    learning_outcomes: ["LO1", "LO3"]
+    references: ["R2"]
+
+evaluation:
+  components:
+    - name: "Quiz/Assignment"
+      type: "Online"
+      weight: 20
+      description: "Quizzes or assignments delivered via eLearn portal"
+    - name: "Mid-Semester Test"
+      type: "Closed Book"
+      weight: 30
+      duration: "2 hours"
+      coverage: "Sessions 1-8"
+    - name: "Case Study"
+      type: "Project Work"
+      weight: 20
+      description: "Application of systems engineering principles to automotive domain problem"
+    - name: "Comprehensive Exam"
+      type: "Open Book"
+      weight: 30
+      duration: "2.5 hours"
+      coverage: "All sessions"

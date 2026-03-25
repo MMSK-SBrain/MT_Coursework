@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 16,
+  "week": 4,
+  "session_title": "Lubrication — The Engine's Lifeblood",
+  "questions": [
+    {
+      "id": "D16-Q01",
+      "question": "In a multi-grade oil designation such as 5W-30, what does the 'W' stand for?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Weight",
+        "B": "Wax",
+        "C": "Winter",
+        "D": "Width"
+      },
+      "correct_answer": "C",
+      "explanation": "The 'W' in SAE multi-grade oil designations stands for Winter. The number before the W indicates the oil's cold-flow viscosity — how easily it flows at low temperatures during cold starts.",
+      "topic": "SAE Oil Grades",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D16-Q02",
+      "question": "Which of the following is NOT one of the five functions of engine oil?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Lubricate moving parts",
+        "B": "Cool bearings and pistons",
+        "C": "Seal gaps between piston rings and cylinder walls",
+        "D": "Generate hydraulic pressure for power steering"
+      },
+      "correct_answer": "D",
+      "explanation": "The five functions of engine oil are: lubricate (reduce friction), cool (carry heat from bearings and pistons), seal (fill gaps between rings and cylinder walls), clean (suspend contaminants), and protect (prevent corrosion). Power steering uses a separate hydraulic fluid system.",
+      "topic": "Functions of Engine Oil",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D16-Q03",
+      "question": "What is the purpose of the bypass valve built into an oil filter?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To direct oil to the turbocharger first",
+        "B": "To allow oil to reach the engine when the filter is clogged or the oil is too cold",
+        "C": "To reduce oil pressure at high RPM",
+        "D": "To drain oil back to the sump when the engine is off"
+      },
+      "correct_answer": "B",
+      "explanation": "The bypass valve opens when the filter becomes clogged or when oil is too cold and thick to pass through the filter media. Unfiltered oil reaching the bearings is preferable to no oil at all — the bypass valve is a safety mechanism.",
+      "topic": "Oil Filtration",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D16-Q04",
+      "question": "Compared to a 10W-40 oil, a 0W-20 oil will be:",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Thinner at cold temperatures and thinner at operating temperature",
+        "B": "Thicker at cold temperatures and thinner at operating temperature",
+        "C": "Thinner at cold temperatures and thicker at operating temperature",
+        "D": "Identical in viscosity at all temperatures"
+      },
+      "correct_answer": "A",
+      "explanation": "The 0W flows more easily at cold temperatures than 10W (lower W number = better cold flow, down to -35 C vs -25 C). The 20 hot grade is thinner at 100 C than the 40 hot grade. So 0W-20 is thinner in both cold and hot conditions compared to 10W-40.",
+      "topic": "SAE Oil Grades",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D16-Q05",
+      "question": "Why are ACEA C-rated oils described as 'low-SAPS'?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "They contain fewer viscosity improver polymers to save cost",
+        "B": "They use a thinner base stock to improve fuel economy",
+        "C": "They have reduced Sulphated Ash, Phosphorus, and Sulphur to protect DPFs and catalytic converters",
+        "D": "They exclude all detergent additives to extend drain intervals"
+      },
+      "correct_answer": "C",
+      "explanation": "ACEA C-rated oils are formulated with low levels of Sulphated Ash, Phosphorus, and Sulphur (SAPS). These substances can poison catalytic converters and clog diesel particulate filters. Low-SAPS oils protect exhaust aftertreatment systems while still providing engine protection.",
+      "topic": "API and ACEA Ratings",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D16-Q06",
+      "question": "A customer brings in a 2020 turbocharged diesel SUV for an oil change. The service history shows the previous shop used a cheap 15W-40 mineral oil instead of the manufacturer-specified 5W-30 ACEA C3 full synthetic. Which combination of problems is this MOST likely to cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Immediate turbocharger bearing seizure and catalytic converter meltdown",
+        "B": "Premature DPF clogging from high-SAPS content and increased fuel consumption from higher viscosity drag",
+        "C": "Oil pump failure from excessive flow resistance and crankshaft bearing corrosion",
+        "D": "Coolant contamination from thermal breakdown and expansion tank overflow"
+      },
+      "correct_answer": "B",
+      "explanation": "A 15W-40 mineral oil is not low-SAPS rated, so its higher sulphated ash content will gradually clog the DPF. The higher viscosity (15W-40 vs 5W-30) increases internal friction and parasitic drag, worsening fuel economy. While turbo damage is possible long-term, the most likely near-term effects are DPF accumulation and fuel penalty.",
+      "topic": "Oil Specification Consequences",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D16-Q07",
+      "question": "A technician measures oil pressure on a high-mileage engine and finds 0.7 bar at warm idle but 3.0 bar at 3,000 RPM. The oil level is correct and the correct viscosity grade is being used. What is the MOST likely root cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "A faulty oil pressure relief valve stuck open",
+        "B": "A clogged oil pickup strainer restricting flow",
+        "C": "A failed oil temperature sensor providing incorrect readings to the ECU",
+        "D": "Worn main and connecting rod bearings allowing excessive oil bleed-off at low pump speed"
+      },
+      "correct_answer": "D",
+      "explanation": "Low pressure at idle that improves at higher RPM indicates a flow-related issue. Worn bearings have increased clearance, allowing more oil to escape the bearing journals. At low RPM, the pump cannot compensate for this bleed-off, so pressure drops. At higher RPM, the pump delivers enough volume to maintain pressure despite the extra clearance. A stuck-open relief valve would cause low pressure at all RPMs, and a clogged pickup would starve the pump across the range.",
+      "topic": "Oil Pressure Diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D16-Q08",
+      "question": "During a routine oil change, a technician notices the drained oil is grey and frothy with a milky residue on the oil filler cap. The coolant level is slightly low with no visible external leaks. What cross-system fault should the technician investigate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "A leaking head gasket allowing coolant to enter the oil passages",
+        "B": "Worn piston rings causing excessive blow-by into the crankcase",
+        "C": "A failed oil cooler thermostat causing oil to overheat and oxidise",
+        "D": "Contaminated fuel diluting the oil and changing its colour"
+      },
+      "correct_answer": "A",
+      "explanation": "Grey, frothy oil with milky residue under the filler cap is a classic sign of coolant mixing with engine oil. Combined with a low coolant level and no external leaks, this strongly indicates a head gasket breach between a coolant passage and an oil passage. This is a cooling-lubrication crossover fault — the coolant is entering the oil, destroying its lubricating properties and risking bearing damage.",
+      "topic": "Oil Condition Diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D16-Q09",
+      "question": "A gerotor oil pump is described as a positive displacement pump. What does this mean in practical terms, and why does the system need a pressure relief valve?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "It produces constant pressure regardless of RPM, and the relief valve prevents cavitation at low speed",
+        "B": "It only pumps oil in one direction, and the relief valve reverses flow for engine braking lubrication",
+        "C": "It moves a fixed volume of oil per revolution, so flow and pressure increase with RPM, and the relief valve prevents dangerously high pressure at high RPM",
+        "D": "It requires positive electrical input to operate, and the relief valve provides backup if the motor fails"
+      },
+      "correct_answer": "C",
+      "explanation": "A positive displacement pump delivers a fixed volume of oil with each revolution of the shaft. As engine RPM increases, the pump spins faster and delivers more oil. Without regulation, the oil pressure at high RPM would exceed safe limits (potentially 8-10+ bar) and could burst oil seals or damage the filter. The pressure relief valve opens at approximately 4-5 bar and redirects excess oil back to the sump to maintain safe system pressure.",
+      "topic": "Oil Pump Operation",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D16-Q10",
+      "question": "A turbocharged petrol vehicle has been driven exclusively on short trips in cold weather for several months. The technician finds the oil is black, has a strong fuel smell, and the viscosity feels thin. What has MOST likely occurred, and what additional component is at risk?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The catalytic converter has overheated and sent heat back through the exhaust manifold, burning the oil additives",
+        "B": "The oil filter has failed open, allowing unfiltered soot to darken the oil and reduce its viscosity",
+        "C": "The oil pressure relief valve is stuck closed, forcing oil through the bearings at excessive speed and shearing the molecules",
+        "D": "Fuel dilution from incomplete combustion during cold running has thinned the oil, and the turbocharger bearings are at risk of failure from inadequate oil film thickness"
+      },
+      "correct_answer": "D",
+      "explanation": "During short cold trips, the engine runs rich because it never fully warms up. Unburned fuel washes past the piston rings into the crankcase, diluting the oil. This makes the oil thinner (lower viscosity), darker (contaminated with combustion by-products), and gives it a fuel smell. The turbocharger shaft, spinning at up to 250,000 RPM on an oil film only 0.02-0.05 mm thick, is especially vulnerable to diluted oil that cannot maintain adequate film thickness.",
+      "topic": "Oil Degradation and Turbo Risk",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

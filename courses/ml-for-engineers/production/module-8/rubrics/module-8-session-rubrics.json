@@ -1,0 +1,258 @@
+{
+  "module": 8,
+  "module_name": "Natural Language Processing",
+  "rubrics": [
+    {
+      "session": "8.1",
+      "session_name": "Text Preprocessing",
+      "total_points": 15,
+      "criteria": [
+        {
+          "category": "Implementation",
+          "points": 8,
+          "requirements": [
+            "Tokenization working correctly (2 pts)",
+            "Stop word removal implemented (2 pts)",
+            "Stemming/lemmatization applied (2 pts)",
+            "Complete preprocessing pipeline (2 pts)"
+          ]
+        },
+        {
+          "category": "Visualizations",
+          "points": 3,
+          "requirements": [
+            "Word clouds before/after (1 pt)",
+            "Word frequency charts (1 pt)",
+            "Token length distribution (1 pt)"
+          ]
+        },
+        {
+          "category": "Documentation",
+          "points": 2,
+          "requirements": [
+            "Clear markdown explanations (1 pt)",
+            "Code comments (1 pt)"
+          ]
+        },
+        {
+          "category": "Code Quality",
+          "points": 2,
+          "requirements": [
+            "Clean, readable code (1 pt)",
+            "Reusable functions (1 pt)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": "8.2",
+      "session_name": "Sentiment Analysis Basic",
+      "total_points": 15,
+      "criteria": [
+        {
+          "category": "Implementation",
+          "points": 8,
+          "requirements": [
+            "Data loading and preprocessing (2 pts)",
+            "BoW and TF-IDF vectorization (2 pts)",
+            "Model training (Naive Bayes + Logistic Regression) (2 pts)",
+            "Evaluation metrics computed (2 pts)"
+          ]
+        },
+        {
+          "category": "Accuracy Target",
+          "points": 3,
+          "requirements": [
+            "Accuracy >85% (3 pts)",
+            "Accuracy 80-85% (2 pts)",
+            "Accuracy 75-80% (1 pt)"
+          ]
+        },
+        {
+          "category": "Visualizations",
+          "points": 2,
+          "requirements": [
+            "Confusion matrix (1 pt)",
+            "Model comparison chart (1 pt)"
+          ]
+        },
+        {
+          "category": "Documentation",
+          "points": 2,
+          "requirements": [
+            "Clear explanations (1 pt)",
+            "Test on custom reviews (1 pt)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": "8.3",
+      "session_name": "Word Embeddings",
+      "total_points": 15,
+      "criteria": [
+        {
+          "category": "Implementation",
+          "points": 8,
+          "requirements": [
+            "Load/create word embeddings (2 pts)",
+            "Multi-class classification model (2 pts)",
+            "Model training and evaluation (2 pts)",
+            "Comparison with baseline (2 pts)"
+          ]
+        },
+        {
+          "category": "Accuracy Target",
+          "points": 3,
+          "requirements": [
+            "Accuracy >80% (3 pts)",
+            "Accuracy 75-80% (2 pts)",
+            "Accuracy 70-75% (1 pt)"
+          ]
+        },
+        {
+          "category": "Visualizations",
+          "points": 2,
+          "requirements": [
+            "Embedding visualization (1 pt)",
+            "Confusion matrix (1 pt)"
+          ]
+        },
+        {
+          "category": "Documentation",
+          "points": 2,
+          "requirements": [
+            "Explanation of embeddings (1 pt)",
+            "Results analysis (1 pt)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": "8.4",
+      "session_name": "LSTM Sentiment Analysis",
+      "total_points": 15,
+      "criteria": [
+        {
+          "category": "Implementation",
+          "points": 8,
+          "requirements": [
+            "LSTM architecture defined (2 pts)",
+            "Embedding layer configured (2 pts)",
+            "Model training with proper callbacks (2 pts)",
+            "Evaluation on test set (2 pts)"
+          ]
+        },
+        {
+          "category": "Accuracy Target",
+          "points": 3,
+          "requirements": [
+            "Accuracy >85% (3 pts)",
+            "Accuracy 80-85% (2 pts)",
+            "Accuracy 75-80% (1 pt)"
+          ]
+        },
+        {
+          "category": "Visualizations",
+          "points": 2,
+          "requirements": [
+            "Training history plots (1 pt)",
+            "Confusion matrix (1 pt)"
+          ]
+        },
+        {
+          "category": "Documentation",
+          "points": 2,
+          "requirements": [
+            "Model architecture explanation (1 pt)",
+            "Comparison to traditional ML (1 pt)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": "8.5",
+      "session_name": "Transformers and BERT",
+      "total_points": 15,
+      "criteria": [
+        {
+          "category": "Implementation",
+          "points": 8,
+          "requirements": [
+            "BERT model loaded correctly (2 pts)",
+            "Fine-tuning or text classification (2 pts)",
+            "Proper tokenization (2 pts)",
+            "Evaluation metrics (2 pts)"
+          ]
+        },
+        {
+          "category": "Functionality",
+          "points": 3,
+          "requirements": [
+            "Successfully uses pre-trained model (3 pts)",
+            "Partial implementation (2 pts)",
+            "Basic usage demonstrated (1 pt)"
+          ]
+        },
+        {
+          "category": "Visualizations",
+          "points": 2,
+          "requirements": [
+            "Results visualization (1 pt)",
+            "Comparison to previous models (1 pt)"
+          ]
+        },
+        {
+          "category": "Documentation",
+          "points": 2,
+          "requirements": [
+            "Explanation of transformers (1 pt)",
+            "Use case discussion (1 pt)"
+          ]
+        }
+      ]
+    },
+    {
+      "session": "8.6",
+      "session_name": "Text Generation",
+      "total_points": 15,
+      "criteria": [
+        {
+          "category": "Implementation",
+          "points": 8,
+          "requirements": [
+            "GPT model loaded/configured (2 pts)",
+            "Text generation working (2 pts)",
+            "Temperature sampling demonstrated (2 pts)",
+            "Multiple generation examples (2 pts)"
+          ]
+        },
+        {
+          "category": "Quality",
+          "points": 3,
+          "requirements": [
+            "Coherent text generated (3 pts)",
+            "Partially coherent (2 pts)",
+            "Basic generation (1 pt)"
+          ]
+        },
+        {
+          "category": "Visualizations",
+          "points": 2,
+          "requirements": [
+            "Generation examples displayed (1 pt)",
+            "Temperature comparison (1 pt)"
+          ]
+        },
+        {
+          "category": "Documentation",
+          "points": 2,
+          "requirements": [
+            "Explanation of generation process (1 pt)",
+            "Applications discussed (1 pt)"
+          ]
+        }
+      ]
+    }
+  ]
+}

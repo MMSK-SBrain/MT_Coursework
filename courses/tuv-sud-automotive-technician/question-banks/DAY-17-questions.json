@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 17,
+  "week": 4,
+  "session_title": "Cooling & Thermal Management",
+  "questions": [
+    {
+      "id": "D17-Q01",
+      "question": "What is the approximate normal operating temperature range for engine coolant in a modern vehicle?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "50-65 degrees Celsius",
+        "B": "120-140 degrees Celsius",
+        "C": "85-105 degrees Celsius",
+        "D": "150-180 degrees Celsius"
+      },
+      "correct_answer": "C",
+      "explanation": "Modern engines are designed to operate with coolant temperatures of approximately 85-105 degrees Celsius, with a target around 90 degrees C. This is the optimal balance — warm enough for efficient combustion and low emissions, but cool enough to prevent component damage.",
+      "topic": "Cooling System Fundamentals",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D17-Q02",
+      "question": "When the thermostat is closed during engine warm-up, where does the coolant circulate?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Through a bypass circuit and heater core, not through the radiator",
+        "B": "Through the radiator only",
+        "C": "Coolant does not circulate at all until the thermostat opens",
+        "D": "Through the expansion tank and overflow hose"
+      },
+      "correct_answer": "A",
+      "explanation": "When the thermostat is closed, coolant circulates in a small bypass loop — through the engine block, cylinder head, heater core, and bypass passage back to the water pump. This allows the engine to warm up quickly and provides cabin heat. The radiator is bypassed until the thermostat opens.",
+      "topic": "Thermostat Operation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D17-Q03",
+      "question": "What is the primary purpose of pressurising the cooling system with a pressure cap?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To force coolant through the heater core faster",
+        "B": "To prevent coolant from flowing backward through the water pump",
+        "C": "To maintain oil pressure in the engine",
+        "D": "To raise the boiling point of the coolant above the operating temperature"
+      },
+      "correct_answer": "D",
+      "explanation": "Pressurising the cooling system raises the boiling point of the coolant. At atmospheric pressure, water boils at 100 degrees C. A 1.0 bar pressure cap raises this to approximately 121 degrees C. With a 50/50 coolant mix, it reaches about 129 degrees C. This provides a safety margin well above the normal 90 degrees C operating temperature.",
+      "topic": "Pressure Cap Function",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D17-Q04",
+      "question": "What are the three main coolant chemistry types used in modern vehicles?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "PAG (Polyalkylene Glycol), PAO (Polyalphaolefin), and DOT (Department of Transport)",
+        "B": "OAT (Organic Acid Technology), IAT (Inorganic Acid Technology), and HOAT (Hybrid OAT)",
+        "C": "SAE, API, and ACEA formulations",
+        "D": "Ethanol-based, methanol-based, and glycol-based"
+      },
+      "correct_answer": "B",
+      "explanation": "The three main coolant types are: IAT (Inorganic Acid Technology) — traditional green coolant with silicate inhibitors and shorter life; OAT (Organic Acid Technology) — long-life coolant using organic acids, typically orange or pink; and HOAT (Hybrid OAT) — a blend combining both technologies, often blue or yellow. Each has different chemical inhibitors and service life.",
+      "topic": "Coolant Types",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D17-Q05",
+      "question": "A weep hole on a mechanical water pump is showing coolant residue. What does this indicate?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The pump impeller has broken and needs immediate replacement",
+        "B": "The coolant is overpressurised and the weep hole is acting as a relief valve",
+        "C": "The pump's internal mechanical seal is failing and the pump should be replaced",
+        "D": "Condensation has collected on the pump housing, which is normal"
+      },
+      "correct_answer": "C",
+      "explanation": "The weep hole on a water pump is positioned below the shaft seal. When the mechanical seal begins to fail, coolant seeps past it and drains out through the weep hole. Coolant residue or crystallised deposits around the weep hole indicate the seal is deteriorating and the pump should be replaced before it fails completely.",
+      "topic": "Water Pump Diagnosis",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D17-Q06",
+      "question": "A customer complains of engine overheating on the motorway. The technician finds the upper radiator hose is hot and pressurised, but the radiator itself is cool to the touch across most of its surface. The coolant level is correct. What is the MOST likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The thermostat is stuck closed, preventing coolant from reaching the radiator",
+        "B": "The cooling fan clutch has failed and is not pulling air through the radiator",
+        "C": "The water pump impeller has corroded and is not generating sufficient flow",
+        "D": "The radiator core is internally blocked, preventing coolant from flowing through the tubes"
+      },
+      "correct_answer": "D",
+      "explanation": "A hot, pressurised upper hose confirms the thermostat IS open and coolant is reaching the radiator inlet. However, if the radiator core is internally blocked (from corrosion, scale, or contamination), coolant enters the top but cannot flow through the tubes to the bottom. The radiator surface stays cool because blocked tubes carry no heat. A fan failure would cause overheating at low speed but not usually on the motorway where ram air provides cooling.",
+      "topic": "Overheating Diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D17-Q07",
+      "question": "A technician mixes OAT (organic acid) coolant with IAT (inorganic acid) coolant to top up a system. What is the MOST serious consequence of this mixing?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The coolant immediately boils due to a chemical reaction",
+        "B": "The corrosion inhibitors react and form a gel or sludge that can block the radiator, heater core, and water passages",
+        "C": "The mixture becomes electrically conductive and causes ECU damage through the coolant temperature sensor",
+        "D": "The freezing point protection is eliminated and the engine block will crack in winter"
+      },
+      "correct_answer": "B",
+      "explanation": "Mixing OAT and IAT coolants causes the different corrosion inhibitor chemistries to react with each other. The organic acids and silicate-based inorganic inhibitors can form a gel or precipitate sludge. This sludge restricts flow through small passages — particularly the heater core, radiator tubes, and coolant jackets around the cylinder head. The result is reduced cooling capacity, potential hot spots, and eventual overheating.",
+      "topic": "Coolant Mixing Consequences",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D17-Q08",
+      "question": "A vehicle overheats only when idling in traffic but maintains normal temperature at highway speeds. The cooling fan does not engage. Which diagnostic path should the technician follow FIRST?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the thermostat, as it is clearly not opening fully",
+        "B": "Flush the radiator to remove internal blockage that restricts low-speed airflow",
+        "C": "Replace the water pump because it cannot generate enough flow at idle RPM",
+        "D": "Check the fan relay, fuse, coolant temperature sensor signal, and fan motor operation before replacing any parts"
+      },
+      "correct_answer": "D",
+      "explanation": "At highway speed, ram air through the radiator provides sufficient cooling. At idle, the cooling fan must take over. If the fan does not engage, the cause could be a blown fuse, failed relay, faulty coolant temperature sensor not sending the activation signal, a bad fan motor, or a wiring fault. The technician should systematically test the electrical circuit — fuse, relay, sensor signal, and motor — before condemning any single component. The thermostat is likely working since the system cools at highway speed.",
+      "topic": "Cooling Fan Diagnosis",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D17-Q09",
+      "question": "During a combustion gas leak test (block test) on a suspected head gasket failure, the fluid in the tester changes from blue to yellow when held over the expansion tank of a running engine. What does this confirm?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Combustion gases (CO2) are present in the cooling system, confirming a head gasket or crack allowing gas into the coolant",
+        "B": "The coolant concentration is too weak and needs to be strengthened",
+        "C": "The cooling system has excessive air pockets from improper bleeding",
+        "D": "The coolant has become acidic from age and needs to be replaced"
+      },
+      "correct_answer": "A",
+      "explanation": "A combustion gas leak tester uses a chemical reagent (typically bromothymol blue) that changes from blue to yellow in the presence of carbon dioxide. If the fluid changes colour when held over the expansion tank opening, it confirms combustion gases are entering the cooling system. This is caused by a breached head gasket, cracked cylinder head, or cracked block allowing combustion chamber pressure into the coolant passages.",
+      "topic": "Head Gasket Diagnosis",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D17-Q10",
+      "question": "A diesel vehicle's engine never reaches normal operating temperature — the gauge stays below 75 degrees C even after extended driving. The heater blows lukewarm air. What is the MOST likely root cause, and what secondary effect will this have on the emissions system?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The water pump is over-speeding due to a loose belt, and the catalytic converter will overheat from excess cooling",
+        "B": "The radiator is oversized for the engine, and the EGR valve will stick from thermal shock",
+        "C": "The thermostat is stuck open, and the DPF will struggle to reach regeneration temperature, leading to excessive soot accumulation",
+        "D": "The coolant temperature sensor is faulty, and the turbocharger will over-boost from incorrect temperature compensation"
+      },
+      "correct_answer": "C",
+      "explanation": "An engine that never reaches operating temperature almost certainly has a thermostat stuck open. Coolant continuously flows through the radiator, preventing proper warm-up. The secondary effect on a diesel is critical: a cooler engine produces cooler exhaust gases, which makes it harder for the DPF to reach the 550-600 degrees C needed for regeneration. Soot accumulates faster than it is burned off, eventually triggering a DPF warning and potential limp mode. This is a cooling-to-exhaust cross-system fault.",
+      "topic": "Thermostat Failure and Emissions Impact",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

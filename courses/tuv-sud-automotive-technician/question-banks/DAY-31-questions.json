@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 31,
+  "week": 7,
+  "session_title": "Hybrid Architectures & EV Components",
+  "questions": [
+    {
+      "id": "D31-Q01",
+      "question": "In a series hybrid architecture, which component is the sole source of mechanical drive to the wheels?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The internal combustion engine through a conventional gearbox",
+        "B": "The electric motor",
+        "C": "A combination of the engine and motor sharing a common driveshaft",
+        "D": "A hydraulic pump driven by the generator"
+      },
+      "correct_answer": "B",
+      "explanation": "In a series hybrid, the internal combustion engine never drives the wheels directly. The engine's only role is to turn a generator that produces electricity. That electricity powers the electric motor, which is the sole mechanical drive source to the wheels. The battery acts as an energy buffer between the generator and motor. The Nissan e-Power system is a production example of this architecture.",
+      "topic": "Series hybrid architecture",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D31-Q02",
+      "question": "What distinguishes a parallel hybrid from a series hybrid in terms of mechanical drive?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "A parallel hybrid uses two electric motors instead of one",
+        "B": "In a parallel hybrid, both the engine and electric motor can independently or simultaneously drive the wheels",
+        "C": "A parallel hybrid has a larger battery pack than a series hybrid",
+        "D": "A parallel hybrid can only drive the wheels using the engine"
+      },
+      "correct_answer": "B",
+      "explanation": "The defining characteristic of a parallel hybrid is that both the internal combustion engine and the electric motor have a mechanical connection to the wheels and can drive them independently or together. At low load the motor may drive alone; under heavy acceleration both contribute torque. This contrasts with a series hybrid where only the electric motor drives the wheels and the engine powers a generator. Honda's Integrated Motor Assist is a classic parallel hybrid example.",
+      "topic": "Parallel hybrid architecture",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D31-Q03",
+      "question": "Which type of electric motor uses permanent rare-earth magnets in its rotor and delivers maximum torque from zero RPM?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Induction (asynchronous) motor",
+        "B": "Switched reluctance motor",
+        "C": "Permanent Magnet Synchronous Motor (PMSM)",
+        "D": "Universal brushed DC motor"
+      },
+      "correct_answer": "C",
+      "explanation": "The Permanent Magnet Synchronous Motor (PMSM) uses powerful neodymium rare-earth magnets embedded in its rotor. The stator's three-phase windings create a rotating magnetic field that the rotor magnets follow synchronously. PMSM motors deliver maximum torque from zero RPM, achieve over 95% efficiency, and are the most common motor type in automotive EVs including BMW, VW, and Hyundai models.",
+      "topic": "PMSM electric motors",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D31-Q04",
+      "question": "What is the primary function of the inverter in an electric vehicle drivetrain?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To step down the HV battery voltage to 12 volts for the auxiliary system",
+        "B": "To convert DC from the battery to three-phase AC for the motor, and to reverse the conversion during regenerative braking",
+        "C": "To charge the HV battery from the AC mains supply",
+        "D": "To balance the individual cell voltages within the battery pack"
+      },
+      "correct_answer": "B",
+      "explanation": "The inverter is the core power electronics unit in an EV drivetrain. It uses six high-power semiconductor switches (IGBTs or SiC MOSFETs) to convert DC from the battery into three-phase AC to drive the motor. During regenerative braking, the process reverses: the motor acts as a generator producing AC, and the inverter rectifies it back to DC to recharge the battery. The inverter controls motor speed via switching frequency and torque via current amplitude using Pulse Width Modulation (PWM).",
+      "topic": "Inverter function",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D31-Q05",
+      "question": "Compared to NMC (Nickel Manganese Cobalt) battery chemistry, what is a key advantage of LFP (Lithium Iron Phosphate) cells?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "LFP has significantly higher energy density, giving more range per kilogram",
+        "B": "LFP offers superior thermal stability and a much longer cycle life of 3,000 to 5,000 cycles",
+        "C": "LFP cells charge faster because they tolerate higher C-rates at all temperatures",
+        "D": "LFP cells are lighter, reducing overall vehicle weight"
+      },
+      "correct_answer": "B",
+      "explanation": "LFP cells have excellent thermal stability with thermal runaway onset above 300 degrees C, compared to approximately 200 degrees C for NMC. LFP also delivers significantly longer cycle life of 3,000 to 5,000 or more cycles versus 1,000 to 1,500 for NMC. However, LFP has lower energy density (approximately 160 Wh/kg versus 250 Wh/kg for NMC), meaning a heavier pack is needed for equivalent range. LFP's lower cost and use of abundant iron rather than expensive cobalt make it the preferred choice for standard-range models from Tesla and BYD.",
+      "topic": "HV battery cell chemistry",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D31-Q06",
+      "question": "A technician is diagnosing a BEV that shows a fully charged HV battery on the scan tool but all 12-volt accessories — headlights, wipers, instrument cluster, and infotainment — are inoperative. The 12-volt battery measures 8.2 volts. What is the most likely root cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The main HV contactors have welded shut, preventing power distribution",
+        "B": "The DC-DC converter has failed, so it can no longer step down HV to 12 volts to maintain the auxiliary battery",
+        "C": "The on-board charger is faulty and has overcharged the HV battery while draining the 12-volt system",
+        "D": "The BMS has disconnected the HV battery due to an insulation fault, removing all power"
+      },
+      "correct_answer": "B",
+      "explanation": "In a BEV, the DC-DC converter replaces the conventional alternator. It steps down the 400V (or 800V) HV supply to 12 volts and keeps the 12-volt battery charged. If the DC-DC converter fails, the 12-volt battery drains because nothing is replenishing it, even though the HV battery remains fully charged. All conventional 12-volt systems lose power, including the control electronics that manage the HV system, rendering the vehicle undriveable. A dead or low 12-volt battery in an EV should always prompt DC-DC converter diagnosis as a primary suspect.",
+      "topic": "DC-DC converter failure diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D31-Q07",
+      "question": "A customer reports that their plug-in hybrid vehicle achieves only 15 km of electric-only range instead of the advertised 60 km, and the engine starts almost immediately after departure. Scan tool data shows the HV battery State of Charge is 22% despite being plugged in overnight. Which diagnosis should the technician investigate first?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The electric motor has partial winding damage reducing efficiency",
+        "B": "The on-board charger or the charge port connection has failed, preventing the battery from fully charging overnight",
+        "C": "The inverter is defaulting to a low-power mode due to a software fault",
+        "D": "The planetary gear set in the power-split device is slipping, wasting electric energy"
+      },
+      "correct_answer": "B",
+      "explanation": "A PHEV showing only 22% SOC after overnight charging indicates the battery did not charge. The most logical starting point is the AC charging path: the charge port connector, the charge cable, and the on-board charger (OBC). The OBC converts AC mains power to DC for the battery. If the OBC has failed, or the charge port seal is damaged preventing a proper connection, the battery remains at whatever SOC it had when parked. The technician should verify that the charge indicator activated overnight, check for OBC-related DTCs, inspect the charge port for damage or corrosion, and test with a known-good charge cable before investigating deeper drivetrain faults.",
+      "topic": "PHEV charging fault diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D31-Q08",
+      "question": "In the Toyota power-split (series-parallel) architecture, the planetary gear set connects the engine to the carrier, MG1 to the sun gear, and MG2 to the ring gear. During heavy acceleration when maximum power is needed, how does the system operate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The engine shuts off and both MG1 and MG2 drive the wheels simultaneously from battery power alone",
+        "B": "MG1 locks the sun gear, forcing the engine to drive the wheels directly while MG2 is disconnected",
+        "C": "The engine drives the wheels through the planetary gear while MG2 simultaneously adds electric torque to the ring gear from battery power",
+        "D": "The planetary gear set disengages and a conventional clutch connects the engine directly to the wheels"
+      },
+      "correct_answer": "C",
+      "explanation": "In the Toyota Synergy Drive power-split architecture, maximum power mode combines both power sources. The engine drives through the carrier of the planetary gear set, and its torque is split: some goes to the ring gear (and thus to the wheels) and some drives MG1 as a generator. MG1's generated electricity supplements battery power to feed MG2, which adds electric torque to the ring gear. The result is engine mechanical power plus MG2 electric power both reaching the wheels through the ring gear. There is no clutch or mechanical disconnect; the planetary gear set continuously blends the two power sources.",
+      "topic": "Power-split hybrid operation",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D31-Q09",
+      "question": "A technician observes that an EV's HV battery contactors close with an audible click, but the inverter reports a 'DC bus voltage low' fault and the vehicle will not enter ready mode. The pre-charge relay was recently replaced. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The replacement pre-charge resistor value is too high, preventing the inverter's DC-link capacitors from charging to the required threshold before the main positive contactor closes",
+        "B": "The BMS software needs to be re-flashed after any contactor replacement",
+        "C": "The electric motor has a short circuit that is pulling the bus voltage down",
+        "D": "The 12-volt battery is too weak to hold the contactors closed"
+      },
+      "correct_answer": "A",
+      "explanation": "The pre-charge circuit uses a resistor (typically 50 to 150 ohms) in series with the pre-charge contactor to slowly charge the inverter's DC-link capacitors before the main positive contactor closes. The main positive contactor is designed to close only after the capacitor voltage reaches approximately 90% of battery voltage. If the replacement pre-charge resistor value is too high, the RC time constant increases dramatically, and the capacitors may not reach the threshold voltage within the BMS timeout window. The BMS then closes the main contactor prematurely or aborts the sequence, leaving the DC bus voltage below the inverter's minimum operating threshold. The correct repair is to verify the pre-charge resistor matches the manufacturer's specification.",
+      "topic": "Pre-charge circuit diagnosis",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D31-Q10",
+      "question": "An induction motor is chosen over a PMSM for the rear axle of a dual-motor EV. Which technical characteristic of the induction motor makes it particularly suited for this application compared to a PMSM?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The induction motor produces higher peak torque at zero RPM than a PMSM",
+        "B": "The induction motor has zero drag torque when de-energised, eliminating unnecessary losses when the rear axle is not needed at cruise",
+        "C": "The induction motor is lighter than an equivalent PMSM",
+        "D": "The induction motor requires no cooling system, simplifying rear axle packaging"
+      },
+      "correct_answer": "B",
+      "explanation": "When an induction motor is not energised (no current to the stator), the squirrel-cage rotor has no permanent magnets to create a residual magnetic field. This means there is effectively zero drag torque when the motor is spinning unpowered. In a dual-motor EV, this is valuable because at highway cruise where rear drive is not needed, the rear induction motor spins freely without wasting energy as drag. A PMSM, by contrast, always has its permanent magnets creating a back-EMF even when not driven, producing some drag. Tesla uses this strategy with a PMSM on the front axle for efficiency and an induction motor on the rear for on-demand AWD without drag penalty.",
+      "topic": "Induction vs PMSM motor selection",
+      "bloom_level": "Evaluate"
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+{
+  "module": "Module 9: Deployment & MLOps",
+  "rubrics": [
+    {
+      "session": "9.1 - Model Serialization & Version Control",
+      "total_points": 15,
+      "criteria": [
+        {
+          "category": "Model Saving (5 points)",
+          "excellent": {
+            "score": 5,
+            "description": "Model saved correctly with joblib/pickle and all preprocessing components included. Can load and make predictions successfully."
+          },
+          "good": {
+            "score": 4,
+            "description": "Model saved correctly but minor issues with preprocessing pipeline or file organization."
+          },
+          "satisfactory": {
+            "score": 3,
+            "description": "Model saves but incomplete pipeline or inconsistent predictions after loading."
+          },
+          "needs_improvement": {
+            "score": 0-2,
+            "description": "Model doesn't save correctly or fails to load, or preprocessing missing."
+          }
+        },
+        {
+          "category": "Versioning System (4 points)",
+          "excellent": {
+            "score": 4,
+            "description": "Implements complete versioning with metadata (metrics, timestamp, description). Uses semantic versioning correctly."
+          },
+          "good": {
+            "score": 3,
+            "description": "Basic versioning implemented with some metadata."
+          },
+          "satisfactory": {
+            "score": 2,
+            "description": "Simple versioning without comprehensive metadata."
+          },
+          "needs_improvement": {
+            "score": 0-1,
+            "description": "No versioning or incomplete implementation."
+          }
+        },
+        {
+          "category": "Error Handling (3 points)",
+          "excellent": {
+            "score": 3,
+            "description": "Robust error handling with try-except blocks, meaningful error messages, and graceful degradation."
+          },
+          "good": {
+            "score": 2,
+            "description": "Basic error handling implemented."
+          },
+          "needs_improvement": {
+            "score": 0-1,
+            "description": "No error handling or crashes on errors."
+          }
+        },
+        {
+          "category": "Documentation (3 points)",
+          "excellent": {
+            "score": 3,
+            "description": "Complete model card with performance metrics, usage instructions, and limitations documented."
+          },
+          "good": {
+            "score": 2,
+            "description": "Basic documentation present but missing some elements."
+          },
+          "needs_improvement": {
+            "score": 0-1,
+            "description": "Minimal or no documentation."
+          }
+        }
+      ]
+    },
+    {
+      "session": "9.2 - Flask API Basics",
+      "total_points": 15,
+      "criteria": [
+        {
+          "category": "API Implementation (6 points)",
+          "excellent": {
+            "score": 6,
+            "description": "Complete Flask API with /predict, /health, and / endpoints. All endpoints work correctly with proper HTTP methods and status codes."
+          },
+          "good": {
+            "score": 4-5,
+            "description": "API works with main endpoints but minor issues or missing health check."
+          },
+          "satisfactory": {
+            "score": 2-3,
+            "description": "Basic API functionality but significant issues or missing features."
+          },
+          "needs_improvement": {
+            "score": 0-1,
+            "description": "API doesn't run or has major functionality issues."
+          }
+        },
+        {
+          "category": "Input Validation & Error Handling (4 points)",
+          "excellent": {
+            "score": 4,
+            "description": "Comprehensive input validation, proper error handling with appropriate HTTP codes (400, 500), and meaningful error messages."
+          },
+          "good": {
+            "score": 3,
+            "description": "Basic validation and error handling present."
+          },
+          "needs_improvement": {
+            "score": 0-2,
+            "description": "Minimal validation or crashes on invalid input."
+          }
+        },
+        {
+          "category": "Testing (3 points)",
+          "excellent": {
+            "score": 3,
+            "description": "Complete test script that tests all endpoints, error cases, and edge cases. Tests pass successfully."
+          },
+          "good": {
+            "score": 2,
+            "description": "Basic tests present covering main functionality."
+          },
+          "needs_improvement": {
+            "score": 0-1,
+            "description": "No tests or incomplete testing."
+          }
+        },
+        {
+          "category": "Documentation (2 points)",
+          "excellent": {
+            "score": 2,
+            "description": "Complete README with API documentation, usage examples, and setup instructions."
+          },
+          "needs_improvement": {
+            "score": 0-1,
+            "description": "Minimal or no documentation."
+          }
+        }
+      ]
+    },
+    {
+      "session": "9.3 - FastAPI for ML",
+      "total_points": 15,
+      "criteria": [
+        {
+          "category": "FastAPI Implementation (6 points)",
+          "excellent": {
+            "score": 6,
+            "description": "Complete FastAPI with Pydantic models, automatic validation, and interactive docs working."
+          },
+          "good": {
+            "score": 4-5,
+            "description": "FastAPI works with Pydantic but minor issues."
+          },
+          "satisfactory": {
+            "score": 2-3,
+            "description": "Basic FastAPI without proper Pydantic models."
+          },
+          "needs_improvement": {
+            "score": 0-1,
+            "description": "API doesn't work or major issues."
+          }
+        },
+        {
+          "category": "Pydantic Models (4 points)",
+          "excellent": {
+            "score": 4,
+            "description": "Well-defined Pydantic models with appropriate types and validation rules."
+          },
+          "good": {
+            "score": 3,
+            "description": "Pydantic models present but could be more comprehensive."
+          },
+          "needs_improvement": {
+            "score": 0-2,
+            "description": "No Pydantic models or incorrect usage."
+          }
+        },
+        {
+          "category": "Documentation & Testing (3 points)",
+          "excellent": {
+            "score": 3,
+            "description": "Interactive docs work correctly (/docs), tests present."
+          },
+          "good": {
+            "score": 2,
+            "description": "Docs present but limited tests."
+          },
+          "needs_improvement": {
+            "score": 0-1,
+            "description": "No docs or tests."
+          }
+        },
+        {
+          "category": "Flask vs FastAPI Comparison (2 points)",
+          "excellent": {
+            "score": 2,
+            "description": "Clear comparison showing understanding of when to use each."
+          },
+          "needs_improvement": {
+            "score": 0-1,
+            "description": "Minimal comparison or understanding."
+          }
+        }
+      ]
+    },
+    {
+      "session": "9.4 - Cloud Deployment",
+      "total_points": 15,
+      "criteria": [
+        {
+          "category": "Successful Deployment (7 points)",
+          "excellent": {
+            "score": 7,
+            "description": "Model successfully deployed to cloud (Heroku or similar) with working public URL. API accessible and functional."
+          },
+          "good": {
+            "score": 5-6,
+            "description": "Deployed but minor issues or intermittent functionality."
+          },
+          "satisfactory": {
+            "score": 3-4,
+            "description": "Deployment attempted but significant issues."
+          },
+          "needs_improvement": {
+            "score": 0-2,
+            "description": "No successful deployment or major failures."
+          }
+        },
+        {
+          "category": "Deployment Configuration (4 points)",
+          "excellent": {
+            "score": 4,
+            "description": "Proper Procfile, requirements.txt, runtime.txt. Environment variables used correctly."
+          },
+          "good": {
+            "score": 3,
+            "description": "Configuration present but minor issues."
+          },
+          "needs_improvement": {
+            "score": 0-2,
+            "description": "Missing or incorrect configuration files."
+          }
+        },
+        {
+          "category": "Testing & Documentation (4 points)",
+          "excellent": {
+            "score": 4,
+            "description": "Deployment tested and documented with URL, setup instructions, and troubleshooting guide."
+          },
+          "good": {
+            "score": 3,
+            "description": "Basic documentation present."
+          },
+          "needs_improvement": {
+            "score": 0-2,
+            "description": "Minimal testing or documentation."
+          }
+        }
+      ]
+    },
+    {
+      "session": "9.5 - Model Monitoring & Logging",
+      "total_points": 15,
+      "criteria": [
+        {
+          "category": "Logging Implementation (5 points)",
+          "excellent": {
+            "score": 5,
+            "description": "Comprehensive logging of predictions with timestamp, input, prediction, confidence, and model version."
+          },
+          "good": {
+            "score": 4,
+            "description": "Basic logging present but missing some fields."
+          },
+          "satisfactory": {
+            "score": 2-3,
+            "description": "Minimal logging."
+          },
+          "needs_improvement": {
+            "score": 0-1,
+            "description": "No logging or broken implementation."
+          }
+        },
+        {
+          "category": "Monitoring Dashboard (6 points)",
+          "excellent": {
+            "score": 6,
+            "description": "Complete dashboard showing key metrics: requests over time, prediction distribution, confidence scores. Interactive and updates correctly."
+          },
+          "good": {
+            "score": 4-5,
+            "description": "Dashboard present with basic metrics."
+          },
+          "satisfactory": {
+            "score": 2-3,
+            "description": "Minimal dashboard functionality."
+          },
+          "needs_improvement": {
+            "score": 0-1,
+            "description": "No dashboard or doesn't work."
+          }
+        },
+        {
+          "category": "Alert System (4 points)",
+          "excellent": {
+            "score": 4,
+            "description": "Alert system implemented with reasonable thresholds and notifications."
+          },
+          "good": {
+            "score": 3,
+            "description": "Basic alerts present."
+          },
+          "needs_improvement": {
+            "score": 0-2,
+            "description": "No alert system."
+          }
+        }
+      ]
+    },
+    {
+      "session": "9.6 - A/B Testing & Model Updates",
+      "total_points": 15,
+      "criteria": [
+        {
+          "category": "Multiple Model Versions (5 points)",
+          "excellent": {
+            "score": 5,
+            "description": "Successfully deployed two model versions with traffic splitting logic implemented."
+          },
+          "good": {
+            "score": 4,
+            "description": "Two versions deployed but basic splitting."
+          },
+          "satisfactory": {
+            "score": 2-3,
+            "description": "Attempted multiple versions but issues."
+          },
+          "needs_improvement": {
+            "score": 0-1,
+            "description": "Only one version or non-functional."
+          }
+        },
+        {
+          "category": "A/B Testing Logic (5 points)",
+          "excellent": {
+            "score": 5,
+            "description": "Correct A/B testing implementation with configurable traffic split, proper tracking, and comparison."
+          },
+          "good": {
+            "score": 4,
+            "description": "Basic A/B testing working."
+          },
+          "needs_improvement": {
+            "score": 0-3,
+            "description": "A/B testing not working or incomplete."
+          }
+        },
+        {
+          "category": "Comparison & Analysis (5 points)",
+          "excellent": {
+            "score": 5,
+            "description": "Complete comparison dashboard showing metrics for both versions. Statistical analysis performed. Clear recommendation."
+          },
+          "good": {
+            "score": 3-4,
+            "description": "Basic comparison present."
+          },
+          "needs_improvement": {
+            "score": 0-2,
+            "description": "No comparison or analysis."
+          }
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "total_possible": 90,
+    "grading_scale": {
+      "A": "81-90 points (90-100%)",
+      "B": "72-80 points (80-89%)",
+      "C": "63-71 points (70-79%)",
+      "D": "54-62 points (60-69%)",
+      "F": "0-53 points (below 60%)"
+    },
+    "created": "2026-01-06",
+    "version": "1.0"
+  }
+}

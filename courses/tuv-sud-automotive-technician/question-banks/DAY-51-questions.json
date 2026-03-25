@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 51,
+  "week": 11,
+  "session_title": "Wiring Harness Routing & Repair",
+  "questions": [
+    {
+      "id": "D51-Q01",
+      "question": "What are the four primary failure modes that harness routing rules are designed to prevent?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Voltage drop, resistance, capacitance, and inductance",
+        "B": "Heat damage, chafing, water intrusion, and mechanical fatigue",
+        "C": "Short circuit, open circuit, high resistance, and intermittent connection",
+        "D": "Corrosion, vibration, UV damage, and chemical attack"
+      },
+      "correct_answer": "B",
+      "explanation": "Every harness routing rule exists to prevent one of four failure modes: heat damage (melted insulation near exhaust/turbo), chafing (insulation worn through from rubbing on sharp edges), water intrusion (corrosion from missing grommets), and mechanical fatigue (broken wires from repeated flexing at hinges). These four enemies of wiring drive all protection and routing decisions.",
+      "topic": "Harness failure modes",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D51-Q02",
+      "question": "Which type of loom tape is the OEM standard for interior cabin harness wrapping?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Standard electrical insulation tape",
+        "B": "PVC loom tape",
+        "C": "Fleece loom tape",
+        "D": "Duct tape"
+      },
+      "correct_answer": "C",
+      "explanation": "Fleece loom tape (such as Tesa 51612) is the OEM standard for interior harnesses. Its soft, non-woven construction absorbs vibration, prevents rattles, and moulds itself to the harness shape. It provides excellent NVH damping for cabin applications. PVC tape is used in engine bay and underbody areas. Standard electrical tape is never acceptable for harness work.",
+      "topic": "Loom tape selection",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D51-Q03",
+      "question": "What is the minimum clearance required between a harness and any heat source above 100 degrees Celsius?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "10 mm",
+        "B": "15 mm",
+        "C": "25 mm",
+        "D": "50 mm"
+      },
+      "correct_answer": "C",
+      "explanation": "The minimum clearance from any heat source above 100 degrees Celsius is 25 mm. Standard PVC wire insulation starts to degrade at 105 degrees Celsius and melts at around 150 degrees. Even proximity to hot components (without contact) causes gradual insulation degradation over time. If 25 mm clearance cannot be achieved, heat-resistant sleeving must be used.",
+      "topic": "Thermal clearance requirement",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D51-Q04",
+      "question": "When performing a crimp splice, why must a ratcheting crimp tool be used instead of standard pliers?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Ratcheting tools are faster to operate",
+        "B": "Ratcheting tools apply consistent, correct compression force and will not release until the crimp is complete, ensuring a reliable connection",
+        "C": "Pliers damage the wire insulation",
+        "D": "Ratcheting tools are required by law for all crimping operations"
+      },
+      "correct_answer": "B",
+      "explanation": "A ratcheting crimp tool ensures the butt connector is compressed with the correct force every time. It will not open until the full crimp cycle is complete. Standard pliers apply inconsistent, usually insufficient force, resulting in crimps that pass a hand tug test but fail under vibration in a vehicle. The consistent force of a ratcheting tool is what makes crimping an OEM-preferred method.",
+      "topic": "Crimp tool requirements",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D51-Q05",
+      "question": "When replacing a damaged wire in a harness, what is the rule for selecting the replacement wire gauge?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Always use the thickest gauge available for maximum safety",
+        "B": "Match the original gauge or go one size up; never go smaller",
+        "C": "Use any gauge as long as it fits in the connector terminal",
+        "D": "Use one size smaller to improve flexibility in the harness"
+      },
+      "correct_answer": "B",
+      "explanation": "The replacement wire must match the original gauge or be one size larger. A thinner wire has higher resistance and lower current capacity. Under load, it causes voltage drops that degrade circuit performance, and at worst, the wire overheats and starts a fire. Going one size up provides slightly better current handling with no negative consequences.",
+      "topic": "Wire gauge selection rule",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D51-Q06",
+      "question": "A technician repairs a chafed wire on the engine bay harness using a solder splice with standard heat shrink tubing (not adhesive-lined). The repair passes continuity testing. Six months later, the same circuit develops an intermittent fault. What most likely caused the failure?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The solder joint cracked from engine vibration",
+        "B": "Moisture wicked into the splice through the non-sealed heat shrink, corroding the copper conductors and creating a high-resistance intermittent connection",
+        "C": "The wire gauge used was too small",
+        "D": "The PVC tape over the splice unwound from heat"
+      },
+      "correct_answer": "B",
+      "explanation": "Standard heat shrink tubing only provides mechanical and insulation protection; it does not seal against moisture. In the engine bay, water and humidity wick through the unsealed ends via capillary action, reaching the exposed copper at the solder joint. Over time, corrosion develops on the copper strands, creating a green oxide layer with high resistance. The connection works intermittently as corrosion grows. Adhesive-lined heat shrink is required for any splice exposed to moisture.",
+      "topic": "Splice waterproofing failure",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D51-Q07",
+      "question": "A technician needs to remove a terminal from a 6-pin connector to re-route a wire. They do not have the correct terminal release tool and use a small flathead screwdriver to pry the terminal out. The terminal comes out but the lock tab is bent. What are the consequences of reinserting this terminal?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "No consequences; the secondary lock will hold the terminal in place",
+        "B": "The bent lock tab will not engage the housing slot, so the terminal can back out under vibration, creating an intermittent connection that may take hours to diagnose",
+        "C": "The screwdriver will have damaged the wire insulation",
+        "D": "The connector housing will crack when the terminal is reinserted"
+      },
+      "correct_answer": "B",
+      "explanation": "The terminal lock tab is the primary retention mechanism that clicks into the housing slot. A bent tab cannot engage properly, leaving the terminal free to back out of the housing under vehicle vibration. The secondary lock provides additional retention but is not designed to compensate for a failed primary lock. The result is an intermittent connection that can take hours to diagnose because it may work perfectly when the connector is being inspected but fail when the vehicle is moving.",
+      "topic": "Terminal damage consequences",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D51-Q08",
+      "question": "A technician routes a repaired harness section across the engine bay, running it over the exhaust manifold heat shield with approximately 10 mm clearance. The insulation is standard PVC rated to 105 degrees Celsius. Is this routing acceptable?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Yes, the heat shield reduces the temperature enough to protect the wire",
+        "B": "Yes, as long as the wire is wrapped with PVC loom tape for additional protection",
+        "C": "No; 10 mm is below the minimum 25 mm clearance, and even the heat shield surface can exceed 105 degrees Celsius, which will degrade the PVC insulation over time",
+        "D": "No, but adding a cable tie to the heat shield will solve the problem"
+      },
+      "correct_answer": "C",
+      "explanation": "Even with a heat shield, the surface temperature near an exhaust manifold can exceed the continuous rating of PVC insulation (105 degrees Celsius). The 25 mm minimum clearance rule applies regardless of heat shields. At 10 mm clearance, radiant and conducted heat will gradually degrade the insulation, eventually causing a short circuit. The wire must be rerouted or protected with heat-resistant sleeving rated for the actual temperature zone.",
+      "topic": "Thermal clearance violation",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D51-Q09",
+      "question": "During a solder splice, a technician notices the solder joint has a dull, grainy surface rather than a smooth, shiny appearance. The joint feels solid when pulled. Should they accept this splice?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Yes, since it passed the tug test, the electrical connection is adequate",
+        "B": "No; a dull grainy surface indicates a cold solder joint with poor molecular bonding, which will have high resistance and fail under vibration over time",
+        "C": "Yes, all lead-free solder naturally appears dull and grainy",
+        "D": "No, but applying more solder on top will fix it"
+      },
+      "correct_answer": "B",
+      "explanation": "A dull, grainy surface is the hallmark of a cold solder joint, where the solder solidified before properly wetting the copper surfaces. While it may feel mechanically solid initially, the molecular bond between solder and copper is poor. The joint will have higher resistance than a proper joint and is prone to cracking under vibration. The correct action is to reheat the joint to achieve proper wetting, or cut it off and redo the splice. Applying more solder on top of a cold joint does not fix it.",
+      "topic": "Cold solder joint identification",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D51-Q10",
+      "question": "A workshop repairs a door harness wire that broke at the hinge flex point. They solder the break and wrap it with fleece tape. Three months later, the wire breaks again in the same location. What should have been done differently?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Used crimp splice instead of solder for a stronger joint",
+        "B": "Added a service loop of extra wire length at the hinge point to allow the harness to flex without stressing the splice, and used a flexible splice method",
+        "C": "Used thicker gauge wire for the entire door harness",
+        "D": "Routed the wire through a different entry point on the door"
+      },
+      "correct_answer": "B",
+      "explanation": "The hinge flex point is a high-fatigue area where the harness bends thousands of times during the vehicle's life. A rigid solder joint at this exact point becomes the stiffest part of the flex zone, concentrating stress and causing the wire to break again at the edge of the splice. The professional repair includes a service loop (extra wire length) at the flex point so the splice sits in a non-flexing section, and using flexible wire rated for flex applications.",
+      "topic": "Flex point repair strategy",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

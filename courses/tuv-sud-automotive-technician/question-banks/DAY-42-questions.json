@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 42,
+  "week": 9,
+  "session_title": "Engine Inspection & Measurement",
+  "questions": [
+    {
+      "id": "D42-Q01",
+      "question": "When measuring cylinder bore diameter, how many readings are taken per cylinder to determine taper and ovality?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Two readings — one at the top and one at the bottom",
+        "B": "Four readings — two heights at two axes",
+        "C": "Six readings — three heights at two axes (thrust and non-thrust)",
+        "D": "Eight readings — four heights at two axes"
+      },
+      "correct_answer": "C",
+      "explanation": "Each cylinder is measured at three heights (top of ring travel, centre, bottom of ring travel) and at two axes (thrust direction perpendicular to the crankshaft, and non-thrust direction parallel to the crankshaft). This yields six readings per cylinder. Taper is calculated as the difference between top and bottom readings on the same axis. Ovality (out-of-round) is the difference between the two axes at the same height. Both measurements are needed to fully characterise bore wear.",
+      "topic": "Bore measurement technique",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D42-Q02",
+      "question": "What does Plastigage measure, and what is the critical rule during its use?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "It measures piston ring gap — the piston must be at TDC during measurement",
+        "B": "It measures bearing oil clearance — the crankshaft must NOT be rotated while the Plastigage is in place",
+        "C": "It measures cylinder bore diameter — the bore gauge must be zeroed first",
+        "D": "It measures camshaft lobe lift — the camshaft must be removed from the head"
+      },
+      "correct_answer": "B",
+      "explanation": "Plastigage is a crushable plastic strip placed across a bearing journal. When the bearing cap is installed and torqued to specification, the strip is crushed to a width proportional to the oil clearance. The crushed width is compared to a scale printed on the Plastigage packaging. The critical rule is that the crankshaft must not be rotated while the Plastigage is in place — rotation would smear the strip and destroy the measurement. The journal and bearing surfaces must also be clean and dry (no oil) for an accurate reading.",
+      "topic": "Plastigage bearing clearance measurement",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D42-Q03",
+      "question": "When using a bore gauge, why is the gauge first zeroed against an outside micrometer set to the nominal bore diameter?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Because the bore gauge can only measure differences from a reference, not absolute diameters, making comparative measurement more accurate inside a bore",
+        "B": "Because the micrometer is used to calibrate the bore gauge's spring tension",
+        "C": "Because the bore gauge cannot fit inside the cylinder without being pre-compressed",
+        "D": "Because the dial indicator on the bore gauge has no numerical scale"
+      },
+      "correct_answer": "A",
+      "explanation": "A bore gauge with a dial indicator is a comparative measurement tool. It reads the deviation from a set reference dimension rather than absolute diameter. By zeroing the gauge against an outside micrometer locked at the nominal bore size (e.g., 86.000mm), the dial indicator then reads how much the actual bore deviates from that reference. If the dial reads +0.035, the bore is 86.035mm. This comparative technique is more accurate for internal measurements than trying to read an absolute dimension inside a bore.",
+      "topic": "Bore gauge setup and theory",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D42-Q04",
+      "question": "A camshaft lobe measures 34.50mm across the base circle and 42.20mm across the nose. What is the lobe lift?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "76.70mm",
+        "B": "7.70mm",
+        "C": "42.20mm",
+        "D": "34.50mm"
+      },
+      "correct_answer": "B",
+      "explanation": "Camshaft lobe lift is the difference between the maximum dimension (across the nose) and the minimum dimension (across the base circle). Lobe lift = 42.20mm - 34.50mm = 7.70mm. This represents how far the camshaft lobe pushes the valve open. If this value falls below the manufacturer's minimum specification (due to wear on the lobe nose), the camshaft must be replaced because the hardened surface layer is only a few tenths of a millimetre deep and cannot be reground.",
+      "topic": "Camshaft lobe lift measurement",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D42-Q05",
+      "question": "What does block deck flatness measure, and what happens if warpage exceeds the specification?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "It measures bore diameter accuracy — excessive warpage requires reboring all cylinders",
+        "B": "It measures the evenness of the surface where the head gasket seals — excessive warpage means the deck must be machined flat or the head gasket will not seal properly",
+        "C": "It measures the depth of the cylinder bores — excessive warpage means the pistons are too high",
+        "D": "It measures the distance between bolt holes — excessive warpage means the head bolts won't align"
+      },
+      "correct_answer": "B",
+      "explanation": "Block deck flatness is checked by placing a precision straightedge across the deck surface in multiple directions (diagonally, lengthwise, widthwise) and attempting to insert feeler gauges underneath. The thickest gauge that fits under the straightedge equals the warpage amount. Typical maximum warpage is 0.05mm. If warpage exceeds this limit, the head gasket cannot achieve a uniform seal across the entire surface, leading to coolant or combustion gas leakage. The deck must be machined (skimmed) flat before reassembly.",
+      "topic": "Block deck flatness",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D42-Q06",
+      "question": "During bore measurement, a technician finds the following readings for Cylinder 3: Top thrust axis = 86.068mm, Bottom thrust axis = 86.012mm, Top non-thrust axis = 86.008mm. The taper limit is 0.05mm and the ovality limit is 0.03mm. What are the taper and ovality values, and what is the verdict?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Taper = 0.056mm (FAIL), Ovality = 0.060mm (FAIL) — the bore requires reboring for both reasons",
+        "B": "Taper = 0.056mm (FAIL), Ovality = 0.004mm (PASS) — rebore needed due to taper only",
+        "C": "Taper = 0.004mm (PASS), Ovality = 0.056mm (FAIL) — rebore needed due to ovality only",
+        "D": "Taper = 0.060mm (FAIL), Ovality = 0.056mm (FAIL) — the cylinder is beyond all limits"
+      },
+      "correct_answer": "A",
+      "explanation": "Taper is the difference between top and bottom readings on the same axis: 86.068 - 86.012 = 0.056mm on the thrust axis, which exceeds the 0.05mm limit (FAIL). Ovality is the difference between the two axes at the same height: at the top, 86.068 - 86.008 = 0.060mm, which exceeds the 0.03mm limit (FAIL). Both taper and ovality are out of specification. The bore has worn wider at the top (taper from piston rocking at TDC) and wider in the thrust direction (ovality from connecting rod side-loading). This cylinder requires reboring to the next oversize.",
+      "topic": "Bore measurement calculation and interpretation",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D42-Q07",
+      "question": "A Plastigage test on a main bearing journal shows the crushed strip is very wide — indicating a clearance of only 0.010mm, well below the specification range of 0.020-0.058mm. What is the most likely cause and what action should be taken?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The clearance is too tight — this is likely caused by using the wrong bearing shell (oversized shell or wrong part number), and the bearing selection must be verified against the journal measurement",
+        "B": "The Plastigage was applied incorrectly — repeat the test with less strip material",
+        "C": "The journal is severely worn — it needs regrinding to the next undersize",
+        "D": "This is an ideal result — tighter clearance means better lubrication"
+      },
+      "correct_answer": "A",
+      "explanation": "A bearing clearance far below specification indicates that the bearing shell is too thick for the journal diameter. This could mean the wrong bearing part number was used, an oversize bearing was fitted to a standard journal, or the journal was not measured correctly. Insufficient clearance restricts oil flow through the bearing, causing oil starvation, overheating, and rapid bearing failure. A bearing that is too tight is just as dangerous as one that is too loose. The journal diameter must be verified with a micrometer and the correct standard or undersize bearing shell selected to achieve the specified clearance range.",
+      "topic": "Bearing clearance troubleshooting",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D42-Q08",
+      "question": "During crankshaft journal measurement, a technician finds that rod journal number 3 reads 46.985mm at axis A and 46.960mm at axis B (90 degrees apart), both measured at the front of the journal. The out-of-round limit is 0.020mm. What does this result indicate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The journal is within specification — the 0.025mm difference is acceptable",
+        "B": "The journal is 0.025mm out-of-round, exceeding the 0.020mm limit — it requires regrinding to the next undersize diameter with matching undersize bearings",
+        "C": "The micrometer is reading incorrectly and should be recalibrated",
+        "D": "The difference indicates taper rather than out-of-round, so a different measurement is needed"
+      },
+      "correct_answer": "B",
+      "explanation": "Out-of-round is the difference between two axis readings at the same position along the journal: 46.985 - 46.960 = 0.025mm. This exceeds the 0.020mm limit. An out-of-round journal has an oval cross-section rather than a circular one, meaning the bearing clearance varies as the shaft rotates. At the tight point, the oil film is squeezed too thin; at the loose point, load-carrying capacity is reduced. This creates cyclical loading that hammers the bearing, leading to premature failure. The crankshaft must be reground to the next undersize (e.g., -0.25mm) to restore a perfectly round journal, and matching undersize bearings must be fitted.",
+      "topic": "Crankshaft journal measurement interpretation",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D42-Q09",
+      "question": "A technician examines the removed bearing shells from main journal 4. The overlay coating has worn through completely, exposing bright copper on the loaded half of the shell, while the unloaded half still shows the original silver overlay. What is the most likely root cause of this wear pattern?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The engine ran with contaminated oil containing abrasive particles",
+        "B": "The engine was consistently operated under heavy load with either insufficient oil viscosity or excessive bearing clearance, causing the oil film to collapse under load on one side",
+        "C": "The bearing was installed upside down with the oil hole misaligned",
+        "D": "The coolant temperature sensor failed, causing continuous cold-running conditions"
+      },
+      "correct_answer": "B",
+      "explanation": "Copper exposure on only the loaded half of a bearing shell indicates that the oil film collapsed under load in that area. In a main bearing, the loaded half carries the combustion and reciprocating forces. If oil viscosity is too low for the operating temperature, or if bearing clearance is excessive (allowing oil film pressure to drop), the hydrodynamic oil wedge fails under peak load. Metal-to-metal contact strips the soft overlay layer. Contamination would produce scoring across both halves, not localised overlay erosion. Misaligned oil holes would starve the bearing entirely, not just one half. This forensic evidence points to sustained heavy-load operation beyond the bearing's oil film capacity.",
+      "topic": "Bearing forensic analysis",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D42-Q10",
+      "question": "During piston ring end gap measurement, a technician pushes a new top compression ring into the cylinder bore and measures the gap at 0.12mm. The specification states a minimum gap of 0.20mm for the bore diameter. The technician concludes the ring is the correct part but the gap is too tight. What action should be taken, and what would happen if the ring were installed without correction?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The ring should be installed as-is since a tighter gap provides better sealing — no correction needed",
+        "B": "The ring end gap must be carefully enlarged using a ring filing tool to reach the minimum specification; if installed too tight, the ring will expand when the engine reaches operating temperature, the ends will butt together, and the ring will lock in the bore, scoring both the ring and the cylinder wall",
+        "C": "The ring is the wrong size and must be exchanged for a larger diameter ring",
+        "D": "The bore needs to be honed further to increase the diameter and open the gap"
+      },
+      "correct_answer": "B",
+      "explanation": "A piston ring end gap that is below the minimum specification is a serious condition. Piston rings expand as they heat up during engine operation. The end gap provides clearance for this thermal expansion. If the gap is insufficient, the ring ends will butt together at operating temperature, and continued thermal expansion forces the ring outward against the bore wall with enormous pressure. This scores the cylinder wall, breaks the ring, and causes catastrophic bore damage. The correct fix is to carefully file the ring ends using a dedicated ring filing tool, removing small amounts of material and re-checking the gap frequently until the specification is met. Rings are never installed with insufficient end gap.",
+      "topic": "Piston ring end gap correction",
+      "bloom_level": "Evaluate"
+    }
+  ]
+}

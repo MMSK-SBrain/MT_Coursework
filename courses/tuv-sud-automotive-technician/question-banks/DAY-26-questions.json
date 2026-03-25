@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 26,
+  "week": 6,
+  "session_title": "The Power Flow — Crankshaft to Contact Patch",
+  "questions": [
+    {
+      "id": "D26-Q01",
+      "question": "What is the primary function of the flywheel in the drivetrain?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To increase the engine's maximum RPM",
+        "B": "To smooth out rotational energy between power strokes and provide a friction surface for the clutch",
+        "C": "To reduce exhaust emissions during cold start",
+        "D": "To lubricate the gearbox input shaft bearings"
+      },
+      "correct_answer": "B",
+      "explanation": "The flywheel is a heavy disc (8-15 kg) bolted to the crankshaft rear end. It stores rotational energy to smooth out power pulses between firing events, provides the ring gear for starter motor engagement, and its rear face is the machined friction surface against which the clutch disc presses.",
+      "topic": "Flywheel function",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D26-Q02",
+      "question": "In a gear pair where the driving gear has 20 teeth and the driven gear has 60 teeth, what is the gear ratio?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "0.33:1",
+        "B": "1:3",
+        "C": "3:1",
+        "D": "6:1"
+      },
+      "correct_answer": "C",
+      "explanation": "Gear ratio is calculated as the number of teeth on the driven gear divided by the number of teeth on the driving gear. 60 / 20 = 3.0, giving a gear ratio of 3:1. This means the output shaft turns once for every three turns of the input shaft, producing three times the torque at one-third the speed.",
+      "topic": "Gear ratio calculation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D26-Q03",
+      "question": "What distinguishes a dual-mass flywheel (DMF) from a solid (single-mass) flywheel?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "A DMF uses two masses connected by springs to absorb torsional vibration",
+        "B": "A DMF is made entirely from aluminium to reduce weight",
+        "C": "A DMF has a built-in clutch disc that never needs replacement",
+        "D": "A DMF rotates in the opposite direction to a solid flywheel"
+      },
+      "correct_answer": "A",
+      "explanation": "A dual-mass flywheel consists of two separate masses connected by a spring-and-damper system. This design absorbs torsional vibrations from the engine before they reach the transmission, resulting in smoother operation and reduced noise. However, DMFs are a wear item and more expensive to replace than solid flywheels.",
+      "topic": "Flywheel types",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D26-Q04",
+      "question": "In the mechanical power chain, what is the role of the differential?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To disconnect the engine from the wheels when the vehicle stops",
+        "B": "To convert reciprocating motion into rotational motion",
+        "C": "To split torque between left and right wheels while allowing them to turn at different speeds",
+        "D": "To provide reverse gear functionality"
+      },
+      "correct_answer": "C",
+      "explanation": "The differential sits between the two driven wheels and has two essential functions: it divides the torque from the driveshaft equally between the left and right axle shafts, and it allows the inner and outer wheels to rotate at different speeds when the vehicle turns a corner. Without a differential, the tyres would scrub during turns.",
+      "topic": "Differential function",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D26-Q05",
+      "question": "What does a gear ratio less than 1.0 (e.g., 0.8:1) indicate about the gearbox output?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The output shaft turns slower than the input shaft with higher torque",
+        "B": "The gearbox is in reverse gear",
+        "C": "The output shaft turns faster than the input shaft with reduced torque",
+        "D": "The gearbox has a mechanical fault"
+      },
+      "correct_answer": "C",
+      "explanation": "A gear ratio below 1.0 is called overdrive. At 0.8:1, the output shaft spins faster than the input shaft (1.25 times faster), but the torque is reduced (multiplied by 0.8). Overdrive gears are used for highway cruising because they allow the engine to run at lower RPM for a given road speed, improving fuel economy.",
+      "topic": "Overdrive gear ratios",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D26-Q06",
+      "question": "A vehicle has a 6-speed manual gearbox. First gear ratio is 3.77:1 and the final drive (differential) ratio is 3.94:1. If the engine produces 180 Nm of torque, what is the approximate torque at the wheels in first gear?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "712 Nm",
+        "B": "1,420 Nm",
+        "C": "2,674 Nm",
+        "D": "680 Nm"
+      },
+      "correct_answer": "C",
+      "explanation": "The overall ratio is the gear ratio multiplied by the final drive ratio: 3.77 x 3.94 = 14.85:1. The torque at the wheels is the engine torque multiplied by the overall ratio: 180 Nm x 14.85 = 2,673 Nm (approximately 2,674 Nm). This demonstrates why first gear provides such enormous pulling force at the wheels for starting from standstill.",
+      "topic": "Overall gear ratio and torque calculation",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D26-Q07",
+      "question": "A customer complains that their rear-wheel-drive vehicle vibrates noticeably at highway speed (100-120 km/h) but the vibration disappears when coasting in neutral. Which driveline component is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The clutch disc friction material is worn",
+        "B": "The differential pinion bearing is worn",
+        "C": "The propshaft is out of balance or has a worn universal joint",
+        "D": "The flywheel ring gear has missing teeth"
+      },
+      "correct_answer": "C",
+      "explanation": "A vibration present under power at highway speed that disappears in neutral (engine still running but driveline unloaded) points to a rotating driveline component under torque load. A worn U-joint or out-of-balance propshaft produces speed-dependent vibration. The clutch disc would cause vibration at all speeds when engaged. The flywheel ring gear only engages during cranking. The differential pinion bearing would typically produce a whine, not vibration.",
+      "topic": "Driveline vibration diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D26-Q08",
+      "question": "A technician is comparing a FWD and an RWD vehicle on the lift. Which statement correctly identifies a layout difference?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The FWD vehicle has a long propshaft running to the rear axle, while the RWD vehicle uses short half shafts",
+        "B": "The RWD vehicle has a transaxle combining the gearbox and differential at the front of the vehicle",
+        "C": "The FWD vehicle uses short half shafts with CV joints from the transaxle to the front wheels, while the RWD vehicle has a propshaft to a rear differential",
+        "D": "Both layouts use identical driveline components but mounted in different orientations"
+      },
+      "correct_answer": "C",
+      "explanation": "In a FWD layout, the engine and transmission are combined into a transaxle at the front, with short half shafts using CV joints connecting to the front wheels. An RWD layout has the gearbox at the front connected by a long propshaft (with U-joints) to a separate rear differential, which then connects to the rear wheels via half shafts. The components differ significantly between layouts.",
+      "topic": "Drivetrain layout comparison",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D26-Q09",
+      "question": "An engine produces 200 Nm at 3,000 RPM. In fifth gear with a ratio of 0.93:1 and a final drive ratio of 3.94:1, what is the approximate output speed at the wheels?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "819 RPM",
+        "B": "2,790 RPM",
+        "C": "1,550 RPM",
+        "D": "3,225 RPM"
+      },
+      "correct_answer": "A",
+      "explanation": "The overall ratio is the gear ratio multiplied by the final drive ratio: 0.93 x 3.94 = 3.66:1. The output speed is the engine speed divided by the overall ratio: 3,000 / 3.66 = approximately 819 RPM. The torque at the wheels would be 200 x 3.66 = 732 Nm. In a higher gear the speed reduction is less but the torque multiplication is also lower.",
+      "topic": "Speed and torque calculation through drivetrain",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D26-Q10",
+      "question": "A technician notices that a vehicle's alternator is not charging the battery despite the engine running. Considering the relationship between the mechanical and electrical power chains, which of the following could cause this condition?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The gearbox is stuck in neutral",
+        "B": "The serpentine drive belt has snapped, so the alternator rotor is not spinning",
+        "C": "The clutch disc is worn past its service limit",
+        "D": "The differential oil level is low"
+      },
+      "correct_answer": "B",
+      "explanation": "The alternator depends on the mechanical power chain to function — specifically, the serpentine belt driven by the engine crankshaft pulley spins the alternator rotor. If the belt snaps, the alternator cannot generate electricity regardless of whether the engine is running. The gearbox, clutch, and differential are downstream of the alternator's drive and do not affect its operation. This illustrates how the electrical power chain depends on the mechanical chain.",
+      "topic": "Mechanical-electrical power chain interdependence",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

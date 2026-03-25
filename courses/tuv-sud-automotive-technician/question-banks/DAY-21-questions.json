@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 21,
+  "week": 5,
+  "session_title": "Vehicle Dynamics — How Cars Grip, Turn & Stop",
+  "questions": [
+    {
+      "id": "D21-Q01",
+      "question": "In the tyre marking '225/45R17 91W', what does the number '45' represent?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The aspect ratio — sidewall height is 45% of the section width",
+        "B": "The tyre width in millimetres",
+        "C": "The rim diameter in centimetres",
+        "D": "The maximum load capacity in kilograms"
+      },
+      "correct_answer": "A",
+      "explanation": "The second number in a tyre marking is the aspect ratio, expressed as a percentage. It indicates the sidewall height relative to the section width. For a 225/45R17 tyre, the sidewall height is 45% of 225 mm, which equals approximately 101 mm.",
+      "topic": "Tyre size markings",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D21-Q02",
+      "question": "What is the legal minimum tread depth for passenger car tyres in most European jurisdictions?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "0.8 mm",
+        "B": "1.6 mm",
+        "C": "3.0 mm",
+        "D": "4.0 mm"
+      },
+      "correct_answer": "B",
+      "explanation": "The legal minimum tread depth is 1.6 mm in most European jurisdictions. However, the industry-recommended replacement point is 3 mm because wet-weather braking performance drops significantly below that level. Tyre wear indicators (TWI) become flush with the tread surface at exactly 1.6 mm.",
+      "topic": "Tread depth and safety",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D21-Q03",
+      "question": "What does the 'R' in the tyre marking '205/55R16' indicate?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The tyre is reinforced for heavy loads",
+        "B": "The tyre has a rear-axle-only fitment",
+        "C": "The tyre has radial construction",
+        "D": "The tyre is rated for rain conditions"
+      },
+      "correct_answer": "C",
+      "explanation": "The 'R' stands for radial construction, meaning the carcass plies run radially from bead to bead at 90 degrees to the direction of travel. Virtually all modern passenger car tyres use radial construction. The alternative — bias-ply (cross-ply) — is now mainly found on trailers and classic vehicles.",
+      "topic": "Tyre construction types",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D21-Q04",
+      "question": "Which tyre inflation condition causes accelerated wear predominantly in the centre of the tread?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Under-inflation",
+        "B": "Correct inflation with excessive negative camber",
+        "C": "Correct inflation with excessive positive camber",
+        "D": "Over-inflation"
+      },
+      "correct_answer": "D",
+      "explanation": "Over-inflation causes the tyre to bulge outward in the centre, concentrating the contact patch on the middle strip of the tread. The edges carry less load, so the centre wears faster. Under-inflation causes the opposite — edge wear on both sides with the centre relatively unworn.",
+      "topic": "Contact patch and inflation effects",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D21-Q05",
+      "question": "What is the primary function of the steel belts located beneath the tread in a radial tyre?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To lock the tyre bead onto the wheel rim",
+        "B": "To maintain an airtight seal replacing the inner tube",
+        "C": "To stabilise the tread area and keep the contact patch flat under load",
+        "D": "To absorb impact energy from road imperfections"
+      },
+      "correct_answer": "C",
+      "explanation": "The steel belts sit directly beneath the tread compound and stabilise the tread area, ensuring the contact patch remains flat on the road even during cornering and over bumps. The bead wire locks the tyre to the rim, the inner liner provides the airtight seal, and the sidewall/carcass absorbs road impacts.",
+      "topic": "Tyre anatomy",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D21-Q06",
+      "question": "A technician inspects a tyre marked '225/45R17 91W'. The customer wants to replace it with a '225/45R17 88H' tyre that is significantly cheaper. What should the technician advise?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The replacement is acceptable since the size dimensions are identical",
+        "B": "The replacement is acceptable since both are radial construction",
+        "C": "The replacement must be refused because both the load index and speed rating are lower than the original specification",
+        "D": "The replacement is acceptable if only the front tyres are changed"
+      },
+      "correct_answer": "C",
+      "explanation": "The original tyre has a load index of 91 (615 kg) and speed rating W (270 km/h). The proposed replacement has a load index of 88 (560 kg) and speed rating H (210 km/h). Both are below the original specification. Replacement tyres must match or exceed the vehicle manufacturer's original load index and speed rating. Fitting a lower-rated tyre compromises safety and may void insurance.",
+      "topic": "Tyre specifications and replacement rules",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D21-Q07",
+      "question": "A vehicle is travelling at 100 km/h and the driver needs to perform an emergency lane change while braking. According to the friction circle concept, what happens if the driver applies maximum braking force?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The tyres generate maximum lateral force simultaneously, allowing the lane change",
+        "B": "The tyres have no remaining grip budget for lateral force, making the lane change impossible",
+        "C": "The lateral force doubles because braking heats the tyres and increases grip",
+        "D": "The vertical force increases, enlarging the contact patch and providing more lateral grip"
+      },
+      "correct_answer": "B",
+      "explanation": "The friction circle dictates that a tyre has a finite total grip budget. If 100% of the available grip is used for longitudinal braking force, 0% remains for lateral (cornering) force. The driver cannot steer around an obstacle while braking at maximum. This is the fundamental physics problem that ABS solves — by preventing wheel lock-up, ABS keeps the wheel rolling, preserving some lateral grip for steering.",
+      "topic": "Friction circle and vehicle dynamics",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D21-Q08",
+      "question": "A technician measures tread depth on a tyre at three points across the tread. The readings are: inner edge 2.1 mm, centre 5.8 mm, outer edge 2.3 mm. What is the most likely cause of this wear pattern?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Under-inflation causing both-edge wear",
+        "B": "Over-inflation causing centre wear",
+        "C": "Worn shock absorbers causing cupping",
+        "D": "Excessive positive camber causing outer edge wear"
+      },
+      "correct_answer": "A",
+      "explanation": "Both edges are worn (2.1 mm and 2.3 mm) while the centre retains significantly more tread (5.8 mm). This is the classic pattern of chronic under-inflation. When a tyre is under-inflated, the centre of the tread lifts slightly and the edges carry the majority of the load, causing accelerated wear on both shoulders. The technician should correct the inflation pressure and investigate why it was low (slow leak, valve issue, or customer neglect).",
+      "topic": "Tyre wear pattern diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D21-Q09",
+      "question": "During hard braking on a wet road, the driver notices the steering becomes unresponsive and the car continues in a straight line despite steering input. The ABS warning light is NOT illuminated. What is the most likely explanation?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The brake booster has failed, reducing pedal force",
+        "B": "The tyres have aquaplaned — the tread cannot evacuate water fast enough, causing the tyres to ride on a film of water",
+        "C": "The proportioning valve has failed, locking the rear wheels",
+        "D": "The power steering pump has failed during braking"
+      },
+      "correct_answer": "B",
+      "explanation": "Aquaplaning (hydroplaning) occurs when the tyre tread cannot channel water away from the contact patch fast enough, causing a film of water to build up between the tyre and road surface. The tyre loses all contact with the road, eliminating both braking and steering grip. Since ABS is not activated (no light, no lock-up detected), the wheels are still spinning freely on water — ABS sees no speed differential. This is more likely with worn tread, high speed, and standing water.",
+      "topic": "Aquaplaning and tread function",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D21-Q10",
+      "question": "A direct TPMS system shows the left-front tyre at 1.8 bar while the other three tyres show 2.3 bar. The driver's door jamb sticker specifies 2.3 bar for all positions. After inflating the left-front to 2.3 bar, the pressure drops back to 1.8 bar within one week. An indirect TPMS system on a different vehicle would likely display this same fault as:",
+      "difficulty": "hard",
+      "choices": {
+        "A": "An exact pressure reading of 1.8 bar for the affected tyre",
+        "B": "No warning at all, since indirect TPMS cannot detect slow leaks",
+        "C": "A fault code in the ABS module with no dashboard warning",
+        "D": "A general low-pressure warning without identifying which specific tyre is affected, based on wheel speed differences"
+      },
+      "correct_answer": "D",
+      "explanation": "A direct TPMS uses pressure sensors inside each tyre to report exact pressures per wheel. An indirect TPMS uses ABS wheel speed sensors to detect pressure loss — an under-inflated tyre has a slightly smaller rolling radius and rotates faster than the others. Indirect TPMS can detect the anomaly but cannot display an exact pressure reading. Many indirect systems indicate only that a tyre is low without specifying which one, though some modern systems can identify the affected corner through speed comparison algorithms.",
+      "topic": "Direct vs indirect TPMS",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 7,
+  "week": 2,
+  "session_title": "Electrical Theory — Ohm's Law, Circuits & Faults",
+  "questions": [
+    {
+      "id": "D07-Q01",
+      "question": "In the water pipe analogy for electricity, what does the height of the water tank represent?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Voltage",
+        "B": "Resistance",
+        "C": "Current",
+        "D": "Power"
+      },
+      "correct_answer": "A",
+      "explanation": "In the water pipe analogy, the height of the tank creates water pressure, which represents voltage (electrical pressure). Higher tank height means more pressure, just as higher voltage means more electrical push. Option C (current) corresponds to the water flow rate, not the pressure.",
+      "topic": "Voltage, current, resistance fundamentals",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D07-Q02",
+      "question": "A 12V circuit has a load with 4 ohms of resistance. Using Ohm's Law, what is the current flowing through the circuit?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "0.33 A",
+        "B": "3 A",
+        "C": "48 A",
+        "D": "16 A"
+      },
+      "correct_answer": "B",
+      "explanation": "Using Ohm's Law: I = V / R = 12 / 4 = 3 A. Option C (48 A) is the result of incorrectly multiplying V x R instead of dividing, which is a common mistake when confusing the Ohm's Law triangle.",
+      "topic": "Ohm's Law calculations",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D07-Q03",
+      "question": "In a series circuit with two 6-ohm resistors connected to a 12V battery, what is the current flowing through the circuit?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "0.5 A",
+        "B": "1 A",
+        "C": "2 A",
+        "D": "4 A"
+      },
+      "correct_answer": "B",
+      "explanation": "In a series circuit, resistances add: R_total = 6 + 6 = 12 ohms. Then I = V / R = 12 / 12 = 1 A. Option C (2 A) would be the current through each resistor if they were in parallel, not series.",
+      "topic": "Series circuits and Ohm's Law",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D07-Q04",
+      "question": "What is the key characteristic of current flow in a parallel circuit?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Current is the same through every branch",
+        "B": "Current reverses direction in alternate branches",
+        "C": "Current flows only through the branch with the lowest resistance",
+        "D": "Current divides between branches, with each branch drawing its own current based on its resistance"
+      },
+      "correct_answer": "D",
+      "explanation": "In a parallel circuit, each branch provides its own path from positive to negative, so current divides among branches. Each branch draws current according to I = V / R for that branch. Option A describes a series circuit, where current is the same everywhere because there is only one path.",
+      "topic": "Parallel circuits",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D07-Q05",
+      "question": "Which of the following best describes a high resistance fault in an automotive circuit?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The circuit is completely broken and no current flows",
+        "B": "Current takes an unintended shortcut to ground, causing a fuse to blow",
+        "C": "Unwanted resistance restricts current flow, causing the component to work poorly and generating excess heat",
+        "D": "The battery voltage increases above the alternator regulated level"
+      },
+      "correct_answer": "C",
+      "explanation": "A high resistance fault means extra, unwanted resistance (e.g., from corrosion or a loose connection) restricts current flow. The component receives less voltage and works poorly (dim lights, slow motors), while the voltage dropped across the bad connection converts to heat. Option A describes an open circuit, and option B describes a short circuit.",
+      "topic": "Circuit fault types",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D07-Q06",
+      "question": "A technician measures 12V across a headlight connector but the headlight does not illuminate. The bulb has been confirmed as good. Applying circuit fault analysis, what fault type is most likely present?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Short circuit on the ground side",
+        "B": "The fuse is rated too high for the circuit",
+        "C": "High resistance in the headlight filament",
+        "D": "Open circuit on the ground side of the headlight"
+      },
+      "correct_answer": "D",
+      "explanation": "Measuring full battery voltage at the connector with a good bulb that does not illuminate indicates voltage is present but no current is flowing. This is the diagnostic signature of an open circuit: full voltage available but no complete path for current. The break must be on the ground side since supply voltage is reaching the connector. Option A (short to ground) would cause excessive current and blow the fuse.",
+      "topic": "Open circuit fault diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D07-Q07",
+      "question": "A 55W halogen headlight operates on a 12V system. Using the power formula, what is the approximate current draw of this headlight?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "0.22 A",
+        "B": "4.6 A",
+        "C": "43 A",
+        "D": "660 A"
+      },
+      "correct_answer": "B",
+      "explanation": "Using P = V x I, rearranged to I = P / V = 55 / 12 = 4.58 A, approximately 4.6 A. This tells us the headlight circuit needs at least a 5A fuse, typically 7.5A or 10A to allow headroom. Option C (43 A) results from incorrectly dividing 12 by the fraction 55/12, a common calculator sequence error.",
+      "topic": "Power formula and Ohm's Law calculations",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D07-Q08",
+      "question": "A vehicle's left headlight is dim while the right headlight is bright. Both headlights are wired in parallel. A voltmeter reads 9V at the dim headlight and 12V at the bright one. What is the most probable cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The battery is weak and cannot supply both headlights simultaneously",
+        "B": "The dim headlight has a short circuit causing excessive current",
+        "C": "There is a high resistance connection in the supply or ground path of the dim headlight, dropping 3V before the bulb",
+        "D": "The fuse for the dim headlight is the wrong amperage"
+      },
+      "correct_answer": "C",
+      "explanation": "Since both headlights are in parallel and the bright one receives 12V, the battery supply is adequate. The 3V difference at the dim headlight indicates unwanted resistance (corroded connector, damaged wire, or bad ground) dropping voltage before it reaches the bulb. Option A is unlikely because the parallel bright headlight proves the battery voltage is sufficient.",
+      "topic": "High resistance fault diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D07-Q09",
+      "question": "A technician finds that a vehicle's cigarette lighter fuse (15A) keeps blowing repeatedly. After replacing the fuse, it blows again within seconds. What fault type is indicated and what should the technician do?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Short circuit; inspect the wiring for damaged insulation touching the vehicle body and never install a higher-rated fuse",
+        "B": "High resistance fault; clean all connectors in the circuit",
+        "C": "Normal operation; the fuse is simply defective and should be replaced with a new one of the same rating",
+        "D": "Open circuit; replace the fuse with a 20A fuse to handle the load"
+      },
+      "correct_answer": "A",
+      "explanation": "A fuse that blows immediately and repeatedly indicates a short circuit, where current flows through an unintended low-resistance path (usually bare wire touching the metal body). The technician must find and repair the damaged insulation. Installing a higher-rated fuse (option D) is dangerous and prohibited, as the wire would overheat before the fuse blows, risking fire.",
+      "topic": "Short circuit diagnosis and fuse safety",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D07-Q10",
+      "question": "Two 6-ohm fog lights are wired in parallel on a 12V circuit. What is the total current drawn from the battery by both fog lights combined?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "1 A",
+        "B": "2 A",
+        "C": "4 A",
+        "D": "6 A"
+      },
+      "correct_answer": "C",
+      "explanation": "In parallel, each 6-ohm fog light sees the full 12V. Each draws I = 12 / 6 = 2A. Total current = 2A + 2A = 4A. Alternatively, parallel resistance: 1/R_total = 1/6 + 1/6 = 2/6, so R_total = 3 ohms, and I_total = 12 / 3 = 4A. Option A (1A) is the series circuit current if both were in series, a common confusion.",
+      "topic": "Parallel circuit calculations",
+      "bloom_level": "Apply"
+    }
+  ]
+}

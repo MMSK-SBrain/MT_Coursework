@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 33,
+  "week": 7,
+  "session_title": "HVAC System — Climate Comfort Engineering",
+  "questions": [
+    {
+      "id": "D33-Q01",
+      "question": "In the automotive refrigeration cycle, where does the actual cooling of cabin air take place?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "At the condenser, where refrigerant releases heat to the atmosphere",
+        "B": "At the evaporator, where low-pressure refrigerant absorbs heat from the cabin air",
+        "C": "At the compressor, where refrigerant is compressed to a high-pressure gas",
+        "D": "At the expansion valve, where refrigerant pressure drops suddenly"
+      },
+      "correct_answer": "B",
+      "explanation": "Cooling occurs at the evaporator, located inside the HVAC housing behind the dashboard. Cold, low-pressure liquid refrigerant enters the evaporator and absorbs heat from the warm cabin air blowing across its fins. As the refrigerant absorbs this heat, it evaporates into a gas. This phase change from liquid to gas is what removes heat from the cabin air, producing the cooling effect. Air entering the evaporator at around 35 degrees C exits at approximately 5 to 10 degrees C.",
+      "topic": "Refrigeration cycle — evaporator",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D33-Q02",
+      "question": "What is the primary function of the condenser in an automotive air conditioning system?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To filter debris and moisture from the refrigerant",
+        "B": "To release heat absorbed from the cabin to the outside atmosphere by condensing the high-pressure refrigerant gas into a liquid",
+        "C": "To create the pressure drop that cools the refrigerant",
+        "D": "To store refrigerant when the system is not in use"
+      },
+      "correct_answer": "B",
+      "explanation": "The condenser is mounted at the front of the vehicle, ahead of the radiator, where it receives maximum airflow. Hot, high-pressure refrigerant gas from the compressor enters the condenser. As ambient air flows across the condenser fins, the refrigerant releases its heat to the atmosphere and changes state from a gas to a high-pressure liquid. This is the stage where the heat absorbed from the cabin is dumped outside the vehicle, completing the heat transfer cycle.",
+      "topic": "Refrigeration cycle — condenser",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D33-Q03",
+      "question": "Which refrigerant is replacing R-134a in new vehicles due to its significantly lower global warming potential?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "R-12 (Freon)",
+        "B": "R-22",
+        "C": "R-1234yf",
+        "D": "R-410A"
+      },
+      "correct_answer": "C",
+      "explanation": "R-1234yf (2,3,3,3-Tetrafluoropropene) is the replacement for R-134a in new automotive applications. R-1234yf has a Global Warming Potential (GWP) of less than 1, compared to R-134a's GWP of 1,430. EU F-Gas regulations mandate the use of refrigerants with GWP below 150 in new vehicle models since 2017. While R-1234yf operates similarly to R-134a in the refrigeration cycle, the two refrigerants are not interchangeable, and R-1234yf requires dedicated recovery and charging equipment due to its different properties and higher cost.",
+      "topic": "Refrigerant types and environmental regulations",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D33-Q04",
+      "question": "Why does an electric vehicle use an electrically driven compressor instead of a belt-driven compressor?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Electric compressors are cheaper to manufacture than belt-driven units",
+        "B": "A BEV has no running engine to provide belt drive, so the compressor must be powered directly from the HV electrical system",
+        "C": "Belt-driven compressors cannot achieve the pressures needed for R-1234yf refrigerant",
+        "D": "Electric compressors produce less noise than belt-driven compressors"
+      },
+      "correct_answer": "B",
+      "explanation": "In a conventional vehicle, the AC compressor is driven by a belt connected to the engine crankshaft. A battery electric vehicle has no internal combustion engine, so there is no crankshaft to drive a belt. The compressor must therefore be electrically powered, running directly from the HV system (typically 400V). This electric compressor can also operate at variable speed independent of any engine RPM, allowing more precise climate control. The HV electric compressor is a significant power consumer, drawing 3 to 5 kW, which is one reason why running the AC in an EV reduces driving range.",
+      "topic": "Electric vs belt-driven compressors",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D33-Q05",
+      "question": "In an EV during winter, what replaces the conventional engine coolant heater core as the primary cabin heat source?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Heat from the electric motor is routed through the cabin ventilation system",
+        "B": "A PTC (Positive Temperature Coefficient) electric heater or a heat pump system",
+        "C": "A small diesel-fired auxiliary heater mounted in the engine bay",
+        "D": "Waste heat from the inverter is channelled directly into the cabin air stream"
+      },
+      "correct_answer": "B",
+      "explanation": "A conventional vehicle uses waste heat from the engine coolant circuit through a heater core to warm the cabin. An EV produces very little waste heat, so alternative heating is required. Most EVs use a PTC electric heater, which is a ceramic resistive element that heats air or coolant directly from HV electricity. More efficient EVs use a heat pump system, which reverses the refrigeration cycle to extract heat from the outside air and pump it into the cabin. Heat pumps are approximately three times more efficient than PTC resistive heaters, significantly reducing the range penalty of winter heating, which can otherwise reduce EV range by 30 to 40 percent.",
+      "topic": "EV cabin heating solutions",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D33-Q06",
+      "question": "A customer complains that their vehicle's air conditioning blows cold on the passenger side but warm on the driver side when set to the same temperature. The refrigerant charge is correct and the compressor is operating normally. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The evaporator has a partial blockage on the driver's side only",
+        "B": "The driver-side blend door actuator has failed, leaving the blend door in the full-heat position so heated air from the heater core mixes with cooled air on that side",
+        "C": "The cabin temperature sensor on the driver's side is reading incorrectly low, causing the system to add heat",
+        "D": "The expansion valve is over-restricting flow, reducing evaporator efficiency"
+      },
+      "correct_answer": "B",
+      "explanation": "In a dual-zone HVAC system, independent blend door actuators on each side control the ratio of cooled air (from the evaporator) to heated air (from the heater core) for that zone. If the driver-side blend door actuator fails or its linkage breaks, the blend door may default to or become stuck in the full-heat position, allowing hot heater core air to mix with or bypass the cooled evaporator air on the driver's side. The passenger side, controlled by its own functioning actuator, continues to deliver cold air. Diagnosis involves commanding the blend door through its range via the scan tool and verifying motor operation and mechanical linkage movement.",
+      "topic": "Dual-zone HVAC blend door diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D33-Q07",
+      "question": "A technician is performing an AC performance test. With the system running, the low-side pressure is abnormally high and the high-side pressure is abnormally low. The compressor clutch is engaging. What is the most likely fault?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The system is overcharged with too much refrigerant",
+        "B": "The compressor has internal valve or reed failure and is not compressing the refrigerant effectively, so pressures are equalising across both sides",
+        "C": "The condenser fan is inoperative, preventing heat rejection",
+        "D": "The expansion valve is stuck fully closed, blocking refrigerant flow"
+      },
+      "correct_answer": "B",
+      "explanation": "When a compressor suffers internal valve plate or reed valve failure, it can no longer effectively create the pressure differential between the low side and high side of the system. Refrigerant flows through without being properly compressed, so the low-side pressure rises above normal and the high-side pressure falls below normal, with pressures tending to equalise. The compressor clutch still engages because the electromagnetic clutch coil is separate from the internal pumping mechanism. Diagnosis is confirmed by comparing the two pressures: if they are nearly equal with the compressor running, the compressor has failed internally and must be replaced. A condenser fan failure would cause high-side pressure to increase, not decrease.",
+      "topic": "AC pressure diagnosis — compressor failure",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D33-Q08",
+      "question": "An EV owner reports that their driving range drops by approximately 40% during winter months, even though they keep the cabin temperature at a moderate 20 degrees C. The vehicle uses a resistive PTC heater, not a heat pump. Why is this range loss so severe, and what design feature would reduce it?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Cold temperatures reduce tyre pressure causing rolling resistance; installing winter tyres would solve the problem",
+        "B": "The PTC heater draws 3 to 5 kW directly from the HV battery as resistive heat at a 1:1 efficiency ratio, whereas a heat pump could deliver 3 kW of heating while consuming only 1 kW of electrical energy by extracting heat from outdoor air",
+        "C": "The battery simply cannot hold as much charge in cold weather, so the range loss is unavoidable",
+        "D": "The regenerative braking system is disabled in cold weather, eliminating energy recovery"
+      },
+      "correct_answer": "B",
+      "explanation": "A PTC resistive heater converts electrical energy to heat at approximately a 1:1 ratio: every 1 kW of electricity produces 1 kW of heat. Running at 3 to 5 kW for cabin heating consumes the same energy that would otherwise propel the vehicle, directly reducing range by 30 to 40 percent in cold conditions. A heat pump reverses the refrigeration cycle to extract heat from outdoor air and pump it into the cabin. Because it moves heat rather than generating it, a heat pump can deliver approximately 3 kW of heating while consuming only about 1 kW of electricity (a COP of approximately 3), reducing the energy impact on range by roughly two-thirds. While cold temperatures do also affect battery capacity and tyre rolling resistance, the dominant factor in this scenario is the heating method.",
+      "topic": "EV winter range — PTC vs heat pump",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D33-Q09",
+      "question": "During a refrigerant leak detection procedure, a technician pressurises the AC system with dry nitrogen to 150 psi, applies soapy water solution to all connections, and observes bubbles forming at the condenser-to-hose fitting. After tightening the fitting, the bubbles stop. Why was dry nitrogen used rather than simply recharging with refrigerant and using an electronic leak detector?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Nitrogen is cheaper than refrigerant, saving workshop costs",
+        "B": "Nitrogen is non-condensable at system pressures, so it will not mask a leak by changing state; it is also non-flammable and environmentally inert, allowing safe pressurisation for leak testing without venting refrigerant to the atmosphere, which is illegal under F-Gas regulations",
+        "C": "Electronic leak detectors cannot detect R-1234yf, so nitrogen is the only option",
+        "D": "Nitrogen provides higher pressure than refrigerant, making leaks easier to detect"
+      },
+      "correct_answer": "B",
+      "explanation": "Using nitrogen for pressure testing is both a technical best practice and a regulatory requirement. Refrigerant must not be intentionally vented to the atmosphere under F-Gas and EPA regulations. Nitrogen is an inert, non-flammable, non-condensable gas that safely pressurises the system for leak detection without environmental or legal consequences. Because nitrogen does not change phase at these pressures, it maintains constant pressure, making leak identification with soap solution or submersion straightforward. Once the leak is found and repaired, the nitrogen is safely vented, the system is evacuated with a vacuum pump to remove moisture and air, and then recharged with the correct refrigerant. Electronic leak detectors can detect R-1234yf, but they are used after recharging as a complementary verification method.",
+      "topic": "Leak detection with nitrogen",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D33-Q10",
+      "question": "A vehicle's windscreen fogs up immediately when the driver selects demist mode, and the air smells sweet. The coolant reservoir level has been dropping over the past month. What HVAC component has most likely failed, and what is the safety concern?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The cabin air filter is saturated with moisture and needs replacement",
+        "B": "The heater core has developed a leak, allowing engine coolant to enter the HVAC plenum and deposit a glycol mist on the windscreen interior, creating a safety hazard due to severely impaired visibility",
+        "C": "The AC evaporator is frozen and dripping water into the air stream",
+        "D": "The windscreen seal has failed, allowing rain water to enter the ventilation ducts"
+      },
+      "correct_answer": "B",
+      "explanation": "A leaking heater core allows hot engine coolant (which contains ethylene glycol) to seep into the HVAC air stream. The glycol creates a distinctive sweet smell and deposits a greasy, oily film on the inside of the windscreen that is extremely difficult to wipe clear. This film actually worsens fogging rather than clearing it when demist mode is selected, because the moist glycol vapour condenses on the glass. The dropping coolant level confirms coolant loss into the HVAC system. This is a safety-critical fault because the driver's forward visibility is severely impaired. The heater core must be replaced, and the HVAC plenum flushed to remove residual coolant contamination.",
+      "topic": "Heater core leak diagnosis",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

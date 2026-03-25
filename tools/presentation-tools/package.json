@@ -1,0 +1,36 @@
+{
+  "name": "automotive-lecture-presentations",
+  "version": "1.0.0",
+  "description": "Convert automotive lecture frameworks to PowerPoint and HTML presentations",
+  "main": "index.js",
+  "scripts": {
+    "convert:pptx": "bash ./convert-to-pptx.sh",
+    "convert:html": "bash ./convert-to-html.sh",
+    "convert:all": "python3 convert-all.py",
+    "convert:all:pptx": "bash ./convert-to-pptx.sh --all",
+    "convert:all:html": "bash ./convert-to-html.sh --all",
+    "preview": "reveal-md ../lecture-frameworks/$npm_config_session*.md --theme themes/reveal-engineering.css --css themes/reveal-engineering.css --watch",
+    "preprocess": "python3 preprocess-frameworks.py",
+    "test": "echo 'Testing conversion with SESSION-01...' && npm run convert:pptx SESSION-01",
+    "clean": "rm -rf output/pptx/* output/html/* output/preprocessed/*"
+  },
+  "keywords": [
+    "presentations",
+    "markdown",
+    "marp",
+    "reveal.js",
+    "automotive",
+    "education"
+  ],
+  "author": "Course Generator",
+  "license": "MIT",
+  "dependencies": {
+    "@marp-team/marp-cli": "^3.4.0",
+    "reveal-md": "^6.1.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

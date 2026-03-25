@@ -1,0 +1,127 @@
+# Docker Compose Configuration for Local Development
+# Sentiment Analysis ML Application
+
+version: '3.8'
+
+services:
+  # Backend API Service
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: sentiment-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_VERSION=1.0.0
+      - LOG_LEVEL=INFO
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ../backend:/app
+      - backend_data:/app/data
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+
+  # Frontend UI Service
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    container_name: sentiment-ui
+    ports:
+      - "8501:8501"
+    environment:
+      - SENTIMENT_API_URL=http://backend:8000
+    volumes:
+      - ../frontend:/app
+    networks:
+      - app-network
+    depends_on:
+      - backend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+
+  # Monitoring Dashboard Service
+  monitoring:
+    build:
+      context: ../monitoring
+      dockerfile: Dockerfile
+    container_name: sentiment-monitoring
+    ports:
+      - "8502:8502"
+    environment:
+      - SENTIMENT_API_URL=http://backend:8000
+    volumes:
+      - ../monitoring:/app
+      - monitoring_data:/app/data
+    networks:
+      - app-network
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # Optional: Database Service (PostgreSQL)
+  # Uncomment if you want to use PostgreSQL instead of SQLite
+  # database:
+  #   image: postgres:15-alpine
+  #   container_name: sentiment-db
+  #   environment:
+  #     - POSTGRES_DB=sentiment_db
+  #     - POSTGRES_USER=sentiment_user
+  #     - POSTGRES_PASSWORD=sentiment_password
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - app-network
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U sentiment_user"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
+  #   restart: unless-stopped
+
+  # Optional: Redis Cache Service
+  # Uncomment for caching layer
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: sentiment-cache
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis_data:/data
+  #   networks:
+  #     - app-network
+  #   healthcheck:
+  #     test: ["CMD", "redis-cli", "ping"]
+  #     interval: 10s
+  #     timeout: 3s
+  #     retries: 5
+  #   restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  backend_data:
+    driver: local
+  monitoring_data:
+    driver: local
+  # postgres_data:
+  #   driver: local
+  # redis_data:
+  #   driver: local

@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 11,
+  "week": 3,
+  "session_title": "Air + Fuel = Combustion — The Engine's Two Inputs",
+  "questions": [
+    {
+      "id": "D11-Q01",
+      "question": "How many crankshaft revolutions are required to complete one full four-stroke cycle?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "One revolution (360 degrees)",
+        "B": "Two revolutions (720 degrees)",
+        "C": "Three revolutions (1080 degrees)",
+        "D": "Four revolutions (1440 degrees)"
+      },
+      "correct_answer": "B",
+      "explanation": "The four-stroke cycle consists of intake, compression, power, and exhaust strokes. Each stroke uses 180 degrees of crankshaft rotation, so all four strokes require 720 degrees — two complete crankshaft revolutions.",
+      "topic": "Four-Stroke Cycle",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D11-Q02",
+      "question": "Which stroke of the four-stroke cycle is the ONLY one that produces useful work to turn the crankshaft?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Intake stroke",
+        "B": "Compression stroke",
+        "C": "Power stroke",
+        "D": "Exhaust stroke"
+      },
+      "correct_answer": "C",
+      "explanation": "The power stroke is the only stroke that produces useful work. During this stroke, the ignited air-fuel charge expands and forces the piston downward, delivering rotational force to the crankshaft. The other three strokes consume energy.",
+      "topic": "Four-Stroke Cycle",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D11-Q03",
+      "question": "What is the typical compression ratio of a diesel engine compared to a gasoline engine?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Diesel: 5:1 to 8:1 — Gasoline: 10:1 to 13:1",
+        "B": "Both types use the same ratio of approximately 10:1",
+        "C": "Diesel: 15:1 to 22:1 — Gasoline: 8:1 to 13:1",
+        "D": "Diesel: 8:1 to 13:1 — Gasoline: 15:1 to 22:1"
+      },
+      "correct_answer": "C",
+      "explanation": "Diesel engines require a much higher compression ratio (15:1 to 22:1) to heat the air sufficiently for auto-ignition without a spark plug. Gasoline engines use lower ratios (8:1 to 13:1) because the mixture is ignited by a spark plug.",
+      "topic": "Gasoline vs Diesel Differences",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D11-Q04",
+      "question": "What is the primary function of the Mass Air Flow (MAF) sensor in the air intake system?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To control the amount of air entering the engine by adjusting a butterfly valve",
+        "B": "To filter contaminants from the incoming air before they reach the cylinders",
+        "C": "To measure the mass of air entering the engine in grams per second for fuel calculation",
+        "D": "To warm the incoming air to improve combustion efficiency during cold starts"
+      },
+      "correct_answer": "C",
+      "explanation": "The MAF sensor measures the mass of air entering the engine in grams per second. This measurement is critical because the ECU uses it to calculate the correct amount of fuel to inject, maintaining the proper air-fuel ratio. Mass measurement (not volume) accounts for temperature and altitude changes automatically.",
+      "topic": "Air Intake System Components",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D11-Q05",
+      "question": "In a gasoline engine, how does the ECU primarily control engine power output?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "By adjusting only the fuel injection quantity",
+        "B": "By controlling both air quantity via the throttle body and matching fuel injection accordingly",
+        "C": "By varying the compression ratio using variable-height pistons",
+        "D": "By advancing or retarding the exhaust valve timing only"
+      },
+      "correct_answer": "B",
+      "explanation": "In a gasoline engine, the electronic throttle body controls the volume of air entering the engine. The ECU reads the MAF sensor to determine how much air is flowing, then calculates and delivers the matching fuel quantity to maintain the stoichiometric ratio. This air-leading, fuel-following strategy is fundamental to gasoline engine control.",
+      "topic": "ECU Air-Fuel Control",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D11-Q06",
+      "question": "A customer complains of reduced engine power and poor fuel economy. The air filter has not been replaced in over 80,000 km. The scan tool shows DTC P0101 (MAF Range/Performance). What is the most likely chain of events causing these symptoms?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The clogged filter restricted airflow, causing the ECU to over-fuel the engine and foul the spark plugs",
+        "B": "The severely restricted filter caused unfiltered air to bypass the element, contaminating the MAF sensor and corrupting the airflow signal to the ECU",
+        "C": "The old filter degraded and released paper particles that blocked the fuel injectors",
+        "D": "The restricted filter caused excessive backpressure that damaged the exhaust catalytic converter"
+      },
+      "correct_answer": "B",
+      "explanation": "When an air filter becomes severely clogged, the pressure drop across it increases dramatically. This can cause air to bypass the filter element through gaps in the housing or damaged seals, carrying contaminants onto the MAF sensor. A contaminated MAF sensor provides incorrect airflow readings (P0101), causing the ECU to miscalculate fuel delivery, resulting in poor economy and reduced power.",
+      "topic": "Air Intake System Diagnostics",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D11-Q07",
+      "question": "A diesel engine and a gasoline engine are both running at the same RPM under partial load. Which statement correctly describes a fundamental difference in how they control power output?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The gasoline engine uses a throttle to restrict airflow and matches fuel quantity, while the diesel engine admits unrestricted air and controls power solely by varying fuel injection quantity",
+        "B": "Both engines control power identically by varying the amount of fuel injected per cycle",
+        "C": "The diesel engine uses a throttle to restrict airflow for emissions control, while the gasoline engine runs unthrottled",
+        "D": "The gasoline engine controls power by varying ignition timing only, while the diesel engine varies compression ratio"
+      },
+      "correct_answer": "A",
+      "explanation": "This is a fundamental difference between the two engine types. Gasoline engines use a throttle body to control the air volume entering the engine, then the ECU matches the fuel to maintain stoichiometric ratio. Diesel engines always admit full air (unthrottled) and control power output exclusively by varying the quantity of fuel injected. If a throttle is present on a diesel, it serves EGR control or brake booster vacuum, not power regulation.",
+      "topic": "Gasoline vs Diesel Power Control",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D11-Q08",
+      "question": "During a four-stroke cycle, the intake valve opens on the intake stroke and the exhaust valve opens on the exhaust stroke. What would happen if the exhaust valve failed to open during the exhaust stroke on one cylinder?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The cylinder would continue to fire normally but with slightly reduced power on the next cycle",
+        "B": "The burnt gases would remain trapped in the cylinder, preventing fresh charge from entering on the next intake stroke, causing that cylinder to misfire",
+        "C": "The engine would immediately stall because all cylinders share the same exhaust manifold",
+        "D": "The fuel injector for that cylinder would compensate by injecting additional fuel on the next cycle"
+      },
+      "correct_answer": "B",
+      "explanation": "If the exhaust valve fails to open, burnt gases cannot escape the cylinder during the exhaust stroke. On the subsequent intake stroke, the cylinder is still full of exhaust gas, so fresh air-fuel charge cannot enter. Without a combustible charge, the cylinder cannot produce power — it misfires. This trapped gas also means the compression stroke compresses exhaust rather than a fresh mixture.",
+      "topic": "Four-Stroke Cycle Failure Analysis",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D11-Q09",
+      "question": "In a drive-by-wire throttle system, the accelerator pedal position sensor sends a signal to the ECU, which then commands the throttle motor. If the throttle position sensor (TPS) feedback signal is lost while the pedal sensor is still working, what is the expected system response?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The throttle opens fully because there is no feedback to limit its position",
+        "B": "The ECU continues to operate normally using only the pedal position sensor input",
+        "C": "The ECU enters a failsafe mode, limiting throttle opening to a safe default position and setting a DTC",
+        "D": "The engine shuts down immediately because the TPS signal is required for ignition timing"
+      },
+      "correct_answer": "C",
+      "explanation": "In a drive-by-wire system, the TPS provides critical feedback to confirm that the throttle butterfly is in the position the ECU commanded. Without this feedback, the ECU cannot verify safe throttle operation. The system enters a limp/failsafe mode with restricted throttle authority to prevent unintended acceleration, and stores a diagnostic trouble code (such as P2111 or P2112).",
+      "topic": "Throttle Body Control and Failsafe",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D11-Q10",
+      "question": "A technician is explaining to a trainee why the MAF sensor measures air MASS (grams per second) rather than air VOLUME (litres per second). Which explanation is correct?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Mass measurement is cheaper to manufacture and easier to calibrate in production",
+        "B": "Volume measurement would change with temperature and altitude, so a fixed volume of air at altitude contains less oxygen than the same volume at sea level — mass measurement automatically accounts for air density changes",
+        "C": "Mass sensors are smaller and fit more easily into the intake ducting between the air filter and throttle body",
+        "D": "Volume measurement requires a mechanical vane that restricts airflow, whereas mass measurement has no moving parts"
+      },
+      "correct_answer": "B",
+      "explanation": "The ECU needs to know the actual oxygen content entering the engine to calculate correct fuel delivery. Air density decreases with higher altitude and higher temperatures — a given volume of hot, high-altitude air contains less oxygen than the same volume of cool, sea-level air. By measuring mass directly, the MAF sensor inherently accounts for all density variations, giving the ECU an accurate oxygen measurement regardless of operating conditions.",
+      "topic": "MAF Sensor Operating Principle",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

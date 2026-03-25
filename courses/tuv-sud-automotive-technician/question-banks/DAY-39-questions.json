@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 39,
+  "week": 8,
+  "session_title": "Cross-System Diagnostic Scenarios",
+  "questions": [
+    {
+      "id": "D39-Q01",
+      "question": "What is Step 1 of the 7-step diagnostic workflow taught in this course?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Connect the scan tool and read all DTCs",
+        "B": "Verify the customer complaint by reproducing the symptom",
+        "C": "Research Technical Service Bulletins for known issues",
+        "D": "Perform a visual inspection of the engine bay"
+      },
+      "correct_answer": "B",
+      "explanation": "Step 1 is always to verify the customer complaint. The technician must reproduce or confirm the reported symptom through road testing, observation, or demonstration before beginning any diagnostic procedure. Customers may describe symptoms inaccurately, or the fault may be intermittent. If the technician cannot reproduce the complaint, they cannot diagnose it reliably. The full 7-step workflow is: (1) Verify complaint, (2) Check for DTCs across all modules, (3) Analyse DTCs, freeze frame, and live data, (4) Research TSBs and known issues, (5) Test and isolate the faulty component, (6) Repair, (7) Verify the repair.",
+      "topic": "7-step diagnostic workflow",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D39-Q02",
+      "question": "In the 7-step diagnostic workflow, what is the purpose of Step 4 (Research)?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To find the cheapest replacement parts from online suppliers",
+        "B": "To check Technical Service Bulletins (TSBs), known issues, and wiring diagrams before performing hands-on testing",
+        "C": "To write the diagnostic report for the customer",
+        "D": "To contact the vehicle manufacturer for permission to proceed with the repair"
+      },
+      "correct_answer": "B",
+      "explanation": "Step 4 — Research — involves checking manufacturer Technical Service Bulletins (TSBs), known issues databases, wiring diagrams, and service information before picking up any testing tools. TSBs are documents published by manufacturers that describe known problems, their root causes, and approved repair procedures. If a TSB exists for the exact symptom you are diagnosing, it can save hours of diagnostic time. As the framework states: 'Five minutes of research saves one hour of guessing.' This step sits between data analysis (Step 3) and physical testing (Step 5) to ensure the technician is informed before testing.",
+      "topic": "Diagnostic research and TSBs",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D39-Q03",
+      "question": "What is the key difference between a primary fault and a secondary (consequential) fault?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Primary faults set DTCs while secondary faults do not",
+        "B": "A primary fault is the root cause of the problem, while secondary faults are symptoms caused by the primary fault in other systems",
+        "C": "Primary faults are covered under warranty and secondary faults are not",
+        "D": "Primary faults occur in the engine only, and secondary faults occur in all other systems"
+      },
+      "correct_answer": "B",
+      "explanation": "A primary fault is the actual root cause — the original component or system failure that started the problem. Secondary or consequential faults are DTCs and symptoms that appear in other modules or systems as a result of the primary fault. For example, a failed wheel speed sensor (primary fault) causes ABS, ESC, speedometer, and cruise control faults (all secondary). Fixing secondary symptoms without addressing the primary fault is wasteful — the symptoms will return. Cross-system thinking means identifying which of many DTCs is the root cause and which are consequences.",
+      "topic": "Primary vs. secondary faults",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D39-Q04",
+      "question": "Why is Step 7 (Verify the repair) considered the most important step that must never be skipped?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Because the manufacturer warranty requires documented proof of verification",
+        "B": "Because it confirms the repair resolved the original complaint and did not introduce new faults — by clearing codes, road testing, re-scanning, and confirming no new or pending DTCs exist",
+        "C": "Because it is the step where the technician calculates the total labour hours for billing",
+        "D": "Because the service interval counter must be reset after every repair"
+      },
+      "correct_answer": "B",
+      "explanation": "Step 7 — Verify the repair — is the professional standard that separates competent technicians from amateurs. After completing the repair, the technician must: (1) Clear all DTCs, (2) Road test the vehicle under conditions that originally produced the fault, (3) Re-scan all modules to check for pending or confirmed codes, (4) Confirm no new faults were accidentally introduced during the repair (a disconnected connector, a loose wire, a tool left behind), and (5) Document the findings and repair. Skipping verification means the customer may return with the same complaint, or worse, a new problem introduced during the repair may go undetected until it creates a safety issue.",
+      "topic": "Repair verification importance",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D39-Q05",
+      "question": "What is a Pre-Delivery Inspection (PDI)?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "A diagnostic scan performed before ordering parts from the dealer",
+        "B": "A comprehensive checklist inspection performed on a new vehicle before it is handed over to the customer, ensuring it is fault-free and ready for use",
+        "C": "An emissions test required before a vehicle can be registered",
+        "D": "A safety recall check performed when a used vehicle is sold"
+      },
+      "correct_answer": "B",
+      "explanation": "A Pre-Delivery Inspection (PDI) is a standardised checklist inspection performed by the dealership on every new vehicle before customer delivery. It includes verifying fluid levels, tyre pressures, and torque specifications; checking all electrical systems and lights function correctly; performing a diagnostic scan to confirm no DTCs are present; inspecting body panels for transport damage; removing protective films and transit shipping brackets; and confirming that all accessories and documentation are present. The PDI ensures the customer receives a vehicle in perfect condition and reduces warranty claims caused by shipping or storage issues.",
+      "topic": "Pre-Delivery Inspection",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D39-Q06",
+      "question": "An instrument cluster shows no speedometer reading, but the ABS system works normally and cruise control operates correctly. A scan tool shows no ABS or speed sensor DTCs. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "All four wheel speed sensors have failed simultaneously",
+        "B": "The vehicle speed signal is reaching the ABS module (which provides it to cruise control), but the CAN bus message from the ABS module to the instrument cluster has a fault — likely a network issue on the body CAN segment or an instrument cluster fault",
+        "C": "The speedometer needle motor inside the cluster has mechanically failed",
+        "D": "The transmission output shaft speed sensor has failed"
+      },
+      "correct_answer": "B",
+      "explanation": "This scenario requires cross-system thinking. The ABS system works, which means the wheel speed sensors and ABS module are functioning correctly — the ABS module has valid speed data. Cruise control also works, confirming that the vehicle speed signal is being shared with other systems. The instrument cluster is the only system not receiving or not displaying the speed data. Since modern speedometers receive their speed signal via CAN bus from the ABS module (not from a direct sensor), the fault is in the communication path between the ABS module and the instrument cluster — either a CAN bus fault on the body network segment, a gateway translation error, or an internal instrument cluster failure. A scan tool showing no ABS DTCs further confirms the ABS side is healthy.",
+      "topic": "Cross-system speedometer fault diagnosis",
+      "bloom_level": "Analyse"
+    },
+    {
+      "id": "D39-Q07",
+      "question": "A customer reports that their vehicle's battery goes flat overnight for the third time. The battery and alternator have both tested good. Using the 7-step workflow, which test at Step 5 will most efficiently identify the root cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the battery with a larger capacity unit to compensate for the drain",
+        "B": "Perform a parasitic current draw test with a multimeter in series with the battery negative cable, then systematically pull fuses one at a time to identify which circuit has excessive draw — likely a module that is not entering sleep mode",
+        "C": "Disconnect the alternator and test if the battery holds charge without it",
+        "D": "Check the starter motor current draw because a worn starter can drain the battery"
+      },
+      "correct_answer": "B",
+      "explanation": "A parasitic drain test measures the current flowing from the battery when the vehicle is off and all systems should be in sleep mode. The normal parasitic draw is typically 20-50 mA. If the draw exceeds this (often 300 mA or more in fault conditions), a module is staying awake. The technician connects the multimeter in series on the battery negative cable (set to mA/A range), waits for all modules to enter sleep mode (this can take 20-45 minutes on modern vehicles), and then reads the current. If the draw is excessive, fuses are pulled one at a time while monitoring the meter. When pulling a specific fuse causes the current to drop to normal, the circuit on that fuse contains the faulty component — often a BCM, infotainment module, or aftermarket accessory that refuses to sleep. This is a systematic, efficient isolation technique.",
+      "topic": "Parasitic battery drain diagnosis",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D39-Q08",
+      "question": "A vehicle has a rough idle and the check engine light is on. A full module scan reveals: ECM — P0300 (Random Misfire), P0301 (Cylinder 1 Misfire); BCM — U0100 (Lost Communication with ECM), B1234 (CAN Communication Fault). A technician replaces the cylinder 1 spark plug and ignition coil, but the misfire persists. What did the technician do wrong?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "They should have replaced all spark plugs and coils, not just cylinder 1",
+        "B": "They ignored the U-codes in the BCM, which indicate a CAN bus communication fault is the root cause — the misfire is a secondary symptom of lost network data, not a direct ignition failure",
+        "C": "They forgot to clear the DTCs before testing, so the old codes were still stored",
+        "D": "They should have performed a compression test before replacing any parts"
+      },
+      "correct_answer": "B",
+      "explanation": "This is the classic cross-system diagnostic trap. The technician focused on the P-codes (misfire) and ignored the U-codes (network communication). The U0100 code in the BCM means it lost communication with the ECM — this indicates a CAN bus fault. In many vehicles, sensor data such as camshaft position or crankshaft position is shared between modules via CAN. If the CAN bus has a fault (broken wire, corroded connector, bad termination), the ECM may lose synchronisation data it needs for fuel injection timing, causing a random misfire. The root cause is the network fault, not the ignition components. The technician wasted money on a spark plug and coil because they did not follow the diagnostic workflow — specifically, Step 3 (analyse ALL codes) would have flagged the U-codes as the common thread.",
+      "topic": "Cross-system misfire diagnosis — network root cause",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D39-Q09",
+      "question": "A customer complains that the air conditioning blows warm air on the driver's side but cold air on the passenger's side (dual-zone climate control). The HVAC scan shows no DTCs. What is the most likely root cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The refrigerant is low and needs recharging",
+        "B": "The driver's side blend door actuator has failed or the blend door is stuck, preventing it from directing airflow over the evaporator to the driver's vent",
+        "C": "The cabin air filter is clogged and restricting airflow to the driver's side",
+        "D": "The compressor clutch is slipping and not maintaining sufficient refrigerant pressure"
+      },
+      "correct_answer": "B",
+      "explanation": "In a dual-zone climate control system, each side has its own blend door actuator that controls the mix of hot (heater core) and cold (evaporator) air for that zone. If the passenger side blows cold correctly but the driver's side blows warm, the refrigerant system is functioning (both sides share the same evaporator and compressor). The fault is isolated to the driver's side air distribution — specifically the blend door actuator or the blend door mechanism. The actuator may have failed (stripped gears, burned motor, lost position calibration), or the blend door itself may be stuck in the 'heat' position. Diagnosis involves commanding the driver's blend door actuator through its range using the scan tool's bi-directional controls and listening for actuator movement or checking temperature change at the vent.",
+      "topic": "HVAC dual-zone blend door diagnosis",
+      "bloom_level": "Analyse"
+    },
+    {
+      "id": "D39-Q10",
+      "question": "During diagnostic Step 7 (Verify the repair), a technician clears all DTCs, road tests the vehicle, and then re-scans. The original fault code has not returned, but a new code — C0035 (Left Front Wheel Speed Sensor Circuit) — is now present that was not there before the repair. What should the technician do?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Ignore it because it is unrelated to the original repair and the customer did not complain about it",
+        "B": "Investigate immediately — the new code may have been introduced during the repair (a disconnected connector, a damaged wire, or a sensor disturbed during the work), and releasing the vehicle with a new fault is unacceptable",
+        "C": "Clear the code again and re-test — it is probably a ghost code from the clearing process",
+        "D": "Document the code and tell the customer to come back if the ABS light comes on"
+      },
+      "correct_answer": "B",
+      "explanation": "Any new DTC that appears after a repair must be investigated before the vehicle is released. The purpose of the verification re-scan is precisely to catch problems introduced during the repair process. A wheel speed sensor code appearing after work that involved lifting the vehicle, removing wheels, or working near the hub area strongly suggests the technician accidentally disconnected the sensor connector, damaged the sensor wiring, or disturbed the sensor's air gap. Releasing the vehicle with a known new fault is professionally unacceptable — it creates a safety issue (ABS may be partially disabled), generates a customer comeback, and demonstrates a failure of the repair verification process. The technician must trace and resolve the new code before returning the vehicle.",
+      "topic": "Repair verification — new fault detection",
+      "bloom_level": "Evaluate"
+    }
+  ]
+}

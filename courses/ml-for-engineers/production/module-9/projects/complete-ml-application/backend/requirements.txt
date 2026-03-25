@@ -1,0 +1,25 @@
+# FastAPI Backend Requirements
+# Production-ready ML API dependencies
+
+# Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+
+# CORS and Security
+python-multipart==0.0.6
+
+# Logging and Monitoring
+python-json-logger==2.0.7
+
+# ML Dependencies (lightweight for production)
+scikit-learn==1.3.2
+numpy==1.24.3
+
+# Optional: For advanced ML models
+# transformers==4.35.0
+# torch==2.1.0
+
+# Testing
+pytest==7.4.3
+httpx==0.25.1

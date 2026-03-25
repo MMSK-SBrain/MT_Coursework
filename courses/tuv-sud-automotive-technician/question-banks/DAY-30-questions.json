@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 30,
+  "week": 6,
+  "session_title": "Transmission & Charging Diagnostics Consolidation",
+  "questions": [
+    {
+      "id": "D30-Q01",
+      "question": "What are the two triggers that determine when a vehicle service is due?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Engine temperature and oil pressure",
+        "B": "Mileage or time — whichever comes first",
+        "C": "Fuel consumption and exhaust emissions",
+        "D": "Battery voltage and alternator output"
+      },
+      "correct_answer": "B",
+      "explanation": "Manufacturer service schedules use two triggers: mileage-based (e.g., every 15,000 km) and time-based (e.g., every 12 months). The service is due at whichever threshold is reached first. A vehicle driven only 3,000 km in two years is still overdue for service because fluids degrade over time regardless of mileage.",
+      "topic": "Service intervals",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D30-Q02",
+      "question": "Why should GL-5 gear oil never be used in a manual gearbox that specifies GL-4?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "GL-5 is too thin and will leak past the seals",
+        "B": "GL-5 contains sulphur-phosphorus extreme-pressure additives that can attack the brass synchronizer rings",
+        "C": "GL-5 solidifies at normal operating temperatures",
+        "D": "GL-5 is only suitable for automatic transmissions"
+      },
+      "correct_answer": "B",
+      "explanation": "GL-5 gear oil contains more aggressive extreme-pressure (EP) additives based on sulphur-phosphorus compounds, designed for the hypoid gears in differentials. These additives are chemically active against yellow metals such as the brass (copper-zinc alloy) used in synchronizer rings. Using GL-5 in a GL-4 gearbox can corrode and weaken the synchro rings, causing premature wear and gear crunching.",
+      "topic": "Gear oil specifications",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D30-Q03",
+      "question": "What three purposes does proper service documentation serve?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Marketing, sales, and advertising",
+        "B": "Warranty compliance, vehicle resale value, and technician liability protection",
+        "C": "Insurance claims, tax deductions, and fuel economy tracking",
+        "D": "Parts ordering, stock management, and supplier evaluation"
+      },
+      "correct_answer": "B",
+      "explanation": "Service documentation serves three critical purposes: it provides proof of scheduled maintenance for warranty claims (missing records can result in warranty rejection), it maintains the vehicle's service history which significantly impacts resale value, and it protects the technician against liability by providing a dated, detailed record of work performed, parts used, and fluid specifications.",
+      "topic": "Service documentation importance",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D30-Q04",
+      "question": "When checking ATF level in a conventional automatic transmission with a dipstick, what conditions must be met for an accurate reading?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Engine off, transmission cold, vehicle on a slope",
+        "B": "Engine running, transmission at operating temperature (60-80 degrees C), selector in Park, vehicle on level ground",
+        "C": "Engine running at 4,000 RPM, transmission in Drive, vehicle stationary",
+        "D": "Engine off, transmission hot, selector in Neutral"
+      },
+      "correct_answer": "B",
+      "explanation": "ATF level must be checked with the engine running (so the torque converter and oil passages are filled), the transmission at operating temperature of 60-80 degrees C (ATF expands with heat, changing the level), the selector in Park (standard procedure for most manufacturers), and the vehicle on level ground. Checking with the engine off or at the wrong temperature will give an inaccurate reading.",
+      "topic": "ATF level check procedure",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D30-Q05",
+      "question": "During an AC ripple test on an alternator, what does a reading above 0.5 V AC on the DC output indicate?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The voltage regulator is set too high",
+        "B": "The serpentine belt is slipping",
+        "C": "One or more diodes in the rectifier bridge have failed, allowing AC to pass through to the DC output",
+        "D": "The battery is fully charged and rejecting current"
+      },
+      "correct_answer": "C",
+      "explanation": "A healthy alternator with a functioning 6-diode rectifier bridge produces nearly smooth DC with less than 0.5 V of AC ripple. When a diode fails open, it removes one rectification path, causing a noticeable AC component to appear on the output. This AC ripple (above 0.5 V) is a reliable indicator of diode failure, even before the battery warning light illuminates. The alternator output will also drop by approximately one-third.",
+      "topic": "Alternator AC ripple testing",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D30-Q06",
+      "question": "A customer complains that their vehicle shakes at 80-100 km/h. The vibration is present in all gears and persists when coasting with the clutch depressed. Recent work includes new front tyres. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The clutch disc is worn and needs replacement",
+        "B": "The gearbox output shaft bearing has failed",
+        "C": "The newly fitted front tyres are improperly balanced or one has a manufacturing defect causing a force variation",
+        "D": "The alternator bearing is worn and creating vibration through the engine"
+      },
+      "correct_answer": "C",
+      "explanation": "Speed-dependent vibration that persists when coasting with the clutch depressed eliminates the gearbox and engine as sources, because they are disconnected from the driveline in that condition. The vibration follows road speed, not engine speed. Combined with the recent tyre fitment, the most likely cause is wheel imbalance or a tyre defect. Improperly balanced wheels create a speed-dependent vibration that worsens at certain speeds (typically 80-120 km/h). This is a cross-system diagnostic — the symptom could suggest transmission or driveline issues, but the clutch-depressed test isolates it to the wheels.",
+      "topic": "Cross-system vibration diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D30-Q07",
+      "question": "A vehicle's battery goes flat overnight every 3-4 days. The battery tests good (SOH 92%), the alternator output is 14.4 V under load, and no warning lights are illuminated. The technician measures a parasitic drain of 380 mA (specification: 50 mA maximum). After systematically pulling fuses, the drain drops to 45 mA when the fuse for the boot/trunk light circuit is removed. What should the technician investigate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the alternator because it has a leaking diode causing reverse current flow",
+        "B": "Replace the battery because it has excessive self-discharge",
+        "C": "Inspect the boot light switch and circuit — the light is likely staying on when the boot is closed, drawing continuous current",
+        "D": "Reprogram the body control module to reduce sleep mode current"
+      },
+      "correct_answer": "C",
+      "explanation": "The systematic fuse-pull test identified the boot light circuit as the source of the 380 mA drain (380 - 45 = 335 mA excess on that circuit). The most common cause is a faulty boot light switch that does not properly turn off the light when the boot is closed, or a mis-positioned switch that fails to make contact with the boot lid. The light then stays on continuously, draining the battery over several days. A 335 mA draw on a 60 Ah battery would flatten it in approximately 7 days, matching the customer's complaint. The battery and alternator are both confirmed good.",
+      "topic": "Parasitic drain fault isolation",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D30-Q08",
+      "question": "A technician performs an ATF condition check and finds the fluid is dark brown, slightly opaque, and has a distinct burnt smell. The customer reports no drivability issues. What is the correct recommendation?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The fluid condition is normal for a high-mileage vehicle — no action required",
+        "B": "Recommend an ATF change using the manufacturer-specified fluid, and advise the customer that internal damage may have already begun even though symptoms have not yet appeared",
+        "C": "Immediately condemn the transmission and recommend replacement",
+        "D": "Add ATF conditioner and recheck in 10,000 km"
+      },
+      "correct_answer": "B",
+      "explanation": "Dark brown, opaque ATF with a burnt smell indicates the fluid has been overheated and its friction modifiers, lubricating properties, and seal conditioners are degraded. Although the customer reports no current drivability issues, internal friction surfaces are being damaged progressively. An ATF change using the correct manufacturer-specified fluid is recommended to restore protection. The customer should be advised that some internal wear may have already occurred and that symptoms could develop later. Condemning the transmission is premature when there are no drivability symptoms.",
+      "topic": "ATF condition assessment and recommendation",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D30-Q09",
+      "question": "A vehicle with a conventional automatic transmission produces a whining noise that increases with engine RPM in Park and Neutral, but the pitch changes when Drive is selected. All fluid levels are correct. Which component is the most likely source of the noise?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The torque converter turbine bearing",
+        "B": "The transmission oil pump, because it is driven by the engine via the torque converter and operates in all selector positions, with load changes when a gear is engaged",
+        "C": "The output shaft bearing, because it only spins when in gear",
+        "D": "The differential ring gear"
+      },
+      "correct_answer": "B",
+      "explanation": "The transmission oil pump is driven by the engine through the torque converter housing and operates whenever the engine is running, regardless of the selector position (Park, Neutral, or Drive). A whining noise that is present in all positions and varies with engine RPM points to the oil pump. The pitch change when Drive is selected occurs because engaging a gear changes the hydraulic load on the pump as it now supplies pressure to the forward clutch pack. The output shaft and differential only spin when the vehicle is moving in gear, so they would not produce noise in Park or Neutral.",
+      "topic": "Automatic transmission noise diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D30-Q10",
+      "question": "During a routine service, a technician finds the serpentine drive belt has visible cracking on the rib side and the belt has covered 55,000 km. The manufacturer's replacement interval is 60,000 km. The belt still maintains correct tension. What is the correct action?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Refit the belt — it still has 5,000 km of remaining service life and the tension is correct",
+        "B": "Apply belt dressing to extend the belt life and re-inspect at 60,000 km",
+        "C": "Replace the belt now — visible rib cracking indicates material degradation regardless of remaining mileage, and failure would disable the alternator, water pump, and power steering",
+        "D": "Tighten the belt further to compensate for the cracking"
+      },
+      "correct_answer": "C",
+      "explanation": "Visible cracking on the rib side of a serpentine belt indicates rubber degradation from heat cycling and age. The belt is a critical component that drives the alternator (charging), water pump (cooling), and power steering pump. A belt failure while driving would disable all three systems simultaneously — the battery would discharge, the engine would overheat, and power steering would be lost. Since the belt is already showing deterioration at 55,000 km (close to the 60,000 km interval) and the vehicle is already in the workshop for service, replacement now is the correct, cost-effective, and safe action. Belt dressing is never appropriate for modern serpentine belts.",
+      "topic": "Scheduled maintenance decision-making",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

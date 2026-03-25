@@ -1,0 +1,263 @@
+{
+  "module": "Module 7: Computer Vision",
+  "rubric_version": "1.0",
+  "total_sessions": 6,
+  "points_per_session": 15,
+  "session_rubrics": {
+    "session_7_1": {
+      "title": "CNN Fundamentals - MNIST",
+      "total_points": 15,
+      "criteria": [
+        {
+          "criterion": "Model Implementation",
+          "points": 6,
+          "levels": {
+            "excellent": {
+              "points": 6,
+              "description": "CNN architecture correctly implemented with all required layers (Conv2D, MaxPooling, Dense). Model compiles and trains successfully."
+            },
+            "good": {
+              "points": 4,
+              "description": "CNN mostly correct with minor issues. Trains but may have small architectural errors."
+            },
+            "needs_improvement": {
+              "points": 2,
+              "description": "Significant architectural issues or model doesn't train properly."
+            },
+            "incomplete": {
+              "points": 0,
+              "description": "Model not implemented or major errors prevent execution."
+            }
+          }
+        },
+        {
+          "criterion": "Target Accuracy Achievement",
+          "points": 4,
+          "levels": {
+            "excellent": {
+              "points": 4,
+              "description": "Achieves >98% test accuracy as required."
+            },
+            "good": {
+              "points": 3,
+              "description": "Achieves 95-98% test accuracy."
+            },
+            "needs_improvement": {
+              "points": 2,
+              "description": "Achieves 90-95% test accuracy."
+            },
+            "incomplete": {
+              "points": 0,
+              "description": "Below 90% accuracy."
+            }
+          }
+        },
+        {
+          "criterion": "Visualizations",
+          "points": 3,
+          "levels": {
+            "excellent": {
+              "points": 3,
+              "description": "Includes all 7 required visualizations: sample digits, class distribution, training history, confusion matrix, predictions, error analysis, comparison."
+            },
+            "good": {
+              "points": 2,
+              "description": "Includes 5-6 visualizations with good quality."
+            },
+            "needs_improvement": {
+              "points": 1,
+              "description": "Includes 3-4 visualizations or poor quality."
+            }
+          }
+        },
+        {
+          "criterion": "Code Quality & Documentation",
+          "points": 2,
+          "levels": {
+            "excellent": {
+              "points": 2,
+              "description": "Clean code, good variable names, comments explaining key steps, well-organized notebook."
+            },
+            "good": {
+              "points": 1,
+              "description": "Mostly clean code with some documentation."
+            },
+            "needs_improvement": {
+              "points": 0,
+              "description": "Poor code quality, lack of comments, disorganized."
+            }
+          }
+        }
+      ]
+    },
+    "session_7_2": {
+      "title": "Advanced CNNs - CIFAR-10",
+      "total_points": 15,
+      "criteria": [
+        {
+          "criterion": "Advanced Architecture",
+          "points": 5,
+          "description": "Implements deeper CNN with batch normalization, progressive dropout, and multiple conv blocks."
+        },
+        {
+          "criterion": "Data Augmentation",
+          "points": 3,
+          "description": "Correctly implements and applies ImageDataGenerator with multiple augmentation techniques."
+        },
+        {
+          "criterion": "Target Accuracy (>70%)",
+          "points": 4,
+          "description": "Achieves target accuracy on CIFAR-10 test set."
+        },
+        {
+          "criterion": "Visualizations & Analysis",
+          "points": 2,
+          "description": "Includes training curves, confusion matrix, per-class accuracy, sample predictions."
+        },
+        {
+          "criterion": "Documentation",
+          "points": 1,
+          "description": "Well-documented code with explanations of architectural choices."
+        }
+      ]
+    },
+    "session_7_3": {
+      "title": "Transfer Learning - Cats vs Dogs",
+      "total_points": 15,
+      "criteria": [
+        {
+          "criterion": "Two-Phase Training",
+          "points": 5,
+          "description": "Implements both phases: feature extraction (frozen) and fine-tuning (unfrozen top layers) with appropriate learning rates."
+        },
+        {
+          "criterion": "Model Architecture",
+          "points": 3,
+          "description": "Correctly loads VGG16, adds custom classifier, compiles with appropriate parameters."
+        },
+        {
+          "criterion": "Target Accuracy (>90%)",
+          "points": 4,
+          "description": "Achieves >90% validation accuracy through transfer learning."
+        },
+        {
+          "criterion": "Analysis & Comparison",
+          "points": 2,
+          "description": "Compares phase 1 vs phase 2 performance, visualizes training history."
+        },
+        {
+          "criterion": "Code Quality",
+          "points": 1,
+          "description": "Clean, well-documented code with clear explanations."
+        }
+      ]
+    },
+    "session_7_4": {
+      "title": "Object Detection - Face Detection",
+      "total_points": 15,
+      "criteria": [
+        {
+          "criterion": "Haar Cascade Implementation",
+          "points": 5,
+          "description": "Successfully implements face detection using Haar Cascades with bounding boxes."
+        },
+        {
+          "criterion": "Real-time Detection",
+          "points": 4,
+          "description": "Implements webcam real-time face detection (or demonstrates understanding if hardware unavailable)."
+        },
+        {
+          "criterion": "YOLO Understanding",
+          "points": 3,
+          "description": "Demonstrates understanding of YOLO architecture and differences from Haar Cascades."
+        },
+        {
+          "criterion": "Comparison & Analysis",
+          "points": 2,
+          "description": "Compares classical vs deep learning methods for object detection."
+        },
+        {
+          "criterion": "Documentation",
+          "points": 1,
+          "description": "Well-documented with explanations of IoU, NMS concepts."
+        }
+      ]
+    },
+    "session_7_5": {
+      "title": "Medical Imaging - Pneumonia Detection",
+      "total_points": 15,
+      "criteria": [
+        {
+          "criterion": "Transfer Learning Implementation",
+          "points": 4,
+          "description": "Uses VGG16 or similar for medical image classification."
+        },
+        {
+          "criterion": "Class Imbalance Handling",
+          "points": 3,
+          "description": "Implements class weights or oversampling to handle imbalanced dataset."
+        },
+        {
+          "criterion": "Target Recall (>85%)",
+          "points": 4,
+          "description": "Achieves >85% recall (critical for medical diagnosis - catching pneumonia cases)."
+        },
+        {
+          "criterion": "Medical Context Understanding",
+          "points": 2,
+          "description": "Demonstrates understanding of medical implications: FN vs FP costs, ROC curve analysis."
+        },
+        {
+          "criterion": "Visualizations",
+          "points": 2,
+          "description": "Includes confusion matrix, ROC curve, sample predictions with X-ray images."
+        }
+      ]
+    },
+    "session_7_6": {
+      "title": "Manufacturing Defect Detection",
+      "total_points": 15,
+      "criteria": [
+        {
+          "criterion": "Transfer Learning with MobileNet",
+          "points": 4,
+          "description": "Implements transfer learning using MobileNetV2 for fast inference."
+        },
+        {
+          "criterion": "Two-Phase Training",
+          "points": 3,
+          "description": "Completes both feature extraction and fine-tuning phases."
+        },
+        {
+          "criterion": "Target Accuracy (>85%)",
+          "points": 3,
+          "description": "Achieves >85% accuracy despite limited data."
+        },
+        {
+          "criterion": "Inference Speed Analysis",
+          "points": 3,
+          "description": "Measures and reports inference time (<100ms for production readiness)."
+        },
+        {
+          "criterion": "Deployment Considerations",
+          "points": 2,
+          "description": "Discusses production deployment: FP/FN costs, ROI, real-time requirements."
+        }
+      ]
+    }
+  },
+  "grading_scale": {
+    "A": "13-15 points (87-100%)",
+    "B": "11-12 points (73-86%)",
+    "C": "9-10 points (60-72%)",
+    "D": "7-8 points (47-59%)",
+    "F": "0-6 points (0-46%)"
+  },
+  "general_guidelines": {
+    "late_submission": "10% deduction per day, max 3 days",
+    "code_execution": "Code must run without errors for full credit",
+    "plagiarism": "Zero tolerance - cite sources, use own implementations",
+    "partial_credit": "Partial credit available for incomplete work showing understanding",
+    "resubmission": "One resubmission allowed within 1 week for up to 80% credit"
+  }
+}

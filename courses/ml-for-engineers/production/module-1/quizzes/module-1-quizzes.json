@@ -1,0 +1,721 @@
+{
+  "module": 1,
+  "module_name": "Foundations",
+  "total_sessions": 4,
+  "total_questions": 44,
+  "passing_score": 70,
+  "created": "2026-01-05",
+  "version": "1.0",
+
+  "session_1": {
+    "session_number": 1,
+    "session_title": "Understanding Machine Learning",
+    "total_questions": 12,
+    "estimated_time_minutes": 15,
+
+    "questions": [
+      {
+        "quiz_id": "M1-S1-Q01",
+        "question": "Machine learning is best described as:",
+        "options": [
+          "Writing rules for computers to follow",
+          "Teaching computers to learn patterns from data",
+          "A type of database management system",
+          "Advanced Excel formulas"
+        ],
+        "correct_answer": 1,
+        "explanation": "Machine learning is about teaching computers to learn patterns from data, rather than explicitly programming every rule. The computer finds patterns in examples and uses them to make predictions.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "understand",
+        "topic": "ML Definition"
+      },
+      {
+        "quiz_id": "M1-S1-Q02",
+        "question": "What is required for supervised learning?",
+        "options": [
+          "Only input data",
+          "Input data and correct answers (labels)",
+          "No data at all",
+          "Only images"
+        ],
+        "correct_answer": 1,
+        "explanation": "Supervised learning requires both input data (features) and correct answers (labels) so the model can learn the relationship between them. For example, in spam detection, you need both emails (input) and their spam/not-spam labels (output).",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember",
+        "topic": "Supervised Learning"
+      },
+      {
+        "quiz_id": "M1-S1-Q03",
+        "question": "Predicting if an email is spam or not spam is an example of:",
+        "options": [
+          "Regression",
+          "Classification",
+          "Unsupervised learning",
+          "Not a machine learning problem"
+        ],
+        "correct_answer": 1,
+        "explanation": "This is binary classification because we're predicting a category (spam or not spam). Classification problems predict discrete categories, while regression predicts continuous numbers.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "apply",
+        "topic": "Classification vs Regression"
+      },
+      {
+        "quiz_id": "M1-S1-Q04",
+        "question": "Predicting house prices in dollars is an example of:",
+        "options": [
+          "Regression",
+          "Binary classification",
+          "Multi-class classification",
+          "Unsupervised learning"
+        ],
+        "correct_answer": 0,
+        "explanation": "This is regression because we're predicting a continuous number (price in dollars). Regression problems output numbers, while classification problems output categories.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "apply",
+        "topic": "Classification vs Regression"
+      },
+      {
+        "quiz_id": "M1-S1-Q05",
+        "question": "What is the first step in the ML pipeline?",
+        "options": [
+          "Deploy the model",
+          "Train the model",
+          "Get and prepare data",
+          "Test the model"
+        ],
+        "correct_answer": 2,
+        "explanation": "The ML pipeline starts with getting and preparing data. Without quality data, you can't train a model. The full pipeline is: Data → Prepare → Train → Test → Deploy.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember",
+        "topic": "ML Pipeline"
+      },
+      {
+        "quiz_id": "M1-S1-Q06",
+        "question": "Machine learning is NOT suitable for:",
+        "options": [
+          "Complex pattern recognition",
+          "Simple calculator operations (2 + 2)",
+          "Image classification",
+          "Text sentiment analysis"
+        ],
+        "correct_answer": 1,
+        "explanation": "Simple calculator operations have explicit rules (2+2 always equals 4) and don't need ML. ML is best for problems where patterns are complex and hard to write explicit rules for.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 45,
+        "bloom_level": "evaluate",
+        "topic": "When to Use ML"
+      },
+      {
+        "quiz_id": "M1-S1-Q07",
+        "question": "What's the difference between binary and multi-class classification?",
+        "options": [
+          "Binary predicts 2 categories, multi-class predicts 3 or more",
+          "They're exactly the same thing",
+          "Binary classification is more difficult",
+          "Multi-class doesn't use labeled data"
+        ],
+        "correct_answer": 0,
+        "explanation": "Binary classification has exactly 2 possible outcomes (yes/no, spam/ham), while multi-class has 3 or more outcomes (type A/B/C, species 1/2/3/4). Both use labeled data and similar algorithms.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 40,
+        "bloom_level": "understand",
+        "topic": "Classification Types"
+      },
+      {
+        "quiz_id": "M1-S1-Q08",
+        "question": "Why do we split data into training and testing sets?",
+        "options": [
+          "To create more data",
+          "To test the model on data it hasn't seen before",
+          "Because computers require it",
+          "To delete bad data"
+        ],
+        "correct_answer": 1,
+        "explanation": "We split data to test the model on data it hasn't seen during training. This tells us if the model can generalize to new situations, not just memorize the training data. It's like taking an exam on new questions, not the same ones you studied.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand",
+        "topic": "Train/Test Split"
+      },
+      {
+        "quiz_id": "M1-S1-Q09",
+        "question": "True or False: ML can solve any problem if you have enough data.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 1,
+        "explanation": "False. ML has limitations. Some problems need perfect accuracy (life-critical systems), some have no learnable patterns, and some require explainability that ML can't provide. More data doesn't always solve these fundamental issues.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 40,
+        "bloom_level": "evaluate",
+        "topic": "ML Limitations"
+      },
+      {
+        "quiz_id": "M1-S1-Q10",
+        "question": "True or False: Classification predicts categories, regression predicts numbers.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 0,
+        "explanation": "True. Classification outputs discrete categories (spam/not spam, cat/dog/bird), while regression outputs continuous numbers (price, temperature, age). This is the fundamental difference between the two.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 25,
+        "bloom_level": "remember",
+        "topic": "Classification vs Regression"
+      },
+      {
+        "quiz_id": "M1-S1-Q11",
+        "question": "True or False: You always need labeled data for machine learning.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 1,
+        "explanation": "False. Supervised learning needs labeled data, but unsupervised learning works with unlabeled data to find hidden patterns and structures. Examples of unsupervised learning include clustering and dimensionality reduction.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 35,
+        "bloom_level": "understand",
+        "topic": "Learning Types"
+      },
+      {
+        "quiz_id": "M1-S1-Q12",
+        "question": "True or False: The ML pipeline has 5 main steps: Data, Prepare, Train, Test, Deploy.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 0,
+        "explanation": "True. These are the 5 fundamental steps of the ML pipeline. Every ML project follows this flow: get data, prepare it, train a model, test it, and deploy it to production.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 25,
+        "bloom_level": "remember",
+        "topic": "ML Pipeline"
+      }
+    ]
+  },
+
+  "session_2": {
+    "session_number": 2,
+    "session_title": "Working with Data",
+    "total_questions": 10,
+    "estimated_time_minutes": 12,
+
+    "questions": [
+      {
+        "quiz_id": "M1-S2-Q01",
+        "question": "In stock data, what does OHLCV stand for?",
+        "options": [
+          "Only High Low Close Volume",
+          "Open High Low Close Volume",
+          "Open Hour Low Close Value",
+          "Open High Late Close Volume"
+        ],
+        "correct_answer": 1,
+        "explanation": "OHLCV stands for Open, High, Low, Close, Volume. These are the 5 key data points for each trading day: opening price, highest price, lowest price, closing price, and number of shares traded.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember",
+        "topic": "Stock Data"
+      },
+      {
+        "quiz_id": "M1-S2-Q02",
+        "question": "What does the pandas command df.head() do?",
+        "options": [
+          "Shows the first few rows of data (default 5)",
+          "Deletes the top rows",
+          "Calculates the average",
+          "Sorts the data by the first column"
+        ],
+        "correct_answer": 0,
+        "explanation": "df.head() displays the first 5 rows of the DataFrame by default (you can specify a different number with df.head(10)). It's useful for quickly inspecting your data structure and contents.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 25,
+        "bloom_level": "remember",
+        "topic": "Pandas Operations"
+      },
+      {
+        "quiz_id": "M1-S2-Q03",
+        "question": "In machine learning, features are:",
+        "options": [
+          "The output variable we want to predict",
+          "The input variables we use to make predictions",
+          "Errors in the model",
+          "Data visualization types"
+        ],
+        "correct_answer": 1,
+        "explanation": "Features (also called X) are the input variables used to make predictions. For example, in house price prediction, features might be: square footage, number of bedrooms, location. The output (what we predict) is called the label or target.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "understand",
+        "topic": "Features vs Labels"
+      },
+      {
+        "quiz_id": "M1-S2-Q04",
+        "question": "Which column should you use for stock price analysis?",
+        "options": [
+          "Open price",
+          "Close price",
+          "Adj Close (Adjusted Close)",
+          "High price"
+        ],
+        "correct_answer": 2,
+        "explanation": "Use 'Adj Close' (Adjusted Close) for price analysis because it accounts for stock splits and dividends, giving accurate historical returns. The regular 'Close' doesn't account for these corporate actions and can be misleading.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 35,
+        "bloom_level": "apply",
+        "topic": "Stock Data"
+      },
+      {
+        "quiz_id": "M1-S2-Q05",
+        "question": "What does df.describe() show?",
+        "options": [
+          "Only the first row",
+          "Statistical summary of numerical columns (mean, std, min, max, etc.)",
+          "All the data in the DataFrame",
+          "Error messages about the data"
+        ],
+        "correct_answer": 1,
+        "explanation": "df.describe() provides statistical summary for numerical columns including count, mean, standard deviation, minimum, quartiles, and maximum. It's a quick way to understand the distribution and range of your data.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember",
+        "topic": "Pandas Operations"
+      },
+      {
+        "quiz_id": "M1-S2-Q06",
+        "question": "Why is it important to check for missing values?",
+        "options": [
+          "It's not necessary",
+          "Missing values can cause errors in ML models and affect predictions",
+          "To delete all the data",
+          "Just for documentation purposes"
+        ],
+        "correct_answer": 1,
+        "explanation": "Missing values can cause errors when training ML models and can significantly affect predictions. You need to identify them and decide how to handle them (remove rows, fill with mean/median, or use advanced imputation).",
+        "difficulty": "easy",
+        "estimated_time_seconds": 35,
+        "bloom_level": "understand",
+        "topic": "Data Quality"
+      },
+      {
+        "quiz_id": "M1-S2-Q07",
+        "question": "True or False: Each row in stock data typically represents one trading day.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 0,
+        "explanation": "True. In daily stock data, each row represents one trading day with OHLCV values for that day. Markets are closed on weekends and holidays, so there are about 252 trading days per year (not 365).",
+        "difficulty": "easy",
+        "estimated_time_seconds": 25,
+        "bloom_level": "remember",
+        "topic": "Stock Data Structure"
+      },
+      {
+        "quiz_id": "M1-S2-Q08",
+        "question": "True or False: Volume tells you how many shares were traded on a given day.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 0,
+        "explanation": "True. Volume is the total number of shares traded during a trading day. High volume indicates high interest/activity in the stock, while low volume indicates less trading activity.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 20,
+        "bloom_level": "remember",
+        "topic": "Stock Data"
+      },
+      {
+        "quiz_id": "M1-S2-Q09",
+        "question": "True or False: You can use AI to help you write data exploration code.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 0,
+        "explanation": "True. AI tools like ChatGPT, Claude, and Gemini can help you write pandas code for data exploration. You provide the task and context, and they generate code that you can use and learn from.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 20,
+        "bloom_level": "remember",
+        "topic": "AI-Assisted Learning"
+      },
+      {
+        "quiz_id": "M1-S2-Q10",
+        "question": "True or False: More data is always better, even if it's low quality.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 1,
+        "explanation": "False. 'Garbage in, garbage out' - low quality data leads to poor models regardless of quantity. It's better to have less high-quality data than lots of poor-quality data. Quality includes accuracy, completeness, consistency, and relevance.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 30,
+        "bloom_level": "evaluate",
+        "topic": "Data Quality"
+      }
+    ]
+  },
+
+  "session_3": {
+    "session_number": 3,
+    "session_title": "Data Visualization & Patterns",
+    "total_questions": 10,
+    "estimated_time_minutes": 12,
+
+    "questions": [
+      {
+        "quiz_id": "M1-S3-Q01",
+        "question": "Which chart type is best for showing price movement over time?",
+        "options": [
+          "Pie chart",
+          "Line chart",
+          "Donut chart",
+          "Word cloud"
+        ],
+        "correct_answer": 1,
+        "explanation": "Line charts are ideal for time series data like stock prices. They clearly show trends, patterns, and changes over time. Each point represents a value at a specific time, and the line connects them to show the progression.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 25,
+        "bloom_level": "apply",
+        "topic": "Chart Types"
+      },
+      {
+        "quiz_id": "M1-S3-Q02",
+        "question": "What does a histogram show?",
+        "options": [
+          "Time series data",
+          "Distribution and frequency of values",
+          "Correlation between two variables",
+          "Nothing useful"
+        ],
+        "correct_answer": 1,
+        "explanation": "A histogram shows the distribution of data by dividing it into bins and counting how many values fall into each bin. It helps you see patterns like: Is the data normally distributed? Are there outliers? What's the most common range?",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "understand",
+        "topic": "Chart Types"
+      },
+      {
+        "quiz_id": "M1-S3-Q03",
+        "question": "High trading volume usually indicates:",
+        "options": [
+          "Low interest in the stock",
+          "High interest and activity in the stock",
+          "The stock is worthless",
+          "A data error"
+        ],
+        "correct_answer": 1,
+        "explanation": "High volume indicates high interest and trading activity. This often happens around major news, earnings reports, or significant market events. High volume days are important because they often precede significant price movements.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "understand",
+        "topic": "Volume Analysis"
+      },
+      {
+        "quiz_id": "M1-S3-Q04",
+        "question": "A candlestick chart shows:",
+        "options": [
+          "Only closing price",
+          "Open, High, Low, Close (OHLC) in one visual element",
+          "Only volume data",
+          "Historical news articles"
+        ],
+        "correct_answer": 1,
+        "explanation": "Candlestick charts pack OHLC data into one visual element per time period. The body shows open/close range, the wicks show high/low extremes. Green/white candles mean close > open (price up), red/black mean close < open (price down).",
+        "difficulty": "easy",
+        "estimated_time_seconds": 35,
+        "bloom_level": "understand",
+        "topic": "Chart Types"
+      },
+      {
+        "quiz_id": "M1-S3-Q05",
+        "question": "Why normalize prices to start at 100 when comparing multiple stocks?",
+        "options": [
+          "To make charts look prettier",
+          "To compare relative performance regardless of absolute price",
+          "To delete unwanted data",
+          "To fix data errors"
+        ],
+        "correct_answer": 1,
+        "explanation": "Normalizing to 100 lets you compare percentage changes in different stocks regardless of their absolute prices. A $10 stock and $1000 stock can be compared fairly - both starting at 100 shows which grew more in percentage terms.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 40,
+        "bloom_level": "understand",
+        "topic": "Multi-Stock Comparison"
+      },
+      {
+        "quiz_id": "M1-S3-Q06",
+        "question": "What is a moving average useful for?",
+        "options": [
+          "Deleting old data",
+          "Smoothing out short-term fluctuations to see long-term trends",
+          "Making the chart load faster",
+          "Converting prices to different currencies"
+        ],
+        "correct_answer": 1,
+        "explanation": "Moving averages smooth out day-to-day volatility to reveal underlying trends. A 50-day MA averages the last 50 days, so random daily fluctuations have less impact. Traders use MA crossovers as trading signals.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 35,
+        "bloom_level": "understand",
+        "topic": "Technical Indicators"
+      },
+      {
+        "quiz_id": "M1-S3-Q07",
+        "question": "True or False: Visualizations help identify patterns that numbers alone might hide.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 0,
+        "explanation": "True. Humans are visual creatures - we can spot trends, outliers, and patterns much faster in charts than in tables of numbers. A sudden spike or gradual trend jumps out in a chart but might be hidden in rows of data.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 25,
+        "bloom_level": "understand",
+        "topic": "Value of Visualization"
+      },
+      {
+        "quiz_id": "M1-S3-Q08",
+        "question": "True or False: You should only use one type of chart for all your data.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 1,
+        "explanation": "False. Different chart types serve different purposes. Use line charts for trends over time, histograms for distributions, scatter plots for correlations, and bar charts for comparisons. Choose the chart type that best reveals the insight you're seeking.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "evaluate",
+        "topic": "Chart Selection"
+      },
+      {
+        "quiz_id": "M1-S3-Q09",
+        "question": "True or False: AI can help you create complex visualizations with plotly.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 0,
+        "explanation": "True. AI tools can generate plotly code for complex, interactive visualizations. You describe what you want (candlestick chart, multi-subplot dashboard, etc.) and the AI provides working code. You can then customize it further.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 20,
+        "bloom_level": "remember",
+        "topic": "AI-Assisted Visualization"
+      },
+      {
+        "quiz_id": "M1-S3-Q10",
+        "question": "True or False: Scatter plots are useful for identifying correlations between two variables.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 0,
+        "explanation": "True. Scatter plots show the relationship between two variables. If points cluster along a diagonal line, there's correlation. Positive slope means positive correlation, negative slope means negative correlation, random scatter means no correlation.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 25,
+        "bloom_level": "understand",
+        "topic": "Chart Types"
+      }
+    ]
+  },
+
+  "session_4": {
+    "session_number": 4,
+    "session_title": "Mastering AI-Assisted Learning",
+    "total_questions": 12,
+    "estimated_time_minutes": 15,
+
+    "questions": [
+      {
+        "quiz_id": "M1-S4-Q01",
+        "question": "The prompt engineering formula is: TASK + CONTEXT + ___ + CONSTRAINTS",
+        "options": [
+          "TIME",
+          "FORMAT",
+          "MONEY",
+          "CODE"
+        ],
+        "correct_answer": 1,
+        "explanation": "The formula is TASK + CONTEXT + FORMAT + CONSTRAINTS. FORMAT specifies how you want the output (Python code, explanation, table, etc.). This structure helps AI tools generate exactly what you need.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 25,
+        "bloom_level": "remember",
+        "topic": "Prompt Engineering"
+      },
+      {
+        "quiz_id": "M1-S4-Q02",
+        "question": "Iterative prompting means:",
+        "options": [
+          "Asking the same question repeatedly without changes",
+          "Refining prompts step-by-step to improve results",
+          "Using multiple LLMs simultaneously",
+          "Deleting all previous prompts"
+        ],
+        "correct_answer": 1,
+        "explanation": "Iterative prompting means starting with a simple prompt and refining it based on the response. For example: 1) 'Load data' → 2) 'Add error handling' → 3) 'Add data validation' → 4) 'Add comments'. Each iteration improves the output.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "understand",
+        "topic": "Prompt Engineering"
+      },
+      {
+        "quiz_id": "M1-S4-Q03",
+        "question": "When debugging with AI, you should provide:",
+        "options": [
+          "Only the error message",
+          "Only your code",
+          "Both the error message and relevant code",
+          "Nothing - AI knows automatically"
+        ],
+        "correct_answer": 2,
+        "explanation": "For effective debugging, provide both: (1) the complete error message and (2) the relevant code that caused it. This gives the AI context to understand what went wrong and suggest the right fix.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "apply",
+        "topic": "Debugging with AI"
+      },
+      {
+        "quiz_id": "M1-S4-Q04",
+        "question": "Multi-level explanations help because:",
+        "options": [
+          "They waste time",
+          "You can choose the depth that matches your understanding",
+          "They're required by Python",
+          "They make code run faster"
+        ],
+        "correct_answer": 1,
+        "explanation": "Multi-level explanations let you control the detail level. Beginner level uses simple terms, intermediate adds technical details, advanced includes underlying mechanics. You can ask 'Explain like I'm 10' or 'Explain with technical detail'.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 35,
+        "bloom_level": "understand",
+        "topic": "Learning with AI"
+      },
+      {
+        "quiz_id": "M1-S4-Q05",
+        "question": "A good prompt library includes:",
+        "options": [
+          "Only one type of prompt",
+          "Templates for common tasks across multiple categories",
+          "Random unorganized prompts",
+          "Only debugging prompts"
+        ],
+        "correct_answer": 1,
+        "explanation": "A good prompt library is organized by categories (data loading, visualization, debugging, etc.) with reusable templates. Each prompt is rated and annotated with notes about what worked. This makes it easy to find and reuse effective prompts.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 35,
+        "bloom_level": "apply",
+        "topic": "Prompt Library"
+      },
+      {
+        "quiz_id": "M1-S4-Q06",
+        "question": "Which makes a BETTER prompt: 'Load stock data' OR 'Load stock data from AAPL.csv, parse Date column as datetime, set as index, handle file-not-found error'?",
+        "options": [
+          "First prompt - it's shorter",
+          "Second prompt - it's more specific",
+          "Both are equally good",
+          "Neither will work"
+        ],
+        "correct_answer": 1,
+        "explanation": "The second prompt is better because it's specific. It tells the AI: what file, what to do with dates, what to use as index, and what errors to handle. Specific prompts get specific, useful results. Vague prompts get generic code.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 40,
+        "bloom_level": "evaluate",
+        "topic": "Prompt Quality"
+      },
+      {
+        "quiz_id": "M1-S4-Q07",
+        "question": "Why build a personal prompt library?",
+        "options": [
+          "It's required by the course",
+          "To have quick access to effective prompts you can reuse and refine",
+          "To impress your friends",
+          "Because everyone else does it"
+        ],
+        "correct_answer": 1,
+        "explanation": "A personal prompt library saves time by letting you reuse prompts that worked well. Instead of starting from scratch each time, you have tested templates you can adapt. It also helps you track what works and continuously improve your prompting skills.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 35,
+        "bloom_level": "understand",
+        "topic": "Prompt Library"
+      },
+      {
+        "quiz_id": "M1-S4-Q08",
+        "question": "What's an example of good CONTEXT in a prompt?",
+        "options": [
+          "'Do something with data'",
+          "'I have a DataFrame with stock prices for Apple over 5 years'",
+          "'Python'",
+          "'Help'"
+        ],
+        "correct_answer": 1,
+        "explanation": "Good context provides relevant background: what data you have, what it contains, what you're trying to achieve. 'DataFrame with stock prices for Apple over 5 years' tells the AI exactly what you're working with, enabling better code suggestions.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 35,
+        "bloom_level": "apply",
+        "topic": "Prompt Engineering"
+      },
+      {
+        "quiz_id": "M1-S4-Q09",
+        "question": "True or False: Iterating on prompts usually gives better results than one-shot prompts.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 0,
+        "explanation": "True. Starting simple and refining based on results typically works better than trying to create one perfect prompt. It's like having a conversation: you clarify, add details, and adjust based on what you get back.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 25,
+        "bloom_level": "evaluate",
+        "topic": "Prompt Engineering"
+      },
+      {
+        "quiz_id": "M1-S4-Q10",
+        "question": "True or False: You should always ask for the most technical explanation possible.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 1,
+        "explanation": "False. Match the explanation level to your current understanding. If you're learning, start with beginner explanations. As you understand more, request more technical detail. Overwhelming technical detail when you're learning can be confusing rather than helpful.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "evaluate",
+        "topic": "Learning with AI"
+      },
+      {
+        "quiz_id": "M1-S4-Q11",
+        "question": "True or False: AI can help you learn faster by providing customized explanations.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 0,
+        "explanation": "True. AI can explain concepts at your level, provide examples tailored to your context, answer follow-up questions immediately, and break down complex topics into simpler pieces. It's like having a patient tutor available 24/7.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 25,
+        "bloom_level": "understand",
+        "topic": "AI-Assisted Learning"
+      },
+      {
+        "quiz_id": "M1-S4-Q12",
+        "question": "True or False: A good prompt should include constraints like 'use matplotlib, figure size 12x6, include grid'.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 0,
+        "explanation": "True. Constraints specify exactly how you want the output: which library, what size, what features. This prevents the AI from making assumptions and gives you code that's closer to what you actually need, reducing the need for manual modifications.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "apply",
+        "topic": "Prompt Engineering"
+      }
+    ]
+  }
+}

@@ -1,0 +1,691 @@
+{
+  "module": 8,
+  "module_name": "Natural Language Processing",
+  "total_questions": 54,
+  "sessions": [
+    {
+      "session": "8.1",
+      "session_name": "Text Preprocessing",
+      "questions": [
+        {
+          "id": "8.1.1",
+          "question": "What is tokenization in NLP?",
+          "options": [
+            "Converting text to lowercase",
+            "Breaking text into individual words or tokens",
+            "Removing punctuation from text",
+            "Translating text to another language"
+          ],
+          "correct": 1,
+          "explanation": "Tokenization is the process of breaking text into individual units (tokens), typically words or subwords."
+        },
+        {
+          "id": "8.1.2",
+          "question": "Which technique reduces words to their root form more accurately?",
+          "options": [
+            "Stemming",
+            "Lemmatization",
+            "Tokenization",
+            "Stop word removal"
+          ],
+          "correct": 1,
+          "explanation": "Lemmatization uses vocabulary and morphological analysis to return the proper base form of a word, while stemming uses crude chopping."
+        },
+        {
+          "id": "8.1.3",
+          "question": "What are stop words?",
+          "options": [
+            "Words that stop the tokenization process",
+            "Common words that carry little meaning (the, is, at)",
+            "Words at the end of sentences",
+            "Words that indicate punctuation"
+          ],
+          "correct": 1,
+          "explanation": "Stop words are common words like 'the', 'is', 'at' that appear frequently but typically carry little semantic meaning."
+        },
+        {
+          "id": "8.1.4",
+          "question": "Why do we convert text to lowercase in preprocessing?",
+          "options": [
+            "To reduce file size",
+            "To ensure consistency and treat 'Cat' and 'cat' as the same",
+            "To improve tokenization speed",
+            "It's not necessary for NLP"
+          ],
+          "correct": 1,
+          "explanation": "Lowercase normalization ensures that words are treated consistently regardless of capitalization."
+        },
+        {
+          "id": "8.1.5",
+          "question": "Which library is commonly used for advanced NLP tasks with pre-trained models?",
+          "options": [
+            "NumPy",
+            "Pandas",
+            "spaCy",
+            "Matplotlib"
+          ],
+          "correct": 2,
+          "explanation": "spaCy is a popular NLP library that provides pre-trained models and efficient processing."
+        },
+        {
+          "id": "8.1.6",
+          "question": "What does the PorterStemmer algorithm do?",
+          "options": [
+            "Translates text",
+            "Removes stop words",
+            "Reduces words to their stem by removing suffixes",
+            "Counts word frequency"
+          ],
+          "correct": 2,
+          "explanation": "PorterStemmer is a stemming algorithm that removes common suffixes to reduce words to their stem."
+        },
+        {
+          "id": "8.1.7",
+          "question": "When should you NOT remove punctuation in text preprocessing?",
+          "options": [
+            "When building a spam detector",
+            "When sentiment analysis needs emoticons like :) or :(",
+            "When classifying news articles",
+            "You should always remove punctuation"
+          ],
+          "correct": 1,
+          "explanation": "Punctuation like emoticons can carry important sentiment information and should be preserved in such cases."
+        },
+        {
+          "id": "8.1.8",
+          "question": "What is the main advantage of using spaCy over NLTK?",
+          "options": [
+            "SpaCy is faster and production-ready",
+            "NLTK is always better",
+            "SpaCy has more preprocessing functions",
+            "SpaCy is older and more tested"
+          ],
+          "correct": 0,
+          "explanation": "spaCy is optimized for production use and is generally faster than NLTK for processing large amounts of text."
+        },
+        {
+          "id": "8.1.9",
+          "question": "Which preprocessing step would you skip for a named entity recognition task?",
+          "options": [
+            "Tokenization",
+            "Converting to lowercase (may lose proper noun information)",
+            "Removing URLs",
+            "Removing HTML tags"
+          ],
+          "correct": 1,
+          "explanation": "Lowercasing can lose important information about proper nouns which are crucial for NER."
+        }
+      ]
+    },
+    {
+      "session": "8.2",
+      "session_name": "Sentiment Analysis Basics",
+      "questions": [
+        {
+          "id": "8.2.1",
+          "question": "What does TF-IDF stand for?",
+          "options": [
+            "Text Frequency - Individual Document Frequency",
+            "Term Frequency - Inverse Document Frequency",
+            "Token Frequency - Indexed Document Frequency",
+            "Total Frequency - Independent Document Frequency"
+          ],
+          "correct": 1,
+          "explanation": "TF-IDF stands for Term Frequency - Inverse Document Frequency, a numerical statistic that reflects word importance."
+        },
+        {
+          "id": "8.2.2",
+          "question": "What is a Bag of Words (BoW) representation?",
+          "options": [
+            "A collection of word embeddings",
+            "A vector of word counts ignoring order",
+            "A dictionary of word definitions",
+            "A sequential representation of text"
+          ],
+          "correct": 1,
+          "explanation": "Bag of Words represents text as a vector of word counts, disregarding grammar and word order."
+        },
+        {
+          "id": "8.2.3",
+          "question": "Why is Naive Bayes particularly suitable for text classification?",
+          "options": [
+            "It's the fastest algorithm",
+            "It works well with high-dimensional sparse data",
+            "It requires the least amount of training data",
+            "It always gives the highest accuracy"
+          ],
+          "correct": 1,
+          "explanation": "Naive Bayes performs well with high-dimensional sparse data like text features and is computationally efficient."
+        },
+        {
+          "id": "8.2.4",
+          "question": "What advantage does TF-IDF have over simple word counts?",
+          "options": [
+            "It's faster to compute",
+            "It gives more weight to rare, informative words",
+            "It uses less memory",
+            "It's easier to understand"
+          ],
+          "correct": 1,
+          "explanation": "TF-IDF down-weights common words and emphasizes words that are distinctive to specific documents."
+        },
+        {
+          "id": "8.2.5",
+          "question": "In the IMDB dataset, what do the labels 0 and 1 represent?",
+          "options": [
+            "0=Neutral, 1=Positive",
+            "0=Negative, 1=Positive",
+            "0=Spam, 1=Not Spam",
+            "0=Short, 1=Long review"
+          ],
+          "correct": 1,
+          "explanation": "In binary sentiment analysis on IMDB, 0 typically represents negative reviews and 1 represents positive reviews."
+        },
+        {
+          "id": "8.2.6",
+          "question": "What is the main limitation of Bag of Words representation?",
+          "options": [
+            "It's too slow to compute",
+            "It ignores word order and context",
+            "It can only handle small vocabularies",
+            "It doesn't work with machine learning"
+          ],
+          "correct": 1,
+          "explanation": "BoW discards word order and contextual information, treating 'not good' the same as 'good not'."
+        },
+        {
+          "id": "8.2.7",
+          "question": "Which metric is most important for imbalanced sentiment data?",
+          "options": [
+            "Accuracy alone",
+            "F1-score (balances precision and recall)",
+            "Training time",
+            "Model size"
+          ],
+          "correct": 1,
+          "explanation": "F1-score is better for imbalanced data as it considers both precision and recall."
+        },
+        {
+          "id": "8.2.8",
+          "question": "Why do we use ngrams (e.g., bigrams) in text vectorization?",
+          "options": [
+            "To reduce vocabulary size",
+            "To capture some word order and phrases",
+            "To speed up training",
+            "To remove stop words"
+          ],
+          "correct": 1,
+          "explanation": "Ngrams capture sequences of words, preserving some context and phrase information."
+        },
+        {
+          "id": "8.2.9",
+          "question": "What does the 'max_features' parameter in CountVectorizer control?",
+          "options": [
+            "Maximum document length",
+            "Maximum number of words to include in vocabulary",
+            "Maximum number of documents",
+            "Maximum training epochs"
+          ],
+          "correct": 1,
+          "explanation": "max_features limits the vocabulary to the top N most frequent words, controlling dimensionality."
+        }
+      ]
+    },
+    {
+      "session": "8.3",
+      "session_name": "Word Embeddings",
+      "questions": [
+        {
+          "id": "8.3.1",
+          "question": "What are word embeddings?",
+          "options": [
+            "Word frequency counts",
+            "Dense vector representations capturing semantic meaning",
+            "One-hot encoded vectors",
+            "Dictionary definitions of words"
+          ],
+          "correct": 1,
+          "explanation": "Word embeddings are dense vector representations where similar words have similar vectors in semantic space."
+        },
+        {
+          "id": "8.3.2",
+          "question": "What is a key advantage of word embeddings over BoW?",
+          "options": [
+            "Faster to compute",
+            "Captures semantic relationships between words",
+            "Uses less memory",
+            "Easier to interpret"
+          ],
+          "correct": 1,
+          "explanation": "Word embeddings capture semantic meaning, so 'king' and 'queen' are closer than 'king' and 'apple'."
+        },
+        {
+          "id": "8.3.3",
+          "question": "What does the analogy 'king - man + woman \u2248 queen' demonstrate?",
+          "options": [
+            "Word embeddings don't work",
+            "Embeddings capture semantic relationships and analogies",
+            "Random word associations",
+            "Gender bias in language"
+          ],
+          "correct": 1,
+          "explanation": "This demonstrates that embeddings capture meaningful relationships that can be manipulated with vector arithmetic."
+        },
+        {
+          "id": "8.3.4",
+          "question": "What is the typical dimensionality of word embeddings?",
+          "options": [
+            "1-10 dimensions",
+            "50-300 dimensions",
+            "1000-5000 dimensions",
+            "10,000+ dimensions"
+          ],
+          "correct": 1,
+          "explanation": "Common embedding dimensions are 50, 100, 200, or 300 - dense enough for meaning but not too large."
+        },
+        {
+          "id": "8.3.5",
+          "question": "What is GloVe?",
+          "options": [
+            "A text preprocessing library",
+            "Global Vectors for word representation (pre-trained embeddings)",
+            "A sentiment analysis model",
+            "A tokenization algorithm"
+          ],
+          "correct": 1,
+          "explanation": "GloVe (Global Vectors) is a method for creating word embeddings trained on word co-occurrence statistics."
+        },
+        {
+          "id": "8.3.6",
+          "question": "Why use pre-trained embeddings like GloVe or Word2Vec?",
+          "options": [
+            "They're faster to download",
+            "Training embeddings requires massive amounts of text data",
+            "Pre-trained are always more accurate",
+            "Custom embeddings don't work"
+          ],
+          "correct": 1,
+          "explanation": "Pre-trained embeddings are trained on billions of words, capturing general language patterns efficiently."
+        },
+        {
+          "id": "8.3.7",
+          "question": "What does Word2Vec's skip-gram model predict?",
+          "options": [
+            "The next word in a sentence",
+            "Context words given a center word",
+            "Sentiment of a sentence",
+            "Document topics"
+          ],
+          "correct": 1,
+          "explanation": "Skip-gram predicts surrounding context words from a given center word."
+        },
+        {
+          "id": "8.3.8",
+          "question": "How can you visualize high-dimensional embeddings?",
+          "options": [
+            "Bar charts",
+            "Dimensionality reduction with t-SNE or PCA to 2D/3D",
+            "Pie charts",
+            "You cannot visualize them"
+          ],
+          "correct": 1,
+          "explanation": "t-SNE or PCA can reduce embeddings to 2-3 dimensions for visualization while preserving relationships."
+        },
+        {
+          "id": "8.3.9",
+          "question": "What is the Embedding layer in Keras?",
+          "options": [
+            "A preprocessing step",
+            "A trainable layer that learns word vectors",
+            "A loss function",
+            "An optimizer"
+          ],
+          "correct": 1,
+          "explanation": "The Embedding layer in Keras learns word vectors as part of the neural network training process."
+        }
+      ]
+    },
+    {
+      "session": "8.4",
+      "session_name": "Sequence Models (LSTM)",
+      "questions": [
+        {
+          "id": "8.4.1",
+          "question": "Why are LSTMs suitable for text processing?",
+          "options": [
+            "They're the fastest models",
+            "They can capture long-term dependencies in sequences",
+            "They require less data",
+            "They're easier to train"
+          ],
+          "correct": 1,
+          "explanation": "LSTMs have memory cells that can maintain information over long sequences, ideal for text."
+        },
+        {
+          "id": "8.4.2",
+          "question": "What problem do LSTMs solve that simple RNNs struggle with?",
+          "options": [
+            "Processing speed",
+            "Vanishing gradient problem",
+            "Memory usage",
+            "Dataset size requirements"
+          ],
+          "correct": 1,
+          "explanation": "LSTMs use gates to control information flow, mitigating the vanishing gradient problem in long sequences."
+        },
+        {
+          "id": "8.4.3",
+          "question": "In text classification with LSTM, what does sequence padding do?",
+          "options": [
+            "Adds more training data",
+            "Makes all sequences the same length",
+            "Improves accuracy",
+            "Reduces training time"
+          ],
+          "correct": 1,
+          "explanation": "Padding makes all input sequences the same length, required for batch processing in neural networks."
+        },
+        {
+          "id": "8.4.4",
+          "question": "What is a bidirectional LSTM?",
+          "options": [
+            "Two separate LSTM models",
+            "LSTM that processes sequences in both forward and backward directions",
+            "LSTM with two layers",
+            "LSTM that predicts two outputs"
+          ],
+          "correct": 1,
+          "explanation": "Bidirectional LSTMs process sequences both ways, capturing context from both past and future."
+        },
+        {
+          "id": "8.4.5",
+          "question": "Why might an LSTM outperform traditional ML for sentiment analysis?",
+          "options": [
+            "It's faster",
+            "It captures word order and context",
+            "It requires less data",
+            "It's easier to interpret"
+          ],
+          "correct": 1,
+          "explanation": "LSTMs preserve sequential information, understanding that 'not good' is different from 'good'."
+        },
+        {
+          "id": "8.4.6",
+          "question": "What is the purpose of dropout in LSTM layers?",
+          "options": [
+            "Speed up training",
+            "Prevent overfitting by randomly dropping connections",
+            "Reduce model size",
+            "Improve accuracy always"
+          ],
+          "correct": 1,
+          "explanation": "Dropout randomly disables neurons during training to prevent overfitting and improve generalization."
+        },
+        {
+          "id": "8.4.7",
+          "question": "What does the 'return_sequences=True' parameter do in Keras LSTM?",
+          "options": [
+            "Returns final output only",
+            "Returns output at each timestep",
+            "Returns training sequences",
+            "Returns validation sequences"
+          ],
+          "correct": 1,
+          "explanation": "return_sequences=True returns outputs for all timesteps, needed for stacking LSTMs."
+        },
+        {
+          "id": "8.4.8",
+          "question": "For text generation, what type of problem is it typically framed as?",
+          "options": [
+            "Classification",
+            "Next word prediction (language modeling)",
+            "Clustering",
+            "Dimensionality reduction"
+          ],
+          "correct": 1,
+          "explanation": "Text generation uses language modeling to predict the next word given previous words."
+        },
+        {
+          "id": "8.4.9",
+          "question": "What is temperature in text generation?",
+          "options": [
+            "Processing speed",
+            "Controls randomness of predictions (higher=more random)",
+            "Model training time",
+            "GPU temperature"
+          ],
+          "correct": 1,
+          "explanation": "Temperature scaling controls the randomness of predictions, with higher values producing more diverse outputs."
+        }
+      ]
+    },
+    {
+      "session": "8.5",
+      "session_name": "Transformers and BERT",
+      "questions": [
+        {
+          "id": "8.5.1",
+          "question": "What is the key innovation of transformer models?",
+          "options": [
+            "Using CNNs for text",
+            "Self-attention mechanism",
+            "Larger embeddings",
+            "More layers"
+          ],
+          "correct": 1,
+          "explanation": "Transformers use self-attention to weigh the importance of different words in understanding context."
+        },
+        {
+          "id": "8.5.2",
+          "question": "What does BERT stand for?",
+          "options": [
+            "Basic Encoder Representation from Transformers",
+            "Bidirectional Encoder Representations from Transformers",
+            "Binary Encoder for Retrieval Tasks",
+            "Best Encoder Regression Technique"
+          ],
+          "correct": 1,
+          "explanation": "BERT is Bidirectional Encoder Representations from Transformers, a pre-trained language model."
+        },
+        {
+          "id": "8.5.3",
+          "question": "What advantage do transformers have over LSTMs?",
+          "options": [
+            "Simpler architecture",
+            "Can process sequences in parallel (faster training)",
+            "Always more accurate",
+            "Require less memory"
+          ],
+          "correct": 1,
+          "explanation": "Transformers don't process sequentially like LSTMs, enabling parallel processing and faster training."
+        },
+        {
+          "id": "8.5.4",
+          "question": "What is the Hugging Face library used for?",
+          "options": [
+            "Image processing",
+            "Accessing pre-trained transformer models",
+            "Data visualization",
+            "Web scraping"
+          ],
+          "correct": 1,
+          "explanation": "Hugging Face provides easy access to thousands of pre-trained transformer models."
+        },
+        {
+          "id": "8.5.5",
+          "question": "What is fine-tuning in the context of BERT?",
+          "options": [
+            "Adjusting hyperparameters",
+            "Training the pre-trained model on a specific task",
+            "Reducing model size",
+            "Improving accuracy through ensembling"
+          ],
+          "correct": 1,
+          "explanation": "Fine-tuning adapts a pre-trained BERT model to a specific downstream task with task-specific data."
+        },
+        {
+          "id": "8.5.6",
+          "question": "What does attention mechanism help the model do?",
+          "options": [
+            "Process faster",
+            "Focus on relevant parts of the input",
+            "Reduce overfitting",
+            "Use less memory"
+          ],
+          "correct": 1,
+          "explanation": "Attention allows the model to weigh the importance of different parts of the input when making predictions."
+        },
+        {
+          "id": "8.5.7",
+          "question": "Why are transformer models called 'pre-trained'?",
+          "options": [
+            "They come with preset hyperparameters",
+            "They're trained on massive text corpora before fine-tuning",
+            "They're faster to train",
+            "They don't need training"
+          ],
+          "correct": 1,
+          "explanation": "Pre-trained models are trained on billions of words to learn general language patterns before task-specific fine-tuning."
+        },
+        {
+          "id": "8.5.8",
+          "question": "What is masked language modeling in BERT training?",
+          "options": [
+            "Hiding the model weights",
+            "Predicting masked (hidden) words in sentences",
+            "Removing stop words",
+            "Encrypting text"
+          ],
+          "correct": 1,
+          "explanation": "BERT is trained by masking random words and learning to predict them based on context."
+        },
+        {
+          "id": "8.5.9",
+          "question": "Which is NOT a typical use case for BERT?",
+          "options": [
+            "Text classification",
+            "Named entity recognition",
+            "Image generation",
+            "Question answering"
+          ],
+          "correct": 2,
+          "explanation": "BERT is a text model and is not used for image generation tasks."
+        }
+      ]
+    },
+    {
+      "session": "8.6",
+      "session_name": "Chatbot Development",
+      "questions": [
+        {
+          "id": "8.6.1",
+          "question": "What is intent classification in a chatbot?",
+          "options": [
+            "Classifying user intentions behind messages",
+            "Classifying message length",
+            "Classifying user demographics",
+            "Classifying message timestamps"
+          ],
+          "correct": 0,
+          "explanation": "Intent classification determines what the user wants to accomplish (e.g., 'check_order', 'return_product')."
+        },
+        {
+          "id": "8.6.2",
+          "question": "What are the three main types of chatbots?",
+          "options": [
+            "Fast, Medium, Slow",
+            "Rule-based, Retrieval-based, Generative",
+            "Simple, Complex, Hybrid",
+            "Text, Voice, Video"
+          ],
+          "correct": 1,
+          "explanation": "Chatbots can be rule-based (fixed rules), retrieval-based (select responses), or generative (create responses)."
+        },
+        {
+          "id": "8.6.3",
+          "question": "What is entity extraction in chatbots?",
+          "options": [
+            "Extracting files from messages",
+            "Identifying specific information like dates, names, order numbers",
+            "Removing entities from text",
+            "Counting entities"
+          ],
+          "correct": 1,
+          "explanation": "Entity extraction identifies specific pieces of information (entities) needed to fulfill user requests."
+        },
+        {
+          "id": "8.6.4",
+          "question": "Why is confidence scoring important in chatbots?",
+          "options": [
+            "To show how fast the bot responds",
+            "To know when to escalate to human agents for low confidence",
+            "To count messages",
+            "To encrypt communications"
+          ],
+          "correct": 1,
+          "explanation": "Low confidence predictions indicate uncertainty, often requiring human intervention."
+        },
+        {
+          "id": "8.6.5",
+          "question": "What is a retrieval-based chatbot?",
+          "options": [
+            "Generates new responses from scratch",
+            "Selects appropriate pre-written responses",
+            "Uses web search",
+            "Translates between languages"
+          ],
+          "correct": 1,
+          "explanation": "Retrieval-based chatbots select from a repository of pre-written responses based on intent."
+        },
+        {
+          "id": "8.6.6",
+          "question": "What accuracy target should you aim for in intent classification?",
+          "options": [
+            ">50%",
+            ">70%",
+            ">90%",
+            "100%"
+          ],
+          "correct": 2,
+          "explanation": "For production chatbots, aim for >90% intent classification accuracy to minimize user frustration."
+        },
+        {
+          "id": "8.6.7",
+          "question": "How do you handle unknown intents in a chatbot?",
+          "options": [
+            "Crash the application",
+            "Provide fallback response and escalate if needed",
+            "Ignore the message",
+            "Send random response"
+          ],
+          "correct": 1,
+          "explanation": "Unknown intents should trigger fallback responses and potentially escalation to human agents."
+        },
+        {
+          "id": "8.6.8",
+          "question": "What is the advantage of template-based responses?",
+          "options": [
+            "More creative",
+            "Consistent, controlled, and appropriate responses",
+            "Faster to compute",
+            "Uses less memory"
+          ],
+          "correct": 1,
+          "explanation": "Template-based responses ensure consistency, appropriateness, and brand alignment."
+        },
+        {
+          "id": "8.6.9",
+          "question": "How can you make template responses feel more natural?",
+          "options": [
+            "Always use the same response",
+            "Random selection from multiple response templates",
+            "Make responses longer",
+            "Add emojis only"
+          ],
+          "correct": 1,
+          "explanation": "Having multiple templates per intent and randomly selecting creates variation and feels more natural."
+        }
+      ]
+    }
+  ]
+}

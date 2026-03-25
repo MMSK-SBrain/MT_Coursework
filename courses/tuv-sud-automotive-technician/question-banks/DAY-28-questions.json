@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 28,
+  "week": 6,
+  "session_title": "Automatic Transmissions & Driveline",
+  "questions": [
+    {
+      "id": "D28-Q01",
+      "question": "What are the three main internal components of a torque converter?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Sun gear, planet gears, and ring gear",
+        "B": "Impeller (pump), turbine, and stator",
+        "C": "Clutch disc, pressure plate, and diaphragm spring",
+        "D": "Input shaft, layshaft, and output shaft"
+      },
+      "correct_answer": "B",
+      "explanation": "A torque converter contains three main elements: the impeller (pump), which is bolted to the engine crankshaft and flings ATF outward; the turbine, which is connected to the transmission input shaft and is spun by the fluid; and the stator, which redirects returning fluid to multiply torque during launch. A lock-up clutch is also present for cruise efficiency.",
+      "topic": "Torque converter components",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D28-Q02",
+      "question": "What is the purpose of the lock-up clutch inside a torque converter?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To disconnect the engine from the transmission when the vehicle stops",
+        "B": "To create a direct mechanical connection between the impeller and turbine at cruise speed, eliminating fluid slip",
+        "C": "To multiply engine torque during hard acceleration",
+        "D": "To reverse the direction of fluid flow for reverse gear"
+      },
+      "correct_answer": "B",
+      "explanation": "At cruise speed (typically above 50-60 km/h), the lock-up clutch mechanically connects the impeller to the turbine, creating a direct 1:1 connection with zero slip. This eliminates the 3-5% energy loss from fluid coupling, maximising fuel efficiency. Without lock-up, the torque converter would continuously waste energy as heat in the ATF.",
+      "topic": "Torque converter lock-up",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D28-Q03",
+      "question": "In a planetary gear set, what happens when the ring gear is held stationary and the sun gear is the input?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The output is reverse at high speed",
+        "B": "Direct drive (1:1 ratio) is achieved",
+        "C": "A forward gear reduction (low gear) is produced at the planet carrier output",
+        "D": "The transmission enters neutral"
+      },
+      "correct_answer": "C",
+      "explanation": "When the ring gear is held stationary and the sun gear is driven, the planet gears walk around inside the fixed ring gear, causing the planet carrier to rotate as the output. This configuration produces a forward gear reduction — the output speed is lower than the input speed but torque is multiplied. This is how low gears are achieved in automatic transmissions.",
+      "topic": "Planetary gear set operation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D28-Q04",
+      "question": "What type of CV joint is typically used on the outer (wheel) end of a front-wheel-drive half shaft, and why?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Tripod joint, because it handles high angles for steering",
+        "B": "Universal joint, because it is simpler and cheaper",
+        "C": "Rzeppa joint, because it can operate at high steering angles up to 45-50 degrees while maintaining constant velocity",
+        "D": "Hooke joint, because it provides plunge capability for suspension travel"
+      },
+      "correct_answer": "C",
+      "explanation": "The Rzeppa CV joint uses six balls in a cage between inner and outer races, allowing it to operate at angles up to 45-50 degrees. This high-angle capability is essential at the wheel end because the front wheels must steer through full lock while still receiving drive power. The inner joint typically uses a tripod type, which provides the plunge (in-out sliding) needed for suspension travel.",
+      "topic": "CV joint types — Rzeppa vs tripod",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D28-Q05",
+      "question": "In a DSG/DCT (dual-clutch transmission), how are the gears distributed between the two clutches?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Clutch 1 handles forward gears and Clutch 2 handles reverse only",
+        "B": "Clutch 1 handles odd gears (1, 3, 5, 7) and Clutch 2 handles even gears (2, 4, 6) plus reverse",
+        "C": "Both clutches share all gears equally with random selection",
+        "D": "Clutch 1 handles low gears (1-3) and Clutch 2 handles high gears (4-7)"
+      },
+      "correct_answer": "B",
+      "explanation": "A DSG/DCT is essentially two manual gearboxes in one housing. Clutch 1 operates odd-numbered gears (1, 3, 5, 7) via one input shaft, while Clutch 2 operates even-numbered gears (2, 4, 6) and reverse via a concentric second input shaft. This arrangement allows the next gear to be pre-selected on the inactive shaft so the shift occurs in under 200 milliseconds with no torque interruption.",
+      "topic": "DSG/DCT design",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D28-Q06",
+      "question": "A vehicle has a harsh 2-3 upshift in its conventional automatic transmission. The ATF is dark brown and has a burnt smell. All other shifts are acceptable. What is the most likely diagnosis?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The torque converter stator one-way clutch has failed",
+        "B": "The 2-3 clutch pack is slipping due to degraded ATF causing worn friction material, leading to harsh application as the hydraulic system compensates with increased line pressure",
+        "C": "The differential bearings are worn and creating resistance",
+        "D": "The drive belt is slipping on the alternator pulley"
+      },
+      "correct_answer": "B",
+      "explanation": "A harsh single upshift with burnt ATF strongly suggests clutch pack wear in the specific clutch element responsible for the 2-3 shift. Degraded ATF loses its friction modifier properties, causing the clutch pack to slip initially. The TCU adapts by increasing line pressure to prevent further slip, which results in a harsh, abrupt engagement. Dark brown, burnt-smelling ATF confirms internal overheating and friction material degradation. Other shifts may still be acceptable if their clutch packs have less wear.",
+      "topic": "Automatic transmission shift quality diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D28-Q07",
+      "question": "A front-wheel-drive vehicle produces a rhythmic clicking noise from the front-left side when turning right at low speed in a car park. The noise disappears when driving straight. What component is most likely at fault?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The left front wheel bearing is worn",
+        "B": "The left front outer CV joint is worn, and the increased steering angle during a right turn loads the left joint beyond its wear tolerance",
+        "C": "The left front brake caliper is sticking",
+        "D": "The left front inner tripod joint is damaged"
+      },
+      "correct_answer": "B",
+      "explanation": "A clicking noise on a specific side during turns at low speed is the classic symptom of a worn outer Rzeppa CV joint. When turning right, the left front wheel turns to its maximum steering angle, increasing the operating angle of the left outer CV joint. The worn internal components (balls and grooves) produce a rhythmic click at this extended angle. The noise disappears when driving straight because the joint operates at a smaller angle where wear is less evident. A torn CV boot allowing grease loss and contamination typically precedes this failure.",
+      "topic": "CV joint fault diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D28-Q08",
+      "question": "A technician checks the ATF in a conventional automatic transmission and finds the fluid is red/pink, translucent, and at the correct level. However, the customer complains of delayed engagement from Park to Drive (2-3 second delay before the car moves). What should the technician investigate next?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the ATF immediately — the colour indicates contamination",
+        "B": "Check for internal hydraulic pressure loss, possibly from a worn oil pump, leaking seals, or a sticking valve body spool valve preventing prompt clutch pack application",
+        "C": "Replace the torque converter because the stator has failed",
+        "D": "Adjust the throttle cable to correct shift timing"
+      },
+      "correct_answer": "B",
+      "explanation": "Red/pink translucent ATF indicates the fluid is in good condition, so the problem is not fluid degradation. Delayed engagement from Park to Drive suggests the clutch pack responsible for the forward drive range is not being applied quickly enough. This points to a hydraulic pressure issue — a worn oil pump providing insufficient pressure, an internal seal leak allowing pressure to bleed off, or a sticking spool valve in the valve body not directing pressure to the forward clutch pack promptly. A scan tool check of line pressure data and fault codes would be the next diagnostic step.",
+      "topic": "Automatic transmission delayed engagement diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D28-Q09",
+      "question": "A customer with a dry-clutch DSG reports a shudder and vibration at low speed during stop-and-go traffic. The symptom disappears at higher speeds. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The torque converter lock-up clutch is engaging too early",
+        "B": "The propshaft centre bearing has failed",
+        "C": "The dry clutch pack is worn from frequent low-speed slipping in traffic, causing judder during partial engagement",
+        "D": "The CVT belt is slipping on the pulleys"
+      },
+      "correct_answer": "C",
+      "explanation": "Dry-clutch DSG transmissions are known to suffer from low-speed shudder when the clutch packs wear. In stop-and-go traffic, the clutches slip constantly at partial engagement to manage low-speed driving — similar to riding a manual clutch. This accelerates wear on the friction material. As the clutch surfaces become glazed or uneven, they judder during the partial engagement zone used at low speeds. At higher speeds the clutches are fully locked, so the shudder disappears. This is a recognised characteristic of dry DCT designs.",
+      "topic": "DSG/DCT clutch wear diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D28-Q10",
+      "question": "Why can a vehicle with a conventional automatic transmission not be push-started, unlike a manual transmission vehicle?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The torque converter fluid freezes when the engine is off",
+        "B": "The automatic transmission has no clutch pedal for the driver to release",
+        "C": "The oil pump is driven by the engine via the torque converter; without engine rotation there is no hydraulic pressure to engage any clutch packs, so no power path exists from the wheels to the engine",
+        "D": "The park pawl permanently locks the output shaft when the engine is off"
+      },
+      "correct_answer": "C",
+      "explanation": "In a conventional automatic, the oil pump is driven by the torque converter housing (connected to the engine). When the engine is off, the pump does not turn, producing zero hydraulic pressure. Without pressure, no clutch packs or bands can be applied, meaning there is no mechanical connection through the planetary gear sets from the output shaft back to the engine. Pushing the vehicle spins the wheels and output shaft but the power path stops at the unapplied clutch packs. In a manual, the direct mechanical link through the clutch disc allows push-starting.",
+      "topic": "Automatic transmission oil pump dependency",
+      "bloom_level": "Apply"
+    }
+  ]
+}

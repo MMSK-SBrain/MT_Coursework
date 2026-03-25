@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 47,
+  "week": 10,
+  "session_title": "Gearbox Inspection & Re-Assembly",
+  "questions": [
+    {
+      "id": "D47-Q01",
+      "question": "What is the minimum acceptable blocking ring clearance when measuring a synchromesh ring against its gear cone?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "0.3 mm",
+        "B": "0.5 mm",
+        "C": "0.8 mm",
+        "D": "1.2 mm"
+      },
+      "correct_answer": "C",
+      "explanation": "The typical minimum blocking ring clearance is 0.8 mm. Below this value, the synchro ring cannot generate enough friction travel to match speeds before gear engagement, resulting in gear crunch during shifts. A new ring typically measures 1.5 to 2.0 mm.",
+      "topic": "Synchro ring clearance specification",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D47-Q02",
+      "question": "When setting bearing preload using the crush-type method, what happens if the technician overtightens the shaft nut?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The bearings will run with zero preload",
+        "B": "The crush spacer is permanently over-compressed and must be replaced with a new one",
+        "C": "The nut can simply be backed off to the correct torque",
+        "D": "The bearing rollers will realign themselves during initial operation"
+      },
+      "correct_answer": "B",
+      "explanation": "Crush-type preload spacers deform permanently. Once over-crushed, the spacer cannot be restored by backing off the nut. The technician must disassemble, install a new crush spacer, and carefully sneak up on the correct torque again. This is why incremental tightening with frequent preload checks is essential.",
+      "topic": "Bearing preload - crush type",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D47-Q03",
+      "question": "How should blocking ring clearance be measured to ensure accuracy?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Measure once at any position around the ring",
+        "B": "Measure at three positions 120 degrees apart and use the smallest reading",
+        "C": "Measure only where the ring appears most worn",
+        "D": "Use a ruler held against the gap"
+      },
+      "correct_answer": "B",
+      "explanation": "Blocking ring clearance must be measured at three positions 120 degrees apart using a feeler gauge to account for any uneven wear. The smallest reading determines whether the ring meets specification, since the tightest point is where the ring will bottom out first during speed matching.",
+      "topic": "Blocking ring measurement technique",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D47-Q04",
+      "question": "What is the purpose of RTV sealant applied to gearbox case halves?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To act as an adhesive that holds the case halves permanently together",
+        "B": "To replace worn gasket surfaces and seal against oil leaks",
+        "C": "To lubricate the bolts during the torque sequence",
+        "D": "To protect the aluminium case from corrosion"
+      },
+      "correct_answer": "B",
+      "explanation": "Most modern gearboxes use RTV sealant instead of paper gaskets between case halves. The continuous sealant bead conforms to the mating surfaces and creates an oil-tight seal. It is not an adhesive; the bolts hold the case together. The sealant must be applied in a 3 mm continuous bead inside the bolt holes.",
+      "topic": "RTV sealant application",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D47-Q05",
+      "question": "When installing a shaft seal on a gearbox, which direction should the seal lip face?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Outward, away from the gearbox, to repel water",
+        "B": "Inward, toward the oil inside the gearbox",
+        "C": "It does not matter as long as the seal is pressed in square",
+        "D": "Toward whichever side has the highest pressure"
+      },
+      "correct_answer": "B",
+      "explanation": "The seal lip must face inward toward the oil. The spring-loaded lip is designed to maintain contact with the rotating shaft and contain the oil. If installed backward, the lip cannot retain oil and the seal fails immediately. The lip direction follows the rule: lip faces the fluid being sealed.",
+      "topic": "Seal installation orientation",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D47-Q06",
+      "question": "During a gearbox rebuild, a technician measures 0.15 mm end-play on the output shaft. The specification calls for 0.05 mm preload. What shim thickness increase is required to achieve the correct setting?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "0.05 mm thicker shim",
+        "B": "0.10 mm thicker shim",
+        "C": "0.20 mm thicker shim",
+        "D": "0.15 mm thicker shim"
+      },
+      "correct_answer": "C",
+      "explanation": "The required shim increase equals the measured end-play plus the desired preload: 0.15 mm + 0.05 mm = 0.20 mm. The shim must first eliminate the existing play (0.15 mm) and then apply additional compression to create the specified preload (0.05 mm).",
+      "topic": "Shim calculation for preload",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D47-Q07",
+      "question": "After reassembling a gearbox, a technician tests the shift mechanism and finds that they can move the 1st/2nd shift rod and the 3rd/4th shift rod simultaneously. What is the safety implication and correct action?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "This is normal during bench testing; it will lock when the vehicle is moving",
+        "B": "The interlock has failed, which could allow two gears to engage simultaneously and lock the gearbox catastrophically; the box must be reopened and the fault identified",
+        "C": "The detent springs are too weak and just need replacing",
+        "D": "The shift forks need to be adjusted to reduce travel"
+      },
+      "correct_answer": "B",
+      "explanation": "The interlock mechanism physically prevents two shift rods from moving at the same time. If both rods can move simultaneously, the interlock pins or plate are missing, incorrectly installed, or damaged. Engaging two gears simultaneously locks the gearbox instantaneously, which can cause catastrophic transmission failure and loss of vehicle control. The gearbox must not leave the workshop until this is corrected.",
+      "topic": "Interlock safety verification",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D47-Q08",
+      "question": "A technician installs a gearbox input shaft seal by hammering directly on the rubber lip with a flat punch because the correct seal driver is not available. What are the likely consequences?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The seal will work normally since it was driven to the correct depth",
+        "B": "The seal lip will be damaged, the garter spring may be dislodged, and the seal will leak from day one",
+        "C": "The seal bore in the housing will be enlarged",
+        "D": "The shaft surface will be scored by the punch"
+      },
+      "correct_answer": "B",
+      "explanation": "Hammering directly on a seal lip damages the precision rubber edge that maintains contact with the shaft. It can dislodge the small garter spring behind the lip that maintains lip pressure. The seal may also enter the bore cocked rather than square. The correct method requires a seal driver that contacts only the outer metal shell, never the lip.",
+      "topic": "Seal installation technique errors",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D47-Q09",
+      "question": "During a road test after gearbox rebuild, the vehicle pops out of 3rd gear under acceleration but holds all other gears normally. The synchro rings were measured and within spec. What is the most probable cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The gear oil level is too low",
+        "B": "The 3rd/4th detent spring is weak or the detent groove on the shift rod is worn, failing to hold the rod in position under load",
+        "C": "The clutch is not fully disengaging during the shift",
+        "D": "The reverse gear idler is interfering with the 3rd gear mesh"
+      },
+      "correct_answer": "B",
+      "explanation": "Gear pop-out under load in a single gear points to the detent mechanism for that gear's shift rod. A weak detent spring or a worn detent groove allows the shift rod to drift out of the engaged position when acceleration loads push back against the gear engagement. Since all other gears hold, the synchros and forks are likely fine; the specific detent for the 3rd/4th rod needs attention.",
+      "topic": "Post-rebuild pop-out diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D47-Q10",
+      "question": "A technician applies RTV sealant to the gearbox case mating surface but runs the bead OUTSIDE the bolt holes rather than inside. What problem will this create?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The case bolts will not achieve correct torque",
+        "B": "Excess sealant will squeeze into the gearbox interior, potentially blocking oil passages or jamming gear teeth",
+        "C": "The sealant will not cure properly outside the bolt holes",
+        "D": "The gearbox case will crack under torque"
+      },
+      "correct_answer": "B",
+      "explanation": "The sealant bead must run INSIDE the bolt holes so that any squeeze-out goes outward (harmless external bead) rather than inward. Running the bead outside the bolt holes means excess sealant squeezes into the gearbox interior when the case is torqued. Internal sealant can block oil drainage passages, starve bearings of lubrication, or lodge between gear teeth causing intermittent binding.",
+      "topic": "RTV sealant application errors",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

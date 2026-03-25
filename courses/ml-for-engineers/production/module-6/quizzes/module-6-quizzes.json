@@ -1,0 +1,855 @@
+{
+  "module": 6,
+  "module_name": "Neural Networks & Deep Learning",
+  "total_questions": 54,
+  "sessions": [
+    {
+      "session": 1,
+      "title": "Introduction to Neural Networks",
+      "questions": [
+        {
+          "id": "m6_s1_q1",
+          "question": "What is the role of an activation function in a neural network?",
+          "options": [
+            "To normalize input data",
+            "To introduce non-linearity into the model",
+            "To compile the model",
+            "To save the model weights"
+          ],
+          "correct": 1,
+          "explanation": "Activation functions introduce non-linearity, allowing neural networks to learn complex patterns. Without them, the network would be equivalent to linear regression regardless of depth.",
+          "difficulty": "easy",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s1_q2",
+          "question": "In a neural network, what is forward propagation?",
+          "options": [
+            "Updating weights based on errors",
+            "Computing output from input by passing through layers",
+            "Training the model",
+            "Validating the model"
+          ],
+          "correct": 1,
+          "explanation": "Forward propagation is the process of computing the output by passing input data through each layer of the network sequentially.",
+          "difficulty": "easy",
+          "bloom_level": "knowledge"
+        },
+        {
+          "id": "m6_s1_q3",
+          "question": "When should you use neural networks instead of traditional ML?",
+          "options": [
+            "Always - NNs are always better",
+            "For small datasets with clear patterns",
+            "For large datasets, unstructured data, or complex patterns",
+            "When interpretability is critical"
+          ],
+          "correct": 2,
+          "explanation": "Neural networks excel with large datasets, unstructured data (images, text), and complex patterns. For small tabular datasets, traditional ML is often better.",
+          "difficulty": "medium",
+          "bloom_level": "evaluation"
+        },
+        {
+          "id": "m6_s1_q4",
+          "question": "What is the difference between a parameter and a hyperparameter?",
+          "options": [
+            "Parameters are learned during training; hyperparameters are set before training",
+            "Hyperparameters are learned; parameters are set manually",
+            "They are the same thing",
+            "Parameters are only used in neural networks"
+          ],
+          "correct": 0,
+          "explanation": "Parameters (weights and biases) are learned from data during training. Hyperparameters (learning rate, number of layers) are configured before training.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s1_q5",
+          "question": "How many parameters does a Dense layer with 100 input features and 50 neurons have?",
+          "options": [
+            "150",
+            "5,000",
+            "5,050",
+            "150,000"
+          ],
+          "correct": 2,
+          "explanation": "Parameters = (input × neurons) + bias = (100 × 50) + 50 = 5,050. Each connection has a weight, plus one bias per neuron.",
+          "difficulty": "medium",
+          "bloom_level": "application"
+        },
+        {
+          "id": "m6_s1_q6",
+          "question": "What are the three main components of a neuron in a neural network?",
+          "options": [
+            "Input, Output, Hidden",
+            "Weights, Bias, Activation Function",
+            "Training, Testing, Validation",
+            "Forward, Backward, Update"
+          ],
+          "correct": 1,
+          "explanation": "A neuron consists of: (1) Weights for each input, (2) A bias term, and (3) An activation function to introduce non-linearity.",
+          "difficulty": "easy",
+          "bloom_level": "knowledge"
+        },
+        {
+          "id": "m6_s1_q7",
+          "question": "Why did neural networks become popular in recent years?",
+          "options": [
+            "They were just invented",
+            "They always worked well",
+            "More data, better compute (GPUs), improved algorithms",
+            "Traditional ML stopped working"
+          ],
+          "correct": 2,
+          "explanation": "Neural networks existed for decades but became practical due to: (1) Big Data availability, (2) GPU computing power, (3) Algorithmic improvements (ReLU, dropout, batch norm).",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s1_q8",
+          "question": "For the Iris dataset (150 samples), which is typically better?",
+          "options": [
+            "Deep neural network with 10 layers",
+            "Traditional ML like Decision Tree or Random Forest",
+            "LSTM network",
+            "Always neural networks"
+          ],
+          "correct": 1,
+          "explanation": "For small datasets like Iris, traditional ML (Decision Tree, Random Forest) is usually better - simpler, faster, more interpretable, and less prone to overfitting.",
+          "difficulty": "medium",
+          "bloom_level": "evaluation"
+        },
+        {
+          "id": "m6_s1_q9",
+          "question": "What is the 'curse of dimensionality' in neural networks?",
+          "options": [
+            "Too many output classes",
+            "Model becomes very slow",
+            "Need exponentially more data as features increase",
+            "Network becomes too deep"
+          ],
+          "correct": 2,
+          "explanation": "As the number of features (dimensions) increases, the amount of data needed to avoid overfitting grows exponentially. This makes learning difficult in very high dimensions.",
+          "difficulty": "hard",
+          "bloom_level": "understanding"
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "title": "Building with Keras",
+      "questions": [
+        {
+          "id": "m6_s2_q1",
+          "question": "What is the purpose of the Sequential API in Keras?",
+          "options": [
+            "To train models sequentially",
+            "To build linear stacks of layers easily",
+            "To process sequences of data",
+            "To compile models"
+          ],
+          "correct": 1,
+          "explanation": "The Sequential API is used to build models as a linear stack of layers, where each layer has exactly one input and one output tensor.",
+          "difficulty": "easy",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s2_q2",
+          "question": "Which activation function is most commonly used in hidden layers?",
+          "options": [
+            "Sigmoid",
+            "Softmax",
+            "ReLU (Rectified Linear Unit)",
+            "Linear"
+          ],
+          "correct": 2,
+          "explanation": "ReLU is the most popular activation for hidden layers because it: (1) Solves vanishing gradient problem, (2) Is computationally efficient, (3) Trains faster than sigmoid/tanh.",
+          "difficulty": "easy",
+          "bloom_level": "knowledge"
+        },
+        {
+          "id": "m6_s2_q3",
+          "question": "For a 10-class classification problem, which output activation should you use?",
+          "options": [
+            "ReLU",
+            "Sigmoid",
+            "Softmax",
+            "Tanh"
+          ],
+          "correct": 2,
+          "explanation": "Softmax is used for multi-class classification (>2 classes). It converts raw scores into a probability distribution that sums to 1.0.",
+          "difficulty": "easy",
+          "bloom_level": "application"
+        },
+        {
+          "id": "m6_s2_q4",
+          "question": "What loss function should you use for multi-class classification with one-hot encoded labels?",
+          "options": [
+            "binary_crossentropy",
+            "categorical_crossentropy",
+            "mse",
+            "mae"
+          ],
+          "correct": 1,
+          "explanation": "categorical_crossentropy is used when labels are one-hot encoded (e.g., [0,0,1,0,0]). For integer labels, use sparse_categorical_crossentropy.",
+          "difficulty": "medium",
+          "bloom_level": "application"
+        },
+        {
+          "id": "m6_s2_q5",
+          "question": "Why must you flatten MNIST images (28×28) to 784 for a Dense network?",
+          "options": [
+            "To reduce memory usage",
+            "Dense layers expect 1D input vectors",
+            "To normalize the data",
+            "To improve accuracy"
+          ],
+          "correct": 1,
+          "explanation": "Dense (fully connected) layers expect 1D input. Images are 2D (28×28), so we flatten to 784 (28×28=784) features. CNNs can handle 2D directly.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s2_q6",
+          "question": "What is the Adam optimizer?",
+          "options": [
+            "A regularization technique",
+            "An adaptive learning rate optimizer combining momentum and RMSprop",
+            "A type of neural network",
+            "An activation function"
+          ],
+          "correct": 1,
+          "explanation": "Adam (Adaptive Moment Estimation) is an optimizer that combines the benefits of momentum and adaptive learning rates. It's the default choice for most deep learning tasks.",
+          "difficulty": "medium",
+          "bloom_level": "knowledge"
+        },
+        {
+          "id": "m6_s2_q7",
+          "question": "If your MNIST model achieves 95% accuracy, how many digits are misclassified out of 10,000?",
+          "options": [
+            "50",
+            "500",
+            "5,000",
+            "95"
+          ],
+          "correct": 1,
+          "explanation": "95% accuracy = 5% error rate. 5% of 10,000 = 500 misclassifications. To reach 98% accuracy, we need to reduce this to 200.",
+          "difficulty": "easy",
+          "bloom_level": "application"
+        },
+        {
+          "id": "m6_s2_q8",
+          "question": "What does model.summary() show?",
+          "options": [
+            "Model accuracy",
+            "Layer architecture, output shapes, and parameter counts",
+            "Training history",
+            "Predictions"
+          ],
+          "correct": 1,
+          "explanation": "model.summary() displays the model architecture: layer types, output shapes, number of parameters per layer, and total parameters.",
+          "difficulty": "easy",
+          "bloom_level": "knowledge"
+        },
+        {
+          "id": "m6_s2_q9",
+          "question": "Why do we normalize pixel values from 0-255 to 0-1?",
+          "options": [
+            "To save memory",
+            "Neural networks train better with smaller, normalized inputs",
+            "To increase accuracy",
+            "It's required by Keras"
+          ],
+          "correct": 1,
+          "explanation": "Normalization helps gradient descent converge faster and more stably. Large input values can cause numerical instability and slow training.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        }
+      ]
+    },
+    {
+      "session": 3,
+      "title": "Training Neural Networks",
+      "questions": [
+        {
+          "id": "m6_s3_q1",
+          "question": "What is an epoch in neural network training?",
+          "options": [
+            "One forward pass through the network",
+            "One complete pass through the entire training dataset",
+            "One batch of data",
+            "One weight update"
+          ],
+          "correct": 1,
+          "explanation": "An epoch is one complete pass through the entire training dataset. If you have 60,000 samples and train for 10 epochs, the model sees all 60,000 samples 10 times.",
+          "difficulty": "easy",
+          "bloom_level": "knowledge"
+        },
+        {
+          "id": "m6_s3_q2",
+          "question": "What is batch size?",
+          "options": [
+            "Total number of training samples",
+            "Number of samples processed before updating weights",
+            "Number of epochs",
+            "Size of the neural network"
+          ],
+          "correct": 1,
+          "explanation": "Batch size is the number of training samples used in one iteration to compute gradients and update weights. Common values: 32, 64, 128, 256.",
+          "difficulty": "easy",
+          "bloom_level": "knowledge"
+        },
+        {
+          "id": "m6_s3_q3",
+          "question": "What's the trade-off with larger batch sizes?",
+          "options": [
+            "Faster training, more stable gradients, but higher memory usage",
+            "Slower training, better accuracy",
+            "No trade-off - always use largest possible",
+            "Only affects validation accuracy"
+          ],
+          "correct": 0,
+          "explanation": "Larger batches: (+) Faster, more stable gradients, better GPU utilization (-) Higher memory usage, may generalize worse. Smaller batches: (+) Better generalization, less memory (-) Noisier gradients, slower.",
+          "difficulty": "medium",
+          "bloom_level": "evaluation"
+        },
+        {
+          "id": "m6_s3_q4",
+          "question": "What is the purpose of the learning rate?",
+          "options": [
+            "How fast the model trains",
+            "Step size for weight updates during optimization",
+            "Number of layers",
+            "Batch size"
+          ],
+          "correct": 1,
+          "explanation": "Learning rate controls the step size when updating weights. Too high: unstable, overshoots minimum. Too low: slow convergence. Typical values: 0.001, 0.0001.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s3_q5",
+          "question": "What does the EarlyStopping callback do?",
+          "options": [
+            "Stops training at a specific epoch",
+            "Stops training when validation performance stops improving",
+            "Stops when accuracy reaches 100%",
+            "Stops when loss reaches zero"
+          ],
+          "correct": 1,
+          "explanation": "EarlyStopping monitors a metric (usually val_loss) and stops training if it doesn't improve for 'patience' epochs. This prevents overfitting and saves time.",
+          "difficulty": "easy",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s3_q6",
+          "question": "For regression problems, which loss function should you use?",
+          "options": [
+            "categorical_crossentropy",
+            "binary_crossentropy",
+            "mse (mean squared error)",
+            "softmax"
+          ],
+          "correct": 2,
+          "explanation": "MSE (mean squared error) is the standard loss for regression. MAE (mean absolute error) is also used when you want to be less sensitive to outliers.",
+          "difficulty": "easy",
+          "bloom_level": "application"
+        },
+        {
+          "id": "m6_s3_q7",
+          "question": "What is the ReduceLROnPlateau callback?",
+          "options": [
+            "Reduces batch size when stuck",
+            "Reduces learning rate when validation metric plateaus",
+            "Reduces model size",
+            "Reduces number of epochs"
+          ],
+          "correct": 1,
+          "explanation": "ReduceLROnPlateau monitors a metric and reduces the learning rate (e.g., by 0.5) when progress stalls. This helps the model escape local minima and fine-tune.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s3_q8",
+          "question": "Why is validation data important during training?",
+          "options": [
+            "To increase training speed",
+            "To detect overfitting and guide early stopping",
+            "To increase model capacity",
+            "To reduce memory usage"
+          ],
+          "correct": 1,
+          "explanation": "Validation data (held out from training) helps detect overfitting. If train accuracy increases but val accuracy decreases, the model is overfitting.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s3_q9",
+          "question": "What happens if the learning rate is too high?",
+          "options": [
+            "Training is too slow",
+            "Model doesn't learn anything",
+            "Loss oscillates or diverges (increases)",
+            "Overfitting occurs"
+          ],
+          "correct": 2,
+          "explanation": "Too high learning rate causes large weight updates that overshoot the minimum, causing loss to oscillate or even diverge (increase). Solution: Reduce learning rate.",
+          "difficulty": "medium",
+          "bloom_level": "analysis"
+        }
+      ]
+    },
+    {
+      "session": 4,
+      "title": "Regularization & Optimization",
+      "questions": [
+        {
+          "id": "m6_s4_q1",
+          "question": "What is the purpose of Dropout?",
+          "options": [
+            "To drop bad data",
+            "To randomly drop neurons during training to prevent overfitting",
+            "To reduce model size",
+            "To speed up training"
+          ],
+          "correct": 1,
+          "explanation": "Dropout randomly sets a fraction of neurons to zero during training. This prevents co-adaptation of features and reduces overfitting. Typical rates: 0.2-0.5.",
+          "difficulty": "easy",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s4_q2",
+          "question": "What does Dropout(0.3) mean?",
+          "options": [
+            "Drop 3 neurons",
+            "Drop 30% of neurons randomly during training",
+            "Drop 30% of data",
+            "Set 30% of weights to zero"
+          ],
+          "correct": 1,
+          "explanation": "Dropout(0.3) means 30% of neurons are randomly set to zero in each training iteration. During inference (prediction), all neurons are used.",
+          "difficulty": "easy",
+          "bloom_level": "knowledge"
+        },
+        {
+          "id": "m6_s4_q3",
+          "question": "What is Batch Normalization?",
+          "options": [
+            "Normalizing input data before training",
+            "Normalizing activations between layers during training",
+            "Normalizing weights",
+            "Normalizing the batch size"
+          ],
+          "correct": 1,
+          "explanation": "Batch Normalization normalizes the activations of each layer using the mean and std of the current batch. This stabilizes and speeds up training.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s4_q4",
+          "question": "Where should you typically place Dropout layers?",
+          "options": [
+            "Before input layer",
+            "After Dense layers (before activation)",
+            "After activation functions",
+            "Only in the output layer"
+          ],
+          "correct": 2,
+          "explanation": "Dropout is typically added after activation functions in hidden layers. Common pattern: Dense → Activation → Dropout. Don't use dropout in the output layer.",
+          "difficulty": "medium",
+          "bloom_level": "application"
+        },
+        {
+          "id": "m6_s4_q5",
+          "question": "How does Batch Normalization help training?",
+          "options": [
+            "Reduces overfitting only",
+            "Stabilizes gradients, allows higher learning rates, speeds up training",
+            "Increases model capacity",
+            "Reduces memory usage"
+          ],
+          "correct": 1,
+          "explanation": "Batch Normalization: (1) Reduces internal covariate shift, (2) Stabilizes gradients, (3) Allows higher learning rates, (4) Acts as regularization, (5) Speeds up convergence.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s4_q6",
+          "question": "To improve MNIST from 95% to 98%, what's most effective?",
+          "options": [
+            "Train longer (more epochs)",
+            "Combine: Larger network + Dropout + Batch Norm + LR scheduling",
+            "Just increase batch size",
+            "Use different optimizer"
+          ],
+          "correct": 1,
+          "explanation": "Getting from 95% to 98% (60% error reduction!) requires multiple techniques: (1) Larger capacity (more neurons), (2) Better regularization (Dropout, BatchNorm), (3) Smart training (LR scheduling, early stopping).",
+          "difficulty": "hard",
+          "bloom_level": "synthesis"
+        },
+        {
+          "id": "m6_s4_q7",
+          "question": "What is the trade-off between model capacity and overfitting?",
+          "options": [
+            "No trade-off exists",
+            "Larger models learn better but are more prone to overfitting",
+            "Smaller models always overfit more",
+            "Capacity doesn't affect overfitting"
+          ],
+          "correct": 1,
+          "explanation": "Larger models (more parameters) can learn more complex patterns but are more prone to overfitting. Solution: Increase capacity AND add regularization (dropout, batch norm).",
+          "difficulty": "medium",
+          "bloom_level": "evaluation"
+        },
+        {
+          "id": "m6_s4_q8",
+          "question": "Why use BatchNormalization before or after the activation function?",
+          "options": [
+            "Doesn't matter",
+            "Before is standard (normalizes inputs to activation)",
+            "After is always better",
+            "Never use both"
+          ],
+          "correct": 1,
+          "explanation": "Standard practice: Dense → BatchNorm → Activation. This normalizes inputs to the activation function, helping it work in its optimal range. Some use: Dense → Activation → BatchNorm (works too).",
+          "difficulty": "hard",
+          "bloom_level": "evaluation"
+        },
+        {
+          "id": "m6_s4_q9",
+          "question": "What happens to Dropout during inference (prediction)?",
+          "options": [
+            "Still drops 30% of neurons",
+            "Drops different neurons",
+            "All neurons are used (dropout is disabled)",
+            "Drops 50% of neurons"
+          ],
+          "correct": 2,
+          "explanation": "During inference/prediction, Dropout is turned OFF - all neurons are used. Weights are automatically scaled to account for this. Only used during training.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        }
+      ]
+    },
+    {
+      "session": 5,
+      "title": "Transfer Learning",
+      "questions": [
+        {
+          "id": "m6_s5_q1",
+          "question": "What is transfer learning?",
+          "options": [
+            "Transferring data between computers",
+            "Using a pre-trained model as a starting point for a new task",
+            "Training multiple models simultaneously",
+            "Transferring weights randomly"
+          ],
+          "correct": 1,
+          "explanation": "Transfer learning leverages a model pre-trained on a large dataset (like ImageNet) as a starting point for a new, related task. This saves time and improves performance.",
+          "difficulty": "easy",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s5_q2",
+          "question": "What is ImageNet?",
+          "options": [
+            "A neural network architecture",
+            "A large dataset of 14M images in 1000 categories",
+            "A training algorithm",
+            "An activation function"
+          ],
+          "correct": 1,
+          "explanation": "ImageNet is a large-scale dataset with ~14 million images across 1000 categories. Models pre-trained on ImageNet have learned general visual features useful for many tasks.",
+          "difficulty": "easy",
+          "bloom_level": "knowledge"
+        },
+        {
+          "id": "m6_s5_q3",
+          "question": "What does 'freezing layers' mean in transfer learning?",
+          "options": [
+            "Making layers run slower",
+            "Setting layer weights as non-trainable (fixed)",
+            "Removing layers",
+            "Stopping training"
+          ],
+          "correct": 1,
+          "explanation": "Freezing layers means setting them as non-trainable, so their weights don't change during training. This preserves the pre-trained features while training only new layers.",
+          "difficulty": "easy",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s5_q4",
+          "question": "What are the two main phases of transfer learning?",
+          "options": [
+            "Training and testing",
+            "Feature extraction (frozen base) then fine-tuning (unfreeze top layers)",
+            "Forward and backward propagation",
+            "Compilation and evaluation"
+          ],
+          "correct": 1,
+          "explanation": "Phase 1: Feature extraction - Freeze pre-trained base, train only new classification head. Phase 2: Fine-tuning - Unfreeze top layers, train with very small learning rate.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s5_q5",
+          "question": "Why should you use a very small learning rate when fine-tuning?",
+          "options": [
+            "To save time",
+            "To prevent destroying pre-trained features with large updates",
+            "To increase accuracy faster",
+            "It doesn't matter"
+          ],
+          "correct": 1,
+          "explanation": "Pre-trained weights contain valuable learned features. A small learning rate (e.g., 1e-5) makes gentle adjustments without destroying these features. Large LR would 'forget' what was learned.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s5_q6",
+          "question": "When is transfer learning most effective?",
+          "options": [
+            "Always, for any task",
+            "When new task is similar to pre-training task (e.g., both are image classification)",
+            "Only for text data",
+            "Only when you have millions of samples"
+          ],
+          "correct": 1,
+          "explanation": "Transfer learning works best when tasks are related (e.g., ImageNet → Flowers). If domains are very different (e.g., ImageNet → medical scans), benefits are smaller but still exist.",
+          "difficulty": "medium",
+          "bloom_level": "evaluation"
+        },
+        {
+          "id": "m6_s5_q7",
+          "question": "What is VGG16?",
+          "options": [
+            "A dataset",
+            "A pre-trained CNN with 16 layers (13 conv + 3 FC)",
+            "An optimizer",
+            "A loss function"
+          ],
+          "correct": 1,
+          "explanation": "VGG16 is a convolutional neural network architecture with 16 layers (13 convolutional, 3 fully connected), pre-trained on ImageNet. Known for simplicity and effectiveness.",
+          "difficulty": "easy",
+          "bloom_level": "knowledge"
+        },
+        {
+          "id": "m6_s5_q8",
+          "question": "Why is transfer learning faster than training from scratch?",
+          "options": [
+            "Uses fewer layers",
+            "Pre-trained features reduce training time; only train new layers",
+            "Uses smaller images",
+            "Automatically optimizes code"
+          ],
+          "correct": 1,
+          "explanation": "Transfer learning is faster because: (1) Pre-trained base doesn't need training (frozen), (2) Only train small classification head, (3) Fewer epochs needed, (4) Better initialization.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s5_q9",
+          "question": "What should you do with the top layers of a pre-trained model?",
+          "options": [
+            "Always keep them",
+            "Always remove them",
+            "Remove them and add custom layers for your task (include_top=False)",
+            "Freeze them permanently"
+          ],
+          "correct": 2,
+          "explanation": "Remove the top classification layers (include_top=False) and add your own custom layers suited to your task (your number of classes). Keep the feature extraction base.",
+          "difficulty": "medium",
+          "bloom_level": "application"
+        }
+      ]
+    },
+    {
+      "session": 6,
+      "title": "Neural Networks for Tabular Data",
+      "questions": [
+        {
+          "id": "m6_s6_q1",
+          "question": "For tabular data, when do neural networks typically outperform traditional ML?",
+          "options": [
+            "Always",
+            "Never - traditional ML is always better for tabular data",
+            "When dataset is very large (>100k rows) and has complex interactions",
+            "Only for classification"
+          ],
+          "correct": 2,
+          "explanation": "For tabular data, traditional ML (Random Forest, XGBoost) often wins on small-medium datasets. NNs shine with very large datasets (>100k rows) and complex non-linear interactions.",
+          "difficulty": "medium",
+          "bloom_level": "evaluation"
+        },
+        {
+          "id": "m6_s6_q2",
+          "question": "Why is feature scaling critical for neural networks with tabular data?",
+          "options": [
+            "It's not critical",
+            "To save memory",
+            "NNs are sensitive to input scale; unscaled features cause unstable training",
+            "To increase accuracy"
+          ],
+          "correct": 2,
+          "explanation": "Neural networks use gradient descent, which is very sensitive to feature scales. Features with large values dominate gradients. Always use StandardScaler or MinMaxScaler for NNs.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s6_q3",
+          "question": "What is an LSTM network?",
+          "options": [
+            "A type of Dense network",
+            "A recurrent network specialized for sequences (time series, text)",
+            "A regularization technique",
+            "An optimizer"
+          ],
+          "correct": 1,
+          "explanation": "LSTM (Long Short-Term Memory) is a type of recurrent neural network designed to learn from sequences. It has memory cells that can retain information over long sequences.",
+          "difficulty": "easy",
+          "bloom_level": "knowledge"
+        },
+        {
+          "id": "m6_s6_q4",
+          "question": "For stock price prediction, what's typically better?",
+          "options": [
+            "LSTM always wins",
+            "Traditional ML always wins",
+            "Depends on data size; often Random Forest is competitive or better",
+            "Neural networks are always better"
+          ],
+          "correct": 2,
+          "explanation": "For stock prediction: Random Forest and XGBoost often perform as well as or better than NNs, especially with engineered features. LSTM can help with sequence patterns but isn't always better.",
+          "difficulty": "hard",
+          "bloom_level": "evaluation"
+        },
+        {
+          "id": "m6_s6_q5",
+          "question": "What makes LSTM different from regular Dense networks?",
+          "options": [
+            "More layers",
+            "Has memory to remember previous inputs in a sequence",
+            "Faster training",
+            "Better activation functions"
+          ],
+          "correct": 1,
+          "explanation": "LSTM has memory cells and gates that allow it to remember information across time steps. Dense networks process each input independently without memory.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        },
+        {
+          "id": "m6_s6_q6",
+          "question": "Why is interpretability important for business applications?",
+          "options": [
+            "It's not important",
+            "Stakeholders need to understand and trust model decisions",
+            "Only for compliance",
+            "To increase accuracy"
+          ],
+          "correct": 1,
+          "explanation": "Interpretability is critical for: (1) Building trust with stakeholders, (2) Debugging and improving models, (3) Regulatory compliance, (4) Understanding business drivers. Traditional ML (RF) offers better interpretability than NNs.",
+          "difficulty": "medium",
+          "bloom_level": "evaluation"
+        },
+        {
+          "id": "m6_s6_q7",
+          "question": "What is the appropriate architecture for a Dense NN with tabular data?",
+          "options": [
+            "Always use 10 layers",
+            "Start with 2-4 hidden layers, decreasing size (e.g., 256→128→64)",
+            "Single layer is always enough",
+            "Always use 100 neurons per layer"
+          ],
+          "correct": 1,
+          "explanation": "For tabular data, start simple: 2-4 hidden layers with decreasing sizes (e.g., 256→128→64→32). Add regularization (Dropout, BatchNorm). More layers ≠ always better.",
+          "difficulty": "medium",
+          "bloom_level": "application"
+        },
+        {
+          "id": "m6_s6_q8",
+          "question": "What is the key lesson from comparing NNs to traditional ML on tabular data?",
+          "options": [
+            "Always use NNs",
+            "Always use traditional ML",
+            "Start with traditional ML (RF); try NNs if you have large data or need the extra 2-5%",
+            "They perform equally"
+          ],
+          "correct": 2,
+          "explanation": "Practical advice: (1) Start with Random Forest (fast, interpretable, often wins), (2) If RF achieves goals, stop there, (3) Try NNs only if you need extra accuracy and have sufficient data.",
+          "difficulty": "hard",
+          "bloom_level": "synthesis"
+        },
+        {
+          "id": "m6_s6_q9",
+          "question": "For time series data, why should you NOT shuffle when creating train/test split?",
+          "options": [
+            "To save time",
+            "Would leak future information into training (data leakage)",
+            "Shuffling is always fine",
+            "To increase accuracy"
+          ],
+          "correct": 1,
+          "explanation": "Time series requires chronological split. Shuffling would allow the model to 'see the future' during training (data leakage), resulting in unrealistically high training performance but poor real-world results.",
+          "difficulty": "medium",
+          "bloom_level": "understanding"
+        }
+      ]
+    }
+  ],
+  "answer_key": {
+    "m6_s1_q1": 1,
+    "m6_s1_q2": 1,
+    "m6_s1_q3": 2,
+    "m6_s1_q4": 0,
+    "m6_s1_q5": 2,
+    "m6_s1_q6": 1,
+    "m6_s1_q7": 2,
+    "m6_s1_q8": 1,
+    "m6_s1_q9": 2,
+    "m6_s2_q1": 1,
+    "m6_s2_q2": 2,
+    "m6_s2_q3": 2,
+    "m6_s2_q4": 1,
+    "m6_s2_q5": 1,
+    "m6_s2_q6": 1,
+    "m6_s2_q7": 1,
+    "m6_s2_q8": 1,
+    "m6_s2_q9": 1,
+    "m6_s3_q1": 1,
+    "m6_s3_q2": 1,
+    "m6_s3_q3": 0,
+    "m6_s3_q4": 1,
+    "m6_s3_q5": 1,
+    "m6_s3_q6": 2,
+    "m6_s3_q7": 1,
+    "m6_s3_q8": 1,
+    "m6_s3_q9": 2,
+    "m6_s4_q1": 1,
+    "m6_s4_q2": 1,
+    "m6_s4_q3": 1,
+    "m6_s4_q4": 2,
+    "m6_s4_q5": 1,
+    "m6_s4_q6": 1,
+    "m6_s4_q7": 1,
+    "m6_s4_q8": 1,
+    "m6_s4_q9": 2,
+    "m6_s5_q1": 1,
+    "m6_s5_q2": 1,
+    "m6_s5_q3": 1,
+    "m6_s5_q4": 1,
+    "m6_s5_q5": 1,
+    "m6_s5_q6": 1,
+    "m6_s5_q7": 1,
+    "m6_s5_q8": 1,
+    "m6_s5_q9": 2,
+    "m6_s6_q1": 2,
+    "m6_s6_q2": 2,
+    "m6_s6_q3": 1,
+    "m6_s6_q4": 2,
+    "m6_s6_q5": 1,
+    "m6_s6_q6": 1,
+    "m6_s6_q7": 1,
+    "m6_s6_q8": 2,
+    "m6_s6_q9": 1
+  }
+}

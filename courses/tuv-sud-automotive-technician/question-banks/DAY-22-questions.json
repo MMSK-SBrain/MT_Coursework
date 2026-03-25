@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 22,
+  "week": 5,
+  "session_title": "Suspension & Steering Systems",
+  "questions": [
+    {
+      "id": "D22-Q01",
+      "question": "Which suspension type combines the shock absorber and the upper suspension mounting point into a single structural assembly?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Double wishbone",
+        "B": "Multi-link",
+        "C": "MacPherson strut",
+        "D": "Trailing arm"
+      },
+      "correct_answer": "C",
+      "explanation": "The MacPherson strut combines the damper (shock absorber) and the upper suspension locating member into one unit. The strut itself acts as the upper pivot point for the wheel, which is why it requires a bearing in the top mount to allow rotation when steering. Double wishbone and multi-link designs use separate shock absorbers that are not structural members.",
+      "topic": "MacPherson strut construction",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D22-Q02",
+      "question": "What is the primary function of a shock absorber (damper) in a suspension system?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To control and dampen the oscillation of the spring",
+        "B": "To support the vehicle's weight",
+        "C": "To steer the front wheels",
+        "D": "To provide anti-roll stiffness in corners"
+      },
+      "correct_answer": "A",
+      "explanation": "The shock absorber (damper) controls the spring's oscillation by converting kinetic energy into heat through forcing oil through small orifices. Without a damper, the vehicle would continue bouncing after each bump. The spring supports the vehicle weight, the steering system directs the wheels, and the anti-roll bar provides roll stiffness.",
+      "topic": "Damper function",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D22-Q03",
+      "question": "In a rack-and-pinion steering system, which component converts the rotational input from the steering column into linear motion at the road wheels?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The tie rod ends",
+        "B": "The steering knuckle",
+        "C": "The pinion gear meshing with the rack",
+        "D": "The Electronic Power Steering motor"
+      },
+      "correct_answer": "C",
+      "explanation": "The pinion gear, attached to the steering column, meshes with the toothed rack. As the driver turns the steering wheel, the pinion rotates and moves the rack laterally (left or right). The rack's linear motion is then transmitted to the steering knuckles via tie rods and tie rod ends, turning the road wheels.",
+      "topic": "Rack-and-pinion steering",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D22-Q04",
+      "question": "Which wheel alignment angle is defined as the inward or outward tilt of the wheel when viewed from the front of the vehicle?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Toe",
+        "B": "Caster",
+        "C": "Camber",
+        "D": "Scrub radius"
+      },
+      "correct_answer": "C",
+      "explanation": "Camber is the angle of the wheel relative to vertical when viewed from the front. Positive camber means the top of the wheel tilts outward; negative camber means it tilts inward. Toe describes whether the fronts of the wheels point inward or outward when viewed from above. Caster is the angle of the steering axis when viewed from the side.",
+      "topic": "Wheel alignment angles — camber",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D22-Q05",
+      "question": "Which type of shock absorber uses a high-pressure nitrogen gas charge separated from the oil by a floating piston to prevent aeration?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Twin-tube damper",
+        "B": "Mono-tube damper",
+        "C": "Air spring damper",
+        "D": "Coilover damper"
+      },
+      "correct_answer": "B",
+      "explanation": "The mono-tube damper features a single tube containing a piston, oil, and a separate floating piston that separates the oil from a high-pressure nitrogen charge (typically 25-30 bar). This design prevents oil aeration during hard use, provides faster response, and better heat dissipation. Twin-tube dampers use two concentric tubes with a base valve and are more susceptible to aeration under demanding conditions.",
+      "topic": "Twin-tube vs mono-tube dampers",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D22-Q06",
+      "question": "A vehicle exhibits excessive inner-edge tyre wear on the front wheels only. An alignment printout shows camber at -2.5 degrees on both sides, while the manufacturer specification is -0.5 degrees +/- 0.3 degrees. What is the most likely root cause and correct repair?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Over-inflated tyres — correct the tyre pressure to the door jamb specification",
+        "B": "Incorrect toe setting — adjust toe to manufacturer specification",
+        "C": "Excessive negative camber — investigate for worn upper strut mounts or bent components and adjust camber to specification",
+        "D": "Worn shock absorbers — replace the front dampers and re-align"
+      },
+      "correct_answer": "C",
+      "explanation": "Inner-edge wear is the hallmark of excessive negative camber — the top of the wheel tilts inward, overloading the tyre's inner shoulder. At -2.5 degrees versus a specification of -0.5 +/- 0.3 degrees, the camber is severely out of range. Common causes include worn or collapsed upper strut top mounts, bent control arms from pothole impact, or worn subframe bushings. The technician must identify why camber has shifted before adjusting, as the alignment adjustment alone may not address a damaged component.",
+      "topic": "Camber effect on tyre wear",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D22-Q07",
+      "question": "A customer complains that the steering wheel does not return to centre after completing a turn at low speed. The power steering warning light is off and fluid level (on a hydraulic system) is correct. Which alignment angle is most directly responsible for steering wheel self-centring?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Toe — insufficient toe-in prevents the wheels from tracking straight",
+        "B": "Camber — excessive negative camber creates a lateral pull overriding the return force",
+        "C": "Caster — insufficient positive caster reduces the self-aligning torque that returns the steering to centre",
+        "D": "Thrust angle — a misaligned rear axle creates a yaw moment that fights the steering return"
+      },
+      "correct_answer": "C",
+      "explanation": "Caster is the angle of the steering axis when viewed from the side. Positive caster means the steering axis tilts rearward at the top. This creates a mechanical trail that generates self-aligning torque — the force that returns the steering wheel to centre after a turn. Insufficient positive caster reduces this self-aligning effect, causing the steering to feel 'dead' and fail to return. Common causes include shifted subframe position, worn control arm bushings, or impact damage to the strut tower.",
+      "topic": "Caster angle and steering behaviour",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D22-Q08",
+      "question": "A technician discovers a torn ball joint boot on a double wishbone front suspension during a routine inspection. The ball joint has no detectable play when tested with a pry bar. What is the correct course of action?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Pass the inspection — the ball joint has no play so it is still functional",
+        "B": "Replace the ball joint boot only and repack the joint with grease",
+        "C": "Flag it for monitoring at the next service interval in 10,000 km",
+        "D": "Replace the ball joint assembly — a torn boot allows contamination that will cause accelerated wear and eventual failure, even if play is not yet detectable"
+      },
+      "correct_answer": "D",
+      "explanation": "A torn ball joint boot exposes the precision ball-and-socket joint to water, dirt, and road salt. Once contaminated, the joint wears rapidly and can develop sudden free play or seize. Because ball joints are safety-critical components (they connect the wheel assembly to the suspension), the accepted practice is to replace the entire ball joint assembly when the boot is compromised. Simply replacing the boot does not remove contamination already inside the joint, and monitoring risks catastrophic failure between service intervals.",
+      "topic": "Ball joint inspection and failure modes",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D22-Q09",
+      "question": "A vehicle has MacPherson strut front suspension and multi-link rear suspension. The customer reports a 'clunking' noise from the front when driving slowly over speed bumps. The noise occurs once per bump and is felt through the steering. Which component is the most likely suspect?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Rear multi-link trailing arm bushing",
+        "B": "Front lower control arm bushing or front strut top mount bearing",
+        "C": "Rear shock absorber internal valve failure",
+        "D": "Front anti-roll bar end link ball joint"
+      },
+      "correct_answer": "B",
+      "explanation": "The noise is from the front (felt through steering), occurs at low speed over bumps (rules out wheel balance), and is a single clunk per bump (not a rattle). On a MacPherson strut system, the two most likely sources of a single clunk over bumps are: (1) a worn lower control arm bushing where rubber has degraded allowing metal-to-metal contact, or (2) a failed strut top mount bearing. The top mount supports the strut under full vehicle weight and allows rotation for steering — when its rubber or bearing fails, it produces a distinctive clunk. The anti-roll bar end link is also a possibility but typically produces a lighter rattle rather than a solid clunk.",
+      "topic": "Suspension noise diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D22-Q10",
+      "question": "An alignment printout for a vehicle shows: Left front toe = +0.15 degrees, Right front toe = +0.15 degrees, Left front camber = -0.3 degrees, Right front camber = -1.8 degrees. The manufacturer specifies toe at 0.10 +/- 0.10 degrees per side and camber at -0.5 +/- 0.5 degrees per side. Which finding requires the most urgent correction and why?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The right front camber at -1.8 degrees is 0.8 degrees outside the allowable range and will cause a strong pull to the left as well as rapid inner-edge wear on the right tyre",
+        "B": "The left front toe is 0.05 degrees above nominal — this will cause feathered tyre wear",
+        "C": "Both front toe values are identical, which indicates the steering wheel is off-centre",
+        "D": "The left front camber at -0.3 degrees is too close to zero and will cause outer-edge wear"
+      },
+      "correct_answer": "A",
+      "explanation": "The right front camber at -1.8 degrees is well outside the specification of -0.5 +/- 0.5 degrees (allowable range -1.0 to 0.0). This excessive negative camber will cause rapid inner-edge wear on the right front tyre and generate a lateral pull because the left and right camber are significantly different (a 1.5-degree side-to-side difference). The vehicle will pull toward the side with the more positive (less negative) camber — in this case, to the left. The toe readings are within specification. This camber reading suggests a damaged or worn component requiring investigation before alignment adjustment.",
+      "topic": "Alignment printout interpretation",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

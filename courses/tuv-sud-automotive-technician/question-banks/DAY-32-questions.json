@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 32,
+  "week": 7,
+  "session_title": "High-Voltage Safety Protocols",
+  "questions": [
+    {
+      "id": "D32-Q01",
+      "question": "Above what DC voltage threshold is direct current considered potentially lethal to a human?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "12 volts DC",
+        "B": "24 volts DC",
+        "C": "50 volts DC",
+        "D": "120 volts DC"
+      },
+      "correct_answer": "C",
+      "explanation": "The internationally recognised threshold at which direct current becomes potentially lethal is 50 volts DC (and 30 volts AC). Every electric vehicle operates at 400 to 800 volts DC, which is eight to sixteen times this lethal threshold. At 400 volts with wet skin resistance of approximately 1,000 ohms, the resulting current of 400 milliamps is over thirteen times the 30 milliamp level that causes ventricular fibrillation.",
+      "topic": "HV safety thresholds",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D32-Q02",
+      "question": "What does the abbreviation LOTO stand for in the context of high-voltage vehicle service?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Low-Output Test Operation",
+        "B": "Lock-Out / Tag-Out",
+        "C": "Live-On / Test-Off",
+        "D": "Load-Off / Turn-Over"
+      },
+      "correct_answer": "B",
+      "explanation": "LOTO stands for Lock-Out / Tag-Out. It is a safety procedure where the technician physically locks the service disconnect in the removed position and attaches a personal tag identifying who removed it and why. This prevents anyone from inadvertently re-energising the HV system while a technician is working on it. LOTO is a non-negotiable step in every HV isolation procedure and is the technician's personal guarantee that the circuit remains de-energised.",
+      "topic": "LOTO procedure",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D32-Q03",
+      "question": "Class 0 insulating gloves, as used for automotive HV work, are rated to protect against voltages up to:",
+      "difficulty": "easy",
+      "choices": {
+        "A": "500 volts AC",
+        "B": "1,000 volts AC",
+        "C": "5,000 volts AC",
+        "D": "10,000 volts AC"
+      },
+      "correct_answer": "B",
+      "explanation": "Class 0 insulating gloves are rated for a maximum use voltage of 1,000 volts AC (1,500 volts DC). They are the standard glove class for automotive HV work on 400V and 800V vehicle systems. Before every use, the technician must perform a visual inspection for cuts, punctures, or embedded objects, followed by an inflate test (roll the cuff to trap air and check for leaks). Gloves must be stored flat, away from heat and UV light, and retested at intervals specified by the manufacturer.",
+      "topic": "HV PPE — insulating gloves",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D32-Q04",
+      "question": "When performing a de-energisation verification on a high-voltage system, the technician must take three voltage measurements. What are these three measurement points?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "HV positive to 12V positive, HV negative to 12V negative, and 12V positive to chassis",
+        "B": "HV positive to HV negative, HV positive to chassis ground, and HV negative to chassis ground",
+        "C": "Battery cell 1 to cell 2, cell 2 to cell 3, and cell 3 to chassis",
+        "D": "Inverter input to inverter output, motor phase A to phase B, and phase C to chassis"
+      },
+      "correct_answer": "B",
+      "explanation": "The three-point de-energisation verification measures: (1) HV positive to HV negative, confirming no voltage between the main HV conductors; (2) HV positive to vehicle chassis ground, confirming no voltage leakage from the positive bus to body; and (3) HV negative to vehicle chassis ground, confirming no voltage leakage from the negative bus to body. All three readings must show zero volts (or below the lethal threshold) before any HV component may be touched. This is performed using a CAT III rated multimeter after the service disconnect has been removed and the prescribed waiting period has elapsed.",
+      "topic": "De-energisation verification",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D32-Q05",
+      "question": "Why must a technician wait a minimum period (typically 2 to 10 minutes, manufacturer-dependent) after disconnecting the HV service disconnect before touching any HV components?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To allow the engine cooling system to depressurise",
+        "B": "To allow the inverter's DC-link capacitors and the airbag control module backup capacitor to discharge to a safe voltage",
+        "C": "To allow the battery cells to chemically stabilise after the load is removed",
+        "D": "To allow the scan tool to complete its shutdown diagnostic routine"
+      },
+      "correct_answer": "B",
+      "explanation": "The inverter contains large DC-link capacitors that store significant electrical energy even after the battery is disconnected via the service disconnect. These capacitors can retain hundreds of volts for several minutes. Additionally, the airbag control module has its own backup capacitor that can fire squibs. The mandatory waiting period allows these capacitors to discharge through internal bleed resistors to a safe level. Only after the waiting period AND successful three-point voltage verification may the technician proceed. The exact wait time varies by manufacturer and must be checked in the service manual.",
+      "topic": "Capacitor discharge wait period",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D32-Q06",
+      "question": "A technician is about to perform HV isolation on a 400V BEV. They locate the service disconnect under the rear seat, remove it, wait the prescribed 5 minutes, then use a CAT II rated multimeter to verify zero volts. Their colleague points out an error. What is the safety violation?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The technician should have waited 10 minutes, not 5",
+        "B": "The service disconnect should have been removed from the front of the vehicle, not the rear",
+        "C": "A CAT II rated multimeter is insufficient; a CAT III rated multimeter is required for HV vehicle verification to withstand potential transient voltage spikes",
+        "D": "The technician should have disconnected the 12-volt battery before removing the HV service disconnect"
+      },
+      "correct_answer": "C",
+      "explanation": "CAT III (Category III) rated multimeters are designed to withstand high-energy transients that can occur in fixed installation distribution systems, which is the appropriate safety category for automotive HV systems operating at 400V to 800V. A CAT II meter is rated for lower-energy circuits such as portable appliance testing and may not provide adequate protection against transient voltage spikes or arc flash in an HV vehicle system. Using an incorrectly rated meter risks the meter failing catastrophically under fault conditions, potentially exposing the technician to lethal voltage. While the 12V battery should also typically be disconnected, the critical safety error here is the meter rating.",
+      "topic": "CAT III multimeter requirement",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D32-Q07",
+      "question": "During a routine HV glove inspection before starting work, the technician inflates the glove by rolling the cuff and notices that the glove slowly deflates over approximately 30 seconds. What is the correct action?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The glove is acceptable because slow deflation indicates a microscopic pore that will not affect insulation at 400 volts",
+        "B": "Apply electrical tape over the suspected leak area and proceed with the work",
+        "C": "Immediately remove the glove from service, mark it as failed, and use a replacement glove that passes the inflate test",
+        "D": "Re-roll the cuff more tightly and test again; if it holds for 60 seconds on the second attempt, the glove is acceptable"
+      },
+      "correct_answer": "C",
+      "explanation": "Any air leakage during the inflate test indicates a breach in the glove material, no matter how small. A pinhole that leaks air will also allow moisture penetration and potentially provide a conductive path through the insulating material at high voltage. The glove must be immediately removed from service, clearly marked as failed to prevent accidental reuse, and replaced with a glove that passes inspection. Attempting to repair insulating gloves with tape or any other method is strictly prohibited. Insulating gloves are life-safety equipment and must be in perfect condition or discarded.",
+      "topic": "HV glove inspection procedure",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D32-Q08",
+      "question": "A technician completes the HV isolation procedure, performs three-point verification showing 0V on all measurements, and begins removing an HV cable connector. Midway through, a second technician — unaware that work is in progress — replaces the service disconnect plug. What LOTO step was missed that would have prevented this dangerous situation?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The first technician failed to perform the capacitor discharge step",
+        "B": "The first technician failed to apply a personal lock to the service disconnect location and attach an identification tag, preventing anyone from re-energising the system",
+        "C": "The first technician failed to disconnect the 12-volt battery first",
+        "D": "The second technician should have checked the scan tool for active fault codes before reconnecting"
+      },
+      "correct_answer": "B",
+      "explanation": "The Lock-Out / Tag-Out procedure requires the technician to place a personal lock on the service disconnect location (or on the disconnect plug itself, stored in a locked box) so that no one else can physically reinstall it. An attached tag must identify the technician performing the work, the date, and the reason for isolation. Without LOTO, there is nothing preventing another person from re-energising the HV system while work is underway. This scenario illustrates why LOTO is never optional: the second technician had no way of knowing that someone was working on the HV system, and the first technician's failure to lock out the disconnect created a potentially fatal situation.",
+      "topic": "LOTO failure consequences",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D32-Q09",
+      "question": "A vehicle involved in a collision has visible damage to the HV battery enclosure and orange cables are exposed. Emergency responders have isolated the 12V battery. As the first HV-trained technician on scene, what is your immediate priority before any recovery work begins?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Attempt to start the vehicle to check whether the HV system is still functional",
+        "B": "Measure the HV battery State of Charge using the OBD port to determine remaining energy",
+        "C": "Don full HV PPE including Class 0 gloves, confirm the service disconnect is removed or the HV system is isolated, and verify zero volts at accessible HV terminals before allowing anyone to touch damaged HV components",
+        "D": "Immediately cut all orange cables to ensure no voltage is present"
+      },
+      "correct_answer": "C",
+      "explanation": "In a collision with HV battery damage, the pack may still hold full voltage even if the vehicle is inoperative. Exposed orange cables present an immediate electrocution hazard. The correct procedure is: (1) don full HV PPE including Class 0 insulating gloves and face shield; (2) locate and remove the service disconnect if safely accessible, or confirm the HV system is already isolated via emergency responder cut-loops; (3) wait the prescribed discharge period; (4) perform three-point voltage verification with a CAT III meter before allowing any person to contact damaged HV components. Cutting orange cables without PPE risks fatal electrocution. Attempting to start the vehicle or connect diagnostic tools to a crash-damaged HV system is extremely dangerous.",
+      "topic": "Post-collision HV safety",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D32-Q10",
+      "question": "A technician measures insulation resistance between the HV positive bus and the vehicle chassis on a 400V BEV. The reading is 150 kilohms. The manufacturer specifies a minimum of 500 ohms per volt. Is this reading acceptable, and why?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Yes — 150 kilohms is well above the 500 ohm threshold",
+        "B": "No — for a 400V system, the minimum insulation resistance is 200 kilohms (400V multiplied by 500 ohms per volt), and 150 kilohms is below this threshold indicating an insulation fault",
+        "C": "Yes — insulation resistance only matters when the vehicle is driving, not during static testing",
+        "D": "No — insulation resistance must always exceed 1 megohm regardless of system voltage"
+      },
+      "correct_answer": "B",
+      "explanation": "The minimum insulation resistance standard of 500 ohms per volt means the threshold scales with system voltage. For a 400V system: 400V multiplied by 500 ohms per volt equals 200,000 ohms (200 kilohms) minimum. The measured 150 kilohms is below this threshold, indicating degraded insulation between the HV bus and chassis. This would trigger an insulation monitoring device (IMD) fault, causing an HV warning light and potentially reduced power mode. Common causes include moisture ingress at connectors, damaged cable insulation, or contamination inside HV component housings. The technician must locate and repair the insulation breach before returning the vehicle to service.",
+      "topic": "Insulation resistance measurement",
+      "bloom_level": "Apply"
+    }
+  ]
+}

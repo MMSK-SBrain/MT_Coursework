@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 2,
+  "week": 1,
+  "session_title": "Workshop Readiness & Staying Alive",
+  "questions": [
+    {
+      "id": "D02-Q01",
+      "question": "What is the primary purpose of jack stands in a vehicle lifting procedure?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To raise the vehicle off the ground",
+        "B": "To hold the vehicle securely while you work underneath",
+        "C": "To level the vehicle for wheel alignment",
+        "D": "To protect the floor from jack scratches"
+      },
+      "correct_answer": "B",
+      "explanation": "Jack stands are mechanical supports designed to hold a vehicle after it has been raised by a hydraulic trolley jack. A trolley jack is for lifting; a stand is for holding. Working under a vehicle supported only by a hydraulic jack is one of the leading causes of workshop fatalities.",
+      "topic": "Trolley jacks and jack stands",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D02-Q02",
+      "question": "In the hierarchy of controls, where does Personal Protective Equipment (PPE) rank?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "First line of defence (most effective)",
+        "B": "Third line of defence (mid-level)",
+        "C": "It ranks equally with engineering controls",
+        "D": "Last line of defence (least effective)"
+      },
+      "correct_answer": "D",
+      "explanation": "PPE is the last line of defence in the hierarchy of controls, which ranks from elimination (most effective) down through substitution, engineering controls, and administrative controls before reaching PPE. This means hazards should be controlled at higher levels wherever possible.",
+      "topic": "Hierarchy of controls",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D02-Q03",
+      "question": "Which colour identifies high-voltage cables and connectors on hybrid and electric vehicles according to the international standard?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Red",
+        "B": "Blue",
+        "C": "Orange",
+        "D": "Yellow"
+      },
+      "correct_answer": "C",
+      "explanation": "Orange is the internationally recognised colour for high-voltage cables and connectors on hybrid and electric vehicles. Red is used for conventional positive battery terminals at 12V, not for HV identification.",
+      "topic": "High-voltage hazard identification",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D02-Q04",
+      "question": "What are the six categories of modern workshop hazards?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Electrical, chemical, mechanical, thermal, pressurised, ergonomic",
+        "B": "Fire, water, electrical, gravity, chemical, noise",
+        "C": "Crush, burn, shock, slip, trip, fall",
+        "D": "High voltage, low voltage, dust, vibration, heat, cold"
+      },
+      "correct_answer": "A",
+      "explanation": "The six categories are: high voltage (electrical), chemical, mechanical, thermal, pressurised, and ergonomic. Option C lists specific injury mechanisms rather than the structured hazard categories taught in the framework.",
+      "topic": "Workshop hazard categories",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D02-Q05",
+      "question": "During the 10-step safe lift operation procedure, what must the technician do immediately after raising the vehicle approximately 10 cm off the ground?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Begin working underneath immediately",
+        "B": "Engage the mechanical safety locks",
+        "C": "Remove the wheel chocks",
+        "D": "Stop, walk around, and verify every pad is correctly seated on the jacking points"
+      },
+      "correct_answer": "D",
+      "explanation": "After raising to contact (~10 cm), the technician must stop and walk around to verify all four pads are correctly seated on the manufacturer-specified jacking points. This is the critical safety check where most lift failures originate. Mechanical locks are verified later at full working height.",
+      "topic": "Safe lift operation procedure",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D02-Q06",
+      "question": "A technician is preparing to service the air conditioning system of a plug-in hybrid vehicle with a 360V battery. Which PPE combination is most appropriate before beginning any work near the high-voltage components?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Standard nitrile gloves, safety glasses, and coveralls",
+        "B": "Chemical-resistant neoprene gloves, splash goggles, and standard coveralls",
+        "C": "Class 0 HV insulating gloves with leather protectors, face shield, and arc-flash rated clothing",
+        "D": "Leather mechanics gloves, safety glasses, and hearing protection"
+      },
+      "correct_answer": "C",
+      "explanation": "Any work near hybrid/EV high-voltage components requires the full HV PPE suite: Class 0 insulating gloves (rated to 1,000V AC) with leather protectors, face shield, and arc-flash rated clothing. Standard nitrile gloves provide zero electrical insulation and would not prevent electrocution.",
+      "topic": "PPE selection for high-voltage work",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D02-Q07",
+      "question": "A technician notices that one of the two equalizer cables on a 2-post lift appears frayed. The lift still raises and the safety locks engage. What is the correct course of action?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Continue using the lift since the safety locks still work",
+        "B": "Take the lift out of service immediately and report it for repair",
+        "C": "Use the lift only for lighter vehicles under 1,500 kg",
+        "D": "Switch to using only the non-frayed side of the lift"
+      },
+      "correct_answer": "B",
+      "explanation": "A frayed equalizer cable on a 2-post lift means the lift must be taken out of service immediately. The equalizer cable ensures both columns rise evenly; a failure could cause the vehicle to tilt and fall. Continuing to use a lift with visible cable damage, regardless of load, is a serious safety violation.",
+      "topic": "Lift inspection and safety",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D02-Q08",
+      "question": "A technician performs the air inflation test on a pair of Class 0 HV insulating gloves before working on an electric vehicle. One glove holds air, but the other slowly deflates when squeezed. What should the technician do?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Discard the defective glove immediately and obtain a replacement before proceeding",
+        "B": "Patch the leaking glove with electrical tape and continue",
+        "C": "Use both gloves since the leak is slow and the job will be quick",
+        "D": "Use only the good glove on the dominant hand"
+      },
+      "correct_answer": "A",
+      "explanation": "A glove that fails the inflation test has a pinhole that could allow lethal voltage to pass through. There is no repair for HV insulating gloves; the defective glove must be discarded and replaced. Using a single glove or patching provides no protection against electrocution at 400V+.",
+      "topic": "PPE inspection — HV gloves",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D02-Q09",
+      "question": "A customer's 12-year-old vehicle needs to be raised on a 2-post lift. The technician notices surface rust along the bottom sill pinch welds where the lift pads normally contact. What is the safest approach?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Proceed normally since all vehicles of that age have some rust",
+        "B": "Place thicker rubber pads over the corroded areas to distribute the load",
+        "C": "Probe the corroded areas to assess structural integrity, and if compromised, use alternative reinforced lift points or a 4-post lift",
+        "D": "Raise the vehicle very slowly to reduce the risk of pad punch-through"
+      },
+      "correct_answer": "C",
+      "explanation": "Corroded sill pinch welds are a documented cause of vehicles falling from 2-post lifts. The correct approach is to probe the corroded areas to check structural integrity, and if compromised, use alternative manufacturer-specified reinforced points or switch to a 4-post lift. Raising slowly does not prevent a corroded sill from collapsing under the vehicle's full weight.",
+      "topic": "Jacking points and lift safety",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D02-Q10",
+      "question": "A newly hired technician argues that wearing hearing protection while using an air impact wrench is unnecessary because the exposure is brief. Air impact wrenches generate 95-115 dB. Why is this reasoning flawed?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Because the noise only affects the customer, not the technician",
+        "B": "Because impact wrenches only generate harmful noise above 120 dB",
+        "C": "Because hearing protection is only required for continuous noise lasting more than 8 hours",
+        "D": "Because hearing damage from noise above 85 dB is cumulative and irreversible, even from repeated brief exposures over a career"
+      },
+      "correct_answer": "D",
+      "explanation": "Hearing damage is cumulative and irreversible. Repeated brief exposures at 95-115 dB over a career add up to permanent hearing loss. The threshold for requiring hearing protection is 85 dB, which an impact wrench far exceeds. There is no safe 'brief exposure' exception for noise levels this high.",
+      "topic": "Ergonomic hazards — hearing protection",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

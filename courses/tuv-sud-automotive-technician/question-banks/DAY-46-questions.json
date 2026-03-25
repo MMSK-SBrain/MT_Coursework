@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 46,
+  "week": 10,
+  "session_title": "Gearbox Strip-Down",
+  "questions": [
+    {
+      "id": "D46-Q01",
+      "question": "What is the primary advantage of a technician who can strip and rebuild a gearbox compared to one who only performs exchange-unit replacements?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Exchange units are always more expensive than a rebuild",
+        "B": "The rebuild technician can diagnose internal faults from symptoms alone",
+        "C": "Exchange units are no longer available for modern vehicles",
+        "D": "Rebuild work requires fewer specialised tools"
+      },
+      "correct_answer": "B",
+      "explanation": "A technician who has stripped and rebuilt a gearbox understands internal failure modes and can diagnose problems such as grinding, popping out of gear, or whine from sound and feel alone. This diagnostic intuition comes from hands-on experience with internal components.",
+      "topic": "Gearbox rebuild value",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D46-Q02",
+      "question": "During gearbox disassembly, why should all components be laid out on the bench in reassembly order?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To make the inspection report look professional",
+        "B": "To allow the instructor to count the components",
+        "C": "To preserve component relationships and ensure correct reassembly",
+        "D": "To speed up the cleaning process"
+      },
+      "correct_answer": "C",
+      "explanation": "Laying out components in reassembly order preserves the relationship between mating parts (e.g., synchro rings matched to their gears, shims matched to their shafts). This systematic approach prevents errors during rebuild and ensures components return to their correct positions.",
+      "topic": "Disassembly methodology",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D46-Q03",
+      "question": "Which tool is used to remove bearings from gearbox shafts without damaging the shaft or bearing race?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "A cold chisel and hammer",
+        "B": "A bearing puller",
+        "C": "An adjustable wrench",
+        "D": "A screwdriver used as a lever"
+      },
+      "correct_answer": "B",
+      "explanation": "A bearing puller applies controlled, even force behind the bearing inner race to draw it off the shaft. Using chisels, screwdrivers, or other improvised methods risks damaging the shaft surface, bearing race, or both, making reassembly impossible.",
+      "topic": "Bearing removal tools",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D46-Q04",
+      "question": "When visually inspecting synchromesh rings during gearbox strip-down, what appearance indicates the ring must be replaced?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Fine machining lines visible across the entire cone surface",
+        "B": "A slight oil film covering the friction surface",
+        "C": "A glazed, shiny surface with scoring marks on the cone face",
+        "D": "A uniform dark colour from heat cycling"
+      },
+      "correct_answer": "C",
+      "explanation": "Glazing (smooth, shiny surface) and scoring indicate the synchro cone has lost its friction capability. The fine machining lines that hold oil and create friction have been worn away. A healthy cone shows these machining lines; a failed one is smooth and shiny.",
+      "topic": "Synchro ring inspection",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D46-Q05",
+      "question": "What is the purpose of documenting findings on an inspection report form during gearbox strip-down?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To create a parts ordering list for the supplier",
+        "B": "To justify the repair cost to the customer and record component condition for rebuild decisions",
+        "C": "To satisfy insurance requirements only",
+        "D": "To train new apprentices who were not present"
+      },
+      "correct_answer": "B",
+      "explanation": "The inspection report documents the condition of every component, supports reuse/replace decisions during rebuild, provides evidence to justify costs to the customer, and creates a permanent record in the job file proving the work was done to standard.",
+      "topic": "Inspection documentation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D46-Q06",
+      "question": "A technician is stripping a manual gearbox and notices that the 2nd gear synchro ring cone face appears in good condition with visible machining lines. However, when attempting to slide the synchro hub sleeve over the dog teeth, it engages very stiffly. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The synchro hub spring is too strong",
+        "B": "The dog teeth on the gear or sleeve are rounded or burred from aggressive shifting",
+        "C": "The gear oil was the wrong viscosity before disassembly",
+        "D": "The detent ball is jammed in the shift rod"
+      },
+      "correct_answer": "B",
+      "explanation": "Rounded or burred dog teeth prevent clean engagement of the synchro hub sleeve. This damage comes from aggressive shifting habits or gear pop-out conditions. Even though the cone face may look acceptable, damaged dog teeth prevent smooth gear engagement and require replacement of the affected components.",
+      "topic": "Dog teeth wear diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D46-Q07",
+      "question": "During strip-down, a technician finds blue-purple heat discolouration on the 3rd gear bearing inner race and fine metallic particles on the magnetic drain plug. The gearbox was reported for a whining noise that increased with road speed in 3rd gear. What do these findings collectively indicate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The gear oil was overfilled, causing excessive churning and heat",
+        "B": "The 3rd gear synchro ring was slipping, generating friction heat",
+        "C": "The bearing was failing due to inadequate preload or lubrication, shedding material and overheating",
+        "D": "The input shaft seal was leaking, reducing oil level below the bearing"
+      },
+      "correct_answer": "C",
+      "explanation": "Heat discolouration on a bearing race combined with metallic particles on the magnetic plug is classic evidence of bearing failure. The bearing was running with inadequate preload or starved lubrication, causing metal-to-metal contact, heat generation, and material shedding. The whining noise changing with road speed in a specific gear correlates with this bearing carrying the load path for that gear ratio.",
+      "topic": "Bearing failure analysis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D46-Q08",
+      "question": "A technician uses a hydraulic press to remove a bearing from a gearbox layshaft. While pressing, they notice the press gauge reading climbing significantly higher than expected, and the bearing has not moved. What should the technician do?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Continue pressing with higher pressure until the bearing moves",
+        "B": "Stop immediately, release pressure, and reassess the setup for misalignment or wrong mandrel selection",
+        "C": "Apply penetrating oil and wait 30 minutes before trying again",
+        "D": "Switch to a hammer and drift to provide impact force instead"
+      },
+      "correct_answer": "B",
+      "explanation": "Unexpectedly high press force indicates a problem with the setup: the mandrel may be the wrong size (contacting the shaft instead of the bearing), the setup may be misaligned, or the bearing may be contacting a shoulder it shouldn't. Continuing to press risks damaging the shaft, bearing bore, or even causing the workpiece to eject violently. The correct action is to stop, release pressure, and reassess.",
+      "topic": "Hydraulic press safety",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D46-Q09",
+      "question": "A gearbox is being stripped and the technician notices that the selector fork for 3rd/4th gear has a visible wear groove on the pad that contacts the synchro hub sleeve. The groove depth is approximately 1mm. What is the consequence of reusing this fork during rebuild?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "No consequence, as 1mm of wear is within normal tolerance",
+        "B": "The shift feel will be slightly notchy but otherwise functional",
+        "C": "The worn fork cannot push the sleeve far enough for full engagement, risking gear pop-out under load",
+        "D": "The fork will cause the synchro ring to overheat during shifts"
+      },
+      "correct_answer": "C",
+      "explanation": "A worn selector fork pad reduces the effective push distance on the synchro hub sleeve. If the sleeve cannot travel far enough to fully engage the dog teeth, the gear will not lock securely. Under acceleration or deceleration load, the gear can pop out. This is a safety-critical failure, especially at motorway speeds. Worn forks must be replaced.",
+      "topic": "Selector fork wear consequences",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D46-Q10",
+      "question": "During disassembly, a technician forgets to mark the orientation of the shift forks relative to their rods before separating them. At reassembly, they install one fork 180 degrees rotated. What will be the result when the gearbox is tested?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The gearbox will work normally since forks are symmetrical",
+        "B": "The affected gear pair will not engage at all, or will engage the wrong gear in that plane",
+        "C": "Only the shift feel will be slightly different",
+        "D": "The gearbox oil will leak from the shift rod seal"
+      },
+      "correct_answer": "B",
+      "explanation": "Selector forks are not symmetrical in all cases; their offset and curvature are designed for a specific orientation. Installing a fork 180 degrees rotated can cause it to push the sleeve in the wrong direction relative to the shift rod movement, preventing engagement or engaging the wrong gear. This is why marking component orientation during strip-down is critical.",
+      "topic": "Disassembly documentation importance",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

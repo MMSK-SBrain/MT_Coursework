@@ -1,0 +1,273 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey there",
+        "Good morning",
+        "Good afternoon",
+        "Is anyone there?",
+        "Hi there",
+        "Greetings"
+      ],
+      "responses": [
+        "Hello! How can I help you today?",
+        "Hi there! What can I do for you?",
+        "Greetings! How may I assist you?",
+        "Hello! I'm here to help. What do you need?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "Talk to you later",
+        "I'm done",
+        "That's all",
+        "Thanks, bye"
+      ],
+      "responses": [
+        "Goodbye! Have a great day!",
+        "See you later! Feel free to come back anytime.",
+        "Bye! Thanks for chatting with me.",
+        "Take care! Don't hesitate to reach out if you need help."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thanks a lot",
+        "I appreciate it",
+        "Thank you so much",
+        "Perfect, thanks"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!",
+        "Anytime! Glad I could assist.",
+        "My pleasure! Let me know if you need anything else."
+      ]
+    },
+    {
+      "tag": "check_order",
+      "patterns": [
+        "Where is my order?",
+        "Track my order",
+        "Order status",
+        "When will my order arrive?",
+        "I want to check my order",
+        "Can you track my package?",
+        "Shipping status",
+        "Has my order shipped?"
+      ],
+      "responses": [
+        "I can help you track your order. Please provide your order number.",
+        "To check your order status, I'll need your order number. Do you have it?",
+        "Let me help you track that. What's your order number?",
+        "I'd be happy to check on your order. Could you share your order number?"
+      ]
+    },
+    {
+      "tag": "cancel_order",
+      "patterns": [
+        "Cancel my order",
+        "I want to cancel my order",
+        "Can I cancel my purchase?",
+        "Stop my order",
+        "I don't want this anymore",
+        "Cancel order please",
+        "How do I cancel?"
+      ],
+      "responses": [
+        "I can help you cancel your order. Please provide your order number and I'll process the cancellation.",
+        "To cancel your order, I'll need your order number. Once you provide it, I can initiate the cancellation.",
+        "I understand you want to cancel. What's your order number? I'll take care of it for you.",
+        "No problem! Share your order number and I'll cancel it right away."
+      ]
+    },
+    {
+      "tag": "return_policy",
+      "patterns": [
+        "What is your return policy?",
+        "Can I return this?",
+        "How do I return an item?",
+        "Return process",
+        "Do you accept returns?",
+        "Refund policy",
+        "Can I get my money back?"
+      ],
+      "responses": [
+        "We offer a 30-day return policy on most items. You can initiate a return through your account or contact us directly.",
+        "Returns are accepted within 30 days of purchase. Items must be unused and in original packaging. Would you like to start a return?",
+        "Our return policy allows returns within 30 days. I can help you process a return if needed.",
+        "We accept returns for 30 days from the purchase date. Let me know if you'd like assistance with a return."
+      ]
+    },
+    {
+      "tag": "payment_issue",
+      "patterns": [
+        "My payment didn't go through",
+        "Payment failed",
+        "Card declined",
+        "Payment error",
+        "Transaction failed",
+        "Can't complete payment",
+        "Payment not working"
+      ],
+      "responses": [
+        "I'm sorry you're having payment issues. Please check that your card details are correct and try again. If the problem persists, contact your bank.",
+        "Payment issues can occur due to incorrect card info or insufficient funds. Please verify your details and retry.",
+        "Let's resolve this. Make sure your billing address matches your card and that you have sufficient funds.",
+        "I apologize for the inconvenience. Double-check your payment information and try again. If it still doesn't work, your bank may be blocking the transaction."
+      ]
+    },
+    {
+      "tag": "shipping_info",
+      "patterns": [
+        "Shipping information",
+        "How long does shipping take?",
+        "Delivery time",
+        "When will I get my order?",
+        "Shipping options",
+        "Do you ship internationally?",
+        "Shipping cost"
+      ],
+      "responses": [
+        "Standard shipping takes 5-7 business days. Express shipping is available for 2-3 day delivery. International shipping varies by location.",
+        "We offer standard (5-7 days) and express (2-3 days) shipping. Shipping costs are calculated at checkout based on your location.",
+        "Delivery typically takes 5-7 business days for standard shipping. Need it faster? Choose express shipping at checkout.",
+        "Shipping times: Standard is 5-7 days, Express is 2-3 days. We ship internationally to most countries."
+      ]
+    },
+    {
+      "tag": "product_inquiry",
+      "patterns": [
+        "Tell me about this product",
+        "Product details",
+        "Is this product available?",
+        "Do you have this in stock?",
+        "Product information",
+        "I have a question about a product",
+        "Can you tell me more?"
+      ],
+      "responses": [
+        "I'd be happy to help with product information. Which product are you interested in?",
+        "Sure! What product would you like to know more about?",
+        "I can provide details about any of our products. Which one interests you?",
+        "Let me help you with that. What product are you asking about?"
+      ]
+    },
+    {
+      "tag": "account_help",
+      "patterns": [
+        "I forgot my password",
+        "Reset password",
+        "Can't login",
+        "Account locked",
+        "Change password",
+        "Login issues",
+        "Account problems"
+      ],
+      "responses": [
+        "To reset your password, click 'Forgot Password' on the login page and follow the instructions sent to your email.",
+        "I can help with that. Use the 'Forgot Password' link on the login page to reset your password via email.",
+        "Account issues? Try resetting your password using the link on the login page. Check your email for reset instructions.",
+        "If you're having login trouble, use the password reset option on our login page. You'll receive an email with instructions."
+      ]
+    },
+    {
+      "tag": "store_hours",
+      "patterns": [
+        "What are your hours?",
+        "When are you open?",
+        "Business hours",
+        "Store hours",
+        "Opening times",
+        "When do you close?"
+      ],
+      "responses": [
+        "Our customer support is available Monday-Friday 9AM-6PM EST. Online shopping is available 24/7!",
+        "We're here to help Monday through Friday, 9AM to 6PM Eastern Time. You can shop online anytime!",
+        "Customer service hours: Monday-Friday 9AM-6PM EST. Our website is always open for shopping.",
+        "Support team available Mon-Fri 9AM-6PM EST. Shop online 24/7 at your convenience!"
+      ]
+    },
+    {
+      "tag": "contact_info",
+      "patterns": [
+        "How do I contact you?",
+        "Contact information",
+        "Phone number",
+        "Email address",
+        "How can I reach you?",
+        "Customer service contact"
+      ],
+      "responses": [
+        "You can reach us at support@company.com or call 1-800-123-4567. We're here Monday-Friday 9AM-6PM EST.",
+        "Contact us via email at support@company.com or phone at 1-800-123-4567. Hours: Mon-Fri 9AM-6PM EST.",
+        "Get in touch: Email support@company.com or call 1-800-123-4567 (Mon-Fri 9AM-6PM EST).",
+        "Reach our team at support@company.com or 1-800-123-4567. Available Monday through Friday, 9AM-6PM Eastern."
+      ]
+    },
+    {
+      "tag": "promo_code",
+      "patterns": [
+        "Do you have any discounts?",
+        "Promo code",
+        "Coupon code",
+        "Any deals?",
+        "Current promotions",
+        "Discount code",
+        "How can I save money?"
+      ],
+      "responses": [
+        "Check our promotions page for current deals! Sign up for our newsletter to get exclusive discount codes.",
+        "We regularly offer promotions. Subscribe to our newsletter for exclusive deals and discount codes!",
+        "Visit our promotions page for current offers. Join our email list to receive special discount codes!",
+        "Great question! Check out our deals page and subscribe to our newsletter for exclusive promo codes."
+      ]
+    },
+    {
+      "tag": "complaint",
+      "patterns": [
+        "I want to make a complaint",
+        "This is unacceptable",
+        "I'm very unhappy",
+        "This is terrible service",
+        "I'm not satisfied",
+        "Poor quality",
+        "Disappointed"
+      ],
+      "responses": [
+        "I'm very sorry to hear about your experience. Please tell me more so I can help resolve this issue for you.",
+        "I apologize for your frustration. I'd like to make this right. Can you provide more details about the issue?",
+        "I'm sorry you're unhappy with our service. Your feedback is important. Let me help resolve this for you.",
+        "I sincerely apologize. I want to help fix this situation. Please share more details so I can assist you better."
+      ]
+    },
+    {
+      "tag": "warranty",
+      "patterns": [
+        "What's the warranty?",
+        "Warranty information",
+        "Product guarantee",
+        "How long is the warranty?",
+        "Warranty coverage",
+        "Is this under warranty?"
+      ],
+      "responses": [
+        "Most of our products come with a 1-year manufacturer's warranty. Some items have extended warranty options available.",
+        "We offer a 1-year warranty on most products. Check your product page for specific warranty details.",
+        "Standard warranty is 1 year from purchase date. Extended warranty options may be available for certain products.",
+        "Products typically include a 1-year warranty. For specific coverage details, check the product description or contact us."
+      ]
+    }
+  ]
+}

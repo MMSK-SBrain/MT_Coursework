@@ -1,0 +1,264 @@
+{
+  "module": 0,
+  "title": "The Hook",
+  "total_sessions": 3,
+  "points_per_session": 10,
+  "total_points": 30,
+  "grading_philosophy": "Module 0 is lighter weight assessment focused on completion and engagement. Goals: build confidence, remove setup friction, create excitement for learning journey ahead.",
+  "created": "2026-01-06",
+  "version": "1.0",
+
+  "sessions": [
+    {
+      "session": "0.1",
+      "title": "Five Amazing ML Demos",
+      "total_points": 10,
+      "purpose": "Explore ML applications and build excitement",
+      "assessment_type": "Completion-based with curiosity emphasis",
+
+      "criteria": [
+        {
+          "category": "Demo Exploration",
+          "points": 5,
+          "description": "Explores and interacts with all 5 demo applications",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Tests all 5 demos with multiple varied inputs, documents observations for each demo, takes screenshots showing different results"
+            },
+            "good": {
+              "points": 4,
+              "description": "Tests all 5 demos with basic inputs, captures screenshots, provides brief observations"
+            },
+            "adequate": {
+              "points": 3,
+              "description": "Tests 3-4 demos, provides some documentation"
+            },
+            "poor": {
+              "points": 0-2,
+              "description": "Tests fewer than 3 demos or provides minimal documentation"
+            }
+          },
+          "evidence_required": [
+            "Screenshot from each demo showing results",
+            "Brief notes on what each demo does",
+            "At least one observation per demo"
+          ]
+        },
+        {
+          "category": "Curiosity & Questions",
+          "points": 5,
+          "description": "Shows curiosity and asks questions about how demos work",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Asks 5+ insightful questions about demos, hypothesizes about ML techniques used, expresses genuine curiosity about how they work"
+            },
+            "good": {
+              "points": 4,
+              "description": "Asks 3-4 basic questions about how demos function, shows interest in learning more"
+            },
+            "adequate": {
+              "points": 3,
+              "description": "Asks 1-2 questions or shows minimal curiosity"
+            },
+            "poor": {
+              "points": 0-2,
+              "description": "No questions asked, minimal engagement or curiosity demonstrated"
+            }
+          },
+          "evidence_required": [
+            "List of questions about the demos",
+            "Reflection on which demo was most interesting and why",
+            "Thoughts on potential applications"
+          ]
+        }
+      ],
+
+      "grading_notes": "Focus on engagement and enthusiasm, not technical correctness. Goal is to build excitement for ML journey. Give full credit for genuine effort and curiosity."
+    },
+
+    {
+      "session": "0.2",
+      "title": "AI Assistant Setup",
+      "total_points": 10,
+      "purpose": "Set up AI learning tools and test effectiveness",
+      "assessment_type": "Setup verification with prompt testing",
+
+      "criteria": [
+        {
+          "category": "Account Setup",
+          "points": 5,
+          "description": "Successfully sets up ChatGPT/Gemini/Claude account",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Sets up 2+ AI assistants (ChatGPT, Gemini, and/or Claude), tests both effectively, provides screenshots confirming access"
+            },
+            "good": {
+              "points": 4,
+              "description": "Sets up 1 AI assistant successfully with screenshot confirmation, account works properly"
+            },
+            "adequate": {
+              "points": 3,
+              "description": "Sets up account with some assistance or after troubleshooting delays"
+            },
+            "poor": {
+              "points": 0-2,
+              "description": "Cannot complete setup or provides no evidence of working account"
+            }
+          },
+          "evidence_required": [
+            "Screenshot showing logged-in interface",
+            "Name of AI assistant(s) set up",
+            "Confirmation that account is functional"
+          ]
+        },
+        {
+          "category": "Prompt Testing",
+          "points": 5,
+          "description": "Tests AI assistant with ML-related prompts and evaluates responses",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Tests 5+ prompts covering different ML topics, iterates to improve responses (follow-up questions), documents results with examples of good responses"
+            },
+            "good": {
+              "points": 4,
+              "description": "Tests 3-4 prompts successfully, provides examples of responses, shows basic prompt refinement"
+            },
+            "adequate": {
+              "points": 3,
+              "description": "Tests 1-2 prompts with some documentation of responses"
+            },
+            "poor": {
+              "points": 0-2,
+              "description": "Cannot get useful responses or provides minimal testing evidence"
+            }
+          },
+          "evidence_required": [
+            "List of prompts tested",
+            "Examples of AI responses (screenshots or text)",
+            "Reflection on which AI gave best responses",
+            "Notes on prompt refinement attempts"
+          ]
+        }
+      ],
+
+      "grading_notes": "Essential setup for course success. Ensure students have working AI access before proceeding. Be lenient on first attempts but verify functionality. Encourage testing multiple AI tools."
+    },
+
+    {
+      "session": "0.3",
+      "title": "Google Colab & First ML Code",
+      "total_points": 10,
+      "purpose": "Set up cloud environment and run first ML model",
+      "assessment_type": "Technical setup with code execution",
+
+      "criteria": [
+        {
+          "category": "Colab Setup",
+          "points": 3,
+          "description": "Sets up Google Colab and runs first notebook successfully",
+          "levels": {
+            "excellent": {
+              "points": 3,
+              "description": "Sets up Colab, enables GPU, runs notebook successfully, verifies GPU access with nvidia-smi or similar command"
+            },
+            "good": {
+              "points": 2,
+              "description": "Sets up Colab and runs notebook successfully (CPU is fine if GPU not enabled)"
+            },
+            "adequate": {
+              "points": 1,
+              "description": "Sets up Colab with assistance, notebook runs but may have minor issues"
+            },
+            "poor": {
+              "points": 0,
+              "description": "Cannot set up Colab or notebook fails to run"
+            }
+          },
+          "evidence_required": [
+            "Link to Colab notebook or screenshot",
+            "Confirmation that cells executed",
+            "GPU status (enabled or not)"
+          ]
+        },
+        {
+          "category": "Iris Classifier",
+          "points": 7,
+          "description": "Runs and understands Iris classifier code successfully",
+          "levels": {
+            "excellent": {
+              "points": 7,
+              "description": "Runs code successfully, achieves >95% accuracy, understands all major steps (load data, train, predict), experiments with parameters (e.g., changes test_size or random_state)"
+            },
+            "good": {
+              "points": 5-6,
+              "description": "Runs code successfully, achieves >90% accuracy, demonstrates basic understanding of what code does, minimal experimentation"
+            },
+            "adequate": {
+              "points": 3-4,
+              "description": "Runs code but achieves 85-90% accuracy OR shows limited understanding of steps"
+            },
+            "poor": {
+              "points": 0-2,
+              "description": "Cannot run code, major errors occur, or accuracy below 85%"
+            }
+          },
+          "evidence_required": [
+            "Screenshot or link showing code execution",
+            "Reported accuracy score",
+            "Brief explanation of what the code does (3-4 sentences)",
+            "Any experiments tried (optional for good, required for excellent)"
+          ],
+          "technical_requirements": {
+            "minimum_accuracy": 0.85,
+            "target_accuracy": 0.95,
+            "must_execute": "All code cells must run without critical errors",
+            "understanding_check": "Can explain: loading data, training model, making predictions"
+          }
+        }
+      ],
+
+      "grading_notes": "Most important session - verifies student can execute ML code. Be supportive of troubleshooting. Accuracy varies due to random_state (93-100% typical). Focus on: does it run? Do they understand basic flow? Grade generously if genuine effort shown."
+    }
+  ],
+
+  "module_completion_criteria": {
+    "minimum_total_points": 21,
+    "minimum_percentage": 70,
+    "required_completions": [
+      "At least 3 demos explored (Session 0.1)",
+      "At least 1 AI assistant set up (Session 0.2)",
+      "Iris classifier runs successfully (Session 0.3)"
+    ],
+    "bonus_opportunities": [
+      "Set up all 3 AI assistants (+1 bonus point)",
+      "GPU successfully enabled in Colab (+1 bonus point)",
+      "Experiments with Iris code parameters (+1 bonus point)"
+    ],
+    "max_bonus_points": 3
+  },
+
+  "instructor_guidelines": {
+    "grading_approach": "Completion-focused, not mastery-focused. Module 0 is about removing barriers and building confidence.",
+    "common_issues": {
+      "session_1": "Students may not understand demos - that's OK! Just ensure they try them.",
+      "session_2": "Regional restrictions on AI tools - help find alternatives (VPN, different service).",
+      "session_3": "Colab runtime disconnects - normal behavior, teach reconnection. GPU limits - explain free tier restrictions."
+    },
+    "time_expectations": {
+      "fast_students": "2-3 hours total",
+      "average_students": "4-6 hours total",
+      "struggling_students": "6-8 hours (may need 1-on-1 support for setup)"
+    },
+    "when_to_intervene": "If student cannot complete Session 0.3 setup after 2 attempts, schedule live troubleshooting session. Environment setup is critical for course success."
+  },
+
+  "alignment_with_quizzes": {
+    "session_0.2_quiz": "Tests understanding of AI assistants (10 questions, 70% passing)",
+    "session_0.3_quiz": "Tests Colab and GPU knowledge (12 questions, 70% passing)",
+    "note": "Session 0.1 has no quiz - purely exploratory"
+  }
+}

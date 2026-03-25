@@ -1,0 +1,532 @@
+course:
+  title: "TUV SUD Automotive Service Technician"
+  code: "TUV-AST"
+  version: "4.0"
+  date: "2026-03-24"
+  program_duration: "8 weeks mandatory (120 hrs) + 3 weeks optional (45 hrs)"
+  format: "5 days/week x 3 hrs/day = 15 hrs/week"
+  total_days: 55
+  total_hours: 165
+  certification: "TUV SUD Automotive Service Technician"
+  exam_format: "50 MCQ (100 marks across 17 chapters)"
+
+  description: >
+    An 8-week intensive program that takes a learner with zero automotive background
+    through to TUV SUD certification readiness. Every week tells a story, every day
+    earns the right to teach the next. The program follows a Foundation-System-Integration
+    spiral: first show the whole car, then teach safety, then give the electrical language,
+    then go system-by-system deeper, and finally integrate everything.
+
+  design_philosophy: >
+    A learner with zero automotive background walks in on Day 1. The program earns their
+    trust and builds confidence in sequence: show the whole car, teach them to stay alive,
+    give them the language, spiral deeper system by system, then integrate everything.
+
+stages:
+  - name: "Foundation"
+    weeks: [1, 2]
+    description: "Vehicle overview, safety, precision measurement, electrical fundamentals"
+  - name: "System Deep Dives"
+    weeks: [3, 4, 5, 6, 7]
+    description: "Engine, lubrication/cooling/exhaust, chassis, transmission, EV/HVAC/safety"
+  - name: "Integration"
+    weeks: [8]
+    description: "Body electronics, networking, cross-system diagnostics, exam prep"
+  - name: "Optional Extension"
+    weeks: [9, 10, 11]
+    description: "Engine rebuild, gearbox/chassis rebuild, wiring/welding/body"
+
+weeks:
+  - number: 1
+    title: "Meet the Machine"
+    subtitle: "Automotive Fundamentals, Safety & Precision"
+    stage: Foundation
+    exam_weight_marks: 14
+    story: >
+      You've never touched a car professionally. By Friday, you'll know every major
+      system by name and location, you'll be safe to work in any workshop, and you'll
+      measure to hundredths of a millimetre.
+    days:
+      - day: 1
+        theme: "The Car — From Nose to Tail"
+        theory_practice: "40:60"
+        topics:
+          - "Vehicle systems overview (engine, transmission, electrical, suspension, steering, brakes, HVAC, body)"
+          - "Physical walkthrough on a real car — bonnet open, on a lift, underneath"
+          - "The mechatronic shift: how today's car differs from 20 years ago"
+          - "VIN decoding & data plates"
+          - "Parts catalogues & spec sheet reading"
+      - day: 2
+        theme: "Workshop Readiness & Staying Alive"
+        theory_practice: "50:50"
+        topics:
+          - "Workshop equipment (lifts, jacking, jack stands — safe operation)"
+          - "OSHA & ISO standards"
+          - "PPE selection & correct use (HV gloves, arc-flash, eye protection, steel-toed boots)"
+          - "The modern workshop: where danger hides (high voltage, chemicals, rotating parts, heavy components)"
+      - day: 3
+        theme: "Hazards, Compliance & the Fluids That Run Through a Car"
+        theory_practice: "35:65"
+        topics:
+          - "Hazard identification & risk assessment (hands-on with risk matrix)"
+          - "Fire safety & extinguisher types"
+          - "Chemical handling, storage & SDS sheets"
+          - "Environmental compliance (waste oil, coolant, refrigerant, battery disposal)"
+          - "Fluids & consumables overview: engine oil grades, coolant types, brake fluid DOT ratings, transmission fluid, refrigerants, greases"
+      - day: 4
+        theme: "Precision Measurement & Fasteners"
+        theory_practice: "30:70"
+        topics:
+          - "Micrometers, vernier calipers, dial gauges, feeler gauges — purpose, reading, handling"
+          - "Bore, ovality & clearance concepts"
+          - "Fastener types & grades (bolts, studs, nuts, thread types, grade markings)"
+          - "Torque specifications & procedures (click, beam, digital wrenches; torque-angle)"
+          - "Gasket types & sealants (MLS, cork, RTV, thread sealant)"
+      - day: 5
+        theme: "Measurement Mastery & Week 1 Consolidation"
+        theory_practice: "25:75"
+        topics:
+          - "Independent measurement challenge (timed stations)"
+          - "Unit conversions: metric to imperial (torque, pressure, temperature, length)"
+          - "Week 1 review and consolidation"
+          - "Formative MCQ quiz (Week 1 topics)"
+
+  - number: 2
+    title: "Speaking Electricity"
+    subtitle: "E/E Architecture, Electrical Fundamentals & Wiring Craft"
+    stage: Foundation
+    exam_weight_marks: 16
+    story: >
+      Every system you'll study from next week onwards is controlled by electronics.
+      This week, you learn WHY electronics run the car, WHAT the electrical architecture
+      looks like, and HOW to work with it using your hands and a multimeter.
+    days:
+      - day: 6
+        theme: "Why Electronics Run the Car — E/E Architecture & ECU Concepts"
+        theory_practice: "50:50"
+        topics:
+          - "The sensor-ECU-actuator pattern"
+          - "ECU types: ECM, TCU, BCM, ABS module — names, locations, functions"
+          - "Why CAN bus exists (too many wires without it)"
+          - "OBD-II: the technician's window into the ECU world"
+          - "Diagnostic equipment overview (scan tools, oscilloscopes, smoke machines)"
+      - day: 7
+        theme: "Electrical Theory — Ohm's Law, Circuits & Faults"
+        theory_practice: "50:50"
+        topics:
+          - "V = IR and power (P = VI)"
+          - "Series, parallel, and combination circuits"
+          - "Circuit fault types: open circuit, short circuit, high resistance"
+          - "Wiring diagrams & schematics: symbols, current paths, test points, connector IDs"
+      - day: 8
+        theme: "Components, Protection & Wiring Craft"
+        theory_practice: "25:75"
+        topics:
+          - "Relays — construction, operation, testing (NO/NC, coil, contacts)"
+          - "Fuses — types, ratings, fusible links, fuse box layouts"
+          - "Soldering techniques (iron, solder, flux, heat shrink)"
+          - "Crimping techniques (ring, spade, pin terminals)"
+          - "When to solder vs when to crimp"
+      - day: 9
+        theme: "Multimeter Mastery & Battery Systems"
+        theory_practice: "30:70"
+        topics:
+          - "DMM proficiency: DC voltage, AC voltage, resistance, continuity, clamp current"
+          - "Battery construction & chemistry (lead-acid, AGM, EFB)"
+          - "Battery testing: resting voltage, CCA, load test, charging procedures"
+          - "Battery replacement & registration (jump start, battery coding)"
+      - day: 10
+        theme: "Starting & Charging Introduction + Week 2 Consolidation"
+        theory_practice: "35:65"
+        topics:
+          - "Starter motor & alternator — construction overview"
+          - "Basic test sequence: battery to starter draw to alternator output"
+          - "OBD-II practical: read/clear DTCs, examine live data PIDs"
+          - "Week 2 review and consolidation"
+          - "Formative MCQ quiz (Week 2 topics)"
+
+  - number: 3
+    title: "The Heart"
+    subtitle: "Engine Systems: Air, Fuel & Combustion"
+    stage: System Deep Dives
+    exam_weight_marks: 18
+    story: >
+      An engine needs exactly two things to run: air and fuel. This week starts from
+      that simple truth. Day 1 traces how air enters the engine and how fuel gets added
+      to it. Then we zoom in: fuel systems, ignition systems, intake details. By the end,
+      you're inside the valve train, verifying cam timing with a dial gauge.
+    days:
+      - day: 11
+        theme: "Air + Fuel = Combustion — The Engine's Two Inputs"
+        theory_practice: "50:50"
+        topics:
+          - "The powertrain chain: engine to gearbox to differential"
+          - "The four-stroke cycle — gasoline vs diesel differences"
+          - "The air path: air filter to ducting to throttle body to intake manifold to cylinder"
+          - "The fuel path: tank to pump to rail to injector to cylinder"
+          - "ECU coordination of air and fuel"
+          - "Engine block & cylinder head construction"
+      - day: 12
+        theme: "Gasoline Fuel Delivery & Ignition"
+        theory_practice: "55:45"
+        topics:
+          - "MPFI vs GDI: operating principle, injection timing, pressure differences"
+          - "Coil-on-Plug (COP) ignition: signal path from ECU to spark plug"
+          - "EVAP system (charcoal canister, purge valve, leak detection)"
+          - "MAF / MAP sensors — purpose, construction, working, diagnostics"
+      - day: 13
+        theme: "Diesel Fuel Delivery & Intake Control"
+        theory_practice: "55:45"
+        topics:
+          - "Common Rail diesel: HP pump, rail, injectors, multi-injection strategies"
+          - "How diesel differs from gasoline in pressure, timing, and ECU strategy"
+          - "Intake manifold & variable intake geometry"
+          - "EGR valve, EGR cooler, swirl flap actuators"
+      - day: 14
+        theme: "Inside the Engine — Valve Train, Timing & Assembly"
+        theory_practice: "30:70"
+        topics:
+          - "Valve train: camshaft lobes, lifters, rockers, valve springs, stem seals, VVT"
+          - "Timing system: belt vs chain, tensioners, cam phasers, alignment marks"
+          - "Valve timing verification against manufacturer specs"
+          - "Piston-to-wall clearance theory & measurement"
+          - "Fastener preload & torque-to-yield"
+      - day: 15
+        theme: "Engine Diagnostics & Consolidation"
+        theory_practice: "40:60"
+        topics:
+          - "Cross-layer diagnostic scenarios: misfire, rough idle, poor economy"
+          - "Scan tool data interpretation for engine faults"
+          - "Connecting Week 1 measurement skills to engine inspection"
+          - "Week 3 review + formative MCQ"
+
+  - number: 4
+    title: "Keep It Alive"
+    subtitle: "Lubrication, Cooling, Exhaust & Forced Induction"
+    stage: System Deep Dives
+    exam_weight_marks: 16
+    story: >
+      Last week you built the engine in your mind. This week: what keeps it alive.
+      Oil reduces friction. Coolant carries heat away. Exhaust removes waste gases.
+      And if you want more power? Force more air in with a turbocharger.
+    days:
+      - day: 16
+        theme: "Lubrication — The Engine's Lifeblood"
+        theory_practice: "40:60"
+        topics:
+          - "Why lubrication matters: friction, heat, wear"
+          - "Engine oil system: oil pump, filter, galleries, cooler, sump"
+          - "Oil grades (SAE viscosity), API/ACEA ratings, synthetic vs mineral"
+          - "Oil pressure & temperature sensors"
+          - "Oil change procedures, filter replacement"
+      - day: 17
+        theme: "Cooling — Thermal Management"
+        theory_practice: "35:65"
+        topics:
+          - "Cooling system architecture: radiator, hoses, water pump, thermostat, bypass"
+          - "Radiator fans: electric motor, relay, PWM control"
+          - "Coolant types (OAT, IAT, HOAT), concentration testing"
+          - "Cooling system diagnostics: pressure testing, thermostat verification"
+      - day: 18
+        theme: "Exhaust & Emissions Aftertreatment"
+        theory_practice: "50:50"
+        topics:
+          - "Exhaust path: manifold to catalytic converter to DPF to SCR to tailpipe"
+          - "Catalytic converter & oxygen/lambda sensors"
+          - "DPF: substrate, soot loading, regeneration strategies"
+          - "SCR & DEF (AdBlue): dosing, injector, tank, NOx sensors"
+          - "Emission-related fault codes & live sensor data"
+      - day: 19
+        theme: "Turbocharger & Intercooler"
+        theory_practice: "45:55"
+        topics:
+          - "Turbocharger principles: turbine, compressor, bearing housing"
+          - "Wastegate & Variable Geometry Turbo (VGT)"
+          - "Intercooler types, charge piping"
+          - "Boost pressure & EGT sensors"
+          - "Boost leak diagnosis"
+      - day: 20
+        theme: "Thermal & Emissions Diagnostics + Consolidation"
+        theory_practice: "35:65"
+        topics:
+          - "Diagnostic scenarios: overheating, oil pressure drop, boost loss, DPF issues"
+          - "Cross-referencing scan tool data across lubrication, cooling, exhaust, turbo"
+          - "Week 4 review + formative MCQ"
+
+  - number: 5
+    title: "Grip, Turn & Stop"
+    subtitle: "Vehicle Dynamics, Suspension, Steering & Brakes"
+    stage: System Deep Dives
+    exam_weight_marks: 14
+    story: >
+      Before we touch a single suspension component, we answer the question every
+      driver instinctively understands: how does a car grip the road, change direction,
+      and come to a stop? Day 1 builds physical intuition — tyres, forces, friction.
+    days:
+      - day: 21
+        theme: "Vehicle Dynamics — How Cars Grip, Turn & Stop"
+        theory_practice: "55:45"
+        topics:
+          - "Tyre construction, size markings, speed/load ratings, tread depth"
+          - "Forces on a vehicle: longitudinal, lateral, vertical"
+          - "How braking works at a physics level"
+          - "TPMS: direct vs indirect"
+          - "Tyre rotation patterns & wheel balancing"
+      - day: 22
+        theme: "Suspension & Steering Systems"
+        theory_practice: "40:60"
+        topics:
+          - "Suspension types: MacPherson strut, double wishbone, multi-link"
+          - "Shock absorbers & springs: twin-tube/mono-tube, coil/leaf/air"
+          - "Rack-and-pinion steering, Electronic Power Steering (EPS)"
+          - "Wheel alignment: caster, camber, toe"
+      - day: 23
+        theme: "Brake Systems — From Pedal to Wheel"
+        theory_practice: "30:70"
+        topics:
+          - "Pascal's Law applied to braking"
+          - "Master cylinder, brake booster, brake lines"
+          - "Disc brakes: caliper, pads, rotor, wear sensors"
+          - "Drum brakes: shoes, wheel cylinder, adjuster"
+          - "Electronic Parking Brake (EPB)"
+          - "Brake fluid: DOT ratings, bleeding, moisture testing"
+      - day: 24
+        theme: "ABS, ESC & Chassis Electronics"
+        theory_practice: "40:60"
+        topics:
+          - "ABS: wheel speed sensors, hydraulic modulator, ECU logic"
+          - "ESC: yaw rate sensor, lateral acceleration sensor, steering angle sensor"
+          - "Scan tool ABS/ESC fault reading and live data"
+      - day: 25
+        theme: "Chassis Diagnostics & Consolidation"
+        theory_practice: "35:65"
+        topics:
+          - "Diagnostic scenarios: vehicle pull, vibration, noise over bumps, brake pedal feel"
+          - "Systematic approach: symptom to likely system to test to root cause"
+          - "Week 5 review + formative MCQ"
+
+  - number: 6
+    title: "Power Delivery & Power Supply"
+    subtitle: "Transmission, Driveline & Starting/Charging"
+    stage: System Deep Dives
+    exam_weight_marks: 12
+    story: >
+      The engine makes power. But how does that power reach the wheels? And what keeps
+      the whole vehicle electrically alive? This week opens with the big picture — follow
+      the power from crankshaft to tyre contact patch.
+    days:
+      - day: 26
+        theme: "The Power Flow — From Crankshaft to Contact Patch"
+        theory_practice: "55:45"
+        topics:
+          - "Complete mechanical power chain: crankshaft to flywheel to clutch to gearbox to wheels"
+          - "Why we need a gearbox: speed vs torque trade-off, gear ratios"
+          - "Why we need a clutch or torque converter"
+          - "Why we need a differential"
+          - "Parallel electrical power chain: battery to starter to alternator"
+      - day: 27
+        theme: "Manual Transmission & Clutch"
+        theory_practice: "40:60"
+        topics:
+          - "Gear theory: gear pairs, ratios, synchronizer rings, hub sleeve"
+          - "Clutch components: friction disc, pressure plate, release bearing, flywheel"
+          - "Clutch inspection: disc wear, pressure plate, bearing noise"
+      - day: 28
+        theme: "Automatic Transmissions & Driveline"
+        theory_practice: "45:55"
+        topics:
+          - "Torque converter: impeller, turbine, stator, lock-up clutch"
+          - "DSG/DCT: dual clutch pack, mechatronic unit"
+          - "Driveshafts, CV joints, U-joints, CV boots"
+          - "Differential: ring & pinion, side gears, spider gears, LSD"
+      - day: 29
+        theme: "Starting & Charging Systems — Deep Dive"
+        theory_practice: "35:65"
+        topics:
+          - "Starter motor construction, operation, testing"
+          - "Starter circuit: ignition switch, neutral safety switch, voltage drop testing"
+          - "Alternator construction, operation, testing"
+          - "Full test sequence: battery SOH to starter draw to alternator output to parasitic drain"
+      - day: 30
+        theme: "Transmission & Charging Diagnostics + Consolidation"
+        theory_practice: "35:65"
+        topics:
+          - "Scheduled servicing procedures: service interval charts, fluid changes"
+          - "Cross-system diagnostic scenarios"
+          - "Service documentation practices"
+          - "Week 6 review + formative MCQ"
+
+  - number: 7
+    title: "The Future & The Comfort"
+    subtitle: "EV/Hybrid, HVAC & Vehicle Safety Systems"
+    stage: System Deep Dives
+    exam_weight_marks: 16
+    story: >
+      The car of today — and tomorrow. High voltage demands new respect, climate control
+      demands precision, and safety systems are getting smarter than ever.
+    days:
+      - day: 31
+        theme: "Hybrid Architectures & EV Components"
+        theory_practice: "55:45"
+        topics:
+          - "Series, parallel, series-parallel hybrid configurations"
+          - "Electric motors (PMSM, induction), inverters, DC-DC converters"
+          - "HV battery pack: cell chemistry (NMC, LFP), modules, BMS, contactors, pre-charge"
+      - day: 32
+        theme: "High-Voltage Safety Protocols"
+        theory_practice: "30:70"
+        topics:
+          - "Isolation procedures, Lock-Out/Tag-Out"
+          - "HV-rated PPE & insulated tools"
+          - "De-energization verification using CAT III meter"
+          - "Hands-on: safe approach to an HV system"
+      - day: 33
+        theme: "HVAC System"
+        theory_practice: "40:60"
+        topics:
+          - "Refrigeration cycle: evaporation, compression, condensation, expansion"
+          - "Components: compressor, condenser, evaporator, TXV/orifice tube"
+          - "Heating & ventilation: heater core, blend door, blower motor, cabin air filter"
+          - "Refrigerant handling, recovery, leak detection"
+      - day: 34
+        theme: "Vehicle Safety Systems & ADAS"
+        theory_practice: "50:50"
+        topics:
+          - "Passive safety: airbags, seatbelts, crumple zones"
+          - "Active safety & ADAS: ESC, AEB, Lane Keep Assist, Adaptive Cruise Control"
+          - "ADAS sensors: RADAR, LIDAR, ultrasonic, camera"
+          - "Sensor calibration: static vs dynamic"
+      - day: 35
+        theme: "EV/HVAC/Safety Diagnostics & Consolidation"
+        theory_practice: "40:60"
+        topics:
+          - "Diagnostic scenarios across HV systems, HVAC, safety systems"
+          - "Week 7 review + formative MCQ"
+
+  - number: 8
+    title: "The Complete Technician"
+    subtitle: "Body Electronics, Networking & Cross-System Integration"
+    stage: Integration
+    exam_weight_marks: 4
+    story: >
+      A real technician doesn't think in chapters. This week, you stop being a student
+      and start thinking like a diagnostician. Every system connects through the network.
+    days:
+      - day: 36
+        theme: "Lighting Systems"
+        theory_practice: "40:60"
+        topics:
+          - "Headlights: halogen, HID/xenon, LED, matrix LED"
+          - "Headlight aiming & alignment"
+          - "Tail lights, indicators, interior lighting, DRL"
+          - "Adaptive & automatic lighting"
+      - day: 37
+        theme: "Body Electronics"
+        theory_practice: "35:65"
+        topics:
+          - "Immobiliser systems"
+          - "Power windows, central locking, keyless entry"
+          - "Wipers & washers, mirrors, horn, sunroof"
+          - "Instrument cluster & warning lights"
+      - day: 38
+        theme: "CAN Bus & Network Diagnostics — Deep Dive"
+        theory_practice: "40:60"
+        topics:
+          - "CAN protocol: CAN-H, CAN-L, message IDs, priority, termination"
+          - "Network fault diagnosis: U-codes, bus-off, module offline"
+          - "Oscilloscope CAN capture & interpretation"
+          - "Service interval reset procedures"
+      - day: 39
+        theme: "Cross-System Diagnostic Scenarios"
+        theory_practice: "20:80"
+        topics:
+          - "Structured diagnostic workflow: symptom to system to test to repair to verify"
+          - "Multi-system fault finding"
+          - "Post-repair verification"
+          - "Pre-Delivery Inspection (PDI)"
+      - day: 40
+        theme: "Exam Preparation & Capstone"
+        theory_practice: "80:20"
+        topics:
+          - "Full mock exam: 50 MCQs mirroring TUV SUD format"
+          - "Review weak areas"
+          - "Exam strategy: time management, elimination"
+          - "Program wrap-up"
+
+  - number: 9
+    title: "The Surgeon: Engine & Turbo"
+    subtitle: "Rebuild Stage (Optional)"
+    stage: Optional Extension
+    days:
+      - day: 41
+        theme: "Engine Strip-Down"
+        theory_practice: "20:80"
+        topics: ["Disassembly sequence, component tagging, cleaning procedures"]
+      - day: 42
+        theme: "Engine Inspection & Measurement"
+        theory_practice: "20:80"
+        topics: ["Wear assessment, bore measurement, crank journals, cam lobes"]
+      - day: 43
+        theme: "Engine Re-Assembly"
+        theory_practice: "15:85"
+        topics: ["Torque sequences, gasket installation, sealant application, PTW verification"]
+      - day: 44
+        theme: "Turbo Strip-Down, Inspection & Rebuild"
+        theory_practice: "20:80"
+        topics: ["Shaft play, wheel inspection, cartridge rebuild, balancing awareness"]
+      - day: 45
+        theme: "First Start & Verification"
+        theory_practice: "20:80"
+        topics: ["First-start procedure, turbo oil pre-lube, break-in, post-rebuild verification"]
+
+  - number: 10
+    title: "The Surgeon: Gearbox & Chassis"
+    subtitle: "Rebuild Stage (Optional)"
+    stage: Optional Extension
+    days:
+      - day: 46
+        theme: "Gearbox Strip-Down"
+        theory_practice: "20:80"
+        topics: ["Disassembly, bearing extraction, component layout, inspection methodology"]
+      - day: 47
+        theme: "Gearbox Inspection & Re-Assembly"
+        theory_practice: "15:85"
+        topics: ["Synchro wear measurement, shimming, preload, end-float, sealant"]
+      - day: 48
+        theme: "Strut & Damper Replacement"
+        theory_practice: "15:85"
+        topics: ["Spring compressor safety, strut disassembly, top mount, reassembly"]
+      - day: 49
+        theme: "Suspension Arm & Bush Replacement"
+        theory_practice: "15:85"
+        topics: ["Press tools, bush extraction/installation, torque specs, alignment"]
+      - day: 50
+        theme: "Rebuild Verification & Road Test"
+        theory_practice: "30:70"
+        topics: ["Gearbox function test, suspension geometry, road test, consolidation"]
+
+  - number: 11
+    title: "The Craftsman"
+    subtitle: "Wiring, Welding, Body & Finishing (Optional)"
+    stage: Optional Extension
+    days:
+      - day: 51
+        theme: "Wiring Harness Routing & Repair"
+        theory_practice: "25:75"
+        topics: ["Routing principles, loom tape, grommets, splice techniques"]
+      - day: 52
+        theme: "Harness Rebuild Exercise"
+        theory_practice: "10:90"
+        topics: ["Build/rebuild a harness section, terminal repair, continuity testing"]
+      - day: 53
+        theme: "MIG Welding & Spot Welding Awareness"
+        theory_practice: "20:80"
+        topics: ["MIG setup, joint prep, exhaust repair practice, spot welding overview"]
+      - day: 54
+        theme: "Body Structure, Panels & Trim"
+        theory_practice: "50:50"
+        topics: ["BIW (unibody vs BOF), exterior panels, bumpers, interior trims, corrosion protection"]
+      - day: 55
+        theme: "Car Audio, NVH & Program Wrap-Up"
+        theory_practice: "50:50"
+        topics: ["Car audio overview, NVH diagnosis basics, final consolidation"]

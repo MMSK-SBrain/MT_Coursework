@@ -1,0 +1,496 @@
+{
+  "module": 2,
+  "title": "Classification",
+  "description": "Session rubrics for Module 2: Classification - All 6 sessions, 15 points each",
+  "total_points": 90,
+  "sessions": [
+    {
+      "session": "2.1",
+      "title": "Introduction to Classification & First Classifier (Iris)",
+      "total_points": 15,
+      "description": "Build and train first classification model using Iris dataset",
+      "criteria": [
+        {
+          "category": "Understanding",
+          "points": 5,
+          "description": "Demonstrates understanding of classification concepts and train/test split",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Clearly explains classification vs regression, provides examples, accurately describes train/test split purpose, distinguishes features from labels"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Explains classification and train/test split adequately with minor gaps in explanation or examples"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Basic understanding of classification with some confusion about train/test split or feature/label distinction"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "Significant misunderstandings about classification, train/test split, or cannot distinguish features from labels"
+            }
+          }
+        },
+        {
+          "category": "Code Implementation",
+          "points": 5,
+          "description": "Successfully implements complete Iris classification pipeline",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Code runs without errors, achieves >90% accuracy, includes proper train/test split, well-commented, uses multiple algorithms"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Code runs with minor issues, achieves 80-90% accuracy, proper split, basic comments, at least 2 algorithms"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Code runs but below 80% accuracy, or has split issues, minimal comments, only 1 algorithm"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "Code has significant errors, doesn't run, or no proper train/test split implemented"
+            }
+          }
+        },
+        {
+          "category": "Analysis & Visualization",
+          "points": 5,
+          "description": "Analyzes results and creates meaningful visualizations",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Thorough analysis with insights, includes confusion matrix, feature distributions, algorithm comparison, identifies patterns and draws conclusions"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Adequate analysis with some insights, includes basic visualizations (confusion matrix, distributions), reasonable conclusions"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Basic analysis, mostly descriptive, minimal visualizations, limited insights"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "Little to no analysis, missing key visualizations, no meaningful conclusions"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "session": "2.2",
+      "title": "Evaluation Metrics & Confusion Matrix",
+      "total_points": 15,
+      "description": "Master evaluation metrics including accuracy, precision, recall, F1, and confusion matrix interpretation",
+      "criteria": [
+        {
+          "category": "Metric Understanding",
+          "points": 5,
+          "description": "Demonstrates understanding of accuracy, precision, recall, F1-score",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Clearly explains all metrics, provides correct formulas, identifies when to use each metric, explains tradeoffs, understands accuracy limitations"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Explains most metrics correctly, understands basic tradeoffs, minor gaps in when to use each"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Basic understanding of metrics, some confusion between precision/recall, limited understanding of when to use each"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "Significant confusion about metrics, cannot distinguish precision from recall, doesn't understand accuracy limitations"
+            }
+          }
+        },
+        {
+          "category": "Confusion Matrix Analysis",
+          "points": 5,
+          "description": "Correctly interprets and analyzes confusion matrices",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Accurately reads confusion matrix, identifies true/false positives/negatives, explains where model gets confused, relates to metrics, provides actionable insights"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Correctly reads confusion matrix, identifies most error types, relates to metrics, basic insights"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Basic confusion matrix reading, some errors in identifying TP/FP/TN/FN, limited insights"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "Cannot correctly read confusion matrix, confuses rows/columns, no meaningful analysis"
+            }
+          }
+        },
+        {
+          "category": "Practical Application",
+          "points": 5,
+          "description": "Applies appropriate metrics to real scenarios",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Selects appropriate metrics for given scenarios (medical, spam, etc.), justifies choices, understands business impact, considers class imbalance"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Generally selects appropriate metrics, provides basic justification, understands some business context"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Sometimes selects appropriate metrics, limited justification, basic business understanding"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "Inappropriate metric selection, no justification, doesn't consider business context"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "session": "2.3",
+      "title": "Multiple Classification Algorithms",
+      "total_points": 15,
+      "description": "Compare and contrast Decision Trees, Logistic Regression, Random Forest, KNN, and SVM",
+      "criteria": [
+        {
+          "category": "Algorithm Understanding",
+          "points": 5,
+          "description": "Understands how different algorithms work",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Explains how each algorithm makes decisions, identifies strengths/weaknesses, understands hyperparameters, compares approaches conceptually"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Explains most algorithms adequately, identifies some strengths/weaknesses, basic hyperparameter understanding"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Basic algorithm understanding, limited ability to compare, minimal hyperparameter knowledge"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "Cannot explain algorithms, no understanding of differences or hyperparameters"
+            }
+          }
+        },
+        {
+          "category": "Implementation & Comparison",
+          "points": 5,
+          "description": "Implements and compares multiple algorithms effectively",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Implements 4+ algorithms correctly, creates comprehensive comparison (accuracy, speed, interpretability), visualizes results, draws meaningful conclusions"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Implements 3 algorithms correctly, adequate comparison, basic visualization, reasonable conclusions"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Implements 2 algorithms, basic comparison (accuracy only), minimal visualization, limited conclusions"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "Implements 1 or no algorithms correctly, no meaningful comparison, missing analysis"
+            }
+          }
+        },
+        {
+          "category": "Algorithm Selection",
+          "points": 5,
+          "description": "Makes informed decisions about which algorithm to use",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Selects appropriate algorithm based on multiple factors (accuracy, interpretability, speed, data characteristics), provides strong justification, considers production requirements"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Selects reasonable algorithm, considers 2-3 factors, provides basic justification"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Selects algorithm based mainly on accuracy, limited justification, few other factors considered"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "Random or unjustified algorithm selection, no consideration of tradeoffs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "session": "2.4",
+      "title": "Text Classification & Spam Detection",
+      "total_points": 15,
+      "description": "Build spam detector using text preprocessing, vectorization, and classification",
+      "criteria": [
+        {
+          "category": "Text Preprocessing",
+          "points": 5,
+          "description": "Correctly preprocesses text data for ML",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Implements complete preprocessing pipeline (lowercase, punctuation removal, tokenization, stop words), understands purpose of each step, handles edge cases"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Implements most preprocessing steps, understands main purposes, basic edge case handling"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Implements basic preprocessing, limited understanding of purposes, no edge case handling"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "Minimal or incorrect preprocessing, doesn't understand purposes"
+            }
+          }
+        },
+        {
+          "category": "Vectorization & Model Building",
+          "points": 5,
+          "description": "Converts text to features and builds effective classifier",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Implements both CountVectorizer and TF-IDF, compares approaches, builds spam detector achieving >95% accuracy, tests multiple algorithms, handles imbalanced data"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Implements one vectorization method correctly, achieves 90-95% accuracy, tests 2 algorithms, acknowledges imbalance"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Basic vectorization implementation, achieves 80-90% accuracy, single algorithm, ignores imbalance"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "Incorrect vectorization, below 80% accuracy, or code doesn't work"
+            }
+          }
+        },
+        {
+          "category": "Evaluation & Testing",
+          "points": 5,
+          "description": "Evaluates spam detector with appropriate metrics and real-world testing",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Uses precision/recall/F1 (not just accuracy), creates confusion matrix, tests with new custom emails (10+), analyzes errors, considers false positive vs false negative tradeoffs"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Uses appropriate metrics, confusion matrix, tests with 5+ new emails, basic error analysis"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Uses accuracy only, minimal confusion matrix analysis, tests with 1-3 emails, limited error analysis"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "No proper evaluation metrics, no testing with new emails, no error analysis"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "session": "2.5",
+      "title": "Customer Churn Prediction & Feature Engineering",
+      "total_points": 15,
+      "description": "Predict customer churn with advanced feature engineering and handling categorical data",
+      "criteria": [
+        {
+          "category": "Feature Engineering",
+          "points": 5,
+          "description": "Creates meaningful new features from raw data",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Creates 5+ engineered features with business logic (tenure categories, avg monthly charge, service combinations), justifies each feature, tests feature importance"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Creates 3-4 engineered features, basic justification, some feature importance analysis"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Creates 1-2 engineered features, limited justification, minimal importance analysis"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "No feature engineering or arbitrary features with no justification"
+            }
+          }
+        },
+        {
+          "category": "Categorical Data Handling",
+          "points": 5,
+          "description": "Correctly handles categorical variables (encoding, scaling)",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Correctly applies Label Encoding and One-Hot Encoding where appropriate, understands differences, handles all categorical variables, applies feature scaling to numerical features"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Correctly encodes most categorical variables, understands main differences, basic scaling"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Encodes some variables (may mix up label/one-hot), limited understanding, minimal scaling"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "Incorrect encoding, doesn't handle categorical variables, no scaling"
+            }
+          }
+        },
+        {
+          "category": "Business Analysis",
+          "points": 5,
+          "description": "Connects ML results to business insights and actions",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Identifies key churn drivers, provides actionable recommendations, considers cost of false positives vs false negatives, analyzes feature importance for business insights, estimates business impact"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Identifies main churn drivers, provides some recommendations, considers metric tradeoffs, basic business insights"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Lists churn factors, limited recommendations, minimal business context"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "No business analysis, no recommendations, purely technical focus"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "session": "2.6",
+      "title": "Medical Diagnosis, Model Interpretation & Production",
+      "total_points": 15,
+      "description": "Advanced topics including healthcare ML, ROC/AUC, interpretability, and deployment considerations",
+      "criteria": [
+        {
+          "category": "Advanced Metrics (ROC/AUC)",
+          "points": 5,
+          "description": "Understands and applies ROC curves and AUC",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Creates ROC curve, calculates AUC, interprets meaning, compares to other metrics, understands threshold tradeoffs, explains significance of AUC value"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Creates ROC curve, calculates AUC, basic interpretation, understands it's better than accuracy for imbalanced data"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Creates ROC curve, limited interpretation, basic AUC understanding"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "Cannot create ROC curve or doesn't understand AUC"
+            }
+          }
+        },
+        {
+          "category": "Model Interpretability",
+          "points": 5,
+          "description": "Analyzes and explains model decisions",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Analyzes feature importance, explains key decision factors, visualizes decision boundaries (if applicable), relates findings to domain knowledge, considers ethical implications"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Analyzes feature importance, identifies key factors, basic visualizations, some domain connection"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Basic feature importance analysis, limited domain connection, minimal visualization"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "No interpretability analysis, black-box approach, no domain consideration"
+            }
+          }
+        },
+        {
+          "category": "Production Readiness",
+          "points": 5,
+          "description": "Considers deployment, monitoring, and maintenance",
+          "levels": {
+            "excellent": {
+              "points": "4.5-5",
+              "description": "Discusses cross-validation, handles edge cases, considers data drift monitoring, plans for model updates, addresses ethical considerations, documents assumptions and limitations"
+            },
+            "good": {
+              "points": "3.5-4.4",
+              "description": "Uses cross-validation, considers some edge cases, acknowledges need for monitoring, basic limitations documentation"
+            },
+            "adequate": {
+              "points": "2.5-3.4",
+              "description": "Basic validation, minimal edge case handling, limited production considerations"
+            },
+            "poor": {
+              "points": "0-2.4",
+              "description": "No production considerations, no validation beyond single train/test, no limitations acknowledged"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "grading_scale": {
+    "A": {
+      "range": "85-90",
+      "description": "Excellent - Exceeds expectations in all areas"
+    },
+    "B": {
+      "range": "75-84",
+      "description": "Good - Meets expectations with some areas of excellence"
+    },
+    "C": {
+      "range": "63-74",
+      "description": "Adequate - Meets minimum requirements"
+    },
+    "F": {
+      "range": "0-62",
+      "description": "Failing - Does not meet minimum requirements"
+    }
+  },
+  "passing_threshold": 63,
+  "metadata": {
+    "created": "2026-01-06",
+    "version": "1.0",
+    "total_sessions": 6,
+    "points_per_session": 15,
+    "total_possible_points": 90
+  }
+}

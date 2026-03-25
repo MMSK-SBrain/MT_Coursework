@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 24,
+  "week": 5,
+  "session_title": "ABS, ESC & Chassis Electronics",
+  "questions": [
+    {
+      "id": "D24-Q01",
+      "question": "What is the primary purpose of an Anti-lock Braking System (ABS)?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To prevent wheel lock-up during hard braking, maintaining steering control",
+        "B": "To reduce brake pad wear and extend service intervals",
+        "C": "To increase the maximum braking force beyond what the tyres can provide",
+        "D": "To automatically apply the brakes when the driver removes their foot from the accelerator"
+      },
+      "correct_answer": "A",
+      "explanation": "ABS prevents wheel lock-up during hard braking by modulating brake pressure at each wheel individually. Its primary benefit is maintaining steering control — a locked wheel has zero lateral grip and cannot respond to steering input. ABS keeps each wheel just below the lock-up threshold, preserving both braking effectiveness and the driver's ability to steer around obstacles.",
+      "topic": "ABS purpose and function",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D24-Q02",
+      "question": "A passive (inductive) wheel speed sensor generates what type of electrical signal?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "A constant DC voltage proportional to wheel speed",
+        "B": "A digital square wave with constant amplitude",
+        "C": "An AC sine wave whose frequency and amplitude increase with wheel speed",
+        "D": "A pulse-width modulated signal controlled by the ABS ECU"
+      },
+      "correct_answer": "C",
+      "explanation": "A passive (inductive) wheel speed sensor consists of a permanent magnet and coil. As the toothed reluctor ring rotates past the sensor, the changing magnetic field induces an AC sine wave voltage. Both the frequency (speed of teeth passing) and amplitude (strength of magnetic field change) increase with wheel speed. At very low speeds, the signal becomes too small to detect reliably — this is a key limitation compared to active sensors.",
+      "topic": "Passive wheel speed sensor signal",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D24-Q03",
+      "question": "During ABS operation, what does the 'pressure hold' phase accomplish?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "It increases brake pressure to maximum to stop the vehicle faster",
+        "B": "It freezes the current brake pressure at a wheel by closing the inlet valve while keeping the outlet valve closed",
+        "C": "It releases all brake pressure from the caliper to let the wheel spin freely",
+        "D": "It activates the pump motor to recirculate brake fluid to the master cylinder"
+      },
+      "correct_answer": "B",
+      "explanation": "In the pressure hold phase, the ABS ECU energises the normally-open inlet solenoid valve to close it, blocking additional pressure from the master cylinder. The normally-closed outlet valve remains closed, trapping the existing pressure at the caliper. This freezes the braking force at its current level while the ECU evaluates whether the wheel is recovering or still approaching lock-up. If lock-up continues, the system moves to the pressure reduce phase.",
+      "topic": "ABS three-phase pressure control",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D24-Q04",
+      "question": "Which additional sensor does an ESC (Electronic Stability Control) system require beyond the sensors used by ABS alone?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Tyre pressure sensor",
+        "B": "Yaw rate sensor",
+        "C": "Engine coolant temperature sensor",
+        "D": "Exhaust gas oxygen sensor"
+      },
+      "correct_answer": "B",
+      "explanation": "ESC requires a yaw rate sensor (gyroscope) to measure the vehicle's actual rotation rate around its vertical axis. By comparing the yaw rate (what the vehicle is actually doing) with the steering angle (what the driver intends), the ESC ECU can detect oversteer or understeer conditions. ABS uses only wheel speed sensors. ESC adds the yaw rate sensor, a lateral acceleration sensor, and uses the steering angle sensor — all three are beyond what basic ABS requires.",
+      "topic": "ESC sensor requirements",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D24-Q05",
+      "question": "What is the key advantage of an active (Hall effect) wheel speed sensor over a passive (inductive) sensor?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "It does not require any electrical connection to the ABS ECU",
+        "B": "It produces a stronger signal at highway speeds",
+        "C": "It can detect wheel speed accurately down to zero km/h",
+        "D": "It has a longer service life due to having no moving parts"
+      },
+      "correct_answer": "C",
+      "explanation": "The active (Hall effect) sensor produces a clean digital square wave signal with constant amplitude, regardless of wheel speed. This means it works reliably all the way down to zero km/h — critical for modern functions like hill-start assist, EPB, and stop-and-go traffic ABS operation. Passive sensors produce an AC signal whose amplitude drops toward zero at very low speeds, making them unreliable below approximately 5-7 km/h. Both sensor types have no internal moving parts.",
+      "topic": "Active vs passive wheel speed sensors",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D24-Q06",
+      "question": "A vehicle enters a left-hand corner at moderate speed. The ESC system detects that the rear of the vehicle is sliding outward (oversteer). Which wheel will the ESC system apply braking force to in order to correct the oversteer?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The left rear wheel — to slow the inside rear and reduce yaw",
+        "B": "The right front wheel — braking the outside front creates a counter-yaw moment opposing the spin",
+        "C": "Both rear wheels equally — to anchor the rear axle",
+        "D": "The left front wheel — braking the inside front pulls the nose into the corner"
+      },
+      "correct_answer": "B",
+      "explanation": "During oversteer in a left-hand corner, the rear of the vehicle swings outward (to the right), and the vehicle rotates too much. The ESC system applies braking to the outside front wheel (right front). This creates a counter-clockwise yaw moment (when viewed from above) that opposes the excessive clockwise rotation, stabilising the vehicle. Braking the outside front wheel acts like an anchor point that 'pulls' the front of the car back toward the outside, reducing the yaw rate. For understeer correction, the ESC would brake the inside rear wheel instead.",
+      "topic": "ESC oversteer correction",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D24-Q07",
+      "question": "A scan tool displays fault code C0035 — 'Left Front Wheel Speed Sensor Signal Erratic.' The technician measures the sensor resistance and finds it reads 1,100 ohms (within the 800-1,400 ohm specification). What should the technician inspect next?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the sensor immediately since the fault code confirms sensor failure",
+        "B": "Inspect the tone ring (reluctor ring) for missing teeth, cracks, or metallic debris, and check the sensor air gap",
+        "C": "Replace the ABS hydraulic modulator, as erratic signals indicate ECU processing errors",
+        "D": "Check the brake fluid level, since low fluid can cause false wheel speed readings"
+      },
+      "correct_answer": "B",
+      "explanation": "The sensor resistance is within specification, indicating the sensor coil itself is not broken or shorted. An 'erratic signal' fault typically indicates the signal pattern is corrupted rather than absent. The most common causes are tone ring problems: cracked ring, missing teeth, or metallic debris filling the gaps between teeth — all of which distort the signal pattern. The sensor air gap (distance from sensor tip to tone ring) should also be checked, as excessive gap weakens the signal. Always inspect the tone ring before replacing a sensor that tests electrically sound.",
+      "topic": "ABS fault diagnosis — tone ring inspection",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D24-Q08",
+      "question": "A technician is testing a passive wheel speed sensor with a multimeter. With the wheel spun by hand, the multimeter on AC voltage setting reads approximately 0.3 V. The three other passive sensors read between 0.8 V and 1.2 V at similar hand-spin speed. What is the most likely cause of the low signal?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The ABS ECU is not supplying enough power to the sensor",
+        "B": "The brake pads on that wheel are contaminated with grease",
+        "C": "The tyre on that wheel has less tread depth, reducing rotation speed",
+        "D": "The sensor air gap is too large — the sensor is too far from the tone ring"
+      },
+      "correct_answer": "D",
+      "explanation": "Passive (inductive) sensors generate voltage proportional to the rate of change of the magnetic field, which depends directly on the proximity of the tone ring teeth to the sensor tip. An excessive air gap weakens the magnetic field changes and reduces the induced voltage. Since the other three sensors produce 0.8-1.2 V at similar speeds, the affected sensor should produce a similar output if the gap were correct. Common causes of an enlarged air gap include a pushed-back sensor, a worn tone ring, or debris packing behind the sensor. Passive sensors do not receive power from the ECU — they are self-generating.",
+      "topic": "Wheel speed sensor testing",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D24-Q09",
+      "question": "During aggressive acceleration on a wet road, the traction control system (TCS) activates. The TCS shares hardware with the ABS system. How does TCS reduce wheelspin on the driven wheels?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "It increases engine power to push through the loss of traction",
+        "B": "It locks the differential mechanically to distribute torque equally",
+        "C": "It applies brake pressure to the spinning wheel and/or requests the engine ECU to reduce engine torque",
+        "D": "It activates the electric power steering to counter the steering pull caused by wheelspin"
+      },
+      "correct_answer": "C",
+      "explanation": "Traction Control (TCS) detects wheelspin by comparing driven wheel speeds (via ABS wheel speed sensors) against non-driven wheel speeds. When a driven wheel spins faster than the vehicle is moving, TCS intervenes in two ways: (1) it uses the ABS hydraulic modulator to apply brake pressure to the spinning wheel, which also has the effect of transferring torque to the opposite wheel through the differential; and (2) it sends a CAN bus request to the engine ECU to reduce engine torque (via throttle reduction, ignition retard, or fuel cut). TCS reuses ABS sensors and the hydraulic modulator — no additional hydraulic hardware is needed.",
+      "topic": "Traction control system operation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D24-Q10",
+      "question": "A vehicle's ABS warning light illuminates and remains on during driving. A scan tool reveals a fault code indicating 'Right Rear Wheel Speed Sensor — Open Circuit.' The technician finds that the rear wheel bearing on that corner was replaced the previous week. What is the most likely cause of the fault?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The new wheel bearing is a different size, altering the gear ratio calculation in the ABS ECU",
+        "B": "The ABS ECU needs a software update to recognise the new bearing part number",
+        "C": "The magnetic encoder ring integrated into the bearing seal was damaged during installation or the sensor connector was not reconnected after the bearing replacement",
+        "D": "The brake fluid was contaminated during the bearing replacement, affecting the hydraulic modulator"
+      },
+      "correct_answer": "C",
+      "explanation": "Many modern vehicles use active (Hall effect) wheel speed sensors that read a magnetic encoder ring integrated into the wheel bearing seal. During bearing replacement, the encoder ring can be damaged by heat (from pressing), impact, or contact with magnetic tools. Additionally, the sensor wiring connector is often disconnected during the procedure and may not be fully reconnected. An 'open circuit' code points to either a disconnected connector, a broken wire, or a damaged sensor. Given the timing (one week after bearing replacement), the installation procedure is the clear suspect. The technician should check the connector first, then inspect the encoder ring for damage.",
+      "topic": "Post-repair ABS fault diagnosis",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

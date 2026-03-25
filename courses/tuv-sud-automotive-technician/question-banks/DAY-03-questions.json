@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 3,
+  "week": 1,
+  "session_title": "Hazards, Compliance & the Fluids That Run Through a Car",
+  "questions": [
+    {
+      "id": "D03-Q01",
+      "question": "In a risk assessment matrix, the risk score is calculated as:",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Severity + Likelihood",
+        "B": "Severity / Likelihood",
+        "C": "Severity x Likelihood",
+        "D": "Severity - Likelihood"
+      },
+      "correct_answer": "C",
+      "explanation": "Risk is calculated by multiplying Likelihood by Severity (Risk = L x S). Addition would understate high-severity/high-likelihood combinations, while multiplication correctly escalates the risk score as both factors increase.",
+      "topic": "Risk assessment matrix",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D03-Q02",
+      "question": "Which section of a Safety Data Sheet (SDS) contains first aid measures?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Section 2",
+        "B": "Section 4",
+        "C": "Section 7",
+        "D": "Section 11"
+      },
+      "correct_answer": "B",
+      "explanation": "Section 4 of an SDS covers first aid measures for eye contact, skin contact, inhalation, and ingestion. Section 2 covers hazard identification and GHS pictograms, while Section 7 addresses handling and storage requirements.",
+      "topic": "Safety Data Sheets",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D03-Q03",
+      "question": "What happens when IAT (green) coolant is mixed with OAT (orange) coolant?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The mixture becomes more effective at preventing corrosion",
+        "B": "The colour changes but performance is unaffected",
+        "C": "The coolant immediately boils and must be drained",
+        "D": "A gel or sludge forms that clogs heater core and radiator passages"
+      },
+      "correct_answer": "D",
+      "explanation": "Mixing IAT and OAT coolant chemistries causes a gel or sludge to form that clogs the heater core, radiator passages, and water pump. This is a common and expensive mistake (approximately 1,000 euros repair). The mixture does not boil; it silently solidifies inside the cooling system.",
+      "topic": "Coolant types and compatibility",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D03-Q04",
+      "question": "Which fire extinguisher type is correct for an electrical panel fire in a workshop?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Water (red band)",
+        "B": "Foam (cream band)",
+        "C": "CO2 (black band)",
+        "D": "Wet chemical (yellow band)"
+      },
+      "correct_answer": "C",
+      "explanation": "CO2 extinguishers are correct for electrical fires because they are non-conductive and leave no residue. Water extinguishers must NEVER be used on electrical fires as water conducts electricity and could electrocute the operator.",
+      "topic": "Fire extinguisher types",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D03-Q05",
+      "question": "Why must brake fluid be flushed from the hydraulic system approximately every 2 years?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "It is hygroscopic and absorbs moisture, which lowers its boiling point",
+        "B": "It evaporates over time and the level drops",
+        "C": "It reacts with the rubber seals and becomes acidic",
+        "D": "Its colour darkens and it can no longer be visually inspected"
+      },
+      "correct_answer": "A",
+      "explanation": "DOT 3, 4, and 5.1 brake fluids are glycol-based and hygroscopic, meaning they absorb moisture from the atmosphere over time. This absorbed moisture lowers the boiling point significantly (e.g., DOT 4 drops from 230 degrees C dry to 155 degrees C wet), risking vapour lock and brake failure under hard braking.",
+      "topic": "Brake fluid properties",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D03-Q06",
+      "question": "A technician is assessing the risk of grinding a brake disc without eye protection. They rate likelihood as 4 (likely) and severity as 4 (major/permanent disability). Using the risk matrix, what is the risk score and required action?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Risk score 8 (medium) — proceed with caution",
+        "B": "Risk score 16 (extreme) — work cannot proceed until controls are applied",
+        "C": "Risk score 12 (high) — apply administrative controls only",
+        "D": "Risk score 4 (low) — acceptable risk, no action needed"
+      },
+      "correct_answer": "B",
+      "explanation": "Risk = L x S = 4 x 4 = 16, which falls in the extreme (red) zone. Work cannot proceed until controls reduce the risk. The control here is wearing safety glasses and a face shield, which reduces likelihood of eye injury. Option A incorrectly calculates 4+4=8 using addition instead of multiplication.",
+      "topic": "Risk assessment application",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D03-Q07",
+      "question": "A junior technician needs to top up the automatic transmission fluid on a customer's vehicle. The transmission dipstick shows the current fluid is red. The technician finds a container of Dexron VI ATF (red) and the vehicle specification calls for Toyota WS ATF. What is the correct action?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Use the Dexron VI ATF since it is the correct colour and an ATF product",
+        "B": "Mix equal parts Dexron VI and engine oil to approximate the specification",
+        "C": "Do not add any fluid until the exact Toyota WS ATF specification is obtained",
+        "D": "Add the Dexron VI and plan to flush the system at the next service"
+      },
+      "correct_answer": "C",
+      "explanation": "ATF types are NOT interchangeable. Dexron VI and Toyota WS have different friction modifier chemistries, and using the wrong ATF can destroy clutch packs (a 3,000-5,000 euro replacement). The technician must obtain the exact specification. Colour match alone does not indicate chemical compatibility.",
+      "topic": "Transmission fluid specification compliance",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D03-Q08",
+      "question": "A workshop disposes of waste engine oil by pouring it into the storm drain behind the building, reasoning that the small quantities involved are harmless. Which statement best describes the consequence?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "This is acceptable for quantities under 5 litres",
+        "B": "This is permitted if the workshop is within an industrial zone",
+        "C": "This is only a violation if the workshop is within 1 km of a water source",
+        "D": "This is a regulated waste violation with fines starting at 5,000 euros, plus potential groundwater contamination"
+      },
+      "correct_answer": "D",
+      "explanation": "Waste oil is a regulated material that must be collected in sealed drums and collected by a licensed waste disposal service. Pouring any quantity down drains violates environmental regulations with fines starting at 5,000 euros and potentially reaching 50,000+ euros. Distance from water sources or industrial zoning does not create an exemption.",
+      "topic": "Environmental compliance and waste disposal",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D03-Q09",
+      "question": "A technician applies copper anti-seize grease to the brake caliper slide pins during a brake pad replacement. Shortly after, the customer returns with a brake noise complaint. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Copper grease dissolves rubber boots and seals, causing the slide pins to stick and the pads to wear unevenly",
+        "B": "The copper grease was applied too thickly",
+        "C": "Copper grease attracts brake dust which increases friction",
+        "D": "The customer drove too aggressively during the break-in period"
+      },
+      "correct_answer": "A",
+      "explanation": "Copper anti-seize must NEVER be used on rubber components. It dissolves rubber boots and seals, allowing contamination of the slide pins and causing them to seize. The correct product for brake slide pins is silicone grease, which is rubber-compatible. This is a common wrong-grease-type error.",
+      "topic": "Grease types and application",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D03-Q10",
+      "question": "A workshop receives a new container of brake cleaner. The GHS label shows a flame pictogram, an exclamation mark pictogram, and a health hazard pictogram. Which combination of hazards does this indicate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Corrosive, explosive, and toxic",
+        "B": "Oxidiser, skin sensitiser, and aquatic toxicity",
+        "C": "Compressed gas, acute toxicity, and environmental hazard",
+        "D": "Flammable, irritant, and carcinogenic/organ-damaging"
+      },
+      "correct_answer": "D",
+      "explanation": "The flame pictogram indicates flammability, the exclamation mark indicates irritant properties, and the health hazard pictogram (silhouette with starburst on chest) indicates serious health effects such as carcinogenicity or organ damage. The corrosion pictogram (test tubes pouring on hand/surface) is a different symbol from the health hazard pictogram.",
+      "topic": "GHS pictogram interpretation",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

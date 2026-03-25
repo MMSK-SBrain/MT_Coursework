@@ -1,0 +1,657 @@
+{
+  "module": 3,
+  "title": "Regression - THE PAYOFF",
+  "description": "Comprehensive quiz bank for Module 3: Regression, covering all 6 sessions from regression basics to the stock predictor PAYOFF moment",
+  "total_questions": 42,
+  "sessions": [
+    {
+      "session": "3.1",
+      "title": "Introduction to Regression",
+      "questions": [
+        {
+          "id": "m3-s1-q1",
+          "question": "What type of values does regression predict?",
+          "options": [
+            "Categories (e.g., spam/not spam)",
+            "Continuous numbers (e.g., prices, temperatures)",
+            "True or False values",
+            "Images"
+          ],
+          "correct": 1,
+          "explanation": "Regression predicts continuous numerical values like prices, temperatures, or stock values. Classification predicts categories.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s1-q2",
+          "question": "Which evaluation metric penalizes large errors more heavily?",
+          "options": [
+            "Mean Absolute Error (MAE)",
+            "Mean Squared Error (MSE)",
+            "R² Score",
+            "Accuracy"
+          ],
+          "correct": 1,
+          "explanation": "MSE squares the errors before averaging, which penalizes larger errors more heavily than MAE. This makes it more sensitive to outliers.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s1-q3",
+          "question": "An R² score of 0.85 means:",
+          "options": [
+            "The model is 85% accurate",
+            "The model explains 85% of the variance in the data",
+            "85% of predictions are correct",
+            "The model will fail 15% of the time"
+          ],
+          "correct": 1,
+          "explanation": "R² (coefficient of determination) measures how much of the variance in the target variable is explained by the model. 0.85 means the model explains 85% of the variance, which is quite good!",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s1-q4",
+          "question": "What is the main difference between regression and classification?",
+          "options": [
+            "Regression uses neural networks, classification doesn't",
+            "Regression predicts continuous values, classification predicts categories",
+            "Regression is faster than classification",
+            "Regression requires more data"
+          ],
+          "correct": 1,
+          "explanation": "The fundamental difference is the output type: regression predicts continuous numerical values (like house prices), while classification predicts discrete categories (like spam/not spam).",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s1-q5",
+          "question": "If your RMSE is $5,000 when predicting house prices around $200,000, is this good?",
+          "options": [
+            "Yes, very good (2.5% error)",
+            "No, terrible performance",
+            "Cannot determine without more information",
+            "RMSE doesn't apply to house prices"
+          ],
+          "correct": 0,
+          "explanation": "An RMSE of $5,000 on a $200,000 house represents only 2.5% error, which is quite good for real estate prediction. Context matters when interpreting error metrics!",
+          "difficulty": "medium",
+          "bloom_level": "apply"
+        },
+        {
+          "id": "m3-s1-q6",
+          "question": "Which of these is a regression problem?",
+          "options": [
+            "Predicting if an email is spam",
+            "Classifying images of cats vs dogs",
+            "Predicting tomorrow's temperature",
+            "Detecting fraudulent transactions"
+          ],
+          "correct": 2,
+          "explanation": "Predicting tomorrow's temperature is a regression problem because temperature is a continuous numerical value. The other options are classification problems (predicting categories).",
+          "difficulty": "easy",
+          "bloom_level": "apply"
+        },
+        {
+          "id": "m3-s1-q7",
+          "question": "What does MAE (Mean Absolute Error) tell you?",
+          "options": [
+            "The average magnitude of errors in the same units as the target",
+            "The percentage of correct predictions",
+            "How well the model fits the training data",
+            "The number of outliers in your data"
+          ],
+          "correct": 0,
+          "explanation": "MAE is the average of absolute differences between predicted and actual values, expressed in the same units as your target variable. If predicting stock prices in dollars, MAE will be in dollars.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        }
+      ]
+    },
+    {
+      "session": "3.2",
+      "title": "Multiple Regression & Feature Engineering",
+      "questions": [
+        {
+          "id": "m3-s2-q1",
+          "question": "What is feature scaling and why is it important for regression?",
+          "options": [
+            "Removing features from the model",
+            "Normalizing features to similar ranges so no single feature dominates",
+            "Creating new features from existing ones",
+            "Sorting features by importance"
+          ],
+          "correct": 1,
+          "explanation": "Feature scaling (normalization/standardization) ensures all features are on similar scales. This is crucial for many algorithms (like linear regression with regularization) to prevent features with larger ranges from dominating the model.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s2-q2",
+          "question": "In polynomial regression, what are we doing?",
+          "options": [
+            "Using multiple algorithms at once",
+            "Creating polynomial features (like x², x³) to capture non-linear relationships",
+            "Training the model multiple times",
+            "Using polynomial distributions"
+          ],
+          "correct": 1,
+          "explanation": "Polynomial regression creates new features by raising existing features to powers (x², x³, etc.), allowing linear regression to model non-linear relationships.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s2-q3",
+          "question": "What is overfitting in regression?",
+          "options": [
+            "When the model performs well on training data but poorly on new data",
+            "When the model is too simple",
+            "When you have too many data points",
+            "When the model trains too quickly"
+          ],
+          "correct": 0,
+          "explanation": "Overfitting occurs when a model learns the training data too well, including its noise and outliers, resulting in poor performance on new, unseen data. It's memorizing rather than learning patterns.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s2-q4",
+          "question": "What is the purpose of regularization (Ridge/Lasso)?",
+          "options": [
+            "To make models train faster",
+            "To prevent overfitting by penalizing large coefficients",
+            "To increase model accuracy on training data",
+            "To remove features automatically"
+          ],
+          "correct": 1,
+          "explanation": "Regularization adds a penalty term for large coefficients, encouraging simpler models that generalize better. Ridge (L2) and Lasso (L1) use different penalty calculations, with Lasso also performing feature selection.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s2-q5",
+          "question": "You have 3 features: house size (500-5000 sq ft), bedrooms (1-5), and year built (1950-2020). Should you scale these?",
+          "options": [
+            "No, never scale features",
+            "Yes, they are on very different scales",
+            "Only scale the year built",
+            "Scaling doesn't matter for regression"
+          ],
+          "correct": 1,
+          "explanation": "Yes! These features are on vastly different scales. House size ranges 4,500 units while bedrooms only ranges 4 units. Without scaling, the model might give disproportionate weight to house size simply because of its larger numerical range.",
+          "difficulty": "medium",
+          "bloom_level": "apply"
+        },
+        {
+          "id": "m3-s2-q6",
+          "question": "What's the difference between Ridge and Lasso regularization?",
+          "options": [
+            "Ridge is faster than Lasso",
+            "Ridge uses L2 penalty (squared coefficients), Lasso uses L1 penalty (absolute values)",
+            "Ridge is for classification, Lasso for regression",
+            "There is no difference"
+          ],
+          "correct": 1,
+          "explanation": "Ridge (L2) uses squared coefficients in the penalty term, shrinking all coefficients but rarely to zero. Lasso (L1) uses absolute values, which can shrink coefficients all the way to zero, effectively performing feature selection.",
+          "difficulty": "hard",
+          "bloom_level": "analyze"
+        },
+        {
+          "id": "m3-s2-q7",
+          "question": "If you add more and more polynomial features (x², x³, x⁴...), what will likely happen?",
+          "options": [
+            "Model will always get better",
+            "Training performance improves but test performance may degrade (overfitting)",
+            "Model will train faster",
+            "Nothing, it doesn't matter"
+          ],
+          "correct": 1,
+          "explanation": "Adding more polynomial features increases model complexity. While this may improve training performance, it often leads to overfitting where the model fits noise in the training data and performs poorly on new data.",
+          "difficulty": "hard",
+          "bloom_level": "analyze"
+        }
+      ]
+    },
+    {
+      "session": "3.3",
+      "title": "Time Series Basics",
+      "questions": [
+        {
+          "id": "m3-s3-q1",
+          "question": "What makes time series data special compared to regular tabular data?",
+          "options": [
+            "It has more columns",
+            "It has temporal dependencies - order matters!",
+            "It's always numerical",
+            "It requires more storage"
+          ],
+          "correct": 1,
+          "explanation": "Time series data has temporal dependencies where the order of observations matters. Past values influence future values, unlike regular tabular data where rows are typically independent.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s3-q2",
+          "question": "Why should you NOT shuffle time series data when creating train/test splits?",
+          "options": [
+            "Shuffling takes too long",
+            "It would leak future information into the training set, causing unrealistic performance",
+            "Time series data cannot be shuffled",
+            "Shuffling doesn't affect time series"
+          ],
+          "correct": 1,
+          "explanation": "Shuffling would put future data points in the training set and past points in the test set, allowing the model to 'see the future' during training. This creates unrealistically good performance that won't work in real deployment.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s3-q3",
+          "question": "What is a moving average?",
+          "options": [
+            "The average of all data points",
+            "The average of a sliding window of recent data points",
+            "The average change between consecutive points",
+            "A type of regression algorithm"
+          ],
+          "correct": 1,
+          "explanation": "A moving average calculates the average of a fixed-size sliding window of data points. For example, a 10-day moving average uses the last 10 days' values. It smooths out short-term fluctuations to reveal trends.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s3-q4",
+          "question": "What is 'seasonality' in time series?",
+          "options": [
+            "Data that only exists in certain seasons",
+            "Regular, predictable patterns that repeat over fixed periods (daily, monthly, yearly)",
+            "Random fluctuations in data",
+            "Long-term trends"
+          ],
+          "correct": 1,
+          "explanation": "Seasonality refers to regular, repeating patterns in time series data. For example, ice cream sales peak every summer, retail sales spike every December, or electricity usage varies by hour of day.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s3-q5",
+          "question": "How should you split time series data for training and testing?",
+          "options": [
+            "Randomly shuffle and split 80/20",
+            "Train on older data, test on more recent data (chronological split)",
+            "Split based on feature values",
+            "Use k-fold cross-validation"
+          ],
+          "correct": 1,
+          "explanation": "Time series should be split chronologically: train on older data, test on recent data. This mimics real-world usage where you predict the future using only past information. For example, train on 2019-2022, test on 2023.",
+          "difficulty": "medium",
+          "bloom_level": "apply"
+        },
+        {
+          "id": "m3-s3-q6",
+          "question": "What is a 'trend' in time series analysis?",
+          "options": [
+            "Short-term fluctuations",
+            "Long-term upward or downward movement in the data",
+            "Seasonal patterns",
+            "Random noise"
+          ],
+          "correct": 1,
+          "explanation": "A trend is the long-term direction of the data - whether it's generally increasing, decreasing, or staying flat over time. For example, stock markets have shown an upward trend over decades despite short-term volatility.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s3-q7",
+          "question": "You have 5 years of daily stock data (1,825 days). How should you split it for time series prediction?",
+          "options": [
+            "Randomly select 1,460 days for training, 365 for testing",
+            "Use first 4 years (1,460 days) for training, last year (365 days) for testing",
+            "Use 80% of each year for training",
+            "Shuffle all days and split 80/20"
+          ],
+          "correct": 1,
+          "explanation": "For time series, always split chronologically. Training on the first 4 years and testing on the most recent year simulates real-world usage: using historical data to predict the future.",
+          "difficulty": "medium",
+          "bloom_level": "apply"
+        }
+      ]
+    },
+    {
+      "session": "3.4",
+      "title": "Feature Engineering for Stocks",
+      "questions": [
+        {
+          "id": "m3-s4-q1",
+          "question": "What does RSI (Relative Strength Index) measure?",
+          "options": [
+            "The trading volume of a stock",
+            "The momentum of price movements to identify overbought/oversold conditions",
+            "The correlation between stocks",
+            "The company's revenue strength"
+          ],
+          "correct": 1,
+          "explanation": "RSI measures momentum by comparing the magnitude of recent gains to recent losses. Values above 70 suggest overbought conditions, below 30 suggest oversold. It's a popular technical indicator for timing trades.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s4-q2",
+          "question": "What is MACD (Moving Average Convergence Divergence)?",
+          "options": [
+            "A measure of trading volume",
+            "The difference between two exponential moving averages, used to identify trend changes",
+            "A type of regression algorithm",
+            "The maximum price change in a day"
+          ],
+          "correct": 1,
+          "explanation": "MACD is calculated as the difference between a 12-day and 26-day exponential moving average. When MACD crosses above its signal line, it may indicate a bullish trend; crossing below may indicate bearish trend.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s4-q3",
+          "question": "What is a 'lag feature' in time series?",
+          "options": [
+            "A feature that loads slowly",
+            "Using previous time period values as features (e.g., yesterday's price to predict today)",
+            "A feature that doesn't correlate well",
+            "The difference between prediction and actual"
+          ],
+          "correct": 1,
+          "explanation": "A lag feature uses past values as predictors for current/future values. For example, lag_1 might be yesterday's closing price, lag_7 might be the price from 7 days ago. These capture temporal patterns.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s4-q4",
+          "question": "Why is domain knowledge important in feature engineering for stocks?",
+          "options": [
+            "It's not important, algorithms figure everything out",
+            "Domain knowledge helps create meaningful features like technical indicators that traders actually use",
+            "Only for documentation purposes",
+            "To make the code longer"
+          ],
+          "correct": 1,
+          "explanation": "Financial domain knowledge helps create features that capture real patterns traders look for: support/resistance levels, momentum, volatility regimes, etc. These informed features often outperform raw data.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s4-q5",
+          "question": "What is volatility in stock prediction?",
+          "options": [
+            "How much the trading volume changes",
+            "The degree of variation in stock prices over time - higher volatility means larger price swings",
+            "The number of trades per day",
+            "The stock's correlation with the market"
+          ],
+          "correct": 1,
+          "explanation": "Volatility measures how much and how quickly prices change. High volatility means large price swings (riskier but potentially more profitable), low volatility means stable, predictable prices. Often measured as standard deviation of returns.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s4-q6",
+          "question": "What is a rolling statistic (like rolling mean)?",
+          "options": [
+            "A statistic that changes every time you calculate it",
+            "A statistic calculated over a sliding window of recent data points",
+            "The final statistic after all data is processed",
+            "A type of feature scaling"
+          ],
+          "correct": 1,
+          "explanation": "Rolling statistics are calculated over a moving window. For example, a 10-day rolling mean at day 50 uses days 41-50, at day 51 uses days 42-51, etc. This creates time-varying features that adapt to recent patterns.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s4-q7",
+          "question": "You're creating features from stock data. Which feature would likely be MOST useful for predicting tomorrow's price?",
+          "options": [
+            "The stock's ticker symbol",
+            "10-day and 50-day moving averages and their crossover",
+            "The day of the week as a number",
+            "The length of the company name"
+          ],
+          "correct": 1,
+          "explanation": "Moving averages and their crossovers are proven technical indicators that capture momentum and trend changes. When short-term MA crosses above long-term MA ('golden cross'), it often signals upward movement. Ticker symbol and company name length provide no predictive value.",
+          "difficulty": "medium",
+          "bloom_level": "apply"
+        }
+      ]
+    },
+    {
+      "session": "3.5",
+      "title": "Advanced Regression Models",
+      "questions": [
+        {
+          "id": "m3-s5-q1",
+          "question": "How does decision tree regression make predictions?",
+          "options": [
+            "By fitting a straight line through the data",
+            "By creating a tree of if-then rules that split data into regions with similar target values",
+            "By calculating distances to nearest neighbors",
+            "By using neural networks"
+          ],
+          "correct": 1,
+          "explanation": "Decision tree regression recursively splits data based on features (e.g., 'if price > $100, then...') creating a tree structure. Leaf nodes contain the predicted value (often the mean) for samples that reach that leaf.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s5-q2",
+          "question": "What is an ensemble method?",
+          "options": [
+            "Training one model multiple times",
+            "Combining multiple models to make better predictions than any single model",
+            "Using multiple datasets",
+            "A type of regularization"
+          ],
+          "correct": 1,
+          "explanation": "Ensemble methods combine predictions from multiple models to achieve better performance than individual models. Examples include Random Forest (ensemble of decision trees) and Gradient Boosting (sequential ensemble).",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s5-q3",
+          "question": "How does Random Forest improve upon a single decision tree?",
+          "options": [
+            "It trains one very deep tree",
+            "It trains many trees on random subsets of data and features, then averages predictions",
+            "It uses a random algorithm",
+            "It randomly selects the best features"
+          ],
+          "correct": 1,
+          "explanation": "Random Forest trains multiple decision trees, each on a random subset of data (bootstrap sample) and random subset of features. By averaging predictions from diverse trees, it reduces overfitting and improves generalization.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s5-q4",
+          "question": "What is the key idea behind Gradient Boosting?",
+          "options": [
+            "Train many models in parallel",
+            "Sequentially train models where each new model focuses on correcting previous models' errors",
+            "Boost the learning rate",
+            "Use gradient descent for feature selection"
+          ],
+          "correct": 1,
+          "explanation": "Gradient Boosting builds models sequentially. Each new model is trained to predict the residual errors (mistakes) of the previous models. Over iterations, the ensemble gets progressively better at handling difficult cases.",
+          "difficulty": "hard",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s5-q5",
+          "question": "When should you prefer Linear Regression over Random Forest?",
+          "options": [
+            "Never, Random Forest is always better",
+            "When you have linear relationships, need interpretability, or have limited data",
+            "When you have lots of data",
+            "When you want the most complex model"
+          ],
+          "correct": 1,
+          "explanation": "Linear Regression is preferable when: (1) relationships are truly linear, (2) you need to interpret coefficients ('$1K increase in square footage increases price by $150'), (3) you have limited data (simpler models need less data), or (4) you value speed/simplicity.",
+          "difficulty": "hard",
+          "bloom_level": "evaluate"
+        },
+        {
+          "id": "m3-s5-q6",
+          "question": "What does feature importance in Random Forest tell you?",
+          "options": [
+            "How many times each feature appears in the data",
+            "How much each feature contributes to reducing prediction error across all trees",
+            "The correlation between features",
+            "Which features should be removed"
+          ],
+          "correct": 1,
+          "explanation": "Feature importance measures how much each feature contributes to reducing error across all trees in the forest. Features that frequently create informative splits and reduce error have higher importance. This helps understand what drives predictions.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s5-q7",
+          "question": "You're predicting house prices. Linear Regression gives R²=0.75, Random Forest gives R²=0.92, Gradient Boosting gives R²=0.94. Which should you choose?",
+          "options": [
+            "Always Gradient Boosting (highest R²)",
+            "Linear Regression (simplest)",
+            "It depends - consider test performance, interpretability, deployment complexity, and overfitting risk",
+            "Random Forest (middle ground)"
+          ],
+          "correct": 2,
+          "explanation": "The 'best' model depends on context: Is that R² on training or test data? (Watch for overfitting!) Do you need to explain predictions to clients? (Linear is interpretable) What's the deployment environment? (Complex models need more resources) Will the model be retrained often? (Simpler is easier to maintain) Consider the full context, not just one metric!",
+          "difficulty": "hard",
+          "bloom_level": "evaluate"
+        }
+      ]
+    },
+    {
+      "session": "3.6",
+      "title": "Stock Predictor PAYOFF - Building the Module 0 Demo",
+      "questions": [
+        {
+          "id": "m3-s6-q1",
+          "question": "What type of neural network is particularly good for time series like stock prices?",
+          "options": [
+            "Convolutional Neural Networks (CNN)",
+            "Long Short-Term Memory (LSTM) networks",
+            "Fully connected networks only",
+            "Generative Adversarial Networks (GAN)"
+          ],
+          "correct": 1,
+          "explanation": "LSTMs are designed for sequence data and can capture long-term dependencies in time series. They have memory cells that selectively remember or forget information, making them ideal for stock prices where patterns can span multiple time steps.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s6-q2",
+          "question": "What is backtesting in stock prediction?",
+          "options": [
+            "Testing on old data you already used for training",
+            "Simulating how your strategy would have performed on historical data you didn't train on",
+            "Testing the backend server",
+            "Running tests backwards"
+          ],
+          "correct": 1,
+          "explanation": "Backtesting simulates your prediction strategy on historical data you didn't use for training. For example, if you train on 2019-2022, you backtest on 2023 to see how your strategy would have performed. This helps validate real-world usefulness.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s6-q3",
+          "question": "Why is preventing data leakage critical in stock prediction?",
+          "options": [
+            "It's not critical, leakage doesn't matter",
+            "Because using future information in training creates unrealistically good performance that fails in production",
+            "To protect company secrets",
+            "To reduce model training time"
+          ],
+          "correct": 1,
+          "explanation": "Data leakage (using future information during training) creates models that appear to work perfectly but fail completely in real use. For example, if tomorrow's price accidentally gets into today's features, the model 'sees the future' during training but won't have that luxury when deployed.",
+          "difficulty": "hard",
+          "bloom_level": "analyze"
+        },
+        {
+          "id": "m3-s6-q4",
+          "question": "Remember Module 0? What was the 'wow' moment that got you interested in this course?",
+          "options": [
+            "A working stock price predictor that seemed magical",
+            "A simple calculator",
+            "A static website",
+            "A spreadsheet"
+          ],
+          "correct": 0,
+          "explanation": "THE PAYOFF! In Module 0, you saw a working stock predictor and wondered 'Can I build that?' Now, in Module 3, you HAVE built it! This is the journey from amazement to achievement. Celebrate this moment!",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m3-s6-q5",
+          "question": "What is the realistic expectation for stock price prediction accuracy?",
+          "options": [
+            "100% accuracy is achievable with enough data",
+            "Beating a simple baseline (like predicting yesterday's price) is a meaningful achievement",
+            "Below 50% R² means total failure",
+            "Only professional traders can build working models"
+          ],
+          "correct": 1,
+          "explanation": "Stock markets are inherently unpredictable due to countless factors (news, sentiment, global events). A model that consistently beats simple baselines (like naive forecasting) is actually quite successful! R² > 0.70 is excellent for stock prediction.",
+          "difficulty": "medium",
+          "bloom_level": "evaluate"
+        },
+        {
+          "id": "m3-s6-q6",
+          "question": "What production considerations are important for deploying a stock predictor?",
+          "options": [
+            "Just save the model, nothing else matters",
+            "Model versioning, data pipeline reliability, monitoring, error handling, and update schedules",
+            "Only the prediction accuracy",
+            "Making it look pretty"
+          ],
+          "correct": 1,
+          "explanation": "Production deployment requires: (1) Reliable data pipelines (what if Yahoo Finance is down?), (2) Model versioning (which model is live?), (3) Monitoring (is performance degrading?), (4) Error handling (what if API fails?), (5) Update schedules (retrain monthly? weekly?), (6) Logging and alerting.",
+          "difficulty": "hard",
+          "bloom_level": "evaluate"
+        },
+        {
+          "id": "m3-s6-q7",
+          "question": "You built the stock predictor from Module 0! How does it compare to what you saw on Day 1?",
+          "options": [
+            "It's completely different",
+            "It uses the same core concepts: data collection, feature engineering, model training, and prediction",
+            "The Module 0 version was fake",
+            "You still can't build what you saw"
+          ],
+          "correct": 1,
+          "explanation": "You've now built what amazed you in Module 0! While there might be some differences in implementation details, the core pipeline is the same: collecting stock data, engineering features (technical indicators), training models, and making predictions. This is THE PAYOFF - the journey from 'Can I build this?' to 'I BUILT THIS!' Celebrate this achievement!",
+          "difficulty": "easy",
+          "bloom_level": "evaluate"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "difficulty_distribution": {
+      "easy": 11,
+      "medium": 24,
+      "hard": 7
+    },
+    "bloom_taxonomy": {
+      "understand": 29,
+      "apply": 7,
+      "analyze": 3,
+      "evaluate": 3
+    },
+    "special_notes": [
+      "Session 3.6 includes explicit Module 0 callbacks to emphasize THE PAYOFF moment",
+      "Questions balance theoretical understanding with practical application",
+      "Financial domain knowledge is tested throughout",
+      "Time series concepts are reinforced across multiple sessions",
+      "Questions progress from basics to advanced concepts",
+      "The emotional journey from Module 0 to Module 3 is recognized in assessment"
+    ],
+    "passing_criteria": {
+      "per_session": "70% (5/7 questions)",
+      "overall_module": "70% (30/42 questions)"
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 49,
+  "week": 10,
+  "session_title": "Suspension Arm & Bush Replacement",
+  "questions": [
+    {
+      "id": "D49-Q01",
+      "question": "Why must the hub/knuckle assembly be supported before disconnecting the control arm from the steering knuckle?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To prevent the control arm from swinging and hitting the technician",
+        "B": "To prevent the unsupported knuckle from dropping and damaging the brake hose and ABS sensor wiring",
+        "C": "To keep the brake disc aligned with the calliper",
+        "D": "To make the ball joint separation easier"
+      },
+      "correct_answer": "B",
+      "explanation": "Without support, the heavy knuckle/hub assembly will drop when the control arm is disconnected. This stretches or tears the flexible brake hose, strains the ABS sensor wiring, and can damage the CV joint boot. Supporting the knuckle with a jack or stand before arm removal prevents creating additional problems.",
+      "topic": "Knuckle support procedure",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D49-Q02",
+      "question": "What is the critical concept of torquing suspension bush bolts at ride height?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "It prevents the bolts from loosening over time",
+        "B": "It ensures the bush rubber sits at a neutral angle with no pre-twist, maximising bush lifespan",
+        "C": "It allows the technician to use a shorter torque wrench",
+        "D": "It makes the ride height adjustable after installation"
+      },
+      "correct_answer": "B",
+      "explanation": "If bolts are torqued with the suspension at full droop on a lift, the bush rubber is twisted to an extreme angle. When the vehicle is lowered, the bush is already pre-loaded with twist, reducing the available range of movement and causing premature failure at 10,000 to 15,000 km instead of 80,000 or more km. Torquing at ride height sets the bush at its neutral position.",
+      "topic": "Ride-height torque concept",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D49-Q03",
+      "question": "What type of lubricant should be used on a rubber suspension bush before pressing it into an arm bore?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Engine oil or WD-40",
+        "B": "Copper grease",
+        "C": "Soapy water or a rubber-safe silicone lubricant",
+        "D": "Petroleum-based grease"
+      },
+      "correct_answer": "C",
+      "explanation": "Petroleum-based lubricants attack rubber, causing it to swell, soften, and lose its damping properties. Soapy water or manufacturer-specified silicone lubricant allows the bush to slide smoothly into the bore during pressing without degrading the rubber. The lubricant evaporates or becomes inert after installation.",
+      "topic": "Bush installation lubrication",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D49-Q04",
+      "question": "When pressing a new bush into a control arm, why does the orientation of the voided section in the bush rubber matter?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The void is cosmetic and helps identify the manufacturer",
+        "B": "The void controls compliance characteristics, making the bush softer in one direction and stiffer in another as designed by the engineers",
+        "C": "The void allows oil to drain through the bush",
+        "D": "The void must face upward to prevent water accumulation"
+      },
+      "correct_answer": "B",
+      "explanation": "The voided section in a suspension bush is engineered to provide specific compliance. The bush is softer in the direction of the void allowing controlled flex for bump absorption and stiffer perpendicular to it resisting lateral loads during cornering. Installing with incorrect orientation gives wrong compliance characteristics, poor handling, and accelerated uneven wear.",
+      "topic": "Bush orientation and compliance",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D49-Q05",
+      "question": "What is the correct mandrel selection for pressing a bush OUT of a control arm bore?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The mandrel OD should match the arm bore diameter",
+        "B": "The mandrel ID should match the bush outer shell diameter so it contacts the shell not the arm bore",
+        "C": "Any mandrel that fits loosely over the bush will work",
+        "D": "The mandrel should be slightly larger than the arm bore"
+      },
+      "correct_answer": "B",
+      "explanation": "The press-out mandrel must contact the bush outer shell directly. If the mandrel is too small, it passes through without pushing the bush. If too large, it contacts the arm bore and damages it. The mandrel ID must match the bush outer diameter so force is applied evenly to the shell, pushing it cleanly through the bore and into the receiver cup below.",
+      "topic": "Press mandrel selection",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D49-Q06",
+      "question": "A technician torques a lower control arm bolt with the suspension fully extended on the lift instead of at ride height. The customer returns after 12,000 km with a clunking noise from the front suspension. What has happened?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The bolt has worked loose due to vibration",
+        "B": "The new bush has failed prematurely because the rubber was pre-twisted at full droop, exhausting its flex range and tearing internally",
+        "C": "The ball joint has worn out from increased loading",
+        "D": "The subframe bolts have shifted under cornering loads"
+      },
+      "correct_answer": "B",
+      "explanation": "Torquing at full droop pre-twists the bush rubber. When the vehicle operates at ride height, the bush is already at its limit of rotation. Every suspension movement further stresses the pre-twisted rubber, causing internal tearing and failure at 10,000 to 15,000 km instead of the designed 80,000 or more km. The clunking noise is the torn bush allowing metal-to-metal contact between the arm and subframe.",
+      "topic": "Ride-height torque failure consequence",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D49-Q07",
+      "question": "A technician is pressing a new bush into a control arm and notices the bush enters the bore cocked at an angle rather than straight. They continue pressing to force it in. What damage is likely to result?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "No damage because the bush will straighten as it seats fully",
+        "B": "The bush outer shell distorts, the rubber pre-loads unevenly, and the bush will squeak and fail prematurely",
+        "C": "The hydraulic press will be damaged from the uneven load",
+        "D": "Only the bore will be slightly enlarged which is acceptable"
+      },
+      "correct_answer": "B",
+      "explanation": "A bush that enters cocked causes the outer shell to deform as it is forced into the bore. The interference fit becomes uneven, with one side too tight and the other too loose. The rubber is pre-loaded asymmetrically, causing squeaking under load and accelerated fatigue failure. The correct action is to stop, remove the partially pressed bush, realign the setup, and press again with a new bush if the original was damaged.",
+      "topic": "Bush press-in technique errors",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D49-Q08",
+      "question": "After replacing lower control arm bushes and the ball joint, a technician returns the vehicle without performing a wheel alignment. The customer returns 5,000 km later with severe inside-edge wear on both front tyres. What went wrong?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The tyres were already worn before the repair",
+        "B": "The new bushes have different compliance than the worn ones, shifting the arm angle and changing camber and toe, causing accelerated inner-edge tyre wear",
+        "C": "The ball joint was installed upside down",
+        "D": "The tyre pressures were not checked after the repair"
+      },
+      "correct_answer": "B",
+      "explanation": "New bushes have different compliance characteristics than worn ones. The arm now sits at a subtly different angle, and the new ball joint seats at a slightly different position in the knuckle taper. These small geometry changes affect camber and toe. Excessive negative camber or toe-out causes rapid inside-edge tyre wear. Wheel alignment is mandatory after any arm, bush, or ball joint work.",
+      "topic": "Alignment consequences after bush replacement",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D49-Q09",
+      "question": "A technician uses petroleum-based grease to lubricate a new rubber suspension bush before pressing it in, thinking it will reduce friction during installation. What will happen to the bush over time?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Nothing because the grease will evaporate after a few weeks",
+        "B": "The petroleum attacks the rubber, causing it to swell, soften, and lose its damping properties, leading to premature bush failure and loss of suspension control",
+        "C": "The bush will bond more strongly to the bore",
+        "D": "The grease will cause the bush to squeak when cold"
+      },
+      "correct_answer": "B",
+      "explanation": "Petroleum-based products chemically attack rubber compounds. The rubber absorbs the petroleum, swells in volume, becomes soft and mushy, and loses its engineered stiffness. The bush can no longer control arm movement properly, resulting in vague handling, clunking, and ultimately complete bush failure. Only soapy water, silicone spray, or manufacturer-specified rubber-safe lubricants should be used.",
+      "topic": "Lubricant compatibility with rubber bushes",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D49-Q10",
+      "question": "During a ball joint replacement, a technician uses a fork-type splitter to separate the ball joint from the steering knuckle. They plan to reuse the ball joint boot. What is wrong with this approach?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Nothing because fork-type splitters are the standard separation tool",
+        "B": "The fork-type splitter tears the ball joint dust boot as it wedges between the joint and the knuckle, exposing the joint to contamination and guaranteeing premature failure",
+        "C": "The fork splitter will damage the knuckle taper bore",
+        "D": "Fork splitters only work on tie rod ends not ball joints"
+      },
+      "correct_answer": "B",
+      "explanation": "A fork-type splitter works by wedging between the ball joint body and the knuckle. This inevitably cuts or tears the rubber dust boot. While the joint may technically separate successfully, the destroyed boot allows dirt and water to enter the joint, causing rapid bearing surface wear and failure within months. When a ball joint is to be reused, a press-type or screw-type separator must be used to preserve the boot.",
+      "topic": "Ball joint separation tool selection",
+      "bloom_level": "Apply"
+    }
+  ]
+}

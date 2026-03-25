@@ -1,0 +1,745 @@
+{
+  "module": "Module 5: Unsupervised Learning",
+  "total_quizzes": 6,
+  "total_questions": 54,
+  "quizzes": [
+    {
+      "session": 1,
+      "title": "K-Means Clustering",
+      "questions": [
+        {
+          "id": "m5s1q1",
+          "question": "What is the main difference between supervised and unsupervised learning?",
+          "type": "multiple_choice",
+          "options": [
+            "Supervised requires labeled data, unsupervised does not",
+            "Unsupervised is always more accurate",
+            "Supervised is faster to train",
+            "There is no difference"
+          ],
+          "correct_answer": 0,
+          "explanation": "The key difference is that supervised learning requires labeled training data (inputs with known outputs), while unsupervised learning discovers patterns in unlabeled data."
+        },
+        {
+          "id": "m5s1q2",
+          "question": "In K-Means clustering, what does K represent?",
+          "type": "multiple_choice",
+          "options": [
+            "The number of features",
+            "The number of clusters",
+            "The number of iterations",
+            "The convergence threshold"
+          ],
+          "correct_answer": 1,
+          "explanation": "K represents the number of clusters that the algorithm will find in the data. You must specify K before running K-Means."
+        },
+        {
+          "id": "m5s1q3",
+          "question": "Why is feature scaling critical for K-Means clustering?",
+          "type": "multiple_choice",
+          "options": [
+            "It makes the algorithm run faster",
+            "K-Means is distance-based and features with larger ranges will dominate",
+            "It improves visualization",
+            "It's not actually necessary"
+          ],
+          "correct_answer": 1,
+          "explanation": "K-Means uses Euclidean distance to assign points to clusters. Without scaling, features with larger numerical ranges will dominate the distance calculation, leading to poor clustering."
+        },
+        {
+          "id": "m5s1q4",
+          "question": "What is the elbow method used for?",
+          "type": "multiple_choice",
+          "options": [
+            "Selecting optimal number of clusters (K)",
+            "Choosing learning rate",
+            "Removing outliers",
+            "Feature selection"
+          ],
+          "correct_answer": 0,
+          "explanation": "The elbow method plots inertia (within-cluster sum of squares) vs. K and looks for an 'elbow' point where the rate of decrease slows, suggesting the optimal K."
+        },
+        {
+          "id": "m5s1q5",
+          "question": "What does silhouette score measure?",
+          "type": "multiple_choice",
+          "options": [
+            "Cluster accuracy compared to true labels",
+            "How well-separated clusters are",
+            "Training time",
+            "Number of outliers"
+          ],
+          "correct_answer": 1,
+          "explanation": "Silhouette score ranges from -1 to 1 and measures how similar a point is to its own cluster compared to other clusters. Higher values indicate better-separated clusters."
+        },
+        {
+          "id": "m5s1q6",
+          "question": "A silhouette score of 0.8 indicates:",
+          "type": "multiple_choice",
+          "options": [
+            "Poor clustering",
+            "Acceptable clustering",
+            "Good clustering with well-separated clusters",
+            "Perfect clustering"
+          ],
+          "correct_answer": 2,
+          "explanation": "Silhouette scores close to 1 indicate excellent cluster separation. 0.8 is very good, suggesting clusters are dense and well-separated."
+        },
+        {
+          "id": "m5s1q7",
+          "question": "What is inertia in K-Means?",
+          "type": "multiple_choice",
+          "options": [
+            "Number of iterations to converge",
+            "Sum of squared distances of samples to their closest cluster center",
+            "Number of clusters",
+            "Silhouette score"
+          ],
+          "correct_answer": 1,
+          "explanation": "Inertia measures within-cluster variance - the sum of squared distances from each point to its cluster centroid. Lower inertia means tighter clusters."
+        },
+        {
+          "id": "m5s1q8",
+          "question": "K-Means is best suited for which type of cluster shapes?",
+          "type": "multiple_choice",
+          "options": [
+            "Any arbitrary shape",
+            "Spherical/circular clusters",
+            "Elongated clusters",
+            "Hierarchical structures"
+          ],
+          "correct_answer": 1,
+          "explanation": "K-Means assumes spherical clusters of similar size. It struggles with elongated, irregular, or varying-size clusters."
+        },
+        {
+          "id": "m5s1q9",
+          "question": "In customer segmentation, what does RFM stand for?",
+          "type": "multiple_choice",
+          "options": [
+            "Revenue, Frequency, Marketing",
+            "Recency, Frequency, Monetary",
+            "Rating, Feedback, Metrics",
+            "Region, Features, Model"
+          ],
+          "correct_answer": 1,
+          "explanation": "RFM stands for Recency (how recently they purchased), Frequency (how often they purchase), and Monetary (how much they spend) - key metrics for customer segmentation."
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "title": "Hierarchical Clustering & DBSCAN",
+      "questions": [
+        {
+          "id": "m5s2q1",
+          "question": "What is the main advantage of hierarchical clustering over K-Means?",
+          "type": "multiple_choice",
+          "options": [
+            "It's always faster",
+            "You don't need to specify the number of clusters beforehand",
+            "It only works on large datasets",
+            "It requires less memory"
+          ],
+          "correct_answer": 1,
+          "explanation": "Hierarchical clustering creates a dendrogram showing relationships at all levels, allowing you to choose the number of clusters after seeing the structure."
+        },
+        {
+          "id": "m5s2q2",
+          "question": "What does a dendrogram visualize?",
+          "type": "multiple_choice",
+          "options": [
+            "Feature importance",
+            "The hierarchical relationships between clusters",
+            "Cluster centroids",
+            "Outliers"
+          ],
+          "correct_answer": 1,
+          "explanation": "A dendrogram is a tree diagram showing how clusters merge at different distance thresholds in hierarchical clustering."
+        },
+        {
+          "id": "m5s2q3",
+          "question": "In Ward's linkage method, clusters are merged based on:",
+          "type": "multiple_choice",
+          "options": [
+            "Minimum distance between points",
+            "Maximum distance between points",
+            "Minimizing within-cluster variance",
+            "Random selection"
+          ],
+          "correct_answer": 2,
+          "explanation": "Ward's method merges clusters that result in the minimum increase in total within-cluster variance, producing compact, spherical clusters."
+        },
+        {
+          "id": "m5s2q4",
+          "question": "What does DBSCAN stand for?",
+          "type": "multiple_choice",
+          "options": [
+            "Distance-Based Scan",
+            "Density-Based Spatial Clustering of Applications with Noise",
+            "Data-Based Statistical Clustering Algorithm",
+            "Distributed Binary Spatial Clustering"
+          ],
+          "correct_answer": 1,
+          "explanation": "DBSCAN is a density-based clustering algorithm that groups together points in high-density regions and identifies outliers in low-density regions."
+        },
+        {
+          "id": "m5s2q5",
+          "question": "What are the two main parameters in DBSCAN?",
+          "type": "multiple_choice",
+          "options": [
+            "K and inertia",
+            "eps (radius) and min_samples",
+            "depth and width",
+            "alpha and beta"
+          ],
+          "correct_answer": 1,
+          "explanation": "eps defines the radius for neighborhood search, and min_samples defines the minimum number of points required to form a dense region (cluster)."
+        },
+        {
+          "id": "m5s2q6",
+          "question": "What is a key advantage of DBSCAN over K-Means?",
+          "type": "multiple_choice",
+          "options": [
+            "DBSCAN is faster",
+            "DBSCAN can find arbitrarily-shaped clusters and identify outliers",
+            "DBSCAN requires fewer parameters",
+            "DBSCAN always gives better results"
+          ],
+          "correct_answer": 1,
+          "explanation": "DBSCAN can discover clusters of arbitrary shape (not just spherical) and automatically identifies outliers as noise points."
+        },
+        {
+          "id": "m5s2q7",
+          "question": "In DBSCAN, points labeled as -1 represent:",
+          "type": "multiple_choice",
+          "options": [
+            "The first cluster",
+            "Core points",
+            "Outliers/noise points",
+            "Border points"
+          ],
+          "correct_answer": 2,
+          "explanation": "Points labeled -1 are outliers or noise - points that don't belong to any cluster because they're in low-density regions."
+        },
+        {
+          "id": "m5s2q8",
+          "question": "Which clustering algorithm is most computationally expensive for large datasets?",
+          "type": "multiple_choice",
+          "options": [
+            "K-Means",
+            "DBSCAN",
+            "Hierarchical clustering",
+            "They're all the same"
+          ],
+          "correct_answer": 2,
+          "explanation": "Hierarchical clustering typically has O(n³) complexity, making it impractical for very large datasets. K-Means and DBSCAN are more scalable."
+        },
+        {
+          "id": "m5s2q9",
+          "question": "When should you use hierarchical clustering?",
+          "type": "multiple_choice",
+          "options": [
+            "When you have millions of data points",
+            "When you want to explore relationships at multiple levels and have moderate-sized data",
+            "When you need the fastest algorithm",
+            "Never - K-Means is always better"
+          ],
+          "correct_answer": 1,
+          "explanation": "Hierarchical clustering is best for moderate-sized datasets where you want to explore cluster relationships at different levels and create a dendrogram for interpretation."
+        }
+      ]
+    },
+    {
+      "session": 3,
+      "title": "Document Clustering and Text Analysis",
+      "questions": [
+        {
+          "id": "m5s3q1",
+          "question": "What does TF-IDF stand for?",
+          "type": "multiple_choice",
+          "options": [
+            "Text Frequency - Inverse Document Frequency",
+            "Term Frequency - Inverse Document Frequency",
+            "Total Features - Indexed Data Frequency",
+            "Text Features - Internal Document Format"
+          ],
+          "correct_answer": 1,
+          "explanation": "TF-IDF (Term Frequency-Inverse Document Frequency) is a numerical statistic that reflects how important a word is to a document in a collection."
+        },
+        {
+          "id": "m5s3q2",
+          "question": "Why is TF-IDF better than simple word counts for document clustering?",
+          "type": "multiple_choice",
+          "options": [
+            "It's faster to compute",
+            "It down-weights common words that appear in many documents",
+            "It requires less memory",
+            "It only works in English"
+          ],
+          "correct_answer": 1,
+          "explanation": "TF-IDF reduces the weight of frequently occurring words (like 'the', 'a') that appear across many documents and increases the weight of rare, discriminative terms."
+        },
+        {
+          "id": "m5s3q3",
+          "question": "What is the purpose of stop word removal in text clustering?",
+          "type": "multiple_choice",
+          "options": [
+            "To make text shorter",
+            "To remove common words that don't add meaning",
+            "To correct spelling errors",
+            "To translate text"
+          ],
+          "correct_answer": 1,
+          "explanation": "Stop words (like 'the', 'is', 'at') are common words that appear frequently but carry little semantic meaning, so removing them improves clustering quality."
+        },
+        {
+          "id": "m5s3q4",
+          "question": "In document clustering, what are 'topics'?",
+          "type": "multiple_choice",
+          "options": [
+            "The number of documents",
+            "Groups of documents with similar content/themes",
+            "Individual words",
+            "The clustering algorithm used"
+          ],
+          "correct_answer": 1,
+          "explanation": "Topics are coherent themes or subjects discovered by grouping documents with similar content together through clustering."
+        },
+        {
+          "id": "m5s3q5",
+          "question": "How can you interpret what a document cluster represents?",
+          "type": "multiple_choice",
+          "options": [
+            "By counting the number of documents",
+            "By examining the most frequent/important terms in that cluster",
+            "By looking at document length",
+            "By checking the file format"
+          ],
+          "correct_answer": 1,
+          "explanation": "You can understand a cluster's topic by examining the top TF-IDF weighted terms or most frequent words that characterize documents in that cluster."
+        },
+        {
+          "id": "m5s3q6",
+          "question": "What is lemmatization in text preprocessing?",
+          "type": "multiple_choice",
+          "options": [
+            "Removing stop words",
+            "Converting words to lowercase",
+            "Reducing words to their base/root form (e.g., 'running' -> 'run')",
+            "Translating text"
+          ],
+          "correct_answer": 2,
+          "explanation": "Lemmatization reduces words to their dictionary form (lemma), so 'running', 'runs', 'ran' all become 'run', improving clustering by treating similar words as identical."
+        },
+        {
+          "id": "m5s3q7",
+          "question": "Word clouds in document clustering are useful for:",
+          "type": "multiple_choice",
+          "options": [
+            "Improving clustering accuracy",
+            "Visualizing the most important terms in each cluster",
+            "Preprocessing text",
+            "Storing documents"
+          ],
+          "correct_answer": 1,
+          "explanation": "Word clouds provide a visual representation of the most frequent or important terms in a cluster, making it easy to understand the cluster's topic at a glance."
+        },
+        {
+          "id": "m5s3q8",
+          "question": "Can clustering discover topics without labeled training data?",
+          "type": "multiple_choice",
+          "options": [
+            "No, you always need labels",
+            "Yes, clustering is unsupervised and can discover topics from raw text",
+            "Only if you have at least 50% labeled data",
+            "Only for small datasets"
+          ],
+          "correct_answer": 1,
+          "explanation": "Clustering is unsupervised and can automatically discover topics/themes in document collections without any labeled examples."
+        },
+        {
+          "id": "m5s3q9",
+          "question": "Which library is commonly used for TF-IDF vectorization in Python?",
+          "type": "multiple_choice",
+          "options": [
+            "pandas",
+            "matplotlib",
+            "scikit-learn (sklearn)",
+            "requests"
+          ],
+          "correct_answer": 2,
+          "explanation": "scikit-learn provides TfidfVectorizer, which converts text documents to TF-IDF feature matrices for machine learning."
+        }
+      ]
+    },
+    {
+      "session": 4,
+      "title": "PCA - Principal Component Analysis",
+      "questions": [
+        {
+          "id": "m5s4q1",
+          "question": "What is the curse of dimensionality?",
+          "type": "multiple_choice",
+          "options": [
+            "Having too few features",
+            "The phenomenon where data becomes sparse in high-dimensional spaces",
+            "When algorithms run too fast",
+            "Having too many data points"
+          ],
+          "correct_answer": 1,
+          "explanation": "The curse of dimensionality refers to various problems that arise when working with high-dimensional data, including sparsity, computational complexity, and difficulty in visualization."
+        },
+        {
+          "id": "m5s4q2",
+          "question": "What does PCA do?",
+          "type": "multiple_choice",
+          "options": [
+            "Adds more features to the dataset",
+            "Reduces dimensionality by finding principal components that capture most variance",
+            "Removes outliers",
+            "Labels unlabeled data"
+          ],
+          "correct_answer": 1,
+          "explanation": "PCA (Principal Component Analysis) is a dimensionality reduction technique that transforms data to a new coordinate system where the axes (principal components) capture maximum variance."
+        },
+        {
+          "id": "m5s4q3",
+          "question": "Why is standardization critical before applying PCA?",
+          "type": "multiple_choice",
+          "options": [
+            "It makes PCA faster",
+            "PCA is sensitive to feature scales; features with larger ranges will dominate",
+            "It's not actually necessary",
+            "It improves visualization colors"
+          ],
+          "correct_answer": 1,
+          "explanation": "PCA is based on variance, so features with larger numerical ranges will have higher variance and dominate the principal components. Standardization ensures all features contribute equally."
+        },
+        {
+          "id": "m5s4q4",
+          "question": "What does 'explained variance ratio' tell you in PCA?",
+          "type": "multiple_choice",
+          "options": [
+            "The error rate",
+            "The proportion of dataset variance captured by each principal component",
+            "The number of clusters",
+            "The training time"
+          ],
+          "correct_answer": 1,
+          "explanation": "Explained variance ratio shows what percentage of the total variance in the original data is captured by each principal component. Higher is better."
+        },
+        {
+          "id": "m5s4q5",
+          "question": "If the first 2 principal components explain 85% of variance, what does this mean?",
+          "type": "multiple_choice",
+          "options": [
+            "The model is 85% accurate",
+            "You can represent the data in 2D while retaining 85% of the information",
+            "You have 85% of the original features",
+            "85% of data points are outliers"
+          ],
+          "correct_answer": 1,
+          "explanation": "This means that projecting your high-dimensional data onto just the first 2 principal components preserves 85% of the variance (information) in the original data."
+        },
+        {
+          "id": "m5s4q6",
+          "question": "Are principal components interpretable like original features?",
+          "type": "multiple_choice",
+          "options": [
+            "Yes, they're exactly the same as original features",
+            "No, they're linear combinations of original features and harder to interpret",
+            "Only if you use exactly 2 components",
+            "They're always more interpretable"
+          ],
+          "correct_answer": 1,
+          "explanation": "Principal components are weighted combinations of original features, making them less interpretable. This is a tradeoff for dimensionality reduction."
+        },
+        {
+          "id": "m5s4q7",
+          "question": "What is a scree plot used for in PCA?",
+          "type": "multiple_choice",
+          "options": [
+            "Visualizing clusters",
+            "Determining how many principal components to keep",
+            "Showing outliers",
+            "Displaying the original data"
+          ],
+          "correct_answer": 1,
+          "explanation": "A scree plot shows explained variance by each component, helping you decide how many components to retain (often looking for an 'elbow' point)."
+        },
+        {
+          "id": "m5s4q8",
+          "question": "Can PCA be used before clustering?",
+          "type": "multiple_choice",
+          "options": [
+            "No, never",
+            "Yes, to reduce dimensions and speed up clustering",
+            "Only for K-Means",
+            "Only for text data"
+          ],
+          "correct_answer": 1,
+          "explanation": "PCA is often used as a preprocessing step before clustering to reduce dimensionality, speed up computation, and remove noise."
+        },
+        {
+          "id": "m5s4q9",
+          "question": "If you have 784 features (like MNIST images), how many principal components do you need to retain 95% variance?",
+          "type": "multiple_choice",
+          "options": [
+            "Always 784",
+            "Always 2",
+            "Typically much fewer than 784 (often 50-150)",
+            "Exactly half (392)"
+          ],
+          "correct_answer": 2,
+          "explanation": "PCA's power is that you can typically retain 95% variance with far fewer components than original features. For MNIST, often 50-150 components suffice instead of 784."
+        }
+      ]
+    },
+    {
+      "session": 5,
+      "title": "t-SNE and Advanced Visualization",
+      "questions": [
+        {
+          "id": "m5s5q1",
+          "question": "What does t-SNE stand for?",
+          "type": "multiple_choice",
+          "options": [
+            "Total Statistical Normalization Estimation",
+            "t-Distributed Stochastic Neighbor Embedding",
+            "Temporal Spatial Network Embedding",
+            "Two-Step Nonlinear Estimation"
+          ],
+          "correct_answer": 1,
+          "explanation": "t-SNE (t-Distributed Stochastic Neighbor Embedding) is a nonlinear dimensionality reduction technique particularly well-suited for visualization."
+        },
+        {
+          "id": "m5s5q2",
+          "question": "What is the main difference between PCA and t-SNE?",
+          "type": "multiple_choice",
+          "options": [
+            "PCA is supervised, t-SNE is unsupervised",
+            "PCA is linear, t-SNE is nonlinear",
+            "PCA is slower than t-SNE",
+            "There is no difference"
+          ],
+          "correct_answer": 1,
+          "explanation": "PCA performs linear transformation preserving global structure, while t-SNE uses nonlinear transformation better at preserving local neighborhood relationships."
+        },
+        {
+          "id": "m5s5q3",
+          "question": "What is the perplexity parameter in t-SNE?",
+          "type": "multiple_choice",
+          "options": [
+            "The number of clusters",
+            "A measure of how many neighbors each point considers (typical range: 5-50)",
+            "The learning rate",
+            "The number of iterations"
+          ],
+          "correct_answer": 1,
+          "explanation": "Perplexity balances local and global aspects of the data. Lower values focus on very local structure, higher values consider broader neighborhoods."
+        },
+        {
+          "id": "m5s5q4",
+          "question": "Why is t-SNE much slower than PCA?",
+          "type": "multiple_choice",
+          "options": [
+            "t-SNE is linear",
+            "t-SNE requires iterative optimization and pairwise distance calculations",
+            "t-SNE uses more memory",
+            "t-SNE is actually faster"
+          ],
+          "correct_answer": 1,
+          "explanation": "t-SNE requires computing pairwise distances and iteratively optimizing point positions, making it computationally expensive. PCA is a simple linear algebra operation."
+        },
+        {
+          "id": "m5s5q5",
+          "question": "Can you easily transform new data points using a trained t-SNE model?",
+          "type": "multiple_choice",
+          "options": [
+            "Yes, just like PCA",
+            "No, t-SNE doesn't provide a general transformation for new data",
+            "Only if you retrain",
+            "Only for 2D visualizations"
+          ],
+          "correct_answer": 1,
+          "explanation": "Unlike PCA, t-SNE doesn't learn a parametric mapping, so you can't easily transform new points. You'd need to rerun t-SNE with the new data included."
+        },
+        {
+          "id": "m5s5q6",
+          "question": "When should you use t-SNE over PCA?",
+          "type": "multiple_choice",
+          "options": [
+            "When speed is critical",
+            "When you need to transform new data",
+            "When visualization quality is most important and you have computational resources",
+            "Never - PCA is always better"
+          ],
+          "correct_answer": 2,
+          "explanation": "t-SNE typically produces better visualizations with clearer cluster separation, but at the cost of computational time. Use it when visualization quality matters most."
+        },
+        {
+          "id": "m5s5q7",
+          "question": "What structure does t-SNE preserve better than PCA?",
+          "type": "multiple_choice",
+          "options": [
+            "Global structure",
+            "Local neighborhood structure",
+            "Linear relationships",
+            "Feature names"
+          ],
+          "correct_answer": 1,
+          "explanation": "t-SNE excels at preserving local neighborhood relationships - keeping similar points close together in the low-dimensional space."
+        },
+        {
+          "id": "m5s5q8",
+          "question": "Why is it recommended to apply PCA before t-SNE on very high-dimensional data?",
+          "type": "multiple_choice",
+          "options": [
+            "To make t-SNE faster and reduce noise",
+            "To make visualizations prettier",
+            "To increase accuracy",
+            "It's not recommended"
+          ],
+          "correct_answer": 0,
+          "explanation": "Reducing dimensions with PCA first (e.g., 784 → 50) speeds up t-SNE significantly and can improve results by removing noise."
+        },
+        {
+          "id": "m5s5q9",
+          "question": "What does UMAP improve upon compared to t-SNE?",
+          "type": "multiple_choice",
+          "options": [
+            "Nothing - they're identical",
+            "UMAP is faster and preserves both local AND global structure better",
+            "UMAP only works on images",
+            "UMAP requires labeled data"
+          ],
+          "correct_answer": 1,
+          "explanation": "UMAP (Uniform Manifold Approximation and Projection) is a newer technique that's faster than t-SNE and better preserves both local and global structure."
+        }
+      ]
+    },
+    {
+      "session": 6,
+      "title": "Anomaly Detection",
+      "questions": [
+        {
+          "id": "m5s6q1",
+          "question": "What is the main challenge in unsupervised anomaly detection?",
+          "type": "multiple_choice",
+          "options": [
+            "It's too slow",
+            "You don't have labeled examples of what constitutes an anomaly",
+            "It requires too much data",
+            "It only works on images"
+          ],
+          "correct_answer": 1,
+          "explanation": "Unsupervised anomaly detection must identify unusual patterns without labeled examples of anomalies, relying on the assumption that anomalies are rare and different from normal data."
+        },
+        {
+          "id": "m5s6q2",
+          "question": "How does Isolation Forest detect anomalies?",
+          "type": "multiple_choice",
+          "options": [
+            "By measuring distance to nearest neighbors",
+            "By identifying points that are easy to isolate (require few splits)",
+            "By clustering",
+            "By supervised learning"
+          ],
+          "correct_answer": 1,
+          "explanation": "Isolation Forest assumes anomalies are easier to isolate than normal points. It builds random trees, and points requiring fewer splits to isolate are deemed anomalous."
+        },
+        {
+          "id": "m5s6q3",
+          "question": "What does the 'contamination' parameter in Isolation Forest represent?",
+          "type": "multiple_choice",
+          "options": [
+            "The accuracy",
+            "The expected proportion of outliers in the dataset",
+            "The number of trees",
+            "The learning rate"
+          ],
+          "correct_answer": 1,
+          "explanation": "Contamination specifies the expected proportion of outliers/anomalies. For fraud detection with 5% fraud, you'd set contamination=0.05."
+        },
+        {
+          "id": "m5s6q4",
+          "question": "In One-Class SVM for anomaly detection, what does 'one-class' mean?",
+          "type": "multiple_choice",
+          "options": [
+            "It only works with one feature",
+            "It learns the boundary of the normal class (one class)",
+            "It can only detect one type of anomaly",
+            "It requires one labeled example"
+          ],
+          "correct_answer": 1,
+          "explanation": "One-Class SVM learns a decision boundary that encompasses the normal class, treating anything outside as an anomaly."
+        },
+        {
+          "id": "m5s6q5",
+          "question": "How does unsupervised fraud detection compare to supervised in terms of performance?",
+          "type": "multiple_choice",
+          "options": [
+            "Unsupervised is always better",
+            "Supervised is typically better (~85-90% vs ~50-60%) but requires labels",
+            "They perform identically",
+            "Unsupervised is only better for large datasets"
+          ],
+          "correct_answer": 1,
+          "explanation": "Supervised methods (Random Forest, XGBoost) typically achieve 85-92% precision/recall with labeled data, while unsupervised methods achieve 50-60% but don't need labels."
+        },
+        {
+          "id": "m5s6q6",
+          "question": "When should you use unsupervised anomaly detection for fraud?",
+          "type": "multiple_choice",
+          "options": [
+            "Never - supervised is always better",
+            "When you have no or few labeled fraud examples, or need to detect novel fraud types",
+            "Only for small datasets",
+            "Only when speed doesn't matter"
+          ],
+          "correct_answer": 1,
+          "explanation": "Unsupervised methods are valuable when labels are scarce, expensive, or when you need to detect new types of fraud that differ from historical patterns."
+        },
+        {
+          "id": "m5s6q7",
+          "question": "What is a hybrid approach to fraud detection?",
+          "type": "multiple_choice",
+          "options": [
+            "Using only supervised methods",
+            "Using unsupervised to flag suspects, manual review to label, then supervised on labeled data",
+            "Using two supervised models",
+            "Using only clustering"
+          ],
+          "correct_answer": 1,
+          "explanation": "A hybrid approach uses unsupervised detection initially, generates labels through manual review, then trains supervised models as labels accumulate - best of both worlds!"
+        },
+        {
+          "id": "m5s6q8",
+          "question": "What are anomaly scores in Isolation Forest?",
+          "type": "multiple_choice",
+          "options": [
+            "The accuracy of the model",
+            "Numerical values indicating how anomalous each point is",
+            "The number of trees",
+            "The contamination rate"
+          ],
+          "correct_answer": 1,
+          "explanation": "Anomaly scores quantify how anomalous each point is. Lower scores (more negative) indicate points that are easier to isolate and thus more anomalous."
+        },
+        {
+          "id": "m5s6q9",
+          "question": "Why might unsupervised anomaly detection have higher false positive rates than supervised?",
+          "type": "multiple_choice",
+          "options": [
+            "It's slower",
+            "Without labeled examples, it flags anything unusual as anomalous, which may include legitimate but rare cases",
+            "It uses more features",
+            "It doesn't"
+          ],
+          "correct_answer": 1,
+          "explanation": "Unsupervised methods flag statistical outliers, which may include legitimate unusual cases. Supervised methods learn from labeled examples what actually constitutes fraud."
+        }
+      ]
+    }
+  ]
+}

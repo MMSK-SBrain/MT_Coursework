@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 10,
+  "week": 2,
+  "session_title": "Starting & Charging Introduction + Week 2 Consolidation",
+  "questions": [
+    {
+      "id": "D10-Q01",
+      "question": "What is the dual function of the starter motor solenoid?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "It pushes the pinion into the ring gear and closes the heavy contacts to send full battery current to the motor",
+        "B": "It regulates voltage and controls engine RPM",
+        "C": "It charges the battery and powers the ignition system",
+        "D": "It monitors engine temperature and activates the cooling fan"
+      },
+      "correct_answer": "A",
+      "explanation": "The solenoid performs two simultaneous functions: mechanically pushing the Bendix drive pinion into engagement with the flywheel ring gear, and electrically closing heavy-duty contacts to route 150-300A from the battery to the starter motor. Option A describes the voltage regulator in the alternator, not the starter solenoid.",
+      "topic": "Starter motor construction and operation",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D10-Q02",
+      "question": "Which component in the alternator converts the internally generated AC voltage to DC?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The voltage regulator",
+        "B": "The rotor field winding",
+        "C": "The diode rectifier bridge",
+        "D": "The slip rings and brushes"
+      },
+      "correct_answer": "C",
+      "explanation": "The diode rectifier bridge contains six diodes that convert three-phase AC from the stator windings into pulsating DC for the vehicle electrical system. The voltage regulator (option A) controls field current to maintain stable output voltage, but does not perform the AC-to-DC conversion.",
+      "topic": "Alternator construction and operation",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D10-Q03",
+      "question": "What voltage range should a healthy alternator produce at the battery terminals with the engine running at approximately 2000 RPM?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "10.5 - 11.5 V",
+        "B": "12.4 - 12.8 V",
+        "C": "14.0 - 14.8 V",
+        "D": "16.0 - 18.0 V"
+      },
+      "correct_answer": "C",
+      "explanation": "A healthy alternator with a functioning voltage regulator produces 14.0 to 14.8V at the battery terminals. This elevated voltage is necessary to push charging current into the battery. Option B (12.4-12.8V) is approximately the battery resting voltage and would indicate the alternator is not charging. Option D (16-18V) would indicate a failed regulator causing dangerous overcharging.",
+      "topic": "Alternator output voltage specifications",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D10-Q04",
+      "question": "What is the purpose of the neutral safety switch (automatic) or clutch switch (manual) in the starting circuit?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To limit the current flowing to the starter motor",
+        "B": "To regulate the alternator output during cranking",
+        "C": "To cut power to the fuel injectors during starting",
+        "D": "To prevent the engine from starting when the transmission is in gear, which could cause the vehicle to lurch forward"
+      },
+      "correct_answer": "D",
+      "explanation": "The neutral safety switch (automatic) ensures the vehicle is in Park or Neutral, and the clutch switch (manual) ensures the clutch pedal is pressed before the starter can be engaged. This prevents the vehicle from lurching dangerously if started while in gear. Option A is incorrect because current limiting is handled by the battery's internal resistance and the motor's resistance.",
+      "topic": "Starting circuit safety interlocks",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D10-Q05",
+      "question": "In the systematic starting and charging test sequence, which component should always be tested first and why?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The alternator, because it powers all other systems",
+        "B": "The battery, because its condition affects the results of all subsequent tests",
+        "C": "The starter motor, because it is the most expensive component",
+        "D": "The OBD-II port, because DTCs must be cleared before testing"
+      },
+      "correct_answer": "B",
+      "explanation": "The battery must be tested first because a weak battery produces misleading results: it makes a good starter appear to draw excessive current and makes a good alternator appear to produce the correct voltage. Always establish the battery baseline before testing downstream components. Option A is wrong because the alternator cannot be tested meaningfully if the battery condition is unknown.",
+      "topic": "Starting and charging test sequence",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D10-Q06",
+      "question": "A vehicle has the following test results: resting voltage 12.1V, cranking voltage drops to 9.5V, and running voltage is 14.3V. Which diagnosis is correct?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The alternator is overcharging and needs replacement",
+        "B": "The battery is weak or discharged, but the alternator is functioning normally",
+        "C": "All components are within normal specifications",
+        "D": "The starter motor has excessive current draw and is dragging"
+      },
+      "correct_answer": "B",
+      "explanation": "The low resting voltage (12.1V = ~25% charge) and excessive cranking voltage drop (below 10.5V) indicate a weak battery. However, the running voltage of 14.3V is within the normal 14.0-14.8V range, confirming the alternator is regulating properly. The battery needs charging and load testing, or replacement. Option D is less likely because the excessive voltage drop during cranking is more consistent with a weak battery than a dragging starter.",
+      "topic": "Interpreting starting and charging test results",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D10-Q07",
+      "question": "A technician measures 12.8V at the battery terminals with the engine running at 2000 RPM. The battery warning light is illuminated on the dashboard. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The battery is overcharged and the warning light confirms it",
+        "B": "The serpentine belt tension is too tight, overloading the alternator",
+        "C": "The alternator is not charging; 12.8V is barely above resting voltage, indicating little or no alternator output",
+        "D": "The instrument cluster ECU has a software error causing a false warning"
+      },
+      "correct_answer": "C",
+      "explanation": "Running voltage of 12.8V is far below the expected 14.0-14.8V range and indicates the alternator is producing minimal or no output. The battery warning light confirms this. Common causes include worn brushes losing contact with slip rings, a broken or slipping serpentine belt, or a failed voltage regulator. Option A is incorrect because overcharging would show voltage above 15V, not below 13V.",
+      "topic": "Alternator undercharge diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D10-Q08",
+      "question": "A customer reports that the headlights are excessively bright, there is an acid smell from the battery area, and the battery electrolyte is boiling. The technician measures 16.2V at the battery terminals with the engine running. What has failed?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The alternator voltage regulator has failed in the full-on position, causing overcharging",
+        "B": "The starter motor solenoid contacts are welded closed",
+        "C": "The battery has an internal short between cells",
+        "D": "The main fuse has melted, allowing unregulated current"
+      },
+      "correct_answer": "A",
+      "explanation": "All symptoms point to alternator overcharging: excessively bright headlights, boiling electrolyte, acid smell, and running voltage above 15V. The voltage regulator has failed in the 'full field' position, sending maximum current to the rotor and producing uncontrolled high output. This destroys batteries and can damage ECUs. Option C would cause low voltage, not high voltage.",
+      "topic": "Alternator overcharge fault diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D10-Q09",
+      "question": "A technician turns the key to START and hears a single loud click but the engine does not crank. The battery resting voltage tested at 12.6V. Based on the starter circuit knowledge from this week, what is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The battery is dead and needs replacement",
+        "B": "The neutral safety switch is faulty and blocking the circuit",
+        "C": "The CAN bus is preventing the ECM from authorising the start",
+        "D": "The starter solenoid energises (producing the click) but the heavy contacts are burnt or the motor has failed"
+      },
+      "correct_answer": "D",
+      "explanation": "A single loud click confirms the solenoid coil has enough current to energise and pull the plunger (producing the mechanical click), but the engine does not turn. Since the battery is at 12.6V (fully charged), the problem lies at the solenoid heavy contacts (burnt and not passing current) or the starter motor itself (seized or failed windings). Option B is unlikely because a faulty neutral safety switch would prevent even the click, as it is upstream of the solenoid.",
+      "topic": "Starter motor fault diagnosis",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D10-Q10",
+      "question": "During the Week 2 consolidation, a trainee is asked: 'A starter motor draws 200A from a 12V battery. Using Ohm's Law from Day 7, what is the effective resistance of the starter motor?' Which answer demonstrates correct application of the week's learning?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "2,400 ohms, calculated as V times I",
+        "B": "0.06 ohms, calculated as R = V / I = 12 / 200",
+        "C": "16.7 ohms, calculated as R = I / V = 200 / 12",
+        "D": "188 ohms, calculated as R = I - V = 200 - 12"
+      },
+      "correct_answer": "B",
+      "explanation": "Applying Ohm's Law: R = V / I = 12 / 200 = 0.06 ohms. This extremely low resistance is why starter cables must be very thick and why the starter motor acts almost like a controlled short circuit. Option A incorrectly uses V x I, which is the power formula (P = VI = 2,400W), not resistance. Option C inverts the division.",
+      "topic": "Week 2 consolidation — Ohm's Law applied to starting system",
+      "bloom_level": "Apply"
+    }
+  ]
+}

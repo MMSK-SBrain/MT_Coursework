@@ -1,0 +1,563 @@
+{
+  "course_code": "ML-ENG",
+  "course_title": "Machine Learning for Engineers: The AI-Assisted Approach",
+  "assessment_framework": {
+    "description": "Assessment criteria and activity suggestions for each session outcome",
+    "activity_types": {
+      "prompt_engineering": "Challenges to improve AI prompting skills",
+      "code_explanation": "Analyze and understand AI-generated code",
+      "debug_detective": "Find and fix bugs with AI assistance",
+      "project_builder": "Build complete projects using AI tools",
+      "concept_quiz": "Interactive Q&A with AI",
+      "real_world_solving": "Apply ML to actual scenarios",
+      "model_comparison": "Compare different approaches",
+      "collaborative_learning": "Explore what-if scenarios with AI"
+    }
+  },
+  "modules": [
+    {
+      "module_id": "module-0",
+      "module_number": 0,
+      "title": "Prerequisites - Setting Up Your AI-Assisted Learning Environment",
+      "sessions": [
+        {
+          "session_id": "session-0-1",
+          "title": "Introduction to LLMs and Account Setup",
+          "outcomes": [
+            {
+              "id": "so-0-1-1",
+              "code": "ML-ENG-SO-0-1-1",
+              "description": "Create accounts on ChatGPT, Gemini, and Claude platforms",
+              "assessment_criteria": {
+                "evidence": "Screenshots of successfully created accounts with verified email addresses",
+                "measurement": "Checklist completion: ChatGPT account ✓, Gemini account ✓, Claude account ✓",
+                "success_criteria": "All three accounts created and verified; able to log in and send test messages"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Platform Setup Sprint",
+                  "description": "Visit ChatGPT, Gemini, and Claude websites. Create accounts using your email. Verify each account and test by sending 'Hello, I'm learning ML' to each platform.",
+                  "duration_minutes": 20,
+                  "deliverable": "Screenshot compilation showing successful login to all three platforms"
+                },
+                {
+                  "type": "real_world_solving",
+                  "title": "Account Troubleshooting",
+                  "description": "If you encounter any setup issues (verification emails, login problems), document the issue and use one LLM to get troubleshooting help.",
+                  "duration_minutes": 10,
+                  "deliverable": "Short write-up of any issues faced and how you resolved them"
+                }
+              ]
+            },
+            {
+              "id": "so-0-1-2",
+              "code": "ML-ENG-SO-0-1-2",
+              "description": "Identify key differences between GPT-4, Gemini, Claude, and open-source LLMs",
+              "assessment_criteria": {
+                "evidence": "Comparison table highlighting 4-5 key differences (speed, accuracy, cost, capabilities)",
+                "measurement": "Accuracy of identified differences; depth of understanding demonstrated",
+                "success_criteria": "Can explain at least 3 meaningful differences and when to use each LLM"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "LLM Comparison Research",
+                  "description": "Ask ChatGPT: 'What are the key differences between GPT-4, Gemini, Claude, and Llama?' Create a comparison table with: Model Name, Developer, Strengths, Weaknesses, Best Use Cases.",
+                  "duration_minutes": 30,
+                  "deliverable": "Comparison table with 5 LLM models and 5 comparison dimensions"
+                },
+                {
+                  "type": "collaborative_learning",
+                  "title": "When to Use Which LLM",
+                  "description": "Create 3 hypothetical ML scenarios and ask an LLM which model would be best for each scenario and why.",
+                  "duration_minutes": 15,
+                  "deliverable": "Document with 3 scenarios and LLM recommendations with reasoning"
+                }
+              ]
+            },
+            {
+              "id": "so-0-1-3",
+              "code": "ML-ENG-SO-0-1-3",
+              "description": "Test the same ML-related prompt across different LLMs and compare response quality",
+              "assessment_criteria": {
+                "evidence": "Side-by-side comparison document showing same prompt sent to 3 LLMs with responses",
+                "measurement": "Analysis quality: identifies differences in code quality, explanation clarity, completeness",
+                "success_criteria": "Can articulate which response was best and why, citing specific examples"
+              },
+              "activities": [
+                {
+                  "type": "prompt_engineering",
+                  "title": "Multi-LLM Code Generation Test",
+                  "description": "Send this exact prompt to ChatGPT, Gemini, and Claude: 'Write Python code to load a CSV file and create a simple linear regression model to predict house prices. Include comments explaining each step.' Compare the responses.",
+                  "duration_minutes": 25,
+                  "deliverable": "Comparison document with responses from all 3 LLMs and your analysis of which was best"
+                },
+                {
+                  "type": "model_comparison",
+                  "title": "Response Quality Analysis",
+                  "description": "Rate each LLM's response on: Code correctness (1-5), Explanation clarity (1-5), Completeness (1-5), Beginner-friendliness (1-5). Calculate total scores.",
+                  "duration_minutes": 15,
+                  "deliverable": "Scoring rubric with ratings and your recommendation of which LLM to use for learning ML"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-0-2",
+          "title": "Ways to Access LLMs",
+          "outcomes": [
+            {
+              "id": "so-0-2-1",
+              "code": "ML-ENG-SO-0-2-1",
+              "description": "Use web-based interfaces to interact with LLMs for code generation",
+              "assessment_criteria": {
+                "evidence": "Successfully generated ML code snippet using web interface with iterative refinement",
+                "measurement": "Code runs without errors; shows evidence of prompt iteration",
+                "success_criteria": "Generated functional code through web interface; made at least 2 refinement requests"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Web Interface Code Generation",
+                  "description": "Using ChatGPT or Gemini web interface, generate code for: 'Create a Python function that loads the Iris dataset, splits it into train/test, and trains a decision tree classifier.' Run the code in Google Colab.",
+                  "duration_minutes": 20,
+                  "deliverable": "Working code in Colab notebook with output showing successful execution"
+                },
+                {
+                  "type": "prompt_engineering",
+                  "title": "Iterative Refinement Practice",
+                  "description": "After getting initial code, refine it with follow-up prompts: 1) 'Add visualization of the decision tree', 2) 'Add accuracy metrics', 3) 'Add comments in beginner-friendly language'.",
+                  "duration_minutes": 20,
+                  "deliverable": "Final refined code showing all three improvements"
+                }
+              ]
+            },
+            {
+              "id": "so-0-2-2",
+              "code": "ML-ENG-SO-0-2-2",
+              "description": "Install and configure IDE plugins (Copilot, Cursor) for in-editor AI assistance",
+              "assessment_criteria": {
+                "evidence": "Screenshot of IDE with AI plugin active and generating code suggestions",
+                "measurement": "Successful installation and demonstration of code completion",
+                "success_criteria": "Plugin installed, configured, and able to generate at least one code suggestion"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "IDE Plugin Setup",
+                  "description": "Install VS Code and GitHub Copilot (or Cursor). Create a new Python file named 'ml_test.py'. Type '# Function to load and split iris dataset' and let the AI suggest the code.",
+                  "duration_minutes": 30,
+                  "deliverable": "Screenshot showing AI code suggestions in your IDE"
+                },
+                {
+                  "type": "code_explanation",
+                  "title": "AI-Assisted Code Writing",
+                  "description": "Write 5 different comment prompts in your IDE and let AI complete them. Examples: '# train random forest', '# calculate accuracy', '# plot confusion matrix'.",
+                  "duration_minutes": 20,
+                  "deliverable": "Python file with 5 AI-generated code blocks from comment prompts"
+                }
+              ]
+            },
+            {
+              "id": "so-0-2-3",
+              "code": "ML-ENG-SO-0-2-3",
+              "description": "Execute basic API calls to LLM services and interpret responses",
+              "assessment_criteria": {
+                "evidence": "Working Python script that calls LLM API and prints response",
+                "measurement": "Code executes successfully; API key properly configured; response parsed correctly",
+                "success_criteria": "Successfully makes API call and receives ML code generation response"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "First API Call",
+                  "description": "Using an LLM, generate Python code to call OpenAI API or Google AI API with prompt: 'Write a function to classify sentiment'. Get your API key from the platform. Run the code.",
+                  "duration_minutes": 35,
+                  "deliverable": "Working Python script that makes API call and displays response"
+                },
+                {
+                  "type": "real_world_solving",
+                  "title": "API Response Parsing",
+                  "description": "Modify your API script to: 1) Extract just the code from the response, 2) Save it to a file, 3) Count the number of lines. Use AI to help with JSON parsing.",
+                  "duration_minutes": 25,
+                  "deliverable": "Enhanced script with response parsing and file saving"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-0-3",
+          "title": "Understanding Compute Resources",
+          "outcomes": [
+            {
+              "id": "so-0-3-1",
+              "code": "ML-ENG-SO-0-3-1",
+              "description": "Explain the difference between CPU and GPU processing for ML workloads",
+              "assessment_criteria": {
+                "evidence": "Written explanation (200-300 words) with real-world analogy",
+                "measurement": "Accuracy of technical concepts; clarity of analogy; practical understanding",
+                "success_criteria": "Correctly explains parallel processing advantage; provides clear analogy; mentions when to use each"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "CPU vs GPU Research",
+                  "description": "Ask an LLM: 'Explain CPU vs GPU for machine learning using a real-world analogy that a non-technical person would understand. Include when to use each.' Write a summary in your own words.",
+                  "duration_minutes": 20,
+                  "deliverable": "200-300 word explanation with analogy"
+                },
+                {
+                  "type": "collaborative_learning",
+                  "title": "Visual Understanding",
+                  "description": "Ask AI to generate a simple diagram description showing how CPUs and GPUs process data differently. Create a sketch based on the description.",
+                  "duration_minutes": 15,
+                  "deliverable": "Hand-drawn or digital diagram illustrating CPU vs GPU processing"
+                }
+              ]
+            },
+            {
+              "id": "so-0-3-2",
+              "code": "ML-ENG-SO-0-3-2",
+              "description": "Run a simple ML task on both CPU and GPU, comparing execution time",
+              "assessment_criteria": {
+                "evidence": "Colab notebook with execution times for both CPU and GPU runs",
+                "measurement": "Correct implementation; accurate timing measurement; clear speed comparison",
+                "success_criteria": "Shows execution time difference; explains why GPU is faster (or not) for this specific task"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "CPU vs GPU Performance Test",
+                  "description": "In Google Colab, use AI to generate code that: 1) Trains a neural network on Fashion MNIST using CPU, 2) Measures time, 3) Switches to GPU, 4) Trains again and measures time, 5) Compares results.",
+                  "duration_minutes": 30,
+                  "deliverable": "Colab notebook showing execution times for CPU and GPU with speedup calculation"
+                },
+                {
+                  "type": "model_comparison",
+                  "title": "When Does GPU Matter?",
+                  "description": "Run 3 different sized models (small, medium, large) on CPU and GPU. Document at what size GPU becomes significantly faster. Use AI to generate the test code.",
+                  "duration_minutes": 25,
+                  "deliverable": "Table showing execution times for 3 model sizes on CPU vs GPU"
+                }
+              ]
+            },
+            {
+              "id": "so-0-3-3",
+              "code": "ML-ENG-SO-0-3-3",
+              "description": "Configure a Google Colab notebook with GPU acceleration",
+              "assessment_criteria": {
+                "evidence": "Colab notebook with GPU enabled and verified",
+                "measurement": "Correct runtime settings; verification code runs successfully",
+                "success_criteria": "GPU is enabled; can print GPU name and memory; runs sample computation"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Colab GPU Setup",
+                  "description": "Open Google Colab. Go to Runtime > Change runtime type > Select GPU. Use AI to generate code that checks: 1) If GPU is available, 2) GPU name, 3) GPU memory. Run the code.",
+                  "duration_minutes": 15,
+                  "deliverable": "Colab notebook showing GPU information output"
+                },
+                {
+                  "type": "real_world_solving",
+                  "title": "GPU Troubleshooting",
+                  "description": "Try to run a GPU computation. If it fails, use AI to debug the error. Common issues: TensorFlow/PyTorch not detecting GPU, CUDA errors, memory limits.",
+                  "duration_minutes": 20,
+                  "deliverable": "Documentation of any issues encountered and solutions found with AI help"
+                }
+              ]
+            },
+            {
+              "id": "so-0-3-4",
+              "code": "ML-ENG-SO-0-3-4",
+              "description": "Compare free vs paid cloud GPU services for cost-effectiveness",
+              "assessment_criteria": {
+                "evidence": "Comparison spreadsheet with at least 4 services analyzed",
+                "measurement": "Completeness of comparison (pricing, GPU types, limits, features)",
+                "success_criteria": "Can recommend best option for different use cases (learning, small projects, production)"
+              },
+              "activities": [
+                {
+                  "type": "real_world_solving",
+                  "title": "Cloud GPU Service Comparison",
+                  "description": "Research using AI: Google Colab (free & Pro), Kaggle, AWS, Paperspace. Create comparison table: Free tier limits, Paid pricing, GPU types, Session limits, Storage.",
+                  "duration_minutes": 30,
+                  "deliverable": "Comparison spreadsheet with recommendations for beginners"
+                },
+                {
+                  "type": "collaborative_learning",
+                  "title": "Cost-Benefit Analysis",
+                  "description": "Create 3 scenarios: 1) Learning ML (student), 2) Small business project, 3) Heavy training workload. Ask AI which service fits each scenario and why.",
+                  "duration_minutes": 20,
+                  "deliverable": "Document with 3 scenarios and justified recommendations"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-1",
+      "module_number": 1,
+      "title": "Getting Started with AI-Assisted Learning",
+      "sessions": [
+        {
+          "session_id": "session-1-1",
+          "title": "Introduction to Machine Learning",
+          "outcomes": [
+            {
+              "id": "so-1-1-1",
+              "code": "ML-ENG-SO-1-1-1",
+              "description": "Define machine learning and distinguish it from traditional programming",
+              "assessment_criteria": {
+                "evidence": "Written definition and comparison table showing 3-4 key differences",
+                "measurement": "Accuracy of definition; clarity of distinctions; use of examples",
+                "success_criteria": "Provides accurate definition; identifies at least 3 valid differences with examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "ML vs Traditional Programming",
+                  "description": "Ask LLM: 'What's the difference between ML and traditional programming? Give me 3 examples of problems better solved with ML.' Create a comparison table.",
+                  "duration_minutes": 20,
+                  "deliverable": "Comparison table with definitions and 3 example problems for each approach"
+                },
+                {
+                  "type": "collaborative_learning",
+                  "title": "ML in Everyday Life",
+                  "description": "Identify 5 ML systems you use daily (email spam filter, recommendations, voice assistant, etc.). For each, explain why it needs ML instead of traditional code.",
+                  "duration_minutes": 15,
+                  "deliverable": "List of 5 ML applications with explanations"
+                }
+              ]
+            },
+            {
+              "id": "so-1-1-2",
+              "code": "ML-ENG-SO-1-1-2",
+              "description": "Identify real-world problems suitable for ML solutions",
+              "assessment_criteria": {
+                "evidence": "List of 5 problems with justification why ML is appropriate",
+                "measurement": "Problem relevance; ML suitability reasoning; diversity of domains",
+                "success_criteria": "Identifies 5 valid ML problems; explains why ML is needed; covers at least 3 different domains"
+              },
+              "activities": [
+                {
+                  "type": "real_world_solving",
+                  "title": "Problem Identification Workshop",
+                  "description": "Think of problems in your industry/domain. Ask AI: 'Which of these problems can be solved with ML: [list your problems].' For each ML-suitable problem, ask 'Why is this an ML problem and what type of ML would work?'",
+                  "duration_minutes": 25,
+                  "deliverable": "Document with 5 problems, ML suitability analysis, and ML approach for each"
+                },
+                {
+                  "type": "model_comparison",
+                  "title": "ML vs Non-ML Decision Framework",
+                  "description": "Ask AI to help you create a decision tree: 'When should I use ML vs traditional programming?' Test it on 10 different problems.",
+                  "duration_minutes": 20,
+                  "deliverable": "Decision framework flowchart with 10 example problems tested"
+                }
+              ]
+            },
+            {
+              "id": "so-1-1-3",
+              "code": "ML-ENG-SO-1-1-3",
+              "description": "Use LLMs to explain ML concepts in multiple ways for different audiences",
+              "assessment_criteria": {
+                "evidence": "Same ML concept explained 5 different ways (child, teenager, engineer, executive, elderly person)",
+                "measurement": "Appropriateness of language for each audience; accuracy maintained across versions",
+                "success_criteria": "All 5 explanations are audience-appropriate; core concept remains accurate"
+              },
+              "activities": [
+                {
+                  "type": "prompt_engineering",
+                  "title": "Multi-Audience Explanation Challenge",
+                  "description": "Pick one concept: 'supervised learning.' Prompt AI: 'Explain supervised learning to [audience]' for: 10-year-old, college student, business executive, grandmother, engineer. Compile responses.",
+                  "duration_minutes": 25,
+                  "deliverable": "Document with 5 versions of the same explanation for different audiences"
+                },
+                {
+                  "type": "collaborative_learning",
+                  "title": "Explanation Quality Assessment",
+                  "description": "Show your 5 explanations to people from those audiences (or ask AI to critique them). Get feedback on clarity. Refine based on feedback.",
+                  "duration_minutes": 20,
+                  "deliverable": "Feedback summary and refined explanations"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-1-2",
+          "title": "Effective Prompt Engineering for ML",
+          "outcomes": [
+            {
+              "id": "so-1-2-1",
+              "code": "ML-ENG-SO-1-2-1",
+              "description": "Construct effective prompts that specify ML requirements clearly",
+              "assessment_criteria": {
+                "evidence": "10 well-structured prompts for different ML tasks showing improvement from initial attempts",
+                "measurement": "Prompt clarity; specificity; completeness; results quality",
+                "success_criteria": "Prompts include: task description, input/output format, constraints, expected behavior"
+              },
+              "activities": [
+                {
+                  "type": "prompt_engineering",
+                  "title": "Prompt Formula Workshop",
+                  "description": "Learn the formula: Task + Context + Format + Constraints. Example: 'Create [task] that takes [input] and returns [output], considering [constraints].' Practice with 5 ML tasks.",
+                  "duration_minutes": 30,
+                  "deliverable": "10 prompts (5 bad → 5 improved) with explanations of improvements"
+                },
+                {
+                  "type": "model_comparison",
+                  "title": "Vague vs Specific Prompts",
+                  "description": "Test pairs of prompts (vague vs specific) for the same task. Example: 'Create a classifier' vs 'Create a binary text classifier for spam detection that takes email text and returns spam/not-spam with confidence scores.' Compare outputs.",
+                  "duration_minutes": 25,
+                  "deliverable": "Side-by-side comparison showing how prompt quality affects output"
+                }
+              ]
+            },
+            {
+              "id": "so-1-2-2",
+              "code": "ML-ENG-SO-1-2-2",
+              "description": "Iterate on AI-generated code by providing targeted follow-up prompts",
+              "assessment_criteria": {
+                "evidence": "Conversation thread showing 3-4 iterations improving initial code",
+                "measurement": "Quality of follow-up prompts; progressive improvement; final code quality",
+                "success_criteria": "Shows clear improvement trajectory; final code meets all requirements; follow-ups are specific"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Iterative Code Refinement",
+                  "description": "Start with basic prompt: 'Create a simple linear regression.' Then iterate: 1) 'Add data visualization', 2) 'Add error metrics', 3) 'Add cross-validation', 4) 'Make code more efficient'. Document each step.",
+                  "duration_minutes": 35,
+                  "deliverable": "Conversation log with 5 iterations showing progressive enhancement"
+                },
+                {
+                  "type": "debug_detective",
+                  "title": "Bug Fix Iteration",
+                  "description": "Ask AI for code that intentionally has issues. Use follow-up prompts to fix: 1) 'This code gives NameError', 2) 'Add input validation', 3) 'Handle missing data', 4) 'Optimize performance'.",
+                  "duration_minutes": 25,
+                  "deliverable": "Before/after code with iteration log"
+                }
+              ]
+            },
+            {
+              "id": "so-1-2-3",
+              "code": "ML-ENG-SO-1-2-3",
+              "description": "Request code explanations at different levels of technical depth",
+              "assessment_criteria": {
+                "evidence": "Same code block explained at 3 levels: beginner, intermediate, expert",
+                "measurement": "Appropriateness of depth for each level; technical accuracy",
+                "success_criteria": "Beginner explanation avoids jargon; intermediate uses some technical terms; expert is detailed"
+              },
+              "activities": [
+                {
+                  "type": "code_explanation",
+                  "title": "Multi-Level Code Explanation",
+                  "description": "Generate complex ML code (e.g., neural network). Ask AI to explain it: 1) 'Like I'm a beginner', 2) 'With moderate technical detail', 3) 'At expert level with theory'. Compare.",
+                  "duration_minutes": 25,
+                  "deliverable": "Same code with 3 different explanation depths"
+                },
+                {
+                  "type": "prompt_engineering",
+                  "title": "Custom Explanation Depth",
+                  "description": "Create prompts that specify exactly what to explain: 'Explain only the data preprocessing', 'Explain just the model architecture', 'Explain only the evaluation metrics'.",
+                  "duration_minutes": 20,
+                  "deliverable": "Code with 4 focused explanations of different components"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-1-3",
+          "title": "Setting Up ML Environment and First Model",
+          "outcomes": [
+            {
+              "id": "so-1-3-1",
+              "code": "ML-ENG-SO-1-3-1",
+              "description": "Use AI assistance to install Python, Jupyter, and essential ML libraries",
+              "assessment_criteria": {
+                "evidence": "Working Jupyter notebook with all libraries imported successfully",
+                "measurement": "Successful installation; all imports run without errors; version check passes",
+                "success_criteria": "Can run: import numpy, pandas, sklearn, matplotlib successfully"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Environment Setup with AI Guidance",
+                  "description": "Ask AI: 'Guide me through installing Python 3.10, Jupyter, and ML libraries (numpy, pandas, scikit-learn, matplotlib) on [your OS].' Follow step-by-step. Test each library.",
+                  "duration_minutes": 40,
+                  "deliverable": "Jupyter notebook showing successful import of all libraries with version numbers"
+                },
+                {
+                  "type": "debug_detective",
+                  "title": "Installation Troubleshooting",
+                  "description": "Document any installation errors. Use AI to debug: 'I got this error [paste error], how do I fix it?' Keep a troubleshooting log.",
+                  "duration_minutes": 20,
+                  "deliverable": "Troubleshooting log with errors encountered and AI-assisted solutions"
+                }
+              ]
+            },
+            {
+              "id": "so-1-3-2",
+              "code": "ML-ENG-SO-1-3-2",
+              "description": "Generate and execute a simple prediction model using AI-provided code",
+              "assessment_criteria": {
+                "evidence": "Running model that makes predictions; output shows accuracy metric",
+                "measurement": "Code executes without errors; predictions are generated; basic accuracy shown",
+                "success_criteria": "Model trains successfully; makes predictions; achieves >70% accuracy on simple dataset"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "First ML Model",
+                  "description": "Prompt: 'Create a complete ML program that loads the Iris dataset, splits into train/test, trains a classifier, and shows accuracy. Include comments.' Run in Jupyter.",
+                  "duration_minutes": 25,
+                  "deliverable": "Working Jupyter notebook with complete ML pipeline and output"
+                },
+                {
+                  "type": "collaborative_learning",
+                  "title": "Experimentation",
+                  "description": "Ask AI: 'How can I modify this code to try different algorithms?' Test 3 different classifiers (Decision Tree, Random Forest, SVM) and compare results.",
+                  "duration_minutes": 25,
+                  "deliverable": "Notebook showing results from 3 different algorithms"
+                }
+              ]
+            },
+            {
+              "id": "so-1-3-3",
+              "code": "ML-ENG-SO-1-3-3",
+              "description": "Explain each line of AI-generated ML code with AI assistance",
+              "assessment_criteria": {
+                "evidence": "Annotated code with line-by-line explanations in own words",
+                "measurement": "Accuracy of explanations; demonstrates understanding beyond copy-paste",
+                "success_criteria": "Every line has correct explanation; can answer 'why' questions about code choices"
+              },
+              "activities": [
+                {
+                  "type": "code_explanation",
+                  "title": "Line-by-Line Code Understanding",
+                  "description": "Take your first ML model. Ask AI: 'Explain this code line by line.' Then rephrase each explanation in your own words. Add comments to the code.",
+                  "duration_minutes": 30,
+                  "deliverable": "Heavily commented code showing understanding of each line"
+                },
+                {
+                  "type": "concept_quiz",
+                  "title": "Code Comprehension Quiz",
+                  "description": "Create 10 quiz questions about your code using AI: 'Generate quiz questions testing understanding of this code.' Answer them without looking at the code. Check answers with AI.",
+                  "duration_minutes": 20,
+                  "deliverable": "Quiz with 10 questions and your answers with score"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

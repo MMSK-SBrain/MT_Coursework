@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 53,
+  "week": 11,
+  "session_title": "MIG Welding & Spot Welding Awareness",
+  "questions": [
+    {
+      "id": "D53-Q01",
+      "question": "What does MIG stand for in MIG welding?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Manual Integrated Gas",
+        "B": "Metal Inert Gas",
+        "C": "Mechanical Iron Grafting",
+        "D": "Molten Impact Groove"
+      },
+      "correct_answer": "B",
+      "explanation": "MIG stands for Metal Inert Gas (technical name: GMAW - Gas Metal Arc Welding). The process uses a continuously fed wire electrode with a shielding gas (typically an argon/CO2 mix) to protect the weld pool from atmospheric contamination. The wire serves as both the electrode and the filler material.",
+      "topic": "MIG welding terminology",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D53-Q02",
+      "question": "Why must clothing worn during welding be made of cotton or natural fibres rather than synthetics?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Natural fibres provide better insulation from the welding current",
+        "B": "Synthetic fabrics melt and fuse onto the skin when exposed to welding spatter, causing severe burns",
+        "C": "Cotton is lighter and more comfortable during the heat of welding",
+        "D": "Synthetic fabrics create static electricity that interferes with the arc"
+      },
+      "correct_answer": "B",
+      "explanation": "Synthetic fabrics (nylon, polyester, acrylic) melt when exposed to welding spatter temperatures. Molten synthetic material adheres to the skin and continues to burn, causing deep, extremely painful burns that are worse than those from a brief contact with hot metal. Cotton and natural fibres char and self-extinguish rather than melting.",
+      "topic": "Welding PPE clothing requirements",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D53-Q03",
+      "question": "What are the three key parameters a technician must set on a MIG welding machine?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Temperature, pressure, and electrode length",
+        "B": "Wire speed, voltage, and shielding gas flow rate",
+        "C": "Amperage, frequency, and arc length",
+        "D": "Wire diameter, tip size, and torch angle"
+      },
+      "correct_answer": "B",
+      "explanation": "The three controls on a MIG welder are wire speed (controls filler deposition rate in metres per minute), voltage (controls arc length and heat input), and gas flow rate (controls shielding quality in litres per minute). For 1.5 mm mild steel, typical starting settings are 5 m/min wire speed, 18V, and 12-16 L/min gas flow with 75/25 argon/CO2 mix.",
+      "topic": "MIG machine setup parameters",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D53-Q04",
+      "question": "What weld defect is caused by too low a shielding gas flow rate during MIG welding?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Undercut along the weld edges",
+        "B": "Porosity (gas holes trapped in the solidified weld)",
+        "C": "Excessive spatter on the surrounding metal",
+        "D": "Cold lap where the weld does not fuse to the base metal"
+      },
+      "correct_answer": "B",
+      "explanation": "Insufficient shielding gas allows atmospheric nitrogen and oxygen to reach the molten weld pool. These gases become trapped as bubbles during solidification, creating porosity (small holes throughout the weld). Porosity weakens the weld and is visible as a rough, pitted surface or detected by cross-sectioning. The typical gas flow rate for workshop MIG welding is 12-16 L/min.",
+      "topic": "Porosity from inadequate shielding",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D53-Q05",
+      "question": "What is the purpose of resistance spot welding in automotive manufacturing?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To attach bumper covers to the reinforcement bar",
+        "B": "To join overlapping sheet metal body panels by passing high current through the contact point, creating a fused nugget without filler material",
+        "C": "To repair cracked engine blocks",
+        "D": "To attach weather seals to door frames"
+      },
+      "correct_answer": "B",
+      "explanation": "Resistance spot welding joins overlapping sheet metal panels by clamping them between copper electrodes and passing high electrical current through the contact point. The resistance at the interface generates heat, melting and fusing the panels into a weld nugget. No filler material is required. A typical vehicle body contains 3,000 to 5,000 spot welds. This is the primary joining method for body-in-white construction.",
+      "topic": "Spot welding principles",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D53-Q06",
+      "question": "A technician is MIG welding a patch onto an exhaust pipe. Their first bead has a rough surface with visible small holes throughout. The shielding gas regulator shows 14 L/min flow. What is the most likely cause and solution?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The voltage is too high; reduce it by 2V",
+        "B": "The weld surface was not cleaned before welding; the rust, oil, and road grime are outgassing and contaminating the weld pool, causing porosity despite adequate gas flow",
+        "C": "The wire speed is too fast; reduce it by 2 m/min",
+        "D": "The gas mix is wrong; switch to pure argon"
+      },
+      "correct_answer": "B",
+      "explanation": "Even with correct gas flow, porosity can result from surface contamination. Rust, oil, paint, road grime, and moisture on the base metal outgas when heated by the arc, creating bubbles in the weld pool. The solution is to grind or wire-brush the weld zone to clean, bright metal before welding. Joint preparation is as important as machine settings for weld quality.",
+      "topic": "Porosity from surface contamination",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D53-Q07",
+      "question": "A technician examines their MIG weld bead and notices the edges of the bead show a groove cut into the base metal alongside the weld. This defect is called undercut. What machine setting is most likely responsible?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Wire speed too fast, depositing too much filler material",
+        "B": "Gas flow rate too low, causing atmospheric contamination",
+        "C": "Voltage too high, creating an excessively wide and hot arc that melts the base metal at the weld edges without filling it with filler material",
+        "D": "Travel speed too slow, causing excess heat build-up at the start"
+      },
+      "correct_answer": "C",
+      "explanation": "Undercut occurs when the arc melts a groove into the base metal at the weld toe (edges) but insufficient filler metal flows into that groove. Excessive voltage creates a wider, hotter arc that melts more base metal than the wire can fill. The solution is to reduce voltage, which narrows the arc and reduces heat input at the edges while maintaining adequate penetration at the centre.",
+      "topic": "Undercut weld defect cause",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D53-Q08",
+      "question": "A general service technician is asked by a customer to weld a crack in the vehicle's B-pillar (a structural safety member). The technician has basic MIG welding skills from this course. What is the correct response?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Proceed with the weld since MIG welding was covered in the course",
+        "B": "Refuse the job and explain that structural body repairs require certified body repair technician qualifications, manufacturer-approved procedures, and may have insurance and safety certification implications",
+        "C": "Attempt the weld but use a thicker wire for extra strength",
+        "D": "Weld it and advise the customer it is a temporary repair"
+      },
+      "correct_answer": "B",
+      "explanation": "The B-pillar is a critical structural safety member that maintains the passenger safety cell integrity during a side impact. Welding structural members requires certified body repair qualifications, manufacturer-approved repair procedures, correct material specifications (many modern pillars use ultra-high-strength steel that cannot be conventionally welded), and may void insurance coverage if done incorrectly. A general service technician should refer this work to a qualified body shop.",
+      "topic": "Structural welding limitations",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D53-Q09",
+      "question": "During MIG welding practice, the wire makes a rapid popping sound and repeatedly stubs into the workpiece instead of forming a smooth arc. What setting adjustment is needed?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Increase gas flow rate to improve shielding",
+        "B": "Increase voltage to establish a longer, more stable arc that allows the wire to melt before contacting the workpiece",
+        "C": "Decrease wire speed to reduce the amount of filler being deposited",
+        "D": "Move the torch further from the workpiece"
+      },
+      "correct_answer": "B",
+      "explanation": "Wire stubbing and popping indicates the voltage is too low for the wire speed setting. The wire reaches the workpiece before the arc has sufficient energy to melt it, causing it to physically push against the work. Increasing voltage lengthens the arc and increases heat, allowing the wire to melt smoothly into the weld pool. Alternatively, reducing wire speed can help, but the primary adjustment for stubbing is voltage increase.",
+      "topic": "MIG welding troubleshooting",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D53-Q10",
+      "question": "A technician sets the MIG welder gas flow to 25 L/min, thinking that more shielding gas provides better protection. The resulting weld still shows porosity. Why does excessive gas flow cause this problem?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The excess gas cools the weld pool too quickly",
+        "B": "High flow rate creates turbulence at the gas nozzle that draws atmospheric air into the shielding envelope, contaminating the weld pool with the very gases the shielding is meant to exclude",
+        "C": "The gas bottle pressure drops too fast at high flow rates",
+        "D": "Excess argon reacts with the wire electrode at high temperature"
+      },
+      "correct_answer": "B",
+      "explanation": "Excessive gas flow creates turbulent flow instead of the laminar flow needed for effective shielding. The turbulence at the nozzle exit creates eddies that entrain atmospheric air (containing nitrogen and oxygen) into the supposedly protected zone around the weld pool. This is counterintuitive: more gas actually provides worse protection. The optimal range is typically 12-16 L/min for workshop conditions.",
+      "topic": "Gas flow rate optimisation",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

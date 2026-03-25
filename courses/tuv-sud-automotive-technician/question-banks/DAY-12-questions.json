@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 12,
+  "week": 3,
+  "session_title": "Gasoline Fuel Delivery & Ignition",
+  "questions": [
+    {
+      "id": "D12-Q01",
+      "question": "What is the typical operating fuel pressure of a Multi-Point Fuel Injection (MPFI) system?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "0.5 to 1 bar",
+        "B": "3 to 5 bar",
+        "C": "50 to 100 bar",
+        "D": "100 to 200 bar"
+      },
+      "correct_answer": "B",
+      "explanation": "MPFI systems operate at relatively low pressure, typically 3 to 5 bar (approximately 45 to 75 PSI). This pressure is sufficient to spray fuel through a single pintle nozzle into the intake port upstream of the intake valve.",
+      "topic": "MPFI Fuel Pressure",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D12-Q02",
+      "question": "In a Gasoline Direct Injection (GDI) system, where is the fuel injector physically located?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Inside the fuel tank, submerged in fuel",
+        "B": "In the intake manifold, pointing at the intake runner",
+        "C": "Directly in the combustion chamber, with its tip protruding into the cylinder",
+        "D": "In the exhaust manifold, upstream of the catalytic converter"
+      },
+      "correct_answer": "C",
+      "explanation": "GDI injectors are mounted directly in the combustion chamber through the cylinder head, with the injector tip exposed to cylinder conditions. This allows fuel to be sprayed directly into the cylinder at very high pressure (100-200+ bar), bypassing the intake port entirely.",
+      "topic": "GDI System Architecture",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D12-Q03",
+      "question": "What voltage does the secondary winding of a coil-on-plug (COP) ignition coil produce to fire a spark plug?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "12 to 14 volts",
+        "B": "100 to 500 volts",
+        "C": "1,000 to 5,000 volts",
+        "D": "25,000 to 45,000 volts"
+      },
+      "correct_answer": "D",
+      "explanation": "The ignition coil is a step-up transformer. The secondary winding contains tens of thousands of turns of fine wire that generate 25,000 to 45,000 volts when the magnetic field in the primary winding collapses. This high voltage is necessary to jump the spark plug gap (typically 0.7 to 1.1 mm) and create a spark.",
+      "topic": "Ignition System Voltages",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D12-Q04",
+      "question": "What is the primary advantage of GDI over MPFI in terms of engine efficiency?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "GDI eliminates the need for an air filter, reducing intake restriction",
+        "B": "GDI allows higher compression ratios and multiple injection strategies, improving fuel economy by 5-15%",
+        "C": "GDI uses lower fuel pressure, reducing the load on the engine-driven fuel pump",
+        "D": "GDI engines do not require spark plugs, eliminating ignition system losses"
+      },
+      "correct_answer": "B",
+      "explanation": "GDI's cooling effect from fuel evaporating directly in the cylinder suppresses knock, allowing higher compression ratios (approximately 12:1 vs 10:1 for MPFI). GDI also enables advanced injection strategies such as stratified lean-burn for cruising and split injections to optimize combustion. These advantages combine to improve fuel economy by 5-15% over equivalent MPFI engines.",
+      "topic": "MPFI vs GDI Comparison",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D12-Q05",
+      "question": "How does the ECU control the amount of fuel delivered by an MPFI injector?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "By adjusting the fuel pressure in the rail — higher pressure means more fuel",
+        "B": "By varying the pulse width (the duration the injector is held open), measured in milliseconds",
+        "C": "By changing the number of times the injector fires per engine cycle",
+        "D": "By mechanically adjusting the injector nozzle opening size via a stepper motor"
+      },
+      "correct_answer": "B",
+      "explanation": "In an MPFI system, fuel pressure is held constant at 3-5 bar. The ECU controls fuel quantity by varying the pulse width — how long the injector solenoid is energized. A longer pulse width keeps the injector open longer, allowing more fuel to spray. At idle, the pulse width might be 2-4 ms; at full load, it can reach 8-15 ms.",
+      "topic": "MPFI Fuel Control",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D12-Q06",
+      "question": "A technician is diagnosing a GDI engine with DTC P0087 (Fuel Rail Pressure Too Low). The engine cranks for a long time before starting and runs rough at idle. Which component is the MOST likely root cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "A fouled spark plug on cylinder 2",
+        "B": "A failing camshaft-driven high-pressure fuel pump unable to build sufficient rail pressure",
+        "C": "A contaminated MAF sensor reading lower than actual airflow",
+        "D": "A stuck-open exhaust gas recirculation (EGR) valve"
+      },
+      "correct_answer": "B",
+      "explanation": "DTC P0087 specifically indicates that fuel rail pressure is below the ECU's target. In a GDI system, the high-pressure pump (cam-driven) is responsible for raising fuel pressure from 3-5 bar (from the in-tank pump) to 100-200+ bar. A failing HP pump that cannot build adequate pressure results in poor fuel atomization, long cranking, and rough running. Spark plugs, MAF sensors, and EGR valves would not trigger a low rail pressure code.",
+      "topic": "GDI Fuel System Diagnostics",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D12-Q07",
+      "question": "A customer with a 2015 GDI engine reports rough idle and occasional misfires. The vehicle has 95,000 km on the odometer and has never had the intake valves serviced. What is the most likely GDI-specific cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Worn piston rings causing low compression across all cylinders",
+        "B": "Carbon buildup on the intake valves restricting airflow into the cylinders, since GDI fuel does not wash over the intake valves",
+        "C": "A failed ignition coil on one cylinder causing a single-cylinder misfire",
+        "D": "A clogged fuel filter restricting fuel supply to the high-pressure pump"
+      },
+      "correct_answer": "B",
+      "explanation": "Carbon buildup on intake valves is the most common GDI-specific fault. In MPFI systems, fuel sprayed into the intake port washes over the valve, keeping it clean. In GDI, fuel bypasses the port entirely. Crankcase ventilation vapors (oil mist) bake onto the hot intake valves over time, forming hard carbon deposits that restrict airflow. At 95,000 km without service, this is the most probable cause. Walnut blasting is the common cleaning procedure.",
+      "topic": "GDI Carbon Buildup",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D12-Q08",
+      "question": "A technician measures the resistance of a coil-on-plug ignition coil. The primary winding reads 1.2 ohms and the secondary winding reads OL (open circuit) on the multimeter. What does this indicate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The coil is functioning normally — secondary windings always read open circuit due to high resistance",
+        "B": "The secondary winding has an internal break, meaning the coil cannot generate high voltage and should be replaced",
+        "C": "The primary winding is shorted, causing excess current draw that appears as an open secondary",
+        "D": "The multimeter is set to the wrong range — secondary windings require a megohm meter to measure"
+      },
+      "correct_answer": "B",
+      "explanation": "A healthy secondary winding should read between approximately 6,000 and 15,000 ohms. An OL (over limit / open circuit) reading indicates a break in the very fine secondary wire. Without a continuous secondary winding, the coil cannot transform the primary magnetic field collapse into high voltage — no spark will be produced. The primary reading of 1.2 ohms is within the normal 0.5-2 ohm range, confirming the fault is isolated to the secondary winding.",
+      "topic": "Ignition Coil Testing",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D12-Q09",
+      "question": "A technician is comparing two fuel injectors during diagnostics. Injector A (MPFI) has a resistance of 14 ohms. Injector B (GDI solenoid) is from a different vehicle. Using a noid light, the technician confirms the ECU signal is present at injector B's connector, but the engine misfires on that cylinder. What is the most appropriate next diagnostic step?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the ECU because the noid light confirmed the signal is faulty",
+        "B": "Measure the resistance across the GDI injector's terminals and compare to the manufacturer's specification to check for an open or shorted coil",
+        "C": "Replace the injector immediately since the noid light confirmed the wiring is good",
+        "D": "Perform a compression test on that cylinder to rule out mechanical failure"
+      },
+      "correct_answer": "B",
+      "explanation": "The noid light confirmed the ECU signal and wiring are functional. The next logical step in the diagnostic sequence is to test the injector itself. Measuring resistance across the injector terminals will reveal if the internal coil is open (OL reading) or shorted (very low resistance). Only after confirming an injector fault should it be replaced. Jumping to replacement without confirmation is the 'parts cannon' approach. A compression test would be appropriate later if the injector tests normal.",
+      "topic": "Fuel Injector Diagnostic Sequence",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D12-Q10",
+      "question": "A gasoline engine has both MPFI port injectors and GDI direct injectors (dual injection system). Under which operating condition would the ECU most likely activate the port injectors instead of — or in addition to — the direct injectors?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "During maximum power output at high RPM, because port injectors deliver more fuel volume",
+        "B": "During cold start and low-load cruise, to wash fuel over the intake valves and prevent carbon buildup while maintaining efficiency",
+        "C": "Only during engine braking and deceleration to reduce exhaust emissions",
+        "D": "During high-altitude driving when atmospheric pressure is low and GDI atomization is poor"
+      },
+      "correct_answer": "B",
+      "explanation": "Dual injection systems use port injectors at low load and during warm-up to provide fuel washing over the intake valves, preventing the carbon buildup that plagues GDI-only engines. At higher loads and during acceleration, the GDI injectors take over for their superior atomization and efficiency advantages. This strategy combines the self-cleaning benefit of port injection with the performance and economy benefits of direct injection.",
+      "topic": "Dual Injection Strategy",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 25,
+  "week": 5,
+  "session_title": "Chassis Diagnostics & Week 5 Consolidation",
+  "questions": [
+    {
+      "id": "D25-Q01",
+      "question": "What is the first step in the four-step chassis diagnostic framework taught in this course?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Replace the most commonly failed component",
+        "B": "Listen to and clarify the customer's symptom description",
+        "C": "Connect a scan tool and read fault codes",
+        "D": "Perform a four-wheel alignment check"
+      },
+      "correct_answer": "B",
+      "explanation": "The four-step framework is: (1) Symptom — listen to and clarify exactly what the customer experiences, when it happens, and under what conditions; (2) System identification — determine which system(s) could cause the symptom; (3) Targeted test — perform specific inspections or measurements to confirm or eliminate each suspect; (4) Root cause — confirmed diagnosis leading to an accurate repair. Starting with the symptom prevents wasted time testing the wrong systems.",
+      "topic": "Diagnostic framework",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D25-Q02",
+      "question": "A feathered (sawtooth-textured) tyre wear pattern, where the tread feels smooth in one direction but rough in the other, is most commonly caused by:",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Over-inflated tyres",
+        "B": "Worn shock absorbers",
+        "C": "Incorrect toe alignment",
+        "D": "Excessive negative camber"
+      },
+      "correct_answer": "C",
+      "explanation": "Feathering — a sawtooth texture across the tread blocks — is the classic indicator of incorrect toe alignment. When toe is misaligned, the tyre is dragged slightly sideways as it rolls, scrubbing the tread in one direction across each block. Toe-in tends to feather the outer edge; toe-out feathers the inner edge. The directional scrubbing creates the distinctive rough-one-way, smooth-the-other feel.",
+      "topic": "Tyre wear pattern diagnosis",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D25-Q03",
+      "question": "When diagnosing a vehicle that drifts to one side, why should tyre pressure be checked before performing a wheel alignment?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Because the alignment machine requires specific tyre pressures to give accurate readings",
+        "B": "Because unequal tyre pressure creates different rolling resistances that cause directional pull, and correcting pressure may resolve the complaint at zero cost",
+        "C": "Because low tyre pressure can damage the alignment sensors",
+        "D": "Because the tyre pressure monitoring system must be calibrated before alignment"
+      },
+      "correct_answer": "B",
+      "explanation": "A tyre with lower pressure has a larger, softer contact patch with greater rolling resistance than a properly inflated tyre. If one side has lower pressure, the vehicle pulls toward that side. Checking tyre pressure takes 60 seconds and costs nothing — it is the cheapest and fastest diagnostic check. If unequal pressure is the cause, the complaint is resolved without an alignment. This follows the diagnostic principle: cheap and fast checks first, expensive and slow checks last.",
+      "topic": "Efficient diagnostic sequencing",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D25-Q04",
+      "question": "A cupping or scalloping wear pattern — irregular dished-out patches around the tyre circumference — is most commonly caused by which failed component?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "A worn shock absorber (damper) that cannot control tyre bounce",
+        "B": "A worn steering rack bushing",
+        "C": "A cracked brake rotor causing vibration",
+        "D": "A faulty TPMS sensor giving incorrect pressure readings"
+      },
+      "correct_answer": "A",
+      "explanation": "Cupping or scalloping occurs when the tyre repeatedly bounces off and impacts the road surface due to inadequate damping. A worn shock absorber cannot control the spring's oscillation, so the tyre momentarily leaves the road surface and impacts again, scuffing a cup-shaped patch. This repeats around the circumference creating a pattern of dished-out patches. Replacing the dampers resolves the root cause; the tyres should also be replaced if cupping is severe.",
+      "topic": "Tyre wear linked to suspension faults",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D25-Q05",
+      "question": "During a brake booster functional test, the technician pumps the brake pedal five times with the engine off, holds the pedal firm, then starts the engine. The pedal does not sink or change position. What does this result indicate?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The brake booster is functioning correctly",
+        "B": "The master cylinder has an internal fluid bypass leak",
+        "C": "The brake booster is not receiving vacuum or the booster diaphragm has failed",
+        "D": "The ABS hydraulic modulator is blocking fluid flow"
+      },
+      "correct_answer": "C",
+      "explanation": "In a functional booster, starting the engine restores vacuum to the booster diaphragm, which provides additional force on the master cylinder pushrod — the pedal should sink noticeably under the foot. If the pedal stays firm and does not move, the booster is not receiving vacuum assistance. Causes include a disconnected or cracked vacuum hose, a failed one-way check valve, or a ruptured booster diaphragm. This is a quick, zero-cost diagnostic test.",
+      "topic": "Brake booster testing",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D25-Q06",
+      "question": "A customer reports steering wheel vibration that occurs ONLY during braking at highway speeds, not during normal cruising at the same speed. Based on the diagnostic framework, what is the most likely root cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Wheel imbalance — a lost balance weight causes speed-dependent vibration",
+        "B": "Excessive brake rotor lateral runout or disc thickness variation — the uneven rotor surface pushes the pads in and out during braking, transmitting pulsation through the steering",
+        "C": "Worn front wheel bearings allowing hub wobble at highway speed",
+        "D": "Worn inner tie rod ends allowing steering play under braking load"
+      },
+      "correct_answer": "B",
+      "explanation": "The critical diagnostic clue is that the vibration occurs ONLY during braking, not during normal cruising. Wheel imbalance would produce vibration at all times at the relevant speed range, not just during braking. Rotor lateral runout or disc thickness variation (DTV) causes the pads to be pushed in and out as the rotor rotates under braking, creating a pulsation felt through the brake pedal and steering wheel. The technician should measure rotor runout with a dial indicator (specification typically 0.03-0.05 mm maximum) and check DTV with a micrometer at six points.",
+      "topic": "Vibration diagnosis — braking vs cruising",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D25-Q07",
+      "question": "A vehicle exhibits the following symptoms: ABS warning light illuminated, scan tool shows 'Left Rear Wheel Speed Sensor — Signal Implausible,' and the left rear tyre shows cupping wear. The technician confirms the sensor resistance and air gap are within specification. What is the most likely root cause combining both symptoms?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The ABS ECU has an internal processing fault affecting only the left rear channel",
+        "B": "The left rear brake caliper is seized, causing heat that damages the sensor signal",
+        "C": "The left rear tyre is a different size than the other three tyres",
+        "D": "The left rear shock absorber is severely worn — the tyre bounce causing the cupping also creates erratic wheel speed signals as the tyre intermittently loses road contact"
+      },
+      "correct_answer": "D",
+      "explanation": "This scenario links two symptoms to a single root cause. A severely worn shock absorber allows the wheel to bounce, which causes cupping wear on the tyre. Simultaneously, when the tyre bounces and momentarily loses contact with the road, the wheel accelerates and decelerates erratically. The wheel speed sensor reads these rapid speed fluctuations, and the ABS ECU flags the signal as implausible because it does not match the expected smooth deceleration/acceleration pattern. Replacing the shock absorber addresses both the mechanical wear and the ABS fault. The tyre should also be replaced once cupping is present.",
+      "topic": "Multi-symptom root cause analysis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D25-Q08",
+      "question": "A technician is diagnosing a complaint of 'the car wanders and doesn't feel stable at highway speed.' An alignment check shows all four wheels within manufacturer specification. Tyre pressures are correct and matched. Tyres are the same size, brand, and tread depth. What should the technician investigate next?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Inspect suspension bushings, ball joints, tie rod ends, and wheel bearings for excessive play — worn components allow geometry to shift under dynamic loads even when static alignment readings are within specification",
+        "B": "Repeat the alignment on a different machine in case the first was calibrated incorrectly",
+        "C": "Replace all four tyres with a different brand, as some tyre compounds cause wandering",
+        "D": "Reprogram the Electronic Power Steering ECU to increase steering assist"
+      },
+      "correct_answer": "A",
+      "explanation": "Static alignment readings are taken with the vehicle stationary on a flat surface. Worn bushings, ball joints, or tie rod ends may allow the suspension geometry to shift under dynamic loads (cornering, braking, road imperfections) even though the static readings are within specification. The compliance (flex) in worn components creates a wandering, vague steering feel at speed. The technician should perform a thorough inspection of all suspension pivot points for play: dry-park test for tie rod ends, pry-bar test for ball joints, visual and physical inspection of all bushings for cracking, separation, or excessive movement.",
+      "topic": "Wandering diagnosis with in-spec alignment",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D25-Q09",
+      "question": "A customer brings a vehicle in after hitting a large pothole. The right front tyre is flat with visible sidewall damage. After fitting the spare, the technician notices the vehicle pulls to the right during braking and the steering wheel is off-centre. What is the minimum set of inspections required before returning the vehicle?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the damaged tyre and perform a wheel balance — the pull will resolve when the correct tyre is fitted",
+        "B": "Replace the tyre, then check and correct wheel alignment only — the off-centre steering indicates toe has shifted",
+        "C": "Replace the tyre, inspect the wheel rim for damage, inspect suspension components (control arm, strut, ball joint, tie rod) for bending or breakage, check the brake caliper for damage, and perform a four-wheel alignment",
+        "D": "Replace the tyre and wheel rim, then road test — if the pull persists, schedule an alignment for next week"
+      },
+      "correct_answer": "C",
+      "explanation": "A pothole impact severe enough to destroy a tyre sidewall can damage multiple components simultaneously. The brake pull to the right suggests unequal braking (possible caliper or rotor damage, or shifted geometry changing weight transfer). The off-centre steering wheel indicates the geometry has shifted (bent control arm, bent tie rod, or moved subframe). The minimum inspection must include: the wheel rim (check for cracks or bends), all suspension components on that corner for visible damage or deformation, the brake caliper and rotor for physical damage, and a full four-wheel alignment to quantify any geometry shift. Returning the vehicle without these checks is a safety risk.",
+      "topic": "Post-impact comprehensive inspection",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D25-Q10",
+      "question": "During a Week 5 review, a trainee states: 'DOT 5 brake fluid has the highest boiling point, so it's the best upgrade for any vehicle currently using DOT 4.' Why is this statement incorrect?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "DOT 5 actually has a lower boiling point than DOT 4",
+        "B": "DOT 5 is silicone-based and is NOT compatible with the glycol-based DOT 3, DOT 4, and DOT 5.1 fluids — mixing them causes seal damage and brake failure; DOT 5.1 is the correct high-performance glycol-based upgrade",
+        "C": "DOT 5 is only approved for racing vehicles and cannot legally be used on road cars",
+        "D": "DOT 5 has the same boiling point as DOT 4 but is more expensive, offering no real benefit"
+      },
+      "correct_answer": "B",
+      "explanation": "DOT 5 is silicone-based, while DOT 3, DOT 4, and DOT 5.1 are all glycol-based (polyethylene glycol). Silicone and glycol fluids are chemically incompatible — mixing them causes rubber seal swelling, fluid separation, and spongy braking leading to potential brake failure. A vehicle designed for glycol-based fluid should never receive DOT 5. The correct high-performance upgrade for a DOT 4 vehicle is DOT 5.1 — which is glycol-based, fully compatible, and has a higher wet boiling point (180 degrees C vs 155 degrees C for DOT 4). The trainee confused DOT 5 (silicone) with DOT 5.1 (glycol) — a critical and dangerous mistake.",
+      "topic": "Brake fluid compatibility",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

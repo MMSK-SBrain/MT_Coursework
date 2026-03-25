@@ -1,0 +1,464 @@
+{
+  "module": "Module 0: The Hook",
+  "total_quizzes": 3,
+  "total_questions": 28,
+  "description": "Assessment questions for Module 0 covering demos, LLM setup, and Google Colab",
+
+  "session_1_quiz": {
+    "session": 1,
+    "title": "The 5 Amazing Demos",
+    "duration_minutes": 10,
+    "passing_score": 70,
+    "questions": [
+      {
+        "quiz_id": "M0-S1-Q01",
+        "question": "What was the primary purpose of showing you the 5 demos in Session 1?",
+        "options": [
+          "To teach you how ML algorithms work in detail",
+          "To motivate you and show what you'll build by the end of the course",
+          "To test your existing knowledge of machine learning",
+          "To explain neural networks and deep learning concepts"
+        ],
+        "correct_answer": 1,
+        "explanation": "Module 0 is called 'The Hook' because its primary goal is to create excitement and motivation by showing amazing ML applications. You'll learn HOW they work in later modules. The demos demonstrate the end destination of your learning journey.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M0-S1-Q02",
+        "question": "In the Stock Price Predictor demo, what type of ML problem is this?",
+        "options": [
+          "Classification (predicting categories)",
+          "Regression (predicting continuous values)",
+          "Clustering (grouping similar items)",
+          "Reinforcement Learning (learning from rewards)"
+        ],
+        "correct_answer": 1,
+        "explanation": "Stock price prediction is a regression problem because we're predicting a continuous numerical value (price in dollars), not a category. Classification would be used if we were only predicting 'up' or 'down' direction.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M0-S1-Q03",
+        "question": "The Cricket Match Predictor considers which of the following factors?",
+        "options": [
+          "Only team rankings",
+          "Team rankings, venue, toss, and recent form",
+          "Only the toss winner",
+          "Player individual statistics only"
+        ],
+        "correct_answer": 1,
+        "explanation": "The cricket predictor is a comprehensive model that considers multiple factors: team rankings (strength), venue (home advantage), toss (strategic advantage), and recent form (current performance). This demonstrates how ML can integrate multiple variables to make predictions.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M0-S1-Q04",
+        "question": "What makes the Face Detection demo an example of Computer Vision?",
+        "options": [
+          "It processes numerical data only",
+          "It analyzes and understands image/visual data",
+          "It uses text processing",
+          "It predicts future events"
+        ],
+        "correct_answer": 1,
+        "explanation": "Computer Vision is the field of AI that enables computers to understand and process visual information from images and videos. The face detection demo analyzes pixel data to identify faces, which is a classic computer vision task.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M0-S1-Q05",
+        "question": "In the Sentiment Analysis demo, what are the three main categories it classifies text into?",
+        "options": [
+          "Good, Bad, Neutral",
+          "Positive, Negative, Neutral",
+          "Happy, Sad, Angry",
+          "True, False, Unknown"
+        ],
+        "correct_answer": 1,
+        "explanation": "Sentiment analysis typically classifies text into three categories: Positive (favorable opinion), Negative (unfavorable opinion), and Neutral (no strong opinion either way). This is the standard approach in Natural Language Processing.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M0-S1-Q06",
+        "question": "Which demo showed how ML can be used for customer service automation?",
+        "options": [
+          "Stock Price Predictor",
+          "Face Detection",
+          "Customer Support Chatbot",
+          "Cricket Match Predictor"
+        ],
+        "correct_answer": 2,
+        "explanation": "The Customer Support Chatbot demo showed how conversational AI can handle customer queries automatically, reducing the need for human intervention in routine questions. This is a practical business application of Natural Language Processing.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M0-S1-Q07",
+        "question": "What confidence level did the Stock Predictor show in the demo?",
+        "options": [
+          "100% (perfect prediction)",
+          "Around 78% (high but not perfect)",
+          "50% (random guessing)",
+          "25% (very low)"
+        ],
+        "correct_answer": 1,
+        "explanation": "The demo showed around 78% confidence, which is realistic for stock prediction. This teaches an important lesson: ML models are NOT perfect fortune tellers. Stock markets are unpredictable, so 78% confidence (better than random but not guaranteed) is actually quite good.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 45,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M0-S1-Q08",
+        "question": "Which module of the course will you actually BUILD the stock predictor?",
+        "options": [
+          "Module 0 (immediately)",
+          "Module 1 (Foundations)",
+          "Module 3 (Regression)",
+          "Module 10 (Capstone)"
+        ],
+        "correct_answer": 2,
+        "explanation": "You'll build the stock predictor in Module 3 (Regression) after learning the foundations in Module 1 and classification in Module 2. This progressive structure ensures you understand the underlying concepts before building complex projects.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember"
+      }
+    ]
+  },
+
+  "session_2_quiz": {
+    "session": 2,
+    "title": "Your AI Assistant Setup",
+    "duration_minutes": 12,
+    "passing_score": 70,
+    "questions": [
+      {
+        "quiz_id": "M0-S2-Q01",
+        "question": "Which of the following is NOT an LLM (Large Language Model) we're using in this course?",
+        "options": [
+          "ChatGPT",
+          "Google Gemini",
+          "Microsoft Excel",
+          "Claude"
+        ],
+        "correct_answer": 2,
+        "explanation": "Microsoft Excel is a spreadsheet application, not an LLM. ChatGPT (by OpenAI), Google Gemini (by Google), and Claude (by Anthropic) are all Large Language Models that can help with coding, explanations, and debugging.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M0-S2-Q02",
+        "question": "What's the main benefit of AI-assisted learning in this course?",
+        "options": [
+          "AI writes all the code, so you don't need to understand it",
+          "AI helps generate and explain code, accelerating your learning",
+          "AI makes you not need to practice coding",
+          "AI guarantees your code will always be perfect"
+        ],
+        "correct_answer": 1,
+        "explanation": "AI-assisted learning means using AI as a learning tool that helps you generate code examples, explains concepts, debugs errors, and accelerates understanding. You still need to understand the code, practice, and learn - AI is your teacher/assistant, not a replacement for learning.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M0-S2-Q03",
+        "question": "What does API access to LLMs allow you to do?",
+        "options": [
+          "Get faster, more accurate responses",
+          "Access LLMs programmatically for automation and batch processing",
+          "Create accounts more quickly",
+          "Learn machine learning concepts faster"
+        ],
+        "correct_answer": 1,
+        "explanation": "API (Application Programming Interface) access allows you to call LLMs from your own code programmatically. This enables automation (processing hundreds of texts), integration into applications, and batch operations. It's not needed for early modules but becomes useful for advanced projects.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M0-S2-Q04",
+        "question": "Which is true about the free tiers of ChatGPT and Gemini?",
+        "options": [
+          "They are not suitable for completing this course",
+          "They are sufficient for learning ML in this course",
+          "They expire after 1 month of use",
+          "They don't include code generation capabilities"
+        ],
+        "correct_answer": 1,
+        "explanation": "The free tiers of both ChatGPT (GPT-3.5) and Gemini are completely sufficient for this course. They can generate code, explain concepts, debug errors, and answer questions - everything you need for learning. Paid versions offer more power but are NOT required.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M0-S2-Q05",
+        "question": "When comparing LLM responses, what should you look for?",
+        "options": [
+          "Only which one responds fastest",
+          "Clarity, completeness, and appropriateness for your skill level",
+          "Which one uses the most technical jargon",
+          "Which one gives the longest response"
+        ],
+        "correct_answer": 1,
+        "explanation": "When comparing LLM responses, focus on: 1) Clarity (can you understand it?), 2) Completeness (does it answer your full question?), and 3) Appropriateness for your level (is it too simple or too complex?). Different LLMs have different strengths, so trying multiple can help you find the best answer.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 45,
+        "bloom_level": "evaluate"
+      },
+      {
+        "quiz_id": "M0-S2-Q06",
+        "question": "What does IDE integration mean in the context of AI coding assistants?",
+        "options": [
+          "AI running inside your code editor to suggest code as you type",
+          "Posting your code on social media platforms",
+          "Sharing code with friends and classmates",
+          "Copying code from websites into your editor"
+        ],
+        "correct_answer": 0,
+        "explanation": "IDE (Integrated Development Environment) integration means having AI built into your code editor (like VS Code, PyCharm, etc.). Examples include GitHub Copilot and Cursor, which suggest code completions as you type. While powerful, this is NOT required for the course - web-based LLMs are sufficient.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M0-S2-Q07",
+        "question": "True or False: You need paid LLM subscriptions to complete this course.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 1,
+        "explanation": "FALSE. The free tiers of ChatGPT, Gemini, and Claude are completely sufficient for this course. While paid versions (ChatGPT Plus, Gemini Advanced) offer more features, they are optional enhancements, not requirements. You can complete every module with free access.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M0-S2-Q08",
+        "question": "True or False: Different LLMs may give slightly different code for the same prompt.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 0,
+        "explanation": "TRUE. Different LLMs (ChatGPT, Gemini, Claude) are trained differently and may produce different but equally correct solutions to the same problem. This is actually beneficial - you can try multiple LLMs if one's response doesn't work or isn't clear. It's like asking different teachers the same question.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M0-S2-Q09",
+        "question": "What is a good practice when using LLMs for learning code?",
+        "options": [
+          "Copy code without reading it",
+          "Ask for code with detailed comments and explanations",
+          "Only use one LLM throughout the course",
+          "Never ask follow-up questions"
+        ],
+        "correct_answer": 1,
+        "explanation": "Best practice is to ask LLMs to generate code WITH comments and explanations. For example: 'Write Python code to load a CSV file. Include comments explaining each line.' This helps you learn, not just copy. Reading and understanding the code is essential for learning.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 45,
+        "bloom_level": "apply"
+      },
+      {
+        "quiz_id": "M0-S2-Q10",
+        "question": "True or False: API access to LLMs is required starting from Module 1.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 1,
+        "explanation": "FALSE. API access is NOT required for Modules 1-8. You'll use web-based interfaces (chat.openai.com, gemini.google.com) for everything. API access might be introduced in Modules 9-10 for advanced automation projects, but even then it's optional.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember"
+      }
+    ]
+  },
+
+  "session_3_quiz": {
+    "session": 3,
+    "title": "Cloud Computing & GPU Power",
+    "duration_minutes": 15,
+    "passing_score": 70,
+    "questions": [
+      {
+        "quiz_id": "M0-S3-Q01",
+        "question": "What is Google Colab?",
+        "options": [
+          "A graphics editing tool from Google",
+          "A free cloud-based Jupyter notebook with GPU access",
+          "A video conferencing alternative to Google Meet",
+          "A cloud storage service like Google Drive"
+        ],
+        "correct_answer": 1,
+        "explanation": "Google Colab (Colaboratory) is a free cloud-based Jupyter notebook environment that runs in your browser. It provides free access to GPUs, has pre-installed ML libraries, integrates with Google Drive, and requires zero installation on your computer.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M0-S3-Q02",
+        "question": "Why do we use GPUs for ML training instead of just CPUs?",
+        "options": [
+          "GPUs are cheaper to buy than CPUs",
+          "GPUs can process many calculations in parallel, making training much faster",
+          "GPUs use less electricity than CPUs",
+          "GPUs are easier to program than CPUs"
+        ],
+        "correct_answer": 1,
+        "explanation": "GPUs (Graphics Processing Units) excel at parallel processing - they can perform thousands of calculations simultaneously. ML training involves massive matrix operations that can be parallelized, making GPUs 10-100x faster than CPUs for this specific task. Think of it as 1000 workers vs 1 worker.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 45,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M0-S3-Q03",
+        "question": "How do you enable GPU in Google Colab?",
+        "options": [
+          "It's enabled automatically, no action needed",
+          "Runtime → Change runtime type → Select GPU",
+          "Settings → Enable GPU acceleration",
+          "You need to pay for GPU access first"
+        ],
+        "correct_answer": 1,
+        "explanation": "To enable GPU in Colab: Click 'Runtime' menu → 'Change runtime type' → Set 'Hardware accelerator' to 'GPU' → Save. The notebook will restart with GPU enabled. You can verify with '!nvidia-smi' command. This is FREE in Colab's free tier.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "apply"
+      },
+      {
+        "quiz_id": "M0-S3-Q04",
+        "question": "What does the command '!pip install package-name' do in Colab?",
+        "options": [
+          "Deletes a Python package",
+          "Installs a Python package using pip",
+          "Updates your Python version",
+          "Checks what version of a package is installed"
+        ],
+        "correct_answer": 1,
+        "explanation": "The '!' prefix runs a system command (not Python code). 'pip' is Python's package installer. So '!pip install seaborn' would install the seaborn visualization library. This is useful when you need libraries not pre-installed in Colab.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "understand"
+      },
+      {
+        "quiz_id": "M0-S3-Q05",
+        "question": "Where are Colab notebooks automatically saved?",
+        "options": [
+          "On your computer's desktop",
+          "In your Google Drive (Colab Notebooks folder)",
+          "On Colab's servers only",
+          "They're not saved automatically"
+        ],
+        "correct_answer": 1,
+        "explanation": "Colab notebooks auto-save to your Google Drive in a folder called 'Colab Notebooks'. They save every 2-3 minutes, just like Google Docs. This means your work is safe even if your browser crashes, and you can access it from any device.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M0-S3-Q06",
+        "question": "What was the approximate accuracy you achieved when running the Iris classifier demo?",
+        "options": [
+          "Around 50% (random guessing)",
+          "Around 70% (okay performance)",
+          "Around 96% (excellent performance)",
+          "100% (perfect performance)"
+        ],
+        "correct_answer": 2,
+        "explanation": "The Iris classifier demo achieved approximately 96% accuracy (varies slightly due to random train/test split). This is excellent performance and demonstrates that even simple ML algorithms like Decision Trees can learn patterns very effectively on clean, well-structured data.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M0-S3-Q07",
+        "question": "True or False: You need to install Python on your computer before using Colab.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 1,
+        "explanation": "FALSE. Google Colab runs entirely in the cloud - all code executes on Google's servers, not your computer. You only need a web browser and internet connection. This makes it perfect for learners who don't want to deal with local installations.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M0-S3-Q08",
+        "question": "True or False: Free Colab tier gives you unlimited GPU access 24/7.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 1,
+        "explanation": "FALSE. Free tier has limits: ~12-15 GPU hours per day, 12 hour maximum session duration, and 90-minute idle timeout. If you need more, Colab Pro ($9.99/month) is available, but the free tier is completely sufficient for this course.",
+        "difficulty": "medium",
+        "estimated_time_seconds": 45,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M0-S3-Q09",
+        "question": "True or False: Colab notebooks are similar to Jupyter notebooks and use the .ipynb file format.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 0,
+        "explanation": "TRUE. Colab is built on Jupyter notebooks and uses the same .ipynb (Interactive Python Notebook) file format. This means you can download Colab notebooks and open them in Jupyter, VS Code, or other tools, and vice versa.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember"
+      },
+      {
+        "quiz_id": "M0-S3-Q10",
+        "question": "True or False: You need to buy an expensive GPU to complete this machine learning course.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correct_answer": 1,
+        "explanation": "FALSE. Google Colab provides FREE GPU access (Tesla T4 with 15GB memory) that is more than sufficient for this course. You don't need any special hardware - just a laptop/computer with internet and a browser. This removes the biggest barrier to learning ML.",
+        "difficulty": "easy",
+        "estimated_time_seconds": 30,
+        "bloom_level": "remember"
+      }
+    ]
+  },
+
+  "quiz_metadata": {
+    "total_time_minutes": 37,
+    "total_questions": 28,
+    "difficulty_distribution": {
+      "easy": 18,
+      "medium": 10,
+      "hard": 0
+    },
+    "bloom_levels": {
+      "remember": 16,
+      "understand": 10,
+      "apply": 2,
+      "evaluate": 0
+    },
+    "question_types": {
+      "multiple_choice": 22,
+      "true_false": 6
+    },
+    "passing_criteria": "70% on each session quiz",
+    "retake_policy": "Unlimited retakes allowed",
+    "time_limit": "No strict time limit, estimates provided",
+    "open_book": true,
+    "notes_allowed": true
+  }
+}

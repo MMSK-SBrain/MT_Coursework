@@ -1,0 +1,1503 @@
+{
+  "course": {
+    "code": "ML-ENG",
+    "title": "Machine Learning for Engineers: The AI-Assisted Approach",
+    "duration_weeks": "17-19",
+    "outcomes": [
+      {
+        "id": "co-1",
+        "code": "ML-ENG-CO-1",
+        "description": "Apply LLM tools (ChatGPT, Gemini) to generate, analyze, and modify machine learning code for solving real-world problems",
+        "bloom_level": "Apply"
+      },
+      {
+        "id": "co-2",
+        "code": "ML-ENG-CO-2",
+        "description": "Evaluate and optimize machine learning models using appropriate metrics and AI-assisted debugging techniques",
+        "bloom_level": "Evaluate"
+      },
+      {
+        "id": "co-3",
+        "code": "ML-ENG-CO-3",
+        "description": "Design and implement end-to-end ML solutions for classification, regression, computer vision, and NLP problems using AI assistance",
+        "bloom_level": "Create"
+      },
+      {
+        "id": "co-4",
+        "code": "ML-ENG-CO-4",
+        "description": "Demonstrate effective prompt engineering skills to communicate ML requirements and iterate on AI-generated solutions",
+        "bloom_level": "Apply"
+      },
+      {
+        "id": "co-5",
+        "code": "ML-ENG-CO-5",
+        "description": "Deploy machine learning applications using cloud-based resources and explain their functionality to technical and non-technical audiences",
+        "bloom_level": "Apply"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "module_id": "module-0",
+      "module_number": 0,
+      "title": "Prerequisites - Setting Up Your AI-Assisted Learning Environment",
+      "duration_weeks": 1,
+      "outcomes": [
+        {
+          "id": "mo-0-1",
+          "code": "ML-ENG-MO-0-1",
+          "description": "Configure and access multiple LLM platforms (ChatGPT, Gemini, Claude) through web, IDE, and API interfaces",
+          "bloom_level": "Apply",
+          "parent_co": "co-1"
+        },
+        {
+          "id": "mo-0-2",
+          "code": "ML-ENG-MO-0-2",
+          "description": "Compare CPU and GPU performance for ML tasks and set up cloud-based GPU environments",
+          "bloom_level": "Analyze",
+          "parent_co": "co-5"
+        },
+        {
+          "id": "mo-0-3",
+          "code": "ML-ENG-MO-0-3",
+          "description": "Select appropriate LLM tools and compute resources based on project requirements and constraints",
+          "bloom_level": "Evaluate",
+          "parent_co": "co-4"
+        }
+      ],
+      "sessions": [
+        {
+          "session_id": "session-0-1",
+          "title": "Introduction to LLMs and Account Setup",
+          "outcomes": [
+            {
+              "id": "so-0-1-1",
+              "code": "ML-ENG-SO-0-1-1",
+              "description": "Create accounts on ChatGPT, Gemini, and Claude platforms",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-0-1"
+            },
+            {
+              "id": "so-0-1-2",
+              "code": "ML-ENG-SO-0-1-2",
+              "description": "Identify key differences between GPT-4, Gemini, Claude, and open-source LLMs",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-0-1"
+            },
+            {
+              "id": "so-0-1-3",
+              "code": "ML-ENG-SO-0-1-3",
+              "description": "Test the same ML-related prompt across different LLMs and compare response quality",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-0-3"
+            }
+          ]
+        },
+        {
+          "session_id": "session-0-2",
+          "title": "Ways to Access LLMs",
+          "outcomes": [
+            {
+              "id": "so-0-2-1",
+              "code": "ML-ENG-SO-0-2-1",
+              "description": "Use web-based interfaces to interact with LLMs for code generation",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-0-1"
+            },
+            {
+              "id": "so-0-2-2",
+              "code": "ML-ENG-SO-0-2-2",
+              "description": "Install and configure IDE plugins (Copilot, Cursor) for in-editor AI assistance",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-0-1"
+            },
+            {
+              "id": "so-0-2-3",
+              "code": "ML-ENG-SO-0-2-3",
+              "description": "Execute basic API calls to LLM services and interpret responses",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-0-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-0-3",
+          "title": "Understanding Compute Resources",
+          "outcomes": [
+            {
+              "id": "so-0-3-1",
+              "code": "ML-ENG-SO-0-3-1",
+              "description": "Explain the difference between CPU and GPU processing for ML workloads",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-0-2"
+            },
+            {
+              "id": "so-0-3-2",
+              "code": "ML-ENG-SO-0-3-2",
+              "description": "Run a simple ML task on both CPU and GPU, comparing execution time",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-0-2"
+            },
+            {
+              "id": "so-0-3-3",
+              "code": "ML-ENG-SO-0-3-3",
+              "description": "Configure a Google Colab notebook with GPU acceleration",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-0-2"
+            },
+            {
+              "id": "so-0-3-4",
+              "code": "ML-ENG-SO-0-3-4",
+              "description": "Compare free vs paid cloud GPU services for cost-effectiveness",
+              "bloom_level": "Evaluate",
+              "parent_mo": "mo-0-3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-1",
+      "module_number": 1,
+      "title": "Getting Started with AI-Assisted Learning",
+      "duration_weeks": 1,
+      "outcomes": [
+        {
+          "id": "mo-1-1",
+          "code": "ML-ENG-MO-1-1",
+          "description": "Apply prompt engineering techniques to elicit high-quality ML code and explanations from LLMs",
+          "bloom_level": "Apply",
+          "parent_co": "co-4"
+        },
+        {
+          "id": "mo-1-2",
+          "code": "ML-ENG-MO-1-2",
+          "description": "Analyze ML problem statements and decompose them into AI-actionable prompts",
+          "bloom_level": "Analyze",
+          "parent_co": "co-4"
+        },
+        {
+          "id": "mo-1-3",
+          "code": "ML-ENG-MO-1-3",
+          "description": "Build a simple ML prediction model using AI-generated code and execute it successfully",
+          "bloom_level": "Apply",
+          "parent_co": "co-1"
+        }
+      ],
+      "sessions": [
+        {
+          "session_id": "session-1-1",
+          "title": "Introduction to Machine Learning",
+          "outcomes": [
+            {
+              "id": "so-1-1-1",
+              "code": "ML-ENG-SO-1-1-1",
+              "description": "Define machine learning and distinguish it from traditional programming",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-1-2"
+            },
+            {
+              "id": "so-1-1-2",
+              "code": "ML-ENG-SO-1-1-2",
+              "description": "Identify real-world problems suitable for ML solutions",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-1-2"
+            },
+            {
+              "id": "so-1-1-3",
+              "code": "ML-ENG-SO-1-1-3",
+              "description": "Use LLMs to explain ML concepts in multiple ways for different audiences",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-1-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-1-2",
+          "title": "Effective Prompt Engineering for ML",
+          "outcomes": [
+            {
+              "id": "so-1-2-1",
+              "code": "ML-ENG-SO-1-2-1",
+              "description": "Construct effective prompts that specify ML requirements clearly",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-1-1"
+            },
+            {
+              "id": "so-1-2-2",
+              "code": "ML-ENG-SO-1-2-2",
+              "description": "Iterate on AI-generated code by providing targeted follow-up prompts",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-1-1"
+            },
+            {
+              "id": "so-1-2-3",
+              "code": "ML-ENG-SO-1-2-3",
+              "description": "Request code explanations at different levels of technical depth",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-1-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-1-3",
+          "title": "Setting Up ML Environment and First Model",
+          "outcomes": [
+            {
+              "id": "so-1-3-1",
+              "code": "ML-ENG-SO-1-3-1",
+              "description": "Use AI assistance to install Python, Jupyter, and essential ML libraries",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-1-3"
+            },
+            {
+              "id": "so-1-3-2",
+              "code": "ML-ENG-SO-1-3-2",
+              "description": "Generate and execute a simple prediction model using AI-provided code",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-1-3"
+            },
+            {
+              "id": "so-1-3-3",
+              "code": "ML-ENG-SO-1-3-3",
+              "description": "Explain each line of AI-generated ML code with AI assistance",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-1-3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-2",
+      "module_number": 2,
+      "title": "Supervised Learning - Classification",
+      "duration_weeks": 2,
+      "outcomes": [
+        {
+          "id": "mo-2-1",
+          "code": "ML-ENG-MO-2-1",
+          "description": "Build classification models using AI-generated code for binary and multi-class problems",
+          "bloom_level": "Apply",
+          "parent_co": "co-3"
+        },
+        {
+          "id": "mo-2-2",
+          "code": "ML-ENG-MO-2-2",
+          "description": "Compare different classification algorithms and select appropriate ones for specific use cases",
+          "bloom_level": "Evaluate",
+          "parent_co": "co-2"
+        },
+        {
+          "id": "mo-2-3",
+          "code": "ML-ENG-MO-2-3",
+          "description": "Debug and fix errors in AI-generated classification code using AI assistance",
+          "bloom_level": "Analyze",
+          "parent_co": "co-1"
+        }
+      ],
+      "sessions": [
+        {
+          "session_id": "session-2-1",
+          "title": "Classification Fundamentals",
+          "outcomes": [
+            {
+              "id": "so-2-1-1",
+              "code": "ML-ENG-SO-2-1-1",
+              "description": "Explain what classification problems are and provide real-world examples",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-2-1"
+            },
+            {
+              "id": "so-2-1-2",
+              "code": "ML-ENG-SO-2-1-2",
+              "description": "Distinguish between binary and multi-class classification problems",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-2-1"
+            },
+            {
+              "id": "so-2-1-3",
+              "code": "ML-ENG-SO-2-1-3",
+              "description": "Use LLMs to generate a simple binary classification example with sample data",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-2-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-2-2",
+          "title": "Classification Algorithms",
+          "outcomes": [
+            {
+              "id": "so-2-2-1",
+              "code": "ML-ENG-SO-2-2-1",
+              "description": "Describe how Decision Trees, Random Forest, SVM, and Logistic Regression work conceptually",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-2-2"
+            },
+            {
+              "id": "so-2-2-2",
+              "code": "ML-ENG-SO-2-2-2",
+              "description": "Generate code for multiple classification algorithms using AI and run them on the same dataset",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-2-2"
+            },
+            {
+              "id": "so-2-2-3",
+              "code": "ML-ENG-SO-2-2-3",
+              "description": "Compare algorithm performance and recommend the best choice for a given problem",
+              "bloom_level": "Evaluate",
+              "parent_mo": "mo-2-2"
+            }
+          ]
+        },
+        {
+          "session_id": "session-2-3",
+          "title": "Training and Testing Data",
+          "outcomes": [
+            {
+              "id": "so-2-3-1",
+              "code": "ML-ENG-SO-2-3-1",
+              "description": "Explain the importance of splitting data into training and testing sets",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-2-1"
+            },
+            {
+              "id": "so-2-3-2",
+              "code": "ML-ENG-SO-2-3-2",
+              "description": "Use AI to generate code that properly splits data and trains a classifier",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-2-1"
+            },
+            {
+              "id": "so-2-3-3",
+              "code": "ML-ENG-SO-2-3-3",
+              "description": "Identify and fix data leakage issues in AI-generated code",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-2-3"
+            }
+          ]
+        },
+        {
+          "session_id": "session-2-4",
+          "title": "Feature Engineering and Project",
+          "outcomes": [
+            {
+              "id": "so-2-4-1",
+              "code": "ML-ENG-SO-2-4-1",
+              "description": "Use AI to identify and create relevant features for classification problems",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-2-1"
+            },
+            {
+              "id": "so-2-4-2",
+              "code": "ML-ENG-SO-2-4-2",
+              "description": "Build a complete email spam detector using AI-assisted code generation",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-2-1"
+            },
+            {
+              "id": "so-2-4-3",
+              "code": "ML-ENG-SO-2-4-3",
+              "description": "Debug classification errors by analyzing confusion patterns with AI help",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-2-3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-3",
+      "module_number": 3,
+      "title": "Supervised Learning - Regression",
+      "duration_weeks": 2,
+      "outcomes": [
+        {
+          "id": "mo-3-1",
+          "code": "ML-ENG-MO-3-1",
+          "description": "Implement regression models using AI assistance to predict continuous values",
+          "bloom_level": "Apply",
+          "parent_co": "co-3"
+        },
+        {
+          "id": "mo-3-2",
+          "code": "ML-ENG-MO-3-2",
+          "description": "Analyze regression model performance and identify factors affecting prediction accuracy",
+          "bloom_level": "Analyze",
+          "parent_co": "co-2"
+        },
+        {
+          "id": "mo-3-3",
+          "code": "ML-ENG-MO-3-3",
+          "description": "Apply feature scaling and handle outliers in regression problems using AI-generated techniques",
+          "bloom_level": "Apply",
+          "parent_co": "co-3"
+        }
+      ],
+      "sessions": [
+        {
+          "session_id": "session-3-1",
+          "title": "Understanding Regression Problems",
+          "outcomes": [
+            {
+              "id": "so-3-1-1",
+              "code": "ML-ENG-SO-3-1-1",
+              "description": "Define regression and distinguish it from classification",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-3-1"
+            },
+            {
+              "id": "so-3-1-2",
+              "code": "ML-ENG-SO-3-1-2",
+              "description": "Identify real-world problems that require regression solutions",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-3-1"
+            },
+            {
+              "id": "so-3-1-3",
+              "code": "ML-ENG-SO-3-1-3",
+              "description": "Generate and run a simple linear regression model using AI assistance",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-3-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-3-2",
+          "title": "Regression Algorithms",
+          "outcomes": [
+            {
+              "id": "so-3-2-1",
+              "code": "ML-ENG-SO-3-2-1",
+              "description": "Explain the difference between linear and non-linear regression",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-3-1"
+            },
+            {
+              "id": "so-3-2-2",
+              "code": "ML-ENG-SO-3-2-2",
+              "description": "Use AI to implement multiple regression algorithms (Linear, Polynomial, Random Forest Regressor)",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-3-1"
+            },
+            {
+              "id": "so-3-2-3",
+              "code": "ML-ENG-SO-3-2-3",
+              "description": "Compare regression algorithms on the same dataset and select the best performer",
+              "bloom_level": "Evaluate",
+              "parent_mo": "mo-3-2"
+            }
+          ]
+        },
+        {
+          "session_id": "session-3-3",
+          "title": "Feature Scaling and Outlier Handling",
+          "outcomes": [
+            {
+              "id": "so-3-3-1",
+              "code": "ML-ENG-SO-3-3-1",
+              "description": "Explain why feature scaling is important for regression models",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-3-3"
+            },
+            {
+              "id": "so-3-3-2",
+              "code": "ML-ENG-SO-3-3-2",
+              "description": "Apply standardization and normalization techniques using AI-generated code",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-3-3"
+            },
+            {
+              "id": "so-3-3-3",
+              "code": "ML-ENG-SO-3-3-3",
+              "description": "Detect outliers in datasets and implement handling strategies with AI assistance",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-3-3"
+            }
+          ]
+        },
+        {
+          "session_id": "session-3-4",
+          "title": "Regression Projects",
+          "outcomes": [
+            {
+              "id": "so-3-4-1",
+              "code": "ML-ENG-SO-3-4-1",
+              "description": "Build a house price prediction model using AI-assisted development",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-3-1"
+            },
+            {
+              "id": "so-3-4-2",
+              "code": "ML-ENG-SO-3-4-2",
+              "description": "Analyze prediction errors and identify patterns using visualization",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-3-2"
+            },
+            {
+              "id": "so-3-4-3",
+              "code": "ML-ENG-SO-3-4-3",
+              "description": "Improve regression model performance by iterating on features and algorithms with AI help",
+              "bloom_level": "Evaluate",
+              "parent_mo": "mo-3-2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-4",
+      "module_number": 4,
+      "title": "Model Evaluation and Optimization",
+      "duration_weeks": 1.5,
+      "outcomes": [
+        {
+          "id": "mo-4-1",
+          "code": "ML-ENG-MO-4-1",
+          "description": "Calculate and interpret evaluation metrics (accuracy, precision, recall, F1, RMSE) using AI tools",
+          "bloom_level": "Analyze",
+          "parent_co": "co-2"
+        },
+        {
+          "id": "mo-4-2",
+          "code": "ML-ENG-MO-4-2",
+          "description": "Diagnose overfitting and underfitting in models and apply correction strategies",
+          "bloom_level": "Evaluate",
+          "parent_co": "co-2"
+        },
+        {
+          "id": "mo-4-3",
+          "code": "ML-ENG-MO-4-3",
+          "description": "Optimize model hyperparameters using AI-assisted tuning techniques",
+          "bloom_level": "Apply",
+          "parent_co": "co-2"
+        }
+      ],
+      "sessions": [
+        {
+          "session_id": "session-4-1",
+          "title": "Classification Metrics",
+          "outcomes": [
+            {
+              "id": "so-4-1-1",
+              "code": "ML-ENG-SO-4-1-1",
+              "description": "Explain accuracy, precision, recall, and F1-score in the context of classification",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-4-1"
+            },
+            {
+              "id": "so-4-1-2",
+              "code": "ML-ENG-SO-4-1-2",
+              "description": "Use AI to calculate and visualize classification metrics from model predictions",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-4-1"
+            },
+            {
+              "id": "so-4-1-3",
+              "code": "ML-ENG-SO-4-1-3",
+              "description": "Interpret confusion matrices and determine which metric matters most for a given problem",
+              "bloom_level": "Evaluate",
+              "parent_mo": "mo-4-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-4-2",
+          "title": "Cross-Validation and Overfitting",
+          "outcomes": [
+            {
+              "id": "so-4-2-1",
+              "code": "ML-ENG-SO-4-2-1",
+              "description": "Explain the concepts of overfitting and underfitting with examples",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-4-2"
+            },
+            {
+              "id": "so-4-2-2",
+              "code": "ML-ENG-SO-4-2-2",
+              "description": "Implement k-fold cross-validation using AI-generated code",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-4-2"
+            },
+            {
+              "id": "so-4-2-3",
+              "code": "ML-ENG-SO-4-2-3",
+              "description": "Diagnose overfitting by comparing training and validation performance",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-4-2"
+            },
+            {
+              "id": "so-4-2-4",
+              "code": "ML-ENG-SO-4-2-4",
+              "description": "Apply regularization techniques with AI assistance to reduce overfitting",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-4-2"
+            }
+          ]
+        },
+        {
+          "session_id": "session-4-3",
+          "title": "Hyperparameter Tuning",
+          "outcomes": [
+            {
+              "id": "so-4-3-1",
+              "code": "ML-ENG-SO-4-3-1",
+              "description": "Define hyperparameters and distinguish them from model parameters",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-4-3"
+            },
+            {
+              "id": "so-4-3-2",
+              "code": "ML-ENG-SO-4-3-2",
+              "description": "Use AI to implement grid search and random search for hyperparameter optimization",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-4-3"
+            },
+            {
+              "id": "so-4-3-3",
+              "code": "ML-ENG-SO-4-3-3",
+              "description": "Evaluate the impact of different hyperparameters on model performance",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-4-3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-5",
+      "module_number": 5,
+      "title": "Unsupervised Learning",
+      "duration_weeks": 2,
+      "outcomes": [
+        {
+          "id": "mo-5-1",
+          "code": "ML-ENG-MO-5-1",
+          "description": "Implement clustering algorithms using AI assistance to discover patterns in unlabeled data",
+          "bloom_level": "Apply",
+          "parent_co": "co-3"
+        },
+        {
+          "id": "mo-5-2",
+          "code": "ML-ENG-MO-5-2",
+          "description": "Apply dimensionality reduction techniques to visualize high-dimensional data",
+          "bloom_level": "Apply",
+          "parent_co": "co-3"
+        },
+        {
+          "id": "mo-5-3",
+          "code": "ML-ENG-MO-5-3",
+          "description": "Build anomaly detection systems using AI-generated code for fraud or fault detection",
+          "bloom_level": "Apply",
+          "parent_co": "co-3"
+        }
+      ],
+      "sessions": [
+        {
+          "session_id": "session-5-1",
+          "title": "Introduction to Clustering",
+          "outcomes": [
+            {
+              "id": "so-5-1-1",
+              "code": "ML-ENG-SO-5-1-1",
+              "description": "Explain unsupervised learning and how it differs from supervised learning",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-5-1"
+            },
+            {
+              "id": "so-5-1-2",
+              "code": "ML-ENG-SO-5-1-2",
+              "description": "Implement K-Means clustering using AI-generated code on a sample dataset",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-5-1"
+            },
+            {
+              "id": "so-5-1-3",
+              "code": "ML-ENG-SO-5-1-3",
+              "description": "Determine the optimal number of clusters using elbow method and silhouette scores",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-5-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-5-2",
+          "title": "Advanced Clustering Techniques",
+          "outcomes": [
+            {
+              "id": "so-5-2-1",
+              "code": "ML-ENG-SO-5-2-1",
+              "description": "Compare K-Means, DBSCAN, and Hierarchical clustering approaches",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-5-1"
+            },
+            {
+              "id": "so-5-2-2",
+              "code": "ML-ENG-SO-5-2-2",
+              "description": "Use AI to implement DBSCAN for density-based clustering",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-5-1"
+            },
+            {
+              "id": "so-5-2-3",
+              "code": "ML-ENG-SO-5-2-3",
+              "description": "Build a customer segmentation system using clustering with AI assistance",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-5-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-5-3",
+          "title": "Dimensionality Reduction",
+          "outcomes": [
+            {
+              "id": "so-5-3-1",
+              "code": "ML-ENG-SO-5-3-1",
+              "description": "Explain why dimensionality reduction is useful for data visualization and processing",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-5-2"
+            },
+            {
+              "id": "so-5-3-2",
+              "code": "ML-ENG-SO-5-3-2",
+              "description": "Apply PCA to reduce high-dimensional data using AI-generated code",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-5-2"
+            },
+            {
+              "id": "so-5-3-3",
+              "code": "ML-ENG-SO-5-3-3",
+              "description": "Use t-SNE for visualization and interpret the resulting clusters",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-5-2"
+            }
+          ]
+        },
+        {
+          "session_id": "session-5-4",
+          "title": "Anomaly Detection",
+          "outcomes": [
+            {
+              "id": "so-5-4-1",
+              "code": "ML-ENG-SO-5-4-1",
+              "description": "Define anomaly detection and identify use cases in fraud and fault detection",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-5-3"
+            },
+            {
+              "id": "so-5-4-2",
+              "code": "ML-ENG-SO-5-4-2",
+              "description": "Implement isolation forest and one-class SVM for anomaly detection using AI",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-5-3"
+            },
+            {
+              "id": "so-5-4-3",
+              "code": "ML-ENG-SO-5-4-3",
+              "description": "Build a fraud detection system and evaluate its effectiveness",
+              "bloom_level": "Evaluate",
+              "parent_mo": "mo-5-3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-6",
+      "module_number": 6,
+      "title": "Neural Networks and Deep Learning Basics",
+      "duration_weeks": 2,
+      "outcomes": [
+        {
+          "id": "mo-6-1",
+          "code": "ML-ENG-MO-6-1",
+          "description": "Build simple neural networks using AI-generated TensorFlow/Keras/PyTorch code",
+          "bloom_level": "Apply",
+          "parent_co": "co-3"
+        },
+        {
+          "id": "mo-6-2",
+          "code": "ML-ENG-MO-6-2",
+          "description": "Analyze how neural network architecture choices affect model performance",
+          "bloom_level": "Analyze",
+          "parent_co": "co-2"
+        },
+        {
+          "id": "mo-6-3",
+          "code": "ML-ENG-MO-6-3",
+          "description": "Apply transfer learning using pre-trained models with AI assistance",
+          "bloom_level": "Apply",
+          "parent_co": "co-3"
+        }
+      ],
+      "sessions": [
+        {
+          "session_id": "session-6-1",
+          "title": "Introduction to Neural Networks",
+          "outcomes": [
+            {
+              "id": "so-6-1-1",
+              "code": "ML-ENG-SO-6-1-1",
+              "description": "Explain what neural networks are and how they differ from traditional ML",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-6-1"
+            },
+            {
+              "id": "so-6-1-2",
+              "code": "ML-ENG-SO-6-1-2",
+              "description": "Describe the components of a neural network (neurons, layers, weights, biases)",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-6-1"
+            },
+            {
+              "id": "so-6-1-3",
+              "code": "ML-ENG-SO-6-1-3",
+              "description": "Use AI to generate and train a simple neural network for classification",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-6-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-6-2",
+          "title": "Neural Network Architecture",
+          "outcomes": [
+            {
+              "id": "so-6-2-1",
+              "code": "ML-ENG-SO-6-2-1",
+              "description": "Explain common activation functions (ReLU, Sigmoid, Tanh) and their purposes",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-6-2"
+            },
+            {
+              "id": "so-6-2-2",
+              "code": "ML-ENG-SO-6-2-2",
+              "description": "Experiment with different network architectures (layers, neurons) using AI assistance",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-6-2"
+            },
+            {
+              "id": "so-6-2-3",
+              "code": "ML-ENG-SO-6-2-3",
+              "description": "Analyze the impact of architecture changes on training time and accuracy",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-6-2"
+            }
+          ]
+        },
+        {
+          "session_id": "session-6-3",
+          "title": "Building with TensorFlow/Keras",
+          "outcomes": [
+            {
+              "id": "so-6-3-1",
+              "code": "ML-ENG-SO-6-3-1",
+              "description": "Use AI to generate code that builds a neural network using Keras Sequential API",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-6-1"
+            },
+            {
+              "id": "so-6-3-2",
+              "code": "ML-ENG-SO-6-3-2",
+              "description": "Train a neural network on MNIST digit dataset and visualize learning progress",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-6-1"
+            },
+            {
+              "id": "so-6-3-3",
+              "code": "ML-ENG-SO-6-3-3",
+              "description": "Debug common neural network errors (vanishing gradients, poor convergence) with AI help",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-6-2"
+            }
+          ]
+        },
+        {
+          "session_id": "session-6-4",
+          "title": "Transfer Learning",
+          "outcomes": [
+            {
+              "id": "so-6-4-1",
+              "code": "ML-ENG-SO-6-4-1",
+              "description": "Explain transfer learning and when it's beneficial to use pre-trained models",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-6-3"
+            },
+            {
+              "id": "so-6-4-2",
+              "code": "ML-ENG-SO-6-4-2",
+              "description": "Load and fine-tune a pre-trained model using AI-generated code",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-6-3"
+            },
+            {
+              "id": "so-6-4-3",
+              "code": "ML-ENG-SO-6-4-3",
+              "description": "Compare training from scratch vs transfer learning in terms of time and accuracy",
+              "bloom_level": "Evaluate",
+              "parent_mo": "mo-6-3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-7",
+      "module_number": 7,
+      "title": "Computer Vision",
+      "duration_weeks": 2,
+      "outcomes": [
+        {
+          "id": "mo-7-1",
+          "code": "ML-ENG-MO-7-1",
+          "description": "Build image classification systems using CNNs with AI-generated code",
+          "bloom_level": "Apply",
+          "parent_co": "co-3"
+        },
+        {
+          "id": "mo-7-2",
+          "code": "ML-ENG-MO-7-2",
+          "description": "Implement object detection and image processing tasks using pre-trained models",
+          "bloom_level": "Apply",
+          "parent_co": "co-3"
+        },
+        {
+          "id": "mo-7-3",
+          "code": "ML-ENG-MO-7-3",
+          "description": "Evaluate computer vision models and optimize them for accuracy and speed",
+          "bloom_level": "Evaluate",
+          "parent_co": "co-2"
+        }
+      ],
+      "sessions": [
+        {
+          "session_id": "session-7-1",
+          "title": "Introduction to Computer Vision",
+          "outcomes": [
+            {
+              "id": "so-7-1-1",
+              "code": "ML-ENG-SO-7-1-1",
+              "description": "Explain what computer vision is and list common applications",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-7-1"
+            },
+            {
+              "id": "so-7-1-2",
+              "code": "ML-ENG-SO-7-1-2",
+              "description": "Use AI to load, display, and preprocess images for ML models",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-7-1"
+            },
+            {
+              "id": "so-7-1-3",
+              "code": "ML-ENG-SO-7-1-3",
+              "description": "Describe how Convolutional Neural Networks (CNNs) process images",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-7-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-7-2",
+          "title": "Image Classification with CNNs",
+          "outcomes": [
+            {
+              "id": "so-7-2-1",
+              "code": "ML-ENG-SO-7-2-1",
+              "description": "Use AI to build a CNN architecture for image classification",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-7-1"
+            },
+            {
+              "id": "so-7-2-2",
+              "code": "ML-ENG-SO-7-2-2",
+              "description": "Train a custom image classifier on your own dataset with AI assistance",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-7-1"
+            },
+            {
+              "id": "so-7-2-3",
+              "code": "ML-ENG-SO-7-2-3",
+              "description": "Evaluate model performance on test images and identify misclassification patterns",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-7-3"
+            }
+          ]
+        },
+        {
+          "session_id": "session-7-3",
+          "title": "Object Detection and Pre-trained Models",
+          "outcomes": [
+            {
+              "id": "so-7-3-1",
+              "code": "ML-ENG-SO-7-3-1",
+              "description": "Distinguish between image classification and object detection",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-7-2"
+            },
+            {
+              "id": "so-7-3-2",
+              "code": "ML-ENG-SO-7-3-2",
+              "description": "Implement object detection using pre-trained models (YOLO, SSD) with AI help",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-7-2"
+            },
+            {
+              "id": "so-7-3-3",
+              "code": "ML-ENG-SO-7-3-3",
+              "description": "Build a face detection application using AI-generated code",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-7-2"
+            }
+          ]
+        },
+        {
+          "session_id": "session-7-4",
+          "title": "Computer Vision Project",
+          "outcomes": [
+            {
+              "id": "so-7-4-1",
+              "code": "ML-ENG-SO-7-4-1",
+              "description": "Design a custom computer vision solution for a real-world problem",
+              "bloom_level": "Create",
+              "parent_mo": "mo-7-1"
+            },
+            {
+              "id": "so-7-4-2",
+              "code": "ML-ENG-SO-7-4-2",
+              "description": "Optimize CV model for speed and accuracy based on deployment constraints",
+              "bloom_level": "Evaluate",
+              "parent_mo": "mo-7-3"
+            },
+            {
+              "id": "so-7-4-3",
+              "code": "ML-ENG-SO-7-4-3",
+              "description": "Implement image augmentation techniques to improve model robustness",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-7-3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-8",
+      "module_number": 8,
+      "title": "Natural Language Processing (NLP)",
+      "duration_weeks": 2,
+      "outcomes": [
+        {
+          "id": "mo-8-1",
+          "code": "ML-ENG-MO-8-1",
+          "description": "Build text classification and sentiment analysis systems using AI-generated NLP code",
+          "bloom_level": "Apply",
+          "parent_co": "co-3"
+        },
+        {
+          "id": "mo-8-2",
+          "code": "ML-ENG-MO-8-2",
+          "description": "Apply text preprocessing and tokenization techniques for NLP tasks",
+          "bloom_level": "Apply",
+          "parent_co": "co-3"
+        },
+        {
+          "id": "mo-8-3",
+          "code": "ML-ENG-MO-8-3",
+          "description": "Implement transformer-based models for NLP applications with AI assistance",
+          "bloom_level": "Apply",
+          "parent_co": "co-3"
+        }
+      ],
+      "sessions": [
+        {
+          "session_id": "session-8-1",
+          "title": "Introduction to NLP",
+          "outcomes": [
+            {
+              "id": "so-8-1-1",
+              "code": "ML-ENG-SO-8-1-1",
+              "description": "Explain what Natural Language Processing is and list common applications",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-8-1"
+            },
+            {
+              "id": "so-8-1-2",
+              "code": "ML-ENG-SO-8-1-2",
+              "description": "Use AI to preprocess text data (cleaning, tokenization, lowercasing)",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-8-2"
+            },
+            {
+              "id": "so-8-1-3",
+              "code": "ML-ENG-SO-8-1-3",
+              "description": "Build a simple sentiment classifier using bag-of-words with AI assistance",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-8-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-8-2",
+          "title": "Text Classification and Sentiment Analysis",
+          "outcomes": [
+            {
+              "id": "so-8-2-1",
+              "code": "ML-ENG-SO-8-2-1",
+              "description": "Explain TF-IDF and word embeddings for text representation",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-8-2"
+            },
+            {
+              "id": "so-8-2-2",
+              "code": "ML-ENG-SO-8-2-2",
+              "description": "Build a sentiment analysis system for product reviews using AI-generated code",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-8-1"
+            },
+            {
+              "id": "so-8-2-3",
+              "code": "ML-ENG-SO-8-2-3",
+              "description": "Evaluate text classifier performance and interpret confusion patterns",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-8-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-8-3",
+          "title": "Word Embeddings and Transformers",
+          "outcomes": [
+            {
+              "id": "so-8-3-1",
+              "code": "ML-ENG-SO-8-3-1",
+              "description": "Explain word embeddings (Word2Vec, GloVe) and their advantages over TF-IDF",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-8-2"
+            },
+            {
+              "id": "so-8-3-2",
+              "code": "ML-ENG-SO-8-3-2",
+              "description": "Use pre-trained word embeddings in text classification with AI help",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-8-2"
+            },
+            {
+              "id": "so-8-3-3",
+              "code": "ML-ENG-SO-8-3-3",
+              "description": "Describe transformer architecture and its impact on modern NLP",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-8-3"
+            }
+          ]
+        },
+        {
+          "session_id": "session-8-4",
+          "title": "NLP Projects with Transformers",
+          "outcomes": [
+            {
+              "id": "so-8-4-1",
+              "code": "ML-ENG-SO-8-4-1",
+              "description": "Use AI to implement a transformer-based model from Hugging Face",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-8-3"
+            },
+            {
+              "id": "so-8-4-2",
+              "code": "ML-ENG-SO-8-4-2",
+              "description": "Build a text summarization tool using pre-trained transformers",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-8-3"
+            },
+            {
+              "id": "so-8-4-3",
+              "code": "ML-ENG-SO-8-4-3",
+              "description": "Create a simple chatbot using AI-generated NLP code",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-8-1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-9",
+      "module_number": 9,
+      "title": "Real-world ML Projects and Deployment",
+      "duration_weeks": 2,
+      "outcomes": [
+        {
+          "id": "mo-9-1",
+          "code": "ML-ENG-MO-9-1",
+          "description": "Design and implement end-to-end ML pipelines from data collection to deployment",
+          "bloom_level": "Create",
+          "parent_co": "co-5"
+        },
+        {
+          "id": "mo-9-2",
+          "code": "ML-ENG-MO-9-2",
+          "description": "Deploy ML models as web APIs using AI-assisted development",
+          "bloom_level": "Apply",
+          "parent_co": "co-5"
+        },
+        {
+          "id": "mo-9-3",
+          "code": "ML-ENG-MO-9-3",
+          "description": "Create monitoring dashboards and implement basic MLOps practices",
+          "bloom_level": "Apply",
+          "parent_co": "co-5"
+        }
+      ],
+      "sessions": [
+        {
+          "session_id": "session-9-1",
+          "title": "End-to-End ML Pipeline",
+          "outcomes": [
+            {
+              "id": "so-9-1-1",
+              "code": "ML-ENG-SO-9-1-1",
+              "description": "Describe the stages of an end-to-end ML pipeline",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-9-1"
+            },
+            {
+              "id": "so-9-1-2",
+              "code": "ML-ENG-SO-9-1-2",
+              "description": "Use AI to collect, clean, and prepare data for ML modeling",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-9-1"
+            },
+            {
+              "id": "so-9-1-3",
+              "code": "ML-ENG-SO-9-1-3",
+              "description": "Build a complete ML workflow from raw data to predictions with AI assistance",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-9-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-9-2",
+          "title": "Model Deployment Basics",
+          "outcomes": [
+            {
+              "id": "so-9-2-1",
+              "code": "ML-ENG-SO-9-2-1",
+              "description": "Explain different deployment options (cloud, edge, API)",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-9-2"
+            },
+            {
+              "id": "so-9-2-2",
+              "code": "ML-ENG-SO-9-2-2",
+              "description": "Use AI to create a Flask/FastAPI endpoint that serves ML predictions",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-9-2"
+            },
+            {
+              "id": "so-9-2-3",
+              "code": "ML-ENG-SO-9-2-3",
+              "description": "Deploy an ML model to a cloud platform (Heroku, AWS, Google Cloud) with AI help",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-9-2"
+            }
+          ]
+        },
+        {
+          "session_id": "session-9-3",
+          "title": "Monitoring and MLOps",
+          "outcomes": [
+            {
+              "id": "so-9-3-1",
+              "code": "ML-ENG-SO-9-3-1",
+              "description": "Explain the importance of model monitoring and maintenance",
+              "bloom_level": "Understand",
+              "parent_mo": "mo-9-3"
+            },
+            {
+              "id": "so-9-3-2",
+              "code": "ML-ENG-SO-9-3-2",
+              "description": "Use AI to create a monitoring dashboard showing model performance metrics",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-9-3"
+            },
+            {
+              "id": "so-9-3-3",
+              "code": "ML-ENG-SO-9-3-3",
+              "description": "Implement basic logging and error handling for deployed models",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-9-3"
+            }
+          ]
+        },
+        {
+          "session_id": "session-9-4",
+          "title": "Mini-Project Sprint",
+          "outcomes": [
+            {
+              "id": "so-9-4-1",
+              "code": "ML-ENG-SO-9-4-1",
+              "description": "Build and deploy 3 mini ML applications in rapid succession",
+              "bloom_level": "Create",
+              "parent_mo": "mo-9-1"
+            },
+            {
+              "id": "so-9-4-2",
+              "code": "ML-ENG-SO-9-4-2",
+              "description": "Document ML projects using AI-generated README and documentation",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-9-1"
+            },
+            {
+              "id": "so-9-4-3",
+              "code": "ML-ENG-SO-9-4-3",
+              "description": "Present ML solutions to technical and non-technical audiences",
+              "bloom_level": "Apply",
+              "parent_co": "co-5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-10",
+      "module_number": 10,
+      "title": "Capstone Project",
+      "duration_weeks": 3,
+      "outcomes": [
+        {
+          "id": "mo-10-1",
+          "code": "ML-ENG-MO-10-1",
+          "description": "Design and implement a complete ML solution addressing a real-world problem",
+          "bloom_level": "Create",
+          "parent_co": "co-3"
+        },
+        {
+          "id": "mo-10-2",
+          "code": "ML-ENG-MO-10-2",
+          "description": "Evaluate project outcomes against success criteria and iterate on improvements",
+          "bloom_level": "Evaluate",
+          "parent_co": "co-2"
+        },
+        {
+          "id": "mo-10-3",
+          "code": "ML-ENG-MO-10-3",
+          "description": "Present and document the ML project professionally for portfolio use",
+          "bloom_level": "Create",
+          "parent_co": "co-5"
+        }
+      ],
+      "sessions": [
+        {
+          "session_id": "session-10-1",
+          "title": "Project Planning and Design",
+          "outcomes": [
+            {
+              "id": "so-10-1-1",
+              "code": "ML-ENG-SO-10-1-1",
+              "description": "Select a capstone project aligned with career goals and interests",
+              "bloom_level": "Evaluate",
+              "parent_mo": "mo-10-1"
+            },
+            {
+              "id": "so-10-1-2",
+              "code": "ML-ENG-SO-10-1-2",
+              "description": "Define project scope, success criteria, and deliverables",
+              "bloom_level": "Create",
+              "parent_mo": "mo-10-1"
+            },
+            {
+              "id": "so-10-1-3",
+              "code": "ML-ENG-SO-10-1-3",
+              "description": "Design the ML solution architecture with AI assistance",
+              "bloom_level": "Create",
+              "parent_mo": "mo-10-1"
+            }
+          ]
+        },
+        {
+          "session_id": "session-10-2",
+          "title": "Implementation Phase",
+          "outcomes": [
+            {
+              "id": "so-10-2-1",
+              "code": "ML-ENG-SO-10-2-1",
+              "description": "Implement data collection and preprocessing pipeline using AI tools",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-10-1"
+            },
+            {
+              "id": "so-10-2-2",
+              "code": "ML-ENG-SO-10-2-2",
+              "description": "Build, train, and optimize ML models for the project with AI assistance",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-10-1"
+            },
+            {
+              "id": "so-10-2-3",
+              "code": "ML-ENG-SO-10-2-3",
+              "description": "Troubleshoot and debug project issues using AI-assisted problem-solving",
+              "bloom_level": "Analyze",
+              "parent_mo": "mo-10-2"
+            }
+          ]
+        },
+        {
+          "session_id": "session-10-3",
+          "title": "Testing, Deployment, and Documentation",
+          "outcomes": [
+            {
+              "id": "so-10-3-1",
+              "code": "ML-ENG-SO-10-3-1",
+              "description": "Test the ML application thoroughly and validate against success criteria",
+              "bloom_level": "Evaluate",
+              "parent_mo": "mo-10-2"
+            },
+            {
+              "id": "so-10-3-2",
+              "code": "ML-ENG-SO-10-3-2",
+              "description": "Deploy the final ML application using appropriate platform",
+              "bloom_level": "Apply",
+              "parent_mo": "mo-10-1"
+            },
+            {
+              "id": "so-10-3-3",
+              "code": "ML-ENG-SO-10-3-3",
+              "description": "Create comprehensive project documentation and README with AI help",
+              "bloom_level": "Create",
+              "parent_mo": "mo-10-3"
+            }
+          ]
+        },
+        {
+          "session_id": "session-10-4",
+          "title": "Presentation and Portfolio Development",
+          "outcomes": [
+            {
+              "id": "so-10-4-1",
+              "code": "ML-ENG-SO-10-4-1",
+              "description": "Create a professional presentation explaining the project and its impact",
+              "bloom_level": "Create",
+              "parent_mo": "mo-10-3"
+            },
+            {
+              "id": "so-10-4-2",
+              "code": "ML-ENG-SO-10-4-2",
+              "description": "Record a demonstration video showcasing the ML application",
+              "bloom_level": "Create",
+              "parent_mo": "mo-10-3"
+            },
+            {
+              "id": "so-10-4-3",
+              "code": "ML-ENG-SO-10-4-3",
+              "description": "Reflect on learning journey and identify areas for continued growth",
+              "bloom_level": "Evaluate",
+              "parent_mo": "mo-10-2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Excel files (can be regenerated from YAML)
+*.xlsx
+*.xls
+
+# Temporary files
+*~
+.DS_Store

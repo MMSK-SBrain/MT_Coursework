@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 23,
+  "week": 5,
+  "session_title": "Brake Systems — From Pedal to Wheel",
+  "questions": [
+    {
+      "id": "D23-Q01",
+      "question": "Pascal's Law states that pressure applied to a confined fluid is:",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Absorbed by the fluid and converted to heat",
+        "B": "Transmitted equally in all directions throughout the fluid",
+        "C": "Reduced proportionally with distance from the source",
+        "D": "Only effective if the fluid is above its boiling point"
+      },
+      "correct_answer": "B",
+      "explanation": "Pascal's Law states that pressure applied to a confined fluid is transmitted equally and undiminished in all directions throughout the fluid. This principle is the foundation of hydraulic braking — a small force on the master cylinder piston creates pressure that is transmitted equally to all caliper pistons, enabling force multiplication.",
+      "topic": "Pascal's Law",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D23-Q02",
+      "question": "Why does a tandem master cylinder have two separate hydraulic circuits?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To provide different pressure levels for front and rear brakes",
+        "B": "To ensure that if one circuit fails, the other still provides braking",
+        "C": "To allow ABS to control each wheel independently",
+        "D": "To separate the brake fluid from the power steering fluid"
+      },
+      "correct_answer": "B",
+      "explanation": "The tandem master cylinder has two independent circuits as a critical safety feature. If one circuit fails (line rupture, caliper leak), the other circuit retains hydraulic pressure and continues to provide braking on two wheels. Most modern vehicles use a diagonal split (front-left + rear-right on one circuit, front-right + rear-left on the other) to maintain steering stability even with one failed circuit.",
+      "topic": "Master cylinder dual circuits",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D23-Q03",
+      "question": "In a floating caliper disc brake, how does the outboard brake pad contact the rotor when there is only a piston on the inboard side?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "A second hidden piston pushes the outboard pad from behind",
+        "B": "Spring clips push the outboard pad against the rotor at all times",
+        "C": "Hydraulic fluid pressure acts directly on the outboard pad through a channel in the rotor",
+        "D": "The caliper body slides on guide pins — the reaction force from the inboard piston pulls the caliper inward, pressing the outboard pad against the rotor"
+      },
+      "correct_answer": "D",
+      "explanation": "In a floating caliper, the single piston pushes the inboard pad against the rotor. The equal and opposite reaction force acts on the caliper body, pulling it inward on its slide pins. This motion presses the outboard pad against the other face of the rotor. This is why clean, lubricated slide pins are critical — seized pins prevent the caliper from floating and result in uneven pad wear and brake pull.",
+      "topic": "Floating caliper operation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D23-Q04",
+      "question": "What is the wet boiling point of DOT 4 brake fluid?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "100 degrees Celsius",
+        "B": "140 degrees Celsius",
+        "C": "155 degrees Celsius",
+        "D": "230 degrees Celsius"
+      },
+      "correct_answer": "C",
+      "explanation": "DOT 4 brake fluid has a dry boiling point of 230 degrees Celsius and a wet boiling point (with 3.7% moisture content) of 155 degrees Celsius. The wet boiling point is the critical specification because brake fluid is hygroscopic and absorbs moisture over time. DOT 3 has a wet boiling point of only 140 degrees Celsius, while DOT 5.1 reaches 180 degrees Celsius. The 230 degrees figure is the dry boiling point, not the wet.",
+      "topic": "DOT brake fluid ratings",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D23-Q05",
+      "question": "Which tool is used to measure brake rotor thickness to determine whether it meets the minimum specification?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Feeler gauge",
+        "B": "Dial indicator",
+        "C": "Outside micrometer",
+        "D": "Tread depth gauge"
+      },
+      "correct_answer": "C",
+      "explanation": "An outside micrometer is used to measure brake rotor thickness because it provides the precision needed (0.01 mm resolution) to compare the measurement against the minimum thickness specification. The rotor should be measured at a minimum of six points around its circumference. A dial indicator is used for measuring rotor runout (lateral wobble), not thickness.",
+      "topic": "Brake inspection measurement tools",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D23-Q06",
+      "question": "A technician measures a brake rotor at six points and records the following thicknesses: 22.05, 22.03, 21.98, 22.04, 22.01, 21.97 mm. The minimum thickness specification stamped on the rotor is 22.00 mm. What is the correct service decision?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The rotor must be condemned and replaced because two readings (21.98 mm and 21.97 mm) are below the minimum thickness specification",
+        "B": "The rotor passes inspection because the average thickness (22.01 mm) is above minimum",
+        "C": "The rotor can be machined to restore a uniform surface since most readings are above minimum",
+        "D": "The rotor passes because the thickest reading (22.05 mm) confirms adequate material"
+      },
+      "correct_answer": "A",
+      "explanation": "The minimum thickness is a safety-critical absolute limit — any reading at or below this specification means the rotor is condemned. Two measurements (21.98 mm and 21.97 mm) are below the 22.00 mm minimum. Machining would remove additional material, taking more readings below minimum. The average is irrelevant — it is the thinnest point that determines whether the rotor can safely absorb braking heat without cracking or failure. The rotor must be replaced.",
+      "topic": "Rotor thickness service decision",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D23-Q07",
+      "question": "A vehicle pulls to the left during braking only. The pull disappears when brakes are not applied. Tyre pressures are equal and alignment is within specification. What is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The left front tyre has less tread depth than the right front tyre",
+        "B": "The right front caliper slide pins are seized, preventing the caliper from applying full clamping force on the right side",
+        "C": "The left rear shock absorber is leaking, causing weight transfer to the left",
+        "D": "The steering rack is worn, allowing the wheels to toe-out under braking load"
+      },
+      "correct_answer": "B",
+      "explanation": "A pull during braking that disappears when brakes are released indicates unequal braking force side-to-side. Seized slide pins on the right front caliper prevent the caliper from floating, so only the inboard pad contacts the rotor — significantly reducing braking force on that side. The left side brakes normally, generating more force, pulling the vehicle left. Confirming this: after a short drive, the right front wheel would be noticeably cooler than the left (less friction, less heat). The tyre tread difference would cause pull at all times, not just during braking.",
+      "topic": "Brake pull diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D23-Q08",
+      "question": "A technician measures 0.15 mm of lateral runout on a brake rotor using a dial indicator. The manufacturer specification states a maximum of 0.05 mm. After cleaning the hub mounting face and re-mounting the rotor, the runout measures 0.04 mm. What does this tell the technician?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The rotor was warped and has been corrected by re-mounting",
+        "B": "The dial indicator was incorrectly zeroed during the first measurement",
+        "C": "The rotor needs to be machined because the first reading proved it is damaged",
+        "D": "The original excessive runout was caused by debris or corrosion on the hub face — the rotor itself is within specification"
+      },
+      "correct_answer": "D",
+      "explanation": "Dirt, rust, or corrosion on the hub mounting face is the most common cause of excessive rotor runout. Even a few hundredths of a millimetre of debris between the rotor hat and the hub creates a tilted mounting surface, translating to lateral runout at the friction surface. Cleaning the hub face and re-mounting reduced the runout from 0.15 mm to 0.04 mm (within the 0.05 mm specification), confirming the hub face contamination was the root cause — not a warped rotor. This is why checking and cleaning the hub face is always the first step when diagnosing runout.",
+      "topic": "Rotor runout diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D23-Q09",
+      "question": "A customer reports that the brake pedal feels spongy and sinks further than normal before the vehicle begins to slow. The brake fluid reservoir level is at the minimum mark. What is the correct diagnostic sequence?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Top up the brake fluid and bleed the system — the low level allowed air ingestion",
+        "B": "Replace the brake booster — a spongy pedal indicates booster diaphragm failure",
+        "C": "Identify and repair the source of the fluid loss first, then bleed the system to remove air",
+        "D": "Replace the master cylinder — internal bypass is causing the spongy pedal"
+      },
+      "correct_answer": "C",
+      "explanation": "A spongy pedal combined with low fluid level indicates two problems: air in the system (causing the sponginess) and a fluid leak somewhere (causing the low level). Simply topping up and bleeding without finding the leak would be a temporary fix — the level will drop again and more air will enter. The correct approach is to inspect all brake components for leaks (calipers, wheel cylinders, brake lines, hoses, and master cylinder), repair the leak source, then bleed the complete system to remove air. Only after the leak is fixed can the system be reliably sealed and bled.",
+      "topic": "Spongy brake pedal diagnosis",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D23-Q10",
+      "question": "A technician needs to replace the rear brake pads on a vehicle equipped with an Electronic Parking Brake (EPB). The technician attempts to push the caliper piston back with a C-clamp but the piston will not move. What is the correct explanation and procedure?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The caliper is seized and must be replaced as an assembly",
+        "B": "The piston requires rotation clockwise while being pushed back — this is standard for all rear calipers",
+        "C": "The EPB uses a motor-driven thrust screw mechanism that mechanically locks the piston — the technician must use a scan tool to enter EPB Service Mode to retract the pistons before pad replacement",
+        "D": "The brake fluid must be completely drained from the rear circuit before the piston can be pushed back"
+      },
+      "correct_answer": "C",
+      "explanation": "Electronic Parking Brake calipers use an electric motor and thrust screw (spindle) mechanism to apply and hold the parking brake. This mechanism mechanically locks the piston in place and cannot be overcome by manual force. The technician must connect a diagnostic scan tool, enter EPB Service Mode, and command the motors to retract the pistons. After installing new pads and reassembling, the technician exits Service Mode, allowing the ECU to re-initialize and calibrate the clamping force. Attempting to force the piston back manually risks damaging the motor/gearbox mechanism.",
+      "topic": "Electronic Parking Brake service procedure",
+      "bloom_level": "Apply"
+    }
+  ]
+}

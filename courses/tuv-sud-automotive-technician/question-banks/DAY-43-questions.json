@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 43,
+  "week": 9,
+  "session_title": "Engine Re-Assembly",
+  "questions": [
+    {
+      "id": "D43-Q01",
+      "question": "What is the correct assembly sequence when rebuilding an engine?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Cylinder head first, then pistons, then crankshaft",
+        "B": "Crankshaft and main bearings first, then pistons, then timing, then head, then valve train, then externals",
+        "C": "Timing chain first, then crankshaft, then pistons, then cylinder head",
+        "D": "Accessories first, then head, then block internals"
+      },
+      "correct_answer": "B",
+      "explanation": "Engine assembly works from the bottom up, which is the reverse of disassembly. The crankshaft with main bearings goes in first, followed by pistons and connecting rods with rod bearings, then the timing system (chain/belt, tensioner, guides), then the cylinder head with head gasket, then the valve train, and finally external components such as manifolds and accessories. Each stage has a verification point that must be passed before proceeding to the next.",
+      "topic": "Assembly sequence",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D43-Q02",
+      "question": "When installing main bearing shells, the upper shell placed in the block saddle differs from the lower shell placed in the cap. What is the key difference?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The upper shell is thicker than the lower shell",
+        "B": "The upper shell has an oil hole that aligns with the block's oil gallery; the lower shell does not",
+        "C": "The lower shell has a larger alignment tab than the upper shell",
+        "D": "There is no difference — the shells are interchangeable"
+      },
+      "correct_answer": "B",
+      "explanation": "The upper bearing shell (positioned in the block saddle) contains an oil hole and groove that aligns with the engine block's oil gallery passage. This allows pressurised oil from the main gallery to flow through the shell and onto the crankshaft journal, maintaining the hydrodynamic oil film. The lower shell (in the bearing cap) typically has no oil hole because it sits on the loaded side and an oil hole there would reduce load-carrying capacity. The two shells must never be mixed or swapped.",
+      "topic": "Main bearing installation",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D43-Q03",
+      "question": "Why must piston ring end gaps be staggered 120 degrees apart around the piston?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To reduce the weight imbalance of the piston assembly",
+        "B": "To prevent a continuous blow-by path from the combustion chamber to the crankcase if all gaps were aligned",
+        "C": "To ensure the rings compress evenly when entering the bore",
+        "D": "To allow the piston to rotate freely in the cylinder bore"
+      },
+      "correct_answer": "B",
+      "explanation": "Each piston ring has a gap where the ring ends do not meet. If all three ring gaps (top compression, second compression, oil control) were aligned in a straight line, combustion gases would have a direct path from the combustion chamber through all three gaps into the crankcase. Staggering the gaps 120 degrees apart forces the gas to travel around the piston between each ring, dramatically reducing blow-by. The gaps should also be positioned away from the thrust face and piston pin bore axis, which are high-load areas.",
+      "topic": "Ring gap staggering",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D43-Q04",
+      "question": "What does 'torque-to-yield' (TTY) mean for head bolts, and what is the practical consequence?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The bolt is tightened until it yields (snaps), then replaced — it means using maximum force",
+        "B": "The bolt is torqued to a base value then rotated an additional angle, stretching it into its elastic-plastic zone for maximum clamping force — TTY bolts are single-use and must never be reused",
+        "C": "The bolt is torqued to a yield strength value listed in the manual, then can be reused indefinitely",
+        "D": "The bolt is tightened by feel until resistance increases sharply, indicating the yield point"
+      },
+      "correct_answer": "B",
+      "explanation": "Torque-to-yield head bolts are designed to be stretched into the transition zone between elastic and plastic deformation. The procedure involves torquing to a base value (e.g., 30 Nm, then 60 Nm in stages), followed by an angular rotation (e.g., 90 degrees in one or two stages). This stretching provides the maximum and most consistent clamping force on the head gasket. However, once a TTY bolt has been stretched into the plastic zone, its metallurgical properties are permanently altered — it cannot return to its original length and strength. Reusing a TTY bolt risks under-clamping (the bolt stretches further) or fracture, both of which cause head gasket failure.",
+      "topic": "Torque-to-yield head bolts",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D43-Q05",
+      "question": "When applying RTV sealant to an oil pan flange, what is the correct bead diameter and position relative to the bolt holes?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "A thick 8mm bead applied outside the bolt holes to create maximum coverage",
+        "B": "A continuous 3mm bead applied inside the bolt holes, with assembly completed within the sealant's open time",
+        "C": "Sealant spread thinly across the entire mating surface with a brush",
+        "D": "Sealant applied only around the drain plug hole and two corners"
+      },
+      "correct_answer": "B",
+      "explanation": "RTV sealant for oil pan and similar applications must be applied as a continuous 3mm diameter bead running inside the bolt holes (between the bolt holes and the internal cavity). The bead must be continuous with no gaps. The pan must be bolted up within the sealant's open time (typically 10-15 minutes) before the sealant skins over. Excess sealant is dangerous — it squeezes inward and can break off in chunks that block the oil pickup screen or oil galleries. Too little sealant results in oil leaks. The 3mm bead provides enough material to fill minor surface irregularities without creating excess squeeze-out.",
+      "topic": "RTV sealant application",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D43-Q06",
+      "question": "During MLS (Multi-Layer Steel) head gasket installation, a technician applies a thin layer of RTV sealant to both sides of the gasket to 'help it seal better.' What is wrong with this approach?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Nothing is wrong — sealant always improves gasket performance",
+        "B": "Sealant applied to an MLS gasket can compress under clamping force, reducing the effective clamping pressure on the steel sealing layers and creating a potential blow-through path where combustion gases breach the gasket",
+        "C": "The sealant will dissolve in the coolant and contaminate the cooling system",
+        "D": "The sealant will prevent the gasket from being removed during future servicing"
+      },
+      "correct_answer": "B",
+      "explanation": "MLS head gaskets are precision-engineered with multiple steel layers that have elastomeric coatings designed to seal at specific clamping pressures. The gasket seals through metal-to-metal contact between its layers and the block/head surfaces. Adding RTV sealant creates a compressible layer between the gasket and the mating surface. Under the enormous clamping force of the head bolts, this sealant compresses more than the gasket's designed compression, reducing the effective clamping on the MLS layers. This creates localised areas of reduced sealing pressure where combustion gases can breach the gasket. MLS gaskets must never have sealant applied unless the manufacturer specifically requires it at a particular location (some specify small dabs near coolant crossover points).",
+      "topic": "MLS head gasket rules",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D43-Q07",
+      "question": "After engine reassembly, a technician performs the 2-turn rotation check by turning the crankshaft with a breaker bar. Halfway through the second revolution, the crankshaft catches and stops hard. What is the most likely cause, and what should the technician do?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The engine has reached compression on one cylinder — apply more force to push past it",
+        "B": "The timing is off by one or more teeth, causing a valve to contact a piston on an interference engine — the technician must NOT force it, must disassemble the timing system, verify and correct the timing alignment, then repeat the rotation check",
+        "C": "The piston rings are too tight in the bore and need time to seat in",
+        "D": "The main bearing caps are too tight and need to be loosened slightly"
+      },
+      "correct_answer": "B",
+      "explanation": "During a 2-turn rotation check, the crankshaft should rotate smoothly with only the even resistance of compression strokes. A hard catch or sudden stop — distinct from the normal compression feel — indicates mechanical interference, most commonly a piston contacting an open valve. On an interference engine, if the timing chain or belt is installed one tooth off, a valve will be open when the piston reaches TDC, and the piston crown strikes the valve. Forcing past this point will bend the valve, damage the piston, and potentially crack the valve guide. The technician must stop immediately, remove the timing cover, verify all timing marks, correct any misalignment, and repeat the check. A foreign object left in a cylinder or an incorrect piston (wrong compression height) can also cause this symptom.",
+      "topic": "2-turn rotation check failure diagnosis",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D43-Q08",
+      "question": "A technician is torquing head bolts on a 4-cylinder engine. They complete Stage 1 (30 Nm all bolts in sequence) and Stage 2 (60 Nm all bolts in sequence). For Stage 3, the specification calls for an additional 90-degree angle turn. The technician accidentally turns bolt number 5 to 120 degrees before realising the error. What is the correct course of action?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Back the bolt off 30 degrees to reach the correct 90-degree angle",
+        "B": "The bolt has been over-stretched into the yield zone beyond its design and must be replaced with a new TTY bolt — remove the bolt, install a new one, and restart the complete torque sequence from Stage 1 on ALL bolts",
+        "C": "Continue with the remaining bolts at 90 degrees — the 30-degree excess on one bolt will not matter",
+        "D": "Add an extra 30 degrees to all other bolts to keep the clamping force even"
+      },
+      "correct_answer": "B",
+      "explanation": "TTY bolts are designed to be stretched to a precise point in the elastic-plastic transition zone. The 90-degree angle turn is calibrated to reach this optimal stretch. An additional 30 degrees (total 120 degrees) pushes the bolt further into the plastic zone than designed, permanently weakening it. The bolt may have micro-fractures or may not maintain clamping force over time. Backing the bolt off does not undo the metallurgical damage. The over-stretched bolt must be discarded and a new TTY bolt installed. Because the torque sequence creates a specific pattern of clamping across the head, all bolts must be loosened and the complete multi-stage torque sequence must be restarted from Stage 1 to ensure uniform clamping.",
+      "topic": "TTY bolt error recovery",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D43-Q09",
+      "question": "When installing pistons using a ring compressor, the technician taps the piston firmly into the bore with a hammer handle. The piston moves partway in then meets strong resistance. What should the technician do?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Hit harder with a steel hammer to push through the resistance",
+        "B": "Stop immediately and investigate — a ring has likely popped out of the compressor, and forcing it will break the ring and score the bore wall",
+        "C": "Pull the piston back out and add more oil, then try again with the same force",
+        "D": "Rotate the crankshaft to move the connecting rod to a different position"
+      },
+      "correct_answer": "B",
+      "explanation": "Resistance during piston installation with a ring compressor almost always means a piston ring has escaped from under the compressor band. The ring end catches on the top edge of the bore. Forcing the piston inward will break the ring (sending brittle fragments into the bore), score the cylinder wall, and potentially damage the ring groove on the piston. The correct action is to stop, carefully remove the piston, inspect all rings and the compressor, re-seat the rings under the compressor band ensuring they are fully compressed with no visible gaps, re-oil everything, and try again. The compressor must be uniformly tight around the piston before insertion.",
+      "topic": "Piston installation troubleshooting",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D43-Q10",
+      "question": "A technician has completed the full engine reassembly and the 2-turn rotation check passes smoothly. However, they notice that the timing marks, which were perfectly aligned before rotating the crank, are now one tooth off on the camshaft sprocket after the two full revolutions. What does this indicate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "This is normal — timing marks only align every four revolutions of the crankshaft",
+        "B": "The timing chain has stretched and needs to be replaced with a new one",
+        "C": "The timing chain or belt was installed with the marks one tooth off — the valve timing is incorrect, which will cause poor performance, misfires, or potential valve damage, and the timing must be corrected before the engine is started",
+        "D": "The camshaft sprocket bolt has come loose, allowing the sprocket to slip on the camshaft"
+      },
+      "correct_answer": "C",
+      "explanation": "On a standard 4-stroke engine, the camshaft turns exactly once for every two crankshaft turns. After rotating the crankshaft two full turns (720 degrees), the timing marks on both the crankshaft and camshaft must return to their original aligned position. If the camshaft mark is one tooth off, the chain or belt was installed incorrectly. One tooth off means the valve timing is advanced or retarded from the manufacturer's specification. On a non-interference engine, this causes poor performance and misfires. On an interference engine, certain positions in the operating cycle may bring a piston dangerously close to a valve. The timing must be corrected before any start attempt — remove the timing cover, realign the marks, and repeat the verification.",
+      "topic": "Timing verification after assembly",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

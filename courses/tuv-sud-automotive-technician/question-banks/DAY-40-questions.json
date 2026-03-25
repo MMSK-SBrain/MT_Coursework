@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 40,
+  "week": 8,
+  "session_title": "Exam Preparation & Capstone",
+  "questions": [
+    {
+      "id": "D40-Q01",
+      "question": "In the TUV SUD certification exam (50 questions, 90 minutes), approximately how much time should you allocate per question to ensure you finish on time?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "30 seconds per question",
+        "B": "1 minute and 48 seconds per question",
+        "C": "3 minutes per question",
+        "D": "5 minutes per question"
+      },
+      "correct_answer": "B",
+      "explanation": "With 50 questions in 90 minutes, the available time per question is 90 / 50 = 1.8 minutes, or approximately 1 minute and 48 seconds. This means simple recall questions should be answered in under a minute, leaving extra time for scenario-based questions that require more careful reading and analysis. Time management is critical — spending 5 minutes on a difficult question early in the exam means running out of time for easier questions later.",
+      "topic": "Exam time management",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D40-Q02",
+      "question": "When you encounter a difficult multiple-choice question on the exam and cannot determine the answer immediately, what is the recommended strategy?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Leave it blank and never return to it",
+        "B": "Spend as long as necessary until you are certain of the answer",
+        "C": "Eliminate obviously wrong options, mark your best guess, flag the question, and return to it after completing all other questions",
+        "D": "Choose option C because it is statistically the most common correct answer"
+      },
+      "correct_answer": "C",
+      "explanation": "The elimination technique combined with flagging is the most effective exam strategy for difficult questions. First, identify and eliminate answers you know are incorrect — even eliminating one option improves your odds from 25% to 33%. Second, select the best remaining option as your initial answer. Third, flag or mark the question for review. Fourth, continue with the remaining questions without losing time. After completing all questions, return to flagged questions with fresh perspective. Often, information from later questions can help you reconsider earlier ones. Never leave a question blank — there is no penalty for guessing, so an educated guess is always better than no answer.",
+      "topic": "Exam elimination strategy",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D40-Q03",
+      "question": "The mock exam contains three types of questions: recall, applied knowledge, and scenario-based. Which type typically takes the longest to answer and should be flagged for return if you are running low on time?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Recall questions — because they require you to remember specific facts",
+        "B": "Applied knowledge questions — because they require calculation",
+        "C": "Scenario-based questions — because they present a complex situation requiring multi-step reasoning across systems",
+        "D": "All question types take equal time"
+      },
+      "correct_answer": "C",
+      "explanation": "Scenario-based questions present a realistic vehicle fault description and require the student to read carefully, identify the relevant system(s), consider multiple possible causes, eliminate distractors, and select the root cause. These multi-step reasoning questions often reference knowledge from several different weeks of the course and test cross-system thinking. They take significantly longer than recall questions (which test direct facts) or applied knowledge questions (which test understanding of a single concept). The recommended strategy is to answer recall and applied questions first (they are faster), then dedicate remaining time to the more complex scenarios.",
+      "topic": "Exam question type recognition",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D40-Q04",
+      "question": "A multiple-choice question asks about the correct tyre inflation pressure for a vehicle. Two options list specific pressures (2.2 bar and 2.4 bar) and two options state 'refer to the manufacturer's specification on the vehicle placard.' What exam strategy applies here?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Choose the highest pressure because higher is always safer",
+        "B": "Choose 2.2 bar because it is the most common standard pressure",
+        "C": "Recognise that specific pressures vary by vehicle — the answer that directs you to the manufacturer's specification is almost certainly correct because it is the universally applicable answer",
+        "D": "Skip the question because it requires vehicle-specific information you cannot know"
+      },
+      "correct_answer": "C",
+      "explanation": "This is an important exam strategy principle: when one answer is universally true and other answers are only sometimes true, the universal answer is correct. Tyre pressures vary by vehicle make, model, load, and tyre size — no single number applies to all vehicles. The manufacturer's specification placard (usually found on the driver's door jamb or fuel filler cap) provides the correct pressure for that specific vehicle. Any exam answer that says 'follow the manufacturer's specification' or 'refer to the service manual' for vehicle-specific values is almost always the correct choice over a specific number. This pattern applies to torque specifications, fluid capacities, and service intervals as well.",
+      "topic": "Exam strategy — universal vs. specific answers",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D40-Q05",
+      "question": "Which week of the course covered the four-stroke combustion cycle, gasoline fuel injection systems, and ignition systems?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Week 2 — Speaking Electricity",
+        "B": "Week 3 — The Heart: Engine Systems",
+        "C": "Week 5 — Grip, Turn & Stop",
+        "D": "Week 7 — The Future"
+      },
+      "correct_answer": "B",
+      "explanation": "Week 3 covered engine systems including the four-stroke cycle (intake, compression, power, exhaust), gasoline fuel delivery (port injection and direct injection), ignition systems (coil-on-plug, ignition timing), diesel fuel systems (common rail), and valve train and timing components. This represents Chapters 4-6 of the syllabus and accounts for approximately 18 marks (9 questions) on the certification exam — the single largest topic group.",
+      "topic": "Course structure review",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D40-Q06",
+      "question": "An exam question presents this scenario: 'A vehicle pulls to the left during braking. The left front brake disc is significantly hotter than the right after a test drive.' A student immediately selects 'left front caliper seized' as the answer. What critical exam mistake has the student made?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The student answered too quickly without reading all four options — a seized caliper would cause constant pull and heat, not just pull during braking; the correct answer might be a stuck caliper slider pin, contaminated pad, or collapsed brake hose that allows apply pressure but restricts release",
+        "B": "The student's answer is definitively correct and no mistake was made",
+        "C": "The student should have chosen the right front caliper as the fault",
+        "D": "The student should have selected 'low brake fluid' as the answer"
+      },
+      "correct_answer": "A",
+      "explanation": "This illustrates the exam trap of selecting the first plausible-sounding answer without reading all options. While a seized caliper is a possible cause, the question says the pull occurs 'during braking' specifically, and the disc is hotter on the left — this could indicate the left side is applying more force (a sticking slider pin causing uneven pad contact) or not releasing fully (a collapsed brake hose that acts as a one-way valve). The exam may list 'collapsed brake hose' as the correct answer because it specifically explains why apply works but release does not. The lesson: always read ALL four options before selecting. The most obvious-sounding answer is sometimes a deliberate distractor designed to catch students who rush.",
+      "topic": "Exam strategy — avoiding premature answer selection",
+      "bloom_level": "Evaluate"
+    },
+    {
+      "id": "D40-Q07",
+      "question": "Cross-course review: What is the normal operating temperature range for most internal combustion engine coolant systems?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "40-60 degrees Celsius",
+        "B": "80-105 degrees Celsius",
+        "C": "120-140 degrees Celsius",
+        "D": "150-180 degrees Celsius"
+      },
+      "correct_answer": "B",
+      "explanation": "Most modern internal combustion engines are designed to operate with coolant temperature between 80 and 105 degrees Celsius, controlled by the thermostat. The thermostat begins to open at approximately 82-88 degrees Celsius (depending on the vehicle) and is fully open by approximately 95-105 degrees Celsius. Operating within this range ensures optimal fuel combustion efficiency, minimal emissions, and proper oil viscosity. Temperatures below this range indicate the thermostat is stuck open (overcooling), while temperatures above indicate cooling system failure (overheating). This was covered in Week 4 — cooling systems.",
+      "topic": "Cross-course review — cooling system",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D40-Q08",
+      "question": "Cross-course review: A vehicle equipped with ABS has the ABS warning light on. During an emergency stop, the driver reports that the brake pedal does NOT pulsate and the wheels lock up. What does this confirm about the ABS system?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The ABS is functioning correctly — pedal pulsation only occurs on some vehicles",
+        "B": "The ABS system is completely inactive — the hydraulic modulator is not cycling the brake pressure, so the vehicle is braking with conventional (non-ABS) behaviour, and wheel lockup is expected",
+        "C": "The brake master cylinder has failed and no hydraulic pressure is reaching the wheels",
+        "D": "The brake pads are worn beyond minimum thickness and cannot generate friction"
+      },
+      "correct_answer": "B",
+      "explanation": "When ABS is functioning, the hydraulic modulator rapidly cycles brake pressure (reducing, holding, reapplying) at each wheel to prevent lockup. This cycling is felt as pedal pulsation and heard as a buzzing/clicking sound. If the ABS warning light is on and the pedal does NOT pulsate during hard braking, and the wheels lock up, the ABS system is confirmed as inactive. The vehicle reverts to conventional braking — the brakes still work, but without anti-lock protection. The wheels can lock under heavy braking, increasing stopping distance and eliminating steering control on slippery surfaces. This was covered in Week 5 — ABS and ESC systems. The vehicle should not be driven at speed until the ABS fault is diagnosed and repaired.",
+      "topic": "Cross-course review — ABS system diagnosis",
+      "bloom_level": "Analyse"
+    },
+    {
+      "id": "D40-Q09",
+      "question": "Cross-course review: In a hybrid vehicle, what must a technician do BEFORE performing any work on the high-voltage battery system or its orange-sheathed cables?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Wear standard leather work gloves and safety glasses",
+        "B": "Follow the manufacturer's high-voltage isolation procedure: de-energise the system, remove the service disconnect plug, verify zero voltage using a CAT III rated multimeter, and wear insulated high-voltage PPE (Class 0 gloves with leather outers)",
+        "C": "Disconnect the 12V auxiliary battery and wait 5 minutes",
+        "D": "Run the engine until the battery state of charge drops below 20%"
+      },
+      "correct_answer": "B",
+      "explanation": "High-voltage systems in hybrid and electric vehicles operate at voltages up to 400-800V DC — lethal voltage levels. Before any work on HV components, the technician must follow the manufacturer's specific isolation procedure, which includes: (1) Shut down the vehicle completely, (2) Remove the high-voltage service disconnect plug (usually located under the rear seat or in the battery enclosure), (3) Wait the specified time for capacitors to discharge (typically 5-10 minutes), (4) Verify zero voltage at the HV system using a CAT III or CAT IV rated multimeter, and (5) Wear insulated Class 0 high-voltage gloves with leather outer protectors. Simply disconnecting the 12V battery is NOT sufficient — the HV system can retain lethal charge. This was covered in Week 7 — EV/Hybrid systems.",
+      "topic": "Cross-course review — high-voltage safety",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D40-Q10",
+      "question": "An exam question reads: 'Which of the following is the LEAST likely cause of a misfire on cylinder 3?' The options include a faulty cylinder 3 ignition coil, a worn cylinder 3 spark plug, low fuel rail pressure, and a faulty cylinder 1 oxygen sensor. Many students find 'LEAST likely' questions confusing. What is the correct approach to this question type?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Ignore the word 'LEAST' and select the most common cause of a misfire",
+        "B": "Recognise that this is an inverted question — you must identify the three options that CAN cause the symptom and select the one that CANNOT; a cylinder 1 oxygen sensor fault would not cause a cylinder 3 misfire, making it the least likely cause",
+        "C": "Select the most expensive component because exam questions always try to trick you into choosing the cheapest fix",
+        "D": "Choose 'low fuel rail pressure' because it affects all cylinders, not just one"
+      },
+      "correct_answer": "B",
+      "explanation": "Inverted questions ('LEAST likely,' 'NOT a cause of,' 'which is INCORRECT') require reverse thinking. Instead of looking for the right answer, you identify three answers that are plausible causes and eliminate them — the remaining option is the correct answer because it does NOT fit. In this example: a faulty coil on cylinder 3 causes cylinder 3 misfire (plausible — eliminate). A worn spark plug on cylinder 3 causes cylinder 3 misfire (plausible — eliminate). Low fuel rail pressure can cause misfires across cylinders (plausible — eliminate). A faulty oxygen sensor on cylinder 1 monitors exhaust from cylinder 1 and would not directly cause a cylinder 3 misfire (not plausible — this is the answer). The key exam skill is circling or underlining 'LEAST' or 'NOT' in the question so you remember you are looking for the exception.",
+      "topic": "Exam strategy — inverted question technique",
+      "bloom_level": "Evaluate"
+    }
+  ]
+}

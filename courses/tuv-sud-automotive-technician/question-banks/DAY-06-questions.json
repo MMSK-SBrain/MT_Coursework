@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 6,
+  "week": 2,
+  "session_title": "Why Electronics Run the Car — E/E Architecture & ECU Concepts",
+  "questions": [
+    {
+      "id": "D06-Q01",
+      "question": "What is the fundamental pattern that every electronic system in a modern vehicle follows?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Battery, alternator, starter",
+        "B": "Sensor, ECU, actuator",
+        "C": "Fuse, relay, ground",
+        "D": "CAN-High, CAN-Low, terminator"
+      },
+      "correct_answer": "B",
+      "explanation": "Every electronic vehicle system follows the sensor-ECU-actuator pattern: a sensor measures a physical quantity, the ECU processes the data and makes a decision, and the actuator performs a physical action. Option A describes the starting/charging system components, not a universal control pattern.",
+      "topic": "Sensor-ECU-Actuator pattern",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D06-Q02",
+      "question": "What does the abbreviation ECM stand for in automotive electronics?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Electronic Circuit Manager",
+        "B": "Engine Calibration Memory",
+        "C": "Engine Control Module",
+        "D": "Electrical Communication Monitor"
+      },
+      "correct_answer": "C",
+      "explanation": "ECM stands for Engine Control Module, the most complex and critical ECU in any internal combustion engine vehicle. It controls fuel injection, ignition timing, idle speed, and emissions systems. Option A is a fabricated term not used in automotive terminology.",
+      "topic": "Major ECU types",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D06-Q03",
+      "question": "Why was CAN bus developed as an in-vehicle network?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "To allow ECUs to share a communication bus instead of requiring point-to-point wiring between each pair",
+        "B": "To increase the voltage capacity of vehicle wiring",
+        "C": "To replace fuses and relays throughout the vehicle",
+        "D": "To provide backup power when the battery fails"
+      },
+      "correct_answer": "A",
+      "explanation": "CAN bus solved the wiring problem: with 100 ECUs, point-to-point wiring would require nearly 5,000 individual connections. CAN allows all ECUs to share two wires (CAN-High and CAN-Low) and broadcast messages with unique IDs. Option C is incorrect because CAN is a communication network, not a replacement for circuit protection devices.",
+      "topic": "CAN bus purpose",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D06-Q04",
+      "question": "Which ECU is responsible for controlling anti-lock braking, traction control, and electronic stability control?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "BCM (Body Control Module)",
+        "B": "TCU (Transmission Control Unit)",
+        "C": "ECM (Engine Control Module)",
+        "D": "ABS/ESC module"
+      },
+      "correct_answer": "D",
+      "explanation": "The ABS/ESC module (also called the hydraulic control unit) individually modulates brake pressure at each wheel to provide anti-lock braking, traction control, and stability control. The BCM (option A) handles comfort and convenience functions like lighting, locking, and wipers.",
+      "topic": "Major ECU types",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D06-Q05",
+      "question": "In the OBD-II standard, what does the abbreviation DTC stand for?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Diagnostic Trouble Code",
+        "B": "Digital Throttle Controller",
+        "C": "Data Transfer Channel",
+        "D": "Direct Transmission Command"
+      },
+      "correct_answer": "A",
+      "explanation": "DTC stands for Diagnostic Trouble Code, a standardised fault code stored by an ECU when it detects a malfunction. Technicians read DTCs using a scan tool connected to the OBD-II port. Option C is fabricated and not an automotive diagnostic term.",
+      "topic": "OBD-II and diagnostics",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D06-Q06",
+      "question": "A technician plugs a scan tool into a vehicle and finds DTC P0117 — 'Engine Coolant Temperature Sensor Circuit Low Input.' Based on the sensor-ECU-actuator model, which part of the pattern has likely failed?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The actuator (radiator fan) has seized",
+        "B": "The ECU itself has a software corruption",
+        "C": "The sensor or its wiring to the ECU has a fault",
+        "D": "The CAN bus termination resistor is missing"
+      },
+      "correct_answer": "C",
+      "explanation": "The DTC describes a sensor circuit low input, pointing to a problem with the coolant temperature sensor or its wiring (open circuit, short to ground, or damaged sensor). In the sensor-ECU-actuator pattern, a 'circuit low input' code identifies the input (sensor) side. Option A describes an actuator problem that would generate a different type of fault code.",
+      "topic": "Applying the sensor-ECU-actuator pattern to diagnostics",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D06-Q07",
+      "question": "A vehicle has a fuel pump that will not turn on. The technician confirms 12V is present at the fuel pump relay coil terminals, but the relay does not click. Using the sensor-ECU-actuator model, which sequence correctly describes the fuel pump control path?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Fuel pump sensor reads fuel pressure, BCM commands the relay, relay powers the pump",
+        "B": "Ignition switch triggers the ECM, ECM grounds the relay coil, relay contacts power the fuel pump",
+        "C": "The fuel pump is directly connected to the battery through a fuse with no ECU involvement",
+        "D": "The CAN bus sends a message to the fuel pump motor directly"
+      },
+      "correct_answer": "B",
+      "explanation": "The ECM controls the fuel pump relay by providing a ground path to the relay coil. When the ECM receives the ignition-on signal, it grounds pin 86, energising the coil and closing the contacts that power the fuel pump. Option C is incorrect because on modern vehicles, the ECM controls when the fuel pump runs, not a simple direct connection.",
+      "topic": "ECU control paths and relay operation",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D06-Q08",
+      "question": "A premium vehicle has 120 ECUs. If these were connected point-to-point instead of using a CAN bus, approximately how many individual wire connections would be needed?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "240 connections",
+        "B": "1,200 connections",
+        "C": "14,400 connections",
+        "D": "7,140 connections"
+      },
+      "correct_answer": "D",
+      "explanation": "Point-to-point connections between n nodes requires n(n-1)/2 connections. For 120 ECUs: 120 x 119 / 2 = 7,140. This enormous number illustrates why shared network buses like CAN were essential. Option A simply doubles the ECU count and does not account for the combinatorial nature of point-to-point wiring.",
+      "topic": "CAN bus and the wiring problem",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D06-Q09",
+      "question": "A technician reads live data from the OBD-II scan tool and observes that the coolant temperature PID reads -40 degrees C even though the engine is warm. The engine is running rough and using excessive fuel. Which analysis is most likely correct?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The alternator is overcharging, causing false sensor readings across all systems",
+        "B": "The coolant temperature sensor circuit has an open circuit, the ECU defaults to -40 degrees C, and enriches the fuel mixture as if the engine were extremely cold",
+        "C": "The OBD-II scan tool is faulty and displaying incorrect values",
+        "D": "The thermostat is stuck open, causing the engine to actually run at -40 degrees C"
+      },
+      "correct_answer": "B",
+      "explanation": "When a temperature sensor circuit is open, many ECMs default to -40 degrees C (the bottom of the sensor range). The ECM then commands a rich fuel mixture appropriate for extreme cold, causing rough running and high fuel consumption. Option D is physically impossible since an engine generates heat and cannot reach -40 degrees C while running.",
+      "topic": "Interpreting live data and sensor faults",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D06-Q10",
+      "question": "A vehicle's instrument cluster shows the correct speed and RPM, but the transmission shifts erratically. A scan tool reveals no DTCs in the ECM but shows a communication fault in the TCU. Based on the vehicle network architecture, what is the most likely cause?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The CAN bus connection to the TCU is faulty while the rest of the powertrain CAN network is intact",
+        "B": "The instrument cluster is consuming too much CAN bus bandwidth",
+        "C": "The OBD-II port has a broken pin preventing communication with all ECUs",
+        "D": "The battery is too weak to power the TCU"
+      },
+      "correct_answer": "A",
+      "explanation": "Since the ECM and instrument cluster are communicating normally (correct speed and RPM display), the powertrain CAN bus backbone is functional. A localised CAN bus fault at the TCU connection (damaged wiring, corroded connector, or faulty CAN transceiver in the TCU) would isolate only the TCU. Option C is contradicted by the fact that the scan tool successfully communicated with the ECM.",
+      "topic": "CAN bus fault isolation and network diagnostics",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

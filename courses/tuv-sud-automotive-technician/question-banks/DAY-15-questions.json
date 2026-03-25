@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 15,
+  "week": 3,
+  "session_title": "Engine Diagnostics & Consolidation",
+  "questions": [
+    {
+      "id": "D15-Q01",
+      "question": "What is the first step in the 7-step diagnostic framework when a customer reports an engine problem?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Replace the most commonly failed component for that symptom",
+        "B": "Verify the customer's complaint by confirming the symptom yourself",
+        "C": "Disassemble the engine to visually inspect internal components",
+        "D": "Order replacement parts based on the customer's description"
+      },
+      "correct_answer": "B",
+      "explanation": "The first step is always to verify the complaint. A technician must confirm the symptom firsthand before any diagnostic work begins. Customers may describe symptoms inaccurately, or the problem may be intermittent. Skipping verification can lead to misdiagnosis and unnecessary repairs.",
+      "topic": "Diagnostic Framework",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D15-Q02",
+      "question": "What does a Long-Term Fuel Trim (LTFT) value of +18% indicate about the engine's air-fuel mixture?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The engine is running 18% richer than the ideal stoichiometric ratio",
+        "B": "The ECU is adding 18% more fuel than its base calculation because the engine is running lean",
+        "C": "The fuel pressure is 18% above the manufacturer's specification",
+        "D": "The MAF sensor is reading 18% higher than the actual airflow"
+      },
+      "correct_answer": "B",
+      "explanation": "A positive LTFT means the ECU is consistently adding fuel above its base fuel map calculation. An LTFT of +18% means the engine is running lean (receiving less fuel than expected relative to the air entering), so the ECU has learned to add 18% more fuel to compensate. Values beyond +/-10% indicate a problem that needs diagnosis.",
+      "topic": "Fuel Trim Interpretation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D15-Q03",
+      "question": "What information does a freeze frame captured with a diagnostic trouble code provide to the technician?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "A complete repair procedure for the detected fault",
+        "B": "A snapshot of engine operating conditions (RPM, temperature, load, speed, fuel trims) at the exact moment the fault was detected",
+        "C": "A video recording of the engine bay when the fault occurred",
+        "D": "The total number of times the vehicle has been serviced since manufacture"
+      },
+      "correct_answer": "B",
+      "explanation": "When the ECU stores a DTC, it simultaneously captures a freeze frame — a snapshot of key engine parameters at the instant the fault triggered. This includes engine RPM, coolant temperature, engine load, vehicle speed, fuel trim values, and other data. The freeze frame helps the technician understand UNDER WHAT CONDITIONS the fault occurred, which is critical for accurate diagnosis.",
+      "topic": "Freeze Frame Data",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D15-Q04",
+      "question": "DTC P0300 indicates a random or multiple cylinder misfire. What does this suggest compared to a cylinder-specific code like P0303?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "P0300 means the misfire is less severe and can be ignored safely",
+        "B": "P0300 suggests the problem affects all cylinders equally, pointing to a system-wide cause like low fuel pressure, a major vacuum leak, or a timing issue",
+        "C": "P0300 means all spark plugs need immediate replacement",
+        "D": "P0300 and P0303 indicate the same fault and require the same diagnostic approach"
+      },
+      "correct_answer": "B",
+      "explanation": "A P0300 code without cylinder-specific codes means misfires are occurring across multiple or all cylinders, rather than being isolated to one. This pattern points to causes that affect the entire engine equally: low fuel pressure (all cylinders starved), a large vacuum leak (all cylinders affected), timing chain stretch (all cylinders mistimed), or poor fuel quality. A cylinder-specific code like P0303 narrows the problem to that single cylinder.",
+      "topic": "Misfire Code Interpretation",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D15-Q05",
+      "question": "What is the diagnostic term for the approach where a technician replaces parts one at a time until the problem is solved, without performing targeted tests first?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Systematic elimination",
+        "B": "Root cause analysis",
+        "C": "Parts cannon approach",
+        "D": "Preventive maintenance strategy"
+      },
+      "correct_answer": "C",
+      "explanation": "The 'parts cannon' approach is the industry term for guessing and replacing components without proper diagnosis. This method wastes money on unnecessary parts, wastes time, damages customer trust, and reduces workshop profitability. The correct approach is systematic diagnosis: verify the symptom, read DTCs, identify possible systems, perform targeted tests, and confirm the root cause before replacing anything.",
+      "topic": "Diagnostic Methodology",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D15-Q06",
+      "question": "A gasoline engine has a cylinder-specific misfire code P0303 (Cylinder 3 misfire). The technician swaps the ignition coil from Cylinder 3 with the coil from Cylinder 1, clears the codes, and runs the engine. The misfire code changes to P0301 (Cylinder 1 misfire). What can the technician conclusively determine?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Both cylinders 1 and 3 have independent ignition faults",
+        "B": "The ignition coil that was originally on Cylinder 3 is faulty, because the misfire followed the coil to its new position on Cylinder 1",
+        "C": "The wiring harness to Cylinder 3 is damaged since the misfire moved away from that cylinder",
+        "D": "The ECU is malfunctioning and assigning misfire codes to the wrong cylinders"
+      },
+      "correct_answer": "B",
+      "explanation": "This is the classic coil swap test. When the misfire follows the swapped component to its new cylinder, the component is confirmed faulty. The coil originally on Cylinder 3 now causes a misfire on Cylinder 1 — proving the coil itself is defective. If the misfire had stayed on Cylinder 3 after the swap, the coil would be cleared and the technician would move to the next diagnostic step (injector swap or compression test).",
+      "topic": "Ignition Misfire Diagnostic Procedure",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D15-Q07",
+      "question": "A scan tool shows the following fuel trim data on a 4-cylinder gasoline engine: STFT Bank 1: +4%, LTFT Bank 1: +22%. The engine runs rough at idle and hesitates on acceleration. What is the most likely root cause category?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The engine is running rich due to a leaking fuel injector flooding one cylinder",
+        "B": "The engine has a persistent lean condition — most likely caused by a vacuum leak, weak fuel pump, or dirty injectors — since the ECU is adding 22% more fuel than its base map to compensate",
+        "C": "The O2 sensor is stuck at 0.9V (rich signal), causing the ECU to over-correct by adding fuel",
+        "D": "The catalytic converter is plugged, causing exhaust backpressure that the fuel trims are compensating for"
+      },
+      "correct_answer": "B",
+      "explanation": "An LTFT of +22% is significantly above the normal range (+/-10%). Positive fuel trim means the ECU is adding fuel because the engine is running lean. The STFT of +4% shows the ECU is still making additional corrections on top of the learned +22% offset. Common causes of this lean condition include: vacuum leaks (unmetered air enters the intake), a weak fuel pump (insufficient fuel delivery), dirty or clogged injectors (reduced fuel spray), or a MAF sensor under-reporting airflow. The technician should perform a smoke test for vacuum leaks and check fuel pressure as the first diagnostic steps.",
+      "topic": "Fuel Trim Diagnostic Analysis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D15-Q08",
+      "question": "A customer reports that their engine has no power and idles roughly. The scan tool shows no misfire codes, but a compression test reveals: Cylinder 1: 175 PSI, Cylinder 2: 170 PSI, Cylinder 3: 95 PSI, Cylinder 4: 172 PSI. What does this data most strongly suggest?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "A faulty ignition coil on Cylinder 3 causing incomplete combustion",
+        "B": "Contaminated fuel reducing combustion efficiency across all cylinders",
+        "C": "A mechanical fault on Cylinder 3 such as a burnt valve, worn piston rings, or a blown head gasket, since compression is dramatically lower than the other cylinders",
+        "D": "A clogged fuel injector on Cylinder 3 preventing fuel from entering the combustion chamber"
+      },
+      "correct_answer": "C",
+      "explanation": "Compression of 95 PSI on Cylinder 3 versus 170-175 PSI on the other three cylinders is a dramatic difference (approximately 45% lower). This points to a mechanical seal failure on Cylinder 3 — the cylinder cannot hold compression. Possible causes include a burnt exhaust valve (most common), worn piston rings, or a head gasket failure leaking between cylinders. A wet compression test (adding oil to the cylinder) would differentiate rings from valve issues. A faulty coil or injector would not cause low compression, as these affect combustion, not mechanical sealing.",
+      "topic": "Compression Test Interpretation",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D15-Q09",
+      "question": "A technician is diagnosing poor fuel economy on a vehicle. The coolant temperature on the scan tool shows 62 degrees Celsius after 20 minutes of driving. The normal operating temperature for this engine is 88-95 degrees Celsius. Which component failure best explains both the low temperature and the poor fuel economy?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "A failing water pump that is not circulating coolant fast enough",
+        "B": "A thermostat stuck in the OPEN position, allowing coolant to flow through the radiator constantly and preventing the engine from reaching operating temperature — causing the ECU to maintain warm-up fuel enrichment longer than normal",
+        "C": "A blocked radiator that is trapping hot coolant in the engine",
+        "D": "A faulty coolant temperature sensor sending a false low reading while the engine is actually at normal temperature"
+      },
+      "correct_answer": "B",
+      "explanation": "A thermostat stuck open allows coolant to circulate through the radiator continuously, even when the engine is cold. This prevents the engine from reaching its normal 88-95 degree operating temperature. The ECU uses coolant temperature to determine fuel strategy — when the engine appears cold, the ECU maintains warm-up enrichment (extra fuel) for longer than necessary, directly causing poor fuel economy. A blocked radiator would cause overheating (opposite problem). A faulty sensor would need further verification — but 62 degrees after 20 minutes of driving is consistent with a real under-temperature condition from a stuck thermostat.",
+      "topic": "Cross-System Diagnostic Reasoning",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D15-Q10",
+      "question": "A customer complains of a flashing check engine light and noticeable engine vibration. The scan tool shows P0302 (Cylinder 2 Misfire) with a high misfire count. The technician swaps the coil and spark plug from Cylinder 2 to Cylinder 4. After clearing codes and running the engine, the misfire remains on Cylinder 2 (P0302 returns, no P0304). What should the technician do next?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace the new spark plug and coil that were just swapped onto Cylinder 2, as they may also be faulty",
+        "B": "Replace the ECU because it is incorrectly identifying Cylinder 2 as the misfiring cylinder",
+        "C": "Swap the fuel injector from Cylinder 2 to another cylinder to determine if the injector is causing the misfire, and if the misfire still stays on Cylinder 2, perform a compression test to check for mechanical failure",
+        "D": "Conclude that the problem is in the exhaust system downstream of Cylinder 2 and inspect the catalytic converter"
+      },
+      "correct_answer": "C",
+      "explanation": "The coil swap test eliminated ignition as the cause — the misfire did not follow the coil. Following the systematic diagnostic procedure, the next step is to test the fuel injector by swapping it. If the misfire follows the injector, it is the faulty component. If the misfire stays on Cylinder 2 even after eliminating ignition and fuel delivery, the cause must be mechanical — low compression from a burnt valve, worn rings, or head gasket leak. A compression test on Cylinder 2 compared to the others would confirm this. This methodical elimination approach is the core of efficient engine diagnostics.",
+      "topic": "Systematic Misfire Diagnosis Sequence",
+      "bloom_level": "Apply"
+    }
+  ]
+}

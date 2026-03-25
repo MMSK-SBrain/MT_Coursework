@@ -1,0 +1,742 @@
+{
+  "module": 2,
+  "title": "Classification",
+  "description": "Comprehensive quiz bank for Module 2: Classification covering all 6 sessions",
+  "total_questions": 48,
+  "sessions": [
+    {
+      "session": "2.1",
+      "title": "Introduction to Classification & First Classifier (Iris)",
+      "description": "Covers classification basics, Iris dataset, train/test split, and first model training",
+      "questions": [
+        {
+          "id": "m2-s1-q1",
+          "question": "What is the main difference between classification and regression?",
+          "options": [
+            "Classification predicts categories, regression predicts continuous values",
+            "Classification is harder than regression",
+            "Regression uses neural networks, classification doesn't",
+            "They are the same thing"
+          ],
+          "correct": 0,
+          "explanation": "Classification predicts discrete categories (spam/not spam, cat/dog, iris species), while regression predicts continuous numerical values (price, temperature, stock price).",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s1-q2",
+          "question": "In the Iris dataset, what does the term 'features' refer to?",
+          "options": [
+            "The species names (setosa, versicolor, virginica)",
+            "The measurements (sepal length, sepal width, petal length, petal width)",
+            "The number of flowers in the dataset",
+            "The accuracy of the model"
+          ],
+          "correct": 1,
+          "explanation": "Features (also called inputs or X) are the measurements used to make predictions. In Iris, these are the 4 flower measurements. The species names are the labels/targets (y).",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s1-q3",
+          "question": "Why do we split data into training and testing sets?",
+          "options": [
+            "To make the dataset smaller and faster to process",
+            "To evaluate model performance on unseen data",
+            "Because scikit-learn requires it",
+            "To create more data for training"
+          ],
+          "correct": 1,
+          "explanation": "We split data to test the model on data it has never seen before. Testing on training data would be like studying with the exact exam questions - you'd get perfect scores but wouldn't know if you truly learned. The test set simulates real-world use.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s1-q4",
+          "question": "What does the model.fit(X_train, y_train) method do?",
+          "options": [
+            "Tests the model on test data",
+            "Trains/teaches the model using training data",
+            "Makes predictions on new data",
+            "Deletes the model from memory"
+          ],
+          "correct": 1,
+          "explanation": "fit() is the training method. It teaches the model by showing it examples (X_train) and their correct answers (y_train). The model learns patterns during this process.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s1-q5",
+          "question": "If a model has 95% accuracy, what does this mean?",
+          "options": [
+            "The model is 5% broken",
+            "The model correctly predicts 95 out of 100 test cases on average",
+            "Training took 95 seconds",
+            "The model is perfect and ready for production"
+          ],
+          "correct": 1,
+          "explanation": "95% accuracy means the model correctly predicts 95% of test cases. For example, if you have 100 test flowers, it correctly classifies about 95 of them. This is good but not perfect - 5% are still misclassified.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s1-q6",
+          "question": "In a binary classification problem, how many classes are being predicted?",
+          "options": [
+            "1",
+            "2",
+            "3 or more",
+            "It varies"
+          ],
+          "correct": 1,
+          "explanation": "Binary classification has exactly 2 classes (e.g., spam/ham, yes/no, positive/negative). Multi-class classification has 3 or more classes (like Iris with 3 species).",
+          "difficulty": "easy",
+          "bloom_level": "remember"
+        },
+        {
+          "id": "m2-s1-q7",
+          "question": "Which of these is an example of a classification problem?",
+          "options": [
+            "Predicting house prices",
+            "Predicting if an email is spam or not spam",
+            "Predicting tomorrow's temperature",
+            "Predicting stock prices"
+          ],
+          "correct": 1,
+          "explanation": "Email spam detection is classification (2 categories: spam or not spam). House prices, temperature, and stock prices are regression problems because they predict continuous numbers.",
+          "difficulty": "easy",
+          "bloom_level": "apply"
+        },
+        {
+          "id": "m2-s1-q8",
+          "question": "You train a model on 120 samples and test on 30 samples. What is the train/test split ratio?",
+          "options": [
+            "50/50",
+            "70/30",
+            "80/20",
+            "90/10"
+          ],
+          "correct": 2,
+          "explanation": "120 training + 30 testing = 150 total. 120/150 = 80% for training, 30/150 = 20% for testing. This is the standard 80/20 split used in the Iris project.",
+          "difficulty": "medium",
+          "bloom_level": "apply"
+        }
+      ]
+    },
+    {
+      "session": "2.2",
+      "title": "Evaluation Metrics & Confusion Matrix",
+      "description": "Covers accuracy limitations, confusion matrix, precision, recall, F1-score",
+      "questions": [
+        {
+          "id": "m2-s2-q1",
+          "question": "What does a confusion matrix show?",
+          "options": [
+            "How confused the data scientist is",
+            "Actual vs predicted classifications for all test samples",
+            "Only the incorrect predictions",
+            "The training time for each algorithm"
+          ],
+          "correct": 1,
+          "explanation": "A confusion matrix is a table showing actual classes (rows) vs predicted classes (columns). It reveals not just how many mistakes, but specifically which classes get confused with each other.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s2-q2",
+          "question": "In a confusion matrix, where do correct predictions appear?",
+          "options": [
+            "In the off-diagonal cells",
+            "In the diagonal from top-left to bottom-right",
+            "In the bottom row only",
+            "They don't appear in the confusion matrix"
+          ],
+          "correct": 1,
+          "explanation": "Correct predictions appear on the main diagonal (top-left to bottom-right). For example, if actual=setosa and predicted=setosa, it goes in the [setosa, setosa] cell on the diagonal. Off-diagonal cells show misclassifications.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s2-q3",
+          "question": "What is precision in classification?",
+          "options": [
+            "Of all positive predictions, how many were actually positive?",
+            "Of all actual positives, how many did we find?",
+            "The overall accuracy of the model",
+            "The speed at which the model makes predictions"
+          ],
+          "correct": 0,
+          "explanation": "Precision = True Positives / (True Positives + False Positives). It answers: 'When my model says positive, how often is it right?' High precision means few false alarms.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s2-q4",
+          "question": "What is recall in classification?",
+          "options": [
+            "Of all positive predictions, how many were actually positive?",
+            "Of all actual positives, how many did we find?",
+            "The ability to remember training data",
+            "The same as accuracy"
+          ],
+          "correct": 1,
+          "explanation": "Recall = True Positives / (True Positives + False Negatives). It answers: 'Of all the actual positives, how many did I catch?' High recall means few missed cases.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s2-q5",
+          "question": "For a cancer detection model, which metric is more critical?",
+          "options": [
+            "Precision - minimize false alarms",
+            "Recall - catch all actual cancer cases",
+            "Accuracy - overall correctness",
+            "F1-score - balanced approach"
+          ],
+          "correct": 1,
+          "explanation": "In medical diagnosis, recall is critical because missing a cancer case (false negative) is worse than a false alarm (false positive). We want to catch ALL actual cancer cases, even if it means some false positives that can be ruled out with further testing.",
+          "difficulty": "medium",
+          "bloom_level": "apply"
+        },
+        {
+          "id": "m2-s2-q6",
+          "question": "What is the F1-score?",
+          "options": [
+            "The first feature in a dataset",
+            "The harmonic mean of precision and recall",
+            "The same as accuracy",
+            "The speed of the algorithm"
+          ],
+          "correct": 1,
+          "explanation": "F1-score = 2 * (Precision * Recall) / (Precision + Recall). It's the harmonic mean, which balances precision and recall. It's useful when you need both low false positives AND low false negatives.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s2-q7",
+          "question": "Why might accuracy be misleading for imbalanced datasets?",
+          "options": [
+            "Accuracy always gives wrong results",
+            "A model predicting only the majority class can still have high accuracy",
+            "Accuracy cannot be calculated for imbalanced data",
+            "Imbalanced data makes training slower"
+          ],
+          "correct": 1,
+          "explanation": "If 95% of emails are ham and 5% spam, a model that always predicts 'ham' gets 95% accuracy while being completely useless at detecting spam. This is why precision, recall, and F1 are important for imbalanced data.",
+          "difficulty": "medium",
+          "bloom_level": "analyze"
+        },
+        {
+          "id": "m2-s2-q8",
+          "question": "You have a confusion matrix for binary classification: [[90, 10], [5, 95]]. What is the accuracy?",
+          "options": [
+            "85%",
+            "90%",
+            "92.5%",
+            "95%"
+          ],
+          "correct": 2,
+          "explanation": "Accuracy = (True Positives + True Negatives) / Total = (90 + 95) / (90 + 10 + 5 + 95) = 185/200 = 92.5%. The diagonal elements (90, 95) are correct predictions, off-diagonal (10, 5) are errors.",
+          "difficulty": "hard",
+          "bloom_level": "apply"
+        }
+      ]
+    },
+    {
+      "session": "2.3",
+      "title": "Multiple Classification Algorithms",
+      "description": "Covers Decision Trees, Logistic Regression, Random Forest, KNN, SVM, and algorithm comparison",
+      "questions": [
+        {
+          "id": "m2-s3-q1",
+          "question": "How does a Decision Tree make predictions?",
+          "options": [
+            "By following a series of if-then rules based on features",
+            "By calculating the average of all training data",
+            "By using complex mathematical equations",
+            "By randomly selecting a class"
+          ],
+          "correct": 0,
+          "explanation": "Decision Trees work like a flowchart of yes/no questions. For example: 'Is petal length < 2.5cm? If yes, predict setosa. If no, is petal width < 1.7cm?' Each branch is an if-then rule learned from training data.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s3-q2",
+          "question": "What does K-Nearest Neighbors (KNN) do to classify a new sample?",
+          "options": [
+            "Finds the K closest training samples and takes a majority vote",
+            "Creates a tree of decisions",
+            "Calculates probabilities using logistic function",
+            "Generates random predictions"
+          ],
+          "correct": 0,
+          "explanation": "KNN finds the K nearest training samples (using distance measures) and predicts based on majority vote. For example, if K=5 and 4 neighbors are 'spam' and 1 is 'ham', it predicts 'spam'.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s3-q3",
+          "question": "What is an ensemble method in machine learning?",
+          "options": [
+            "Using a single powerful algorithm",
+            "Combining multiple models to make better predictions",
+            "Training on the entire dataset at once",
+            "A type of neural network"
+          ],
+          "correct": 1,
+          "explanation": "Ensemble methods combine multiple models (often weak learners) to create a stronger predictor. Random Forest is an ensemble of many Decision Trees. Wisdom of the crowd!",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s3-q4",
+          "question": "How does Random Forest differ from a single Decision Tree?",
+          "options": [
+            "Random Forest uses one very large tree",
+            "Random Forest trains multiple trees on random subsets and averages results",
+            "Random Forest is faster but less accurate",
+            "They are exactly the same"
+          ],
+          "correct": 1,
+          "explanation": "Random Forest creates many Decision Trees, each trained on a random subset of data and features. Final prediction is based on majority vote (classification) or average (regression). This reduces overfitting and improves accuracy.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s3-q5",
+          "question": "Despite its name, Logistic Regression is used for:",
+          "options": [
+            "Predicting continuous values",
+            "Classification problems",
+            "Clustering data",
+            "Dimensionality reduction"
+          ],
+          "correct": 1,
+          "explanation": "Logistic Regression is a classification algorithm (confusing name!). It uses a logistic/sigmoid function to output probabilities between 0 and 1, which are then converted to class predictions. It's widely used for binary classification.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s3-q6",
+          "question": "Why might different algorithms give different accuracy scores on the same dataset?",
+          "options": [
+            "Some algorithms are broken",
+            "Different algorithms make different assumptions and learn different patterns",
+            "It's due to random errors only",
+            "All algorithms should give the same accuracy"
+          ],
+          "correct": 1,
+          "explanation": "Each algorithm has different assumptions and learning strategies. Decision Trees find rule boundaries, KNN uses distance similarity, Logistic Regression finds linear decision boundaries. Some algorithms work better for certain types of patterns in data.",
+          "difficulty": "medium",
+          "bloom_level": "analyze"
+        },
+        {
+          "id": "m2-s3-q7",
+          "question": "What is the 'K' hyperparameter in K-Nearest Neighbors?",
+          "options": [
+            "The number of features to use",
+            "The number of training samples",
+            "The number of neighbors to consider for voting",
+            "The number of classes to predict"
+          ],
+          "correct": 2,
+          "explanation": "K is the number of nearest neighbors to look at when making a prediction. K=1 means use only the closest neighbor. K=5 means find 5 closest neighbors and take majority vote. Higher K means smoother decision boundaries but less sensitivity to local patterns.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s3-q8",
+          "question": "You test 4 algorithms and get accuracies: DT=93%, LR=96%, RF=95%, KNN=97%. Which should you choose?",
+          "options": [
+            "Always choose the highest accuracy (KNN)",
+            "Always choose the fastest algorithm",
+            "Consider accuracy, speed, interpretability, and production requirements",
+            "Choose the one with the shortest name"
+          ],
+          "correct": 2,
+          "explanation": "While KNN has highest accuracy, consider: (1) Is 97% vs 96% meaningful? (2) Speed: KNN is slow on large datasets (3) Interpretability: Decision Trees are most explainable (4) Production needs: Some models deploy better. Often, a slightly less accurate but faster/simpler model is preferred.",
+          "difficulty": "hard",
+          "bloom_level": "evaluate"
+        }
+      ]
+    },
+    {
+      "session": "2.4",
+      "title": "Text Classification & Spam Detection",
+      "description": "Covers text preprocessing, vectorization, Bag of Words, TF-IDF, and spam detection",
+      "questions": [
+        {
+          "id": "m2-s4-q1",
+          "question": "Why do we need to convert text to numbers for machine learning?",
+          "options": [
+            "To make the text easier to read",
+            "Because ML algorithms work with numerical inputs, not raw text",
+            "To reduce the size of the text",
+            "Text doesn't need to be converted"
+          ],
+          "correct": 1,
+          "explanation": "Machine learning algorithms perform mathematical operations on numbers. Raw text like 'free money' can't be multiplied or compared mathematically. We must convert text to numerical features (vectors) that capture meaning.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s4-q2",
+          "question": "What does text preprocessing typically include?",
+          "options": [
+            "Only removing punctuation",
+            "Converting to lowercase, removing punctuation, removing stop words, tokenization",
+            "Making the text longer",
+            "Translating to different languages"
+          ],
+          "correct": 1,
+          "explanation": "Text preprocessing cleans text for ML: lowercase (so 'Free' and 'free' are same), remove punctuation, remove common words (the, a, is), split into tokens (words). This creates consistent, meaningful features.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s4-q3",
+          "question": "What is the 'Bag of Words' model?",
+          "options": [
+            "A model that predicts word meanings",
+            "Converting text to vectors based on word counts, ignoring order",
+            "A storage container for vocabulary",
+            "A type of deep learning model"
+          ],
+          "correct": 1,
+          "explanation": "Bag of Words treats text as a collection (bag) of words without considering order. Each document becomes a vector of word counts. Example: 'free money' and 'money free' have the same vector. Simple but effective for many tasks.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s4-q4",
+          "question": "How does TF-IDF differ from simple word counts?",
+          "options": [
+            "TF-IDF weights words by how unique they are to a document",
+            "TF-IDF only counts words once",
+            "TF-IDF is the same as word counts",
+            "TF-IDF removes all common words"
+          ],
+          "correct": 0,
+          "explanation": "TF-IDF (Term Frequency-Inverse Document Frequency) gives higher weight to words that appear frequently in a document but rarely across all documents. A word appearing in every document (like 'the') gets low weight. Unique words (like 'viagra' in spam) get high weight.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s4-q5",
+          "question": "Which algorithm is commonly used for spam detection and why?",
+          "options": [
+            "K-Nearest Neighbors, because it's the fastest",
+            "Naive Bayes, because it works well with text and probability",
+            "Linear Regression, because it's simple",
+            "Random Forest, because it has 'forest' in the name"
+          ],
+          "correct": 1,
+          "explanation": "Naive Bayes is popular for text classification because: (1) It works well with high-dimensional text data (2) It calculates probability of spam given certain words (3) It's fast to train and predict (4) Despite 'naive' independence assumption, it works remarkably well for text.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s4-q6",
+          "question": "What is the main challenge with imbalanced spam datasets?",
+          "options": [
+            "There's too much data to process",
+            "Models may achieve high accuracy by predicting only the majority class",
+            "Imbalanced data cannot be used for training",
+            "It makes training slower"
+          ],
+          "correct": 1,
+          "explanation": "If 95% of emails are ham, a model predicting everything as 'ham' gets 95% accuracy while being useless at detecting spam. Solutions include: using precision/recall instead of accuracy, oversampling minority class, undersampling majority class, or using class weights.",
+          "difficulty": "medium",
+          "bloom_level": "analyze"
+        },
+        {
+          "id": "m2-s4-q7",
+          "question": "What does the vocabulary size represent in text classification?",
+          "options": [
+            "The number of documents in the dataset",
+            "The total number of unique words across all documents",
+            "The number of features in the original data",
+            "The accuracy of the model"
+          ],
+          "correct": 1,
+          "explanation": "Vocabulary is the set of unique words found in the training data. If your spam dataset contains 10,000 unique words total, your feature vectors will have 10,000 dimensions (one for each word's count/TF-IDF score).",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s4-q8",
+          "question": "You build a spam detector with 98% accuracy, 90% precision, and 60% recall. What does this mean?",
+          "options": [
+            "The model is perfect and ready for production",
+            "The model is good overall but misses 40% of actual spam emails",
+            "The model only works 60% of the time",
+            "The model is completely broken"
+          ],
+          "correct": 1,
+          "explanation": "98% accuracy looks great, but 60% recall means you're only catching 60% of actual spam - missing 40%! The 90% precision means when it says 'spam', it's usually right. This model might let too much spam through. For spam detection, you might want to tune for higher recall.",
+          "difficulty": "hard",
+          "bloom_level": "evaluate"
+        }
+      ]
+    },
+    {
+      "session": "2.5",
+      "title": "Real-World Classification: Customer Churn & Feature Engineering",
+      "description": "Covers business applications, feature engineering, handling categorical data, class imbalance",
+      "questions": [
+        {
+          "id": "m2-s5-q1",
+          "question": "What is customer churn?",
+          "options": [
+            "When customers buy more products",
+            "When customers leave/cancel their service",
+            "When customers refer friends",
+            "When customers change their address"
+          ],
+          "correct": 1,
+          "explanation": "Churn means customers leaving or canceling service. Predicting churn is valuable for businesses because: (1) It's cheaper to retain customers than acquire new ones (2) You can intervene with offers/support before they leave (3) You can identify at-risk customer segments.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s5-q2",
+          "question": "What is feature engineering?",
+          "options": [
+            "Creating new features from existing data to improve model performance",
+            "Removing all features from the dataset",
+            "Engineering the model architecture",
+            "The same as data collection"
+          ],
+          "correct": 0,
+          "explanation": "Feature engineering creates new, more informative features from raw data. Examples: (1) From date → extract day_of_week, month, is_weekend (2) From first_name, last_name → create full_name (3) From total_charges, months → create avg_monthly_charge. Good features can dramatically improve model performance.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s5-q3",
+          "question": "How do you handle categorical variables (like 'gender': Male/Female) in ML?",
+          "options": [
+            "Remove them from the dataset",
+            "Leave them as text strings",
+            "Convert to numbers using Label Encoding or One-Hot Encoding",
+            "Use them only for visualization"
+          ],
+          "correct": 2,
+          "explanation": "ML needs numbers. For categorical variables: (1) Label Encoding: Male=0, Female=1 (good for ordinal data) (2) One-Hot Encoding: Creates binary columns Male_0, Male_1, Female_0, Female_1 (better for nominal data with no order). One-hot avoids implying false ordering.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s5-q4",
+          "question": "What is One-Hot Encoding?",
+          "options": [
+            "Increasing the temperature of the dataset",
+            "Converting categorical variables into binary columns (0s and 1s)",
+            "Selecting only one feature for training",
+            "A type of neural network"
+          ],
+          "correct": 1,
+          "explanation": "One-hot encoding converts categories to binary columns. Example: Color [Red, Blue, Green] becomes: is_Red [1,0,0], is_Blue [0,1,0], is_Green [0,0,1]. Each sample has exactly one '1' (hot) and others are '0'. This prevents ML from treating categories as having numerical order.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s5-q5",
+          "question": "For a churn prediction model, why might you prioritize recall over precision?",
+          "options": [
+            "Precision is never useful",
+            "Because missing at-risk customers (false negatives) is costly",
+            "Recall is always better than precision",
+            "Because it makes the model train faster"
+          ],
+          "correct": 1,
+          "explanation": "In churn prediction, high recall means you catch most customers who will leave, even if you get some false alarms (predicting churn when they won't leave). Missing a customer who's about to leave (false negative) means losing their revenue. A false alarm just means sending an unnecessary retention offer - less costly.",
+          "difficulty": "medium",
+          "bloom_level": "apply"
+        },
+        {
+          "id": "m2-s5-q6",
+          "question": "What is SMOTE in the context of imbalanced datasets?",
+          "options": [
+            "A type of neural network",
+            "A technique to create synthetic samples of the minority class",
+            "A method to remove outliers",
+            "A visualization tool"
+          ],
+          "correct": 1,
+          "explanation": "SMOTE (Synthetic Minority Over-sampling Technique) creates artificial samples of the minority class by interpolating between existing minority samples. If only 5% of customers churn, SMOTE generates synthetic churned customers to balance the dataset, helping the model learn better.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s5-q7",
+          "question": "Which feature would be most useful for predicting customer churn?",
+          "options": [
+            "Customer ID number",
+            "Number of support tickets in last month",
+            "Customer's favorite color",
+            "The day they first signed up (exact date)"
+          ],
+          "correct": 1,
+          "explanation": "Support tickets indicate customer dissatisfaction, a strong churn signal. Customer ID is arbitrary and has no predictive value. Exact signup date is too specific (but tenure/months as customer would be useful). Favorite color is unrelated to churn. Good features have logical connection to the target.",
+          "difficulty": "medium",
+          "bloom_level": "apply"
+        },
+        {
+          "id": "m2-s5-q8",
+          "question": "You have a churn dataset with 20 features. After feature engineering, you have 50 features. What should you consider?",
+          "options": [
+            "More features always mean better models",
+            "Too many features can lead to overfitting and slower training",
+            "You should always use all available features",
+            "Feature count doesn't matter"
+          ],
+          "correct": 1,
+          "explanation": "More features aren't always better. Risks: (1) Overfitting - model memorizes noise (2) Curse of dimensionality - need more data (3) Slower training/prediction (4) Some features may be irrelevant. Use feature selection, feature importance analysis, or dimensionality reduction to keep only useful features.",
+          "difficulty": "hard",
+          "bloom_level": "evaluate"
+        }
+      ]
+    },
+    {
+      "session": "2.6",
+      "title": "Advanced Topics: Medical Diagnosis, Model Interpretation & Production",
+      "description": "Covers healthcare ML, ROC/AUC, feature importance, ethics, and production considerations",
+      "questions": [
+        {
+          "id": "m2-s6-q1",
+          "question": "In medical diagnosis ML, why is recall often more important than precision?",
+          "options": [
+            "Precision is too complicated to calculate",
+            "Missing a disease (false negative) can be life-threatening",
+            "Recall is easier to optimize",
+            "Medical datasets are always balanced"
+          ],
+          "correct": 1,
+          "explanation": "In healthcare, false negatives (missing a disease) can delay treatment and harm patients. False positives (diagnosing disease when absent) lead to additional testing but are less dangerous. We prioritize catching all actual cases (high recall) even if it means some false alarms.",
+          "difficulty": "medium",
+          "bloom_level": "apply"
+        },
+        {
+          "id": "m2-s6-q2",
+          "question": "What does the ROC curve show?",
+          "options": [
+            "Training time vs accuracy",
+            "True Positive Rate vs False Positive Rate at different thresholds",
+            "Precision vs Recall",
+            "Feature importance"
+          ],
+          "correct": 1,
+          "explanation": "ROC (Receiver Operating Characteristic) curve plots True Positive Rate (recall) on y-axis vs False Positive Rate on x-axis, as you vary the classification threshold. It shows the tradeoff between catching positives and avoiding false alarms. Area under curve (AUC) measures overall performance.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s6-q3",
+          "question": "What does an AUC (Area Under ROC Curve) of 0.5 indicate?",
+          "options": [
+            "Perfect model",
+            "Model performs no better than random guessing",
+            "Model is 50% accurate",
+            "Model needs more training data"
+          ],
+          "correct": 1,
+          "explanation": "AUC ranges from 0 to 1. AUC=0.5 means the ROC curve is a diagonal line - the model is no better than randomly guessing. AUC=1.0 is perfect. AUC=0.7-0.8 is acceptable, 0.8-0.9 is good, >0.9 is excellent. It's threshold-independent, making it useful for comparison.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s6-q4",
+          "question": "What is feature importance in machine learning?",
+          "options": [
+            "How important the dataset is",
+            "Which features contribute most to the model's predictions",
+            "The order features appear in the dataset",
+            "How many features the model uses"
+          ],
+          "correct": 1,
+          "explanation": "Feature importance ranks features by how much they contribute to predictions. Decision Trees and Random Forests provide this automatically. High importance features are key drivers. This helps: (1) Understand the model (2) Identify key factors (3) Reduce features (4) Communicate insights to stakeholders.",
+          "difficulty": "easy",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s6-q5",
+          "question": "Why is model interpretability important in healthcare applications?",
+          "options": [
+            "To make models train faster",
+            "Doctors need to understand why the model made a prediction before trusting it",
+            "It's not important - only accuracy matters",
+            "To reduce the dataset size"
+          ],
+          "correct": 1,
+          "explanation": "In healthcare, doctors are legally and ethically responsible for decisions. They need to understand WHY a model predicts disease to: (1) Trust the prediction (2) Explain to patients (3) Combine with clinical judgment (4) Identify errors. Black-box models, even if accurate, may not be acceptable.",
+          "difficulty": "medium",
+          "bloom_level": "apply"
+        },
+        {
+          "id": "m2-s6-q6",
+          "question": "What is cross-validation?",
+          "options": [
+            "Validating data is correct",
+            "Training and evaluating a model on multiple different train/test splits",
+            "Testing on training data",
+            "Asking someone else to review your code"
+          ],
+          "correct": 1,
+          "explanation": "Cross-validation (e.g., 5-fold CV) splits data into K parts. Train on K-1 parts, test on 1 part. Repeat K times, rotating which part is test. Average the K results. This gives more reliable performance estimate than single train/test split and uses all data for both training and testing.",
+          "difficulty": "medium",
+          "bloom_level": "understand"
+        },
+        {
+          "id": "m2-s6-q7",
+          "question": "Before deploying a classification model to production, you should:",
+          "options": [
+            "Only check that it runs without errors",
+            "Check accuracy on test set and deploy immediately",
+            "Evaluate on test set, validate on new data, monitor performance, plan for updates",
+            "Deploy and hope for the best"
+          ],
+          "correct": 2,
+          "explanation": "Production deployment requires: (1) Test set evaluation (2) Validation on fresh data not seen during development (3) Consider edge cases (4) Monitor performance over time (data drift) (5) Plan for retraining (6) Error handling (7) Logging predictions (8) A/B testing if possible. Models degrade over time as patterns change.",
+          "difficulty": "hard",
+          "bloom_level": "evaluate"
+        },
+        {
+          "id": "m2-s6-q8",
+          "question": "You notice your deployed model's accuracy dropped from 92% to 78% over 6 months. What likely happened?",
+          "options": [
+            "The model deleted itself",
+            "Data drift - the real-world data distribution changed over time",
+            "The model got tired",
+            "This is impossible - models don't change"
+          ],
+          "correct": 1,
+          "explanation": "Data drift occurs when the real-world data distribution changes from training data. Examples: customer behavior changes, new spam tactics emerge, economic conditions shift. Solutions: (1) Monitor performance metrics (2) Retrain periodically with fresh data (3) Set up alerts for accuracy drops (4) Version models and data.",
+          "difficulty": "hard",
+          "bloom_level": "analyze"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "created": "2026-01-06",
+    "version": "1.0",
+    "total_sessions": 6,
+    "total_questions": 48,
+    "difficulty_distribution": {
+      "easy": 16,
+      "medium": 26,
+      "hard": 6
+    },
+    "bloom_taxonomy_distribution": {
+      "remember": 1,
+      "understand": 28,
+      "apply": 10,
+      "analyze": 4,
+      "evaluate": 5
+    },
+    "passing_score": 0.70,
+    "recommended_time_per_question": 45
+  }
+}

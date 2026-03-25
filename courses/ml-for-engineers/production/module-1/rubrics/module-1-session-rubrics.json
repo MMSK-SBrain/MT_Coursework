@@ -1,0 +1,503 @@
+{
+  "module": 1,
+  "title": "Foundations - Understanding ML & Exploring Data",
+  "total_sessions": 4,
+  "points_per_session": 15,
+  "total_points": 60,
+  "grading_philosophy": "Module 1 focuses on understanding concepts and exploring data (NOT building models yet). Reward depth of exploration, quality of insights, visualization clarity, and effective use of AI assistants.",
+  "created": "2026-01-06",
+  "version": "1.0",
+
+  "sessions": [
+    {
+      "session": "1.1",
+      "title": "Understanding Machine Learning",
+      "total_points": 15,
+      "purpose": "Build conceptual foundation of ML - types, pipeline, when to use",
+      "assessment_type": "Conceptual understanding through activities and quiz",
+
+      "criteria": [
+        {
+          "category": "ML Concept Mapping",
+          "points": 5,
+          "description": "Creates comprehensive concept map showing ML types and relationships",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Clear, visual concept map with ML at center, branches for all 3 types (Supervised, Unsupervised, Reinforcement), supervised split into classification/regression, 3+ examples for each type, shows relationships between concepts"
+            },
+            "good": {
+              "points": 4,
+              "description": "Complete concept map with all major concepts, 2 examples per type, basic relationships shown"
+            },
+            "adequate": {
+              "points": 3,
+              "description": "Basic concept map with main types but missing some examples or relationships"
+            },
+            "poor": {
+              "points": 0-2,
+              "description": "Incomplete map, missing major concepts, or unclear organization"
+            }
+          },
+          "evidence_required": [
+            "Concept map image (hand-drawn or digital)",
+            "Shows ML types hierarchy",
+            "Includes real-world examples"
+          ]
+        },
+        {
+          "category": "Problem Type Identification",
+          "points": 6,
+          "description": "Correctly identifies ML problem types and justifies reasoning",
+          "levels": {
+            "excellent": {
+              "points": 6,
+              "description": "Correctly classifies 18+ out of 20 problems (90%+) as classification, regression, or not ML with clear reasoning for each"
+            },
+            "good": {
+              "points": 4-5,
+              "description": "Correctly classifies 14-17 out of 20 problems (70-85%) with reasoning"
+            },
+            "adequate": {
+              "points": 2-3,
+              "description": "Correctly classifies 10-13 out of 20 problems (50-65%)"
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "Fewer than 10 correct or no reasoning provided"
+            }
+          },
+          "evidence_required": [
+            "Completed worksheet with 20 problems classified",
+            "Reasoning for each classification",
+            "Distinction between binary/multi-class classification"
+          ]
+        },
+        {
+          "category": "Industry Problem Analysis",
+          "points": 4,
+          "description": "Analyzes real-world problems in student's domain for ML suitability",
+          "levels": {
+            "excellent": {
+              "points": 4,
+              "description": "Identifies 5 domain problems, clearly determines ML suitability for each, specifies classification vs regression, lists required data, defines success metrics (e.g., 85% accuracy)"
+            },
+            "good": {
+              "points": 3,
+              "description": "Analyzes 5 problems with ML assessment, problem type, and basic data requirements"
+            },
+            "adequate": {
+              "points": 2,
+              "description": "Analyzes 3-4 problems with basic ML suitability assessment"
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "Fewer than 3 problems or superficial analysis"
+            }
+          },
+          "evidence_required": [
+            "Analysis document with 5 industry problems",
+            "ML suitability assessment for each",
+            "Data requirements identified",
+            "Success criteria defined"
+          ]
+        }
+      ],
+
+      "grading_notes": "This session tests conceptual understanding, not implementation. Focus on clear thinking about WHEN to use ML and WHICH type. Use quiz results (15 questions, 70% passing) as additional data point."
+    },
+
+    {
+      "session": "1.2",
+      "title": "Working with Data",
+      "total_points": 15,
+      "purpose": "Explore stock data using pandas - understand structure, features, quality",
+      "assessment_type": "Data exploration quality and insights",
+
+      "criteria": [
+        {
+          "category": "Stock Data Exploration",
+          "points": 7,
+          "description": "Deep exploration of chosen stock using pandas commands",
+          "levels": {
+            "excellent": {
+              "points": 7,
+              "description": "Answers all 6+ exploration questions correctly using code (highest/lowest price, average volume, biggest jump/drop, conditional counts), code is well-commented, creates comprehensive summary report"
+            },
+            "good": {
+              "points": 5-6,
+              "description": "Answers 4-5 exploration questions correctly with working code, basic comments, summary provided"
+            },
+            "adequate": {
+              "points": 3-4,
+              "description": "Answers 2-3 questions correctly, code runs but may have minor issues"
+            },
+            "poor": {
+              "points": 0-2,
+              "description": "Fewer than 2 questions answered or code does not execute"
+            }
+          },
+          "evidence_required": [
+            "Colab notebook with exploration code",
+            "Answers to all data exploration questions",
+            "Summary report with key findings",
+            "Proof of 5 years of data loaded"
+          ],
+          "technical_requirements": {
+            "data_timeframe": "5 years of historical data",
+            "required_pandas_operations": ["head()", "describe()", "max()", "min()", "mean()", "filtering"],
+            "questions_to_answer": [
+              "Highest close price",
+              "Lowest close price",
+              "Average daily volume",
+              "Day with biggest price jump",
+              "Day with biggest price drop",
+              "Count of days closing above threshold"
+            ]
+          }
+        },
+        {
+          "category": "Multi-Stock Comparison",
+          "points": 5,
+          "description": "Compares 5 stocks from different sectors systematically",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Compares 5 stocks across 4+ metrics (avg price, total change %, avg volume, volatility), creates clear comparison table, provides 5+ insights about sector performance"
+            },
+            "good": {
+              "points": 4,
+              "description": "Compares 5 stocks across 3-4 metrics, creates table, provides 3-4 insights"
+            },
+            "adequate": {
+              "points": 3,
+              "description": "Compares 3-4 stocks or provides 2 metrics, basic insights"
+            },
+            "poor": {
+              "points": 0-2,
+              "description": "Fewer than 3 stocks or minimal comparison effort"
+            }
+          },
+          "evidence_required": [
+            "Comparison table with 5 stocks and multiple metrics",
+            "Calculated statistics for each stock",
+            "At least 3 insights discovered",
+            "Sector analysis included"
+          ]
+        },
+        {
+          "category": "Data Quality Check",
+          "points": 3,
+          "description": "Identifies and documents data quality issues",
+          "levels": {
+            "excellent": {
+              "points": 3,
+              "description": "Checks for missing values, duplicates, and outliers using appropriate code (isnull().sum(), duplicated(), statistical methods), documents findings, proposes handling strategies"
+            },
+            "good": {
+              "points": 2,
+              "description": "Checks for 2-3 quality issues, documents findings, basic handling approach"
+            },
+            "adequate": {
+              "points": 1,
+              "description": "Checks for 1 quality issue or minimal documentation"
+            },
+            "poor": {
+              "points": 0,
+              "description": "No quality checking performed"
+            }
+          },
+          "evidence_required": [
+            "Code checking for missing values",
+            "Code checking for duplicates",
+            "Outlier detection attempt",
+            "Data quality report"
+          ]
+        }
+      ],
+
+      "grading_notes": "Focus on exploration depth, not just completing tasks. Reward students who dig deeper, find interesting patterns, and demonstrate pandas proficiency. Stock data should be real (from yfinance) with proper date ranges."
+    },
+
+    {
+      "session": "1.3",
+      "title": "Data Visualization & Patterns",
+      "total_points": 15,
+      "purpose": "Visualize stock data and identify patterns through charts",
+      "assessment_type": "Visualization quality and pattern identification",
+
+      "criteria": [
+        {
+          "category": "Five-Chart Stock Analysis",
+          "points": 8,
+          "description": "Creates 5 different chart types and provides insights for each",
+          "levels": {
+            "excellent": {
+              "points": 8,
+              "description": "Creates all 5 charts (line: price over time, bar: volume, histogram: price distribution, scatter: price vs volume, candlestick), charts are well-formatted with titles/labels/grids, provides 2-3 insightful observations per chart"
+            },
+            "good": {
+              "points": 6-7,
+              "description": "Creates all 5 charts with proper formatting, provides 1-2 observations per chart"
+            },
+            "adequate": {
+              "points": 4-5,
+              "description": "Creates 3-4 charts with basic formatting and minimal insights"
+            },
+            "poor": {
+              "points": 0-3,
+              "description": "Fewer than 3 charts or charts lack formatting/insights"
+            }
+          },
+          "evidence_required": [
+            "Line chart of closing price over time",
+            "Bar chart of volume over time",
+            "Histogram of price distribution",
+            "Scatter plot of price vs volume",
+            "Candlestick chart (with AI assistance)",
+            "2-3 sentence insight for each chart"
+          ],
+          "technical_requirements": {
+            "chart_formatting": "Must include titles, axis labels, and grid",
+            "figure_size": "Readable dimensions (e.g., 12x6)",
+            "data_timeframe": "2+ years of data visualized",
+            "libraries_used": "matplotlib and/or seaborn and/or plotly"
+          }
+        },
+        {
+          "category": "Multi-Stock Visual Comparison",
+          "points": 4,
+          "description": "Compares multiple stocks visually using normalized charts",
+          "levels": {
+            "excellent": {
+              "points": 4,
+              "description": "Creates normalized price comparison chart (all start at 100) for 3 stocks from same sector, clearly shows which performed best, creates 3 volume charts, identifies correlation patterns"
+            },
+            "good": {
+              "points": 3,
+              "description": "Creates comparison chart for 3 stocks, identifies best performer, creates volume charts"
+            },
+            "adequate": {
+              "points": 2,
+              "description": "Creates basic comparison for 2 stocks, minimal analysis"
+            },
+            "poor": {
+              "points": 0-1,
+              "description": "No comparison chart or single stock only"
+            }
+          },
+          "evidence_required": [
+            "Normalized comparison chart",
+            "Analysis of which stock performed best",
+            "Volume comparison charts",
+            "Correlation observation"
+          ]
+        },
+        {
+          "category": "Pattern Identification",
+          "points": 3,
+          "description": "Finds and documents patterns in historical market data",
+          "levels": {
+            "excellent": {
+              "points": 3,
+              "description": "Identifies and marks on chart: 3 uptrends, 3 downtrends, 2 crashes/rallies, 1 sideways period with dates annotated, researches historical context for major movements"
+            },
+            "good": {
+              "points": 2,
+              "description": "Identifies 4-6 patterns with dates, basic historical context"
+            },
+            "adequate": {
+              "points": 1,
+              "description": "Identifies 2-3 patterns, minimal context"
+            },
+            "poor": {
+              "points": 0,
+              "description": "No patterns identified or no documentation"
+            }
+          },
+          "evidence_required": [
+            "Annotated chart with patterns marked",
+            "Dates for each pattern identified",
+            "Historical context (news/events) for major movements",
+            "5 years of S&P 500 or similar index data"
+          ]
+        }
+      ],
+
+      "grading_notes": "Visualization is a skill students are building. Focus on: Can they create the chart? Is it readable? Do they extract insights? Don't penalize aesthetic choices if chart conveys information clearly."
+    },
+
+    {
+      "session": "1.4",
+      "title": "Mastering AI-Assisted Learning",
+      "total_points": 15,
+      "purpose": "Develop prompt engineering skills and complete end-to-end analysis",
+      "assessment_type": "Prompt quality and comprehensive data project",
+
+      "criteria": [
+        {
+          "category": "Prompt Engineering Library",
+          "points": 5,
+          "description": "Creates organized library of effective prompts across categories",
+          "levels": {
+            "excellent": {
+              "points": 5,
+              "description": "Creates 15+ prompts (3 per category × 5 categories: data loading, cleaning, visualization, analysis, debugging), tests each prompt with AI, rates effectiveness (1-5), documents what makes good prompts effective"
+            },
+            "good": {
+              "points": 4,
+              "description": "Creates 12-14 prompts across categories, tests most, includes ratings"
+            },
+            "adequate": {
+              "points": 3,
+              "description": "Creates 9-11 prompts, basic testing and organization"
+            },
+            "poor": {
+              "points": 0-2,
+              "description": "Fewer than 9 prompts or minimal testing/organization"
+            }
+          },
+          "evidence_required": [
+            "Organized prompt library document",
+            "At least 3 prompts per category",
+            "Effectiveness ratings (1-5 scale)",
+            "Notes on what worked well"
+          ]
+        },
+        {
+          "category": "End-to-End Stock Analysis Project",
+          "points": 10,
+          "description": "Complete professional analysis from data loading through insights",
+          "levels": {
+            "excellent": {
+              "points": 10,
+              "description": "Complete project covering: (1) 3 years data loaded & verified (2) Summary statistics + missing values check + 3 insights (3) 5 different charts, each tells part of story (4) 3 patterns/insights with supporting visualizations and explanations (5) Professional notebook with markdown explanations for each step (6) Clear conclusions section"
+            },
+            "good": {
+              "points": 7-9,
+              "description": "Complete project with all sections present: data loading, exploration (2 insights), 4 charts, 2 patterns, documented notebook, basic conclusions"
+            },
+            "adequate": {
+              "points": 4-6,
+              "description": "Partial project: data loaded, basic exploration, 2-3 charts, 1 insight, minimal documentation"
+            },
+            "poor": {
+              "points": 0-3,
+              "description": "Incomplete project, missing major sections, or code doesn't run"
+            }
+          },
+          "evidence_required": [
+            "Complete Colab notebook link or file",
+            "Professional report (can be in notebook)",
+            "All 5 sections completed as specified",
+            "Markdown documentation throughout"
+          ],
+          "project_requirements": {
+            "section_1_load_data": {
+              "points": 2,
+              "requirements": "3 years of data, verification of quality, correct date range"
+            },
+            "section_2_explore": {
+              "points": 2,
+              "requirements": "Summary statistics, missing values check, 3+ insights discovered"
+            },
+            "section_3_visualize": {
+              "points": 2,
+              "requirements": "5 different chart types, each with clear purpose"
+            },
+            "section_4_analyze": {
+              "points": 2,
+              "requirements": "3 patterns/insights found, supported with visualizations, explained clearly"
+            },
+            "section_5_document": {
+              "points": 2,
+              "requirements": "Professional notebook, markdown cells explaining steps, clear conclusions section"
+            }
+          }
+        }
+      ],
+
+      "grading_notes": "This is the capstone project for Module 1. It integrates all skills: pandas, visualization, AI prompting. Grade holistically - looking for complete end-to-end thinking. Professional presentation matters but don't penalize students learning formatting."
+    }
+  ],
+
+  "module_completion_criteria": {
+    "minimum_total_points": 42,
+    "minimum_percentage": 70,
+    "required_completions": [
+      "All 4 session quizzes passed (70%+ each)",
+      "End-to-end stock analysis project completed (Session 1.4)",
+      "Prompt library created with 12+ prompts",
+      "At least 3 visualizations in final project"
+    ],
+    "bonus_opportunities": [
+      "Exceptional visualization in final project (+2 points)",
+      "Discovers unique insight not in course materials (+2 points)",
+      "Helps peer in discussion forum (+1 point)"
+    ],
+    "max_bonus_points": 5
+  },
+
+  "instructor_guidelines": {
+    "grading_approach": "Exploration-focused, not perfection-focused. Reward depth of thinking, quality of insights, and thoroughness of exploration. Students should NOT build ML models yet - that's Module 2.",
+
+    "common_issues": {
+      "session_1": "Students confuse classification vs regression - provide examples, use quiz to clarify",
+      "session_2": "yfinance API may have rate limits or outages - allow alternative data sources (CSV backups)",
+      "session_3": "First time creating multiple chart types - focus on effort and insights over perfect formatting",
+      "session_4": "End-to-end project seems overwhelming - encourage breaking into smaller steps"
+    },
+
+    "time_expectations": {
+      "fast_students": "8-10 hours total",
+      "average_students": "11-14 hours total",
+      "struggling_students": "15-18 hours (encourage office hours for data loading issues)"
+    },
+
+    "what_to_look_for": {
+      "good_work_indicators": [
+        "More than minimum requirements completed",
+        "Insights go beyond surface observations",
+        "Code is commented and organized",
+        "Visualizations are readable and informative",
+        "Student connects concepts to their domain"
+      ],
+      "revision_needed_indicators": [
+        "Code doesn't run or has major errors",
+        "Copy-pasted code with no understanding",
+        "No insights provided, just charts",
+        "Less than 70% of requirements met",
+        "No evidence of using AI assistants effectively"
+      ]
+    },
+
+    "feedback_guidelines": {
+      "praise": "Highlight specific insights, good questions, thorough exploration",
+      "improve": "Guide toward deeper analysis, better prompts, clearer visualizations",
+      "encourage": "Remind that Module 1 is about UNDERSTANDING not BUILDING - mastery comes in Module 2+"
+    }
+  },
+
+  "alignment_with_quizzes": {
+    "session_1_quiz": "15 questions on ML concepts, types, pipeline, when to use ML (70% passing)",
+    "session_2_quiz": "12 questions on pandas operations, OHLCV data, features vs labels (70% passing)",
+    "session_3_quiz": "10 questions on chart types, visualization interpretation, pattern recognition (70% passing)",
+    "session_4_quiz": "12 questions on prompt engineering, iterative prompting, AI-assisted learning (70% passing)",
+    "total_quiz_questions": 49,
+    "combined_quiz_weight": "40% of final module grade"
+  },
+
+  "integration_with_module_2": {
+    "skills_needed_next": [
+      "Understanding classification vs regression (from Session 1.1)",
+      "Pandas data manipulation (from Session 1.2)",
+      "Creating visualizations (from Session 1.3)",
+      "Using AI for code generation (from Session 1.4)"
+    ],
+    "datasets_reused": [
+      "Stock data (will build predictor in Module 3)",
+      "Understanding of data structure carries forward"
+    ],
+    "mindset_shift": "Module 1: 'I understand data' → Module 2: 'I can build models'"
+  }
+}

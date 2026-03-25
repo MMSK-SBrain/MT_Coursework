@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 5,
+  "week": 1,
+  "session_title": "Measurement Mastery & Week 1 Consolidation",
+  "questions": [
+    {
+      "id": "D05-Q01",
+      "question": "What is the exact conversion factor from inches to millimetres?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "1 inch = 10.0 mm",
+        "B": "1 inch = 25.4 mm",
+        "C": "1 inch = 50.8 mm",
+        "D": "1 inch = 2.54 mm"
+      },
+      "correct_answer": "B",
+      "explanation": "One inch equals exactly 25.4 mm. Option D (2.54) is the conversion from inches to centimetres, which is a common confusion. Remembering that 1 inch is approximately one-quarter of 100 mm helps anchor the correct value.",
+      "topic": "Length conversion",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D05-Q02",
+      "question": "To convert Newton-metres (Nm) to foot-pounds (ft-lb), which factor should be used?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Multiply by 1.3558",
+        "B": "Divide by 25.4",
+        "C": "Multiply by 0.7376",
+        "D": "Divide by 1.3558"
+      },
+      "correct_answer": "C",
+      "explanation": "Nm to ft-lb requires multiplying by 0.7376. Option A (multiply by 1.3558) performs the reverse conversion from ft-lb to Nm. A quick check: 100 Nm x 0.7376 = 73.76 ft-lb, which is a sensible result.",
+      "topic": "Torque conversion",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D05-Q03",
+      "question": "What is the relationship between bar and PSI for pressure conversion?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "1 bar = 14.5 PSI",
+        "B": "1 bar = 1.45 PSI",
+        "C": "1 bar = 100 PSI",
+        "D": "1 bar = 145 PSI"
+      },
+      "correct_answer": "A",
+      "explanation": "1 bar equals approximately 14.5 PSI (precisely 14.504). A common tyre pressure of 2.3 bar converts to roughly 33 PSI (2.3 x 14.5 = 33.4), which serves as a practical reference point. Option B (1.45) is off by a factor of 10.",
+      "topic": "Pressure conversion",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D05-Q04",
+      "question": "During the Day 5 measurement challenge, what tolerance is accepted for micrometer readings compared to known values?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Plus or minus 0.10 mm",
+        "B": "Plus or minus 0.05 mm",
+        "C": "Plus or minus 0.02 mm",
+        "D": "Plus or minus 0.01 mm"
+      },
+      "correct_answer": "D",
+      "explanation": "The measurement challenge requires micrometer readings within plus or minus 0.01 mm of the known value, which matches the instrument's resolution. Caliper readings are accepted within plus or minus 0.02 mm, reflecting the caliper's coarser resolution.",
+      "topic": "Measurement challenge standards",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D05-Q05",
+      "question": "To convert degrees Celsius to degrees Fahrenheit, the correct formula is:",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Multiply by 1.8, then subtract 32",
+        "B": "Multiply by 1.8, then add 32",
+        "C": "Subtract 32, then divide by 1.8",
+        "D": "Add 32, then multiply by 1.8"
+      },
+      "correct_answer": "B",
+      "explanation": "The formula is F = (C x 1.8) + 32. Option C performs the reverse conversion (Fahrenheit to Celsius). A quick check with a known reference: 100 degrees C x 1.8 + 32 = 212 degrees F, the boiling point of water.",
+      "topic": "Temperature conversion",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D05-Q06",
+      "question": "A technician reads a specification sheet that calls for a wheel nut torque of 80 ft-lb. The workshop's torque wrench is calibrated in Nm. What is the correct Nm setting?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "59 Nm",
+        "B": "80 Nm",
+        "C": "108 Nm",
+        "D": "160 Nm"
+      },
+      "correct_answer": "C",
+      "explanation": "Converting ft-lb to Nm: 80 x 1.3558 = 108.5 Nm, rounded to 108 Nm. Option A (59 Nm) results from incorrectly multiplying by 0.7376 instead of 1.3558 (which would convert Nm to ft-lb, not the other way). Setting the wrench to 80 Nm when the spec is 80 ft-lb would severely under-torque the wheel nuts.",
+      "topic": "Torque conversion application",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D05-Q07",
+      "question": "A technician measures a brake disc at three points around its circumference using a micrometer. The readings are 22.05 mm, 21.98 mm, and 22.02 mm. The minimum thickness specification is 22.00 mm. What is the correct assessment?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The disc is within specification because the average of the three readings exceeds 22.00 mm",
+        "B": "The disc is within specification because two of three readings exceed the minimum",
+        "C": "The readings indicate a measurement error and the disc should be re-measured with a caliper",
+        "D": "The disc must be replaced because at least one reading (21.98 mm) falls below the minimum thickness specification"
+      },
+      "correct_answer": "D",
+      "explanation": "Brake disc minimum thickness is an absolute limit, not an average. If any measurement point falls below the minimum specification, the disc must be replaced. The 21.98 mm reading is 0.02 mm below the 22.00 mm limit. Additionally, the 0.07 mm variation between readings indicates thickness variation (parallelism issue), which further supports replacement.",
+      "topic": "Micrometer measurement interpretation — brake disc assessment",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D05-Q08",
+      "question": "During the timed measurement challenge, a technician completes the dial gauge station by measuring brake disc runout. The gauge reads a total indicator deviation of 0.12 mm. The specification card states maximum lateral runout is 0.10 mm. What verdict should the technician record?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Pass — the reading is within the instrument's tolerance range",
+        "B": "Pass — the reading would round down to 0.10 mm",
+        "C": "Inconclusive — the disc must be remeasured at a different position",
+        "D": "Fail — the measured runout of 0.12 mm exceeds the maximum specification of 0.10 mm"
+      },
+      "correct_answer": "D",
+      "explanation": "The measured runout of 0.12 mm exceeds the maximum specification of 0.10 mm, which is a fail verdict. In automotive measurement, the reading is compared directly to the specification without rounding in favour of the component. A disc exceeding runout limits causes brake judder and must be resurfaced or replaced.",
+      "topic": "Dial gauge interpretation and go/no-go verdicts",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D05-Q09",
+      "question": "A customer from the United States provides a specification sheet stating that a particular engine's oil pressure at idle should be 14 PSI. The workshop pressure gauge reads in bar. What is the equivalent reading the technician should expect?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Approximately 0.97 bar",
+        "B": "Approximately 1.4 bar",
+        "C": "Approximately 14 bar",
+        "D": "Approximately 203 bar"
+      },
+      "correct_answer": "A",
+      "explanation": "Converting PSI to bar: 14 / 14.5 = 0.97 bar (approximately 1.0 bar). Option B incorrectly divides by 10 instead of 14.5. Option D incorrectly multiplies 14 by 14.5. A quick sanity check: typical engine oil pressure at idle is around 1 bar, which confirms the 0.97 bar result.",
+      "topic": "Pressure conversion application",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D05-Q10",
+      "question": "Reflecting on the complete Week 1 learning progression, which statement best describes why measurement skills (Day 4-5) depend on the knowledge built in Days 1-3?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Measurement tools can only be used if the technician has passed a safety certification",
+        "B": "Knowing the vehicle systems and fluid specifications provides the context for what to measure and what the correct values should be",
+        "C": "Days 1-3 are prerequisites only for the final exam, not for practical measurement",
+        "D": "Measurement skills are independent of vehicle knowledge and can be learned in any order"
+      },
+      "correct_answer": "B",
+      "explanation": "Measurement skills are meaningless without context. Knowing that an engine has bearings with specific oil clearances (Day 1 systems knowledge), that incorrect fluid destroys components (Day 3 fluid knowledge), and that safety procedures protect you while measuring (Day 2 safety) all provide the framework for understanding what to measure, why tolerances matter, and what the correct specification values mean.",
+      "topic": "Week 1 learning integration",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

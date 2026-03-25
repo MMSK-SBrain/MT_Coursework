@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 20,
+  "week": 4,
+  "session_title": "Thermal & Emissions Diagnostics Consolidation",
+  "questions": [
+    {
+      "id": "D20-Q01",
+      "question": "A customer describes their complaint as 'the engine is overheating.' Which of the following is the correct FIRST step in the diagnostic thinking framework?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "Replace the thermostat immediately as it is the most common cause",
+        "B": "Perform a cooling system flush to remove any blockages",
+        "C": "Identify the specific symptoms — check the temperature reading, look for leaks, steam, or warning lights",
+        "D": "Test the head gasket with a combustion gas tester"
+      },
+      "correct_answer": "C",
+      "explanation": "The diagnostic thinking framework starts with translating the customer complaint into specific, measurable symptoms. Before testing any component, the technician should verify what is actually happening — check the temperature gauge reading, confirm warning lights, look for visible steam or leaks, and note any associated symptoms like smoke colour or performance loss. This narrows the possible causes before any parts are touched.",
+      "topic": "Diagnostic Framework",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D20-Q02",
+      "question": "When diagnosing an overheating complaint, a cold upper radiator hose while the engine temperature is climbing above 100 degrees C indicates:",
+      "difficulty": "easy",
+      "choices": {
+        "A": "The radiator is blocked internally",
+        "B": "The cooling fan is running in reverse",
+        "C": "The water pump has failed completely",
+        "D": "The thermostat is stuck closed and coolant is not reaching the radiator"
+      },
+      "correct_answer": "D",
+      "explanation": "If the upper radiator hose remains cold while engine temperature climbs, it means hot coolant is not flowing from the engine to the radiator. The thermostat — which acts as the gatekeeper between the engine and radiator — is stuck in the closed position. A blocked radiator would still have a hot upper hose (hot coolant would reach the inlet but not flow through). A failed water pump would typically cause uneven heating throughout.",
+      "topic": "Overheating Diagnosis",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D20-Q03",
+      "question": "Oil pressure at warm idle should typically be at least:",
+      "difficulty": "easy",
+      "choices": {
+        "A": "0.2 bar",
+        "B": "1.0 bar",
+        "C": "5.0 bar",
+        "D": "10.0 bar"
+      },
+      "correct_answer": "B",
+      "explanation": "Minimum oil pressure at warm idle is typically specified as approximately 1.0 bar (exact values vary by manufacturer). Below this threshold, the hydrodynamic oil film at the bearings may be insufficient to prevent metal-to-metal contact. Oil pressure increases with RPM — at cruising speed, pressures of 3-5 bar are normal.",
+      "topic": "Oil Pressure Specifications",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D20-Q04",
+      "question": "DTC P0299 on a turbocharged vehicle indicates which condition?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Turbocharger or supercharger underboost — actual boost is below the ECU's target",
+        "B": "Exhaust gas temperature exceeding maximum limit",
+        "C": "Catalytic converter efficiency below threshold",
+        "D": "Engine coolant temperature sensor circuit malfunction"
+      },
+      "correct_answer": "A",
+      "explanation": "DTC P0299 is a generic powertrain code indicating a turbocharger/supercharger underboost condition. The ECU detects that actual boost pressure (measured by the MAP sensor) is significantly below the target boost pressure. Possible causes include boost leaks, VGT stuck vanes, wastegate stuck open, failed turbo bearings, blocked air filter, or excessive exhaust back-pressure from a clogged DPF.",
+      "topic": "Turbo Diagnostic Codes",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D20-Q05",
+      "question": "Which diagnostic tool is used to check whether combustion gases have entered the cooling system through a head gasket breach?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "A refractometer held over the expansion tank",
+        "B": "An infrared thermometer pointed at the radiator",
+        "C": "A multimeter measuring the coolant temperature sensor resistance",
+        "D": "A combustion gas leak tester (block tester) with colour-change fluid"
+      },
+      "correct_answer": "D",
+      "explanation": "A combustion gas leak tester (also called a block tester) draws air from the expansion tank through a chamber containing a chemical reagent (typically blue fluid). If combustion gases (CO2) are present in the cooling system, the fluid changes colour from blue to yellow. This confirms that combustion gases are entering the coolant, indicating a head gasket breach, cracked head, or cracked block.",
+      "topic": "Head Gasket Testing",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D20-Q06",
+      "question": "A 2017 diesel SUV presents with three DTCs simultaneously: P2463 (DPF soot accumulation excessive), P0420 (catalyst efficiency below threshold), and P20EE (SCR NOx efficiency below threshold). The customer reports limp mode and mentions an AdBlue warning that appeared briefly last month. What is the MOST logical starting point for diagnosis?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Replace all three aftertreatment components — the DOC, DPF, and SCR catalyst — since all three have fault codes",
+        "B": "Start with the DPF code first since it is the most expensive component to replace",
+        "C": "Investigate the AdBlue (SCR) system first, as failed NOx reduction causes excess heat and back-pressure that can cascade into DPF overloading and apparent catalyst inefficiency",
+        "D": "Clear all codes and road test, as multiple codes usually indicate a temporary sensor glitch"
+      },
+      "correct_answer": "C",
+      "explanation": "When multiple aftertreatment codes appear, look for the root cause that could cascade into the others. The customer mentioned a prior AdBlue warning — if the SCR system is not dosing correctly (low AdBlue, failed injector, or frozen tank), NOx efficiency drops (P20EE). The ECU may then attempt to compensate by altering injection strategy, which can increase soot production and overload the DPF (P2463). The apparent catalyst efficiency code (P0420) may be secondary to the altered exhaust chemistry. Start at the SCR system — check AdBlue level, injector function, and NOx sensor readings.",
+      "topic": "Multi-System Emission Diagnosis",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D20-Q07",
+      "question": "A diesel vehicle with a VGT turbo shows reduced power and excessive black smoke under acceleration. The scan tool reveals requested boost of 1.6 bar but actual boost of only 0.8 bar. The DPF soot loading is at 85%. A smoke test of the charge piping shows no leaks. What is the MOST likely sequence of events that led to this condition?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The intercooler failed first, reducing air density, and the ECU compensated by opening the VGT vanes",
+        "B": "The air filter collapsed internally and is blocking airflow to the compressor, while the DPF is coincidentally reaching end of life",
+        "C": "Carbon build-up has seized the VGT vanes in an open position, reducing boost; the ECU adds extra fuel expecting boost that never arrives, producing black smoke and excessive soot that is overloading the DPF",
+        "D": "The MAP sensor has drifted low, causing the ECU to underreport actual boost, while a separate exhaust leak is wasting turbine energy"
+      },
+      "correct_answer": "C",
+      "explanation": "This is a classic VGT-to-DPF cascade failure. Carbon deposits have seized the VGT vanes open, so the turbo cannot build adequate boost. The ECU, expecting 1.6 bar of air but receiving only 0.8 bar, injects fuel based on its requested boost map. With insufficient air for the fuel quantity, combustion is incomplete — producing black smoke (unburned fuel and soot). This excessive soot flows downstream and overloads the DPF, pushing soot loading to 85%. The root cause is VGT vane seizure; the DPF overloading is a secondary consequence.",
+      "topic": "VGT-DPF Cascade Failure",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D20-Q08",
+      "question": "A vehicle overheats only under sustained high load (towing uphill) but runs at normal temperature during regular driving. The cooling fan operates correctly, the thermostat opens at the correct temperature, coolant level is full, and a pressure test holds specification. What should the technician investigate next?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The air conditioning condenser mounted in front of the radiator is restricting airflow",
+        "B": "Both the coolant mixture ratio and the pressure cap should be investigated, as either a weak coolant mixture or a degraded pressure cap reduces the margin between operating temperature and boiling point, which only becomes apparent under extreme thermal load",
+        "C": "The radiator cap may not be holding its rated pressure, lowering the boiling point just enough to cause issues only under maximum heat rejection demand",
+        "D": "The coolant mixture ratio may be incorrect — test concentration with a refractometer, as a weak mixture reduces the boiling point under the extra thermal load"
+      },
+      "correct_answer": "B",
+      "explanation": "Under normal driving, the cooling system has adequate margin. Under maximum load, the system operates at its thermal limit. A weak coolant mix (low concentration of ethylene glycol) reduces the boiling point, and a pressure cap that cannot hold rated pressure also reduces the boiling point. Either issue alone may not cause overheating during normal use but becomes the tipping point under sustained heavy load. The technician should test coolant concentration with a refractometer AND test the pressure cap's holding capacity. Both are quick, non-invasive tests.",
+      "topic": "Load-Dependent Overheating",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D20-Q09",
+      "question": "A customer reports that the oil pressure warning light flickers at idle when the engine is hot, but the light goes off when they rev the engine. The oil was changed recently using the correct specification. The oil level is correct. A mechanical gauge confirms 0.6 bar at hot idle (specification: minimum 1.0 bar). Which diagnosis and recommended action is MOST appropriate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The oil pressure sender is faulty — replace the electronic sensor and retest",
+        "B": "The oil has been incorrectly filled and is likely a lower viscosity than specified — drain and refill with correct grade",
+        "C": "The oil pump is worn and should be replaced as an immediate repair",
+        "D": "Bearing wear at high mileage has increased clearances beyond compensation at idle pump speed — document the pressure readings, advise the customer of the engine condition, and recommend monitoring or further internal investigation"
+      },
+      "correct_answer": "D",
+      "explanation": "The mechanical gauge confirms genuinely low pressure — ruling out a sensor fault. The correct oil specification and level rule out simple service errors. Low pressure at idle that improves with RPM indicates excess bearing clearance: at idle, the pump's low output cannot maintain pressure through worn bearings. At higher RPM, increased pump volume compensates. At high mileage, this is typically caused by wear on the crankshaft main and rod bearing journals. The correct action is to document findings, inform the customer that bearing wear is the likely cause, and discuss options ranging from monitoring to engine overhaul — not simply replacing the oil pump, which is rarely the root cause.",
+      "topic": "Oil Pressure Diagnostic Reasoning",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D20-Q10",
+      "question": "A turbocharged diesel vehicle arrives with the following symptoms: loss of power, white-blue haze from the exhaust under acceleration, oil consumption of 1 litre per 1,000 km, and oily residue inside the intercooler piping. The turbo shaft has noticeable radial play. What is the complete diagnostic conclusion linking these symptoms?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The turbocharger compressor-side seal has failed, allowing engine oil from the bearing housing to be drawn into the intake air stream, resulting in oil burning in the combustion chamber, blue-white exhaust smoke, high oil consumption, and oily intercooler contamination",
+        "B": "The piston rings are worn, causing blow-by that pressurises the crankcase and forces oil into the intake through the breather system",
+        "C": "The valve stem seals have failed, causing oil to drip into the combustion chamber during deceleration",
+        "D": "The DPF is blocked, creating back-pressure that forces exhaust gas and oil vapour back through the turbo into the intake"
+      },
+      "correct_answer": "A",
+      "explanation": "The evidence forms a clear chain: excessive turbo shaft radial play indicates worn bearings, which allows the shaft to move enough for the compressor-side oil seal to lose contact. Oil from the pressurised bearing housing leaks past the seal into the compressor housing. The spinning compressor wheel then pushes this oil — mixed with intake air — through the intercooler (explaining the oily residue in the piping) and into the combustion chamber. The oil burns, producing white-blue exhaust haze and consuming 1 litre per 1,000 km. The root cause is turbo bearing/seal failure; the intercooler contamination, oil consumption, and smoke are all consequences.",
+      "topic": "Turbo Seal Failure Cross-System Diagnosis",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

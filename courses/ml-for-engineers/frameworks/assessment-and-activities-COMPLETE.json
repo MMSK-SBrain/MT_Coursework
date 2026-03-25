@@ -1,0 +1,2850 @@
+{
+  "course_code": "ML-ENG",
+  "course_title": "Machine Learning for Engineers: The AI-Assisted Approach",
+  "assessment_framework": {
+    "description": "Assessment criteria and activity suggestions for each session outcome",
+    "activity_types": {
+      "prompt_engineering": "Challenges to improve AI prompting skills",
+      "code_explanation": "Analyze and understand AI-generated code",
+      "debug_detective": "Find and fix bugs with AI assistance",
+      "project_builder": "Build complete projects using AI tools",
+      "concept_quiz": "Interactive Q&A with AI",
+      "real_world_solving": "Apply ML to actual scenarios",
+      "model_comparison": "Compare different approaches",
+      "collaborative_learning": "Explore what-if scenarios with AI"
+    }
+  },
+  "modules": [
+    {
+      "module_id": "module-0",
+      "module_number": 0,
+      "title": "Prerequisites - Setting Up Your AI-Assisted Learning Environment",
+      "sessions": [
+        {
+          "session_id": "session-0-1",
+          "title": "Introduction to LLMs and Account Setup",
+          "outcomes": [
+            {
+              "id": "so-0-1-1",
+              "code": "ML-ENG-SO-0-1-1",
+              "description": "Create accounts on ChatGPT, Gemini, and Claude platforms",
+              "assessment_criteria": {
+                "evidence": "Screenshots of successfully created accounts with verified email addresses",
+                "measurement": "Checklist completion: ChatGPT account \u2713, Gemini account \u2713, Claude account \u2713",
+                "success_criteria": "All three accounts created and verified; able to log in and send test messages"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Platform Setup Sprint",
+                  "description": "Visit ChatGPT, Gemini, and Claude websites. Create accounts using your email. Verify each account and test by sending 'Hello, I'm learning ML' to each platform.",
+                  "duration_minutes": 20,
+                  "deliverable": "Screenshot compilation showing successful login to all three platforms"
+                },
+                {
+                  "type": "real_world_solving",
+                  "title": "Account Troubleshooting",
+                  "description": "If you encounter any setup issues (verification emails, login problems), document the issue and use one LLM to get troubleshooting help.",
+                  "duration_minutes": 10,
+                  "deliverable": "Short write-up of any issues faced and how you resolved them"
+                }
+              ]
+            },
+            {
+              "id": "so-0-1-2",
+              "code": "ML-ENG-SO-0-1-2",
+              "description": "Identify key differences between GPT-4, Gemini, Claude, and open-source LLMs",
+              "assessment_criteria": {
+                "evidence": "Comparison table highlighting 4-5 key differences (speed, accuracy, cost, capabilities)",
+                "measurement": "Accuracy of identified differences; depth of understanding demonstrated",
+                "success_criteria": "Can explain at least 3 meaningful differences and when to use each LLM"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "LLM Comparison Research",
+                  "description": "Ask ChatGPT: 'What are the key differences between GPT-4, Gemini, Claude, and Llama?' Create a comparison table with: Model Name, Developer, Strengths, Weaknesses, Best Use Cases.",
+                  "duration_minutes": 30,
+                  "deliverable": "Comparison table with 5 LLM models and 5 comparison dimensions"
+                },
+                {
+                  "type": "collaborative_learning",
+                  "title": "When to Use Which LLM",
+                  "description": "Create 3 hypothetical ML scenarios and ask an LLM which model would be best for each scenario and why.",
+                  "duration_minutes": 15,
+                  "deliverable": "Document with 3 scenarios and LLM recommendations with reasoning"
+                }
+              ]
+            },
+            {
+              "id": "so-0-1-3",
+              "code": "ML-ENG-SO-0-1-3",
+              "description": "Test the same ML-related prompt across different LLMs and compare response quality",
+              "assessment_criteria": {
+                "evidence": "Side-by-side comparison document showing same prompt sent to 3 LLMs with responses",
+                "measurement": "Analysis quality: identifies differences in code quality, explanation clarity, completeness",
+                "success_criteria": "Can articulate which response was best and why, citing specific examples"
+              },
+              "activities": [
+                {
+                  "type": "prompt_engineering",
+                  "title": "Multi-LLM Code Generation Test",
+                  "description": "Send this exact prompt to ChatGPT, Gemini, and Claude: 'Write Python code to load a CSV file and create a simple linear regression model to predict house prices. Include comments explaining each step.' Compare the responses.",
+                  "duration_minutes": 25,
+                  "deliverable": "Comparison document with responses from all 3 LLMs and your analysis of which was best"
+                },
+                {
+                  "type": "model_comparison",
+                  "title": "Response Quality Analysis",
+                  "description": "Rate each LLM's response on: Code correctness (1-5), Explanation clarity (1-5), Completeness (1-5), Beginner-friendliness (1-5). Calculate total scores.",
+                  "duration_minutes": 15,
+                  "deliverable": "Scoring rubric with ratings and your recommendation of which LLM to use for learning ML"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-0-2",
+          "title": "Ways to Access LLMs",
+          "outcomes": [
+            {
+              "id": "so-0-2-1",
+              "code": "ML-ENG-SO-0-2-1",
+              "description": "Use web-based interfaces to interact with LLMs for code generation",
+              "assessment_criteria": {
+                "evidence": "Successfully generated ML code snippet using web interface with iterative refinement",
+                "measurement": "Code runs without errors; shows evidence of prompt iteration",
+                "success_criteria": "Generated functional code through web interface; made at least 2 refinement requests"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Web Interface Code Generation",
+                  "description": "Using ChatGPT or Gemini web interface, generate code for: 'Create a Python function that loads the Iris dataset, splits it into train/test, and trains a decision tree classifier.' Run the code in Google Colab.",
+                  "duration_minutes": 20,
+                  "deliverable": "Working code in Colab notebook with output showing successful execution"
+                },
+                {
+                  "type": "prompt_engineering",
+                  "title": "Iterative Refinement Practice",
+                  "description": "After getting initial code, refine it with follow-up prompts: 1) 'Add visualization of the decision tree', 2) 'Add accuracy metrics', 3) 'Add comments in beginner-friendly language'.",
+                  "duration_minutes": 20,
+                  "deliverable": "Final refined code showing all three improvements"
+                }
+              ]
+            },
+            {
+              "id": "so-0-2-2",
+              "code": "ML-ENG-SO-0-2-2",
+              "description": "Install and configure IDE plugins (Copilot, Cursor) for in-editor AI assistance",
+              "assessment_criteria": {
+                "evidence": "Screenshot of IDE with AI plugin active and generating code suggestions",
+                "measurement": "Successful installation and demonstration of code completion",
+                "success_criteria": "Plugin installed, configured, and able to generate at least one code suggestion"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "IDE Plugin Setup",
+                  "description": "Install VS Code and GitHub Copilot (or Cursor). Create a new Python file named 'ml_test.py'. Type '# Function to load and split iris dataset' and let the AI suggest the code.",
+                  "duration_minutes": 30,
+                  "deliverable": "Screenshot showing AI code suggestions in your IDE"
+                },
+                {
+                  "type": "code_explanation",
+                  "title": "AI-Assisted Code Writing",
+                  "description": "Write 5 different comment prompts in your IDE and let AI complete them. Examples: '# train random forest', '# calculate accuracy', '# plot confusion matrix'.",
+                  "duration_minutes": 20,
+                  "deliverable": "Python file with 5 AI-generated code blocks from comment prompts"
+                }
+              ]
+            },
+            {
+              "id": "so-0-2-3",
+              "code": "ML-ENG-SO-0-2-3",
+              "description": "Execute basic API calls to LLM services and interpret responses",
+              "assessment_criteria": {
+                "evidence": "Working Python script that calls LLM API and prints response",
+                "measurement": "Code executes successfully; API key properly configured; response parsed correctly",
+                "success_criteria": "Successfully makes API call and receives ML code generation response"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "First API Call",
+                  "description": "Using an LLM, generate Python code to call OpenAI API or Google AI API with prompt: 'Write a function to classify sentiment'. Get your API key from the platform. Run the code.",
+                  "duration_minutes": 35,
+                  "deliverable": "Working Python script that makes API call and displays response"
+                },
+                {
+                  "type": "real_world_solving",
+                  "title": "API Response Parsing",
+                  "description": "Modify your API script to: 1) Extract just the code from the response, 2) Save it to a file, 3) Count the number of lines. Use AI to help with JSON parsing.",
+                  "duration_minutes": 25,
+                  "deliverable": "Enhanced script with response parsing and file saving"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-0-3",
+          "title": "Understanding Compute Resources",
+          "outcomes": [
+            {
+              "id": "so-0-3-1",
+              "code": "ML-ENG-SO-0-3-1",
+              "description": "Explain the difference between CPU and GPU processing for ML workloads",
+              "assessment_criteria": {
+                "evidence": "Written explanation (200-300 words) with real-world analogy",
+                "measurement": "Accuracy of technical concepts; clarity of analogy; practical understanding",
+                "success_criteria": "Correctly explains parallel processing advantage; provides clear analogy; mentions when to use each"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "CPU vs GPU Research",
+                  "description": "Ask an LLM: 'Explain CPU vs GPU for machine learning using a real-world analogy that a non-technical person would understand. Include when to use each.' Write a summary in your own words.",
+                  "duration_minutes": 20,
+                  "deliverable": "200-300 word explanation with analogy"
+                },
+                {
+                  "type": "collaborative_learning",
+                  "title": "Visual Understanding",
+                  "description": "Ask AI to generate a simple diagram description showing how CPUs and GPUs process data differently. Create a sketch based on the description.",
+                  "duration_minutes": 15,
+                  "deliverable": "Hand-drawn or digital diagram illustrating CPU vs GPU processing"
+                }
+              ]
+            },
+            {
+              "id": "so-0-3-2",
+              "code": "ML-ENG-SO-0-3-2",
+              "description": "Run a simple ML task on both CPU and GPU, comparing execution time",
+              "assessment_criteria": {
+                "evidence": "Colab notebook with execution times for both CPU and GPU runs",
+                "measurement": "Correct implementation; accurate timing measurement; clear speed comparison",
+                "success_criteria": "Shows execution time difference; explains why GPU is faster (or not) for this specific task"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "CPU vs GPU Performance Test",
+                  "description": "In Google Colab, use AI to generate code that: 1) Trains a neural network on Fashion MNIST using CPU, 2) Measures time, 3) Switches to GPU, 4) Trains again and measures time, 5) Compares results.",
+                  "duration_minutes": 30,
+                  "deliverable": "Colab notebook showing execution times for CPU and GPU with speedup calculation"
+                },
+                {
+                  "type": "model_comparison",
+                  "title": "When Does GPU Matter?",
+                  "description": "Run 3 different sized models (small, medium, large) on CPU and GPU. Document at what size GPU becomes significantly faster. Use AI to generate the test code.",
+                  "duration_minutes": 25,
+                  "deliverable": "Table showing execution times for 3 model sizes on CPU vs GPU"
+                }
+              ]
+            },
+            {
+              "id": "so-0-3-3",
+              "code": "ML-ENG-SO-0-3-3",
+              "description": "Configure a Google Colab notebook with GPU acceleration",
+              "assessment_criteria": {
+                "evidence": "Colab notebook with GPU enabled and verified",
+                "measurement": "Correct runtime settings; verification code runs successfully",
+                "success_criteria": "GPU is enabled; can print GPU name and memory; runs sample computation"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Colab GPU Setup",
+                  "description": "Open Google Colab. Go to Runtime > Change runtime type > Select GPU. Use AI to generate code that checks: 1) If GPU is available, 2) GPU name, 3) GPU memory. Run the code.",
+                  "duration_minutes": 15,
+                  "deliverable": "Colab notebook showing GPU information output"
+                },
+                {
+                  "type": "real_world_solving",
+                  "title": "GPU Troubleshooting",
+                  "description": "Try to run a GPU computation. If it fails, use AI to debug the error. Common issues: TensorFlow/PyTorch not detecting GPU, CUDA errors, memory limits.",
+                  "duration_minutes": 20,
+                  "deliverable": "Documentation of any issues encountered and solutions found with AI help"
+                }
+              ]
+            },
+            {
+              "id": "so-0-3-4",
+              "code": "ML-ENG-SO-0-3-4",
+              "description": "Compare free vs paid cloud GPU services for cost-effectiveness",
+              "assessment_criteria": {
+                "evidence": "Comparison spreadsheet with at least 4 services analyzed",
+                "measurement": "Completeness of comparison (pricing, GPU types, limits, features)",
+                "success_criteria": "Can recommend best option for different use cases (learning, small projects, production)"
+              },
+              "activities": [
+                {
+                  "type": "real_world_solving",
+                  "title": "Cloud GPU Service Comparison",
+                  "description": "Research using AI: Google Colab (free & Pro), Kaggle, AWS, Paperspace. Create comparison table: Free tier limits, Paid pricing, GPU types, Session limits, Storage.",
+                  "duration_minutes": 30,
+                  "deliverable": "Comparison spreadsheet with recommendations for beginners"
+                },
+                {
+                  "type": "collaborative_learning",
+                  "title": "Cost-Benefit Analysis",
+                  "description": "Create 3 scenarios: 1) Learning ML (student), 2) Small business project, 3) Heavy training workload. Ask AI which service fits each scenario and why.",
+                  "duration_minutes": 20,
+                  "deliverable": "Document with 3 scenarios and justified recommendations"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-1",
+      "module_number": 1,
+      "title": "Getting Started with AI-Assisted Learning",
+      "sessions": [
+        {
+          "session_id": "session-1-1",
+          "title": "Introduction to Machine Learning",
+          "outcomes": [
+            {
+              "id": "so-1-1-1",
+              "code": "ML-ENG-SO-1-1-1",
+              "description": "Define machine learning and distinguish it from traditional programming",
+              "assessment_criteria": {
+                "evidence": "Written definition and comparison table showing 3-4 key differences",
+                "measurement": "Accuracy of definition; clarity of distinctions; use of examples",
+                "success_criteria": "Provides accurate definition; identifies at least 3 valid differences with examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "ML vs Traditional Programming",
+                  "description": "Ask LLM: 'What's the difference between ML and traditional programming? Give me 3 examples of problems better solved with ML.' Create a comparison table.",
+                  "duration_minutes": 20,
+                  "deliverable": "Comparison table with definitions and 3 example problems for each approach"
+                },
+                {
+                  "type": "collaborative_learning",
+                  "title": "ML in Everyday Life",
+                  "description": "Identify 5 ML systems you use daily (email spam filter, recommendations, voice assistant, etc.). For each, explain why it needs ML instead of traditional code.",
+                  "duration_minutes": 15,
+                  "deliverable": "List of 5 ML applications with explanations"
+                }
+              ]
+            },
+            {
+              "id": "so-1-1-2",
+              "code": "ML-ENG-SO-1-1-2",
+              "description": "Identify real-world problems suitable for ML solutions",
+              "assessment_criteria": {
+                "evidence": "List of 5 problems with justification why ML is appropriate",
+                "measurement": "Problem relevance; ML suitability reasoning; diversity of domains",
+                "success_criteria": "Identifies 5 valid ML problems; explains why ML is needed; covers at least 3 different domains"
+              },
+              "activities": [
+                {
+                  "type": "real_world_solving",
+                  "title": "Problem Identification Workshop",
+                  "description": "Think of problems in your industry/domain. Ask AI: 'Which of these problems can be solved with ML: [list your problems].' For each ML-suitable problem, ask 'Why is this an ML problem and what type of ML would work?'",
+                  "duration_minutes": 25,
+                  "deliverable": "Document with 5 problems, ML suitability analysis, and ML approach for each"
+                },
+                {
+                  "type": "model_comparison",
+                  "title": "ML vs Non-ML Decision Framework",
+                  "description": "Ask AI to help you create a decision tree: 'When should I use ML vs traditional programming?' Test it on 10 different problems.",
+                  "duration_minutes": 20,
+                  "deliverable": "Decision framework flowchart with 10 example problems tested"
+                }
+              ]
+            },
+            {
+              "id": "so-1-1-3",
+              "code": "ML-ENG-SO-1-1-3",
+              "description": "Use LLMs to explain ML concepts in multiple ways for different audiences",
+              "assessment_criteria": {
+                "evidence": "Same ML concept explained 5 different ways (child, teenager, engineer, executive, elderly person)",
+                "measurement": "Appropriateness of language for each audience; accuracy maintained across versions",
+                "success_criteria": "All 5 explanations are audience-appropriate; core concept remains accurate"
+              },
+              "activities": [
+                {
+                  "type": "prompt_engineering",
+                  "title": "Multi-Audience Explanation Challenge",
+                  "description": "Pick one concept: 'supervised learning.' Prompt AI: 'Explain supervised learning to [audience]' for: 10-year-old, college student, business executive, grandmother, engineer. Compile responses.",
+                  "duration_minutes": 25,
+                  "deliverable": "Document with 5 versions of the same explanation for different audiences"
+                },
+                {
+                  "type": "collaborative_learning",
+                  "title": "Explanation Quality Assessment",
+                  "description": "Show your 5 explanations to people from those audiences (or ask AI to critique them). Get feedback on clarity. Refine based on feedback.",
+                  "duration_minutes": 20,
+                  "deliverable": "Feedback summary and refined explanations"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-1-2",
+          "title": "Effective Prompt Engineering for ML",
+          "outcomes": [
+            {
+              "id": "so-1-2-1",
+              "code": "ML-ENG-SO-1-2-1",
+              "description": "Construct effective prompts that specify ML requirements clearly",
+              "assessment_criteria": {
+                "evidence": "10 well-structured prompts for different ML tasks showing improvement from initial attempts",
+                "measurement": "Prompt clarity; specificity; completeness; results quality",
+                "success_criteria": "Prompts include: task description, input/output format, constraints, expected behavior"
+              },
+              "activities": [
+                {
+                  "type": "prompt_engineering",
+                  "title": "Prompt Formula Workshop",
+                  "description": "Learn the formula: Task + Context + Format + Constraints. Example: 'Create [task] that takes [input] and returns [output], considering [constraints].' Practice with 5 ML tasks.",
+                  "duration_minutes": 30,
+                  "deliverable": "10 prompts (5 bad \u2192 5 improved) with explanations of improvements"
+                },
+                {
+                  "type": "model_comparison",
+                  "title": "Vague vs Specific Prompts",
+                  "description": "Test pairs of prompts (vague vs specific) for the same task. Example: 'Create a classifier' vs 'Create a binary text classifier for spam detection that takes email text and returns spam/not-spam with confidence scores.' Compare outputs.",
+                  "duration_minutes": 25,
+                  "deliverable": "Side-by-side comparison showing how prompt quality affects output"
+                }
+              ]
+            },
+            {
+              "id": "so-1-2-2",
+              "code": "ML-ENG-SO-1-2-2",
+              "description": "Iterate on AI-generated code by providing targeted follow-up prompts",
+              "assessment_criteria": {
+                "evidence": "Conversation thread showing 3-4 iterations improving initial code",
+                "measurement": "Quality of follow-up prompts; progressive improvement; final code quality",
+                "success_criteria": "Shows clear improvement trajectory; final code meets all requirements; follow-ups are specific"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Iterative Code Refinement",
+                  "description": "Start with basic prompt: 'Create a simple linear regression.' Then iterate: 1) 'Add data visualization', 2) 'Add error metrics', 3) 'Add cross-validation', 4) 'Make code more efficient'. Document each step.",
+                  "duration_minutes": 35,
+                  "deliverable": "Conversation log with 5 iterations showing progressive enhancement"
+                },
+                {
+                  "type": "debug_detective",
+                  "title": "Bug Fix Iteration",
+                  "description": "Ask AI for code that intentionally has issues. Use follow-up prompts to fix: 1) 'This code gives NameError', 2) 'Add input validation', 3) 'Handle missing data', 4) 'Optimize performance'.",
+                  "duration_minutes": 25,
+                  "deliverable": "Before/after code with iteration log"
+                }
+              ]
+            },
+            {
+              "id": "so-1-2-3",
+              "code": "ML-ENG-SO-1-2-3",
+              "description": "Request code explanations at different levels of technical depth",
+              "assessment_criteria": {
+                "evidence": "Same code block explained at 3 levels: beginner, intermediate, expert",
+                "measurement": "Appropriateness of depth for each level; technical accuracy",
+                "success_criteria": "Beginner explanation avoids jargon; intermediate uses some technical terms; expert is detailed"
+              },
+              "activities": [
+                {
+                  "type": "code_explanation",
+                  "title": "Multi-Level Code Explanation",
+                  "description": "Generate complex ML code (e.g., neural network). Ask AI to explain it: 1) 'Like I'm a beginner', 2) 'With moderate technical detail', 3) 'At expert level with theory'. Compare.",
+                  "duration_minutes": 25,
+                  "deliverable": "Same code with 3 different explanation depths"
+                },
+                {
+                  "type": "prompt_engineering",
+                  "title": "Custom Explanation Depth",
+                  "description": "Create prompts that specify exactly what to explain: 'Explain only the data preprocessing', 'Explain just the model architecture', 'Explain only the evaluation metrics'.",
+                  "duration_minutes": 20,
+                  "deliverable": "Code with 4 focused explanations of different components"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-1-3",
+          "title": "Setting Up ML Environment and First Model",
+          "outcomes": [
+            {
+              "id": "so-1-3-1",
+              "code": "ML-ENG-SO-1-3-1",
+              "description": "Use AI assistance to install Python, Jupyter, and essential ML libraries",
+              "assessment_criteria": {
+                "evidence": "Working Jupyter notebook with all libraries imported successfully",
+                "measurement": "Successful installation; all imports run without errors; version check passes",
+                "success_criteria": "Can run: import numpy, pandas, sklearn, matplotlib successfully"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Environment Setup with AI Guidance",
+                  "description": "Ask AI: 'Guide me through installing Python 3.10, Jupyter, and ML libraries (numpy, pandas, scikit-learn, matplotlib) on [your OS].' Follow step-by-step. Test each library.",
+                  "duration_minutes": 40,
+                  "deliverable": "Jupyter notebook showing successful import of all libraries with version numbers"
+                },
+                {
+                  "type": "debug_detective",
+                  "title": "Installation Troubleshooting",
+                  "description": "Document any installation errors. Use AI to debug: 'I got this error [paste error], how do I fix it?' Keep a troubleshooting log.",
+                  "duration_minutes": 20,
+                  "deliverable": "Troubleshooting log with errors encountered and AI-assisted solutions"
+                }
+              ]
+            },
+            {
+              "id": "so-1-3-2",
+              "code": "ML-ENG-SO-1-3-2",
+              "description": "Generate and execute a simple prediction model using AI-provided code",
+              "assessment_criteria": {
+                "evidence": "Running model that makes predictions; output shows accuracy metric",
+                "measurement": "Code executes without errors; predictions are generated; basic accuracy shown",
+                "success_criteria": "Model trains successfully; makes predictions; achieves >70% accuracy on simple dataset"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "First ML Model",
+                  "description": "Prompt: 'Create a complete ML program that loads the Iris dataset, splits into train/test, trains a classifier, and shows accuracy. Include comments.' Run in Jupyter.",
+                  "duration_minutes": 25,
+                  "deliverable": "Working Jupyter notebook with complete ML pipeline and output"
+                },
+                {
+                  "type": "collaborative_learning",
+                  "title": "Experimentation",
+                  "description": "Ask AI: 'How can I modify this code to try different algorithms?' Test 3 different classifiers (Decision Tree, Random Forest, SVM) and compare results.",
+                  "duration_minutes": 25,
+                  "deliverable": "Notebook showing results from 3 different algorithms"
+                }
+              ]
+            },
+            {
+              "id": "so-1-3-3",
+              "code": "ML-ENG-SO-1-3-3",
+              "description": "Explain each line of AI-generated ML code with AI assistance",
+              "assessment_criteria": {
+                "evidence": "Annotated code with line-by-line explanations in own words",
+                "measurement": "Accuracy of explanations; demonstrates understanding beyond copy-paste",
+                "success_criteria": "Every line has correct explanation; can answer 'why' questions about code choices"
+              },
+              "activities": [
+                {
+                  "type": "code_explanation",
+                  "title": "Line-by-Line Code Understanding",
+                  "description": "Take your first ML model. Ask AI: 'Explain this code line by line.' Then rephrase each explanation in your own words. Add comments to the code.",
+                  "duration_minutes": 30,
+                  "deliverable": "Heavily commented code showing understanding of each line"
+                },
+                {
+                  "type": "concept_quiz",
+                  "title": "Code Comprehension Quiz",
+                  "description": "Create 10 quiz questions about your code using AI: 'Generate quiz questions testing understanding of this code.' Answer them without looking at the code. Check answers with AI.",
+                  "duration_minutes": 20,
+                  "deliverable": "Quiz with 10 questions and your answers with score"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-2",
+      "module_number": 2,
+      "title": "Supervised Learning - Classification",
+      "sessions": [
+        {
+          "session_id": "session-2-1",
+          "title": "Classification Fundamentals",
+          "outcomes": [
+            {
+              "id": "so-2-1-1",
+              "code": "ML-ENG-SO-2-1-1",
+              "description": "Explain what classification problems are and provide real-world examples",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain what classification problems are and provi...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Classification Fundamentals",
+                  "description": "Ask an LLM to explain: 'Explain what classification problems are and provide real-world examples' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain what classification problems are and provide real-wo..."
+                }
+              ]
+            },
+            {
+              "id": "so-2-1-2",
+              "code": "ML-ENG-SO-2-1-2",
+              "description": "Distinguish between binary and multi-class classification problems",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Distinguish between binary and multi-class classif...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Classification Fundamentals",
+                  "description": "Ask AI to create code for 'Distinguish between binary and multi-class classification problems' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Distinguish between binary and multi-class classification pr..."
+                }
+              ]
+            },
+            {
+              "id": "so-2-1-3",
+              "code": "ML-ENG-SO-2-1-3",
+              "description": "Use LLMs to generate a simple binary classification example with sample data",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use LLMs to generate a simple binary classificatio...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Classification Fundamentals",
+                  "description": "Use AI to generate code that accomplishes: 'Use LLMs to generate a simple binary classification example with sample data' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use LLMs to generate a simple binary classification example ..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-2-2",
+          "title": "Classification Algorithms",
+          "outcomes": [
+            {
+              "id": "so-2-2-1",
+              "code": "ML-ENG-SO-2-2-1",
+              "description": "Describe how Decision Trees, Random Forest, SVM, and Logistic Regression work conceptually",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Describe how Decision Trees, Random Forest, SVM, a...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Classification Algorithms",
+                  "description": "Ask an LLM to explain: 'Describe how Decision Trees, Random Forest, SVM, and Logistic Regression work conceptually' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Describe how Decision Trees, Random Forest, SVM, and Logisti..."
+                }
+              ]
+            },
+            {
+              "id": "so-2-2-2",
+              "code": "ML-ENG-SO-2-2-2",
+              "description": "Generate code for multiple classification algorithms using AI and run them on the same dataset",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Generate code for multiple classification algorith...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Classification Algorithms",
+                  "description": "Use AI to generate code that accomplishes: 'Generate code for multiple classification algorithms using AI and run them on the same dataset' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Generate code for multiple classification algorithms using A..."
+                }
+              ]
+            },
+            {
+              "id": "so-2-2-3",
+              "code": "ML-ENG-SO-2-2-3",
+              "description": "Compare algorithm performance and recommend the best choice for a given problem",
+              "assessment_criteria": {
+                "evidence": "Evaluation report with justified recommendations for: Compare algorithm performance and recommend the be...",
+                "measurement": "Use of appropriate criteria; justification quality; practical recommendations",
+                "success_criteria": "Uses clear evaluation criteria; provides justified ranking; actionable recommendations"
+              },
+              "activities": [
+                {
+                  "type": "model_comparison",
+                  "title": "Compare Approaches: Classification Algorithms",
+                  "description": "Generate 2-3 different approaches for: 'Compare algorithm performance and recommend the best choice for a given problem' using AI. Compare them based on performance, complexity, and use cases. Provide recommendation.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Compare algorithm performance and recommend the best choice ..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-2-3",
+          "title": "Training and Testing Data",
+          "outcomes": [
+            {
+              "id": "so-2-3-1",
+              "code": "ML-ENG-SO-2-3-1",
+              "description": "Explain the importance of splitting data into training and testing sets",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain the importance of splitting data into trai...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Training and Testing Data",
+                  "description": "Ask an LLM to explain: 'Explain the importance of splitting data into training and testing sets' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain the importance of splitting data into training and t..."
+                }
+              ]
+            },
+            {
+              "id": "so-2-3-2",
+              "code": "ML-ENG-SO-2-3-2",
+              "description": "Use AI to generate code that properly splits data and trains a classifier",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to generate code that properly splits data ...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Training and Testing Data",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to generate code that properly splits data and trains a classifier' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to generate code that properly splits data and trains..."
+                }
+              ]
+            },
+            {
+              "id": "so-2-3-3",
+              "code": "ML-ENG-SO-2-3-3",
+              "description": "Identify and fix data leakage issues in AI-generated code",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Identify and fix data leakage issues in AI-generat...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Training and Testing Data",
+                  "description": "Ask AI to create code for 'Identify and fix data leakage issues in AI-generated code' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Identify and fix data leakage issues in AI-generated code..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-2-4",
+          "title": "Feature Engineering and Project",
+          "outcomes": [
+            {
+              "id": "so-2-4-1",
+              "code": "ML-ENG-SO-2-4-1",
+              "description": "Use AI to identify and create relevant features for classification problems",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to identify and create relevant features fo...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Feature Engineering and Project",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to identify and create relevant features for classification problems' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to identify and create relevant features for classifi..."
+                }
+              ]
+            },
+            {
+              "id": "so-2-4-2",
+              "code": "ML-ENG-SO-2-4-2",
+              "description": "Build a complete email spam detector using AI-assisted code generation",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Build a complete email spam detector using AI-assi...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Feature Engineering and Project",
+                  "description": "Use AI to generate code that accomplishes: 'Build a complete email spam detector using AI-assisted code generation' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Build a complete email spam detector using AI-assisted code ..."
+                }
+              ]
+            },
+            {
+              "id": "so-2-4-3",
+              "code": "ML-ENG-SO-2-4-3",
+              "description": "Debug classification errors by analyzing confusion patterns with AI help",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Debug classification errors by analyzing confusion...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Feature Engineering and Project",
+                  "description": "Ask AI to create code for 'Debug classification errors by analyzing confusion patterns with AI help' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Debug classification errors by analyzing confusion patterns ..."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-3",
+      "module_number": 3,
+      "title": "Supervised Learning - Regression",
+      "sessions": [
+        {
+          "session_id": "session-3-1",
+          "title": "Understanding Regression Problems",
+          "outcomes": [
+            {
+              "id": "so-3-1-1",
+              "code": "ML-ENG-SO-3-1-1",
+              "description": "Define regression and distinguish it from classification",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Define regression and distinguish it from classifi...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Understanding Regression Problems",
+                  "description": "Ask an LLM to explain: 'Define regression and distinguish it from classification' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Define regression and distinguish it from classification..."
+                }
+              ]
+            },
+            {
+              "id": "so-3-1-2",
+              "code": "ML-ENG-SO-3-1-2",
+              "description": "Identify real-world problems that require regression solutions",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Identify real-world problems that require regressi...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Understanding Regression Problems",
+                  "description": "Ask AI to create code for 'Identify real-world problems that require regression solutions' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Identify real-world problems that require regression solutio..."
+                }
+              ]
+            },
+            {
+              "id": "so-3-1-3",
+              "code": "ML-ENG-SO-3-1-3",
+              "description": "Generate and run a simple linear regression model using AI assistance",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Generate and run a simple linear regression model ...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Understanding Regression Problems",
+                  "description": "Use AI to generate code that accomplishes: 'Generate and run a simple linear regression model using AI assistance' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Generate and run a simple linear regression model using AI a..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-3-2",
+          "title": "Regression Algorithms",
+          "outcomes": [
+            {
+              "id": "so-3-2-1",
+              "code": "ML-ENG-SO-3-2-1",
+              "description": "Explain the difference between linear and non-linear regression",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain the difference between linear and non-line...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Regression Algorithms",
+                  "description": "Ask an LLM to explain: 'Explain the difference between linear and non-linear regression' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain the difference between linear and non-linear regress..."
+                }
+              ]
+            },
+            {
+              "id": "so-3-2-2",
+              "code": "ML-ENG-SO-3-2-2",
+              "description": "Use AI to implement multiple regression algorithms (Linear, Polynomial, Random Forest Regressor)",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to implement multiple regression algorithms...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Regression Algorithms",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to implement multiple regression algorithms (Linear, Polynomial, Random Forest Regressor)' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to implement multiple regression algorithms (Linear, ..."
+                }
+              ]
+            },
+            {
+              "id": "so-3-2-3",
+              "code": "ML-ENG-SO-3-2-3",
+              "description": "Compare regression algorithms on the same dataset and select the best performer",
+              "assessment_criteria": {
+                "evidence": "Evaluation report with justified recommendations for: Compare regression algorithms on the same dataset ...",
+                "measurement": "Use of appropriate criteria; justification quality; practical recommendations",
+                "success_criteria": "Uses clear evaluation criteria; provides justified ranking; actionable recommendations"
+              },
+              "activities": [
+                {
+                  "type": "model_comparison",
+                  "title": "Compare Approaches: Regression Algorithms",
+                  "description": "Generate 2-3 different approaches for: 'Compare regression algorithms on the same dataset and select the best performer' using AI. Compare them based on performance, complexity, and use cases. Provide recommendation.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Compare regression algorithms on the same dataset and select..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-3-3",
+          "title": "Feature Scaling and Outlier Handling",
+          "outcomes": [
+            {
+              "id": "so-3-3-1",
+              "code": "ML-ENG-SO-3-3-1",
+              "description": "Explain why feature scaling is important for regression models",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain why feature scaling is important for regre...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Feature Scaling and Outlier Handling",
+                  "description": "Ask an LLM to explain: 'Explain why feature scaling is important for regression models' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain why feature scaling is important for regression mode..."
+                }
+              ]
+            },
+            {
+              "id": "so-3-3-2",
+              "code": "ML-ENG-SO-3-3-2",
+              "description": "Apply standardization and normalization techniques using AI-generated code",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Apply standardization and normalization techniques...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Feature Scaling and Outlier Handling",
+                  "description": "Use AI to generate code that accomplishes: 'Apply standardization and normalization techniques using AI-generated code' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Apply standardization and normalization techniques using AI-..."
+                }
+              ]
+            },
+            {
+              "id": "so-3-3-3",
+              "code": "ML-ENG-SO-3-3-3",
+              "description": "Detect outliers in datasets and implement handling strategies with AI assistance",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Detect outliers in datasets and implement handling...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Feature Scaling and Outlier Handling",
+                  "description": "Use AI to generate code that accomplishes: 'Detect outliers in datasets and implement handling strategies with AI assistance' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Detect outliers in datasets and implement handling strategie..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-3-4",
+          "title": "Regression Projects",
+          "outcomes": [
+            {
+              "id": "so-3-4-1",
+              "code": "ML-ENG-SO-3-4-1",
+              "description": "Build a house price prediction model using AI-assisted development",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Build a house price prediction model using AI-assi...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Regression Projects",
+                  "description": "Use AI to generate code that accomplishes: 'Build a house price prediction model using AI-assisted development' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Build a house price prediction model using AI-assisted devel..."
+                }
+              ]
+            },
+            {
+              "id": "so-3-4-2",
+              "code": "ML-ENG-SO-3-4-2",
+              "description": "Analyze prediction errors and identify patterns using visualization",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Analyze prediction errors and identify patterns us...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Regression Projects",
+                  "description": "Ask AI to create code for 'Analyze prediction errors and identify patterns using visualization' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Analyze prediction errors and identify patterns using visual..."
+                }
+              ]
+            },
+            {
+              "id": "so-3-4-3",
+              "code": "ML-ENG-SO-3-4-3",
+              "description": "Improve regression model performance by iterating on features and algorithms with AI help",
+              "assessment_criteria": {
+                "evidence": "Evaluation report with justified recommendations for: Improve regression model performance by iterating ...",
+                "measurement": "Use of appropriate criteria; justification quality; practical recommendations",
+                "success_criteria": "Uses clear evaluation criteria; provides justified ranking; actionable recommendations"
+              },
+              "activities": [
+                {
+                  "type": "model_comparison",
+                  "title": "Compare Approaches: Regression Projects",
+                  "description": "Generate 2-3 different approaches for: 'Improve regression model performance by iterating on features and algorithms with AI help' using AI. Compare them based on performance, complexity, and use cases. Provide recommendation.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Improve regression model performance by iterating on feature..."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-4",
+      "module_number": 4,
+      "title": "Model Evaluation and Optimization",
+      "sessions": [
+        {
+          "session_id": "session-4-1",
+          "title": "Classification Metrics",
+          "outcomes": [
+            {
+              "id": "so-4-1-1",
+              "code": "ML-ENG-SO-4-1-1",
+              "description": "Explain accuracy, precision, recall, and F1-score in the context of classification",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain accuracy, precision, recall, and F1-score ...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Classification Metrics",
+                  "description": "Ask an LLM to explain: 'Explain accuracy, precision, recall, and F1-score in the context of classification' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain accuracy, precision, recall, and F1-score in the con..."
+                }
+              ]
+            },
+            {
+              "id": "so-4-1-2",
+              "code": "ML-ENG-SO-4-1-2",
+              "description": "Use AI to calculate and visualize classification metrics from model predictions",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to calculate and visualize classification m...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Classification Metrics",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to calculate and visualize classification metrics from model predictions' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to calculate and visualize classification metrics fro..."
+                }
+              ]
+            },
+            {
+              "id": "so-4-1-3",
+              "code": "ML-ENG-SO-4-1-3",
+              "description": "Interpret confusion matrices and determine which metric matters most for a given problem",
+              "assessment_criteria": {
+                "evidence": "Evaluation report with justified recommendations for: Interpret confusion matrices and determine which m...",
+                "measurement": "Use of appropriate criteria; justification quality; practical recommendations",
+                "success_criteria": "Uses clear evaluation criteria; provides justified ranking; actionable recommendations"
+              },
+              "activities": [
+                {
+                  "type": "model_comparison",
+                  "title": "Compare Approaches: Classification Metrics",
+                  "description": "Generate 2-3 different approaches for: 'Interpret confusion matrices and determine which metric matters most for a given problem' using AI. Compare them based on performance, complexity, and use cases. Provide recommendation.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Interpret confusion matrices and determine which metric matt..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-4-2",
+          "title": "Cross-Validation and Overfitting",
+          "outcomes": [
+            {
+              "id": "so-4-2-1",
+              "code": "ML-ENG-SO-4-2-1",
+              "description": "Explain the concepts of overfitting and underfitting with examples",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain the concepts of overfitting and underfitti...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Cross-Validation and Overfitting",
+                  "description": "Ask an LLM to explain: 'Explain the concepts of overfitting and underfitting with examples' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain the concepts of overfitting and underfitting with ex..."
+                }
+              ]
+            },
+            {
+              "id": "so-4-2-2",
+              "code": "ML-ENG-SO-4-2-2",
+              "description": "Implement k-fold cross-validation using AI-generated code",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Implement k-fold cross-validation using AI-generat...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Cross-Validation and Overfitting",
+                  "description": "Use AI to generate code that accomplishes: 'Implement k-fold cross-validation using AI-generated code' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Implement k-fold cross-validation using AI-generated code..."
+                }
+              ]
+            },
+            {
+              "id": "so-4-2-3",
+              "code": "ML-ENG-SO-4-2-3",
+              "description": "Diagnose overfitting by comparing training and validation performance",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Diagnose overfitting by comparing training and val...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Cross-Validation and Overfitting",
+                  "description": "Ask AI to create code for 'Diagnose overfitting by comparing training and validation performance' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Diagnose overfitting by comparing training and validation pe..."
+                }
+              ]
+            },
+            {
+              "id": "so-4-2-4",
+              "code": "ML-ENG-SO-4-2-4",
+              "description": "Apply regularization techniques with AI assistance to reduce overfitting",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Apply regularization techniques with AI assistance...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Cross-Validation and Overfitting",
+                  "description": "Use AI to generate code that accomplishes: 'Apply regularization techniques with AI assistance to reduce overfitting' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Apply regularization techniques with AI assistance to reduce..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-4-3",
+          "title": "Hyperparameter Tuning",
+          "outcomes": [
+            {
+              "id": "so-4-3-1",
+              "code": "ML-ENG-SO-4-3-1",
+              "description": "Define hyperparameters and distinguish them from model parameters",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Define hyperparameters and distinguish them from m...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Hyperparameter Tuning",
+                  "description": "Ask an LLM to explain: 'Define hyperparameters and distinguish them from model parameters' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Define hyperparameters and distinguish them from model param..."
+                }
+              ]
+            },
+            {
+              "id": "so-4-3-2",
+              "code": "ML-ENG-SO-4-3-2",
+              "description": "Use AI to implement grid search and random search for hyperparameter optimization",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to implement grid search and random search ...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Hyperparameter Tuning",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to implement grid search and random search for hyperparameter optimization' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to implement grid search and random search for hyperp..."
+                }
+              ]
+            },
+            {
+              "id": "so-4-3-3",
+              "code": "ML-ENG-SO-4-3-3",
+              "description": "Evaluate the impact of different hyperparameters on model performance",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Evaluate the impact of different hyperparameters o...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Hyperparameter Tuning",
+                  "description": "Ask AI to create code for 'Evaluate the impact of different hyperparameters on model performance' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Evaluate the impact of different hyperparameters on model pe..."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-5",
+      "module_number": 5,
+      "title": "Unsupervised Learning",
+      "sessions": [
+        {
+          "session_id": "session-5-1",
+          "title": "Introduction to Clustering",
+          "outcomes": [
+            {
+              "id": "so-5-1-1",
+              "code": "ML-ENG-SO-5-1-1",
+              "description": "Explain unsupervised learning and how it differs from supervised learning",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain unsupervised learning and how it differs f...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Introduction to Clustering",
+                  "description": "Ask an LLM to explain: 'Explain unsupervised learning and how it differs from supervised learning' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain unsupervised learning and how it differs from superv..."
+                }
+              ]
+            },
+            {
+              "id": "so-5-1-2",
+              "code": "ML-ENG-SO-5-1-2",
+              "description": "Implement K-Means clustering using AI-generated code on a sample dataset",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Implement K-Means clustering using AI-generated co...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Introduction to Clustering",
+                  "description": "Use AI to generate code that accomplishes: 'Implement K-Means clustering using AI-generated code on a sample dataset' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Implement K-Means clustering using AI-generated code on a sa..."
+                }
+              ]
+            },
+            {
+              "id": "so-5-1-3",
+              "code": "ML-ENG-SO-5-1-3",
+              "description": "Determine the optimal number of clusters using elbow method and silhouette scores",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Determine the optimal number of clusters using elb...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Introduction to Clustering",
+                  "description": "Ask AI to create code for 'Determine the optimal number of clusters using elbow method and silhouette scores' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Determine the optimal number of clusters using elbow method ..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-5-2",
+          "title": "Advanced Clustering Techniques",
+          "outcomes": [
+            {
+              "id": "so-5-2-1",
+              "code": "ML-ENG-SO-5-2-1",
+              "description": "Compare K-Means, DBSCAN, and Hierarchical clustering approaches",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Compare K-Means, DBSCAN, and Hierarchical clusteri...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Advanced Clustering Techniques",
+                  "description": "Ask AI to create code for 'Compare K-Means, DBSCAN, and Hierarchical clustering approaches' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Compare K-Means, DBSCAN, and Hierarchical clustering approac..."
+                }
+              ]
+            },
+            {
+              "id": "so-5-2-2",
+              "code": "ML-ENG-SO-5-2-2",
+              "description": "Use AI to implement DBSCAN for density-based clustering",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to implement DBSCAN for density-based clust...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Advanced Clustering Techniques",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to implement DBSCAN for density-based clustering' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to implement DBSCAN for density-based clustering..."
+                }
+              ]
+            },
+            {
+              "id": "so-5-2-3",
+              "code": "ML-ENG-SO-5-2-3",
+              "description": "Build a customer segmentation system using clustering with AI assistance",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Build a customer segmentation system using cluster...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Advanced Clustering Techniques",
+                  "description": "Use AI to generate code that accomplishes: 'Build a customer segmentation system using clustering with AI assistance' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Build a customer segmentation system using clustering with A..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-5-3",
+          "title": "Dimensionality Reduction",
+          "outcomes": [
+            {
+              "id": "so-5-3-1",
+              "code": "ML-ENG-SO-5-3-1",
+              "description": "Explain why dimensionality reduction is useful for data visualization and processing",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain why dimensionality reduction is useful for...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Dimensionality Reduction",
+                  "description": "Ask an LLM to explain: 'Explain why dimensionality reduction is useful for data visualization and processing' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain why dimensionality reduction is useful for data visu..."
+                }
+              ]
+            },
+            {
+              "id": "so-5-3-2",
+              "code": "ML-ENG-SO-5-3-2",
+              "description": "Apply PCA to reduce high-dimensional data using AI-generated code",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Apply PCA to reduce high-dimensional data using AI...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Dimensionality Reduction",
+                  "description": "Use AI to generate code that accomplishes: 'Apply PCA to reduce high-dimensional data using AI-generated code' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Apply PCA to reduce high-dimensional data using AI-generated..."
+                }
+              ]
+            },
+            {
+              "id": "so-5-3-3",
+              "code": "ML-ENG-SO-5-3-3",
+              "description": "Use t-SNE for visualization and interpret the resulting clusters",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Use t-SNE for visualization and interpret the resu...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Dimensionality Reduction",
+                  "description": "Ask AI to create code for 'Use t-SNE for visualization and interpret the resulting clusters' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Use t-SNE for visualization and interpret the resulting clus..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-5-4",
+          "title": "Anomaly Detection",
+          "outcomes": [
+            {
+              "id": "so-5-4-1",
+              "code": "ML-ENG-SO-5-4-1",
+              "description": "Define anomaly detection and identify use cases in fraud and fault detection",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Define anomaly detection and identify use cases in...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Anomaly Detection",
+                  "description": "Ask an LLM to explain: 'Define anomaly detection and identify use cases in fraud and fault detection' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Define anomaly detection and identify use cases in fraud and..."
+                }
+              ]
+            },
+            {
+              "id": "so-5-4-2",
+              "code": "ML-ENG-SO-5-4-2",
+              "description": "Implement isolation forest and one-class SVM for anomaly detection using AI",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Implement isolation forest and one-class SVM for a...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Anomaly Detection",
+                  "description": "Use AI to generate code that accomplishes: 'Implement isolation forest and one-class SVM for anomaly detection using AI' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Implement isolation forest and one-class SVM for anomaly det..."
+                }
+              ]
+            },
+            {
+              "id": "so-5-4-3",
+              "code": "ML-ENG-SO-5-4-3",
+              "description": "Build a fraud detection system and evaluate its effectiveness",
+              "assessment_criteria": {
+                "evidence": "Evaluation report with justified recommendations for: Build a fraud detection system and evaluate its ef...",
+                "measurement": "Use of appropriate criteria; justification quality; practical recommendations",
+                "success_criteria": "Uses clear evaluation criteria; provides justified ranking; actionable recommendations"
+              },
+              "activities": [
+                {
+                  "type": "model_comparison",
+                  "title": "Compare Approaches: Anomaly Detection",
+                  "description": "Generate 2-3 different approaches for: 'Build a fraud detection system and evaluate its effectiveness' using AI. Compare them based on performance, complexity, and use cases. Provide recommendation.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Build a fraud detection system and evaluate its effectivenes..."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-6",
+      "module_number": 6,
+      "title": "Neural Networks and Deep Learning Basics",
+      "sessions": [
+        {
+          "session_id": "session-6-1",
+          "title": "Introduction to Neural Networks",
+          "outcomes": [
+            {
+              "id": "so-6-1-1",
+              "code": "ML-ENG-SO-6-1-1",
+              "description": "Explain what neural networks are and how they differ from traditional ML",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain what neural networks are and how they diff...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Introduction to Neural Networks",
+                  "description": "Ask an LLM to explain: 'Explain what neural networks are and how they differ from traditional ML' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain what neural networks are and how they differ from tr..."
+                }
+              ]
+            },
+            {
+              "id": "so-6-1-2",
+              "code": "ML-ENG-SO-6-1-2",
+              "description": "Describe the components of a neural network (neurons, layers, weights, biases)",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Describe the components of a neural network (neuro...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Introduction to Neural Networks",
+                  "description": "Ask an LLM to explain: 'Describe the components of a neural network (neurons, layers, weights, biases)' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Describe the components of a neural network (neurons, layers..."
+                }
+              ]
+            },
+            {
+              "id": "so-6-1-3",
+              "code": "ML-ENG-SO-6-1-3",
+              "description": "Use AI to generate and train a simple neural network for classification",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to generate and train a simple neural netwo...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Introduction to Neural Networks",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to generate and train a simple neural network for classification' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to generate and train a simple neural network for cla..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-6-2",
+          "title": "Neural Network Architecture",
+          "outcomes": [
+            {
+              "id": "so-6-2-1",
+              "code": "ML-ENG-SO-6-2-1",
+              "description": "Explain common activation functions (ReLU, Sigmoid, Tanh) and their purposes",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain common activation functions (ReLU, Sigmoid...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Neural Network Architecture",
+                  "description": "Ask an LLM to explain: 'Explain common activation functions (ReLU, Sigmoid, Tanh) and their purposes' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain common activation functions (ReLU, Sigmoid, Tanh) an..."
+                }
+              ]
+            },
+            {
+              "id": "so-6-2-2",
+              "code": "ML-ENG-SO-6-2-2",
+              "description": "Experiment with different network architectures (layers, neurons) using AI assistance",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Experiment with different network architectures (l...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Neural Network Architecture",
+                  "description": "Use AI to generate code that accomplishes: 'Experiment with different network architectures (layers, neurons) using AI assistance' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Experiment with different network architectures (layers, neu..."
+                }
+              ]
+            },
+            {
+              "id": "so-6-2-3",
+              "code": "ML-ENG-SO-6-2-3",
+              "description": "Analyze the impact of architecture changes on training time and accuracy",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Analyze the impact of architecture changes on trai...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Neural Network Architecture",
+                  "description": "Ask AI to create code for 'Analyze the impact of architecture changes on training time and accuracy' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Analyze the impact of architecture changes on training time ..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-6-3",
+          "title": "Building with TensorFlow/Keras",
+          "outcomes": [
+            {
+              "id": "so-6-3-1",
+              "code": "ML-ENG-SO-6-3-1",
+              "description": "Use AI to generate code that builds a neural network using Keras Sequential API",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to generate code that builds a neural netwo...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Building with TensorFlow/Keras",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to generate code that builds a neural network using Keras Sequential API' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to generate code that builds a neural network using K..."
+                }
+              ]
+            },
+            {
+              "id": "so-6-3-2",
+              "code": "ML-ENG-SO-6-3-2",
+              "description": "Train a neural network on MNIST digit dataset and visualize learning progress",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Train a neural network on MNIST digit dataset and ...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Building with TensorFlow/Keras",
+                  "description": "Use AI to generate code that accomplishes: 'Train a neural network on MNIST digit dataset and visualize learning progress' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Train a neural network on MNIST digit dataset and visualize ..."
+                }
+              ]
+            },
+            {
+              "id": "so-6-3-3",
+              "code": "ML-ENG-SO-6-3-3",
+              "description": "Debug common neural network errors (vanishing gradients, poor convergence) with AI help",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Debug common neural network errors (vanishing grad...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Building with TensorFlow/Keras",
+                  "description": "Ask AI to create code for 'Debug common neural network errors (vanishing gradients, poor convergence) with AI help' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Debug common neural network errors (vanishing gradients, poo..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-6-4",
+          "title": "Transfer Learning",
+          "outcomes": [
+            {
+              "id": "so-6-4-1",
+              "code": "ML-ENG-SO-6-4-1",
+              "description": "Explain transfer learning and when it's beneficial to use pre-trained models",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain transfer learning and when it's beneficial...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Transfer Learning",
+                  "description": "Ask an LLM to explain: 'Explain transfer learning and when it's beneficial to use pre-trained models' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain transfer learning and when it's beneficial to use pr..."
+                }
+              ]
+            },
+            {
+              "id": "so-6-4-2",
+              "code": "ML-ENG-SO-6-4-2",
+              "description": "Load and fine-tune a pre-trained model using AI-generated code",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Load and fine-tune a pre-trained model using AI-ge...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Transfer Learning",
+                  "description": "Use AI to generate code that accomplishes: 'Load and fine-tune a pre-trained model using AI-generated code' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Load and fine-tune a pre-trained model using AI-generated co..."
+                }
+              ]
+            },
+            {
+              "id": "so-6-4-3",
+              "code": "ML-ENG-SO-6-4-3",
+              "description": "Compare training from scratch vs transfer learning in terms of time and accuracy",
+              "assessment_criteria": {
+                "evidence": "Evaluation report with justified recommendations for: Compare training from scratch vs transfer learning...",
+                "measurement": "Use of appropriate criteria; justification quality; practical recommendations",
+                "success_criteria": "Uses clear evaluation criteria; provides justified ranking; actionable recommendations"
+              },
+              "activities": [
+                {
+                  "type": "model_comparison",
+                  "title": "Compare Approaches: Transfer Learning",
+                  "description": "Generate 2-3 different approaches for: 'Compare training from scratch vs transfer learning in terms of time and accuracy' using AI. Compare them based on performance, complexity, and use cases. Provide recommendation.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Compare training from scratch vs transfer learning in terms ..."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-7",
+      "module_number": 7,
+      "title": "Computer Vision",
+      "sessions": [
+        {
+          "session_id": "session-7-1",
+          "title": "Introduction to Computer Vision",
+          "outcomes": [
+            {
+              "id": "so-7-1-1",
+              "code": "ML-ENG-SO-7-1-1",
+              "description": "Explain what computer vision is and list common applications",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain what computer vision is and list common ap...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Introduction to Computer Vision",
+                  "description": "Ask an LLM to explain: 'Explain what computer vision is and list common applications' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain what computer vision is and list common applications..."
+                }
+              ]
+            },
+            {
+              "id": "so-7-1-2",
+              "code": "ML-ENG-SO-7-1-2",
+              "description": "Use AI to load, display, and preprocess images for ML models",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to load, display, and preprocess images for...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Introduction to Computer Vision",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to load, display, and preprocess images for ML models' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to load, display, and preprocess images for ML models..."
+                }
+              ]
+            },
+            {
+              "id": "so-7-1-3",
+              "code": "ML-ENG-SO-7-1-3",
+              "description": "Describe how Convolutional Neural Networks (CNNs) process images",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Describe how Convolutional Neural Networks (CNNs) ...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Introduction to Computer Vision",
+                  "description": "Ask an LLM to explain: 'Describe how Convolutional Neural Networks (CNNs) process images' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Describe how Convolutional Neural Networks (CNNs) process im..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-7-2",
+          "title": "Image Classification with CNNs",
+          "outcomes": [
+            {
+              "id": "so-7-2-1",
+              "code": "ML-ENG-SO-7-2-1",
+              "description": "Use AI to build a CNN architecture for image classification",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to build a CNN architecture for image class...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Image Classification with CNNs",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to build a CNN architecture for image classification' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to build a CNN architecture for image classification..."
+                }
+              ]
+            },
+            {
+              "id": "so-7-2-2",
+              "code": "ML-ENG-SO-7-2-2",
+              "description": "Train a custom image classifier on your own dataset with AI assistance",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Train a custom image classifier on your own datase...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Image Classification with CNNs",
+                  "description": "Use AI to generate code that accomplishes: 'Train a custom image classifier on your own dataset with AI assistance' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Train a custom image classifier on your own dataset with AI ..."
+                }
+              ]
+            },
+            {
+              "id": "so-7-2-3",
+              "code": "ML-ENG-SO-7-2-3",
+              "description": "Evaluate model performance on test images and identify misclassification patterns",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Evaluate model performance on test images and iden...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Image Classification with CNNs",
+                  "description": "Ask AI to create code for 'Evaluate model performance on test images and identify misclassification patterns' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Evaluate model performance on test images and identify miscl..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-7-3",
+          "title": "Object Detection and Pre-trained Models",
+          "outcomes": [
+            {
+              "id": "so-7-3-1",
+              "code": "ML-ENG-SO-7-3-1",
+              "description": "Distinguish between image classification and object detection",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Distinguish between image classification and objec...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Object Detection and Pre-trained Models",
+                  "description": "Ask an LLM to explain: 'Distinguish between image classification and object detection' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Distinguish between image classification and object detectio..."
+                }
+              ]
+            },
+            {
+              "id": "so-7-3-2",
+              "code": "ML-ENG-SO-7-3-2",
+              "description": "Implement object detection using pre-trained models (YOLO, SSD) with AI help",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Implement object detection using pre-trained model...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Object Detection and Pre-trained Models",
+                  "description": "Use AI to generate code that accomplishes: 'Implement object detection using pre-trained models (YOLO, SSD) with AI help' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Implement object detection using pre-trained models (YOLO, S..."
+                }
+              ]
+            },
+            {
+              "id": "so-7-3-3",
+              "code": "ML-ENG-SO-7-3-3",
+              "description": "Build a face detection application using AI-generated code",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Build a face detection application using AI-genera...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Object Detection and Pre-trained Models",
+                  "description": "Use AI to generate code that accomplishes: 'Build a face detection application using AI-generated code' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Build a face detection application using AI-generated code..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-7-4",
+          "title": "Computer Vision Project",
+          "outcomes": [
+            {
+              "id": "so-7-4-1",
+              "code": "ML-ENG-SO-7-4-1",
+              "description": "Design a custom computer vision solution for a real-world problem",
+              "assessment_criteria": {
+                "evidence": "Complete original solution/design for: Design a custom computer vision solution for a rea...",
+                "measurement": "Completeness; originality; functionality; documentation quality",
+                "success_criteria": "Fully functional solution; well-documented; meets all requirements"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Computer Vision Project",
+                  "description": "Use AI to generate code that accomplishes: 'Design a custom computer vision solution for a real-world problem' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Design a custom computer vision solution for a real-world pr..."
+                }
+              ]
+            },
+            {
+              "id": "so-7-4-2",
+              "code": "ML-ENG-SO-7-4-2",
+              "description": "Optimize CV model for speed and accuracy based on deployment constraints",
+              "assessment_criteria": {
+                "evidence": "Evaluation report with justified recommendations for: Optimize CV model for speed and accuracy based on ...",
+                "measurement": "Use of appropriate criteria; justification quality; practical recommendations",
+                "success_criteria": "Uses clear evaluation criteria; provides justified ranking; actionable recommendations"
+              },
+              "activities": [
+                {
+                  "type": "model_comparison",
+                  "title": "Compare Approaches: Computer Vision Project",
+                  "description": "Generate 2-3 different approaches for: 'Optimize CV model for speed and accuracy based on deployment constraints' using AI. Compare them based on performance, complexity, and use cases. Provide recommendation.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Optimize CV model for speed and accuracy based on deployment..."
+                }
+              ]
+            },
+            {
+              "id": "so-7-4-3",
+              "code": "ML-ENG-SO-7-4-3",
+              "description": "Implement image augmentation techniques to improve model robustness",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Implement image augmentation techniques to improve...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Computer Vision Project",
+                  "description": "Use AI to generate code that accomplishes: 'Implement image augmentation techniques to improve model robustness' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Implement image augmentation techniques to improve model rob..."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-8",
+      "module_number": 8,
+      "title": "Natural Language Processing (NLP)",
+      "sessions": [
+        {
+          "session_id": "session-8-1",
+          "title": "Introduction to NLP",
+          "outcomes": [
+            {
+              "id": "so-8-1-1",
+              "code": "ML-ENG-SO-8-1-1",
+              "description": "Explain what Natural Language Processing is and list common applications",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain what Natural Language Processing is and li...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Introduction to NLP",
+                  "description": "Ask an LLM to explain: 'Explain what Natural Language Processing is and list common applications' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain what Natural Language Processing is and list common ..."
+                }
+              ]
+            },
+            {
+              "id": "so-8-1-2",
+              "code": "ML-ENG-SO-8-1-2",
+              "description": "Use AI to preprocess text data (cleaning, tokenization, lowercasing)",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to preprocess text data (cleaning, tokeniza...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Introduction to NLP",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to preprocess text data (cleaning, tokenization, lowercasing)' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to preprocess text data (cleaning, tokenization, lowe..."
+                }
+              ]
+            },
+            {
+              "id": "so-8-1-3",
+              "code": "ML-ENG-SO-8-1-3",
+              "description": "Build a simple sentiment classifier using bag-of-words with AI assistance",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Build a simple sentiment classifier using bag-of-w...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Introduction to NLP",
+                  "description": "Use AI to generate code that accomplishes: 'Build a simple sentiment classifier using bag-of-words with AI assistance' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Build a simple sentiment classifier using bag-of-words with ..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-8-2",
+          "title": "Text Classification and Sentiment Analysis",
+          "outcomes": [
+            {
+              "id": "so-8-2-1",
+              "code": "ML-ENG-SO-8-2-1",
+              "description": "Explain TF-IDF and word embeddings for text representation",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain TF-IDF and word embeddings for text repres...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Text Classification and Sentiment Analysis",
+                  "description": "Ask an LLM to explain: 'Explain TF-IDF and word embeddings for text representation' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain TF-IDF and word embeddings for text representation..."
+                }
+              ]
+            },
+            {
+              "id": "so-8-2-2",
+              "code": "ML-ENG-SO-8-2-2",
+              "description": "Build a sentiment analysis system for product reviews using AI-generated code",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Build a sentiment analysis system for product revi...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Text Classification and Sentiment Analysis",
+                  "description": "Use AI to generate code that accomplishes: 'Build a sentiment analysis system for product reviews using AI-generated code' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Build a sentiment analysis system for product reviews using ..."
+                }
+              ]
+            },
+            {
+              "id": "so-8-2-3",
+              "code": "ML-ENG-SO-8-2-3",
+              "description": "Evaluate text classifier performance and interpret confusion patterns",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Evaluate text classifier performance and interpret...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Text Classification and Sentiment Analysis",
+                  "description": "Ask AI to create code for 'Evaluate text classifier performance and interpret confusion patterns' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Evaluate text classifier performance and interpret confusion..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-8-3",
+          "title": "Word Embeddings and Transformers",
+          "outcomes": [
+            {
+              "id": "so-8-3-1",
+              "code": "ML-ENG-SO-8-3-1",
+              "description": "Explain word embeddings (Word2Vec, GloVe) and their advantages over TF-IDF",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain word embeddings (Word2Vec, GloVe) and thei...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Word Embeddings and Transformers",
+                  "description": "Ask an LLM to explain: 'Explain word embeddings (Word2Vec, GloVe) and their advantages over TF-IDF' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain word embeddings (Word2Vec, GloVe) and their advantag..."
+                }
+              ]
+            },
+            {
+              "id": "so-8-3-2",
+              "code": "ML-ENG-SO-8-3-2",
+              "description": "Use pre-trained word embeddings in text classification with AI help",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use pre-trained word embeddings in text classifica...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Word Embeddings and Transformers",
+                  "description": "Use AI to generate code that accomplishes: 'Use pre-trained word embeddings in text classification with AI help' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use pre-trained word embeddings in text classification with ..."
+                }
+              ]
+            },
+            {
+              "id": "so-8-3-3",
+              "code": "ML-ENG-SO-8-3-3",
+              "description": "Describe transformer architecture and its impact on modern NLP",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Describe transformer architecture and its impact o...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Word Embeddings and Transformers",
+                  "description": "Ask an LLM to explain: 'Describe transformer architecture and its impact on modern NLP' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Describe transformer architecture and its impact on modern N..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-8-4",
+          "title": "NLP Projects with Transformers",
+          "outcomes": [
+            {
+              "id": "so-8-4-1",
+              "code": "ML-ENG-SO-8-4-1",
+              "description": "Use AI to implement a transformer-based model from Hugging Face",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to implement a transformer-based model from...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: NLP Projects with Transformers",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to implement a transformer-based model from Hugging Face' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to implement a transformer-based model from Hugging F..."
+                }
+              ]
+            },
+            {
+              "id": "so-8-4-2",
+              "code": "ML-ENG-SO-8-4-2",
+              "description": "Build a text summarization tool using pre-trained transformers",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Build a text summarization tool using pre-trained ...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: NLP Projects with Transformers",
+                  "description": "Use AI to generate code that accomplishes: 'Build a text summarization tool using pre-trained transformers' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Build a text summarization tool using pre-trained transforme..."
+                }
+              ]
+            },
+            {
+              "id": "so-8-4-3",
+              "code": "ML-ENG-SO-8-4-3",
+              "description": "Create a simple chatbot using AI-generated NLP code",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Create a simple chatbot using AI-generated NLP cod...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: NLP Projects with Transformers",
+                  "description": "Use AI to generate code that accomplishes: 'Create a simple chatbot using AI-generated NLP code' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Create a simple chatbot using AI-generated NLP code..."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-9",
+      "module_number": 9,
+      "title": "Real-world ML Projects and Deployment",
+      "sessions": [
+        {
+          "session_id": "session-9-1",
+          "title": "End-to-End ML Pipeline",
+          "outcomes": [
+            {
+              "id": "so-9-1-1",
+              "code": "ML-ENG-SO-9-1-1",
+              "description": "Describe the stages of an end-to-end ML pipeline",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Describe the stages of an end-to-end ML pipeline...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding End-to-End ML Pipeline",
+                  "description": "Ask an LLM to explain: 'Describe the stages of an end-to-end ML pipeline' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Describe the stages of an end-to-end ML pipeline..."
+                }
+              ]
+            },
+            {
+              "id": "so-9-1-2",
+              "code": "ML-ENG-SO-9-1-2",
+              "description": "Use AI to collect, clean, and prepare data for ML modeling",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to collect, clean, and prepare data for ML ...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: End-to-End ML Pipeline",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to collect, clean, and prepare data for ML modeling' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to collect, clean, and prepare data for ML modeling..."
+                }
+              ]
+            },
+            {
+              "id": "so-9-1-3",
+              "code": "ML-ENG-SO-9-1-3",
+              "description": "Build a complete ML workflow from raw data to predictions with AI assistance",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Build a complete ML workflow from raw data to pred...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: End-to-End ML Pipeline",
+                  "description": "Use AI to generate code that accomplishes: 'Build a complete ML workflow from raw data to predictions with AI assistance' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Build a complete ML workflow from raw data to predictions wi..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-9-2",
+          "title": "Model Deployment Basics",
+          "outcomes": [
+            {
+              "id": "so-9-2-1",
+              "code": "ML-ENG-SO-9-2-1",
+              "description": "Explain different deployment options (cloud, edge, API)",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain different deployment options (cloud, edge,...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Model Deployment Basics",
+                  "description": "Ask an LLM to explain: 'Explain different deployment options (cloud, edge, API)' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain different deployment options (cloud, edge, API)..."
+                }
+              ]
+            },
+            {
+              "id": "so-9-2-2",
+              "code": "ML-ENG-SO-9-2-2",
+              "description": "Use AI to create a Flask/FastAPI endpoint that serves ML predictions",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to create a Flask/FastAPI endpoint that ser...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Model Deployment Basics",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to create a Flask/FastAPI endpoint that serves ML predictions' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to create a Flask/FastAPI endpoint that serves ML pre..."
+                }
+              ]
+            },
+            {
+              "id": "so-9-2-3",
+              "code": "ML-ENG-SO-9-2-3",
+              "description": "Deploy an ML model to a cloud platform (Heroku, AWS, Google Cloud) with AI help",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Deploy an ML model to a cloud platform (Heroku, AW...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Model Deployment Basics",
+                  "description": "Use AI to generate code that accomplishes: 'Deploy an ML model to a cloud platform (Heroku, AWS, Google Cloud) with AI help' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Deploy an ML model to a cloud platform (Heroku, AWS, Google ..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-9-3",
+          "title": "Monitoring and MLOps",
+          "outcomes": [
+            {
+              "id": "so-9-3-1",
+              "code": "ML-ENG-SO-9-3-1",
+              "description": "Explain the importance of model monitoring and maintenance",
+              "assessment_criteria": {
+                "evidence": "Written explanation or diagram demonstrating understanding of: Explain the importance of model monitoring and mai...",
+                "measurement": "Accuracy of explanation; use of correct terminology; clarity of examples",
+                "success_criteria": "Provides accurate explanation with at least 2 relevant examples"
+              },
+              "activities": [
+                {
+                  "type": "concept_quiz",
+                  "title": "Understanding Monitoring and MLOps",
+                  "description": "Ask an LLM to explain: 'Explain the importance of model monitoring and maintenance' Then create a summary in your own words with examples. Verify understanding with follow-up questions.",
+                  "duration_minutes": 20,
+                  "deliverable": "Completed work demonstrating: Explain the importance of model monitoring and maintenance..."
+                }
+              ]
+            },
+            {
+              "id": "so-9-3-2",
+              "code": "ML-ENG-SO-9-3-2",
+              "description": "Use AI to create a monitoring dashboard showing model performance metrics",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Use AI to create a monitoring dashboard showing mo...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Monitoring and MLOps",
+                  "description": "Use AI to generate code that accomplishes: 'Use AI to create a monitoring dashboard showing model performance metrics' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Use AI to create a monitoring dashboard showing model perfor..."
+                }
+              ]
+            },
+            {
+              "id": "so-9-3-3",
+              "code": "ML-ENG-SO-9-3-3",
+              "description": "Implement basic logging and error handling for deployed models",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Implement basic logging and error handling for dep...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Monitoring and MLOps",
+                  "description": "Use AI to generate code that accomplishes: 'Implement basic logging and error handling for deployed models' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Implement basic logging and error handling for deployed mode..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-9-4",
+          "title": "Mini-Project Sprint",
+          "outcomes": [
+            {
+              "id": "so-9-4-1",
+              "code": "ML-ENG-SO-9-4-1",
+              "description": "Build and deploy 3 mini ML applications in rapid succession",
+              "assessment_criteria": {
+                "evidence": "Complete original solution/design for: Build and deploy 3 mini ML applications in rapid s...",
+                "measurement": "Completeness; originality; functionality; documentation quality",
+                "success_criteria": "Fully functional solution; well-documented; meets all requirements"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Mini-Project Sprint",
+                  "description": "Use AI to generate code that accomplishes: 'Build and deploy 3 mini ML applications in rapid succession' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Build and deploy 3 mini ML applications in rapid succession..."
+                }
+              ]
+            },
+            {
+              "id": "so-9-4-2",
+              "code": "ML-ENG-SO-9-4-2",
+              "description": "Document ML projects using AI-generated README and documentation",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Document ML projects using AI-generated README and...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Mini-Project Sprint",
+                  "description": "Use AI to generate code that accomplishes: 'Document ML projects using AI-generated README and documentation' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Document ML projects using AI-generated README and documenta..."
+                }
+              ]
+            },
+            {
+              "id": "so-9-4-3",
+              "code": "ML-ENG-SO-9-4-3",
+              "description": "Present ML solutions to technical and non-technical audiences",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Present ML solutions to technical and non-technica...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Mini-Project Sprint",
+                  "description": "Use AI to generate code that accomplishes: 'Present ML solutions to technical and non-technical audiences' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Present ML solutions to technical and non-technical audience..."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "module-10",
+      "module_number": 10,
+      "title": "Capstone Project",
+      "sessions": [
+        {
+          "session_id": "session-10-1",
+          "title": "Project Planning and Design",
+          "outcomes": [
+            {
+              "id": "so-10-1-1",
+              "code": "ML-ENG-SO-10-1-1",
+              "description": "Select a capstone project aligned with career goals and interests",
+              "assessment_criteria": {
+                "evidence": "Evaluation report with justified recommendations for: Select a capstone project aligned with career goal...",
+                "measurement": "Use of appropriate criteria; justification quality; practical recommendations",
+                "success_criteria": "Uses clear evaluation criteria; provides justified ranking; actionable recommendations"
+              },
+              "activities": [
+                {
+                  "type": "model_comparison",
+                  "title": "Compare Approaches: Project Planning and Design",
+                  "description": "Generate 2-3 different approaches for: 'Select a capstone project aligned with career goals and interests' using AI. Compare them based on performance, complexity, and use cases. Provide recommendation.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Select a capstone project aligned with career goals and inte..."
+                }
+              ]
+            },
+            {
+              "id": "so-10-1-2",
+              "code": "ML-ENG-SO-10-1-2",
+              "description": "Define project scope, success criteria, and deliverables",
+              "assessment_criteria": {
+                "evidence": "Complete original solution/design for: Define project scope, success criteria, and delive...",
+                "measurement": "Completeness; originality; functionality; documentation quality",
+                "success_criteria": "Fully functional solution; well-documented; meets all requirements"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Project Planning and Design",
+                  "description": "Use AI to generate code that accomplishes: 'Define project scope, success criteria, and deliverables' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Define project scope, success criteria, and deliverables..."
+                }
+              ]
+            },
+            {
+              "id": "so-10-1-3",
+              "code": "ML-ENG-SO-10-1-3",
+              "description": "Design the ML solution architecture with AI assistance",
+              "assessment_criteria": {
+                "evidence": "Complete original solution/design for: Design the ML solution architecture with AI assist...",
+                "measurement": "Completeness; originality; functionality; documentation quality",
+                "success_criteria": "Fully functional solution; well-documented; meets all requirements"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Project Planning and Design",
+                  "description": "Use AI to generate code that accomplishes: 'Design the ML solution architecture with AI assistance' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Design the ML solution architecture with AI assistance..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-10-2",
+          "title": "Implementation Phase",
+          "outcomes": [
+            {
+              "id": "so-10-2-1",
+              "code": "ML-ENG-SO-10-2-1",
+              "description": "Implement data collection and preprocessing pipeline using AI tools",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Implement data collection and preprocessing pipeli...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Implementation Phase",
+                  "description": "Use AI to generate code that accomplishes: 'Implement data collection and preprocessing pipeline using AI tools' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Implement data collection and preprocessing pipeline using A..."
+                }
+              ]
+            },
+            {
+              "id": "so-10-2-2",
+              "code": "ML-ENG-SO-10-2-2",
+              "description": "Build, train, and optimize ML models for the project with AI assistance",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Build, train, and optimize ML models for the proje...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Implementation Phase",
+                  "description": "Use AI to generate code that accomplishes: 'Build, train, and optimize ML models for the project with AI assistance' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Build, train, and optimize ML models for the project with AI..."
+                }
+              ]
+            },
+            {
+              "id": "so-10-2-3",
+              "code": "ML-ENG-SO-10-2-3",
+              "description": "Troubleshoot and debug project issues using AI-assisted problem-solving",
+              "assessment_criteria": {
+                "evidence": "Analysis document or comparison showing: Troubleshoot and debug project issues using AI-ass...",
+                "measurement": "Depth of analysis; identification of patterns/issues; quality of insights",
+                "success_criteria": "Identifies key patterns; provides justified conclusions; backs claims with evidence"
+              },
+              "activities": [
+                {
+                  "type": "debug_detective",
+                  "title": "Debug Challenge: Implementation Phase",
+                  "description": "Ask AI to create code for 'Troubleshoot and debug project issues using AI-assisted problem-solving' with 2-3 intentional bugs. Find and fix them using AI assistance. Document the debugging process.",
+                  "duration_minutes": 25,
+                  "deliverable": "Completed work demonstrating: Troubleshoot and debug project issues using AI-assisted prob..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-10-3",
+          "title": "Testing, Deployment, and Documentation",
+          "outcomes": [
+            {
+              "id": "so-10-3-1",
+              "code": "ML-ENG-SO-10-3-1",
+              "description": "Test the ML application thoroughly and validate against success criteria",
+              "assessment_criteria": {
+                "evidence": "Evaluation report with justified recommendations for: Test the ML application thoroughly and validate ag...",
+                "measurement": "Use of appropriate criteria; justification quality; practical recommendations",
+                "success_criteria": "Uses clear evaluation criteria; provides justified ranking; actionable recommendations"
+              },
+              "activities": [
+                {
+                  "type": "model_comparison",
+                  "title": "Compare Approaches: Testing, Deployment, and Documentation",
+                  "description": "Generate 2-3 different approaches for: 'Test the ML application thoroughly and validate against success criteria' using AI. Compare them based on performance, complexity, and use cases. Provide recommendation.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Test the ML application thoroughly and validate against succ..."
+                }
+              ]
+            },
+            {
+              "id": "so-10-3-2",
+              "code": "ML-ENG-SO-10-3-2",
+              "description": "Deploy the final ML application using appropriate platform",
+              "assessment_criteria": {
+                "evidence": "Working code/implementation demonstrating: Deploy the final ML application using appropriate ...",
+                "measurement": "Code executes successfully; produces expected output; follows best practices",
+                "success_criteria": "Implementation works correctly; handles basic edge cases; code is documented"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Testing, Deployment, and Documentation",
+                  "description": "Use AI to generate code that accomplishes: 'Deploy the final ML application using appropriate platform' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Deploy the final ML application using appropriate platform..."
+                }
+              ]
+            },
+            {
+              "id": "so-10-3-3",
+              "code": "ML-ENG-SO-10-3-3",
+              "description": "Create comprehensive project documentation and README with AI help",
+              "assessment_criteria": {
+                "evidence": "Complete original solution/design for: Create comprehensive project documentation and REA...",
+                "measurement": "Completeness; originality; functionality; documentation quality",
+                "success_criteria": "Fully functional solution; well-documented; meets all requirements"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Testing, Deployment, and Documentation",
+                  "description": "Use AI to generate code that accomplishes: 'Create comprehensive project documentation and README with AI help' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Create comprehensive project documentation and README with A..."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "session_id": "session-10-4",
+          "title": "Presentation and Portfolio Development",
+          "outcomes": [
+            {
+              "id": "so-10-4-1",
+              "code": "ML-ENG-SO-10-4-1",
+              "description": "Create a professional presentation explaining the project and its impact",
+              "assessment_criteria": {
+                "evidence": "Complete original solution/design for: Create a professional presentation explaining the ...",
+                "measurement": "Completeness; originality; functionality; documentation quality",
+                "success_criteria": "Fully functional solution; well-documented; meets all requirements"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Presentation and Portfolio Development",
+                  "description": "Use AI to generate code that accomplishes: 'Create a professional presentation explaining the project and its impact' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Create a professional presentation explaining the project an..."
+                }
+              ]
+            },
+            {
+              "id": "so-10-4-2",
+              "code": "ML-ENG-SO-10-4-2",
+              "description": "Record a demonstration video showcasing the ML application",
+              "assessment_criteria": {
+                "evidence": "Complete original solution/design for: Record a demonstration video showcasing the ML app...",
+                "measurement": "Completeness; originality; functionality; documentation quality",
+                "success_criteria": "Fully functional solution; well-documented; meets all requirements"
+              },
+              "activities": [
+                {
+                  "type": "project_builder",
+                  "title": "Build: Presentation and Portfolio Development",
+                  "description": "Use AI to generate code that accomplishes: 'Record a demonstration video showcasing the ML application' Run the code, verify it works, and document each major step.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Record a demonstration video showcasing the ML application..."
+                }
+              ]
+            },
+            {
+              "id": "so-10-4-3",
+              "code": "ML-ENG-SO-10-4-3",
+              "description": "Reflect on learning journey and identify areas for continued growth",
+              "assessment_criteria": {
+                "evidence": "Evaluation report with justified recommendations for: Reflect on learning journey and identify areas for...",
+                "measurement": "Use of appropriate criteria; justification quality; practical recommendations",
+                "success_criteria": "Uses clear evaluation criteria; provides justified ranking; actionable recommendations"
+              },
+              "activities": [
+                {
+                  "type": "model_comparison",
+                  "title": "Compare Approaches: Presentation and Portfolio Development",
+                  "description": "Generate 2-3 different approaches for: 'Reflect on learning journey and identify areas for continued growth' using AI. Compare them based on performance, complexity, and use cases. Provide recommendation.",
+                  "duration_minutes": 30,
+                  "deliverable": "Completed work demonstrating: Reflect on learning journey and identify areas for continued..."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

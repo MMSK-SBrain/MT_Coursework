@@ -1,0 +1,1266 @@
+course:
+  name: Automotive Vehicles
+  code: AELZC441
+  credits: 3
+  duration_days: 20
+  total_sessions: 20
+  session_duration: 2 hours (90 min lecture + 30 min Q&A)
+  institution: BITS Pilani - M.Tech. Automotive Electronics
+  description: >-
+    Comprehensive study of automotive vehicle systems with physics and mathematics foundation, covering powertrain,
+    transmission, chassis dynamics, electrical systems, and safety systems
+  pedagogical_approach: Build confidence with familiar physics/math before introducing complex automotive systems
+course_outcomes:
+  - id: co-1
+    code: AELZC441-CO-1
+    description: >-
+      Study main components/systems of an automobile (engine, transmission, drive-axle system, suspension system, brake
+      system, etc.)
+    category: Knowledge
+    bloom_level: Understand
+  - id: co-2
+    code: AELZC441-CO-2
+    description: Understand fundamental working principles of different systems
+    category: Knowledge
+    bloom_level: Understand
+  - id: co-3
+    code: AELZC441-CO-3
+    description: Learn performance analysis along with working and important aspects of various components of automotive vehicles
+    category: Skill
+    bloom_level: Analyze
+  - id: co-4
+    code: AELZC441-CO-4
+    description: Get acquainted with advanced concepts through projects and assignments
+    category: Skill
+    bloom_level: Apply
+modules:
+  - number: 1
+    name: Vehicle Motion Fundamentals
+    description: >-
+      Apply physics and mathematics to analyze vehicle motion, calculate force and power requirements, and understand
+      tire-road interaction fundamentals
+    duration_sessions: 3
+    module_outcome:
+      id: mo-1
+      code: AELZC441-MO-1
+      description: >-
+        Apply physics and mathematics to analyze vehicle motion, calculate force and power requirements, and understand
+        tire-road interaction fundamentals
+      category: Skill
+      bloom_level: Apply
+      parent_co: co-3
+    lessons:
+      - number: 1
+        name: Forces Acting on a Moving Vehicle
+        day: 1
+        session_outcomes:
+          - id: so-1-1-1
+            code: AELZC441-SO-1-1-1
+            description: Apply Newton's laws of motion to analyze forces acting on a moving vehicle
+            category: Skill
+            bloom_level: Apply
+            session_type: lecture
+            required: true
+            parent_mo: mo-1
+          - id: so-1-1-2
+            code: AELZC441-SO-1-1-2
+            description: Calculate rolling resistance force using coefficient of rolling resistance and vehicle weight
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-1
+          - id: so-1-1-3
+            code: AELZC441-SO-1-1-3
+            description: Calculate aerodynamic drag force using drag coefficient, frontal area, and vehicle speed
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-1
+          - id: so-1-1-4
+            code: AELZC441-SO-1-1-4
+            description: Calculate gradient resistance force for vehicles on inclined surfaces
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-1
+          - id: so-1-1-5
+            code: AELZC441-SO-1-1-5
+            description: >-
+              Determine total resistance force for different driving scenarios (level road, uphill, downhill, varying
+              speeds)
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-1
+          - id: so-1-1-6
+            code: AELZC441-SO-1-1-6
+            description: >-
+              Explain vehicle performance metrics (acceleration, top speed, gradeability) and their dependence on
+              resistance forces
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-1
+      - number: 2
+        name: Tires & Friction Fundamentals
+        day: 2
+        session_outcomes:
+          - id: so-1-2-1
+            code: AELZC441-SO-1-2-1
+            description: Identify tire construction types (radial, bias-ply) and explain tire nomenclature and specifications
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-1
+          - id: so-1-2-2
+            code: AELZC441-SO-1-2-2
+            description: Calculate normal force on tires and explain load distribution among wheels
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-1
+          - id: so-1-2-3
+            code: AELZC441-SO-1-2-3
+            description: Apply friction principles to calculate maximum tire force using coefficient of friction and normal load
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-1
+          - id: so-1-2-4
+            code: AELZC441-SO-1-2-4
+            description: Explain tire slip (longitudinal and lateral) and its relationship to tire force generation
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-1
+          - id: so-1-2-5
+            code: AELZC441-SO-1-2-5
+            description: Describe the friction circle concept and analyze combined braking and cornering forces
+            category: Skill
+            bloom_level: Analyze
+            session_type: lecture
+            required: true
+            parent_mo: mo-1
+          - id: so-1-2-6
+            code: AELZC441-SO-1-2-6
+            description: Explain factors affecting tire grip (tire pressure, temperature, road surface, tire wear)
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-1
+      - number: 3
+        name: From Forces to Power Requirements
+        day: 3
+        session_outcomes:
+          - id: so-1-3-1
+            code: AELZC441-SO-1-3-1
+            description: Convert linear force at tire contact patch to torque at wheel using wheel radius relationship
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-1
+          - id: so-1-3-2
+            code: AELZC441-SO-1-3-2
+            description: Calculate wheel torque requirements for various driving conditions using force and radius
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-1
+          - id: so-1-3-3
+            code: AELZC441-SO-1-3-3
+            description: Apply rotational motion equations to convert torque and rotational speed to power requirements
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-1
+          - id: so-1-3-4
+            code: AELZC441-SO-1-3-4
+            description: Calculate vehicle acceleration performance (0-100 km/h time) using force, mass, and resistance
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-1
+          - id: so-1-3-5
+            code: AELZC441-SO-1-3-5
+            description: Determine maximum gradeability for a vehicle using available tractive force and vehicle weight
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-1
+          - id: so-1-3-6
+            code: AELZC441-SO-1-3-6
+            description: Calculate top speed of a vehicle by balancing available power with total resistance forces
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-1
+  - number: 2
+    name: Powertrain Systems
+    description: >-
+      Understand IC engine operation as a torque-generating device, analyze engine support systems, and compare power
+      transmission mechanisms
+    duration_sessions: 5
+    module_outcome:
+      id: mo-2
+      code: AELZC441-MO-2
+      description: >-
+        Understand IC engine operation as a torque-generating device, analyze engine support systems, and compare power
+        transmission mechanisms
+      category: Knowledge
+      bloom_level: Understand
+      parent_co: co-2
+    lessons:
+      - number: 4
+        name: Introduction to IC Engines (Simplified)
+        day: 4
+        session_outcomes:
+          - id: so-2-4-1
+            code: AELZC441-SO-2-4-1
+            description: Explain the internal combustion engine as a device that converts fuel energy into rotational torque
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-4-2
+            code: AELZC441-SO-2-4-2
+            description: >-
+              Identify major engine components (piston, cylinder, crankshaft, connecting rod, valves) and explain their
+              mechanical functions
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-4-3
+            code: AELZC441-SO-2-4-3
+            description: Describe the 4-stroke engine cycle (intake, compression, power, exhaust) from a mechanical perspective
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-4-4
+            code: AELZC441-SO-2-4-4
+            description: Explain engine terminology (bore, stroke, displacement, compression ratio) and calculate engine capacity
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-4-5
+            code: AELZC441-SO-2-4-5
+            description: Interpret engine torque and power curves and explain their relationship to vehicle performance
+            category: Skill
+            bloom_level: Analyze
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-4-6
+            code: AELZC441-SO-2-4-6
+            description: >-
+              Classify IC engines based on fuel type (petrol/diesel), number of cylinders, and configuration (inline, V,
+              flat)
+            category: Knowledge
+            bloom_level: Remember
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+      - number: 5
+        name: Engine Support Systems - Cooling & Lubrication
+        day: 5
+        session_outcomes:
+          - id: so-2-5-1
+            code: AELZC441-SO-2-5-1
+            description: Explain why engines generate heat and the need for effective cooling systems
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-5-2
+            code: AELZC441-SO-2-5-2
+            description: Compare air-cooled and liquid-cooled systems and analyze their suitability for different applications
+            category: Skill
+            bloom_level: Analyze
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-5-3
+            code: AELZC441-SO-2-5-3
+            description: >-
+              Identify cooling system components (radiator, thermostat, water pump, fan, coolant) and explain their
+              operation
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-5-4
+            code: AELZC441-SO-2-5-4
+            description: >-
+              Explain the need for engine lubrication and the functions of engine oil (friction reduction, heat
+              dissipation, cleaning)
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-5-5
+            code: AELZC441-SO-2-5-5
+            description: Describe lubrication system components (oil pump, filter, oil galleries, sump) and oil circulation path
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-5-6
+            code: AELZC441-SO-2-5-6
+            description: >-
+              Explain engine oil specifications (viscosity grades like 5W-30, API/ACEA classifications) and selection
+              criteria
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+      - number: 6
+        name: Engine Performance & Fuel Systems
+        day: 6
+        session_outcomes:
+          - id: so-2-6-1
+            code: AELZC441-SO-2-6-1
+            description: >-
+              Interpret engine performance maps (torque curve, power curve, BSFC map) and identify optimal operating
+              regions
+            category: Skill
+            bloom_level: Analyze
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-6-2
+            code: AELZC441-SO-2-6-2
+            description: Explain the air-fuel mixture requirements for combustion and the stoichiometric ratio concept
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-6-3
+            code: AELZC441-SO-2-6-3
+            description: Compare fuel delivery systems (carburetor vs fuel injection) and explain their basic operation
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-6-4
+            code: AELZC441-SO-2-6-4
+            description: Describe Multi-Point Fuel Injection (MPFI) and Direct Injection (GDI) systems and their advantages
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-6-5
+            code: AELZC441-SO-2-6-5
+            description: Explain air intake systems and the purpose of air filters, intake manifold, and throttle valve
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-6-6
+            code: AELZC441-SO-2-6-6
+            description: Describe basic emission types (CO, HC, NOx, PM) and introduce emission control requirements (BS4, BS6)
+            category: Knowledge
+            bloom_level: Remember
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+      - number: 7
+        name: Transmission Systems - Part 1
+        day: 7
+        session_outcomes:
+          - id: so-2-7-1
+            code: AELZC441-SO-2-7-1
+            description: Explain the need for transmission in matching engine output characteristics to wheel torque requirements
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-7-2
+            code: AELZC441-SO-2-7-2
+            description: Calculate gear ratios and analyze their effect on torque multiplication and speed reduction
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-2
+          - id: so-2-7-3
+            code: AELZC441-SO-2-7-3
+            description: Describe clutch operation (single-plate, multi-plate) and explain engagement/disengagement mechanism
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-7-4
+            code: AELZC441-SO-2-7-4
+            description: Explain manual gearbox construction (constant mesh, synchromesh) and gear shifting mechanism
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-7-5
+            code: AELZC441-SO-2-7-5
+            description: >-
+              Design basic transmission gear ratios for given vehicle performance requirements (acceleration vs top
+              speed)
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-2
+          - id: so-2-7-6
+            code: AELZC441-SO-2-7-6
+            description: Analyze power flow through a manual transmission from engine to output shaft
+            category: Skill
+            bloom_level: Analyze
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+      - number: 8
+        name: Transmission Systems - Part 2 & Powertrain Alternatives
+        day: 8
+        session_outcomes:
+          - id: so-2-8-1
+            code: AELZC441-SO-2-8-1
+            description: Explain automatic transmission operation including torque converter and planetary gear sets
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-8-2
+            code: AELZC441-SO-2-8-2
+            description: Compare transmission technologies (CVT, DCT/DSG, AMT) and their performance characteristics
+            category: Skill
+            bloom_level: Analyze
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-8-3
+            code: AELZC441-SO-2-8-3
+            description: >-
+              Describe differential operation and its role in distributing power to wheels while allowing speed
+              difference
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-8-4
+            code: AELZC441-SO-2-8-4
+            description: Calculate final drive ratio and analyze its impact on vehicle performance and fuel economy
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-2
+          - id: so-2-8-5
+            code: AELZC441-SO-2-8-5
+            description: Compare powertrain configurations (FWD, RWD, AWD, 4WD) and explain their advantages and limitations
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+          - id: so-2-8-6
+            code: AELZC441-SO-2-8-6
+            description: >-
+              Introduce electric powertrains (motor, battery, inverter) and compare torque characteristics with IC
+              engines
+            category: Knowledge
+            bloom_level: Remember
+            session_type: lecture
+            required: true
+            parent_mo: mo-2
+  - number: 3
+    name: Chassis Dynamics & Control
+    description: >-
+      Analyze vehicle dynamics using mathematical models and understand chassis control systems (braking, steering,
+      suspension)
+    duration_sessions: 4
+    module_outcome:
+      id: mo-3
+      code: AELZC441-MO-3
+      description: >-
+        Analyze vehicle dynamics using mathematical models and understand chassis control systems (braking, steering,
+        suspension)
+      category: Skill
+      bloom_level: Analyze
+      parent_co: co-3
+    lessons:
+      - number: 9
+        name: Vehicle Dynamics Fundamentals
+        day: 9
+        session_outcomes:
+          - id: so-3-9-1
+            code: AELZC441-SO-3-9-1
+            description: Identify forces and moments acting on a vehicle during acceleration, braking, and cornering
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+          - id: so-3-9-2
+            code: AELZC441-SO-3-9-2
+            description: Calculate longitudinal acceleration performance using available tractive force and vehicle mass
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-3
+          - id: so-3-9-3
+            code: AELZC441-SO-3-9-3
+            description: Analyze load transfer during acceleration and calculate front/rear axle load distribution changes
+            category: Skill
+            bloom_level: Analyze
+            session_type: numerical
+            required: true
+            parent_mo: mo-3
+          - id: so-3-9-4
+            code: AELZC441-SO-3-9-4
+            description: Analyze load transfer during braking and calculate front/rear axle load distribution changes
+            category: Skill
+            bloom_level: Analyze
+            session_type: numerical
+            required: true
+            parent_mo: mo-3
+          - id: so-3-9-5
+            code: AELZC441-SO-3-9-5
+            description: Calculate lateral load transfer during cornering using centrifugal force and vehicle geometry
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-3
+          - id: so-3-9-6
+            code: AELZC441-SO-3-9-6
+            description: Explain the relationship between weight distribution and vehicle handling characteristics
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+      - number: 10
+        name: Braking Systems
+        day: 10
+        session_outcomes:
+          - id: so-3-10-1
+            code: AELZC441-SO-3-10-1
+            description: Apply friction principles to calculate braking force using tire-road friction and normal load
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-3
+          - id: so-3-10-2
+            code: AELZC441-SO-3-10-2
+            description: Calculate braking deceleration and stopping distance for given braking force and vehicle mass
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-3
+          - id: so-3-10-3
+            code: AELZC441-SO-3-10-3
+            description: >-
+              Describe hydraulic brake system components (master cylinder, brake booster, brake lines, calipers) and
+              operation
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+          - id: so-3-10-4
+            code: AELZC441-SO-3-10-4
+            description: Compare disc brakes and drum brakes and analyze their performance characteristics
+            category: Skill
+            bloom_level: Analyze
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+          - id: so-3-10-5
+            code: AELZC441-SO-3-10-5
+            description: Explain Anti-lock Braking System (ABS) operation and wheel slip control principle
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+          - id: so-3-10-6
+            code: AELZC441-SO-3-10-6
+            description: Describe brake force distribution between front and rear axles and the role of proportioning valve
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+      - number: 11
+        name: Steering Systems
+        day: 11
+        session_outcomes:
+          - id: so-3-11-1
+            code: AELZC441-SO-3-11-1
+            description: >-
+              Explain Ackermann steering geometry and calculate inner and outer wheel steering angles for turn without
+              slip
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-3
+          - id: so-3-11-2
+            code: AELZC441-SO-3-11-2
+            description: Calculate turning radius using wheelbase, steering angle, and Ackermann principle
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-3
+          - id: so-3-11-3
+            code: AELZC441-SO-3-11-3
+            description: >-
+              Describe steering geometry parameters (caster, camber, toe, kingpin inclination) and their effects on
+              handling
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+          - id: so-3-11-4
+            code: AELZC441-SO-3-11-4
+            description: Compare steering mechanisms (rack-and-pinion vs recirculating ball) and calculate steering ratio
+            category: Skill
+            bloom_level: Analyze
+            session_type: numerical
+            required: true
+            parent_mo: mo-3
+          - id: so-3-11-5
+            code: AELZC441-SO-3-11-5
+            description: Explain power steering systems (hydraulic and Electric Power Assisted Steering - EPAS) and their operation
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+          - id: so-3-11-6
+            code: AELZC441-SO-3-11-6
+            description: Describe steering feedback and explain the importance of steering feel for driver control
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+      - number: 12
+        name: Suspension Systems
+        day: 12
+        session_outcomes:
+          - id: so-3-12-1
+            code: AELZC441-SO-3-12-1
+            description: Apply spring-mass-damper system principles to analyze vehicle suspension behavior
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-3
+          - id: so-3-12-2
+            code: AELZC441-SO-3-12-2
+            description: Explain suspension functions (ride comfort, road holding, handling) and the trade-offs between them
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+          - id: so-3-12-3
+            code: AELZC441-SO-3-12-3
+            description: >-
+              Compare suspension types (independent vs dependent: McPherson strut, double wishbone, multi-link, solid
+              axle)
+            category: Skill
+            bloom_level: Analyze
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+          - id: so-3-12-4
+            code: AELZC441-SO-3-12-4
+            description: Describe spring types (coil, leaf, torsion bar, air) and damper operation (twin-tube, monotube)
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+          - id: so-3-12-5
+            code: AELZC441-SO-3-12-5
+            description: Explain anti-roll bar (stabilizer bar) operation and its effect on roll stiffness and cornering behavior
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+          - id: so-3-12-6
+            code: AELZC441-SO-3-12-6
+            description: Describe electronic suspension systems (adaptive damping, air suspension) and their control strategies
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-3
+  - number: 4
+    name: Vehicle Electrical & Control Systems
+    description: Understand vehicle electrical architecture, ECU-based control systems, and vehicle communication networks
+    duration_sessions: 3
+    module_outcome:
+      id: mo-4
+      code: AELZC441-MO-4
+      description: Understand vehicle electrical architecture, ECU-based control systems, and vehicle communication networks
+      category: Knowledge
+      bloom_level: Understand
+      parent_co: co-2
+    lessons:
+      - number: 13
+        name: Electrical Architecture
+        day: 13
+        session_outcomes:
+          - id: so-4-13-1
+            code: AELZC441-SO-4-13-1
+            description: Describe automotive electrical architecture and explain 12V and 24V system configurations
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-13-2
+            code: AELZC441-SO-4-13-2
+            description: >-
+              Explain battery technology (lead-acid, AGM) and analyze battery specifications (Ah capacity, CCA, reserve
+              capacity)
+            category: Skill
+            bloom_level: Analyze
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-13-3
+            code: AELZC441-SO-4-13-3
+            description: >-
+              Describe charging system components (alternator, voltage regulator) and explain voltage regulation and
+              charging control
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-13-4
+            code: AELZC441-SO-4-13-4
+            description: Explain starting system operation (starter motor, solenoid, bendix drive) and cranking power requirements
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-13-5
+            code: AELZC441-SO-4-13-5
+            description: Compare automotive lighting technologies (halogen, HID, LED, matrix LED) and their control systems
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-13-6
+            code: AELZC441-SO-4-13-6
+            description: >-
+              Explain wiring system design, electrical load distribution, fuse and relay protection, and ground
+              distribution
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+      - number: 14
+        name: Vehicle Control Systems
+        day: 14
+        session_outcomes:
+          - id: so-4-14-1
+            code: AELZC441-SO-4-14-1
+            description: Explain the role of Electronic Control Unit (ECU) in modern vehicles and identify major ECU types
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-14-2
+            code: AELZC441-SO-4-14-2
+            description: Describe engine management ECU functions (fuel control, ignition timing, air management, emissions)
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-14-3
+            code: AELZC441-SO-4-14-3
+            description: >-
+              Classify automotive sensors (temperature, pressure, position, speed, mass airflow, oxygen sensor) and
+              explain their operation
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-14-4
+            code: AELZC441-SO-4-14-4
+            description: >-
+              Classify automotive actuators (fuel injectors, throttle valve, VVT solenoid, EGR valve) and explain their
+              control
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-14-5
+            code: AELZC441-SO-4-14-5
+            description: >-
+              Explain closed-loop control principle in engine management (lambda/oxygen sensor feedback for air-fuel
+              ratio control)
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-14-6
+            code: AELZC441-SO-4-14-6
+            description: Describe transmission control unit (TCU) operation and automatic transmission shift control strategies
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+      - number: 15
+        name: Vehicle Communication Networks
+        day: 15
+        session_outcomes:
+          - id: so-4-15-1
+            code: AELZC441-SO-4-15-1
+            description: >-
+              Explain the need for automotive communication networks and compare point-to-point vs networked
+              architectures
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-15-2
+            code: AELZC441-SO-4-15-2
+            description: Describe CAN (Controller Area Network) bus architecture, protocol layers, and message frame structure
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-15-3
+            code: AELZC441-SO-4-15-3
+            description: Explain CAN bus arbitration mechanism, error detection, and fault confinement
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-15-4
+            code: AELZC441-SO-4-15-4
+            description: Describe LIN (Local Interconnect Network) bus operation and its application in body electronics
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-15-5
+            code: AELZC441-SO-4-15-5
+            description: Explain OBD-II (On-Board Diagnostics) standards, diagnostic trouble codes (DTC), and emission diagnostics
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+          - id: so-4-15-6
+            code: AELZC441-SO-4-15-6
+            description: Analyze network topology design and calculate CAN bus load for given message traffic
+            category: Skill
+            bloom_level: Analyze
+            session_type: lecture
+            required: true
+            parent_mo: mo-4
+  - number: 5
+    name: Vehicle Architecture & Comfort
+    description: Understand complete vehicle architecture, body construction, HVAC systems, and passive safety systems
+    duration_sessions: 3
+    module_outcome:
+      id: mo-5
+      code: AELZC441-MO-5
+      description: Understand complete vehicle architecture, body construction, HVAC systems, and passive safety systems
+      category: Knowledge
+      bloom_level: Understand
+      parent_co: co-1
+    lessons:
+      - number: 16
+        name: Chassis & Body Architecture
+        day: 16
+        session_outcomes:
+          - id: so-5-16-1
+            code: AELZC441-SO-5-16-1
+            description: >-
+              Identify and classify different types of automobiles based on design (sedan, SUV, hatchback), application,
+              and fuel type
+            category: Knowledge
+            bloom_level: Remember
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-5-16-2
+            code: AELZC441-SO-5-16-2
+            description: >-
+              Compare chassis types (monocoque/unibody, ladder frame, space frame) and analyze their applications and
+              advantages
+            category: Skill
+            bloom_level: Analyze
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-5-16-3
+            code: AELZC441-SO-5-16-3
+            description: >-
+              Describe body construction methods and material selection (steel, aluminum, composites) for vehicle
+              structures
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-5-16-4
+            code: AELZC441-SO-5-16-4
+            description: >-
+              Calculate weight distribution (front/rear, left/right) and analyze its impact on vehicle performance and
+              handling
+            category: Skill
+            bloom_level: Apply
+            session_type: numerical
+            required: true
+            parent_mo: mo-5
+          - id: so-5-16-5
+            code: AELZC441-SO-5-16-5
+            description: Explain crash structures and crumple zones and their role in energy absorption and passenger safety
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-5-16-6
+            code: AELZC441-SO-5-16-6
+            description: Describe the complete vehicle architecture and identify major subsystems and their physical locations
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+      - number: 17
+        name: HVAC Systems
+        day: 17
+        session_outcomes:
+          - id: so-5-17-1
+            code: AELZC441-SO-5-17-1
+            description: Explain HVAC (Heating, Ventilation, Air Conditioning) system fundamentals and cabin comfort requirements
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-5-17-2
+            code: AELZC441-SO-5-17-2
+            description: >-
+              Describe the refrigeration thermodynamic cycle (compression, condensation, expansion, evaporation) with
+              P-h diagram
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-5-17-3
+            code: AELZC441-SO-5-17-3
+            description: >-
+              Identify HVAC components (compressor, condenser, evaporator, expansion valve, refrigerant) and explain
+              their operation
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-5-17-4
+            code: AELZC441-SO-5-17-4
+            description: >-
+              Compare compressor types (fixed displacement, variable displacement, electric compressor) and their
+              control mechanisms
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-5-17-5
+            code: AELZC441-SO-5-17-5
+            description: Explain heating system operation and its integration with engine cooling system (heater core)
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-5-17-6
+            code: AELZC441-SO-5-17-6
+            description: >-
+              Describe automatic climate control systems, multi-zone temperature management, and cabin air quality
+              control
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+      - number: 18
+        name: Passive Safety Systems
+        day: 18
+        session_outcomes:
+          - id: so-6-18-1
+            code: AELZC441-SO-6-18-1
+            description: >-
+              Explain crash safety principles and occupant protection strategies (crumple zones, safety cage, load
+              paths)
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-6-18-2
+            code: AELZC441-SO-6-18-2
+            description: >-
+              Describe seatbelt systems (3-point, pretensioners, load limiters) and explain their operation and
+              effectiveness
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-6-18-3
+            code: AELZC441-SO-6-18-3
+            description: Explain airbag systems (frontal, side, curtain, knee airbags) and describe deployment strategies
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-6-18-4
+            code: AELZC441-SO-6-18-4
+            description: >-
+              Describe airbag control unit (ACU) operation, crash sensors (accelerometers), and deployment decision
+              algorithms
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-6-18-5
+            code: AELZC441-SO-6-18-5
+            description: Explain pedestrian protection systems (active hood lift, exterior airbags) and their activation mechanisms
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+          - id: so-6-18-6
+            code: AELZC441-SO-6-18-6
+            description: Describe vehicle safety testing standards (NCAP, Euro NCAP, IIHS) and crash test evaluation criteria
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-5
+  - number: 6
+    name: Active Safety & Emerging Technologies
+    description: Understand active safety systems, introduction to ADAS, and emerging vehicle technologies
+    duration_sessions: 2
+    module_outcome:
+      id: mo-6
+      code: AELZC441-MO-6
+      description: Understand active safety systems, introduction to ADAS, and emerging vehicle technologies
+      category: Knowledge
+      bloom_level: Understand
+      parent_co: co-2
+    lessons:
+      - number: 19
+        name: Active Safety & Vehicle Stability
+        day: 19
+        session_outcomes:
+          - id: so-6-19-1
+            code: AELZC441-SO-6-19-1
+            description: >-
+              Explain Electronic Stability Control (ESC) operation and yaw moment control during cornering and emergency
+              maneuvers
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-6
+          - id: so-6-19-2
+            code: AELZC441-SO-6-19-2
+            description: Describe how ESC uses individual wheel braking to generate corrective yaw moment and stabilize the vehicle
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-6
+          - id: so-6-19-3
+            code: AELZC441-SO-6-19-3
+            description: >-
+              Explain Traction Control System (TCS) operation and wheel slip control during acceleration on low-friction
+              surfaces
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-6
+          - id: so-6-19-4
+            code: AELZC441-SO-6-19-4
+            description: Describe the integration of ESC, TCS, and ABS and explain how they work together for vehicle stability
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-6
+          - id: so-6-19-5
+            code: AELZC441-SO-6-19-5
+            description: Explain understeer and oversteer conditions and how ESC detects and corrects these behaviors
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-6
+          - id: so-6-19-6
+            code: AELZC441-SO-6-19-6
+            description: Describe Hill Start Assist (HSA) and Hill Descent Control (HDC) systems and their operation
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-6
+      - number: 20
+        name: Introduction to ADAS & Future Mobility
+        day: 20
+        session_outcomes:
+          - id: so-6-20-1
+            code: AELZC441-SO-6-20-1
+            description: >-
+              Introduce Advanced Driver Assistance Systems (ADAS) and classify common features (ACC, LKA, AEB, BSD) -
+              overview only
+            category: Knowledge
+            bloom_level: Remember
+            session_type: lecture
+            required: true
+            parent_mo: mo-6
+          - id: so-6-20-2
+            code: AELZC441-SO-6-20-2
+            description: >-
+              Describe Adaptive Cruise Control (ACC) and Lane Keeping Assist (LKA) basic operation principles - brief
+              introduction
+            category: Knowledge
+            bloom_level: Remember
+            session_type: lecture
+            required: true
+            parent_mo: mo-6
+          - id: so-6-20-3
+            code: AELZC441-SO-6-20-3
+            description: >-
+              Explain Automatic Emergency Braking (AEB) and Blind Spot Detection (BSD) functionality - brief
+              introduction
+            category: Knowledge
+            bloom_level: Remember
+            session_type: lecture
+            required: true
+            parent_mo: mo-6
+          - id: so-6-20-4
+            code: AELZC441-SO-6-20-4
+            description: >-
+              Identify sensor technologies for ADAS (camera, radar, ultrasonic, LiDAR) and their basic working
+              principles
+            category: Knowledge
+            bloom_level: Remember
+            session_type: lecture
+            required: true
+            parent_mo: mo-6
+          - id: so-6-20-5
+            code: AELZC441-SO-6-20-5
+            description: >-
+              Explain SAE levels of vehicle autonomy (L0 to L5) and describe the current state of autonomous driving
+              technology
+            category: Knowledge
+            bloom_level: Understand
+            session_type: lecture
+            required: true
+            parent_mo: mo-6
+          - id: so-6-20-6
+            code: AELZC441-SO-6-20-6
+            description: >-
+              Introduce emerging vehicle technologies (electric vehicles, connected vehicles, V2X communication) - brief
+              overview
+            category: Knowledge
+            bloom_level: Remember
+            session_type: lecture
+            required: true
+            parent_mo: mo-6
+summary:
+  total_course_outcomes: 4
+  total_module_outcomes: 6
+  total_session_outcomes: 120
+  total_sessions: 20
+  bloom_distribution:
+    remember: 10
+    understand: 68
+    apply: 34
+    analyze: 8
+    evaluate: 0
+    create: 0
+  category_distribution:
+    knowledge: 76
+    skill: 44
+    attitude: 0
+  session_type_distribution:
+    lecture: 88
+    numerical: 32
+  pedagogical_notes: |
+    REVISED structure emphasizes hands-on problem-solving (28.3% Apply level)
+    with strong foundation in physics and mathematics (Sessions 1-3, 9-12).
+    Appropriate for students with no automotive/mechanical background.
+    Progressive complexity: Easy physics → System understanding → Analysis → Integration.

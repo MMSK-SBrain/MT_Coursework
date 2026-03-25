@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 1,
+  "week": 1,
+  "session_title": "The Car — From Nose to Tail",
+  "questions": [
+    {
+      "id": "D01-Q01",
+      "question": "How many major systems make up a modern vehicle according to the course framework?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "8",
+        "B": "6",
+        "C": "10",
+        "D": "5"
+      },
+      "correct_answer": "A",
+      "explanation": "A modern vehicle is composed of 8 major systems: engine, transmission, electrical/electronics, suspension, steering, brakes, HVAC, and body/interior. Six is too few and would omit critical systems like HVAC and steering.",
+      "topic": "Vehicle systems overview",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D01-Q02",
+      "question": "How many characters are contained in a Vehicle Identification Number (VIN)?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "13",
+        "B": "15",
+        "C": "17",
+        "D": "20"
+      },
+      "correct_answer": "C",
+      "explanation": "A VIN is a unique 17-character code assigned to every vehicle. Confusing it with 13 characters may stem from older serial number systems that predated the standardised 17-character VIN format.",
+      "topic": "Vehicle Identification Number",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D01-Q03",
+      "question": "What is the primary function of the differential in a vehicle's transmission system?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "It converts rotary motion into linear motion",
+        "B": "It provides multiple gear ratios for different speeds",
+        "C": "It connects and disconnects the engine from the gearbox",
+        "D": "It splits drive power between the left and right wheels"
+      },
+      "correct_answer": "D",
+      "explanation": "The differential splits power between the left and right wheels, allowing them to rotate at different speeds during turns. Option C describes the clutch or torque converter, not the differential.",
+      "topic": "Transmission system",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D01-Q04",
+      "question": "Which term best describes the shift from purely mechanical vehicles to vehicles controlled by electronic systems and software?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Digital revolution",
+        "B": "Mechatronic shift",
+        "C": "Automation transition",
+        "D": "Electrification upgrade"
+      },
+      "correct_answer": "B",
+      "explanation": "The mechatronic shift describes the evolution from mechanical components to mechanical parts controlled by electronics and software. 'Electrification upgrade' specifically refers to powertrain electrification (hybrids/EVs), which is only one aspect of the broader mechatronic trend.",
+      "topic": "Mechatronic shift",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D01-Q05",
+      "question": "Positions 1 through 3 of a VIN represent which section?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Vehicle Descriptor Section (VDS)",
+        "B": "Sequential production number",
+        "C": "Model year and assembly plant",
+        "D": "World Manufacturer Identifier (WMI)"
+      },
+      "correct_answer": "D",
+      "explanation": "Positions 1-3 are the World Manufacturer Identifier (WMI), which encodes the country of origin and manufacturer. The Vehicle Descriptor Section (VDS) occupies positions 4-8 and describes the model, body type, and engine type.",
+      "topic": "VIN decoding",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D01-Q06",
+      "question": "A technician is looking up a replacement brake caliper for a customer's vehicle. Two vehicles of the same model and year are in the workshop, but the parts catalogue shows different caliper part numbers for each. What is the most likely reason for this difference?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Brake calipers are universal across all trim levels",
+        "B": "The manufacturer changed suppliers mid-production but the parts are interchangeable",
+        "C": "One vehicle has a sport package option that uses a larger caliper",
+        "D": "The parts catalogue contains an error"
+      },
+      "correct_answer": "C",
+      "explanation": "Options and trim levels (such as a sport package) frequently change component specifications including brake caliper size. This is precisely why technicians must enter the VIN into the electronic parts catalogue rather than relying on model name alone. The assumption that parts are universal across trim levels is a common and costly mistake.",
+      "topic": "Parts catalogues and VIN-based lookup",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D01-Q07",
+      "question": "A customer reports that their vehicle pulls to one side during braking and the front tyres show uneven wear on the inner edges. Which combination of vehicle systems is most likely involved?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Brakes and suspension",
+        "B": "Engine and transmission",
+        "C": "HVAC and electrical",
+        "D": "Steering and body"
+      },
+      "correct_answer": "A",
+      "explanation": "Pulling during braking points to a braking system fault (e.g., sticking caliper), while uneven inner-edge tyre wear indicates a suspension geometry issue (e.g., negative camber). This illustrates how multiple systems intersect at the wheel hub area, which was a key observation during the vehicle walkthrough.",
+      "topic": "Vehicle systems interaction",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D01-Q08",
+      "question": "A technician finds that the VIN stamped on the engine bay of a used vehicle does not match the VIN on the driver's door jamb sticker. What should the technician suspect?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "A normal manufacturing variation between production stations",
+        "B": "Possible accident repair with parts from a different vehicle, clocking, or theft",
+        "C": "The door jamb sticker was replaced during a recall",
+        "D": "European and North American VIN standards differ and allow two VINs"
+      },
+      "correct_answer": "B",
+      "explanation": "All VIN locations on a vehicle must match. A mismatch is a red flag indicating possible major accident repair using panels from another vehicle, odometer fraud (clocking), or a stolen vehicle. VIN standards do not allow different VINs at different locations on the same vehicle.",
+      "topic": "VIN locations and integrity",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D01-Q09",
+      "question": "A modern vehicle has over 100 ECUs communicating via a network. Which network protocol enables these ECUs to exchange data with each other?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Bluetooth Low Energy",
+        "B": "Wi-Fi Direct",
+        "C": "USB serial protocol",
+        "D": "CAN bus"
+      },
+      "correct_answer": "D",
+      "explanation": "CAN bus (Controller Area Network) is the standard in-vehicle communication network over which ECUs exchange data. Bluetooth and Wi-Fi are wireless protocols used for external device connectivity, not for real-time internal ECU communication.",
+      "topic": "Electrical/electronics system",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D01-Q10",
+      "question": "During a live vehicle walkthrough, a trainee removes a front wheel and observes a rubber boot on the driveshaft, a brake caliper, a lower control arm, and a tie rod end all in the same area. This observation best demonstrates which key automotive concept?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "That front-wheel-drive vehicles are more complex than rear-wheel-drive",
+        "B": "That all components in this area share the same service interval",
+        "C": "That multiple vehicle systems intersect at a single location, requiring broad system knowledge",
+        "D": "That the front axle contains more components than the rear axle"
+      },
+      "correct_answer": "C",
+      "explanation": "The wheel hub area is where transmission (CV boot), braking (caliper), suspension (control arm), and steering (tie rod) systems all converge. This demonstrates why technicians must understand all vehicle systems rather than specialising in just one. The presence of multiple system components does not imply they share service intervals.",
+      "topic": "Vehicle walkthrough — systems intersection at wheel hub",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

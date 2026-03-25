@@ -1,0 +1,158 @@
+{
+  "course_code": "TUV-AST",
+  "day": 52,
+  "week": 11,
+  "session_title": "Harness Rebuild Exercise",
+  "questions": [
+    {
+      "id": "D52-Q01",
+      "question": "Why should a technician study the pin-out diagram completely before cutting any wire during a harness build?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "To calculate the total cost of materials",
+        "B": "To understand every circuit's routing, gauge, colour, and pin position, preventing cutting errors that waste time and materials",
+        "C": "To impress the instructor with diagram reading speed",
+        "D": "To determine which connector to install first"
+      },
+      "correct_answer": "B",
+      "explanation": "Five minutes of planning prevents thirty minutes of rework. Understanding every circuit before cutting ensures correct wire lengths (including service loops), correct gauge selection, and correct routing through branches and grommets. A wire cut to the wrong length or wrong gauge must be discarded and re-cut.",
+      "topic": "Build planning importance",
+      "bloom_level": "Understand"
+    },
+    {
+      "id": "D52-Q02",
+      "question": "When cutting wires for a harness build, how much extra length (service loop) should be added to the specified length?",
+      "difficulty": "easy",
+      "choices": {
+        "A": "No extra length; cut to exact specification",
+        "B": "Approximately 50 mm",
+        "C": "200 mm minimum",
+        "D": "Double the specified length"
+      },
+      "correct_answer": "B",
+      "explanation": "A 50 mm service loop is added to each wire's specified length. This extra length provides margin for crimping (some wire is consumed by the strip and crimp process), allows for one rework if a crimp fails, and provides slight routing flexibility during installation. Too much excess creates a messy harness; too little leaves no margin for error.",
+      "topic": "Service loop allowance",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D52-Q03",
+      "question": "What is the correct technique for wrapping loom tape on a harness trunk?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Wrap tightly with full overlap to maximise coverage",
+        "B": "Spiral wrap at approximately 45 degrees with half-overlap, starting and ending with anchor wraps",
+        "C": "Wrap loosely in a random pattern to allow airflow",
+        "D": "Apply strips of tape at 50 mm intervals rather than continuous wrapping"
+      },
+      "correct_answer": "B",
+      "explanation": "The half-overlap spiral wrap at 45 degrees is the standard technique. Each wrap covers half of the previous wrap, creating a double layer of protection throughout. Anchor wraps (two full overlaps) at the start and end prevent the tape from unwinding. This method provides consistent coverage, correct tension, and a professional appearance matching factory standards.",
+      "topic": "Loom tape wrapping technique",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D52-Q04",
+      "question": "When crimping a terminal onto a wire, what must be visible through the terminal inspection window?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "The wire insulation jacket",
+        "B": "The bare copper conductor strands",
+        "C": "The crimp barrel edge",
+        "D": "Nothing; the window should be covered by the crimp"
+      },
+      "correct_answer": "B",
+      "explanation": "The conductor strands must be visible through the inspection window. This confirms the stripped wire was inserted to the correct depth, ensuring full conductor contact within the crimp barrel. If insulation is visible, the conductor did not reach far enough. If nothing is visible, the strip length was too short. The inspection window is a quality verification feature built into terminal design.",
+      "topic": "Crimp quality verification",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D52-Q05",
+      "question": "After assembling all terminals into connector housings, what two tests must be performed on every terminal?",
+      "difficulty": "medium",
+      "choices": {
+        "A": "Voltage test and resistance test",
+        "B": "Tug test (mechanical retention) and continuity test (electrical connection)",
+        "C": "Insulation resistance test and dielectric test",
+        "D": "Visual inspection and colour verification"
+      },
+      "correct_answer": "B",
+      "explanation": "Every terminal requires a tug test (firm pull to verify the lock tab has engaged and the terminal will not back out under vibration) and a continuity test (multimeter probe from pin to wire end to confirm electrical connection through the crimp). A terminal that fails either test must be extracted and re-done.",
+      "topic": "Terminal verification tests",
+      "bloom_level": "Remember"
+    },
+    {
+      "id": "D52-Q06",
+      "question": "A technician is building a harness and strips the wire insulation using the wrong slot on the wire stripper, nicking several copper conductor strands. They decide to proceed with crimping since most strands are intact. What is the risk?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "No risk; a few nicked strands do not affect the connection",
+        "B": "The nicked strands reduce the conductor cross-section, increasing resistance, and create stress concentration points where strands will break under vibration, eventually causing an open circuit",
+        "C": "The crimp will be stronger because the damaged strands compress more easily",
+        "D": "The terminal inspection window will show an incorrect reading"
+      },
+      "correct_answer": "B",
+      "explanation": "Nicked conductor strands have reduced cross-sectional area (increasing resistance and reducing current capacity) and weakened points that act as stress concentrators. Under vehicle vibration, these weakened strands break first, progressively reducing the conductor until an open circuit develops. The correct action is to cut back 10 mm past the damage and re-strip with the correct stripper slot.",
+      "topic": "Conductor damage consequences",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D52-Q07",
+      "question": "During harness testing, a technician finds continuity between Pin A1 and Pin A2 in the same connector (a short circuit). What are the most likely causes, and how should they investigate?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The multimeter is faulty; test with a different meter",
+        "B": "Stray conductor strands from one terminal's crimp are bridging to the adjacent terminal cavity, or the wires are touching through a gap in the tape wrap",
+        "C": "The connector housing is internally shorted due to a manufacturing defect",
+        "D": "The wire colours were mixed up during the build"
+      },
+      "correct_answer": "B",
+      "explanation": "A short between adjacent pins in a newly built harness is most commonly caused by stray conductor strands escaping the crimp barrel and bridging to the neighboring terminal, or by bare conductors touching through a gap in the tape wrapping. Investigation involves extracting both terminals to inspect for stray strands, and examining the tape wrap for gaps where stripped or damaged insulation might allow conductor contact.",
+      "topic": "Short circuit diagnosis in harness build",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D52-Q08",
+      "question": "A technician completes a harness build and all circuits pass continuity testing. However, during the tug test, one terminal pulls out of the connector housing. They push it back in and hear a click. Is this acceptable?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "Yes, the click confirms the lock tab has re-engaged",
+        "B": "No; the terminal should be extracted and the lock tab inspected for deformation, as a terminal that failed the initial tug test may have a weakened lock tab that will fail again under vibration",
+        "C": "Yes, as long as the secondary lock is engaged",
+        "D": "No; the entire connector housing must be replaced"
+      },
+      "correct_answer": "B",
+      "explanation": "A terminal that fails the tug test was either not fully inserted initially or has a defective lock tab. Simply pushing it back until it clicks does not address the root cause. The tab may have been deformed during the initial insertion attempt. The terminal should be extracted with the release tool, the lock tab inspected for bending or fatigue, and replaced if there is any doubt. A terminal that backs out in a vehicle causes an intermittent fault that is extremely time-consuming to diagnose.",
+      "topic": "Failed tug test investigation",
+      "bloom_level": "Apply"
+    },
+    {
+      "id": "D52-Q09",
+      "question": "A technician builds a harness section where the specification calls for PVC tape in the engine bay section and fleece tape in the cabin section, with a grommet at the transition point. They use fleece tape throughout because they prefer its handling characteristics. What problem will this create?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "No problem; fleece tape provides better NVH performance everywhere",
+        "B": "Fleece tape is not waterproof or chemical-resistant, so the engine bay section will absorb moisture and oil, degrading the tape and leaving wires unprotected against heat and chafing in a hostile environment",
+        "C": "The fleece tape will melt on the engine bay side",
+        "D": "The grommet will not seal properly against fleece tape"
+      },
+      "correct_answer": "B",
+      "explanation": "Fleece tape is designed for the dry, controlled cabin environment. In the engine bay, it absorbs moisture, oil, and coolant, losing its adhesion and protective qualities. PVC tape is waterproof, chemical-resistant, and rated for higher temperatures (-40 to +105 degrees Celsius). Using the wrong tape type in the engine bay leaves wires exposed to heat, chemical attack, and chafing in the harshest environment of the vehicle.",
+      "topic": "Tape type selection consequences",
+      "bloom_level": "Analyze"
+    },
+    {
+      "id": "D52-Q10",
+      "question": "A completed harness passes all electrical tests but the instructor notices the tape wrapping has several gaps where bare wires are visible between wrap turns. The technician argues that the harness works electrically. Why is this still a failure?",
+      "difficulty": "hard",
+      "choices": {
+        "A": "The gaps are only cosmetic and do not affect function",
+        "B": "Gaps in tape wrapping expose wires to chafing against adjacent components, allow moisture to reach conductors, and provide no vibration damping at those points, creating future failure locations even though the harness works today",
+        "C": "The gaps mean the technician used too little tape, increasing material cost on future jobs",
+        "D": "The instructor is being overly strict about cosmetic appearance"
+      },
+      "correct_answer": "B",
+      "explanation": "Tape wrapping serves as the primary protection against chafing, moisture, and vibration. Gaps leave sections of wire with zero protection. Over months and years of operation, these exposed sections will contact adjacent components, wear through insulation, absorb moisture, and develop faults. The harness works today but is guaranteed to fail in the future. The craftsman's standard is factory-quality wrapping with no gaps.",
+      "topic": "Tape wrap quality importance",
+      "bloom_level": "Analyze"
+    }
+  ]
+}

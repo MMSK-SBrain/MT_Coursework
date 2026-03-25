@@ -1,0 +1,124 @@
+# Test Configuration for Student Handout Generator
+# This is a complete test configuration with all options
+
+global:
+  output_directory: "./test_output"
+  archive_old_versions: true
+  page_size: "A4"
+  fonts:
+    body: "Inter"
+    heading: "Inter"
+    code: "JetBrains Mono"
+
+# Dark Theme Branding (GitHub Dark theme colors)
+branding:
+  logo_path: "./assets/logo.png"
+  theme: "dark"
+  colors:
+    # Background layers (darkest to lightest)
+    background_primary: "#0D1117"
+    background_secondary: "#161B22"
+    background_tertiary: "#21262D"
+    # Text colors (highest to lowest contrast)
+    text_primary: "#E6EDF3"
+    text_secondary: "#8B949E"
+    text_muted: "#484F58"
+    # Accent colors
+    accent_blue: "#58A6FF"
+    accent_green: "#3FB950"
+    accent_orange: "#D29922"
+    accent_red: "#F85149"
+    accent_purple: "#A371F7"
+    # Borders
+    border_default: "#30363D"
+
+# Question Generation Configuration
+questions:
+  enabled: true
+  questions_per_section: 5
+  require_review: true  # Cannot be disabled - mandatory review
+  types:
+    - multiple_choice
+    - true_false
+    - short_answer
+    - reflection
+    - application
+
+  # AI Generation Settings
+  ai_generation:
+    enabled: true
+    provider: "anthropic"
+    api_key_env_var: "ANTHROPIC_API_KEY"
+    model: "claude-sonnet-4-20250514"
+    max_retries: 3
+    timeout_seconds: 60
+
+  # Question Bank Directories
+  staging_directory: "./test_question_banks/staging"
+  approved_directory: "./test_question_banks/approved"
+  rejected_directory: "./test_question_banks/rejected"
+
+# Content Transformation Rules
+content:
+  exclude_patterns:
+    - "## Video Production Notes"
+    - "### For Instructors"
+    - "<!-- INSTRUCTOR ONLY -->"
+  include_toc: true
+  include_learning_outcomes: true
+  include_assessments: true
+
+# Image Processing Configuration
+images:
+  base_directory: "./test_images"
+  max_width: 500  # pixels (optimized for dark theme)
+  placeholder_on_missing: true
+  placeholder_color: "#21262D"
+  formats_supported:
+    - png
+    - jpg
+    - jpeg
+    - svg
+
+# PDF Output Configuration
+pdf:
+  margins:
+    top: "20mm"
+    bottom: "20mm"
+    left: "25mm"
+    right: "25mm"
+
+  header:
+    enabled: true
+    format: "{module_title}"
+    color: "#8B949E"
+
+  footer:
+    enabled: true
+    format: "Page {page_number}"
+    color: "#484F58"
+
+  page_break_before_sections: true
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "[{timestamp}] [{level}] [{module}] {message}"
+  file: "./tests/logs/handout_generation.log"
+  console: true
+  max_file_size: "10MB"
+  backup_count: 3
+
+# Module-Specific Overrides (optional)
+modules:
+  module-0:
+    questions:
+      questions_per_section: 5  # Lighter for intro module
+
+  test-module-0:
+    questions:
+      questions_per_section: 5
+      types:
+        - multiple_choice
+        - true_false
+        - reflection
