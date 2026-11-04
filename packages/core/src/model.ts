@@ -43,7 +43,7 @@ export const CourseBrief = z.object({
   level: z.enum(["school", "diploma", "ug", "pg", "professional", "vocational"]),
   contactHours: z.number().positive(),
   industry: z.string(), // e.g. "Automotive OEMs and Tier-1 suppliers"
-  markets: z.array(z.string()).min(1), // e.g. ["India", "Germany"]
+  markets: z.array(z.string()).default([]), // e.g. ["India", "Germany"]; empty until the teacher sets it (needed before the job search)
   textbooks: z.array(z.string()).default([]),
   notes: z.string().default(""),
 });
@@ -54,7 +54,7 @@ export const Module = z.object({
   title: z.string(),
   hours: z.number().nonnegative(),
   topics: z.array(z.string()).default([]),
-  foundIn: z.enum(["handout", "moduleSheet", "both", "fit", "user"]),
+  foundIn: z.enum(["handout", "moduleSheet", "both", "fit", "user", "import"]), // "import": taken from existing course files
   note: z.string().optional(), // e.g. "Not in handout"
 });
 export type Module = z.infer<typeof Module>;
@@ -101,7 +101,7 @@ export const Outcome = z.object({
   id: Id, // "LO1"
   text: z.string(),
   bloom: BloomLevel,
-  moduleIds: z.array(Id).min(1),
+  moduleIds: z.array(Id).default([]), // empty = course-level outcome not yet mapped to a module (flagged by unmappedOutcomes)
   objectiveIds: z.array(Id).default([]),
   roleIds: z.array(Id).default([]),
   origin: z.enum(["handout", "fit", "new", "user"]),

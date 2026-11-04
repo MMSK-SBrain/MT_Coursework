@@ -16,7 +16,7 @@ export function importWeeks(ctx: ImportContext): ImportResult {
   const fws = frameworkFiles(dir, "lecture-frameworks", "DAY");
 
   const modules: Module[] = y.weeks.map((w) => ({
-    id: `M${w.number}`, title: w.title, hours: round1(w.days.length * 3), topics: w.days.map((d) => d.theme), foundIn: "user",
+    id: `M${w.number}`, title: w.title, hours: round1(w.days.length * 3), topics: w.days.map((d) => d.theme), foundIn: "import",
     note: [w.subtitle, w.stage ? `Stage: ${w.stage}.` : "", w.story].filter(Boolean).join(" "),
   }));
   notes.push("Modules are the 11 weeks of course-data.yaml (weeks 9-11 are the optional extension); 3 h per day. foundIn is \"user\" (no handout or module sheet exists).");
@@ -50,7 +50,7 @@ export function importWeeks(ctx: ImportContext): ImportResult {
 
   gaps.push("No course objectives (CO) exist anywhere in the sources; objectives is empty. Outcomes have no objectiveIds.");
   gaps.push("No handout or module sheet: program-level outcomes are absent. The 55 question banks (question-banks/DAY-nn-questions.json) and exam-weight marks per week are outside the Course model; not imported.");
-  gaps.push("Audience, industry and market are not stated as fields: audience from the design philosophy, industry derived from the certification name, markets defaulted to [\"India\"] (core requires at least one).");
+  gaps.push("Audience, industry and market are not stated as fields: audience from the design philosophy, industry derived from the certification name, markets not set (the teacher sets them before the job search).");
 
   const course = Course.parse({
     id: slugOf(dir), slug: slugOf(dir),
@@ -58,7 +58,7 @@ export function importWeeks(ctx: ImportContext): ImportResult {
       title: y.title ?? "TUV SUD Automotive Service Technician", code: y.code,
       audience: "Learners with zero automotive background, taken to TUV SUD certification readiness",
       level: "vocational", contactHours: y.totalHours ?? round1(sessions.reduce((a, s) => a + s.minutes, 0) / 60),
-      industry: "Automotive service and repair (workshop technicians)", markets: ["India"], textbooks: [],
+      industry: "Automotive service and repair (workshop technicians)", markets: [], textbooks: [],
       notes: [y.description, y.programDuration ? `Programme: ${y.programDuration}.` : "", y.format ? `Format: ${y.format}.` : "", y.certification ? `Certification: ${y.certification}.` : "", y.examFormat ? `Exam: ${y.examFormat}.` : "", `Version ${y.version} (${y.date}).`].filter(Boolean).join(" "),
     },
     sources: [{ id: "src-yaml", kind: "other", filename: yamlFile.file, mime: "application/yaml", storageKey: `courses/${slugOf(dir)}/${yamlFile.file}` }],

@@ -20,7 +20,7 @@ export function importVehicles(ctx: ImportContext): ImportResult {
 
   const modules: Module[] = y.modules.map((m) => ({
     id: `M${m.number}`, title: m.name, hours: round1(m.lessons.length * 2),
-    topics: m.lessons.map((l) => l.name), foundIn: "user",
+    topics: m.lessons.map((l) => l.name), foundIn: "import",
     note: [m.description, m.moduleOutcome ? `Module outcome ${m.moduleOutcome.id.toUpperCase()}: ${m.moduleOutcome.description}` : ""].filter(Boolean).join(" "),
   }));
   notes.push("Modules come from course-data.yaml; the module outcomes (MO) have no slot in the model and are kept in each module's note. foundIn is \"user\".");
@@ -54,7 +54,7 @@ export function importVehicles(ctx: ImportContext): ImportResult {
 
   gaps.push("No textbooks or reference books are listed in the yaml, requirements.md or README; brief.textbooks is empty.");
   gaps.push("No BITS handout .txt exists for this course; code, credits and audience come from the yaml and requirements.md.");
-  gaps.push("Markets are not stated in the sources: defaulted to [\"India\"] (core requires at least one).");
+  gaps.push("Markets are not stated in the sources: not set (the teacher sets them before the job search).");
   gaps.push("Module hours are derived as 2 h per session (the yaml gives session counts, not hours).");
 
   const course = Course.parse({
@@ -63,7 +63,7 @@ export function importVehicles(ctx: ImportContext): ImportResult {
       title: y.name ?? "Automotive Vehicles", code: y.code,
       audience: [field(req, "Primary Learners"), field(req, "Background")].filter(Boolean).map((s) => plain(s!)).join(" - ") || y.institution || "M.Tech. Automotive Electronics (BITS Pilani WILP)",
       level: "pg", contactHours: round1(sessions.length * 2),
-      industry: field(req, "Industry/Domain") ?? "Automotive engineering", markets: ["India"], textbooks: [],
+      industry: field(req, "Industry/Domain") ?? "Automotive engineering", markets: [], textbooks: [],
       notes: [y.description, y.institution ? `Institution: ${y.institution}.` : "", `Credits: ${y.credits}.`, `Session length: ${y.sessionDuration}.`].filter(Boolean).join(" "),
     },
     sources: [{ id: "src-yaml", kind: "other", filename: yamlFile.file, mime: "application/yaml", storageKey: `courses/${slugOf(dir)}/${yamlFile.file}` }],

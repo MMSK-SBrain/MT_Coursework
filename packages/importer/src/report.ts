@@ -1,4 +1,4 @@
-import { hourBlockProblems, outcomeVerbProblem, uncoveredOutcomes, type Course } from "@cg/core";
+import { hourBlockProblems, outcomeVerbProblem, uncoveredOutcomes, unmappedOutcomes, type Course } from "@cg/core";
 import type { ImportResult } from "./courses/common.js";
 
 export interface RuleWarnings {
@@ -48,6 +48,8 @@ export function renderReport(r: ImportResult, w: RuleWarnings): string {
   L.push(`- Hour blocks (\`hourBlockProblems\`): ${w.sessionsWithBlocks} sessions have blocks; ${w.sessionsClean} are clean, ${w.hours.length} have problems. Blocks are placed exactly as the framework states its minutes, so a phase list that does not add up to the session length shows here.`);
   for (const h of w.hours.slice(0, MAX)) L.push(`  - ${h.session}: ${h.problems[0]}${h.problems.length > 1 ? ` (+${h.problems.length - 1} more)` : ""}`);
   if (w.hours.length > MAX) L.push(`  - ... and ${w.hours.length - MAX} more sessions`);
+  const unmapped = unmappedOutcomes(c);
+  L.push(`- Mapping (\`unmappedOutcomes\`): ${unmapped.length ? `${unmapped.length} outcome(s) not mapped to a module: ${unmapped.join(", ")}` : "every outcome is mapped to a module"}.`);
   L.push(`- Coverage (\`uncoveredOutcomes\`): ${w.uncovered.length ? `${w.uncovered.length} outcome(s) taught by no session: ${w.uncovered.slice(0, 20).join(", ")}` : "every outcome is taught by at least one session"}.`, "");
   return L.join("\n");
 }

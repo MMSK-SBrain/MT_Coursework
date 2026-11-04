@@ -41,8 +41,8 @@ export const BLOOM_ORDER: BloomLevel[] = ["remember", "understand", "apply", "an
 export const BLOOM_VERBS: Record<BloomLevel, string[]> = {
   remember: ["define", "list", "name", "recall", "identify", "state", "label"],
   understand: ["describe", "explain", "summarise", "summarize", "classify", "interpret", "compare", "illustrate", "outline"],
-  apply: ["apply", "use", "calculate", "demonstrate", "solve", "write", "model", "perform", "implement", "operate", "measure"],
-  analyse: ["analyse", "analyze", "differentiate", "examine", "diagnose", "plan", "break down", "investigate", "trace"],
+  apply: ["apply", "use", "calculate", "demonstrate", "solve", "write", "model", "perform", "implement", "operate", "measure", "inspect", "execute", "complete", "read", "carry out", "test", "adjust", "replace", "assemble", "install"],
+  analyse: ["analyse", "analyze", "differentiate", "distinguish", "examine", "diagnose", "plan", "break down", "investigate", "trace", "determine", "troubleshoot"],
   evaluate: ["evaluate", "assess", "justify", "critique", "select", "defend", "judge", "prioritise", "prioritize", "validate"],
   create: ["design", "create", "develop", "construct", "formulate", "propose", "compose", "build"],
 };
@@ -81,6 +81,11 @@ export function hourBlockProblems(blocks: HourBlock[], sessionMinutes: number): 
 export function uncoveredOutcomes(course: Pick<Course, "outcomes">, plan: LearningPlan): string[] {
   const taught = new Set(plan.sessions.flatMap((s) => s.outcomeIds));
   return course.outcomes.map((o) => o.id).filter((id) => !taught.has(id));
+}
+
+/** Outcome ids not mapped to any module. */
+export function unmappedOutcomes(course: Pick<Course, "outcomes">): string[] {
+  return course.outcomes.filter((o) => o.moduleIds.length === 0).map((o) => o.id);
 }
 
 export function videoAllowed(path: LearningPath, kind: VideoKind): boolean {

@@ -8,9 +8,7 @@
     "level": "pg",
     "contactHours": 40,
     "industry": "Automotive Engineering",
-    "markets": [
-      "India"
-    ],
+    "markets": [],
     "textbooks": [],
     "notes": "Comprehensive study of automotive vehicle systems with physics and mathematics foundation, covering powertrain, transmission, chassis dynamics, electrical systems, and safety systems Institution: BITS Pilani - M.Tech. Automotive Electronics. Credits: 3. Session length: 2 hours (90 min lecture + 30 min Q&A)."
   },
@@ -33,7 +31,7 @@
         "Tires & Friction Fundamentals",
         "From Forces to Power Requirements"
       ],
-      "foundIn": "user",
+      "foundIn": "import",
       "note": "Apply physics and mathematics to analyze vehicle motion, calculate force and power requirements, and understand tire-road interaction fundamentals Module outcome MO-1: Apply physics and mathematics to analyze vehicle motion, calculate force and power requirements, and understand tire-road interaction fundamentals"
     },
     {
@@ -47,7 +45,7 @@
         "Transmission Systems - Part 1",
         "Transmission Systems - Part 2 & Powertrain Alternatives"
       ],
-      "foundIn": "user",
+      "foundIn": "import",
       "note": "Understand IC engine operation as a torque-generating device, analyze engine support systems, and compare power transmission mechanisms Module outcome MO-2: Understand IC engine operation as a torque-generating device, analyze engine support systems, and compare power transmission mechanisms"
     },
     {
@@ -60,7 +58,7 @@
         "Steering Systems",
         "Suspension Systems"
       ],
-      "foundIn": "user",
+      "foundIn": "import",
       "note": "Analyze vehicle dynamics using mathematical models and understand chassis control systems (braking, steering, suspension) Module outcome MO-3: Analyze vehicle dynamics using mathematical models and understand chassis control systems (braking, steering, suspension)"
     },
     {
@@ -72,7 +70,7 @@
         "Vehicle Control Systems",
         "Vehicle Communication Networks"
       ],
-      "foundIn": "user",
+      "foundIn": "import",
       "note": "Understand vehicle electrical architecture, ECU-based control systems, and vehicle communication networks Module outcome MO-4: Understand vehicle electrical architecture, ECU-based control systems, and vehicle communication networks"
     },
     {
@@ -84,7 +82,7 @@
         "HVAC Systems",
         "Passive Safety Systems"
       ],
-      "foundIn": "user",
+      "foundIn": "import",
       "note": "Understand complete vehicle architecture, body construction, HVAC systems, and passive safety systems Module outcome MO-5: Understand complete vehicle architecture, body construction, HVAC systems, and passive safety systems"
     },
     {
@@ -95,7 +93,7 @@
         "Active Safety & Vehicle Stability",
         "Introduction to ADAS & Future Mobility"
       ],
-      "foundIn": "user",
+      "foundIn": "import",
       "note": "Understand active safety systems, introduction to ADAS, and emerging vehicle technologies Module outcome MO-6: Understand active safety systems, introduction to ADAS, and emerging vehicle technologies"
     }
   ],
@@ -112,7 +110,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -125,7 +123,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -138,7 +136,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -151,7 +149,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     }
@@ -175,7 +173,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -197,7 +195,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -219,7 +217,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -241,14 +239,14 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
     {
       "id": "SO-1-1-5",
       "text": "Determine total resistance force for different driving scenarios (level road, uphill, downhill, varying speeds)",
-      "bloom": "apply",
+      "bloom": "analyse",
       "moduleIds": [
         "M1"
       ],
@@ -263,7 +261,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -285,7 +283,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -307,7 +305,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -329,7 +327,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -351,7 +349,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -373,7 +371,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -395,7 +393,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -417,7 +415,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -439,7 +437,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -461,7 +459,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -483,7 +481,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -505,14 +503,14 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
     {
       "id": "SO-1-3-5",
       "text": "Determine maximum gradeability for a vehicle using available tractive force and vehicle weight",
-      "bloom": "apply",
+      "bloom": "analyse",
       "moduleIds": [
         "M1"
       ],
@@ -527,7 +525,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -549,7 +547,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -571,7 +569,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -593,7 +591,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -615,7 +613,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -637,7 +635,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -659,7 +657,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -681,7 +679,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -703,7 +701,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -725,7 +723,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -747,7 +745,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -769,7 +767,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -791,7 +789,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -813,7 +811,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -835,7 +833,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -857,7 +855,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -879,7 +877,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -901,7 +899,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -923,7 +921,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -945,7 +943,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -967,7 +965,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -989,7 +987,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1011,7 +1009,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1033,7 +1031,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1055,7 +1053,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1077,7 +1075,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1099,7 +1097,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1121,7 +1119,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1143,7 +1141,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1165,7 +1163,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1187,7 +1185,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1209,7 +1207,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1231,7 +1229,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1253,7 +1251,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1275,7 +1273,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1297,7 +1295,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1319,7 +1317,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1341,7 +1339,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1363,7 +1361,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1385,7 +1383,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1407,7 +1405,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1429,7 +1427,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1451,7 +1449,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1473,7 +1471,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1495,7 +1493,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1517,7 +1515,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1539,7 +1537,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1561,7 +1559,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1583,7 +1581,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1605,7 +1603,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1627,7 +1625,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1649,7 +1647,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1671,7 +1669,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1693,7 +1691,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1715,7 +1713,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1737,7 +1735,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1759,7 +1757,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1781,7 +1779,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1803,7 +1801,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1825,7 +1823,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1847,7 +1845,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1869,7 +1867,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1891,7 +1889,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1913,7 +1911,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1935,7 +1933,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1957,7 +1955,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -1979,7 +1977,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2001,7 +1999,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2023,7 +2021,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2045,7 +2043,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2067,7 +2065,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2089,7 +2087,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2111,7 +2109,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2133,7 +2131,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2155,7 +2153,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2177,7 +2175,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2199,7 +2197,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2221,7 +2219,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2243,7 +2241,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2265,7 +2263,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2287,7 +2285,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2309,7 +2307,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2331,7 +2329,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2353,7 +2351,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2375,7 +2373,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2397,7 +2395,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2419,7 +2417,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2441,7 +2439,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2463,7 +2461,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2485,7 +2483,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2507,7 +2505,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2529,7 +2527,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2551,7 +2549,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2573,7 +2571,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2595,7 +2593,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2617,7 +2615,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2639,7 +2637,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2661,7 +2659,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2683,7 +2681,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2705,7 +2703,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2727,7 +2725,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2749,7 +2747,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2771,7 +2769,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     },
@@ -2793,7 +2791,7 @@
         "promptId": "import.yaml",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     }
@@ -2838,7 +2836,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -2859,7 +2857,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -2880,7 +2878,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -2901,7 +2899,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -2922,7 +2920,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -2943,7 +2941,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -2964,7 +2962,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -2978,7 +2976,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -3015,7 +3013,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3036,7 +3034,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3057,7 +3055,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3078,7 +3076,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3099,7 +3097,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3120,7 +3118,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3141,7 +3139,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -3155,7 +3153,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -3192,7 +3190,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3213,7 +3211,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3234,7 +3232,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3255,7 +3253,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3276,7 +3274,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3297,7 +3295,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3318,7 +3316,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -3332,7 +3330,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -3369,7 +3367,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3390,7 +3388,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3411,7 +3409,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3432,7 +3430,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3453,7 +3451,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3474,7 +3472,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3495,7 +3493,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -3509,7 +3507,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -3546,7 +3544,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3567,7 +3565,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3588,7 +3586,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3609,7 +3607,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3630,7 +3628,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3651,7 +3649,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3672,7 +3670,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -3686,7 +3684,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -3723,7 +3721,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3744,7 +3742,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3765,7 +3763,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3786,7 +3784,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3807,7 +3805,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3828,7 +3826,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3849,7 +3847,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -3863,7 +3861,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -3900,7 +3898,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3921,7 +3919,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3942,7 +3940,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3963,7 +3961,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -3984,7 +3982,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4005,7 +4003,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4026,7 +4024,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -4040,7 +4038,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -4077,7 +4075,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4098,7 +4096,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4119,7 +4117,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4140,7 +4138,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4161,7 +4159,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4182,7 +4180,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4203,7 +4201,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -4217,7 +4215,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -4254,7 +4252,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4275,7 +4273,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4296,7 +4294,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4317,7 +4315,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4338,7 +4336,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4359,7 +4357,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4380,7 +4378,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -4394,7 +4392,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -4431,7 +4429,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4452,7 +4450,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4473,7 +4471,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4494,7 +4492,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4515,7 +4513,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4536,7 +4534,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4557,7 +4555,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -4571,7 +4569,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -4608,7 +4606,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4629,7 +4627,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4650,7 +4648,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4671,7 +4669,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4692,7 +4690,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4713,7 +4711,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4734,7 +4732,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -4748,7 +4746,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -4785,7 +4783,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4806,7 +4804,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4827,7 +4825,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4848,7 +4846,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4869,7 +4867,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4890,7 +4888,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -4904,7 +4902,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -4941,7 +4939,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4962,7 +4960,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -4983,7 +4981,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5004,7 +5002,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5025,7 +5023,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5046,7 +5044,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -5060,7 +5058,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -5097,7 +5095,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5118,7 +5116,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5139,7 +5137,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5160,7 +5158,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5181,7 +5179,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5202,7 +5200,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -5216,7 +5214,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -5253,7 +5251,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5274,7 +5272,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5295,7 +5293,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5316,7 +5314,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5337,7 +5335,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5358,7 +5356,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5379,7 +5377,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -5393,7 +5391,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -5430,7 +5428,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5451,7 +5449,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5472,7 +5470,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5493,7 +5491,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5514,7 +5512,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5535,7 +5533,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             },
@@ -5556,7 +5554,7 @@
                 "promptId": "import.framework",
                 "promptVersion": "1",
                 "costUsd": 0,
-                "createdAt": "2026-11-04T04:47:38.356Z",
+                "createdAt": "2026-11-04T04:49:50.546Z",
                 "builtFrom": []
               }
             }
@@ -5570,7 +5568,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -5599,7 +5597,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -5628,7 +5626,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -5657,7 +5655,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         },
@@ -5686,7 +5684,7 @@
             "promptId": "import.yaml",
             "promptVersion": "1",
             "costUsd": 0,
-            "createdAt": "2026-11-04T04:47:38.356Z",
+            "createdAt": "2026-11-04T04:49:50.546Z",
             "builtFrom": []
           }
         }
@@ -5696,11 +5694,11 @@
         "promptId": "import.plan",
         "promptVersion": "1",
         "costUsd": 0,
-        "createdAt": "2026-11-04T04:47:38.356Z",
+        "createdAt": "2026-11-04T04:49:50.546Z",
         "builtFrom": []
       }
     }
   ],
-  "createdAt": "2026-11-04T04:47:38.356Z",
-  "updatedAt": "2026-11-04T04:47:38.356Z"
+  "createdAt": "2026-11-04T04:49:50.546Z",
+  "updatedAt": "2026-11-04T04:49:50.546Z"
 }

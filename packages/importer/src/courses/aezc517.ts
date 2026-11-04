@@ -24,7 +24,7 @@ export function importSystemsEngineering(ctx: ImportContext): ImportResult {
     m.sessions.forEach((n) => moduleOfSession.set(n, id));
     return {
       id, title: m.title, hours: round1(ss.reduce((a, s) => a + (s.duration ?? 0), 0) / 60),
-      topics: ss.flatMap((s) => s.topics), foundIn: "user", note: m.description,
+      topics: ss.flatMap((s) => s.topics), foundIn: "import", note: m.description,
     };
   });
   notes.push("Modules come from course-data.yaml (sessions 1-4, 5-8, 9-12, 13-16); the BITS handout does not define modules, so foundIn is \"user\".");
@@ -61,7 +61,7 @@ export function importSystemsEngineering(ctx: ImportContext): ImportResult {
   const creditHours = Number(/^(\d+)/.exec(h.creditModel ?? y.creditModel ?? "")?.[1]);
   const contactHours = creditHours > 0 ? creditHours : round1(sessions.reduce((a, s) => a + s.minutes, 0) / 60);
   gaps.push("Experiential-learning components, evaluation scheme (quiz/assignment/mid-sem/comprehensive weights) and the credit-model hour split are in the handout/yaml but have no home in the Course model; not imported.");
-  gaps.push("Industry and market are not stated in the sources: industry derived from the programme name, markets defaulted to [\"India\"] (core requires at least one).");
+  gaps.push("Industry and market are not stated in the sources: industry derived from the programme name, markets not set (the teacher sets them before the job search).");
 
   const course = Course.parse({
     id: slugOf(dir), slug: slugOf(dir),
@@ -69,7 +69,7 @@ export function importSystemsEngineering(ctx: ImportContext): ImportResult {
       title: y.title ?? titleCaseIfShouting(h.title ?? ""),
       code: y.shortCode ?? h.courseNos,
       audience: `${h.programme ?? "M.Tech."} students, ${h.division ?? "BITS Pilani Work Integrated Learning Programmes"} (working engineers)`,
-      level: "pg", contactHours, industry: "Automotive engineering", markets: ["India"],
+      level: "pg", contactHours, industry: "Automotive engineering", markets: [],
       textbooks: [...h.textbooks, ...h.references].map((b) => `${b.id}: ${b.text}`),
       notes: [y.description, `Handout course no: ${h.courseNos}; credit model ${y.creditModel ?? h.creditModel}; version ${h.version} (${h.date}); instructor ${h.instructor}.`, "T-ids are textbooks, R-ids reference books."].filter(Boolean).join(" "),
     },

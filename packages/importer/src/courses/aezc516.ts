@@ -32,7 +32,6 @@ export async function importIceEngines(ctx: ImportContext): Promise<ImportResult
       note: [m.description, ...mos.map((x) => `Module outcome ${x.id}: ${x.description}`)].filter(Boolean).join(" "),
     };
   });
-  const allModuleIds = modules.map((m) => m.id);
   notes.push("Modules come from the .xlsx module sheet (foundIn \"moduleSheet\"); the handout defines no modules. Module hours = 1.5 h per session (session templates are 90 min).");
 
   // objectives: the handout CO table is empty; the sheet carries five
@@ -41,11 +40,11 @@ export async function importIceEngines(ctx: ImportContext): Promise<ImportResult
 
   const tally = { statedMismatch: [] as string[], defaulted: [] as string[] };
   const outcomes = [
-    ...h.outcomes.map((lo) => makeOutcome({ id: lo.id, text: lo.text, moduleIds: allModuleIds, now, promptId: "import.handout" }, tally)),
+    ...h.outcomes.map((lo) => makeOutcome({ id: lo.id, text: lo.text, moduleIds: [], now, promptId: "import.handout" }, tally)),
     ...t.modules.flatMap((m) => m.lessons.flatMap((l) => l.outcomes.map((o) =>
       makeOutcome({ id: soId(o.id), text: o.description, stated: o.bloom, moduleIds: [`M${m.number}`], objectiveIds: m.coId ? [coId(m.coId)] : [], now, promptId: "import.xlsx" }, tally)))),
   ];
-  gaps.push("Handout LO1-LO5 carry no module or objective mapping; linked to all modules (core requires at least one module) and no objectives. Core change suggested: allow course-level outcomes with empty moduleIds.");
+  gaps.push("Handout LO1-LO5 carry no module or objective mapping; imported as course-level outcomes with no module or objective; map them in the app.");
   gaps.push("No session or lesson cites LO1-LO5, so the plan leaves them uncovered (see rule warnings).");
   notes.push("objectiveIds for SO outcomes use the sheet's CO column, which is filled only on some rows; blank cells carry down from the row above (so Module 2 takes CO1).");
   if (tally.statedMismatch.length) notes.push(`Bloom taken from the leading verb; the sheet level differed for ${tally.statedMismatch.length} outcomes.`);
@@ -67,14 +66,14 @@ export async function importIceEngines(ctx: ImportContext): Promise<ImportResult
   gaps.push(`Handout Part B lists 16 contact sessions (15 + a buffer) with a different order and titles (e.g. 1 ${h.sessions[0]?.title.trim()}, 2 ${h.sessions[1]?.title.trim()}); the plan follows the sheet/templates and the handout list is kept in brief.notes.`);
   gaps.push("Several sheet lesson names are placeholders (\"Session 16\", \"Session 17\" ...) and its Day column runs to 28; both ignored in favour of the session templates.");
   gaps.push("Evaluation scheme, experiential-learning components (AMESIM virtual lab) and credit-model hours have no home in the Course model; the lab line is kept in brief.notes.");
-  gaps.push("Industry and market are not stated in the handout: industry derived from the programme name, markets defaulted to [\"India\"] (core requires at least one).");
+  gaps.push("Industry and market are not stated in the handout: industry derived from the programme name, markets not set (the teacher sets them before the job search).");
 
   const course = Course.parse({
     id: slugOf(dir), slug: slugOf(dir),
     brief: {
       title: h.title ?? t.info.name ?? "Advances in IC Engines", code: t.info.code ?? h.courseNos,
       audience: `${h.programme ?? "M.Tech."} students, ${h.division ?? "BITS Pilani Work Integrated Learning Programmes"} (working professionals in the automotive industry)`,
-      level: "pg", contactHours: round1(sessions.reduce((a, s) => a + s.minutes, 0) / 60), industry: "Automotive engineering (powertrain)", markets: ["India"],
+      level: "pg", contactHours: round1(sessions.reduce((a, s) => a + s.minutes, 0) / 60), industry: "Automotive engineering (powertrain)", markets: [],
       textbooks: [...h.textbooks, ...h.references].map((b) => `${b.id}: ${b.text}`),
       notes: [
         h.description, `Handout course no: ${h.courseNos}; credit units ${h.creditUnits}; version ${h.version} (${h.date}); instructor ${h.instructor}.`,
