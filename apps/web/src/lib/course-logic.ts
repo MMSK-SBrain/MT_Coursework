@@ -1,7 +1,7 @@
 // Pure course transitions shared by the UI (teacher decisions) and the job handlers (generated content).
 // No I/O here, so everything is unit-testable and safe to import in client components.
 import type {
-  CaseStudy, Course, FitChange, FurtherLink, HourBlock, JobRole, LearningPlan, Module, Objective, Outcome,
+  CaseStudy, Course, FitChange, FurtherLink, HourBlock, JobRole, LearningPlan, Module, ModuleOutcome, Objective, Outcome,
   OutcomeSuggestion, Provenance,
 } from "@cg/core";
 import type { ParsedInputs } from "@cg/core";
@@ -88,12 +88,12 @@ export function addOwnFit(course: Course, text: string): Course {
 
 /** Apply accepted and changed fit decisions to the base modules. */
 export function modulesAfterFit(base: Module[], fit: FitChange[]): Module[] {
-  const mods = base.map((m) => ({ ...m, topics: [...m.topics] }));
+  const mods = base.map((m) => ({ ...m, topics: [...m.topics], outcomes: [...m.outcomes] }));
   for (const f of fit) {
     if (f.decision !== "accepted" && f.decision !== "changed") continue;
     if (f.targetModuleId === "new") {
       const n = mods.reduce((a, m) => Math.max(a, Number(m.id.replace(/\D/g, "")) || 0), 0) + 1;
-      mods.push({ id: `M${n}`, title: f.text, hours: Math.max(0, f.hoursDelta), topics: [f.text], foundIn: "fit" });
+      mods.push({ id: `M${n}`, title: f.text, hours: Math.max(0, f.hoursDelta), topics: [f.text], outcomes: [], foundIn: "fit" });
       continue;
     }
     const m = mods.find((x) => x.id === f.targetModuleId);
@@ -142,11 +142,17 @@ export function applyOutcomes(course: Course, meta: CourseMeta, d: { objectives:
   ];
 }
 
+/** Apply `fn` to the module outcome `id` (MOs live inside their module). */
+const mapModuleOutcomes = (course: Course, fn: (mo: ModuleOutcome) => ModuleOutcome[] | ModuleOutcome): Module[] =>
+  course.modules.map((m) => ({ ...m, outcomes: m.outcomes.flatMap((mo) => fn(mo)) }));
+
+/** Edit the text of an LO, MO or course objective (locked items are left alone). */
 export function editOutcomeText(course: Course, id: string, text: string): Course {
   const t = text.trim();
   if (!t) return course;
   return {
     ...course,
+    modules: mapModuleOutcomes(course, (mo) => (mo.id === id && !mo.locked ? { ...mo, text: t } : mo)),
     outcomes: course.outcomes.map((o) => (o.id === id && !o.locked ? { ...o, text: t } : o)),
     objectives: course.objectives.map((o) => (o.id === id && !o.locked ? { ...o, text: t } : o)),
   };
@@ -155,6 +161,7 @@ export function editOutcomeText(course: Course, id: string, text: string): Cours
 export function setLocked(course: Course, id: string, locked: boolean): Course {
   return {
     ...course,
+    modules: mapModuleOutcomes(course, (mo) => (mo.id === id ? { ...mo, locked } : mo)),
     outcomes: course.outcomes.map((o) => (o.id === id ? { ...o, locked } : o)),
     objectives: course.objectives.map((o) => (o.id === id ? { ...o, locked } : o)),
   };
@@ -163,6 +170,13 @@ export function setLocked(course: Course, id: string, locked: boolean): Course {
 /** Accept a suggested rewrite. A split replaces the outcome with two (id and id + "b"). */
 export function acceptSuggestion(course: Course, s: OutcomeSuggestion, prov: Provenance): Course {
   const target = course.outcomes.find((o) => o.id === s.targetId);
+  const mo = course.modules.flatMap((m) => m.outcomes).find((x) => x.id === s.targetId);
+  if (!target && mo) {
+    const repl: ModuleOutcome[] = s.proposed.map((p, i) => ({
+      ...mo, id: i === 0 ? mo.id : `${mo.id}${String.fromCharCode(97 + i)}`, text: p.text, bloom: p.bloom, provenance: prov,
+    }));
+    return { ...course, modules: mapModuleOutcomes(course, (x) => (x.id === s.targetId ? repl : x)) };
+  }
   if (!target) {
     const first = s.proposed[0]!;
     return { ...course, objectives: course.objectives.map((o) => (o.id === s.targetId ? { ...o, text: first.text, provenance: prov } : o)) };

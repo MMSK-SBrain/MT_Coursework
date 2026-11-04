@@ -4,7 +4,7 @@ import {
   AUTO_STYLE, BLOOM_ORDER, BLOOM_VERBS, PATH_FAMILY, VIDEO_BY_PATH,
   type BloomLevel, type CaseStudy, type Course, type EditInstruction, type FitChange, type FurtherLink, type Generated,
   type HourBlock, type InputFile, type JobRole, type LearningPlan, type Module, type Objective, type Outcome,
-  type OutcomeSuggestion, type ParsedInputs, type PlanSpec, type Provenance, type Session, type Stages, type TeachingStyle,
+  type OutcomeSuggestion, type ParsedInputs, type PlanSpec, type Provenance, type Session, type SessionOutcome, type Stages, type TeachingStyle,
   type VideoKind,
 } from "@cg/core";
 import { findSession } from "./course-logic";
@@ -17,7 +17,7 @@ const delay = () => new Promise((r) => setTimeout(r, Number(process.env.MOCK_DEL
 
 // ---- Sample data (from the prototype) ------------------------------------------------
 
-const MODULES: (Omit<Module, "foundIn" | "topics"> & { src: "both" | "excel" | "handout" })[] = [
+const MODULES: (Pick<Module, "id" | "title" | "hours" | "note"> & { src: "both" | "excel" | "handout" })[] = [
   { id: "M1", title: "Systems thinking and the role of the systems engineer", hours: 4, src: "both" },
   { id: "M2", title: "Life cycle models: V-model, agile and hybrids", hours: 4, src: "both" },
   { id: "M3", title: "Stakeholder needs and requirements engineering", hours: 6, src: "both" },
@@ -27,6 +27,21 @@ const MODULES: (Omit<Module, "foundIn" | "topics"> & { src: "both" | "excel" | "
   { id: "M7", title: "Technical management: risk, configuration, trade studies", hours: 4, src: "handout", note: "Not in sheet" },
   { id: "M8", title: "Capstone: EV battery management system", hours: 4, src: "excel" },
 ];
+
+/** Module outcomes (MOs) per module: [id, text, bloom, parent LO ids]. */
+const MOS: Record<string, [string, string, BloomLevel, string[]][]> = {
+  M1: [["M1.MO1", "Explain the role of the systems engineer on a cross-functional vehicle programme.", "understand", ["LO1"]]],
+  M2: [["M2.MO1", "Compare the V-model, agile and hybrid life cycles for a vehicle programme.", "understand", ["LO1"]]],
+  M3: [["M3.MO1", "Write verifiable system requirements traced to stakeholder needs.", "apply", ["LO2"]]],
+  M4: [["M4.MO1", "Model the functional architecture of a subsystem in SysML.", "apply", ["LO3"]]],
+  M5: [["M5.MO1", "Plan the interface and integration steps for a subsystem.", "analyse", ["LO4"]]],
+  M6: [["M6.MO1", "Plan verification and validation across SIL, HIL and vehicle tests.", "analyse", ["LO4"]]],
+  M7: [
+    ["M7.MO1", "Perform a hazard analysis and derive safety goals under ISO 26262.", "apply", ["LO5"]],
+    ["M7.MO2", "Evaluate design alternatives with a structured trade study.", "evaluate", ["LO6"]],
+  ],
+  M8: [["M8.MO1", "Evaluate BMS design options against thermal and SOC/SOH requirements.", "evaluate", ["LO6"]]],
+};
 
 const KEYWORDS = ["systems engineering", "requirements engineering", "V-model", "SysML / MBSE", "interface management", "verification and validation", "HIL / SIL", "DFMEA", "trade study", "battery management system"];
 
@@ -70,22 +85,23 @@ const LOS: [string, string, BloomLevel, string[], string[], Outcome["origin"], s
   ["LO6", "Evaluate design alternatives for an EV battery management system with a structured trade study.", "evaluate", ["M7", "M8"], ["r6"], "handout", ["CO3"]],
 ];
 
-const PRESET_SESSIONS: Partial<Record<string, [string, string[], TeachingStyle, number, VideoKind][]>> = {
+/** [title, LO ids, style, minutes, video, MO ids the session outcomes serve] */
+const PRESET_SESSIONS: Partial<Record<string, [string, string[], TeachingStyle, number, VideoKind, string[]][]>> = {
   classroom: [
-    ["Why systems engineering? Systems thinking in a vehicle programme", ["LO1"], "discussion", 120, "none"],
-    ["Life cycle models: V-model, ASPICE and agile", ["LO1"], "teaching", 120, "none"],
-    ["From stakeholder needs to system requirements", ["LO2"], "worked", 120, "demo"],
-    ["Requirements traceability in Polarion", ["LO2"], "lab", 120, "demo"],
-    ["Functional architecture with SysML", ["LO3"], "teaching", 120, "demo"],
-    ["Hazard analysis and ISO 26262 safety goals", ["LO5"], "failure", 120, "none"],
-    ["Planning V&V for a BMS", ["LO4"], "case", 120, "none"],
-    ["BMS trade study", ["LO6"], "project", 120, "none"],
+    ["Why systems engineering? Systems thinking in a vehicle programme", ["LO1"], "discussion", 120, "none", ["M1.MO1"]],
+    ["Life cycle models: V-model, ASPICE and agile", ["LO1"], "teaching", 120, "none", ["M2.MO1"]],
+    ["From stakeholder needs to system requirements", ["LO2"], "worked", 120, "demo", ["M3.MO1"]],
+    ["Requirements traceability in Polarion", ["LO2"], "lab", 120, "demo", ["M3.MO1"]],
+    ["Functional architecture with SysML", ["LO3"], "teaching", 120, "demo", ["M4.MO1"]],
+    ["Hazard analysis and ISO 26262 safety goals", ["LO5"], "failure", 120, "none", ["M7.MO1"]],
+    ["Planning V&V for a BMS", ["LO4"], "case", 120, "none", ["M5.MO1", "M6.MO1"]],
+    ["BMS trade study", ["LO6"], "project", 120, "none", ["M7.MO2", "M8.MO1"]],
   ],
   youtube: [
-    ["Why a car has 100 million lines of code and who keeps it sane", ["LO1"], "dyk", 6, "explainroo"],
-    ["The V-model in one drawing", ["LO1"], "teaching", 8, "whiteboard"],
-    ["What a “good” requirement looks like", ["LO2"], "dyk", 7, "explainroo"],
-    ["Tracing a requirement to a test in Polarion", ["LO2"], "worked", 9, "screen"],
+    ["Why a car has 100 million lines of code and who keeps it sane", ["LO1"], "dyk", 6, "explainroo", ["M1.MO1"]],
+    ["The V-model in one drawing", ["LO1"], "teaching", 8, "whiteboard", ["M2.MO1"]],
+    ["What a “good” requirement looks like", ["LO2"], "dyk", 7, "explainroo", ["M3.MO1"]],
+    ["Tracing a requirement to a test in Polarion", ["LO2"], "worked", 9, "screen", ["M3.MO1"]],
   ],
 };
 
@@ -115,6 +131,20 @@ function split(total: number, weights: number[]): number[] {
   return parts;
 }
 
+/**
+ * Session outcomes for a drafted session: one per module outcome it serves (named, or found through the session's LOs).
+ * Without module outcomes, one per LO so the lesson still has measurable targets.
+ */
+function sessionOutcomesFor(course: Course, sessionId: string, loIds: string[], moIds: string[] | undefined, p: Provenance): SessionOutcome[] {
+  const all = course.modules.flatMap((m) => m.outcomes);
+  let mos = moIds ? all.filter((mo) => moIds.includes(mo.id)) : [];
+  if (!mos.length) mos = all.filter((mo) => mo.outcomeIds.some((l) => loIds.includes(l)));
+  const src = mos.length
+    ? mos.map((mo) => ({ text: mo.text, bloom: mo.bloom, moduleOutcomeIds: [mo.id] }))
+    : course.outcomes.filter((o) => loIds.includes(o.id)).map((o) => ({ text: o.text, bloom: o.bloom, moduleOutcomeIds: [] as string[] }));
+  return src.map((x, i) => ({ id: `${sessionId}.SO${i + 1}`, ...x, locked: false, provenance: p }));
+}
+
 // ---- The mock --------------------------------------------------------------------
 
 export const mockStages: Stages = {
@@ -125,6 +155,8 @@ export const mockStages: Stages = {
     const p = prov("inputs.parse", files.map((f) => f.meta.id));
     const modules: Module[] = MODULES.filter((m) => (hasHandout && m.src !== "excel") || (hasSheet && m.src !== "handout")).map((m) => ({
       id: m.id, title: m.title, hours: m.hours, topics: [],
+      // A handout states module outcomes; a module sheet alone does not.
+      outcomes: hasHandout ? (MOS[m.id] ?? []).map(([id, text, bloom, outcomeIds]) => ({ id, text, bloom, outcomeIds, locked: false, provenance: p })) : [],
       foundIn: hasHandout && hasSheet ? (m.src === "excel" ? "moduleSheet" : m.src === "handout" ? "handout" : "both") : hasHandout ? "handout" : "moduleSheet",
       note: hasHandout && hasSheet ? m.note : undefined,
     }));
@@ -185,9 +217,10 @@ export const mockStages: Stages = {
     await delay();
     const o = course.outcomes.find((x) => x.id === outcomeId);
     const co = course.objectives.find((x) => x.id === outcomeId);
-    if (!o && !co) throw new Error(`No outcome or objective ${outcomeId}`);
-    const text = (o ?? co)!.text;
-    const bloom: BloomLevel = o?.bloom ?? "understand";
+    const mo = course.modules.flatMap((m) => m.outcomes).find((x) => x.id === outcomeId);
+    if (!o && !co && !mo) throw new Error(`No outcome, objective or module outcome ${outcomeId}`);
+    const text = (o ?? mo ?? co)!.text;
+    const bloom: BloomLevel = o?.bloom ?? mo?.bloom ?? "understand";
     const role = o ? course.roles.find((r) => o.roleIds.includes(r.id))?.title ?? "industry" : "industry";
     let value: OutcomeSuggestion;
     const one = (t: string, b: BloomLevel, reason: string): OutcomeSuggestion => ({ targetId: outcomeId, proposed: [{ text: t, bloom: b }], reason });
@@ -239,13 +272,15 @@ export const mockStages: Stages = {
     const preset = PRESET_SESSIONS[spec.path]?.filter(([, los]) => los.every((l) => known.has(l)));
     let sessions: Session[];
     if (preset?.length) {
-      sessions = preset.map(([title, outcomeIds, st, minutes, v], i) => ({
-        id: `s${i + 1}`, index: i + 1, title, outcomeIds, style: spec.style === "auto" ? st : spec.style, minutes,
+      sessions = preset.map(([title, outcomeIds, st, minutes, v, moIds], i) => ({
+        id: `s${i + 1}`, index: i + 1, title, outcomeIds, sessionOutcomes: sessionOutcomesFor(course, `s${i + 1}`, outcomeIds, moIds, p),
+        style: spec.style === "auto" ? st : spec.style, minutes,
         video: allowed.includes(v) ? v : allowed[0]!, blocks: [], links: [], caseStudies: [], assets: [], stale: false, provenance: p,
       }));
     } else {
       sessions = course.outcomes.map((o, i) => ({
-        id: `s${i + 1}`, index: i + 1, title: stripDot(o.text.split(",")[0]!), outcomeIds: [o.id], style: pickStyle(o.bloom),
+        id: `s${i + 1}`, index: i + 1, title: stripDot(o.text.split(",")[0]!), outcomeIds: [o.id],
+        sessionOutcomes: sessionOutcomesFor(course, `s${i + 1}`, [o.id], undefined, p), style: pickStyle(o.bloom),
         minutes: fam === "content" ? 8 : spec.path === "micro" ? 5 : 60, video: allowed[0]!,
         blocks: [], links: [], caseStudies: [], assets: [], stale: false, provenance: p,
       }));
@@ -264,6 +299,10 @@ export const mockStages: Stages = {
     const p = prov("build.hourPlan", session.outcomeIds, course.structureVersion);
     const hours = Math.ceil(session.minutes / 60);
     const blocks: HourBlock[] = [];
+    // The opening block and the teaching/case blocks serve every SO; the rest take turns; wrap-ups and breaks serve none.
+    const soIds = session.sessionOutcomes.map((so) => so.id);
+    const servedBy = (kind: HourBlock["kind"], first: boolean, i: number): string[] =>
+      kind === "wrap" || kind === "break" ? [] : first || kind === "teach" || kind === "case" ? soIds : soIds.length ? [soIds[i % soIds.length]!] : [];
     const example = {
       text: `How an OEM BMS team handles “${session.title}” on a live programme, with the templates they use.`,
       sector: "automotive", roleIds: course.roles.filter((r) => r.selected).map((r) => r.id).slice(0, 2),
@@ -280,7 +319,7 @@ export const mockStages: Stages = {
         const [kind, title, activity] = plan[i]!;
         blocks.push({
           id: `${session.id}-h${h}-b${i + 1}`, hour: h, startMin: start, minutes: m, kind, title: `${title}: ${session.title}`.slice(0, 120),
-          activity, outcomeIds: session.outcomeIds, style: session.style,
+          activity, outcomeIds: session.outcomeIds, sessionOutcomeIds: servedBy(kind, blocks.length === 0, i), style: session.style,
           industryExample: kind === "teach" || kind === "case" ? example : undefined,
           check: kind === "check" ? [`What is the key idea of “${session.title}”?`, "Where would you see this on a vehicle programme?", "What would go wrong if it were skipped?"] : [],
           needsSlides: kind === "teach", provenance: p,

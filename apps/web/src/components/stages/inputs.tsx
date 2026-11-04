@@ -15,7 +15,7 @@ const OPTS: [NonNullable<CourseMeta["startMode"]>, string, string][] = [
 ];
 
 const foundChip = (m: Module) =>
-  ({ both: <span className="chip ok">Both</span>, moduleSheet: <span className="chip ink">Sheet</span>, handout: <span className="chip ink">Handout</span>, fit: <span className="chip ok">From job fit</span>, user: <span className="chip">Yours</span> })[m.foundIn];
+  ({ both: <span className="chip ok">Both</span>, moduleSheet: <span className="chip ink">Sheet</span>, handout: <span className="chip ink">Handout</span>, fit: <span className="chip ok">From job fit</span>, user: <span className="chip">Yours</span>, import: <span className="chip">Imported</span> })[m.foundIn];
 
 function Drop({ kind, course, summary, chip }: { kind: Kind; course: Course; summary?: string; chip?: React.ReactNode }) {
   const { setError } = useCourse();
