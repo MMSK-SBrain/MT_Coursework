@@ -213,7 +213,7 @@ export async function reviewDraft(
     { role: "system", content: reviewPrompt.system },
     { role: "user", content: reviewPrompt.user({ rubric, contextText, draft }, { examples: "" }) },
   ];
-  const opts = { temperature: 0, maxTokens: 1500, json: config.jsonMode };
+  const opts = { temperature: 0, maxTokens: 4096, json: config.jsonMode };
   let cost = 0;
   for (let i = 0; i < 2; i++) {
     const r = await chatWithFallback(client, config.models.review, { ...opts, messages: msgs });

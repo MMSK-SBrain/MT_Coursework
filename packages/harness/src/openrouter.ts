@@ -28,6 +28,8 @@ export interface ChatResult {
 }
 
 export class OpenRouterError extends Error {
+  /** Spend already incurred by the failed call (e.g. a reply cut off by the token limit). */
+  costUsd = 0;
   constructor(message: string, readonly status?: number, readonly model?: string) {
     super(message);
     this.name = "OpenRouterError";
@@ -43,6 +45,8 @@ export class MissingApiKeyError extends Error {
 
 export interface OpenRouterOptions {
   apiKey?: string;
+  /** Thinking-token budget for reasoning models (ignored by others). Default 2048, never more than half of max_tokens. */
+  reasoningMaxTokens?: number;
   baseUrl?: string;
   fetch?: FetchLike;
   timeoutMs?: number;
@@ -57,6 +61,7 @@ export interface ChatClient {
 }
 
 export class OpenRouterClient implements ChatClient {
+  private readonly reasoningMaxTokens: number;
   private readonly apiKey: string;
   private readonly baseUrl: string;
   private readonly fetchFn: FetchLike;
@@ -73,15 +78,20 @@ export class OpenRouterClient implements ChatClient {
     this.timeoutMs = opts.timeoutMs ?? 120_000;
     this.appUrl = opts.appUrl ?? "https://reynlab.com/course-generator";
     this.appTitle = opts.appTitle ?? "Reynlab Course Generator";
+    this.reasoningMaxTokens = opts.reasoningMaxTokens ?? 2048;
   }
 
   async chat(req: ChatRequest): Promise<ChatResult> {
+    const maxTokens = req.maxTokens ?? 8192;
     const body: Record<string, unknown> = {
       model: req.model,
       messages: req.messages,
       temperature: req.temperature ?? 0.3,
-      max_tokens: req.maxTokens ?? 4096,
+      max_tokens: maxTokens,
       usage: { include: true }, // makes OpenRouter return usage.cost in USD
+      // Thinking models can spend the whole token budget on reasoning and return no answer.
+      // A fixed thinking budget (at most half of max_tokens) always leaves room for the answer.
+      reasoning: { max_tokens: Math.min(this.reasoningMaxTokens, Math.floor(maxTokens / 2)) },
     };
     if (req.json) body.response_format = { type: "json_object" };
 
@@ -112,7 +122,12 @@ export class OpenRouterClient implements ChatClient {
     }
     if (data.error) throw new OpenRouterError(`API error: ${JSON.stringify(data.error).slice(0, 300)}`, data.error.code, req.model);
     const content = data.choices?.[0]?.message?.content;
-    if (typeof content !== "string") throw new OpenRouterError("response has no message content", res.status, req.model);
+    if (typeof content !== "string" || !content.trim()) {
+      const finish = data.choices?.[0]?.finish_reason ?? "unknown";
+      const e = new OpenRouterError(`response has no message content (finish_reason ${finish}, ${data.usage?.completion_tokens ?? "?"} completion tokens)`, res.status, req.model);
+      e.costUsd = Number(data.usage?.cost ?? 0) || 0;
+      throw e;
+    }
     return {
       content,
       model: typeof data.model === "string" ? data.model : req.model,

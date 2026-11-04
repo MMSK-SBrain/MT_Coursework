@@ -49,3 +49,16 @@ describe("eval CLI", () => {
     expect(md).toContain("| draftOutcomes | `fake/a` | 1/1 | 1.00 |");
   });
 });
+
+describe("budgetClient", () => {
+  it("refuses calls once the cap is reached", async () => {
+    const { budgetClient } = await import("../eval/run.js");
+    const inner = { chat: async () => ({ content: "{}", model: "m", costUsd: 0.6, promptTokens: 1, completionTokens: 1 }) } as never;
+    const c = budgetClient(inner, 1);
+    await c.chat({} as never);
+    await c.chat({} as never);
+    expect(c.exhausted()).toBe(true);
+    await expect(c.chat({} as never)).rejects.toThrow(/budget/);
+    expect(c.spent()).toBeCloseTo(1.2);
+  });
+});

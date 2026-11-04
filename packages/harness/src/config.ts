@@ -62,7 +62,7 @@ export const DEFAULT_CONFIG: HarnessConfig = {
   contentThreshold: 0.75,
   temperature: 0.3,
   jsonMode: true,
-  maxTokens: 4096,
+  maxTokens: 8192,
 };
 
 function envKey(stage: StageName): string {

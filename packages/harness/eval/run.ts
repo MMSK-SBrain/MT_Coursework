@@ -3,7 +3,7 @@
 // to packages/harness/eval-results/ (gitignored).
 //
 //   pnpm --filter @cg/harness eval -- --models qwen/...,z-ai/... --stages draftOutcomes,proposeFit
-//   options: --models a,b   --stages s1,s2   --briefs id1,id2   --judge model   --out dir
+//   options: --models a,b   --stages s1,s2   --briefs id1,id2   --judge model   --out dir   --max-usd 5
 import { pathToFileURL } from "node:url";
 import type { Course, HourBlock, LearningPlan } from "@cg/core";
 
@@ -55,6 +55,28 @@ export interface EvalArgs {
   briefs: string[];
   judge: string;
   outDir: string;
+  /** Hard spending cap across every call (models and judge). The run stops once it is reached. */
+  maxUsd: number;
+}
+
+/** Counts real spend (OpenRouter's usage.cost) on every call and refuses calls once the cap is reached. */
+export function budgetClient(inner: ChatClient, maxUsd: number): ChatClient & { spent: () => number; exhausted: () => boolean } {
+  let spent = 0;
+  return {
+    async chat(req) {
+      if (spent >= maxUsd) throw new Error(`budget of $${maxUsd} reached`);
+      try {
+        const res = await inner.chat(req);
+        spent += res.costUsd;
+        return res;
+      } catch (e) {
+        spent += Number((e as { costUsd?: number }).costUsd ?? 0) || 0; // failed calls can still cost money
+        throw e;
+      }
+    },
+    spent: () => spent,
+    exhausted: () => spent >= maxUsd,
+  };
 }
 
 export function parseArgs(argv: string[], cfg: HarnessConfig = DEFAULT_CONFIG): EvalArgs {
@@ -73,6 +95,7 @@ export function parseArgs(argv: string[], cfg: HarnessConfig = DEFAULT_CONFIG): 
     briefs: list(get("briefs")) ?? EVAL_COURSES.map((c) => c.id),
     judge: get("judge") ?? cfg.models.review.primary,
     outDir: get("out") ?? decodeURIComponent(new URL("../eval-results/", import.meta.url).pathname),
+    maxUsd: Number(get("max-usd") ?? 5),
   };
 }
 
@@ -98,7 +121,7 @@ async function runOne(stages: OpenRouterStages, stage: EvalStage, c: Course) {
   }
 }
 
-export async function runEval(args: EvalArgs, deps: { client: ChatClient; env?: Record<string, string | undefined>; log?: (s: string) => void }): Promise<EvalRow[]> {
+export async function runEval(args: EvalArgs, deps: { client: ChatClient; env?: Record<string, string | undefined>; log?: (s: string) => void; stop?: () => boolean }): Promise<EvalRow[]> {
   const log = deps.log ?? console.log;
   const rows: EvalRow[] = [];
   const courses = EVAL_COURSES.filter((c) => args.briefs.includes(c.id));
@@ -112,6 +135,7 @@ export async function runEval(args: EvalArgs, deps: { client: ChatClient; env?: 
     const stages = new OpenRouterStages({ client: deps.client, config, roles: new FixtureOccupationSource(), links: new FixtureLinkSource(), examples });
     for (const c of courses) {
       for (const stage of args.stages) {
+        if (deps.stop?.()) { log(`eval: stopping, spending cap of $${args.maxUsd} reached`); return rows; }
         const t0 = Date.now();
         const row: EvalRow = { brief: c.id, stage, model, ok: false, rubricScore: null, soFulfilment: null, contentScore: null, moRollup: null, loRollup: null, ruleWarnings: 0, warnings: [], calls: 0, costUsd: 0, judgeCostUsd: 0, latencyMs: 0 };
         try {
@@ -206,9 +230,11 @@ export async function main(argv: string[], env: Record<string, string | undefine
     err(`eval: ${(e as Error).message}`);
     return 1;
   }
-  const client = deps.client ?? new OpenRouterClient({ apiKey: env.OPENROUTER_API_KEY });
-  log(`eval: ${args.models.length} model(s) x ${args.stages.length} stage(s) x ${args.briefs.length} brief(s); judge ${args.judge}`);
-  const rows = await runEval(args, { client, env, log });
+  if (!(args.maxUsd > 0)) { err("eval: --max-usd must be a positive number"); return 1; }
+  const client = budgetClient(deps.client ?? new OpenRouterClient({ apiKey: env.OPENROUTER_API_KEY }), args.maxUsd);
+  log(`eval: ${args.models.length} model(s) x ${args.stages.length} stage(s) x ${args.briefs.length} brief(s); judge ${args.judge}; cap $${args.maxUsd}`);
+  const rows = await runEval(args, { client, env, log, stop: client.exhausted });
+  log(`eval: spent $${client.spent().toFixed(4)} of $${args.maxUsd}`);
   const fs = await import("node:fs/promises");
   const path = await import("node:path");
   await fs.mkdir(args.outDir, { recursive: true });

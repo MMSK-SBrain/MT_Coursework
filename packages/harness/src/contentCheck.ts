@@ -79,7 +79,7 @@ export function scoreVerdicts(input: ContentCheckInput, verdicts: ContentVerdict
 /** One reviewer call for the whole session. */
 export async function checkSessionContent(input: ContentCheckInput, deps: ContentCheckDeps): Promise<ContentCheckResult> {
   const m = meter();
-  const opts = { temperature: 0, maxTokens: 2500, json: deps.config.jsonMode };
+  const opts = { temperature: 0, maxTokens: 6000, json: deps.config.jsonMode };
   const r = await callJson<ContentCheckOutput>(deps.client, deps.config.models.review, contentCheckPrompt, contentCheckPrompt.user(input, { examples: "" }), opts, m);
   if (!r.ok) {
     return { verdicts: [], blockScores: [], soFulfilment: [], score: 1, failing: [], costUsd: m.cost, calls: m.calls, skipped: `content check skipped: reviewer output was invalid (${r.errors.slice(0, 2).join("; ")})` };
