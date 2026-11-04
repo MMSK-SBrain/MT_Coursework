@@ -92,6 +92,8 @@ export function authOptions(): NextAuthOptions {
       from: process.env.EMAIL_FROM ?? "Course Generator <no-reply@reynlab.com>",
       async sendVerificationRequest({ identifier, url, provider }) {
         if (!process.env.EMAIL_SERVER) {
+          // Never log sign-in links outside development: they are bearer credentials.
+          if (!isDevSignInEnabled()) throw new Error("EMAIL_SERVER is not configured");
           // Development without SMTP: print the magic link.
           console.log(`\n[auth] Magic sign-in link for ${identifier}:\n${url}\n`);
           return;
