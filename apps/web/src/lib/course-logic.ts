@@ -4,7 +4,7 @@ import type {
   CaseStudy, Course, FitChange, FurtherLink, HourBlock, JobRole, LearningPlan, Module, ModuleOutcome, Objective, Outcome,
   OutcomeSuggestion, Provenance,
 } from "@cg/core";
-import type { ParsedInputs } from "@cg/core";
+import { BLOOM_ORDER, BLOOM_VERBS, type ParsedInputs } from "@cg/core";
 import type { CourseMeta } from "./course-meta";
 import { coerceVideo } from "./video-rules";
 
@@ -109,8 +109,11 @@ export function modulesAfterFit(base: Module[], fit: FitChange[]): Module[] {
 export function confirmStructure(course: Course, meta: CourseMeta): [Course, CourseMeta] {
   if (!allFitDecided(course)) throw new Error("Decide every proposed change first");
   const base = meta.baseModules ?? course.modules;
+  // The base snapshot predates the drafted module outcomes: carry the current MOs over so a re-confirmation keeps them.
+  const current = new Map(course.modules.map((m) => [m.id, m.outcomes]));
+  const withMos = base.map((m) => ({ ...m, outcomes: current.get(m.id) ?? m.outcomes }));
   return [
-    { ...course, modules: modulesAfterFit(base, course.fit), structureVersion: course.structureVersion + 1, structureConfirmedAt: nowIso() },
+    { ...course, modules: modulesAfterFit(withMos, course.fit), structureVersion: course.structureVersion + 1, structureConfirmedAt: nowIso() },
     { ...meta, baseModules: base },
   ];
 }
@@ -128,7 +131,7 @@ export function roleCoverage(course: Pick<Course, "fit">, role: JobRole): [numbe
 
 // ---- Stage 4 ------------------------------------------------------------------
 
-export function applyOutcomes(course: Course, meta: CourseMeta, d: { objectives: Objective[]; outcomes: Outcome[] }): [Course, CourseMeta] {
+export function applyOutcomes(course: Course, meta: CourseMeta, d: { objectives: Objective[]; outcomes: Outcome[]; modules?: Module[] }): [Course, CourseMeta] {
   // Locked items are kept exactly as they are, whatever the draft says.
   const keep = <T extends { id: string; locked: boolean }>(old: T[], drafted: T[]) => {
     const locked = new Map(old.filter((o) => o.locked).map((o) => [o.id, o]));
@@ -136,8 +139,12 @@ export function applyOutcomes(course: Course, meta: CourseMeta, d: { objectives:
     for (const o of locked.values()) if (!out.some((x) => x.id === o.id)) out.push(o);
     return out;
   };
+  // Module outcomes (MOs) come back on the drafted modules. Only their MOs are taken: the confirmed structure
+  // (titles, hours, topics) stays as the teacher confirmed it.
+  const drafted = new Map((d.modules ?? []).map((m) => [m.id, m.outcomes]));
+  const modules = course.modules.map((m) => (drafted.has(m.id) ? { ...m, outcomes: keep(m.outcomes, drafted.get(m.id)!) } : m));
   return [
-    { ...course, objectives: keep(course.objectives, d.objectives), outcomes: keep(course.outcomes, d.outcomes) },
+    { ...course, modules, objectives: keep(course.objectives, d.objectives), outcomes: keep(course.outcomes, d.outcomes) },
     { ...meta, outcomesDraftedFor: course.structureVersion },
   ];
 }
@@ -229,4 +236,28 @@ export function applyCaseStudy(course: Course, planId: string, sessionId: string
   if (cs.label === "real" && cs.sources.length === 0) throw new Error("A real case study needs checkable sources");
   const { session } = findSession(course, planId, sessionId);
   return updateSession(course, planId, sessionId, { caseStudies: [...session.caseStudies, cs] });
+}
+
+// ---- Suggested edits for module outcomes and objectives ----------------------------
+
+/**
+ * Stages.suggestOutcomeEdit only looks up course LOs. To suggest edits for a module outcome (MO) or a course
+ * objective (CO), the item is presented to it as an LO in a view of the course; the suggestion keeps the item's id.
+ */
+export function courseForSuggestion(course: Course, id: string): Course {
+  if (course.outcomes.some((o) => o.id === id)) return course;
+  const mod = course.modules.find((m) => m.outcomes.some((o) => o.id === id));
+  const mo = mod?.outcomes.find((o) => o.id === id);
+  const co = course.objectives.find((o) => o.id === id);
+  if (!mo && !co) throw new Error(`No outcome, module outcome or objective ${id}`);
+  const shim: Outcome = mo
+    ? { id, text: mo.text, bloom: mo.bloom, moduleIds: [mod!.id], objectiveIds: [], roleIds: [], origin: "user", locked: mo.locked, provenance: mo.provenance }
+    : { id, text: co!.text, bloom: bloomOfVerb(co!.text), moduleIds: [], objectiveIds: [id], roleIds: [], origin: "handout", locked: co!.locked, provenance: co!.provenance };
+  return { ...course, outcomes: [...course.outcomes, shim] };
+}
+
+/** The Bloom level whose verb list starts the text; "understand" when none does. */
+export function bloomOfVerb(text: string): Outcome["bloom"] {
+  const t = text.trim().toLowerCase();
+  return BLOOM_ORDER.find((b) => BLOOM_VERBS[b].some((v) => t.startsWith(v + " "))) ?? "understand";
 }

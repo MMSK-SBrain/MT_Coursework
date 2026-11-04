@@ -2,7 +2,6 @@ import { describe, expect, it, vi } from "vitest";
 import { HttpError } from "./errors";
 import { route } from "./http";
 import { publicJobError } from "./jobs";
-import { NotAvailableError } from "./mock-exporter";
 import { prepareCourseWrite } from "./repo";
 import { sampleCourse } from "./test-fixtures";
 
@@ -52,6 +51,5 @@ describe("errors do not leak internals", () => {
   it("job errors shown to teachers are generic unless meant for them", () => {
     expect(publicJobError(new Error("relation jobs does not exist"), "j1")).toBe("Generation failed. Reference: j1");
     expect(publicJobError(new HttpError(400, "Upload a handout first"), "j1")).toBe("Upload a handout first");
-    expect(publicJobError(new NotAvailableError("Slides arrive with @cg/exports"), "j1")).toMatch(/exports/);
   });
 });

@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@cg/core": "workspace:*",
+    "@cg/exports": "workspace:*",
+    "@cg/harness": "workspace:*",
     "drizzle-orm": "0.38.4",
     "fflate": "0.8.2",
     "next": "15.5.20",

@@ -6,7 +6,6 @@ import { runJob } from "./job-handlers";
 import type { JobRequest } from "./job-types";
 import type { Exec } from "./repo";
 import { HttpError } from "./errors";
-import { NotAvailableError } from "./mock-exporter";
 
 const { jobs } = schema;
 export type JobRow = typeof jobs.$inferSelect;
@@ -45,7 +44,7 @@ export async function claimNext(): Promise<JobRow | null> {
 
 /** The job's `error` is shown to the teacher: only messages meant for them, otherwise a generic one with the job id. */
 export function publicJobError(e: unknown, jobId: string): string {
-  if (e instanceof HttpError || e instanceof NotAvailableError) return e.message;
+  if (e instanceof HttpError) return e.message;
   return `Generation failed. Reference: ${jobId}`;
 }
 

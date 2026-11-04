@@ -2,7 +2,7 @@
 import type { AssetRef, Course, Generated, InputFile, Provenance } from "@cg/core";
 import { randomUUID } from "node:crypto";
 import {
-  addPlan, applyCaseStudy, applyFit, applyHourPlan, applyLinks, applyOutcomes, applyParsed, applyRoles, findSession, updateSession,
+  addPlan, applyCaseStudy, courseForSuggestion, applyFit, applyHourPlan, applyLinks, applyOutcomes, applyParsed, applyRoles, findSession, updateSession,
 } from "./course-logic";
 import type { CourseMeta } from "./course-meta";
 import { db, schema } from "./db";
@@ -60,7 +60,7 @@ export async function runJob(job: JobRow): Promise<unknown> {
       // Suggestions are shown next to the original; nothing is replaced until the teacher accepts.
       const out = [];
       for (const id of req.outcomeIds) {
-        const g = await stages.suggestOutcomeEdit(course, id, req.instruction);
+        const g = await stages.suggestOutcomeEdit(courseForSuggestion(course, id), id, req.instruction);
         await log(g);
         out.push({ suggestion: g.value, provenance: g.provenance, warnings: g.warnings });
       }

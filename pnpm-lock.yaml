@@ -20,6 +20,12 @@ importers:
       '@cg/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@cg/exports':
+        specifier: workspace:*
+        version: link:../../packages/exports
+      '@cg/harness':
+        specifier: workspace:*
+        version: link:../../packages/harness
       drizzle-orm:
         specifier: 0.38.4
         version: 0.38.4(@types/react@19.1.17)(postgres@3.4.9)(react@19.1.10)

@@ -1,5 +1,5 @@
 "use client";
-import { FREE_TIER, hourBlockProblems, isHttpUrl, VIDEO_BY_PATH, type CaseStudy, type VideoKind } from "@cg/core";
+import { FREE_TIER, hourBlockProblems, isHttpUrl, sessionOutcomeProblems, VIDEO_BY_PATH, type CaseStudy, type VideoKind } from "@cg/core";
 import { useState } from "react";
 import { MODES, SCENES, sceneSeconds, STYLES, VDESC, VIDEO } from "@/lib/catalog";
 import { updateSession } from "@/lib/course-logic";
@@ -7,7 +7,7 @@ import { freeVideoSecondsLeft } from "@/lib/quota";
 import { useCourse } from "../course-context";
 import { FeedbackWidget } from "../feedback-widget";
 import { Busy, Head, pad2 } from "../ui";
-import { PlansStage } from "./plans";
+import { PlansStage, RollUp } from "./plans";
 
 // Defense in depth: the schema already rejects non-http(s) URLs.
 const safeHref = (u: string) => (isHttpUrl(u) ? u : "#");
@@ -26,6 +26,8 @@ export function BuildStage() {
   const k = (t: string) => `${t}:${s.id}`;
   const blocks = [...s.blocks].sort((a, b) => a.hour - b.hour || a.startMin - b.startMin);
   const problems = blocks.length ? hourBlockProblems(blocks, s.minutes) : [];
+  // Before blocks exist only the SO-level checks apply (every SO "not served" would just be noise).
+  const soProblems = blocks.length ? sessionOutcomeProblems(s) : sessionOutcomeProblems({ ...s, blocks: [] }).filter((p) => !p.endsWith("is not served by any block"));
   const warnings = meta.warnings?.[`hourPlan:${s.id}`] ?? [];
   const examples = blocks.filter((b) => b.industryExample);
   const vt = s.video === "none" ? null : s.video;
@@ -56,6 +58,22 @@ export function BuildStage() {
           <div className="panel">
             <span className="eyebrow">{unit} {s.index} · {STYLES[s.style]} · {s.minutes} min</span>
             <h2 style={{ marginTop: 4 }}>{s.title}</h2>
+            <h3 style={{ margin: "12px 0 0" }}>Session outcomes</h3>
+            {s.sessionOutcomes.map((so) => (
+              <div key={so.id} className="lo">
+                <span className="id">{so.id.split(".").pop()}</span>
+                <div>
+                  <div>{so.text}</div>
+                  <div className="meta">
+                    <span className="chip ink">{so.bloom.charAt(0).toUpperCase() + so.bloom.slice(1)}</span>
+                    {so.moduleOutcomeIds.map((id) => <span key={id} className="chip ok" title="Serves this module outcome">{id}</span>)}
+                    {blocks.length > 0 && !blocks.some((b) => b.sessionOutcomeIds.includes(so.id)) && <span className="chip warn">No block serves it</span>}
+                  </div>
+                </div>
+                <div className="acts"><FeedbackWidget courseId={course.id} targetPath={`plans[${plan.id}].sessions[${s.id}].sessionOutcomes[${so.id}]`} provenance={so.provenance} label={so.id} /></div>
+              </div>
+            ))}
+            {soProblems.map((p) => <div key={p} className="chip warn" style={{ marginTop: 6 }}>{p}</div>)}
             {s.stale && <p className="small" style={{ margin: "6px 0 0", color: "var(--warn)" }}>An outcome or the course structure changed after this {unit.toLowerCase()} was built. Redraft the hour-wise plan to bring it up to date.</p>}
           </div>
 
@@ -87,7 +105,7 @@ export function BuildStage() {
 
           <div className="panel blocks">
             <div className="row between"><h2>{isContent ? "Episode plan" : "Hour-wise plan"}</h2>{hourStatus}</div>
-            {[...problems, ...warnings].map((p) => <div key={p} className="chip warn" style={{ marginTop: 6 }}>{p}</div>)}
+            {[...problems, ...(blocks.length ? soProblems : []), ...warnings].map((p) => <div key={p} className="chip warn" style={{ marginTop: 6 }}>{p}</div>)}
             {!blocks.length && <p className="muted" style={{ margin: "8px 0 0" }}>Not drafted yet. Draft it above; it is free.</p>}
             {[...new Set(blocks.map((b) => b.hour))].map((h) => (
               <div key={h}>
@@ -98,7 +116,7 @@ export function BuildStage() {
                     <div>
                       <b>{b.title}</b> <span className="muted small">· {b.minutes} min · {STYLES[b.style]}</span>
                       <div className="small">{b.activity}</div>
-                      <div className="meta" style={{ display: "flex", gap: 4, marginTop: 4 }}>{b.outcomeIds.map((o) => <span key={o} className="chip ink">{o}</span>)}{b.needsSlides && <span className="chip">Slides</span>}</div>
+                      <div className="meta" style={{ display: "flex", gap: 4, marginTop: 4 }}>{b.sessionOutcomeIds.map((o) => <span key={o} className="chip" title={s.sessionOutcomes.find((x) => x.id === o)?.text}>serves {o.split(".").pop()}</span>)}{b.outcomeIds.map((o) => <span key={o} className="chip ink">{o}</span>)}{b.needsSlides && <span className="chip">Slides</span>}</div>
                       {b.check.length > 0 && <ul>{b.check.map((q) => <li key={q}>{q}</li>)}</ul>}
                       <div style={{ marginTop: 6 }}><FeedbackWidget courseId={course.id} targetPath={`plans[${plan.id}].sessions[${s.id}].blocks[${b.id}]`} provenance={b.provenance} label={b.title} /></div>
                     </div>
@@ -171,6 +189,8 @@ export function BuildStage() {
               ))}
             </div>
           )}
+
+          <RollUp course={course} plan={plan} />
 
           <div className="panel">
             <div className="row between">

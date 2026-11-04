@@ -1,5 +1,5 @@
 "use client";
-import { outcomeVerbProblem, type EditInstruction, type Objective, type Outcome, type OutcomeSuggestion, type Provenance } from "@cg/core";
+import { outcomeVerbProblem, type EditInstruction, type ModuleOutcome, type Objective, type Outcome, type OutcomeSuggestion, type Provenance } from "@cg/core";
 import { useState } from "react";
 import { cap, QUICK } from "@/lib/catalog";
 import { acceptSuggestion, editOutcomeText, freezeOutcomes, setLocked, unfreezeOutcomes } from "@/lib/course-logic";
@@ -35,11 +35,14 @@ export function OutcomesStage() {
     setSugOpen((s) => ({ ...s, [id]: false }));
   };
 
-  const item = (o: Objective | Outcome, isLo: boolean) => {
-    const lo = isLo ? (o as Outcome) : null;
+  type Kind = "co" | "lo" | "mo";
+  const item = (o: Objective | Outcome | ModuleOutcome, kind: Kind, moduleId?: string) => {
+    const lo = kind === "lo" ? (o as Outcome) : null;
+    const mo = kind === "mo" ? (o as ModuleOutcome) : null;
     const locked = frozen || o.locked;
     const p = props[o.id];
-    const problem = lo ? outcomeVerbProblem(lo) : null;
+    const problem = lo ? outcomeVerbProblem(lo) : mo ? outcomeVerbProblem(mo) : null;
+    const path = kind === "lo" ? `outcomes[${o.id}]` : kind === "mo" ? `modules[${moduleId}].outcomes[${o.id}]` : `objectives[${o.id}]`;
     return (
       <div key={o.id} className="lo">
         <span className="id">{o.id}</span>
@@ -51,6 +54,14 @@ export function OutcomesStage() {
               {lo.moduleIds.map((m) => <span key={m} className="chip">{m}</span>)}
               {lo.roleIds.map(roleTitle).filter(Boolean).map((t) => <span key={t} className="chip ok">{t}</span>)}
               {srcChip(lo.origin)}
+              {problem && <span className="chip warn" title={problem}>Check the verb</span>}
+            </div>
+          )}
+          {mo && (
+            <div className="meta">
+              <span className="chip ink">{cap(mo.bloom)}</span>
+              {mo.outcomeIds.map((id) => <span key={id} className="chip ok" title="Serves this learning outcome">{id}</span>)}
+              {!mo.outcomeIds.length && <span className="chip warn">Serves no learning outcome</span>}
               {problem && <span className="chip warn" title={problem}>Check the verb</span>}
             </div>
           )}
@@ -72,7 +83,7 @@ export function OutcomesStage() {
             <div className="prop">
               <span className="eyebrow">Suggested rewrite</span>
               <del>{o.text}</del>
-              {p.suggestion.proposed.map((x, i) => <ins key={i}>{i > 0 ? `${o.id}${String.fromCharCode(97 + i)}: ` : ""}{x.text}{lo && x.bloom !== lo.bloom ? ` (${cap(x.bloom)})` : ""}</ins>)}
+              {p.suggestion.proposed.map((x, i) => <ins key={i}>{i > 0 ? `${o.id}${String.fromCharCode(97 + i)}: ` : ""}{x.text}{(lo ?? mo) && x.bloom !== (lo ?? mo)!.bloom ? ` (${cap(x.bloom)})` : ""}</ins>)}
               <span className="muted small">{p.suggestion.reason}</span>
               <div className="row">
                 <button className="btn sm primary" onClick={() => { void save((c) => acceptSuggestion(c, p.suggestion, p.provenance)); drop(o.id); }}>Accept</button>
@@ -82,7 +93,7 @@ export function OutcomesStage() {
               </div>
             </div>
           )}
-          <div style={{ marginTop: 6 }}><FeedbackWidget courseId={course.id} targetPath={`${isLo ? "outcomes" : "objectives"}[${o.id}]`} provenance={o.provenance} label={o.id} /></div>
+          <div style={{ marginTop: 6 }}><FeedbackWidget courseId={course.id} targetPath={path} provenance={o.provenance} label={o.id} /></div>
         </div>
         <div className="acts">
           {frozen ? <span className="chip seal">Frozen</span> : (
@@ -141,13 +152,25 @@ export function OutcomesStage() {
           {busy.bulk && <div style={{ marginTop: 8 }}><Busy>Writing suggestions…</Busy></div>}
         </div>
       )}
-      <div className="panel"><h2>Course objectives</h2><div style={{ marginTop: 4 }}>{course.objectives.map((o) => item(o, false))}</div></div>
+      <div className="panel"><h2>Course objectives</h2><div style={{ marginTop: 4 }}>{course.objectives.map((o) => item(o, "co"))}</div></div>
       <div className="panel">
         <div className="row between">
           <h2>Learning outcomes</h2>
           <span className="muted small">{covered ? "Every module covered" : "Some modules have no outcome"} · {tied ? "every outcome tied to a selected role" : "some outcomes are not tied to a selected role"}</span>
         </div>
-        <div style={{ marginTop: 4 }}>{course.outcomes.map((o) => item(o, true))}</div>
+        <div style={{ marginTop: 4 }}>{course.outcomes.map((o) => item(o, "lo"))}</div>
+      </div>
+      <div className="panel">
+        <div className="row between">
+          <h2>Module outcomes</h2>
+          <span className="muted small">What each module must achieve · each serves one or more learning outcomes</span>
+        </div>
+        {course.modules.map((m) => (
+          <div key={m.id} style={{ marginTop: 12 }}>
+            <h3><span className="mono muted">{m.id}</span> {m.title}</h3>
+            {m.outcomes.length ? m.outcomes.map((mo) => item(mo, "mo", m.id)) : <p className="muted small" style={{ margin: "4px 0 0" }}>No module outcomes yet. Draft the outcomes to add them.</p>}
+          </div>
+        ))}
       </div>
       <div className="row between">
         <button className="btn" onClick={() => go("fit")}>← Course–job fit</button>

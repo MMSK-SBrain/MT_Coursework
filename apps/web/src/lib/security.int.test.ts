@@ -62,11 +62,17 @@ describe("paid exports reserve the credit first", () => {
     await saveCourse(bob, course, sample.plans.length ? { ...course, plans: sample.plans } : course, {});
     await grant(bob, "slides");
     const plan = sample.plans[0]!, s = plan.sessions[0]!;
-    const [job] = await db().insert(schema.jobs).values({ type: "exportSlides", userId: bob, courseId: course.id, payload: { planId: plan.id, sessionId: s.id } }).returning();
-    await expect(runJob(job!)).rejects.toThrow(/@cg\/exports/); // the mock exporter has no .pptx yet
+    // The exporter throws for a session that does not exist.
+    const [bad] = await db().insert(schema.jobs).values({ type: "exportSlides", userId: bob, courseId: course.id, payload: { planId: plan.id, sessionId: "missing" } }).returning();
+    await expect(runJob(bad!)).rejects.toThrow();
     expect((await credits(bob)).slides).toBe(1);
-    const files = await db().select().from(schema.uploads).where(and(eq(schema.uploads.ownerId, bob), eq(schema.uploads.courseId, course.id)));
-    expect(files).toHaveLength(0);
+    const files = () => db().select().from(schema.uploads).where(and(eq(schema.uploads.ownerId, bob), eq(schema.uploads.courseId, course.id)));
+    expect(await files()).toHaveLength(0);
+    // A good export takes the credit and records exactly one file.
+    const [good] = await db().insert(schema.jobs).values({ type: "exportSlides", userId: bob, courseId: course.id, payload: { planId: plan.id, sessionId: s.id } }).returning();
+    await runJob(good!);
+    expect((await credits(bob)).slides).toBe(0);
+    expect(await files()).toHaveLength(1);
   });
 
   it("refuses to start without a credit", async () => {

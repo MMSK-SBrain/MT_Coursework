@@ -1,5 +1,5 @@
 "use client";
-import { uncoveredOutcomes, VIDEO_BY_PATH, type LearningPath, type TeachingStyle, type VideoKind } from "@cg/core";
+import { learningOutcomeCoverage, moduleOutcomeCoverage, uncoveredOutcomes, VIDEO_BY_PATH, type Course, type LearningPath, type LearningPlan, type TeachingStyle, type VideoKind } from "@cg/core";
 import { useState } from "react";
 import { AUDIENCE_VARIANTS, MODES, STYLE_FAMS, STYLES, VIDEO } from "@/lib/catalog";
 import { updateSession } from "@/lib/course-logic";
@@ -106,7 +106,13 @@ export function PlansStage() {
               {plan.sessions.map((s) => (
                 <tr key={s.id}>
                   <td className="mono">{pad2(s.index)}</td>
-                  <td>{s.title} {s.stale && <span className="chip warn">Out of date</span>}</td>
+                  <td>
+                    {s.title} {s.stale && <span className="chip warn">Out of date</span>}
+                    <div className="meta" style={{ display: "flex", flexWrap: "wrap", gap: 4, marginTop: 4 }}>
+                      {s.sessionOutcomes.map((so) => <span key={so.id} className="chip" title={`${so.text} (${so.bloom}) · serves ${so.moduleOutcomeIds.join(", ") || "no module outcome"}`}>{so.id}</span>)}
+                      {!s.sessionOutcomes.length && <span className="chip warn">No session outcomes</span>}
+                    </div>
+                  </td>
                   <td>{s.outcomeIds.map((l) => <span key={l} className="chip ink" style={{ marginRight: 4 }}>{l}</span>)}</td>
                   <td><StyleSelect label={`Style for ${s.index}`} value={s.style} onChange={(st) => save((c) => updateSession(c, plan.id, s.id, { style: st }))} /></td>
                   <td className="mono">{s.minutes} min</td>
@@ -126,6 +132,7 @@ export function PlansStage() {
             {course.outcomes.map((l) => <span key={l.id} className={`chip ${unc.has(l.id) ? "bad" : "ok"}`}>{l.id} {unc.has(l.id) ? "not covered" : "covered"}</span>)}
           </div>
         </div>
+        <RollUp course={course} plan={plan} />
         <div className="row" style={{ justifyContent: "flex-end" }}><button className="btn primary" onClick={() => { setPlanId(plan.id); go("build"); }}>Build assets for this plan →</button></div>
       </>
     );
@@ -139,5 +146,37 @@ export function PlansStage() {
       </div>
       {body}
     </>
+  );
+}
+
+/** Roll-up: session outcomes meet module outcomes (at their Bloom level), which meet the course learning outcomes. */
+export function RollUp({ course, plan }: { course: Course; plan: LearningPlan }) {
+  const mo = moduleOutcomeCoverage(course, plan);
+  const lo = learningOutcomeCoverage(course, plan);
+  return (
+    <div className="panel">
+      <div className="row between">
+        <h3>Outcome roll-up</h3>
+        <span className="muted small">{mo.filter((m) => m.met).length} of {mo.length} module outcomes met · {lo.filter((l) => l.met).length} of {lo.length} learning outcomes met</span>
+      </div>
+      <div className="tbl" style={{ marginTop: 8 }}>
+        <table>
+          <thead><tr><th>Module outcome</th><th>Served by</th><th>Status</th></tr></thead>
+          <tbody>
+            {mo.map((m) => (
+              <tr key={m.moduleOutcomeId}>
+                <td className="mono">{m.moduleOutcomeId}</td>
+                <td>{m.sessionOutcomeIds.map((id) => <span key={id} className="chip" style={{ marginRight: 4 }}>{id}</span>)}</td>
+                <td>{m.met ? <span className="chip ok">Met</span> : <span className="chip bad" title={m.problem}>Not met: {m.problem}</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {!mo.length && <p className="muted small" style={{ margin: 0 }}>No module outcomes yet.</p>}
+      </div>
+      <div className="row" style={{ marginTop: 10 }}>
+        {lo.map((l) => <span key={l.outcomeId} className={`chip ${l.met ? "ok" : "bad"}`} title={l.moduleOutcomeIds.join(", ") || "no module outcomes"}>{l.outcomeId} {l.met ? "met" : "not met"}</span>)}
+      </div>
+    </div>
   );
 }

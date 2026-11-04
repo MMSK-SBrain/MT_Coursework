@@ -1,7 +1,7 @@
 import { Course, learningOutcomeCoverage, moduleOutcomeCoverage, outcomeVerbProblem, sessionOutcomeProblems } from "@cg/core";
 import { describe, expect, it } from "vitest";
-import { acceptSuggestion, addPlan, applyHourPlan, editOutcomeText, setLocked } from "./course-logic";
-import { mockStages } from "./mock-stages";
+import { acceptSuggestion, addPlan, applyHourPlan, confirmStructure, courseForSuggestion, editOutcomeText, reopenStructure, setLocked } from "./course-logic";
+import { mockStages } from "./test-fixtures";
 import { markStale } from "./stale";
 import { sampleCourse } from "./test-fixtures";
 
@@ -49,21 +49,33 @@ describe("LO > MO > SO hierarchy in the sample course", () => {
 
   it("editing a module outcome marks the sessions whose SOs serve it stale", async () => {
     const course = await fullyBuilt();
-    const edited = editOutcomeText(course, "M3.MO1", "Write requirements for a BMS.");
-    expect(edited.modules.find((m) => m.id === "M3")!.outcomes[0]!.text).toBe("Write requirements for a BMS.");
+    // A module outcome that some session outcome serves.
+    const target = course.modules.flatMap((m) => m.outcomes).find((mo) => course.plans[0]!.sessions.some((s) => s.sessionOutcomes.some((so) => so.moduleOutcomeIds.includes(mo.id))))!;
+    const edited = editOutcomeText(course, target.id, "Write requirements for a BMS.");
+    expect(edited.modules.flatMap((m) => m.outcomes).find((o) => o.id === target.id)!.text).toBe("Write requirements for a BMS.");
     const after = markStale(course, edited);
-    const serving = course.plans[0]!.sessions.filter((s) => s.sessionOutcomes.some((so) => so.moduleOutcomeIds.includes("M3.MO1"))).map((s) => s.id);
+    const serving = course.plans[0]!.sessions.filter((s) => s.sessionOutcomes.some((so) => so.moduleOutcomeIds.includes(target.id))).map((s) => s.id);
     expect(serving.length).toBeGreaterThan(0);
     expect(after.plans[0]!.sessions.filter((s) => s.stale).map((s) => s.id).sort()).toEqual(serving.sort());
   });
 
   it("module outcomes lock, and accept suggested rewrites (including splits)", async () => {
     const { course } = await sampleCourse();
-    const locked = setLocked(course, "M4.MO1", true);
-    expect(editOutcomeText(locked, "M4.MO1", "Changed.").modules.find((m) => m.id === "M4")!.outcomes[0]!.text).toBe(course.modules[3]!.outcomes[0]!.text);
-    const g = await mockStages.suggestOutcomeEdit(course, "M7.MO1", { kind: "split", note: "" });
+    const mod = course.modules.find((m) => m.outcomes.length > 0)!;
+    const mo = mod.outcomes[0]!;
+    const locked = setLocked(course, mo.id, true);
+    expect(editOutcomeText(locked, mo.id, "Changed.").modules.find((m) => m.id === mod.id)!.outcomes[0]!.text).toBe(mo.text);
+    const g = await mockStages.suggestOutcomeEdit(courseForSuggestion(course, mo.id), mo.id, { kind: "split", note: "" });
     const after = acceptSuggestion(course, g.value, g.provenance);
-    expect(after.modules.find((m) => m.id === "M7")!.outcomes.map((o) => o.id)).toEqual(["M7.MO1", "M7.MO1b", "M7.MO2"]);
+    const ids = after.modules.find((m) => m.id === mod.id)!.outcomes.map((o) => o.id);
+    expect(ids.slice(0, g.value.proposed.length)).toEqual(g.value.proposed.map((_, i) => (i === 0 ? mo.id : `${mo.id}${String.fromCharCode(97 + i)}`)));
     expect(() => Course.parse(after)).not.toThrow();
+  });
+
+  it("re-confirming the structure keeps the module outcomes", async () => {
+    const { course, meta } = await sampleCourse();
+    const before = course.modules.map((m) => m.outcomes.map((o) => o.id));
+    const [again] = confirmStructure(reopenStructure(course), meta);
+    expect(again.modules.map((m) => m.outcomes.map((o) => o.id))).toEqual(before);
   });
 });

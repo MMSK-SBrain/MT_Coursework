@@ -1,7 +1,7 @@
 import { VIDEO_BY_PATH } from "@cg/core";
 import { describe, expect, it } from "vitest";
 import { addPlan, updateSession } from "./course-logic";
-import { mockStages } from "./mock-stages";
+import { mockStages } from "./test-fixtures";
 import { prepareCourseWrite } from "./repo";
 import { sampleCourse } from "./test-fixtures";
 import { coerceVideo, videoProblems } from "./video-rules";

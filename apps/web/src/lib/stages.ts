@@ -1,27 +1,33 @@
-// The app depends only on the core `Stages` and `Exporter` interfaces. This file is the single place where the
-// real implementations get plugged in.
+// The app depends only on the core `Stages` and `Exporter` interfaces; this file picks the implementations.
+//   OPENROUTER_API_KEY set  -> @cg/harness OpenRouterStages (real models)
+//   otherwise               -> @cg/harness MockStages (deterministic, network-free)
+// Exports always come from @cg/exports (markdown, .pptx, .docx).
 import type { Exporter, Stages } from "@cg/core";
-import { mockStages } from "./mock-stages";
-import { mockExporter } from "./mock-exporter";
+import { exporter } from "@cg/exports";
+import { FixtureJobSource, FixtureLinkSource, MockStages, OpenRouterClient, OpenRouterStages, YouTubeLinkSource, loadConfig } from "@cg/harness";
 
-// ============================================================================================
-// PLUG-IN POINT for @cg/harness and @cg/exports.
-// When they merge:
-//   1. add "@cg/harness": "workspace:*" and "@cg/exports": "workspace:*" to apps/web/package.json
-//      and both names to `transpilePackages` in apps/web/next.config.mjs;
-//   2. replace the two return statements below, e.g.
-//        import { createStages } from "@cg/harness";   return (stages ??= createStages(process.env));
-//        import { exporter } from "@cg/exports";        return exporter;
-//   CG_STAGES=mock keeps the mock (tests, offline dev).
-// ============================================================================================
 let stages: Stages | undefined;
+
+export function createStages(env: Record<string, string | undefined> = process.env): Stages {
+  if (!env.OPENROUTER_API_KEY) {
+    return new MockStages({ now: () => new Date(), delayMs: env.NODE_ENV === "development" ? 400 : 0 });
+  }
+  return new OpenRouterStages({
+    client: new OpenRouterClient({ apiKey: env.OPENROUTER_API_KEY, appTitle: "Course Generator" }),
+    config: loadConfig(env),
+    // The job-listing source is still an open decision; postings come from the harness fixture until it is chosen.
+    jobs: new FixtureJobSource(),
+    links: env.YOUTUBE_API_KEY ? new YouTubeLinkSource({ apiKey: env.YOUTUBE_API_KEY }) : new FixtureLinkSource(),
+  });
+}
+
 export function getStages(): Stages {
-  return (stages ??= mockStages);
+  return (stages ??= createStages());
 }
 
 export function getExporter(): Exporter {
-  return mockExporter;
+  return exporter;
 }
 
 /** Shown in the top bar while generation is mocked. */
-export const usingMockStages = () => getStages() === mockStages;
+export const usingMockStages = () => getStages() instanceof MockStages;
