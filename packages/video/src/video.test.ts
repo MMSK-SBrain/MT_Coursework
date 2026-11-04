@@ -66,7 +66,8 @@ describe("plan() per video kind", () => {
       it("narration covers the session outcomes and the title", async () => {
         const project = await builder.planKind(aezc517, PLAN_FOR_KIND[kind], "s3", kind);
         const text = plain(project.scriptMd).toLowerCase();
-        for (const o of aezc517.outcomes) expect(text).toContain(o.text.replace(/\.$/, "").toLowerCase().replace(/^./, (c) => c));
+        const session = aezc517.plans[0]!.sessions[0]!;
+        for (const so of session.sessionOutcomes) expect(text).toContain(so.text.replace(/\.$/, "").toLowerCase());
         expect(text).toContain("what a good requirement looks like");
       });
 
@@ -124,14 +125,50 @@ describe("rules", () => {
 
   it("trims scenes to the target and enforces the max duration", async () => {
     const full = await createVideoBuilder({ targetSec: 300 }).plan(aezc517, "p-youtube", "s3");
-    const short = await createVideoBuilder({ targetSec: 22 }).plan(aezc517, "p-youtube", "s3");
+    const short = await createVideoBuilder({ targetSec: 30 }).plan(aezc517, "p-youtube", "s3");
     expect(short.estimatedSec).toBeLessThan(full.estimatedSec);
-    expect(short.estimatedSec).toBeLessThanOrEqual(22);
+    expect(short.estimatedSec).toBeLessThanOrEqual(30);
     expect(short.scriptMd.split(/^## /m).length).toBeLessThan(full.scriptMd.split(/^## /m).length);
     // essential scenes survive
     expect(short.scriptMd).toContain("## hook");
     // a limit below the minimum script cannot be met
-    await expect(createVideoBuilder({ maxSec: 5 }).plan(aezc517, "p-youtube", "s3")).rejects.toThrow(VideoLimitError);
+    // a limit below what the SOs need cannot be met: reported, not silently dropped
+    await expect(createVideoBuilder({ maxSec: 5 }).plan(aezc517, "p-youtube", "s3")).rejects.toThrow(/cannot fit/);
+  });
+
+  it("scenes record which SOs they serve, and every SO is covered, even in a short cut", async () => {
+    const ids = aezc517.plans[0]!.sessions[0]!.sessionOutcomes.map((so) => so.id);
+    for (const target of [300, 60, 30]) {
+      const o = templateOutline(aezc517, "p-youtube", "s3", { kind: "explainroo", targetSec: target });
+      expect(o.outcomeIds).toEqual(ids);
+      expect(outlineProblems(o)).toEqual([]);
+      const covered = new Set(o.scenes.flatMap((s) => s.serves ?? []));
+      for (const id of ids) expect(covered.has(id), `${id} at ${target}s`).toBe(true);
+    }
+    const full = templateOutline(aezc517, "p-youtube", "s3", { kind: "explainroo", targetSec: 300 });
+    expect(full.scenes.find((s) => s.id.startsWith("point-"))!.serves!.length).toBeGreaterThan(0);
+  });
+
+  it("dropping scenes never removes the last scene that serves an SO", () => {
+    // only the trace block serves SO2; at 60 s the cut must keep it (or another scene serving SO2)
+    const o = templateOutline(aezc517, "p-youtube", "s3", { kind: "explainroo", targetSec: 40 });
+    expect(o.scenes.some((s) => s.serves?.includes("S3.SO2"))).toBe(true);
+  });
+
+  it("falls back to LOs when the session has no SOs", () => {
+    const course = structuredClone(aezc517);
+    for (const p of course.plans) for (const s of p.sessions) { s.sessionOutcomes = []; s.blocks.forEach((b) => (b.sessionOutcomeIds = [])); }
+    const o = templateOutline(course, "p-youtube", "s3", { kind: "explainroo", targetSec: 300 });
+    expect(o.outcomeIds).toEqual(["LO2"]);
+    expect(o.scenes.find((s) => s.id === "outcomes")!.serves).toEqual(["LO2"]);
+    expect(o.scenes.map((s) => s.narration).join(" ").toLowerCase()).toContain("write verifiable system requirements");
+    expect(outlineProblems(o)).toEqual([]);
+  });
+
+  it("outlineProblems flags uncovered SOs and cap problems", () => {
+    const sc = { id: "hook", priority: 0, visual: { type: "hook" as const, text: "x" }, narration: "[#q] hi", serves: ["A"] };
+    expect(outlineProblems({ title: "T", courseLabel: "C", scenes: [sc], outcomeIds: ["A", "B"] })).toEqual(["outcome B is not covered by any scene"]);
+    expect(outlineProblems({ title: "T", courseLabel: "C", scenes: [sc], outcomeIds: ["A"], capProblems: ["cannot fit"] })).toEqual(["cannot fit"]);
   });
 
   it("buildProject enforces maxSec and the path rule on any outline (LLM seam)", () => {

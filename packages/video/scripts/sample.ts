@@ -1,7 +1,7 @@
 // pnpm --filter @cg/video sample
 // Builds the AEZC517 "What a good requirement looks like" sample for every video kind into out/<kind>/,
 // then renders the explainroo one (about 20 s) when explainroo's doctor says it is ready.
-// Env: SAMPLE_KINDS=explainroo,whiteboard  SAMPLE_SEC=20  SAMPLE_RENDER=0|1  EXPLAINROO_DIR=...
+// Env: SAMPLE_KINDS=explainroo,whiteboard  SAMPLE_SEC=30  SAMPLE_RENDER=0|1  EXPLAINROO_DIR=...
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { aezc517, PLAN_FOR_KIND } from "../src/fixtures.js";
@@ -9,7 +9,7 @@ import { createVideoBuilder, runExplainroo, writeProject } from "../src/index.js
 
 const out = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "out");
 const kinds = (process.env.SAMPLE_KINDS ?? "explainroo,whiteboard,demo,screen,slides").split(",") as (keyof typeof PLAN_FOR_KIND)[];
-const targetSec = Number(process.env.SAMPLE_SEC ?? 20);
+const targetSec = Number(process.env.SAMPLE_SEC ?? 30);
 const builder = createVideoBuilder({ targetSec });
 
 for (const kind of kinds) {

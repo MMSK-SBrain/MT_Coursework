@@ -21,6 +21,8 @@ export interface OutlineScene {
   /** Spoken text. Must contain the [#marker]s its visual uses (see Visual). {shown|spoken} is allowed. */
   narration: string;
   visual: Visual;
+  /** Session outcome ids (or learning outcome ids when the session has no SOs) this scene serves. */
+  serves?: string[];
   /** Lower number = more essential. Scenes with the highest numbers are dropped first to fit a time limit. */
   priority: number;
 }
@@ -30,6 +32,10 @@ export interface ScriptOutline {
   /** Small label on slides, e.g. "AEZC517 Systems Engineering". */
   courseLabel: string;
   scenes: OutlineScene[];
+  /** Outcome ids (SOs, or LOs as a fallback) that the narration must cover. outlineProblems() flags any that no scene serves. */
+  outcomeIds?: string[];
+  /** Set by templateOutline when the length cap could not be met without losing coverage of an outcome. */
+  capProblems?: string[];
 }
 
 export const MARKERS: Record<Visual["type"], (v: Visual) => string[]> = {
@@ -62,6 +68,9 @@ export function outlineProblems(o: ScriptOutline): string[] {
       if (!have.has(m)) problems.push(`scene "${sc.id}" (${sc.visual.type}) needs a [#${m}] marker in its narration`);
     }
   }
+  const covered = new Set(o.scenes.flatMap((sc) => sc.serves ?? []));
+  for (const id of o.outcomeIds ?? []) if (!covered.has(id)) problems.push(`outcome ${id} is not covered by any scene`);
+  problems.push(...(o.capProblems ?? []));
   return problems;
 }
 
@@ -145,15 +154,23 @@ export interface TemplateOptions {
 /** Turn a session (outcomes, hour blocks, industry examples, style) into a ScriptOutline with plain templates. */
 export function templateOutline(course: Course, planId: string, sessionId: string, opt: TemplateOptions): ScriptOutline {
   const { session } = findSession(course, planId, sessionId);
-  const outcomes = session.outcomeIds.map((id) => course.outcomes.find((o) => o.id === id)).filter((o): o is NonNullable<typeof o> => !!o);
+  // Narration is built around the session outcomes (SOs); learning outcomes (LOs) are the fallback.
+  const useSo = session.sessionOutcomes.length > 0;
+  const outcomes: { id: string; text: string }[] = useSo
+    ? session.sessionOutcomes
+    : session.outcomeIds.map((id) => course.outcomes.find((o) => o.id === id)).filter((o): o is NonNullable<typeof o> => !!o);
+  const allIds = outcomes.map((o) => o.id);
+  const known = new Set(allIds);
+  const blockServes = (...bs: HourBlock[]) => [...new Set(bs.flatMap((b) => (useSo ? b.sessionOutcomeIds : b.outcomeIds)).filter((id) => known.has(id)))];
   const blocks: HourBlock[] = [...session.blocks].sort((a, b) => a.hour - b.hour || a.startMin - b.startMin);
   const teach = blocks.filter((b) => ["teach", "activity", "case"].includes(b.kind));
-  const examples = [...new Map(blocks.filter((b) => b.industryExample).map((b) => [b.industryExample!.text, b.industryExample!])).values()];
+  const exBlocks = [...new Map(blocks.filter((b) => b.industryExample).map((b) => [b.industryExample!.text, b])).values()];
+  const examples = exBlocks.map((b) => b.industryExample!);
   const questions = blocks.flatMap((b) => b.check);
   const buildScenes = (compact: boolean): OutlineScene[] => {
-  // compact: only the first clause of the first outcome, no example in the hook (for very short targets)
+  // compact: only the first clause of each outcome, no example in the hook (for very short targets)
   const full = outcomes.map((o) => stripEnd(o.text));
-  const outcomeText = compact ? full.slice(0, 1).map((t) => t.split(/,| with /)[0]!) : full;
+  const outcomeText = compact ? full.map((t) => t.split(/,| with /)[0]!) : full;
   const scenes: OutlineScene[] = [];
   const add = (s: OutlineScene) => scenes.push(s);
 
@@ -162,7 +179,7 @@ export function templateOutline(course: Course, planId: string, sessionId: strin
 
   if (outcomeText.length) {
     const lines = outcomeText.map((t, i) => `[#i${i + 1}] ${speakable(lowerFirst(t))}.`);
-    add({ id: "outcomes", priority: 1, visual: { type: "objectives", title: "By the end you can", items: outcomeText },
+    add({ id: "outcomes", priority: 1, serves: allIds, visual: { type: "objectives", title: "By the end you can", items: outcomeText },
       narration: `By the end of this video, you will be able to:\n${lines.join("\n")}` });
   }
 
@@ -173,24 +190,24 @@ export function templateOutline(course: Course, planId: string, sessionId: strin
       const b = items[i];
       const title = b ? stripEnd(b.title) : stripEnd(session.title);
       const verb = opt.kind === "demo" ? "Watch how" : "Now follow along on screen:";
-      add({ id: `${opt.kind}-${i + 1}-${slug(shortLabel(title), "part")}`, priority: 2 + i, visual: { type: "media", title, caption: title, asset: opt.mediaAssets?.[i] },
+      add({ id: `${opt.kind}-${i + 1}-${slug(shortLabel(title), "part")}`, priority: 2 + i, serves: b ? blockServes(b) : allIds, visual: { type: "media", title, caption: title, asset: opt.mediaAssets?.[i] },
         narration: `[#m] ${verb} ${speakable(lowerFirst(title))}. [#c] Pay attention to the order of the steps and to what each one produces.` });
     }
   } else {
     if (teach.length >= 3) {
       const steps = teach.slice(0, 5).map((b) => shortLabel(b.title));
       const said = steps.map((t, i) => `[#s${i + 1}] ${i === 0 ? "First" : i === steps.length - 1 ? "Finally" : "Then"}, ${speakable(lowerFirst(t))}.`);
-      add({ id: "flow", priority: 2, visual: { type: "flow", title: "The path", steps }, narration: `The session follows ${steps.length} steps.\n${said.join("\n")}` });
+      add({ id: "flow", priority: 2, serves: blockServes(...teach.slice(0, 5)), visual: { type: "flow", title: "The path", steps }, narration: `The session follows ${steps.length} steps.\n${said.join("\n")}` });
     }
     teach.slice(0, 3).forEach((b, i) => {
       const title = stripEnd(b.title);
-      add({ id: `point-${i + 1}-${slug(shortLabel(title), "part")}`, priority: 3 + i, visual: { type: "point", title, caption: shortLabel(b.activity, 90) },
+      add({ id: `point-${i + 1}-${slug(shortLabel(title), "part")}`, priority: 3 + i, serves: blockServes(b), visual: { type: "point", title, caption: shortLabel(b.activity, 90) },
         narration: `[#t] ${speakable(title)}. [#c] ${speakable(stripEnd(b.activity.split(/(?<=[.!?])\s/)[0] ?? b.activity))}.` });
     });
   }
 
   examples.slice(0, 2).forEach((ex, i) => {
-    add({ id: `example-${i + 1}`, priority: i === 0 ? 4 : 7, visual: { type: "example", label: `In ${ex.sector}`, text: stripEnd(ex.text) },
+    add({ id: `example-${i + 1}`, priority: i === 0 ? 4 : 7, serves: blockServes(exBlocks[i]!), visual: { type: "example", label: `In ${ex.sector}`, text: stripEnd(ex.text) },
       narration: `[#e] In ${speakable(ex.sector)}, this shows up like this. ${speakable(stripEnd(ex.text))}.` });
   });
 
@@ -201,24 +218,32 @@ export function templateOutline(course: Course, planId: string, sessionId: strin
 
   if (outcomeText.length) {
     const lines = outcomeText.map((t, i) => `[#i${i + 1}] ${speakable(lowerFirst(t))}.`);
-    add({ id: "recap", priority: 5, visual: { type: "recap", title: "Recap", items: outcomeText },
+    add({ id: "recap", priority: 5, serves: allIds, visual: { type: "recap", title: "Recap", items: outcomeText },
       narration: `To recap, you can now:\n${lines.join("\n")}` });
   }
 
   return scenes;
   };
 
-  // Fit the target: drop the least essential scenes first (keeping order); if two scenes are still too long, go compact.
+  // Fit the target: drop the least essential scenes first (keeping order), but never the last scene that serves an
+  // outcome. If that makes the target unreachable, go compact; if it is still unreachable, report it as a problem.
+  const sec = (sc: OutlineScene[]) => estimateSec(sc.map((x) => x.narration));
   const fit = (scenes: OutlineScene[]) => {
     let kept = scenes;
-    while (kept.length > 2 && estimateSec(kept.map((s) => s.narration)) > opt.targetSec) {
-      const worst = Math.max(...kept.map((s) => s.priority));
-      const idx = kept.map((s) => s.priority).lastIndexOf(worst);
-      kept = kept.filter((_, i) => i !== idx);
+    while (sec(kept) > opt.targetSec) {
+      const order = kept.map((sc, i) => ({ sc, i })).filter(({ sc }) => sc.priority > 0).sort((a, b) => b.sc.priority - a.sc.priority || b.i - a.i);
+      const drop = order.find(({ i }) => {
+        const rest = new Set(kept.filter((_, j) => j !== i).flatMap((x) => x.serves ?? []));
+        return allIds.every((id) => rest.has(id) || !kept.some((x) => x.serves?.includes(id)));
+      });
+      if (!drop) break;
+      kept = kept.filter((_, j) => j !== drop.i);
     }
     return kept;
   };
   let kept = fit(buildScenes(false));
-  if (estimateSec(kept.map((s) => s.narration)) > opt.targetSec) kept = fit(buildScenes(true));
-  return { title: session.title, courseLabel: [course.brief.code, course.brief.title].filter(Boolean).join(" "), scenes: kept };
+  if (sec(kept) > opt.targetSec) kept = fit(buildScenes(true));
+  const capProblems = sec(kept) > opt.targetSec
+    ? [`cannot fit ${opt.targetSec} s (needs ${sec(kept).toFixed(0)} s) without dropping the last scene that serves an outcome`] : [];
+  return { title: session.title, courseLabel: [course.brief.code, course.brief.title].filter(Boolean).join(" "), scenes: kept, outcomeIds: allIds, capProblems };
 }
