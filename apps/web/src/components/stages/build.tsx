@@ -1,5 +1,5 @@
 "use client";
-import { FREE_TIER, hourBlockProblems, VIDEO_BY_PATH, type CaseStudy, type VideoKind } from "@cg/core";
+import { FREE_TIER, hourBlockProblems, isHttpUrl, VIDEO_BY_PATH, type CaseStudy, type VideoKind } from "@cg/core";
 import { useState } from "react";
 import { MODES, SCENES, sceneSeconds, STYLES, VDESC, VIDEO } from "@/lib/catalog";
 import { updateSession } from "@/lib/course-logic";
@@ -8,6 +8,9 @@ import { useCourse } from "../course-context";
 import { FeedbackWidget } from "../feedback-widget";
 import { Busy, Head, pad2 } from "../ui";
 import { PlansStage } from "./plans";
+
+// Defense in depth: the schema already rejects non-http(s) URLs.
+const safeHref = (u: string) => (isHttpUrl(u) ? u : "#");
 
 const paidChip = <span className="chip seal">Paid</span>;
 
@@ -113,7 +116,7 @@ export function BuildStage() {
                 <div>
                   <span className="muted small">{b.title} · {b.industryExample!.sector}</span>
                   <div>{b.industryExample!.text}</div>
-                  {b.industryExample!.sources.map((x) => <a key={x.url} className="small" href={x.url} target="_blank" rel="noreferrer">{x.title}</a>)}
+                  {b.industryExample!.sources.map((x) => <a key={x.url} className="small" href={safeHref(x.url)} target="_blank" rel="noreferrer">{x.title}</a>)}
                 </div>
                 <FeedbackWidget courseId={course.id} targetPath={`plans[${plan.id}].sessions[${s.id}].blocks[${b.id}].industryExample`} provenance={b.provenance} label="example" />
               </div>
@@ -129,7 +132,7 @@ export function BuildStage() {
             {s.links.map((l) => (
               <div key={l.id} className="link">
                 <div>
-                  <span className="chip">{l.kind}</span> <a href={l.url} target="_blank" rel="noreferrer"><b>{l.title}</b></a>
+                  <span className="chip">{l.kind}</span> <a href={safeHref(l.url)} target="_blank" rel="noreferrer"><b>{l.title}</b></a>
                   {l.channelOrSite && <span className="muted small"> · {l.channelOrSite}</span>}
                   {!l.alive && <span className="chip bad">Link is dead</span>}
                   <div className="muted small">{l.why}</div>
@@ -150,7 +153,7 @@ export function BuildStage() {
                   {c.data && <pre>{c.data}</pre>}
                   <ol>{c.questions.map((q) => <li key={q}>{q}</li>)}</ol>
                   <span className="muted small"><b>Teaching note:</b> {c.teachingNote}</span>
-                  {c.sources.map((x) => <a key={x.url} className="small" href={x.url} target="_blank" rel="noreferrer">{x.title}</a>)}
+                  {c.sources.map((x) => <a key={x.url} className="small" href={safeHref(x.url)} target="_blank" rel="noreferrer">{x.title}</a>)}
                   <FeedbackWidget courseId={course.id} targetPath={`plans[${plan.id}].sessions[${s.id}].caseStudies[${c.id}]`} provenance={c.provenance} label="case study" />
                 </div>
               ))}
