@@ -22,3 +22,6 @@ export function getStages(): Stages {
 export function getExporter(): Exporter {
   return mockExporter;
 }
+
+/** Shown in the top bar while generation is mocked. */
+export const usingMockStages = () => getStages() === mockStages;
