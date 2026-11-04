@@ -34,8 +34,8 @@ export function RolesStage() {
           {keywords.map((k) => (
             <span key={k} className="chip">{k} <button aria-label={`Remove ${k}`} onClick={() => setKw(keywords.filter((x) => x !== k))}>×</button></span>
           ))}
-          <input className="kwin" aria-label="Add a keyword" placeholder="+ keyword" value={adding} onChange={(e) => setAdding(e.target.value)}
-            onKeyDown={(e) => { if (e.key === "Enter" && adding.trim()) { setKw([...keywords, adding.trim()]); setAdding(""); } }} />
+          {keywords.length < 15 && <input className="kwin" aria-label="Add a keyword" placeholder="+ keyword" maxLength={60} value={adding} onChange={(e) => setAdding(e.target.value)}
+            onKeyDown={(e) => { if (e.key === "Enter" && adding.trim()) { setKw([...keywords, adding.trim()]); setAdding(""); } }} />}
           {kw && <span className="chip warn">Edited: search again to apply</span>}
         </div>
         <div className="stats" style={{ marginTop: 16 }}>

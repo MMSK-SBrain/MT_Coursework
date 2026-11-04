@@ -3,6 +3,8 @@
 import type { Occupation, OccupationSource } from "@cg/core";
 
 export const ESCO_API = "https://ec.europa.eu/esco/api";
+const MAX_KEYWORDS = 15;
+const MAX_OCCUPATIONS = 40; // at most 15 searches + 40 detail lookups per call, fewer with the cache
 
 type Fetch = (url: string) => Promise<{ ok: boolean; status: number; json(): Promise<unknown> }>;
 
@@ -40,14 +42,16 @@ export class EscoOccupationSource implements OccupationSource {
   }
 
   async search(q: { keywords: string[]; limit: number }): Promise<Occupation[]> {
-    const lists = await Promise.all(q.keywords.map((text) =>
+    // Keywords can come from the teacher: dedupe and cap them, so one search makes a bounded number of calls.
+    const keywords = [...new Set(q.keywords.map((k) => k.trim().slice(0, 60)).filter(Boolean))].slice(0, MAX_KEYWORDS);
+    const lists = await Promise.all(keywords.map((text) =>
       this.get<{ _embedded?: { results?: SearchHit[] } }>("search", { text, type: "occupation", limit: String(this.perKeyword), full: "false" })
         .then((r) => r._embedded?.results ?? [])
         .catch(() => [] as SearchHit[])));
     // Interleave so every keyword contributes before the limit cuts in.
     const uris: string[] = [];
     for (let i = 0; i < this.perKeyword; i++) for (const l of lists) { const h = l[i]; if (h && !uris.includes(h.uri)) uris.push(h.uri); }
-    const picked = uris.slice(0, q.limit);
+    const picked = uris.slice(0, Math.min(q.limit, MAX_OCCUPATIONS));
     const occ = await Promise.all(picked.map((u) => this.occupation(u).catch(() => null)));
     return occ.filter((o): o is Occupation => o !== null && o.essentialSkills.length > 0);
   }

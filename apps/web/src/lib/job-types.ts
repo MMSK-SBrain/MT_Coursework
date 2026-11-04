@@ -7,7 +7,7 @@ const at = { planId: z.string(), sessionId: z.string() };
 
 export const JobRequest = z.discriminatedUnion("type", [
   z.object({ type: z.literal("parseInputs") }),
-  z.object({ type: z.literal("findRoles"), keywords: z.array(z.string()).optional() }),
+  z.object({ type: z.literal("findRoles"), keywords: z.array(z.string().trim().min(1).max(60)).max(15).optional() }),
   z.object({ type: z.literal("proposeFit") }),
   z.object({ type: z.literal("draftOutcomes") }),
   z.object({ type: z.literal("suggestOutcomeEdits"), outcomeIds: z.array(z.string()).min(1).max(20), instruction: EditInstruction }),
