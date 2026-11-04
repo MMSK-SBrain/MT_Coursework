@@ -1,0 +1,5706 @@
+{
+  "id": "aelzc441-automotive-vehicles",
+  "slug": "aelzc441-automotive-vehicles",
+  "brief": {
+    "title": "Automotive Vehicles",
+    "code": "AELZC441",
+    "audience": "M.Tech. Automotive Electronics students (Graduate level) - Engineering graduates with NO automotive or mechanical background",
+    "level": "pg",
+    "contactHours": 40,
+    "industry": "Automotive Engineering",
+    "markets": [
+      "India"
+    ],
+    "textbooks": [],
+    "notes": "Comprehensive study of automotive vehicle systems with physics and mathematics foundation, covering powertrain, transmission, chassis dynamics, electrical systems, and safety systems Institution: BITS Pilani - M.Tech. Automotive Electronics. Credits: 3. Session length: 2 hours (90 min lecture + 30 min Q&A)."
+  },
+  "sources": [
+    {
+      "id": "src-yaml",
+      "kind": "other",
+      "filename": "course-data-fixed.yaml",
+      "mime": "application/yaml",
+      "storageKey": "courses/aelzc441-automotive-vehicles/course-data-fixed.yaml"
+    }
+  ],
+  "modules": [
+    {
+      "id": "M1",
+      "title": "Vehicle Motion Fundamentals",
+      "hours": 6,
+      "topics": [
+        "Forces Acting on a Moving Vehicle",
+        "Tires & Friction Fundamentals",
+        "From Forces to Power Requirements"
+      ],
+      "foundIn": "user",
+      "note": "Apply physics and mathematics to analyze vehicle motion, calculate force and power requirements, and understand tire-road interaction fundamentals Module outcome MO-1: Apply physics and mathematics to analyze vehicle motion, calculate force and power requirements, and understand tire-road interaction fundamentals"
+    },
+    {
+      "id": "M2",
+      "title": "Powertrain Systems",
+      "hours": 10,
+      "topics": [
+        "Introduction to IC Engines (Simplified)",
+        "Engine Support Systems - Cooling & Lubrication",
+        "Engine Performance & Fuel Systems",
+        "Transmission Systems - Part 1",
+        "Transmission Systems - Part 2 & Powertrain Alternatives"
+      ],
+      "foundIn": "user",
+      "note": "Understand IC engine operation as a torque-generating device, analyze engine support systems, and compare power transmission mechanisms Module outcome MO-2: Understand IC engine operation as a torque-generating device, analyze engine support systems, and compare power transmission mechanisms"
+    },
+    {
+      "id": "M3",
+      "title": "Chassis Dynamics & Control",
+      "hours": 8,
+      "topics": [
+        "Vehicle Dynamics Fundamentals",
+        "Braking Systems",
+        "Steering Systems",
+        "Suspension Systems"
+      ],
+      "foundIn": "user",
+      "note": "Analyze vehicle dynamics using mathematical models and understand chassis control systems (braking, steering, suspension) Module outcome MO-3: Analyze vehicle dynamics using mathematical models and understand chassis control systems (braking, steering, suspension)"
+    },
+    {
+      "id": "M4",
+      "title": "Vehicle Electrical & Control Systems",
+      "hours": 6,
+      "topics": [
+        "Electrical Architecture",
+        "Vehicle Control Systems",
+        "Vehicle Communication Networks"
+      ],
+      "foundIn": "user",
+      "note": "Understand vehicle electrical architecture, ECU-based control systems, and vehicle communication networks Module outcome MO-4: Understand vehicle electrical architecture, ECU-based control systems, and vehicle communication networks"
+    },
+    {
+      "id": "M5",
+      "title": "Vehicle Architecture & Comfort",
+      "hours": 6,
+      "topics": [
+        "Chassis & Body Architecture",
+        "HVAC Systems",
+        "Passive Safety Systems"
+      ],
+      "foundIn": "user",
+      "note": "Understand complete vehicle architecture, body construction, HVAC systems, and passive safety systems Module outcome MO-5: Understand complete vehicle architecture, body construction, HVAC systems, and passive safety systems"
+    },
+    {
+      "id": "M6",
+      "title": "Active Safety & Emerging Technologies",
+      "hours": 4,
+      "topics": [
+        "Active Safety & Vehicle Stability",
+        "Introduction to ADAS & Future Mobility"
+      ],
+      "foundIn": "user",
+      "note": "Understand active safety systems, introduction to ADAS, and emerging vehicle technologies Module outcome MO-6: Understand active safety systems, introduction to ADAS, and emerging vehicle technologies"
+    }
+  ],
+  "structureVersion": 1,
+  "roles": [],
+  "fit": [],
+  "objectives": [
+    {
+      "id": "CO1",
+      "text": "Study main components/systems of an automobile (engine, transmission, drive-axle system, suspension system, brake system, etc.)",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "CO2",
+      "text": "Understand fundamental working principles of different systems",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "CO3",
+      "text": "Learn performance analysis along with working and important aspects of various components of automotive vehicles",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "CO4",
+      "text": "Get acquainted with advanced concepts through projects and assignments",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "SO-1-1-1",
+      "text": "Apply Newton's laws of motion to analyze forces acting on a moving vehicle",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-1-2",
+      "text": "Calculate rolling resistance force using coefficient of rolling resistance and vehicle weight",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-1-3",
+      "text": "Calculate aerodynamic drag force using drag coefficient, frontal area, and vehicle speed",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-1-4",
+      "text": "Calculate gradient resistance force for vehicles on inclined surfaces",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-1-5",
+      "text": "Determine total resistance force for different driving scenarios (level road, uphill, downhill, varying speeds)",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-1-6",
+      "text": "Explain vehicle performance metrics (acceleration, top speed, gradeability) and their dependence on resistance forces",
+      "bloom": "understand",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-2-1",
+      "text": "Identify tire construction types (radial, bias-ply) and explain tire nomenclature and specifications",
+      "bloom": "remember",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-2-2",
+      "text": "Calculate normal force on tires and explain load distribution among wheels",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-2-3",
+      "text": "Apply friction principles to calculate maximum tire force using coefficient of friction and normal load",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-2-4",
+      "text": "Explain tire slip (longitudinal and lateral) and its relationship to tire force generation",
+      "bloom": "understand",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-2-5",
+      "text": "Describe the friction circle concept and analyze combined braking and cornering forces",
+      "bloom": "understand",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-2-6",
+      "text": "Explain factors affecting tire grip (tire pressure, temperature, road surface, tire wear)",
+      "bloom": "understand",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-3-1",
+      "text": "Convert linear force at tire contact patch to torque at wheel using wheel radius relationship",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-3-2",
+      "text": "Calculate wheel torque requirements for various driving conditions using force and radius",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-3-3",
+      "text": "Apply rotational motion equations to convert torque and rotational speed to power requirements",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-3-4",
+      "text": "Calculate vehicle acceleration performance (0-100 km/h time) using force, mass, and resistance",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-3-5",
+      "text": "Determine maximum gradeability for a vehicle using available tractive force and vehicle weight",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-1-3-6",
+      "text": "Calculate top speed of a vehicle by balancing available power with total resistance forces",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-4-1",
+      "text": "Explain the internal combustion engine as a device that converts fuel energy into rotational torque",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-4-2",
+      "text": "Identify major engine components (piston, cylinder, crankshaft, connecting rod, valves) and explain their mechanical functions",
+      "bloom": "remember",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-4-3",
+      "text": "Describe the 4-stroke engine cycle (intake, compression, power, exhaust) from a mechanical perspective",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-4-4",
+      "text": "Explain engine terminology (bore, stroke, displacement, compression ratio) and calculate engine capacity",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-4-5",
+      "text": "Interpret engine torque and power curves and explain their relationship to vehicle performance",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-4-6",
+      "text": "Classify IC engines based on fuel type (petrol/diesel), number of cylinders, and configuration (inline, V, flat)",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-5-1",
+      "text": "Explain why engines generate heat and the need for effective cooling systems",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-5-2",
+      "text": "Compare air-cooled and liquid-cooled systems and analyze their suitability for different applications",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-5-3",
+      "text": "Identify cooling system components (radiator, thermostat, water pump, fan, coolant) and explain their operation",
+      "bloom": "remember",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-5-4",
+      "text": "Explain the need for engine lubrication and the functions of engine oil (friction reduction, heat dissipation, cleaning)",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-5-5",
+      "text": "Describe lubrication system components (oil pump, filter, oil galleries, sump) and oil circulation path",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-5-6",
+      "text": "Explain engine oil specifications (viscosity grades like 5W-30, API/ACEA classifications) and selection criteria",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-6-1",
+      "text": "Interpret engine performance maps (torque curve, power curve, BSFC map) and identify optimal operating regions",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-6-2",
+      "text": "Explain the air-fuel mixture requirements for combustion and the stoichiometric ratio concept",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-6-3",
+      "text": "Compare fuel delivery systems (carburetor vs fuel injection) and explain their basic operation",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-6-4",
+      "text": "Describe Multi-Point Fuel Injection (MPFI) and Direct Injection (GDI) systems and their advantages",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-6-5",
+      "text": "Explain air intake systems and the purpose of air filters, intake manifold, and throttle valve",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-6-6",
+      "text": "Describe basic emission types (CO, HC, NOx, PM) and introduce emission control requirements (BS4, BS6)",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-7-1",
+      "text": "Explain the need for transmission in matching engine output characteristics to wheel torque requirements",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-7-2",
+      "text": "Calculate gear ratios and analyze their effect on torque multiplication and speed reduction",
+      "bloom": "apply",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-7-3",
+      "text": "Describe clutch operation (single-plate, multi-plate) and explain engagement/disengagement mechanism",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-7-4",
+      "text": "Explain manual gearbox construction (constant mesh, synchromesh) and gear shifting mechanism",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-7-5",
+      "text": "Design basic transmission gear ratios for given vehicle performance requirements (acceleration vs top speed)",
+      "bloom": "create",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-7-6",
+      "text": "Analyze power flow through a manual transmission from engine to output shaft",
+      "bloom": "analyse",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-8-1",
+      "text": "Explain automatic transmission operation including torque converter and planetary gear sets",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-8-2",
+      "text": "Compare transmission technologies (CVT, DCT/DSG, AMT) and their performance characteristics",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-8-3",
+      "text": "Describe differential operation and its role in distributing power to wheels while allowing speed difference",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-8-4",
+      "text": "Calculate final drive ratio and analyze its impact on vehicle performance and fuel economy",
+      "bloom": "apply",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-8-5",
+      "text": "Compare powertrain configurations (FWD, RWD, AWD, 4WD) and explain their advantages and limitations",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-2-8-6",
+      "text": "Introduce electric powertrains (motor, battery, inverter) and compare torque characteristics with IC engines",
+      "bloom": "understand",
+      "moduleIds": [
+        "M2"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-9-1",
+      "text": "Identify forces and moments acting on a vehicle during acceleration, braking, and cornering",
+      "bloom": "remember",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-9-2",
+      "text": "Calculate longitudinal acceleration performance using available tractive force and vehicle mass",
+      "bloom": "apply",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-9-3",
+      "text": "Analyze load transfer during acceleration and calculate front/rear axle load distribution changes",
+      "bloom": "analyse",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-9-4",
+      "text": "Analyze load transfer during braking and calculate front/rear axle load distribution changes",
+      "bloom": "analyse",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-9-5",
+      "text": "Calculate lateral load transfer during cornering using centrifugal force and vehicle geometry",
+      "bloom": "apply",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-9-6",
+      "text": "Explain the relationship between weight distribution and vehicle handling characteristics",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-10-1",
+      "text": "Apply friction principles to calculate braking force using tire-road friction and normal load",
+      "bloom": "apply",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-10-2",
+      "text": "Calculate braking deceleration and stopping distance for given braking force and vehicle mass",
+      "bloom": "apply",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-10-3",
+      "text": "Describe hydraulic brake system components (master cylinder, brake booster, brake lines, calipers) and operation",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-10-4",
+      "text": "Compare disc brakes and drum brakes and analyze their performance characteristics",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-10-5",
+      "text": "Explain Anti-lock Braking System (ABS) operation and wheel slip control principle",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-10-6",
+      "text": "Describe brake force distribution between front and rear axles and the role of proportioning valve",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-11-1",
+      "text": "Explain Ackermann steering geometry and calculate inner and outer wheel steering angles for turn without slip",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-11-2",
+      "text": "Calculate turning radius using wheelbase, steering angle, and Ackermann principle",
+      "bloom": "apply",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-11-3",
+      "text": "Describe steering geometry parameters (caster, camber, toe, kingpin inclination) and their effects on handling",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-11-4",
+      "text": "Compare steering mechanisms (rack-and-pinion vs recirculating ball) and calculate steering ratio",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-11-5",
+      "text": "Explain power steering systems (hydraulic and Electric Power Assisted Steering - EPAS) and their operation",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-11-6",
+      "text": "Describe steering feedback and explain the importance of steering feel for driver control",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-12-1",
+      "text": "Apply spring-mass-damper system principles to analyze vehicle suspension behavior",
+      "bloom": "apply",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-12-2",
+      "text": "Explain suspension functions (ride comfort, road holding, handling) and the trade-offs between them",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-12-3",
+      "text": "Compare suspension types (independent vs dependent: McPherson strut, double wishbone, multi-link, solid axle)",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-12-4",
+      "text": "Describe spring types (coil, leaf, torsion bar, air) and damper operation (twin-tube, monotube)",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-12-5",
+      "text": "Explain anti-roll bar (stabilizer bar) operation and its effect on roll stiffness and cornering behavior",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-3-12-6",
+      "text": "Describe electronic suspension systems (adaptive damping, air suspension) and their control strategies",
+      "bloom": "understand",
+      "moduleIds": [
+        "M3"
+      ],
+      "objectiveIds": [
+        "CO3"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-13-1",
+      "text": "Describe automotive electrical architecture and explain 12V and 24V system configurations",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-13-2",
+      "text": "Explain battery technology (lead-acid, AGM) and analyze battery specifications (Ah capacity, CCA, reserve capacity)",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-13-3",
+      "text": "Describe charging system components (alternator, voltage regulator) and explain voltage regulation and charging control",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-13-4",
+      "text": "Explain starting system operation (starter motor, solenoid, bendix drive) and cranking power requirements",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-13-5",
+      "text": "Compare automotive lighting technologies (halogen, HID, LED, matrix LED) and their control systems",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-13-6",
+      "text": "Explain wiring system design, electrical load distribution, fuse and relay protection, and ground distribution",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-14-1",
+      "text": "Explain the role of Electronic Control Unit (ECU) in modern vehicles and identify major ECU types",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-14-2",
+      "text": "Describe engine management ECU functions (fuel control, ignition timing, air management, emissions)",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-14-3",
+      "text": "Classify automotive sensors (temperature, pressure, position, speed, mass airflow, oxygen sensor) and explain their operation",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-14-4",
+      "text": "Classify automotive actuators (fuel injectors, throttle valve, VVT solenoid, EGR valve) and explain their control",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-14-5",
+      "text": "Explain closed-loop control principle in engine management (lambda/oxygen sensor feedback for air-fuel ratio control)",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-14-6",
+      "text": "Describe transmission control unit (TCU) operation and automatic transmission shift control strategies",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-15-1",
+      "text": "Explain the need for automotive communication networks and compare point-to-point vs networked architectures",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-15-2",
+      "text": "Describe CAN (Controller Area Network) bus architecture, protocol layers, and message frame structure",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-15-3",
+      "text": "Explain CAN bus arbitration mechanism, error detection, and fault confinement",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-15-4",
+      "text": "Describe LIN (Local Interconnect Network) bus operation and its application in body electronics",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-15-5",
+      "text": "Explain OBD-II (On-Board Diagnostics) standards, diagnostic trouble codes (DTC), and emission diagnostics",
+      "bloom": "understand",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-4-15-6",
+      "text": "Analyze network topology design and calculate CAN bus load for given message traffic",
+      "bloom": "analyse",
+      "moduleIds": [
+        "M4"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-5-16-1",
+      "text": "Identify and classify different types of automobiles based on design (sedan, SUV, hatchback), application, and fuel type",
+      "bloom": "remember",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-5-16-2",
+      "text": "Compare chassis types (monocoque/unibody, ladder frame, space frame) and analyze their applications and advantages",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-5-16-3",
+      "text": "Describe body construction methods and material selection (steel, aluminum, composites) for vehicle structures",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-5-16-4",
+      "text": "Calculate weight distribution (front/rear, left/right) and analyze its impact on vehicle performance and handling",
+      "bloom": "apply",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-5-16-5",
+      "text": "Explain crash structures and crumple zones and their role in energy absorption and passenger safety",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-5-16-6",
+      "text": "Describe the complete vehicle architecture and identify major subsystems and their physical locations",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-5-17-1",
+      "text": "Explain HVAC (Heating, Ventilation, Air Conditioning) system fundamentals and cabin comfort requirements",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-5-17-2",
+      "text": "Describe the refrigeration thermodynamic cycle (compression, condensation, expansion, evaporation) with P-h diagram",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-5-17-3",
+      "text": "Identify HVAC components (compressor, condenser, evaporator, expansion valve, refrigerant) and explain their operation",
+      "bloom": "remember",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-5-17-4",
+      "text": "Compare compressor types (fixed displacement, variable displacement, electric compressor) and their control mechanisms",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-5-17-5",
+      "text": "Explain heating system operation and its integration with engine cooling system (heater core)",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-5-17-6",
+      "text": "Describe automatic climate control systems, multi-zone temperature management, and cabin air quality control",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-18-1",
+      "text": "Explain crash safety principles and occupant protection strategies (crumple zones, safety cage, load paths)",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-18-2",
+      "text": "Describe seatbelt systems (3-point, pretensioners, load limiters) and explain their operation and effectiveness",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-18-3",
+      "text": "Explain airbag systems (frontal, side, curtain, knee airbags) and describe deployment strategies",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-18-4",
+      "text": "Describe airbag control unit (ACU) operation, crash sensors (accelerometers), and deployment decision algorithms",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-18-5",
+      "text": "Explain pedestrian protection systems (active hood lift, exterior airbags) and their activation mechanisms",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-18-6",
+      "text": "Describe vehicle safety testing standards (NCAP, Euro NCAP, IIHS) and crash test evaluation criteria",
+      "bloom": "understand",
+      "moduleIds": [
+        "M5"
+      ],
+      "objectiveIds": [
+        "CO1"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-19-1",
+      "text": "Explain Electronic Stability Control (ESC) operation and yaw moment control during cornering and emergency maneuvers",
+      "bloom": "understand",
+      "moduleIds": [
+        "M6"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-19-2",
+      "text": "Describe how ESC uses individual wheel braking to generate corrective yaw moment and stabilize the vehicle",
+      "bloom": "understand",
+      "moduleIds": [
+        "M6"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-19-3",
+      "text": "Explain Traction Control System (TCS) operation and wheel slip control during acceleration on low-friction surfaces",
+      "bloom": "understand",
+      "moduleIds": [
+        "M6"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-19-4",
+      "text": "Describe the integration of ESC, TCS, and ABS and explain how they work together for vehicle stability",
+      "bloom": "understand",
+      "moduleIds": [
+        "M6"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-19-5",
+      "text": "Explain understeer and oversteer conditions and how ESC detects and corrects these behaviors",
+      "bloom": "understand",
+      "moduleIds": [
+        "M6"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-19-6",
+      "text": "Describe Hill Start Assist (HSA) and Hill Descent Control (HDC) systems and their operation",
+      "bloom": "understand",
+      "moduleIds": [
+        "M6"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-20-1",
+      "text": "Introduce Advanced Driver Assistance Systems (ADAS) and classify common features (ACC, LKA, AEB, BSD) - overview only",
+      "bloom": "understand",
+      "moduleIds": [
+        "M6"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-20-2",
+      "text": "Describe Adaptive Cruise Control (ACC) and Lane Keeping Assist (LKA) basic operation principles - brief introduction",
+      "bloom": "understand",
+      "moduleIds": [
+        "M6"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-20-3",
+      "text": "Explain Automatic Emergency Braking (AEB) and Blind Spot Detection (BSD) functionality - brief introduction",
+      "bloom": "understand",
+      "moduleIds": [
+        "M6"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-20-4",
+      "text": "Identify sensor technologies for ADAS (camera, radar, ultrasonic, LiDAR) and their basic working principles",
+      "bloom": "remember",
+      "moduleIds": [
+        "M6"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-20-5",
+      "text": "Explain SAE levels of vehicle autonomy (L0 to L5) and describe the current state of autonomous driving technology",
+      "bloom": "understand",
+      "moduleIds": [
+        "M6"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "SO-6-20-6",
+      "text": "Introduce emerging vehicle technologies (electric vehicles, connected vehicles, V2X communication) - brief overview",
+      "bloom": "understand",
+      "moduleIds": [
+        "M6"
+      ],
+      "objectiveIds": [
+        "CO2"
+      ],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.yaml",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    }
+  ],
+  "plans": [
+    {
+      "id": "classroom",
+      "name": "Classroom (20 contact sessions)",
+      "path": "classroom",
+      "defaultStyle": "teaching",
+      "sessions": [
+        {
+          "id": "S1",
+          "index": 1,
+          "title": "Forces Acting on a Moving Vehicle",
+          "outcomeIds": [
+            "SO-1-1-1",
+            "SO-1-1-2",
+            "SO-1-1-3",
+            "SO-1-1-4",
+            "SO-1-1-5",
+            "SO-1-1-6"
+          ],
+          "style": "worked",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S1-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: Opening Hook",
+              "activity": "Instructor-led setup phase (slides 1-5): Opening Hook",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Challenge",
+              "activity": "Instructor-led trigger phase (slides 6-8): The Challenge",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1-B3",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 45,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 9-22): Building Understanding",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 5,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 9-22): Building Understanding",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1-B5",
+              "hour": 2,
+              "startMin": 5,
+              "minutes": 10,
+              "kind": "activity",
+              "title": "Climax: Putting It All Together",
+              "activity": "Instructor-led climax phase (slides 23-25): Putting It All Together",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1-B6",
+              "hour": 2,
+              "startMin": 15,
+              "minutes": 15,
+              "kind": "wrap",
+              "title": "Resolution: Consolidation & Next Steps",
+              "activity": "Instructor-led resolution phase (slides 26-30): Consolidation & Next Steps",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1-B7",
+              "hour": 2,
+              "startMin": 30,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S2",
+          "index": 2,
+          "title": "Tires & Friction Fundamentals",
+          "outcomeIds": [
+            "SO-1-2-1",
+            "SO-1-2-2",
+            "SO-1-2-3",
+            "SO-1-2-4",
+            "SO-1-2-5",
+            "SO-1-2-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S2-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 8,
+              "kind": "hook",
+              "title": "Setup: Connecting to Session 1",
+              "activity": "Instructor-led setup phase (slides 1-4): Connecting to Session 1",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2-B2",
+              "hour": 1,
+              "startMin": 8,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Fundamental Limit",
+              "activity": "Instructor-led trigger phase (slides 5-6): The Fundamental Limit",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2-B3",
+              "hour": 1,
+              "startMin": 13,
+              "minutes": 47,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 7-22): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 3,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 7-22): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2-B5",
+              "hour": 2,
+              "startMin": 3,
+              "minutes": 8,
+              "kind": "activity",
+              "title": "Climax: Real-World Application",
+              "activity": "Instructor-led climax phase (slides 23-24): Real-World Application",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2-B6",
+              "hour": 2,
+              "startMin": 11,
+              "minutes": 12,
+              "kind": "wrap",
+              "title": "Resolution: Key Takeaways",
+              "activity": "Instructor-led resolution phase (slides 25-28): Key Takeaways",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2-B7",
+              "hour": 2,
+              "startMin": 23,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S3",
+          "index": 3,
+          "title": "From Forces to Power Requirements",
+          "outcomeIds": [
+            "SO-1-3-1",
+            "SO-1-3-2",
+            "SO-1-3-3",
+            "SO-1-3-4",
+            "SO-1-3-5",
+            "SO-1-3-6"
+          ],
+          "style": "worked",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S3-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 8,
+              "kind": "hook",
+              "title": "Setup: The Journey So Far",
+              "activity": "Instructor-led setup phase (slides 1-3): The Journey So Far",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3-B2",
+              "hour": 1,
+              "startMin": 8,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Challenge",
+              "activity": "Instructor-led trigger phase (slides 4-5): The Challenge",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3-B3",
+              "hour": 1,
+              "startMin": 13,
+              "minutes": 47,
+              "kind": "teach",
+              "title": "Rising action: Building the Chain",
+              "activity": "Instructor-led rising action phase (slides 6-24): Building the Chain",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 8,
+              "kind": "teach",
+              "title": "Rising action: Building the Chain",
+              "activity": "Instructor-led rising action phase (slides 6-24): Building the Chain",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3-B5",
+              "hour": 2,
+              "startMin": 8,
+              "minutes": 10,
+              "kind": "activity",
+              "title": "Climax: The Complete Picture",
+              "activity": "Instructor-led climax phase (slides 25-26): The Complete Picture",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3-B6",
+              "hour": 2,
+              "startMin": 18,
+              "minutes": 12,
+              "kind": "wrap",
+              "title": "Resolution: Mastery & Next Steps",
+              "activity": "Instructor-led resolution phase (slides 27-30): Mastery & Next Steps",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3-B7",
+              "hour": 2,
+              "startMin": 30,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S4",
+          "index": 4,
+          "title": "Introduction to IC Engines (Simplified)",
+          "outcomeIds": [
+            "SO-2-4-1",
+            "SO-2-4-2",
+            "SO-2-4-3",
+            "SO-2-4-4",
+            "SO-2-4-5",
+            "SO-2-4-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S4-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: Opening Hook",
+              "activity": "Instructor-led setup phase (slides 1-5): Opening Hook",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Challenge",
+              "activity": "Instructor-led trigger phase (slides 6-7): The Challenge",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4-B3",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 45,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 7,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4-B5",
+              "hour": 2,
+              "startMin": 7,
+              "minutes": 12,
+              "kind": "activity",
+              "title": "Climax: Understanding Engine Performance",
+              "activity": "Instructor-led climax phase (slides 25-27): Understanding Engine Performance",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4-B6",
+              "hour": 2,
+              "startMin": 19,
+              "minutes": 10,
+              "kind": "wrap",
+              "title": "Resolution: Consolidation & Next Steps",
+              "activity": "Instructor-led resolution phase (slides 28-30): Consolidation & Next Steps",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4-B7",
+              "hour": 2,
+              "startMin": 29,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S5",
+          "index": 5,
+          "title": "Engine Support Systems - Cooling & Lubrication",
+          "outcomeIds": [
+            "SO-2-5-1",
+            "SO-2-5-2",
+            "SO-2-5-3",
+            "SO-2-5-4",
+            "SO-2-5-5",
+            "SO-2-5-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S5-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: Opening Hook",
+              "activity": "Instructor-led setup phase (slides 1-5): Opening Hook",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Challenge",
+              "activity": "Instructor-led trigger phase (slides 6-7): The Challenge",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5-B3",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 45,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 7,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5-B5",
+              "hour": 2,
+              "startMin": 7,
+              "minutes": 12,
+              "kind": "activity",
+              "title": "Climax: Putting It All Together",
+              "activity": "Instructor-led climax phase (slides 25-27): Putting It All Together",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5-B6",
+              "hour": 2,
+              "startMin": 19,
+              "minutes": 10,
+              "kind": "wrap",
+              "title": "Resolution: Consolidation & Next Steps",
+              "activity": "Instructor-led resolution phase (slides 28-30): Consolidation & Next Steps",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5-B7",
+              "hour": 2,
+              "startMin": 29,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S6",
+          "index": 6,
+          "title": "Engine Performance & Fuel Systems",
+          "outcomeIds": [
+            "SO-2-6-1",
+            "SO-2-6-2",
+            "SO-2-6-3",
+            "SO-2-6-4",
+            "SO-2-6-5",
+            "SO-2-6-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S6-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: Opening Hook",
+              "activity": "Instructor-led setup phase (slides 1-5): Opening Hook",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Challenge",
+              "activity": "Instructor-led trigger phase (slides 6-7): The Challenge",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6-B3",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 45,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 5,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6-B5",
+              "hour": 2,
+              "startMin": 5,
+              "minutes": 12,
+              "kind": "activity",
+              "title": "Climax: Putting It All Together",
+              "activity": "Instructor-led climax phase (slides 25-27): Putting It All Together",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6-B6",
+              "hour": 2,
+              "startMin": 17,
+              "minutes": 10,
+              "kind": "wrap",
+              "title": "Resolution: Consolidation & Next Steps",
+              "activity": "Instructor-led resolution phase (slides 28-30): Consolidation & Next Steps",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6-B7",
+              "hour": 2,
+              "startMin": 27,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S7",
+          "index": 7,
+          "title": "Transmission Systems - Part 1",
+          "outcomeIds": [
+            "SO-2-7-1",
+            "SO-2-7-2",
+            "SO-2-7-3",
+            "SO-2-7-4",
+            "SO-2-7-5",
+            "SO-2-7-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S7-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: Opening Hook",
+              "activity": "Instructor-led setup phase (slides 1-5): Opening Hook",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Challenge",
+              "activity": "Instructor-led trigger phase (slides 6-7): The Challenge",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7-B3",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 45,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 7,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7-B5",
+              "hour": 2,
+              "startMin": 7,
+              "minutes": 12,
+              "kind": "activity",
+              "title": "Climax: Complete Transmission Design",
+              "activity": "Instructor-led climax phase (slides 25-27): Complete Transmission Design",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7-B6",
+              "hour": 2,
+              "startMin": 19,
+              "minutes": 10,
+              "kind": "wrap",
+              "title": "Resolution: Consolidation & Next Steps",
+              "activity": "Instructor-led resolution phase (slides 28-30): Consolidation & Next Steps",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7-B7",
+              "hour": 2,
+              "startMin": 29,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S8",
+          "index": 8,
+          "title": "Transmission Systems - Part 2 & Powertrain Alternatives",
+          "outcomeIds": [
+            "SO-2-8-1",
+            "SO-2-8-2",
+            "SO-2-8-3",
+            "SO-2-8-4",
+            "SO-2-8-5",
+            "SO-2-8-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S8-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: Opening Hook",
+              "activity": "Instructor-led setup phase (slides 1-5): Opening Hook",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Challenge",
+              "activity": "Instructor-led trigger phase (slides 6-7): The Challenge",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B3",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 45,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-25): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 5,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-25): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B5",
+              "hour": 2,
+              "startMin": 5,
+              "minutes": 8,
+              "kind": "activity",
+              "title": "Climax: Complete Powertrain Module Integration",
+              "activity": "Instructor-led climax phase (slides 28): Complete Powertrain Module Integration",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B6",
+              "hour": 2,
+              "startMin": 13,
+              "minutes": 10,
+              "kind": "wrap",
+              "title": "Resolution: Consolidation & Next Steps",
+              "activity": "Instructor-led resolution phase (slides 29-30): Consolidation & Next Steps",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B7",
+              "hour": 2,
+              "startMin": 23,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S9",
+          "index": 9,
+          "title": "Vehicle Dynamics Fundamentals",
+          "outcomeIds": [
+            "SO-3-9-1",
+            "SO-3-9-2",
+            "SO-3-9-3",
+            "SO-3-9-4",
+            "SO-3-9-5",
+            "SO-3-9-6"
+          ],
+          "style": "worked",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S9-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: Opening Hook",
+              "activity": "Instructor-led setup phase (slides 1-5): Opening Hook",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Challenge",
+              "activity": "Instructor-led trigger phase (slides 6-7): The Challenge",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9-B3",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 45,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-26): Building Understanding",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-26): Building Understanding",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9-B5",
+              "hour": 2,
+              "startMin": 10,
+              "minutes": 8,
+              "kind": "activity",
+              "title": "Climax: Complete Vehicle Dynamics Analysis",
+              "activity": "Instructor-led climax phase (slides 27): Complete Vehicle Dynamics Analysis",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9-B6",
+              "hour": 2,
+              "startMin": 18,
+              "minutes": 10,
+              "kind": "wrap",
+              "title": "Resolution: Consolidation & Next Steps",
+              "activity": "Instructor-led resolution phase (slides 28-30): Consolidation & Next Steps",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9-B7",
+              "hour": 2,
+              "startMin": 28,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S10",
+          "index": 10,
+          "title": "Braking Systems",
+          "outcomeIds": [
+            "SO-3-10-1",
+            "SO-3-10-2",
+            "SO-3-10-3",
+            "SO-3-10-4",
+            "SO-3-10-5",
+            "SO-3-10-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S10-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: Opening Hook",
+              "activity": "Instructor-led setup phase (slides 1-5): Opening Hook",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Challenge",
+              "activity": "Instructor-led trigger phase (slides 6-7): The Challenge",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10-B3",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 45,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-25): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 7,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 8-25): Building Understanding",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10-B5",
+              "hour": 2,
+              "startMin": 7,
+              "minutes": 8,
+              "kind": "activity",
+              "title": "Climax: Complete Brake System Design",
+              "activity": "Instructor-led climax phase (slides 26): Complete Brake System Design",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10-B6",
+              "hour": 2,
+              "startMin": 15,
+              "minutes": 10,
+              "kind": "wrap",
+              "title": "Resolution: Consolidation & Next Steps",
+              "activity": "Instructor-led resolution phase (slides 27-30): Consolidation & Next Steps",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10-B7",
+              "hour": 2,
+              "startMin": 25,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S11",
+          "index": 11,
+          "title": "Steering Systems",
+          "outcomeIds": [
+            "SO-3-11-1",
+            "SO-3-11-2",
+            "SO-3-11-3",
+            "SO-3-11-4",
+            "SO-3-11-5",
+            "SO-3-11-6"
+          ],
+          "style": "worked",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S11-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 20,
+              "kind": "hook",
+              "title": "Part 1: SETUP - \"The Geometry Problem\"",
+              "activity": "Instructor-led part 1 phase (slides 1-9): SETUP - \"The Geometry Problem\"",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11-B2",
+              "hour": 1,
+              "startMin": 20,
+              "minutes": 15,
+              "kind": "hook",
+              "title": "Part 2: TRIGGER - \"Steering Alignment Parameters\"",
+              "activity": "Instructor-led part 2 phase (slides 10-14): TRIGGER - \"Steering Alignment Parameters\"",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11-B3",
+              "hour": 1,
+              "startMin": 35,
+              "minutes": 20,
+              "kind": "teach",
+              "title": "Part 3: RISING ACTION - \"Converting Rotation to Translation\"",
+              "activity": "Instructor-led part 3 phase (slides 15-19): RISING ACTION - \"Converting Rotation to Translation\"",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11-B4",
+              "hour": 1,
+              "startMin": 55,
+              "minutes": 5,
+              "kind": "activity",
+              "title": "Part 4: CLIMAX - \"The Power Assist Revolution\"",
+              "activity": "Instructor-led part 4 phase (slides 20-25): CLIMAX - \"The Power Assist Revolution\"",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11-B5",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 15,
+              "kind": "activity",
+              "title": "Part 4: CLIMAX - \"The Power Assist Revolution\"",
+              "activity": "Instructor-led part 4 phase (slides 20-25): CLIMAX - \"The Power Assist Revolution\"",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11-B6",
+              "hour": 2,
+              "startMin": 15,
+              "minutes": 15,
+              "kind": "wrap",
+              "title": "Part 5: RESOLUTION - \"Steering Feel & Integration\"",
+              "activity": "Instructor-led part 5 phase (slides 26-30): RESOLUTION - \"Steering Feel & Integration\"",
+              "outcomeIds": [],
+              "style": "worked",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11-B7",
+              "hour": 2,
+              "startMin": 30,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S12",
+          "index": 12,
+          "title": "Suspension Systems",
+          "outcomeIds": [
+            "SO-3-12-1",
+            "SO-3-12-2",
+            "SO-3-12-3",
+            "SO-3-12-4",
+            "SO-3-12-5",
+            "SO-3-12-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S12-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 25,
+              "kind": "hook",
+              "title": "Part 1: SETUP - \"The Physics of Suspension\"",
+              "activity": "Instructor-led part 1 phase (slides 1-9): SETUP - \"The Physics of Suspension\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12-B2",
+              "hour": 1,
+              "startMin": 25,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Part 2: TRIGGER - \"The Impossible Triangle\"",
+              "activity": "Instructor-led part 2 phase (slides 10-13): TRIGGER - \"The Impossible Triangle\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12-B3",
+              "hour": 1,
+              "startMin": 35,
+              "minutes": 25,
+              "kind": "teach",
+              "title": "Part 3: RISING ACTION - \"Suspension Architectures\"",
+              "activity": "Instructor-led part 3 phase (slides 14-21): RISING ACTION - \"Suspension Architectures\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 15,
+              "kind": "activity",
+              "title": "Part 4: CLIMAX - \"Controlling Body Roll\"",
+              "activity": "Instructor-led part 4 phase (slides 22-26): CLIMAX - \"Controlling Body Roll\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12-B5",
+              "hour": 2,
+              "startMin": 15,
+              "minutes": 15,
+              "kind": "wrap",
+              "title": "Part 5: RESOLUTION - \"Electronic Solutions\"",
+              "activity": "Instructor-led part 5 phase (slides 27-32): RESOLUTION - \"Electronic Solutions\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12-B6",
+              "hour": 2,
+              "startMin": 30,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S13",
+          "index": 13,
+          "title": "Electrical Architecture",
+          "outcomeIds": [
+            "SO-4-13-1",
+            "SO-4-13-2",
+            "SO-4-13-3",
+            "SO-4-13-4",
+            "SO-4-13-5",
+            "SO-4-13-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S13-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 15,
+              "kind": "hook",
+              "title": "Part 1: SETUP - \"The Electrical Foundation\"",
+              "activity": "Instructor-led part 1 phase (slides 1-7): SETUP - \"The Electrical Foundation\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13-B2",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 20,
+              "kind": "hook",
+              "title": "Part 2: TRIGGER - \"Energy Storage & Generation\"",
+              "activity": "Instructor-led part 2 phase (slides 8-13): TRIGGER - \"Energy Storage & Generation\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13-B3",
+              "hour": 1,
+              "startMin": 35,
+              "minutes": 25,
+              "kind": "teach",
+              "title": "Part 3: RISING ACTION - \"Starting & Lighting Systems\"",
+              "activity": "Instructor-led part 3 phase (slides 14-21): RISING ACTION - \"Starting & Lighting Systems\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 20,
+              "kind": "activity",
+              "title": "Part 4: CLIMAX - \"Distribution, Protection & Grounding\"",
+              "activity": "Instructor-led part 4 phase (slides 22-27): CLIMAX - \"Distribution, Protection & Grounding\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13-B5",
+              "hour": 2,
+              "startMin": 20,
+              "minutes": 10,
+              "kind": "wrap",
+              "title": "Part 5: RESOLUTION - \"Integration & Next Steps\"",
+              "activity": "Instructor-led part 5 phase (slides 28-30): RESOLUTION - \"Integration & Next Steps\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13-B6",
+              "hour": 2,
+              "startMin": 30,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S14",
+          "index": 14,
+          "title": "Vehicle Control Systems",
+          "outcomeIds": [
+            "SO-4-14-1",
+            "SO-4-14-2",
+            "SO-4-14-3",
+            "SO-4-14-4",
+            "SO-4-14-5",
+            "SO-4-14-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S14-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 15,
+              "kind": "hook",
+              "title": "Part 1: SETUP - \"The Electronic Brain\"",
+              "activity": "Instructor-led part 1 phase (slides 1-7): SETUP - \"The Electronic Brain\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14-B2",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 25,
+              "kind": "hook",
+              "title": "Part 2: TRIGGER - \"Sensing the World\"",
+              "activity": "Instructor-led part 2 phase (slides 8-15): TRIGGER - \"Sensing the World\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14-B3",
+              "hour": 1,
+              "startMin": 40,
+              "minutes": 20,
+              "kind": "teach",
+              "title": "Part 3: RISING ACTION - \"Acting on the World\"",
+              "activity": "Instructor-led part 3 phase (slides 16-21): RISING ACTION - \"Acting on the World\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 20,
+              "kind": "wrap",
+              "title": "Part 4: CLIMAX - \"Closed-Loop Control\"",
+              "activity": "Instructor-led part 4 phase (slides 22-26): CLIMAX - \"Closed-Loop Control\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14-B5",
+              "hour": 2,
+              "startMin": 20,
+              "minutes": 10,
+              "kind": "wrap",
+              "title": "Part 5: RESOLUTION - \"Complete System Integration\"",
+              "activity": "Instructor-led part 5 phase (slides 27-30): RESOLUTION - \"Complete System Integration\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14-B6",
+              "hour": 2,
+              "startMin": 30,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S15",
+          "index": 15,
+          "title": "Vehicle Communication Networks",
+          "outcomeIds": [
+            "SO-4-15-1",
+            "SO-4-15-2",
+            "SO-4-15-3",
+            "SO-4-15-4",
+            "SO-4-15-5",
+            "SO-4-15-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S15-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 12,
+              "kind": "hook",
+              "title": "Part 1: SETUP - \"The Wiring Crisis\"",
+              "activity": "Instructor-led part 1 phase (slides 1-6): SETUP - \"The Wiring Crisis\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15-B2",
+              "hour": 1,
+              "startMin": 12,
+              "minutes": 30,
+              "kind": "hook",
+              "title": "Part 2: TRIGGER - \"CAN Bus Fundamentals\"",
+              "activity": "Instructor-led part 2 phase (slides 7-15): TRIGGER - \"CAN Bus Fundamentals\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15-B3",
+              "hour": 1,
+              "startMin": 42,
+              "minutes": 18,
+              "kind": "teach",
+              "title": "Part 3: RISING ACTION - \"CAN Operation & Reliability\"",
+              "activity": "Instructor-led part 3 phase (slides 16-21): RISING ACTION - \"CAN Operation & Reliability\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 7,
+              "kind": "teach",
+              "title": "Part 3: RISING ACTION - \"CAN Operation & Reliability\"",
+              "activity": "Instructor-led part 3 phase (slides 16-21): RISING ACTION - \"CAN Operation & Reliability\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15-B5",
+              "hour": 2,
+              "startMin": 7,
+              "minutes": 15,
+              "kind": "activity",
+              "title": "Part 4: CLIMAX - \"Complete Network Architecture\"",
+              "activity": "Instructor-led part 4 phase (slides 22-27): CLIMAX - \"Complete Network Architecture\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15-B6",
+              "hour": 2,
+              "startMin": 22,
+              "minutes": 8,
+              "kind": "wrap",
+              "title": "Part 5: RESOLUTION - \"Diagnostics & Future\"",
+              "activity": "Instructor-led part 5 phase (slides 28-30): RESOLUTION - \"Diagnostics & Future\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15-B7",
+              "hour": 2,
+              "startMin": 30,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S16",
+          "index": 16,
+          "title": "Chassis & Body Architecture",
+          "outcomeIds": [
+            "SO-5-16-1",
+            "SO-5-16-2",
+            "SO-5-16-3",
+            "SO-5-16-4",
+            "SO-5-16-5",
+            "SO-5-16-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S16-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 12,
+              "kind": "hook",
+              "title": "Part 1: SETUP - \"Vehicle Classification\"",
+              "activity": "Instructor-led part 1 phase (slides 1-6): SETUP - \"Vehicle Classification\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16-B2",
+              "hour": 1,
+              "startMin": 12,
+              "minutes": 25,
+              "kind": "hook",
+              "title": "Part 2: TRIGGER - \"Chassis Types\"",
+              "activity": "Instructor-led part 2 phase (slides 7-13): TRIGGER - \"Chassis Types\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16-B3",
+              "hour": 1,
+              "startMin": 37,
+              "minutes": 20,
+              "kind": "teach",
+              "title": "Part 3: RISING ACTION - \"Materials & Manufacturing\"",
+              "activity": "Instructor-led part 3 phase (slides 14-19): RISING ACTION - \"Materials & Manufacturing\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16-B4",
+              "hour": 1,
+              "startMin": 57,
+              "minutes": 3,
+              "kind": "activity",
+              "title": "Part 4: CLIMAX - \"Weight Distribution & Crash Safety\"",
+              "activity": "Instructor-led part 4 phase (slides 20-26): CLIMAX - \"Weight Distribution & Crash Safety\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16-B5",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 17,
+              "kind": "activity",
+              "title": "Part 4: CLIMAX - \"Weight Distribution & Crash Safety\"",
+              "activity": "Instructor-led part 4 phase (slides 20-26): CLIMAX - \"Weight Distribution & Crash Safety\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16-B6",
+              "hour": 2,
+              "startMin": 17,
+              "minutes": 13,
+              "kind": "wrap",
+              "title": "Part 5: RESOLUTION - \"Complete Integration\"",
+              "activity": "Instructor-led part 5 phase (slides 27-30): RESOLUTION - \"Complete Integration\"",
+              "outcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16-B7",
+              "hour": 2,
+              "startMin": 30,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:47:38.356Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S17",
+          "index": 17,
+          "title": "HVAC Systems",
+          "outcomeIds": [
+            "SO-5-17-1",
+            "SO-5-17-2",
+            "SO-5-17-3",
+            "SO-5-17-4",
+            "SO-5-17-5",
+            "SO-5-17-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S18",
+          "index": 18,
+          "title": "Passive Safety Systems",
+          "outcomeIds": [
+            "SO-6-18-1",
+            "SO-6-18-2",
+            "SO-6-18-3",
+            "SO-6-18-4",
+            "SO-6-18-5",
+            "SO-6-18-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S19",
+          "index": 19,
+          "title": "Active Safety & Vehicle Stability",
+          "outcomeIds": [
+            "SO-6-19-1",
+            "SO-6-19-2",
+            "SO-6-19-3",
+            "SO-6-19-4",
+            "SO-6-19-5",
+            "SO-6-19-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S20",
+          "index": 20,
+          "title": "Introduction to ADAS & Future Mobility",
+          "outcomeIds": [
+            "SO-6-20-1",
+            "SO-6-20-2",
+            "SO-6-20-3",
+            "SO-6-20-4",
+            "SO-6-20-5",
+            "SO-6-20-6"
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:47:38.356Z",
+            "builtFrom": []
+          }
+        }
+      ],
+      "provenance": {
+        "model": "import",
+        "promptId": "import.plan",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:47:38.356Z",
+        "builtFrom": []
+      }
+    }
+  ],
+  "createdAt": "2026-11-04T04:47:38.356Z",
+  "updatedAt": "2026-11-04T04:47:38.356Z"
+}
