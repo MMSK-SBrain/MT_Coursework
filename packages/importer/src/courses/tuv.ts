@@ -35,16 +35,15 @@ export function importWeeks(ctx: ImportContext): ImportResult {
       const blocks = blocksFor(id, fwEntry?.fw, style, now);
       if (!blocks.length) gaps.push(`Day ${d.day}: no timed phases found; no blocks imported.`);
       const minutes = Number(fwEntry?.fw.durationMin) || 180;
-      // Session.outcomeIds must hold at least one id and the sources state no course LOs: the session's own SO ids stand in (see gaps).
-      sessions.push({ id, index: d.day, title: d.theme, outcomeIds: sessionOutcomes.map((o) => o.id), sessionOutcomes, style, minutes, video: "none", blocks, links: [], caseStudies: [], assets: [], stale: false, provenance: provenance("import.yaml", now) });
+      sessions.push({ id, index: d.day, title: d.theme, outcomeIds: [], sessionOutcomes, style, minutes, video: "none", blocks, links: [], caseStudies: [], assets: [], stale: false, provenance: provenance("import.yaml", now) });
     }
   }
-  const usable = sessions.filter((s) => s.outcomeIds.length);
+  const usable = sessions.filter((s) => s.sessionOutcomes.length);
   notes.push("Session outcomes (S<day>.SO<n>) are the bullets under \"Session Objectives (For Instructor)\" in each DAY framework (5-11 per day); they are lecture-framework objectives, not handout text. No module outcomes or course LOs are stated anywhere, so Module.outcomes and Course.outcomes are empty. Block sessionOutcomeIds are empty: the frameworks do not tie phases to objectives.");
   notes.push("Session style: \"lab\" when the yaml practical share (T:P) is 60% or more, else \"teaching\". Session length from the framework front matter (180 min).");
   if (tally.defaulted.length) gaps.push(`Bloom defaulted to "understand" (verb not recognised): ${tally.defaulted.length} session outcomes, e.g. ${tally.defaulted.slice(0, 5).join(", ")}`);
 
-  gaps.push("Session.outcomeIds (course LOs, at least one id required) has no source: each session lists its own session-outcome ids as a placeholder. Core change suggested: allow Session.outcomeIds to be empty.");
+  gaps.push("The sources state no course LOs, so sessions list none; the session outcomes carry the lesson objectives.");
   gaps.push("No course objectives (CO) exist anywhere in the sources; objectives is empty. Outcomes have no objectiveIds.");
   gaps.push("No handout or module sheet: program-level outcomes are absent. The 55 question banks (question-banks/DAY-nn-questions.json) and exam-weight marks per week are outside the Course model; not imported.");
   gaps.push("Audience, industry and market are not stated as fields: audience from the design philosophy, industry derived from the certification name, markets not set (the teacher sets them before the job search).");

@@ -51,7 +51,6 @@ export async function importIceEngines(ctx: ImportContext): Promise<ImportResult
   // course LOs: the handout's five
   const outcomes = h.outcomes.map((lo) => makeOutcome({ id: lo.id, text: lo.text, moduleIds: [], now, promptId: "import.handout" }, tally));
   gaps.push("Handout LO1-LO5 carry no module, objective or session mapping; imported as course-level outcomes with no module or objective. Module outcomes therefore have no parent LO. Map them in the app.");
-  const allLos = outcomes.map((o) => o.id);
 
   const renamed: string[] = [];
   const sessions: Session[] = t.modules.flatMap((m) => m.lessons.map((l): Session => {
@@ -66,11 +65,11 @@ export async function importIceEngines(ctx: ImportContext): Promise<ImportResult
     }, tally));
     const blocks = tpl ? blocksFromTimed(id, tpl, style, now) : [];
     if (!blocks.length) gaps.push(`Session ${l.number}: no timed template found.`);
-    return { id, index: l.number, title, outcomeIds: allLos, sessionOutcomes, style, minutes: tpl?.minutes ?? 90, video: "none", blocks, links: [], caseStudies: [], assets: [], stale: false, provenance: provenance("import.xlsx", now) };
+    return { id, index: l.number, title, outcomeIds: [], sessionOutcomes, style, minutes: tpl?.minutes ?? 90, video: "none", blocks, links: [], caseStudies: [], assets: [], stale: false, provenance: provenance("import.xlsx", now) };
   }));
   if (tally.statedMismatch.length) notes.push(`Bloom taken from the leading verb; the sheet level differed for ${tally.statedMismatch.length} outcomes.`);
   if (tally.defaulted.length) gaps.push(`Bloom defaulted to "understand" (verb unknown, no stated level): ${tally.defaulted.join(", ")}`);
-  gaps.push("Session.outcomeIds (course LOs, at least one required) has no source: every session lists all five handout LOs as a placeholder. Treat it as unmapped; core change suggested: allow Session.outcomeIds to be empty.");
+  gaps.push("No source maps sessions to the handout LOs, so sessions list no course LOs; map them in the app.");
   notes.push("The 63 sheet SOs are session outcomes on their sessions (S<n>.SO<k>), parented to the lesson's MO. Block sessionOutcomeIds are empty: the templates tie blocks to MCQ ids, not to outcomes.");
   if (renamed.length) notes.push(`Session titles come from the session templates, whose outcome lists match the sheet's SOs; the sheet's lesson names differ for ${renamed.length} of ${sessions.length} sessions: ${renamed.join("; ")}.`);
   gaps.push(`Handout Part B lists 16 contact sessions (15 + a buffer) with a different order and titles (e.g. 1 ${h.sessions[0]?.title.trim()}, 2 ${h.sessions[1]?.title.trim()}); the plan follows the sheet/templates and the handout list is kept in brief.notes.`);

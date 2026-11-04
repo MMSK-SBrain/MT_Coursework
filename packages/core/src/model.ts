@@ -245,7 +245,7 @@ export const Session = z.object({
   id: Id,
   index: z.number().int().positive(),
   title: z.string(),
-  outcomeIds: z.array(Id).min(1), // course LOs
+  outcomeIds: z.array(Id).default([]), // course LOs; empty when no source maps the session to an LO
   sessionOutcomes: z.array(SessionOutcome).default([]), // SOs, the lesson-level outcomes
   style: TeachingStyle,
   minutes: z.number().int().positive(),
