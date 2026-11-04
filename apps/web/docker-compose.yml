@@ -1,0 +1,34 @@
+# Local Postgres for @cg/web, plus a one-shot migration runner.
+#   cd apps/web && docker compose up -d
+# Run `pnpm install` on the host first: the migrator uses pure-JS deps (drizzle-orm, postgres) from node_modules.
+name: cg-web
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: cg
+      POSTGRES_PASSWORD: cg
+      POSTGRES_DB: cg
+    ports:
+      - "54329:5432"
+    volumes:
+      - cg-web-pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cg -d cg"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  migrate:
+    image: node:22-alpine
+    depends_on:
+      db:
+        condition: service_healthy
+    working_dir: /repo/apps/web
+    volumes:
+      - ../..:/repo
+    environment:
+      DATABASE_URL: postgres://cg:cg@db:5432/cg
+    command: ["node", "src/db/migrate.mjs"]
+    restart: "no"
+volumes:
+  cg-web-pg:

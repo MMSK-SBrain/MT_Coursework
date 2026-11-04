@@ -77,3 +77,11 @@ courses/*/handouts/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Node
+node_modules/
+dist/
+.next/
+.env
+.env.local
+*.tsbuildinfo

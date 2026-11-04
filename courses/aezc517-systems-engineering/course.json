@@ -1,0 +1,5018 @@
+{
+  "id": "aezc517-systems-engineering",
+  "slug": "aezc517-systems-engineering",
+  "brief": {
+    "title": "Automotive Systems Engineering",
+    "code": "AEZC517",
+    "audience": "M.Tech. Automotive Engineering/Electronics students, Work Integrated Learning Programmes Division (working engineers)",
+    "level": "pg",
+    "contactHours": 32,
+    "industry": "Automotive engineering",
+    "markets": [],
+    "textbooks": [
+      "T1: Systems Engineering Handbook, A guide for system life cycle processes and activities, John Wiley & Sons, Inc., Hoboken, New Jersey, 4th Edition, 2015.",
+      "R1: Systems Engineering and Analysis, by Benjamin S Blanchard, Wolter J Fabrycky, Pearson, 5th Edition, 2013",
+      "R2: Automotive Systems Engineering, Markus Maurer, Hermann Winner (eds.), Springer-Verlag Berlin Heidelberg, 2013"
+    ],
+    "notes": "This course introduces hard and soft skills required of good automotive systems engineers. It imparts knowledge about foundations of systems engineering to gain an in-depth knowledge of system engineering principles, processes, and methods. The course helps engineers learn and apply systems engineering (SE) methodologies in modern complex automotive system development environments. Handout course no: AE ZG517 / AEL ZG517; credit model 32-0-0; version 6.2 (12-Jan-2025); instructor SAJEETH KUMAR. T-ids are textbooks, R-ids reference books."
+  },
+  "sources": [
+    {
+      "id": "src-handout",
+      "kind": "handout",
+      "filename": "course-handout.txt",
+      "mime": "text/plain",
+      "storageKey": "courses/aezc517-systems-engineering/course-handout.txt"
+    },
+    {
+      "id": "src-yaml",
+      "kind": "other",
+      "filename": "course-data.yaml",
+      "mime": "application/yaml",
+      "storageKey": "courses/aezc517-systems-engineering/course-data.yaml"
+    }
+  ],
+  "modules": [
+    {
+      "id": "M1",
+      "title": "Foundations of Systems Engineering",
+      "hours": 8,
+      "topics": [
+        "Engineering failures case studies",
+        "Importance of systems engineering in avoiding failures",
+        "Real-world examples: Apollo 13, Therac-25, Toyota recalls",
+        "Cost of poor systems engineering",
+        "What is a system? System characteristics",
+        "INCOSE definition of systems engineering",
+        "Systems thinking principles and mindset",
+        "ISO/IEC 15288 life cycle processes",
+        "System life cycle stages",
+        "Stakeholder engagement",
+        "V-model and its variations",
+        "Document-centric traditional systems engineering",
+        "Model-Based Systems Engineering (MBSE) fundamentals",
+        "Benefits and challenges of MBSE",
+        "MBSE tools: SysML, Simulink, MATLAB",
+        "Digital twin concepts",
+        "When to use traditional vs MBSE",
+        "Stakeholder identification and analysis",
+        "Needs vs requirements distinction",
+        "Types of requirements: functional, non-functional, constraints",
+        "Requirements attributes: verifiable, traceable, clear",
+        "Requirements traceability matrix",
+        "Requirements management tools",
+        "Common requirements pitfalls"
+      ],
+      "outcomes": [],
+      "foundIn": "import",
+      "note": "Introduction to systems engineering fundamentals, MBSE, and requirements engineering"
+    },
+    {
+      "id": "M2",
+      "title": "System Design and Analysis",
+      "hours": 8,
+      "topics": [
+        "Concept of operations (CONOPS)",
+        "System context and boundaries",
+        "High-level design principles",
+        "System architecture development",
+        "Architecture patterns and frameworks",
+        "Design freeze and configuration management",
+        "Trade studies and alternatives analysis",
+        "Analysis of real-world systems engineering failure or success",
+        "Requirements and design analysis",
+        "Root cause identification",
+        "Lessons learned and best practices",
+        "Group discussion and presentation",
+        "Operational scenarios and use cases",
+        "Capability gap analysis",
+        "Defining system functions and behaviors",
+        "Functional flow block diagrams (FFBD)",
+        "Requirements allocation to functions",
+        "Functional architecture",
+        "Timeline analysis",
+        "Integration strategies: big bang vs incremental",
+        "Integration process and planning",
+        "Verification vs validation distinction",
+        "V&V plans and test strategies",
+        "Testing types: unit, integration, system, acceptance",
+        "Test coverage and traceability",
+        "Verification methods: test, analysis, inspection, demonstration"
+      ],
+      "outcomes": [],
+      "foundIn": "import",
+      "note": "System design, operational/functional analysis, integration, verification and validation"
+    },
+    {
+      "id": "M3",
+      "title": "Technical and Project Management",
+      "hours": 8,
+      "topics": [
+        "Project estimation techniques",
+        "Work breakdown structure (WBS)",
+        "Project scheduling and control",
+        "Agile systems development",
+        "Scrum and Kanban in systems engineering",
+        "Risk identification and assessment",
+        "Design Failure Mode and Effects Analysis (DFMEA)",
+        "Risk mitigation strategies",
+        "Decision analysis techniques",
+        "Multi-criteria decision analysis (MCDA)",
+        "Trade-off analysis",
+        "Quality assurance vs quality control",
+        "Quality management systems",
+        "Critical parameter management",
+        "Metrics and key performance indicators (KPIs)",
+        "Supplier engagement and contracts",
+        "Vendor selection criteria",
+        "Make vs buy decisions",
+        "Infrastructure requirements planning",
+        "Life cycle management plans",
+        "Maintenance and support strategies",
+        "Technology refresh planning",
+        "Safety analysis methods",
+        "Hazard analysis and risk assessment (HARA)",
+        "Functional safety: ISO 26262",
+        "Security requirements engineering",
+        "Cybersecurity in automotive systems",
+        "Interoperability requirements",
+        "Human factors engineering"
+      ],
+      "outcomes": [],
+      "foundIn": "import",
+      "note": "Project management, risk management, decision making, quality, agreements, and specialty engineering"
+    },
+    {
+      "id": "M4",
+      "title": "Life Cycle and Emerging Trends",
+      "hours": 8,
+      "topics": [
+        "Life cycle cost analysis methods",
+        "Cost breakdown structure",
+        "Development, production, operation, disposal costs",
+        "Total cost of ownership analysis",
+        "Cost-benefit analysis",
+        "Return on investment (ROI) calculations",
+        "Affordability analysis",
+        "Advanced case study analysis",
+        "Safety, security, and specialty engineering aspects",
+        "Application of SE principles to complex automotive system",
+        "Group analysis and presentation",
+        "Critical evaluation and recommendations",
+        "Technical planning and control",
+        "Configuration management",
+        "Information management",
+        "Measurement and analysis",
+        "Decision management processes",
+        "Enabling processes: HR management",
+        "Infrastructure and knowledge management",
+        "Digital engineering and digital thread",
+        "AI/ML in systems engineering",
+        "DevOps for systems engineering",
+        "Future of agile systems engineering",
+        "MBSE in practice: industry adoption",
+        "Autonomous systems engineering challenges",
+        "Sustainability and green systems engineering"
+      ],
+      "outcomes": [],
+      "foundIn": "import",
+      "note": "Life cycle cost analysis, technical management, enabling processes, and emerging trends"
+    }
+  ],
+  "structureVersion": 1,
+  "roles": [],
+  "fit": [],
+  "objectives": [
+    {
+      "id": "CO1",
+      "text": "Introduce hard and soft skills that are required of good automotive systems engineers",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.handout",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:59:13.269Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "CO2",
+      "text": "Impart the knowledge about foundations of systems engineering to gain an in-depth knowledge of system engineering principles, processes, and methods",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.handout",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:59:13.269Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "CO3",
+      "text": "Help engineers to learn and apply the systems engineering (SE) methodologies in modern complex automotive system development environments",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.handout",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:59:13.269Z",
+        "builtFrom": []
+      }
+    }
+  ],
+  "outcomes": [
+    {
+      "id": "LO1",
+      "text": "Describe processes, methods, and practices of systems engineering",
+      "bloom": "understand",
+      "moduleIds": [
+        "M1",
+        "M4"
+      ],
+      "objectiveIds": [],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.handout",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:59:13.269Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "LO2",
+      "text": "Develop requirements, architectures, specifications, verifications, and tests",
+      "bloom": "create",
+      "moduleIds": [
+        "M1",
+        "M2"
+      ],
+      "objectiveIds": [],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.handout",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:59:13.269Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "LO3",
+      "text": "Recognize important systems engineering and systems thinking strategies and practices",
+      "bloom": "remember",
+      "moduleIds": [
+        "M1",
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "objectiveIds": [],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.handout",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:59:13.269Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "LO4",
+      "text": "Apply systems engineering practices and methods in automotive systems",
+      "bloom": "apply",
+      "moduleIds": [
+        "M1",
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "objectiveIds": [],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.handout",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:59:13.269Z",
+        "builtFrom": []
+      }
+    },
+    {
+      "id": "LO5",
+      "text": "Analyse automotive systems using systems engineering approaches to increase performance",
+      "bloom": "analyse",
+      "moduleIds": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "objectiveIds": [],
+      "roleIds": [],
+      "origin": "handout",
+      "locked": false,
+      "provenance": {
+        "model": "import",
+        "promptId": "import.handout",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:59:13.269Z",
+        "builtFrom": []
+      }
+    }
+  ],
+  "plans": [
+    {
+      "id": "classroom",
+      "name": "Classroom (16 contact sessions)",
+      "path": "classroom",
+      "defaultStyle": "teaching",
+      "sessions": [
+        {
+          "id": "S1",
+          "index": 1,
+          "title": "Introduction to Systems Engineering",
+          "outcomeIds": [
+            "LO1",
+            "LO3"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S1.SO1",
+              "text": "Understand the critical importance of systems engineering through real-world failure examples",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1.SO2",
+              "text": "Recognize the cost and consequences of poor systems engineering",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1.SO3",
+              "text": "Define what a system is and identify key system characteristics",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1.SO4",
+              "text": "Articulate the value proposition of systems engineering in automotive contexts",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1.SO5",
+              "text": "Begin developing a systems thinking mindset",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1.SO6",
+              "text": "LO1: Describe processes, methods, and practices of systems engineering (Understand)",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1.SO7",
+              "text": "LO3: Recognize important systems engineering and systems thinking strategies and practices (Understand)",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "story",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S1-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 20,
+              "kind": "hook",
+              "title": "Setup: The Wake-Up Call",
+              "activity": "Instructor-led setup phase (slides 1-8): The Wake-Up Call",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "story",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1-B2",
+              "hour": 1,
+              "startMin": 20,
+              "minutes": 25,
+              "kind": "hook",
+              "title": "Trigger: The Disasters",
+              "activity": "Instructor-led trigger phase (slides 9-16): The Disasters",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "story",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1-B3",
+              "hour": 1,
+              "startMin": 45,
+              "minutes": 15,
+              "kind": "teach",
+              "title": "Rising action: Why Systems Engineering Matters",
+              "activity": "Instructor-led rising action phase (slides 17-22): Why Systems Engineering Matters",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "story",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 5,
+              "kind": "teach",
+              "title": "Rising action: Why Systems Engineering Matters",
+              "activity": "Instructor-led rising action phase (slides 17-22): Why Systems Engineering Matters",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "story",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1-B5",
+              "hour": 2,
+              "startMin": 5,
+              "minutes": 25,
+              "kind": "activity",
+              "title": "Climax: What IS a System?",
+              "activity": "Instructor-led climax phase (slides 23-28): What IS a System?",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "story",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S1-B6",
+              "hour": 2,
+              "startMin": 30,
+              "minutes": 20,
+              "kind": "wrap",
+              "title": "Resolution: Systems Thinking & Moving Forward",
+              "activity": "Instructor-led resolution phase (slides 29-30): Systems Thinking & Moving Forward",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "story",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S2",
+          "index": 2,
+          "title": "Systems Engineering Fundamentals",
+          "outcomeIds": [
+            "LO1",
+            "LO3"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S2.SO1",
+              "text": "Define systems engineering using the INCOSE framework",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2.SO2",
+              "text": "Explain systems thinking principles and mindset",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2.SO3",
+              "text": "Describe ISO/IEC 15288 life cycle processes",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2.SO4",
+              "text": "Identify the key stages of system life cycle",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2.SO5",
+              "text": "Understand the importance of stakeholder engagement",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2.SO6",
+              "text": "Explain the V-model and its variations",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S2-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: Connecting to Session 1",
+              "activity": "Instructor-led setup phase (slides 1-5): Connecting to Session 1",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 8,
+              "kind": "hook",
+              "title": "Trigger: The Definition Challenge",
+              "activity": "Instructor-led trigger phase (slides 6-8): The Definition Challenge",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2-B3",
+              "hour": 1,
+              "startMin": 18,
+              "minutes": 42,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 9-24): Building Understanding",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 8,
+              "kind": "teach",
+              "title": "Rising action: Building Understanding",
+              "activity": "Instructor-led rising action phase (slides 9-24): Building Understanding",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2-B5",
+              "hour": 2,
+              "startMin": 8,
+              "minutes": 8,
+              "kind": "activity",
+              "title": "Climax: Synthesis and Integration",
+              "activity": "Instructor-led climax phase (slides 27-28): Synthesis and Integration",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2-B6",
+              "hour": 2,
+              "startMin": 16,
+              "minutes": 6,
+              "kind": "wrap",
+              "title": "Resolution: Looking Forward",
+              "activity": "Instructor-led resolution phase (slides 29-30): Looking Forward",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S2-B7",
+              "hour": 2,
+              "startMin": 22,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S3",
+          "index": 3,
+          "title": "Traditional vs Model-Based Systems Engineering",
+          "outcomeIds": [
+            "LO1",
+            "LO4"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S3.SO1",
+              "text": "Distinguish between document-centric traditional systems engineering and model-based approaches",
+              "bloom": "analyse",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3.SO2",
+              "text": "Explain the fundamentals of Model-Based Systems Engineering (MBSE)",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3.SO3",
+              "text": "Identify benefits and challenges of MBSE adoption",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3.SO4",
+              "text": "Describe key MBSE tools and languages (SysML, Simulink, MATLAB)",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3.SO5",
+              "text": "Understand digital twin concepts and their role in systems engineering",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3.SO6",
+              "text": "Make informed decisions about when to use traditional vs MBSE approaches",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S3-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: The Implementation Challenge",
+              "activity": "Instructor-led setup phase (slides 1-5): The Implementation Challenge",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 12,
+              "kind": "hook",
+              "title": "Trigger: The Document Problem",
+              "activity": "Instructor-led trigger phase (slides 6-9): The Document Problem",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3-B3",
+              "hour": 1,
+              "startMin": 22,
+              "minutes": 38,
+              "kind": "teach",
+              "title": "Rising action: The MBSE Solution",
+              "activity": "Instructor-led rising action phase (slides 10-23): The MBSE Solution",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 12,
+              "kind": "teach",
+              "title": "Rising action: The MBSE Solution",
+              "activity": "Instructor-led rising action phase (slides 10-23): The MBSE Solution",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3-B5",
+              "hour": 2,
+              "startMin": 12,
+              "minutes": 8,
+              "kind": "activity",
+              "title": "Climax: Decision Framework",
+              "activity": "Instructor-led climax phase (slides 24-26): Decision Framework",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3-B6",
+              "hour": 2,
+              "startMin": 20,
+              "minutes": 8,
+              "kind": "wrap",
+              "title": "Resolution: Looking Forward",
+              "activity": "Instructor-led resolution phase (slides 27-30): Looking Forward",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S3-B7",
+              "hour": 2,
+              "startMin": 28,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S4",
+          "index": 4,
+          "title": "Requirements Engineering",
+          "outcomeIds": [
+            "LO2",
+            "LO4"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S4.SO1",
+              "text": "Distinguish between stakeholder needs and system requirements",
+              "bloom": "analyse",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4.SO2",
+              "text": "Identify and analyze stakeholders systematically",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4.SO3",
+              "text": "Classify requirements into functional, non-functional, and constraint categories",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4.SO4",
+              "text": "Apply requirements quality attributes (verifiable, traceable, clear, unambiguous)",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4.SO5",
+              "text": "Create and use a requirements traceability matrix",
+              "bloom": "create",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4.SO6",
+              "text": "Recognize common requirements engineering pitfalls and anti-patterns",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4.SO7",
+              "text": "Select appropriate requirements management tools and processes",
+              "bloom": "evaluate",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "lab",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S4-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: The Critical Foundation",
+              "activity": "Instructor-led setup phase (slides 1-5): The Critical Foundation",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "lab",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Requirements Challenge",
+              "activity": "Instructor-led trigger phase (slides 6-7): The Requirements Challenge",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "lab",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4-B3",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 45,
+              "kind": "teach",
+              "title": "Rising action: Building the Requirements Framework",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building the Requirements Framework",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "lab",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 7,
+              "kind": "teach",
+              "title": "Rising action: Building the Requirements Framework",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building the Requirements Framework",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "lab",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4-B5",
+              "hour": 2,
+              "startMin": 7,
+              "minutes": 12,
+              "kind": "activity",
+              "title": "Climax: Requirements Engineering Pitfalls",
+              "activity": "Instructor-led climax phase (slides 25-27): Requirements Engineering Pitfalls",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "lab",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4-B6",
+              "hour": 2,
+              "startMin": 19,
+              "minutes": 8,
+              "kind": "wrap",
+              "title": "Resolution: Consolidation and Practice",
+              "activity": "Instructor-led resolution phase (slides 28-30): Consolidation and Practice",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "lab",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S4-B7",
+              "hour": 2,
+              "startMin": 27,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S5",
+          "index": 5,
+          "title": "System Design and Architecture",
+          "outcomeIds": [
+            "LO2",
+            "LO4"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S5.SO1",
+              "text": "Explain the concept of operations (CONOPS) and its role in system design",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5.SO2",
+              "text": "Define system context, boundaries, and external interfaces",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5.SO3",
+              "text": "Apply high-level design principles to automotive system architecture",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5.SO4",
+              "text": "Develop system architectures using structured approaches",
+              "bloom": "create",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5.SO5",
+              "text": "Compare and apply common architecture patterns and frameworks",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5.SO6",
+              "text": "Understand design freeze, baselining, and configuration management",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5.SO7",
+              "text": "Perform trade studies and alternatives analysis for architecture decisions",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S5-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 12,
+              "kind": "hook",
+              "title": "Setup: From Requirements to Architecture",
+              "activity": "Instructor-led setup phase (slides 1-6): From Requirements to Architecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5-B2",
+              "hour": 1,
+              "startMin": 12,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Architecture Challenge",
+              "activity": "Instructor-led trigger phase (slides 7-8): The Architecture Challenge",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5-B3",
+              "hour": 1,
+              "startMin": 17,
+              "minutes": 43,
+              "kind": "teach",
+              "title": "Rising action: Building System Architecture",
+              "activity": "Instructor-led rising action phase (slides 9-24): Building System Architecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 7,
+              "kind": "teach",
+              "title": "Rising action: Building System Architecture",
+              "activity": "Instructor-led rising action phase (slides 9-24): Building System Architecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5-B5",
+              "hour": 2,
+              "startMin": 7,
+              "minutes": 8,
+              "kind": "activity",
+              "title": "Climax: Configuration Management and Design Freeze",
+              "activity": "Instructor-led climax phase (slides 25-26): Configuration Management and Design Freeze",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5-B6",
+              "hour": 2,
+              "startMin": 15,
+              "minutes": 8,
+              "kind": "wrap",
+              "title": "Resolution: Synthesis and Next Steps",
+              "activity": "Instructor-led resolution phase (slides 27-30): Synthesis and Next Steps",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S5-B7",
+              "hour": 2,
+              "startMin": 23,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S6",
+          "index": 6,
+          "title": "Case Study 1",
+          "outcomeIds": [
+            "LO3",
+            "LO4",
+            "LO5"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S6.SO1",
+              "text": "Analyze a real-world complex system failure using systems engineering principles",
+              "bloom": "analyse",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6.SO2",
+              "text": "Identify requirements engineering failures and their cascading consequences",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6.SO3",
+              "text": "Apply root cause analysis using SE frameworks (stakeholder analysis, V&V, traceability)",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6.SO4",
+              "text": "Evaluate design decisions against systems thinking principles",
+              "bloom": "evaluate",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6.SO5",
+              "text": "Recognize the critical importance of systems-level thinking in safety-critical systems",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6.SO6",
+              "text": "Extract actionable lessons learned for future engineering practice",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6.SO7",
+              "text": "Conduct collaborative technical analysis and present findings effectively",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "case",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S6-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: The Tragedy",
+              "activity": "Instructor-led setup phase (slides 1-5): The Tragedy",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "case",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 12,
+              "kind": "hook",
+              "title": "Trigger: Understanding the Technical System",
+              "activity": "Instructor-led trigger phase (slides 6-9): Understanding the Technical System",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "case",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6-B3",
+              "hour": 1,
+              "startMin": 22,
+              "minutes": 35,
+              "kind": "teach",
+              "title": "Rising action: Systematic SE Failure Analysis",
+              "activity": "Instructor-led rising action phase (slides 10-20): Systematic SE Failure Analysis",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "case",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6-B4",
+              "hour": 1,
+              "startMin": 57,
+              "minutes": 3,
+              "kind": "activity",
+              "title": "Climax: Group Analysis Activity",
+              "activity": "Instructor-led climax phase (slides 21-24): Group Analysis Activity",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "case",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6-B5",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 27,
+              "kind": "activity",
+              "title": "Climax: Group Analysis Activity",
+              "activity": "Instructor-led climax phase (slides 21-24): Group Analysis Activity",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "case",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6-B6",
+              "hour": 2,
+              "startMin": 27,
+              "minutes": 20,
+              "kind": "wrap",
+              "title": "Resolution: Synthesis and Integration",
+              "activity": "Instructor-led resolution phase (slides 25-28): Synthesis and Integration",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "case",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S6-B7",
+              "hour": 2,
+              "startMin": 47,
+              "minutes": 5,
+              "kind": "teach",
+              "title": "Conclusion: Takeaways and Next Steps",
+              "activity": "Instructor-led conclusion phase (slides 29-30): Takeaways and Next Steps",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "case",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S7",
+          "index": 7,
+          "title": "Operational and Functional Analysis (Combined)",
+          "outcomeIds": [
+            "LO2",
+            "LO5"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S7.SO1",
+              "text": "Define operational scenarios and develop use cases for automotive systems",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7.SO2",
+              "text": "Perform capability gap analysis to identify functional requirements",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7.SO3",
+              "text": "Decompose system behavior into discrete functions",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7.SO4",
+              "text": "Create functional flow block diagrams (FFBD) to model system operations",
+              "bloom": "create",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7.SO5",
+              "text": "Allocate requirements to specific functions systematically",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7.SO6",
+              "text": "Develop functional architectures that bridge requirements and design",
+              "bloom": "create",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7.SO7",
+              "text": "Perform timeline analysis to validate operational feasibility",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7.SO8",
+              "text": "Apply functional analysis methods to complex automotive systems (ADAS, autonomous vehicles)",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S7-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: From Architecture to Operations",
+              "activity": "Instructor-led setup phase (slides 1-5): From Architecture to Operations",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 8,
+              "kind": "hook",
+              "title": "Trigger: The Lane Keep Assist Challenge",
+              "activity": "Instructor-led trigger phase (slides 6-7): The Lane Keep Assist Challenge",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7-B3",
+              "hour": 1,
+              "startMin": 18,
+              "minutes": 42,
+              "kind": "teach",
+              "title": "Rising action: Building the Functional Model",
+              "activity": "Instructor-led rising action phase (slides 8-23): Building the Functional Model",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "teach",
+              "title": "Rising action: Building the Functional Model",
+              "activity": "Instructor-led rising action phase (slides 8-23): Building the Functional Model",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7-B5",
+              "hour": 2,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "activity",
+              "title": "Climax: The Power of Systematic Functional Analysis",
+              "activity": "Instructor-led climax phase (slides 28): The Power of Systematic Functional Analysis",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7-B6",
+              "hour": 2,
+              "startMin": 15,
+              "minutes": 5,
+              "kind": "wrap",
+              "title": "Resolution: Applying Functional Analysis in Practice",
+              "activity": "Instructor-led resolution phase (slides 29-30): Applying Functional Analysis in Practice",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S7-B7",
+              "hour": 2,
+              "startMin": 20,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S8",
+          "index": 8,
+          "title": "System Integration, Verification & Validation",
+          "outcomeIds": [
+            "LO2",
+            "LO4"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S8.SO1",
+              "text": "Distinguish between verification and validation",
+              "bloom": "analyse",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8.SO2",
+              "text": "Select appropriate integration strategies (big bang vs incremental)",
+              "bloom": "evaluate",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8.SO3",
+              "text": "Develop comprehensive V&V plans aligned with requirements",
+              "bloom": "create",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8.SO4",
+              "text": "Apply the four verification methods: test, analysis, inspection, demonstration",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8.SO5",
+              "text": "Design test strategies for different levels: unit, integration, system, acceptance",
+              "bloom": "create",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8.SO6",
+              "text": "Create test coverage matrices with traceability to requirements",
+              "bloom": "create",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8.SO7",
+              "text": "Recognize common V&V pitfalls and best practices",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S8-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 12,
+              "kind": "hook",
+              "title": "Setup: The Moment of Truth",
+              "activity": "Instructor-led setup phase (slides 1-6): The Moment of Truth",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B2",
+              "hour": 1,
+              "startMin": 12,
+              "minutes": 8,
+              "kind": "hook",
+              "title": "Trigger: The Integration Challenge",
+              "activity": "Instructor-led trigger phase (slides 7-8): The Integration Challenge",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B3",
+              "hour": 1,
+              "startMin": 20,
+              "minutes": 10,
+              "kind": "teach",
+              "title": "Rising action part 1: Verification vs Validation - The Critical Distinction",
+              "activity": "Instructor-led rising action part 1 phase (slides 9-11): Verification vs Validation - The Critical Distinction",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B4",
+              "hour": 1,
+              "startMin": 30,
+              "minutes": 12,
+              "kind": "teach",
+              "title": "Rising action part 2: Integration Strategies",
+              "activity": "Instructor-led rising action part 2 phase (slides 12-15): Integration Strategies",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B5",
+              "hour": 1,
+              "startMin": 42,
+              "minutes": 8,
+              "kind": "teach",
+              "title": "Rising action part 3: Verification Methods",
+              "activity": "Instructor-led rising action part 3 phase (slides 16-18): Verification Methods",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B6",
+              "hour": 1,
+              "startMin": 50,
+              "minutes": 10,
+              "kind": "teach",
+              "title": "Rising action part 4: Testing Levels",
+              "activity": "Instructor-led rising action part 4 phase (slides 19-22): Testing Levels",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B7",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 2,
+              "kind": "teach",
+              "title": "Rising action part 4: Testing Levels",
+              "activity": "Instructor-led rising action part 4 phase (slides 19-22): Testing Levels",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B8",
+              "hour": 2,
+              "startMin": 2,
+              "minutes": 8,
+              "kind": "teach",
+              "title": "Rising action part 5: V&V Planning",
+              "activity": "Instructor-led rising action part 5 phase (slides 23-24): V&V Planning",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B9",
+              "hour": 2,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "teach",
+              "title": "Rising action part 6: Traceability and Evidence",
+              "activity": "Instructor-led rising action part 6 phase (slides 25): Traceability and Evidence",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B10",
+              "hour": 2,
+              "startMin": 15,
+              "minutes": 8,
+              "kind": "activity",
+              "title": "Climax: V&V in Practice - Real Case",
+              "activity": "Instructor-led climax phase (slides 26-27): V&V in Practice - Real Case",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B11",
+              "hour": 2,
+              "startMin": 23,
+              "minutes": 12,
+              "kind": "wrap",
+              "title": "Resolution: Putting It All Together",
+              "activity": "Instructor-led resolution phase (slides 28-30): Putting It All Together",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B12",
+              "hour": 2,
+              "startMin": 35,
+              "minutes": 25,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S8-B13",
+              "hour": 3,
+              "startMin": 0,
+              "minutes": 5,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S9",
+          "index": 9,
+          "title": "Project and Risk Management (Combined)",
+          "outcomeIds": [
+            "LO4",
+            "LO5"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S9.SO1",
+              "text": "Understand the relationship between systems engineering and project management",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9.SO2",
+              "text": "Apply technical planning processes to systems engineering projects",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9.SO3",
+              "text": "Identify, assess, and manage risks in automotive systems projects",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9.SO4",
+              "text": "Develop project schedules and work breakdown structures for SE projects",
+              "bloom": "create",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9.SO5",
+              "text": "Apply risk management frameworks to automotive systems development",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9.SO6",
+              "text": "Understand opportunity management and resilience thinking",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9.SO7",
+              "text": "LO1: Describe processes, methods, and practices of systems engineering (Understand/Apply)",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9.SO8",
+              "text": "LO2: Apply systems engineering processes to automotive systems (Apply)",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9.SO9",
+              "text": "LO3: Recognize important systems engineering and systems thinking strategies and practices (Understand/Apply)",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S9-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 20,
+              "kind": "hook",
+              "title": "Setup: When Projects Go Wrong",
+              "activity": "Instructor-led setup phase (slides 1-8): When Projects Go Wrong",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9-B2",
+              "hour": 1,
+              "startMin": 20,
+              "minutes": 25,
+              "kind": "hook",
+              "title": "Trigger: Project Planning Process",
+              "activity": "Instructor-led trigger phase (slides 9-14): Project Planning Process",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9-B3",
+              "hour": 1,
+              "startMin": 45,
+              "minutes": 15,
+              "kind": "teach",
+              "title": "Rising action: Risk Management Process",
+              "activity": "Instructor-led rising action phase (slides 15-22): Risk Management Process",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 15,
+              "kind": "teach",
+              "title": "Rising action: Risk Management Process",
+              "activity": "Instructor-led rising action phase (slides 15-22): Risk Management Process",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9-B5",
+              "hour": 2,
+              "startMin": 15,
+              "minutes": 15,
+              "kind": "activity",
+              "title": "Climax: Automotive Applications",
+              "activity": "Instructor-led climax phase (slides 23-26): Automotive Applications",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S9-B6",
+              "hour": 2,
+              "startMin": 30,
+              "minutes": 15,
+              "kind": "wrap",
+              "title": "Resolution: Key Takeaways & Moving Forward",
+              "activity": "Instructor-led resolution phase (slides 27-30): Key Takeaways & Moving Forward",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S10",
+          "index": 10,
+          "title": "Decision and Quality Management (Combined)",
+          "outcomeIds": [
+            "LO4",
+            "LO5"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S10.SO1",
+              "text": "Apply systematic decision analysis techniques to engineering trade-offs",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10.SO2",
+              "text": "Use multi-criteria decision analysis (MCDA) for complex automotive decisions",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10.SO3",
+              "text": "Distinguish between Quality Assurance (QA) and Quality Control (QC)",
+              "bloom": "analyse",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10.SO4",
+              "text": "Implement critical parameter management in automotive systems",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10.SO5",
+              "text": "Define and track meaningful metrics and KPIs for systems engineering",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10.SO6",
+              "text": "Recognize common decision-making pitfalls and quality management failures",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10.SO7",
+              "text": "Select appropriate decision frameworks for different problem types",
+              "bloom": "evaluate",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S10-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: The Decision Dilemma",
+              "activity": "Instructor-led setup phase (slides 1-5): The Decision Dilemma",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Impossible Choice",
+              "activity": "Instructor-led trigger phase (slides 6-7): The Impossible Choice",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10-B3",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 45,
+              "kind": "teach",
+              "title": "Rising action: Building the Decision and Quality Framework",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building the Decision and Quality Framework",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 7,
+              "kind": "teach",
+              "title": "Rising action: Building the Decision and Quality Framework",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building the Decision and Quality Framework",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10-B5",
+              "hour": 2,
+              "startMin": 7,
+              "minutes": 12,
+              "kind": "activity",
+              "title": "Climax: Decision and Quality Failures",
+              "activity": "Instructor-led climax phase (slides 25-27): Decision and Quality Failures",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10-B6",
+              "hour": 2,
+              "startMin": 19,
+              "minutes": 8,
+              "kind": "wrap",
+              "title": "Resolution: Consolidation and Practice",
+              "activity": "Instructor-led resolution phase (slides 28-30): Consolidation and Practice",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S10-B7",
+              "hour": 2,
+              "startMin": 27,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S11",
+          "index": 11,
+          "title": "Agreement and Infrastructure Management (Combined)",
+          "outcomeIds": [
+            "LO3",
+            "LO4"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S11.SO1",
+              "text": "Understand the strategic importance of supplier engagement and contract management in automotive systems",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11.SO2",
+              "text": "Apply vendor selection criteria and evaluation frameworks systematically",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11.SO3",
+              "text": "Conduct make vs buy decision analysis using structured methods",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11.SO4",
+              "text": "Define infrastructure requirements for system lifecycle support",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11.SO5",
+              "text": "Develop lifecycle management plans including maintenance, support, and technology refresh strategies",
+              "bloom": "create",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11.SO6",
+              "text": "Recognize the organizational and business aspects of systems engineering",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S11-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: The Hidden Half of Systems Engineering",
+              "activity": "Instructor-led setup phase (slides 1-5): The Hidden Half of Systems Engineering",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Supplier Dilemma",
+              "activity": "Instructor-led trigger phase (slides 6-7): The Supplier Dilemma",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11-B3",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 45,
+              "kind": "teach",
+              "title": "Rising action: Building the Management Framework",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building the Management Framework",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 7,
+              "kind": "teach",
+              "title": "Rising action: Building the Management Framework",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building the Management Framework",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11-B5",
+              "hour": 2,
+              "startMin": 7,
+              "minutes": 12,
+              "kind": "activity",
+              "title": "Climax: Integration and Strategic Thinking",
+              "activity": "Instructor-led climax phase (slides 25-27): Integration and Strategic Thinking",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11-B6",
+              "hour": 2,
+              "startMin": 19,
+              "minutes": 8,
+              "kind": "wrap",
+              "title": "Resolution: Consolidation and Practice",
+              "activity": "Instructor-led resolution phase (slides 28-30): Consolidation and Practice",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S11-B7",
+              "hour": 2,
+              "startMin": 27,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S12",
+          "index": 12,
+          "title": "Specialty Engineering (Safety & Security)",
+          "outcomeIds": [
+            "LO4",
+            "LO5"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S12.SO1",
+              "text": "Apply safety analysis methods to identify hazards in automotive systems",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12.SO2",
+              "text": "Conduct Hazard Analysis and Risk Assessment (HARA) per ISO 26262",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12.SO3",
+              "text": "Understand functional safety requirements and ASIL classification",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12.SO4",
+              "text": "Apply cybersecurity principles to automotive systems",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12.SO5",
+              "text": "Define interoperability requirements for connected vehicles",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12.SO6",
+              "text": "Incorporate human factors engineering in system design",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12.SO7",
+              "text": "Integrate safety and security requirements into systems engineering processes",
+              "bloom": "create",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S12-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: The Critical Intersection",
+              "activity": "Instructor-led setup phase (slides 1-5): The Critical Intersection",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Engineering Challenge",
+              "activity": "Instructor-led trigger phase (slides 6-7): The Engineering Challenge",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12-B3",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 45,
+              "kind": "teach",
+              "title": "Rising action: Building the Specialty Engineering Framework",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building the Specialty Engineering Framework",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 7,
+              "kind": "teach",
+              "title": "Rising action: Building the Specialty Engineering Framework",
+              "activity": "Instructor-led rising action phase (slides 8-24): Building the Specialty Engineering Framework",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12-B5",
+              "hour": 2,
+              "startMin": 7,
+              "minutes": 8,
+              "kind": "activity",
+              "title": "Climax: Real-World Integration Case Study",
+              "activity": "Instructor-led climax phase (slides 25-26): Real-World Integration Case Study",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12-B6",
+              "hour": 2,
+              "startMin": 15,
+              "minutes": 8,
+              "kind": "wrap",
+              "title": "Resolution: Consolidation and Practice",
+              "activity": "Instructor-led resolution phase (slides 27-30): Consolidation and Practice",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S12-B7",
+              "hour": 2,
+              "startMin": 23,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S13",
+          "index": 13,
+          "title": "Life Cycle Cost (LCC) & Total Cost of Ownership (TCO)",
+          "outcomeIds": [
+            "LO5"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S13.SO1",
+              "text": "Understand the concept and importance of life cycle cost (LCC) in automotive systems engineering",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13.SO2",
+              "text": "Identify and quantify all cost elements across the complete system life cycle",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13.SO3",
+              "text": "Apply Total Cost of Ownership (TCO) analysis to automotive systems",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13.SO4",
+              "text": "Conduct cost-benefit analysis and trade studies with cost considerations",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13.SO5",
+              "text": "Recognize the systems engineering role in managing life cycle costs",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13.SO6",
+              "text": "Apply cost estimation techniques for automotive product development",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13.SO7",
+              "text": "Understand the relationship between early design decisions and long-term costs",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13.SO8",
+              "text": "LO2: Apply systems engineering thinking and methods to describe and analyze automotive systems (Apply)",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13.SO9",
+              "text": "LO4: Apply systems engineering practices and methods in automotive systems (Apply)",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13.SO10",
+              "text": "LO5: Analyse automotive systems using systems engineering approaches to increase performance (Analyze)",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S13-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 15,
+              "kind": "hook",
+              "title": "Setup: The Hidden Costs",
+              "activity": "Instructor-led setup phase (slides 1-6): The Hidden Costs",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13-B2",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 20,
+              "kind": "hook",
+              "title": "Trigger: Life Cycle Cost Fundamentals",
+              "activity": "Instructor-led trigger phase (slides 7-12): Life Cycle Cost Fundamentals",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13-B3",
+              "hour": 1,
+              "startMin": 35,
+              "minutes": 25,
+              "kind": "teach",
+              "title": "Rising action: Total Cost of Ownership Models",
+              "activity": "Instructor-led rising action phase (slides 13-18): Total Cost of Ownership Models",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S13-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 25,
+              "kind": "activity",
+              "title": "Climax: Cost-Driven Design",
+              "activity": "Instructor-led climax phase (slides 19-24): Cost-Driven Design",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S14",
+          "index": 14,
+          "title": "Case Study 2",
+          "outcomeIds": [
+            "LO3",
+            "LO4",
+            "LO5"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S14.SO1",
+              "text": "Analyze a complex automotive ADAS system using systems engineering frameworks",
+              "bloom": "analyse",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14.SO2",
+              "text": "Compare and contrast aerospace failures (Session 6: 737 MAX) with automotive failures",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14.SO3",
+              "text": "Evaluate human-automation interaction design in safety-critical systems",
+              "bloom": "evaluate",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14.SO4",
+              "text": "Apply systems safety analysis to autonomous and semi-autonomous systems",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14.SO5",
+              "text": "Identify regulatory and verification challenges in novel automotive technologies",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14.SO6",
+              "text": "Extract lessons learned applicable to future autonomous vehicle development",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14.SO7",
+              "text": "Conduct comparative failure analysis across different transportation domains",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "case",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S14-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: The Autopilot Promise and Reality",
+              "activity": "Instructor-led setup phase (slides 1-5): The Autopilot Promise and Reality",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "case",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 15,
+              "kind": "hook",
+              "title": "Trigger: Understanding the Incidents",
+              "activity": "Instructor-led trigger phase (slides 6-10): Understanding the Incidents",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "case",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14-B3",
+              "hour": 1,
+              "startMin": 25,
+              "minutes": 30,
+              "kind": "teach",
+              "title": "Rising action: Systematic SE Failure Analysis",
+              "activity": "Instructor-led rising action phase (slides 11-18): Systematic SE Failure Analysis",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "case",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14-B4",
+              "hour": 1,
+              "startMin": 55,
+              "minutes": 5,
+              "kind": "activity",
+              "title": "Climax: Comparative Analysis",
+              "activity": "Instructor-led climax phase (slides 19-21): Comparative Analysis",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "case",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14-B5",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "activity",
+              "title": "Climax: Comparative Analysis",
+              "activity": "Instructor-led climax phase (slides 19-21): Comparative Analysis",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "case",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S14-B6",
+              "hour": 2,
+              "startMin": 10,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Resolution: Group Work and Synthesis",
+              "activity": "Instructor-led resolution phase (slides 22-28): Group Work and Synthesis",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "case",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S15",
+          "index": 15,
+          "title": "Technical Management & Enabling Processes",
+          "outcomeIds": [
+            "LO3",
+            "LO4"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S15.SO1",
+              "text": "Distinguish between technical processes, technical management processes, and enabling processes",
+              "bloom": "analyse",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15.SO2",
+              "text": "Apply ISO/IEC 15288 technical management processes to automotive projects",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15.SO3",
+              "text": "Understand knowledge management and its role in organizational learning",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15.SO4",
+              "text": "Apply measurement and decision-making processes for technical oversight",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15.SO5",
+              "text": "Develop technical planning and control strategies for complex systems",
+              "bloom": "create",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15.SO6",
+              "text": "Recognize the role of portfolio management in strategic alignment",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15.SO7",
+              "text": "Apply enabling processes to support technical execution",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S15-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 12,
+              "kind": "hook",
+              "title": "Setup: The Hidden Half of Systems Engineering",
+              "activity": "Instructor-led setup phase (slides 1-6): The Hidden Half of Systems Engineering",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15-B2",
+              "hour": 1,
+              "startMin": 12,
+              "minutes": 8,
+              "kind": "hook",
+              "title": "Trigger: The Well-Engineered Disaster",
+              "activity": "Instructor-led trigger phase (slides 7-8): The Well-Engineered Disaster",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15-B3",
+              "hour": 1,
+              "startMin": 20,
+              "minutes": 30,
+              "kind": "teach",
+              "title": "Rising action part 1: Technical Management Processes",
+              "activity": "Instructor-led rising action part 1 phase (slides 9-20): Technical Management Processes",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15-B4",
+              "hour": 1,
+              "startMin": 50,
+              "minutes": 10,
+              "kind": "teach",
+              "title": "Rising action part 2: Enabling Processes",
+              "activity": "Instructor-led rising action part 2 phase (slides 21-26): Enabling Processes",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15-B5",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "teach",
+              "title": "Rising action part 2: Enabling Processes",
+              "activity": "Instructor-led rising action part 2 phase (slides 21-26): Enabling Processes",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15-B6",
+              "hour": 2,
+              "startMin": 10,
+              "minutes": 8,
+              "kind": "activity",
+              "title": "Climax: Process Integration in Practice",
+              "activity": "Instructor-led climax phase (slides 27-28): Process Integration in Practice",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15-B7",
+              "hour": 2,
+              "startMin": 18,
+              "minutes": 10,
+              "kind": "wrap",
+              "title": "Resolution: Putting It All Together",
+              "activity": "Instructor-led resolution phase (slides 29-30): Putting It All Together",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S15-B8",
+              "hour": 2,
+              "startMin": 28,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        },
+        {
+          "id": "S16",
+          "index": 16,
+          "title": "Emerging Trends in Systems Engineering",
+          "outcomeIds": [
+            "LO1",
+            "LO3"
+          ],
+          "sessionOutcomes": [
+            {
+              "id": "S16.SO1",
+              "text": "Understand the concept and implications of digital engineering and digital thread",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16.SO2",
+              "text": "Recognize applications of AI/ML in systems engineering practices",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16.SO3",
+              "text": "Explain how DevOps principles apply to systems engineering",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16.SO4",
+              "text": "Envision the future evolution of agile systems engineering methodologies",
+              "bloom": "understand",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16.SO5",
+              "text": "Assess the state of MBSE adoption in industry and identify barriers",
+              "bloom": "evaluate",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16.SO6",
+              "text": "Identify unique challenges in engineering autonomous systems",
+              "bloom": "remember",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16.SO7",
+              "text": "Apply sustainability principles to systems engineering decisions",
+              "bloom": "apply",
+              "moduleOutcomeIds": [],
+              "locked": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "style": "teaching",
+          "minutes": 120,
+          "video": "none",
+          "blocks": [
+            {
+              "id": "S16-B1",
+              "hour": 1,
+              "startMin": 0,
+              "minutes": 10,
+              "kind": "hook",
+              "title": "Setup: Looking Forward",
+              "activity": "Instructor-led setup phase (slides 1-5): Looking Forward",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16-B2",
+              "hour": 1,
+              "startMin": 10,
+              "minutes": 5,
+              "kind": "hook",
+              "title": "Trigger: The Convergence Challenge",
+              "activity": "Instructor-led trigger phase (slides 6-7): The Convergence Challenge",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16-B3",
+              "hour": 1,
+              "startMin": 15,
+              "minutes": 45,
+              "kind": "teach",
+              "title": "Rising action: Exploring the Emerging Trends",
+              "activity": "Instructor-led rising action phase (slides 8-24): Exploring the Emerging Trends",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16-B4",
+              "hour": 2,
+              "startMin": 0,
+              "minutes": 7,
+              "kind": "teach",
+              "title": "Rising action: Exploring the Emerging Trends",
+              "activity": "Instructor-led rising action phase (slides 8-24): Exploring the Emerging Trends",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16-B5",
+              "hour": 2,
+              "startMin": 7,
+              "minutes": 12,
+              "kind": "activity",
+              "title": "Climax: Convergence and Future Vision",
+              "activity": "Instructor-led climax phase (slides 25-27): Convergence and Future Vision",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16-B6",
+              "hour": 2,
+              "startMin": 19,
+              "minutes": 8,
+              "kind": "wrap",
+              "title": "Resolution: Consolidation and Reflection",
+              "activity": "Instructor-led resolution phase (slides 28-30): Consolidation and Reflection",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "teaching",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            },
+            {
+              "id": "S16-B7",
+              "hour": 2,
+              "startMin": 27,
+              "minutes": 30,
+              "kind": "wrap",
+              "title": "Q&A",
+              "activity": "Questions and answers after the lecture",
+              "outcomeIds": [],
+              "sessionOutcomeIds": [],
+              "style": "discussion",
+              "check": [],
+              "needsSlides": false,
+              "provenance": {
+                "model": "import",
+                "promptId": "import.framework",
+                "promptVersion": "1",
+                "costUsd": 0,
+                "createdAt": "2026-11-04T04:59:13.269Z",
+                "builtFrom": []
+              }
+            }
+          ],
+          "links": [],
+          "caseStudies": [],
+          "assets": [],
+          "stale": false,
+          "provenance": {
+            "model": "import",
+            "promptId": "import.yaml",
+            "promptVersion": "1",
+            "costUsd": 0,
+            "createdAt": "2026-11-04T04:59:13.269Z",
+            "builtFrom": []
+          }
+        }
+      ],
+      "provenance": {
+        "model": "import",
+        "promptId": "import.plan",
+        "promptVersion": "1",
+        "costUsd": 0,
+        "createdAt": "2026-11-04T04:59:13.269Z",
+        "builtFrom": []
+      }
+    }
+  ],
+  "createdAt": "2026-11-04T04:59:13.269Z",
+  "updatedAt": "2026-11-04T04:59:13.269Z"
+}
