@@ -56,11 +56,13 @@ Video rules by path:
 ## Content model
 
 ```
-Course → Module → Session → Hour block (minutes, activity, LO ids, style)
+Course → Module → Session → Hour block (minutes, activity, SO ids, style)
                                  └─ industry example · further-learning links · quick check
                                  └─ paid: case study · slides · video
 ```
 
+- **Outcome hierarchy.** Course objectives (CO) → course learning outcomes (LO) → module outcomes (MO, 1–3 per module, each serving at least one LO) → session outcomes (SO, per lesson, each serving at least one MO) → hour blocks (each teaching block names the SOs it serves).
+- **Roll-up.** An MO is met when some SO serves it at the same Bloom level or higher. An LO is met when all its MOs are met. Gaps are shown as warnings, never silently filled.
 - Each item stores the ids it was built from: outcome ids, role ids and the version of the course structure. That's what lets changes ripple down.
 - Case studies are labelled **Real, sourced** (with checkable links) or **Composite** (realistic but made up), and never left unlabelled.
 - Further-learning links come from the YouTube Data API and web search. Teachers approve each one, and links are re-checked periodically so dead ones get flagged.
@@ -76,9 +78,12 @@ The aim is flagship-level quality from cheap models. The approach:
    - Bloom verbs come from an approved list.
    - The blocks in an hour add up to 60 minutes.
    - Every outcome is covered by some session.
+   - Every SO is served by a block, and every teaching block serves an SO.
+   - Every MO is met by its SOs (Bloom level roll-up); unmet ones get one repair.
    - No vague verbs such as "understand" or "know".
    - Every link resolves.
 5. **Rubric review.** A stronger, still cheap, model scores the draft against a rubric for that stage. A low score triggers one automatic repair. This is used on the high-stakes stages: outcomes and course–job fit.
+   - **Session content check.** For every session, a reviewer judges whether each block actually delivers the SOs it names (yes / partly / no, with a reason). Blocks below the threshold are rewritten once (title, activity, quick check only). This is the main guard that open-model content meets each lesson's objectives.
 6. **Examples in the prompt.** The four imported courses (AEZC517, AELZC441, AEZC516, TUV SUD) are used as worked examples for each stage.
 7. **Test set.** 5–10 fixed course briefs, run per stage on Qwen, GLM and Claude as a baseline, scored with the rubrics plus human review. The model for each stage is chosen on quality per unit of cost. The test set is re-run whenever a prompt changes.
 8. **Easy switching and traceability.** Each stage has a main model and a backup, set in configuration. Every output records its model, its prompt version and its cost.
