@@ -180,7 +180,7 @@ export async function runEval(args: EvalArgs, deps: { client: ChatClient; env?: 
   return rows;
 }
 
-export function toMarkdown(rows: EvalRow[], args: EvalArgs, at: string): string {
+export function toMarkdown(rows: EvalRow[], args: EvalArgs, at: string, threshold = DEFAULT_CONFIG.rubricThreshold): string {
   const groups = new Map<string, EvalRow[]>();
   for (const r of rows) {
     const k = `${r.stage}\u0000${r.model}`;
@@ -195,17 +195,18 @@ export function toMarkdown(rows: EvalRow[], args: EvalArgs, at: string): string 
     "",
     "## Summary (per stage and model)",
     "",
-    "| Stage | Model | OK | Rubric (0-1) | SO fulfilment | Block content | MO roll-up | LO roll-up | Rule warnings | Cost USD (total) | Rubric per cent | Mean latency s |",
-    "|---|---|---|---|---|---|---|---|---|---|---|---|",
+    "| Stage | Model | OK | Rubric (0-1) | Accepted (>= threshold) | SO fulfilment | Block content | MO roll-up | LO roll-up | Rule warnings | Mean calls | Cost USD (total) | Cost per accepted output | Mean latency s |",
+    "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|",
   ];
   for (const [k, rs] of [...groups].sort()) {
     const [stage, model] = k.split("\u0000");
     const okRows = rs.filter((r) => r.ok);
     const score = mean(okRows.filter((r) => r.rubricScore !== null).map((r) => r.rubricScore!));
     const cost = rs.reduce((a, r) => a + r.costUsd, 0);
-    const perCent = cost > 0 && Number.isFinite(score) ? score / (cost * 100 / rs.length) : NaN;
     const m = (k: "soFulfilment" | "contentScore" | "moRollup" | "loRollup") => fmt(mean(okRows.filter((r) => r[k] !== null).map((r) => r[k]!)));
-    lines.push(`| ${stage} | \`${model}\` | ${okRows.length}/${rs.length} | ${fmt(score)} | ${m("soFulfilment")} | ${m("contentScore")} | ${m("moRollup")} | ${m("loRollup")} | ${fmt(mean(okRows.map((r) => r.ruleWarnings)), 1)} | ${cost.toFixed(4)} | ${fmt(perCent)} | ${fmt(mean(rs.map((r) => r.latencyMs / 1000)), 1)} |`);
+    // Retries, repairs and failed attempts all cost money: what matters is spend per output good enough to keep.
+    const accepted = okRows.filter((r) => r.rubricScore !== null && r.rubricScore >= threshold).length;
+    lines.push(`| ${stage} | \`${model}\` | ${okRows.length}/${rs.length} | ${fmt(score)} | ${accepted}/${rs.length} | ${m("soFulfilment")} | ${m("contentScore")} | ${m("moRollup")} | ${m("loRollup")} | ${fmt(mean(okRows.map((r) => r.ruleWarnings)), 1)} | ${fmt(mean(rs.map((r) => r.calls)), 1)} | ${cost.toFixed(4)} | ${accepted ? (cost / accepted).toFixed(4) : "none accepted"} | ${fmt(mean(rs.map((r) => r.latencyMs / 1000)), 1)} |`);
   }
   lines.push("", "## Detail", "", "| Brief | Stage | Model | OK | Rubric | SO fulfilment | MO roll-up | Warnings | Calls | Cost USD | Error |", "|---|---|---|---|---|---|---|---|---|---|---|");
   for (const r of rows) {
