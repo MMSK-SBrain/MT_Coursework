@@ -2,7 +2,7 @@
 import type { AssetRef, Course, Generated, InputFile, Provenance } from "@cg/core";
 import { randomUUID } from "node:crypto";
 import {
-  addPlan, applyCaseStudy, courseForSuggestion, applyFit, applyHourPlan, applyLinks, applyOutcomes, applyParsed, applyRoles, findSession, updateSession,
+  addPlan, applyCaseStudy, applyFit, applyHourPlan, applyLinks, applyOutcomes, applyParsed, applyRoles, findSession, updateSession,
 } from "./course-logic";
 import type { CourseMeta } from "./course-meta";
 import { db, schema } from "./db";
@@ -59,8 +59,8 @@ export async function runJob(job: JobRow): Promise<unknown> {
     case "suggestOutcomeEdits": {
       // Suggestions are shown next to the original; nothing is replaced until the teacher accepts.
       const out = [];
-      for (const id of req.outcomeIds) {
-        const g = await stages.suggestOutcomeEdit(courseForSuggestion(course, id), id, req.instruction);
+      for (const id of new Set(req.outcomeIds)) {
+        const g = await stages.suggestOutcomeEdit(course, id, req.instruction);
         await log(g);
         out.push({ suggestion: g.value, provenance: g.provenance, warnings: g.warnings });
       }
@@ -109,7 +109,8 @@ export async function runJob(job: JobRow): Promise<unknown> {
           ? await exporter.slides(course, req.planId, req.sessionId)
           : await exporter.instructorGuide(course, req.planId, req.sessionId);
         const ext = isSlides ? "pptx" : "docx";
-        const key = `courses/${course.id}/${req.planId}/${req.sessionId}/${isSlides ? "slides" : "instructor-guide"}-${Date.now()}.${ext}`;
+        // Server-generated name: plan and session ids come from the client and never reach the path.
+        const key = `courses/${course.id}/exports/${isSlides ? "slides" : "instructor-guide"}-${randomUUID()}.${ext}`;
         let recorded = false;
         try {
           await putFile(key, bytes);

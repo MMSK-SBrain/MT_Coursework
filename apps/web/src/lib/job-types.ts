@@ -10,7 +10,7 @@ export const JobRequest = z.discriminatedUnion("type", [
   z.object({ type: z.literal("findRoles"), keywords: z.array(z.string()).optional() }),
   z.object({ type: z.literal("proposeFit") }),
   z.object({ type: z.literal("draftOutcomes") }),
-  z.object({ type: z.literal("suggestOutcomeEdits"), outcomeIds: z.array(z.string()).min(1), instruction: EditInstruction }),
+  z.object({ type: z.literal("suggestOutcomeEdits"), outcomeIds: z.array(z.string()).min(1).max(20), instruction: EditInstruction }),
   z.object({ type: z.literal("draftPlan"), specs: z.array(PlanSpec).min(1).max(4) }),
   z.object({ type: z.literal("draftHourPlan"), ...at }),
   z.object({ type: z.literal("findFurtherLearning"), ...at }),
