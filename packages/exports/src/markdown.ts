@@ -1,4 +1,4 @@
-import { isHttpUrl, type Course, type HourBlock, type Session } from "@cg/core";
+import { isHttpUrl, learningOutcomeCoverage, moduleOutcomeCoverage, type Course, type HourBlock, type Session } from "@cg/core";
 import { approvedLinks, blockRange, outcomeText, pad2, sortedBlocks } from "./util.js";
 
 const cell = (s: string) => s.replace(/\|/g, "\\|").replace(/\s*\n\s*/g, " ");
@@ -65,6 +65,25 @@ function outcomes(course: Course): string {
     course.outcomes.map((o) => [o.id, o.text, cap(o.bloom), o.moduleIds.join(", "), o.objectiveIds.join(", "), o.roleIds.map(roleTitle).join(", ")]),
   ));
   if (course.outcomesFrozenAt) out.push("", `Outcomes frozen on ${course.outcomesFrozenAt.slice(0, 10)}.`);
+  out.push("", "## Outcome hierarchy", "", "Course learning outcome (LO), then the module outcomes (MO) that serve it.", "");
+  for (const lo of course.outcomes) {
+    out.push(`- **${lo.id}** ${lo.text} (${cap(lo.bloom)})`);
+    const mos = course.modules.flatMap((mod) => mod.outcomes.filter((mo) => mo.outcomeIds.includes(lo.id)).map((mo) => ({ mod, mo })));
+    if (!mos.length) out.push("  - No module outcomes yet.");
+    for (const { mod, mo } of mos) out.push(`  - **${mo.id}** ${mo.text} (${cap(mo.bloom)}, ${mod.id})`);
+  }
+  for (const plan of course.plans) {
+    out.push("", `## Roll-up: ${plan.name}`, "");
+    const mc = moduleOutcomeCoverage(course, plan);
+    out.push(table(["Module outcome", "Session outcomes", "Status"], mc.map((s) => [
+      s.moduleOutcomeId, s.sessionOutcomeIds.join(", ") || "none", s.met ? "Met" : `Not met: ${s.problem ?? "unknown"}`,
+    ])));
+    out.push("");
+    out.push(table(["Learning outcome", "Module outcomes", "Status"], learningOutcomeCoverage(course, plan).map((s) => [
+      s.outcomeId, s.moduleOutcomeIds.join(", ") || "none",
+      s.met ? "Met" : s.moduleOutcomeIds.length ? `Not met: ${s.moduleOutcomeIds.filter((id) => !mc.find((x) => x.moduleOutcomeId === id)?.met).join(", ")} not met` : "Not met: no module outcomes",
+    ])));
+  }
   return out.join("\n") + "\n";
 }
 
@@ -81,18 +100,22 @@ function planReadme(course: Course, planId: string): string {
 }
 
 function blockMd(b: HourBlock): string[] {
-  return [`### ${b.title}`, "", `*${b.kind}, ${b.minutes} min, style: ${b.style}${b.outcomeIds.length ? `, outcomes: ${b.outcomeIds.join(", ")}` : ""}*`, "", b.activity, ""];
+  return [`### ${b.title}`, "", `*${b.kind}, ${b.minutes} min, style: ${b.style}${b.sessionOutcomeIds.length ? `, serves: ${b.sessionOutcomeIds.join(", ")}` : ""}*`, "", b.activity, ""];
 }
 
 function sessionMd(course: Course, planName: string, s: Session): string {
   const out: string[] = [`# Session ${s.index}: ${s.title}`, "", `Plan: ${planName} | ${s.minutes} minutes | style: ${s.style}`, ""];
   out.push("## Outcomes", "");
   for (const id of s.outcomeIds) out.push(`- **${id}** ${outcomeText(course, id)}`);
+  if (s.sessionOutcomes.length) {
+    out.push("", "## Session outcomes", "");
+    out.push(table(["Id", "Outcome", "Bloom", "Module outcomes"], s.sessionOutcomes.map((o) => [o.id, o.text, cap(o.bloom), o.moduleOutcomeIds.join(", ")])));
+  }
   if (s.stale) out.push("", "> Note: an upstream item changed after this session was drafted. Review before use.");
   const blocks = sortedBlocks(s.blocks);
   out.push("", "## Hour-wise plan", "");
   if (blocks.length) {
-    out.push(table(["Time", "Min", "Block", "Type", "Style"], blocks.map((b) => [blockRange(b), String(b.minutes), b.title, b.kind, b.style])));
+    out.push(table(["Time", "Min", "Block", "Type", "Style", "SOs"], blocks.map((b) => [blockRange(b), String(b.minutes), b.title, b.kind, b.style, b.sessionOutcomeIds.join(", ")])));
     out.push("");
     for (const b of blocks) out.push(...blockMd(b));
   } else out.push("No hour plan drafted yet.", "");

@@ -55,8 +55,13 @@ export async function instructorGuideExport(course: Course, planId: string, sess
     body.push(bullet(`${id}${o ? ` (${o.bloom})` : ""}: ${outcomeText(course, id)}`));
   }
 
+  body.push(h1("Session outcomes"));
+  if (session.sessionOutcomes.length) {
+    for (const o of session.sessionOutcomes) body.push(bullet(`${o.id} (${o.bloom}${o.moduleOutcomeIds.length ? `; serves ${o.moduleOutcomeIds.join(", ")}` : ""}): ${o.text}`));
+  } else body.push(p("No session outcomes defined."));
+
   body.push(h1("Run sheet"));
-  body.push(table(["Time", "Min", "Block", "Type", "Style"], [14, 8, 42, 16, 20], blocks.map((b) => [blockRange(b), String(b.minutes), b.title, b.kind, b.style])));
+  body.push(table(["Time", "Min", "Block", "Type", "Style", "SOs"], [12, 7, 36, 13, 16, 16], blocks.map((b) => [blockRange(b), String(b.minutes), b.title, b.kind, b.style, b.sessionOutcomeIds.join(", ")])));
 
   body.push(h1("Talking points"));
   for (const b of blocks) {

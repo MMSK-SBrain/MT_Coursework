@@ -1,6 +1,6 @@
 import PptxGenJS from "pptxgenjs";
 import type { Course, HourBlock } from "@cg/core";
-import { findSession, outcomeText, sentences, shorten, sortedBlocks } from "./util.js";
+import { findSession, outcomeText, sentences, sortedBlocks } from "./util.js";
 
 export interface SlideTheme {
   background: string;
@@ -24,11 +24,26 @@ export interface SlideOptions { theme?: ThemeName | SlideTheme }
 
 const MAX_BULLETS = 4;
 
+/** Short slide text: whole sentence if it fits, else cut at the last clause boundary that fits (never an ellipsis; the full text is in the notes). */
+function shortBullet(text: string, max: number): string {
+  const t = text.trim().replace(/\.$/, "");
+  if (t.length <= max) return t;
+  let cut = -1;
+  for (const m of t.matchAll(/,| into | and | then | with | to | so | when | where /g)) {
+    if (m.index! > 20 && m.index! <= max) cut = m.index!;
+  }
+  if (cut > 0) return t.slice(0, cut).trim();
+  const words = t.split(/\s+/);
+  let out = "";
+  for (const w of words) { if ((out + " " + w).trim().length > max) break; out = (out + " " + w).trim(); }
+  return out;
+}
+
 /** Bullets for the slide face: the example, then the activity's sentences kept short. Full prose goes to notes. */
 function faceBullets(b: HourBlock): string[] {
-  const out = sentences(b.activity).map((s) => shorten(s, 90));
-  if (b.industryExample) out.push(`In industry: ${shorten(b.industryExample.text, 90)}`);
-  for (const q of b.check) out.push(`Check: ${shorten(q, 80)}`);
+  const out = sentences(b.activity).map((s) => shortBullet(s, 90));
+  if (b.industryExample) out.push(`In industry: ${shortBullet(b.industryExample.text, 90)}`);
+  for (const q of b.check) out.push(`Check: ${shortBullet(q, 80)}`);
   return out;
 }
 
@@ -62,8 +77,11 @@ export async function slidesExport(course: Course, planId: string, sessionId: st
   // Outcomes
   const oc = pres.addSlide({ masterName: "CG" });
   heading(oc, "By the end of this session you can");
-  bullets(oc, session.outcomeIds.map((id) => outcomeText(course, id)), 12.1);
-  oc.addNotes(session.outcomeIds.map((id) => `${id}: ${outcomeText(course, id)}`).join("\n"));
+  const outcomeLines = session.sessionOutcomes.length
+    ? session.sessionOutcomes.map((o) => ({ id: o.id, text: o.text }))
+    : session.outcomeIds.map((id) => ({ id, text: outcomeText(course, id) }));
+  bullets(oc, outcomeLines.map((o) => o.text), 12.1);
+  oc.addNotes(outcomeLines.map((o) => `${o.id}: ${o.text}`).join("\n"));
   footer(oc);
 
   // One or more slides per block that needs slides
@@ -76,7 +94,8 @@ export async function slidesExport(course: Course, planId: string, sessionId: st
       heading(s, chunks.length > 1 ? `${b.title} (${i + 1}/${chunks.length})` : b.title);
       bullets(s, chunk, 7.3);
       imageArea(s);
-      s.addNotes(i === 0 ? b.activity : `Continued: ${b.title}.`);
+      const full = b.industryExample ? `${b.activity}\n\nIndustry example (${b.industryExample.sector}): ${b.industryExample.text}` : b.activity;
+      s.addNotes(i === 0 ? full : `Continued: ${b.title}.`);
       footer(s);
     });
   }

@@ -64,6 +64,26 @@ describe("markdown", () => {
     expect(s).not.toContain("ASPICE SYS.2 explained"); // unapproved
   });
 
+  it("outcomes.md shows hierarchy and roll-up with reasons", () => {
+    const o = md["outcomes.md"]!;
+    expect(o).toContain("## Outcome hierarchy");
+    expect(o).toContain("**M3.MO1** Write verifiable requirements");
+    expect(o).toContain("## Roll-up: Classroom, 3 h sessions");
+    expect(o).toContain("| M3.MO1 | S3.SO1, S3.SO2 | Met |");
+    expect(o).toContain("| M1.MO1 | none | Not met: no session outcome serves it |");
+    expect(o).toContain("| LO2 | M3.MO1, M3.MO2 | Met |");
+    expect(o).toContain("| LO1 | M1.MO1, M2.MO1 | Not met:");
+  });
+
+  it("session file lists SOs and block SO ids", () => {
+    const s = md["plans/p1/session-03.md"]!;
+    expect(s).toContain("## Session outcomes");
+    expect(s).toContain("| S3.SO2 | Trace a requirement");
+    expect(s).toContain("| Apply | M3.MO1, M3.MO2 |");
+    expect(s).toContain("serves: S3.SO1, S3.SO2*");
+    expect(s).toContain("| Exit quiz | check | retrieval | S3.SO1, S3.SO2 |");
+  });
+
   it("excludes case study content, keeps only the count", () => {
     const all = Object.values(md).join("\n");
     expect(all).toContain("1 case study available");
@@ -86,6 +106,25 @@ describe("slides", () => {
     expect(text).not.toContain("Rewrite in pairs"); // needsSlides false
     const notes = Object.keys(files).filter((n) => n.startsWith("ppt/notesSlides/") && n.endsWith(".xml")).map((n) => files[n]).join("\n");
     expect(notes).toContain("Introduce the five checks");
+    // outcomes slide shows session outcomes, not LOs
+    expect(text).toContain("Rewrite a weak requirement");
+    expect(text).not.toContain("Write verifiable system requirements");
+    expect(notes).toContain("S3.SO1: Rewrite a weak requirement");
+  });
+
+  it("keeps long industry examples whole in notes and short on the slide", async () => {
+    const files = unzip(await ex.slides(course, P, S));
+    const slideText = Object.keys(files).filter((n) => /^ppt\/slides\/slide\d+\.xml$/.test(n)).map((n) => files[n]).join("\n");
+    const notes = Object.keys(files).filter((n) => n.startsWith("ppt/notesSlides/") && n.endsWith(".xml")).map((n) => files[n]).join("\n");
+    expect(slideText).toContain("In industry:");
+    expect(slideText).not.toContain("…");
+    expect(slideText).not.toContain("warranty dispute");
+    expect(notes).toContain("later used the same trace to settle a warranty dispute");
+  });
+
+  it("falls back to LOs when a session has no session outcomes", async () => {
+    const files = unzip(await ex.slides(course, P, "s4"));
+    expect(Object.values(files).join("\n")).toContain("Model the functional and physical architecture");
   });
 
   it("supports the dark theme", async () => {
@@ -101,6 +140,9 @@ describe("instructor guide", () => {
     for (const t of ["Session overview", "Outcomes", "Run sheet", "Talking points", "Quick checks", "Answer:", "Case studies", "Composite case", "Further learning", "Anatomy of a good requirement"]) {
       expect(doc).toContain(t);
     }
+    expect(doc).toContain("Session outcomes");
+    expect(doc).toContain("S3.SO2");
+    expect(doc).toContain(">SOs<");
     expect(doc).toContain("The ambiguous derating requirement");
     expect(doc).not.toContain("ASPICE SYS.2 explained");
   });
