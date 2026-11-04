@@ -1,5 +1,5 @@
 // Business rules shared by the harness (to validate model output) and the app (to warn and gate).
-import type { BloomLevel, Course, HourBlock, LearningPath, LearningPlan, Outcome, TeachingStyle, VideoKind } from "./model.js";
+import type { BloomLevel, Course, HourBlock, LearningPath, LearningPlan, Outcome, Session, TeachingStyle, VideoKind } from "./model.js";
 
 export const PATH_FAMILY: Record<LearningPath, "live" | "blended" | "selfPaced" | "content"> = {
   classroom: "live", lab: "live", bootcamp: "live",
@@ -86,6 +86,71 @@ export function uncoveredOutcomes(course: Pick<Course, "outcomes">, plan: Learni
 /** Outcome ids not mapped to any module. */
 export function unmappedOutcomes(course: Pick<Course, "outcomes">): string[] {
   return course.outcomes.filter((o) => o.moduleIds.length === 0).map((o) => o.id);
+}
+
+// ---- Outcome hierarchy: LO <- MO <- SO <- hour blocks ----------------------------
+
+const bloomRank = (b: BloomLevel) => BLOOM_ORDER.indexOf(b);
+
+/** Block kinds that don't have to serve a session outcome. */
+const FREE_BLOCKS = new Set<HourBlock["kind"]>(["break", "wrap"]);
+
+/**
+ * Lesson-level check: the content of a session must serve its session outcomes.
+ * Each SO needs a measurable verb and at least one block serving it; each teaching block must name a known SO.
+ */
+export function sessionOutcomeProblems(session: Pick<Session, "title" | "sessionOutcomes" | "blocks">): string[] {
+  const problems: string[] = [];
+  const ids = new Set(session.sessionOutcomes.map((so) => so.id));
+  if (session.sessionOutcomes.length === 0) problems.push(`session "${session.title}" has no session outcomes`);
+  for (const so of session.sessionOutcomes) {
+    const verb = outcomeVerbProblem(so);
+    if (verb) problems.push(`${so.id} ${verb}`);
+    if (!session.blocks.some((b) => b.sessionOutcomeIds.includes(so.id))) problems.push(`${so.id} is not served by any block`);
+  }
+  for (const b of session.blocks) {
+    const unknown = b.sessionOutcomeIds.filter((id) => !ids.has(id));
+    if (unknown.length) problems.push(`block "${b.title}" names unknown session outcome(s) ${unknown.join(", ")}`);
+    if (b.sessionOutcomeIds.length === 0 && !FREE_BLOCKS.has(b.kind)) problems.push(`block "${b.title}" serves no session outcome`);
+  }
+  return problems;
+}
+
+export interface ModuleOutcomeStatus {
+  moduleId: string;
+  moduleOutcomeId: string;
+  sessionOutcomeIds: string[]; // SOs in the plan that serve this MO
+  met: boolean;
+  problem?: string;
+}
+
+/**
+ * Module roll-up: an MO is met when at least one SO in the plan serves it at the MO's Bloom level or higher.
+ * Sessions must reach the depth the module promises, not just mention its topic.
+ */
+export function moduleOutcomeCoverage(course: Pick<Course, "modules">, plan: LearningPlan): ModuleOutcomeStatus[] {
+  const sos = plan.sessions.flatMap((s) => s.sessionOutcomes);
+  return course.modules.flatMap((m) =>
+    m.outcomes.map((mo) => {
+      const serving = sos.filter((so) => so.moduleOutcomeIds.includes(mo.id));
+      const top = serving.reduce((r, so) => Math.max(r, bloomRank(so.bloom)), -1);
+      const status: ModuleOutcomeStatus = { moduleId: m.id, moduleOutcomeId: mo.id, sessionOutcomeIds: serving.map((so) => so.id), met: false };
+      if (!serving.length) status.problem = "no session outcome serves it";
+      else if (top < bloomRank(mo.bloom)) status.problem = `session outcomes reach ${BLOOM_ORDER[top]}, the module outcome needs ${mo.bloom}`;
+      else status.met = true;
+      return status;
+    }),
+  );
+}
+
+/** Course roll-up: an LO is met when it has module outcomes and all of them are met. */
+export function learningOutcomeCoverage(course: Pick<Course, "modules" | "outcomes">, plan: LearningPlan): { outcomeId: string; met: boolean; moduleOutcomeIds: string[] }[] {
+  const mo = moduleOutcomeCoverage(course, plan);
+  const parents = new Map(course.modules.flatMap((m) => m.outcomes.map((o) => [o.id, o.outcomeIds] as const)));
+  return course.outcomes.map((lo) => {
+    const mine = mo.filter((s) => parents.get(s.moduleOutcomeId)?.includes(lo.id));
+    return { outcomeId: lo.id, moduleOutcomeIds: mine.map((s) => s.moduleOutcomeId), met: mine.length > 0 && mine.every((s) => s.met) };
+  });
 }
 
 export function videoAllowed(path: LearningPath, kind: VideoKind): boolean {

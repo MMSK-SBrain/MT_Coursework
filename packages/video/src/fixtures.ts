@@ -4,7 +4,7 @@ import type { Course, HourBlock, LearningPath, Session } from "@cg/core";
 const provenance = { model: "fixture", promptId: "fixture", promptVersion: "1", costUsd: 0, createdAt: "2026-11-04T00:00:00Z", builtFrom: [] };
 
 const block = (id: string, hour: number, startMin: number, minutes: number, kind: HourBlock["kind"], title: string, activity: string, extra: Partial<HourBlock> = {}): HourBlock => ({
-  id, hour, startMin, minutes, kind, title, activity, outcomeIds: ["LO2"], style: "dyk", check: [], needsSlides: false, provenance, ...extra,
+  id, hour, startMin, minutes, kind, title, activity, outcomeIds: ["LO2"], sessionOutcomeIds: ["S3.SO1"], style: "dyk", check: [], needsSlides: false, provenance, ...extra,
 });
 
 const blocks: HourBlock[] = [
@@ -16,12 +16,17 @@ const blocks: HourBlock[] = [
     industryExample: { roleIds: [], sources: [], sector: "automotive", text: "The pack shall disconnect the contactors within 100 ms when any cell is above 60 degrees Celsius" },
     check: ["Which number in this requirement could a test bench check?"],
   }),
-  block("b4", 1, 45, 10, "activity", "Trace the requirement to a test", "Link the rewritten requirement to one HIL test case in the requirements tool."),
+  block("b4", 1, 45, 10, "activity", "Trace the requirement to a test", "Link the rewritten requirement to one HIL test case in the requirements tool.", { sessionOutcomeIds: ["S3.SO2"] }),
   block("b5", 1, 55, 5, "wrap", "Three rules for a good requirement", "One sentence recap."),
 ];
 
+const sessionOutcomes: Session["sessionOutcomes"] = [
+  { id: "S3.SO1", text: "Write a verifiable requirement with a measurable limit and condition", bloom: "apply", moduleOutcomeIds: ["M3.MO1"], locked: false, provenance },
+  { id: "S3.SO2", text: "Trace a requirement to the test that verifies it", bloom: "analyse", moduleOutcomeIds: ["M3.MO1"], locked: false, provenance },
+];
+
 const session = (id: string, index: number, video: Session["video"]): Session => ({
-  id, index, title: "What a good requirement looks like", outcomeIds: ["LO2"], style: "dyk", minutes: 60, video, blocks, links: [], caseStudies: [], assets: [], stale: false, provenance,
+  id, index, title: "What a good requirement looks like", outcomeIds: ["LO2"], sessionOutcomes, style: "dyk", minutes: 60, video, blocks, links: [], caseStudies: [], assets: [], stale: false, provenance,
 });
 
 const plan = (id: string, path: LearningPath, video: Session["video"]) => ({
@@ -33,7 +38,9 @@ export const aezc517: Course = {
   slug: "aezc517",
   brief: { title: "Automotive Systems Engineering", code: "AEZC517", audience: "M.Tech WILP, working engineers", level: "pg", contactHours: 32, industry: "Automotive OEMs and Tier-1 suppliers", markets: ["India", "Germany"], textbooks: [], notes: "" },
   sources: [],
-  modules: [{ id: "M3", title: "Stakeholder needs and requirements engineering", hours: 6, topics: [], foundIn: "both" }],
+  modules: [{ id: "M3", title: "Stakeholder needs and requirements engineering", hours: 6, topics: [], foundIn: "both", outcomes: [
+    { id: "M3.MO1", text: "Write and trace verifiable system requirements from stakeholder needs", bloom: "apply", outcomeIds: ["LO2"], locked: false, provenance },
+  ] }],
   structureVersion: 1,
   roles: [],
   fit: [],

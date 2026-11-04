@@ -49,11 +49,26 @@ export const CourseBrief = z.object({
 });
 export type CourseBrief = z.infer<typeof CourseBrief>;
 
+export const BloomLevel = z.enum(["remember", "understand", "apply", "analyse", "evaluate", "create"]);
+export type BloomLevel = z.infer<typeof BloomLevel>;
+
+/** Module outcome (MO): what one module must achieve. Serves one or more course learning outcomes (LOs). */
+export const ModuleOutcome = z.object({
+  id: Id, // "M3.MO1"
+  text: z.string(),
+  bloom: BloomLevel,
+  outcomeIds: z.array(Id).default([]), // parent LO ids
+  locked: z.boolean().default(false),
+  provenance: Provenance,
+});
+export type ModuleOutcome = z.infer<typeof ModuleOutcome>;
+
 export const Module = z.object({
   id: Id, // "M1"
   title: z.string(),
   hours: z.number().nonnegative(),
   topics: z.array(z.string()).default([]),
+  outcomes: z.array(ModuleOutcome).default([]), // module outcomes (MOs)
   foundIn: z.enum(["handout", "moduleSheet", "both", "fit", "user", "import"]), // "import": taken from existing course files
   note: z.string().optional(), // e.g. "Not in handout"
 });
@@ -86,8 +101,6 @@ export const FitChange = z.object({
 });
 export type FitChange = z.infer<typeof FitChange>;
 
-export const BloomLevel = z.enum(["remember", "understand", "apply", "analyse", "evaluate", "create"]);
-export type BloomLevel = z.infer<typeof BloomLevel>;
 
 export const Objective = z.object({
   id: Id, // "CO1"
@@ -149,6 +162,21 @@ export const VideoKind = z.enum(["none", "demo", "whiteboard", "explainroo", "sc
 export type VideoKind = z.infer<typeof VideoKind>;
 
 export const BlockKind = z.enum(["hook", "teach", "activity", "case", "check", "wrap", "break"]);
+export type BlockKind = z.infer<typeof BlockKind>;
+
+/**
+ * Session outcome (SO): what one lesson achieves. Serves one or more module outcomes.
+ * Generated content is checked against these: every block names the SOs it serves.
+ */
+export const SessionOutcome = z.object({
+  id: Id, // "S3.SO1"
+  text: z.string(),
+  bloom: BloomLevel,
+  moduleOutcomeIds: z.array(Id).default([]), // parent MO ids
+  locked: z.boolean().default(false),
+  provenance: Provenance,
+});
+export type SessionOutcome = z.infer<typeof SessionOutcome>;
 
 export const IndustryExample = z.object({
   text: z.string(),
@@ -166,7 +194,8 @@ export const HourBlock = z.object({
   kind: BlockKind,
   title: z.string(),
   activity: z.string(), // what the teacher and learners do
-  outcomeIds: z.array(Id).default([]),
+  outcomeIds: z.array(Id).default([]), // course LOs (kept for traceability)
+  sessionOutcomeIds: z.array(Id).default([]), // the SOs this block serves; the content check uses these
   style: TeachingStyle,
   industryExample: IndustryExample.optional(),
   check: z.array(z.string()).default([]), // quick-check questions
@@ -216,7 +245,8 @@ export const Session = z.object({
   id: Id,
   index: z.number().int().positive(),
   title: z.string(),
-  outcomeIds: z.array(Id).min(1),
+  outcomeIds: z.array(Id).min(1), // course LOs
+  sessionOutcomes: z.array(SessionOutcome).default([]), // SOs, the lesson-level outcomes
   style: TeachingStyle,
   minutes: z.number().int().positive(),
   video: VideoKind.default("none"),
