@@ -30,3 +30,13 @@ describe("rules", () => {
     expect(videoAllowed("youtube", "whiteboard")).toBe(true);
   });
 });
+
+import { FurtherLink, isHttpUrl } from "./model.js";
+describe("links", () => {
+  it("accepts only http and https URLs", () => {
+    expect(isHttpUrl("https://example.org/a")).toBe(true);
+    expect(isHttpUrl("javascript:alert(1)")).toBe(false);
+    expect(isHttpUrl("data:text/html,x")).toBe(false);
+    expect(FurtherLink.safeParse({ id: "l1", kind: "other", title: "t", url: "javascript:alert(1)", why: "w" }).success).toBe(false);
+  });
+});

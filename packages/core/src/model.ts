@@ -4,6 +4,17 @@ import { z } from "zod";
 
 export const Id = z.string().min(1);
 
+/** True only for absolute http: and https: URLs. Links come from web search, models and teachers, so nothing else is allowed. */
+export function isHttpUrl(u: string): boolean {
+  try {
+    const p = new URL(u).protocol;
+    return p === "http:" || p === "https:";
+  } catch {
+    return false;
+  }
+}
+export const HttpUrl = z.string().url().refine(isHttpUrl, "must be an http or https URL");
+
 /** Who/what produced a piece of content. Every generated item carries one. */
 export const Provenance = z.object({
   model: z.string(), // e.g. "qwen/qwen3-235b-a22b" or "human" or "import"
@@ -55,7 +66,7 @@ export const JobRole = z.object({
   experience: z.string().optional(), // "2–8 yrs"
   skills: z.array(z.string()),
   moduleMatch: z.number().min(0).max(100), // % overlap with the modules
-  evidence: z.array(z.object({ title: z.string(), url: z.string().url(), source: z.string() })).default([]),
+  evidence: z.array(z.object({ title: z.string(), url: HttpUrl, source: z.string() })).default([]),
   selected: z.boolean().default(false),
   addedByUser: z.boolean().default(false),
 });
@@ -143,7 +154,7 @@ export const IndustryExample = z.object({
   text: z.string(),
   sector: z.string(), // e.g. "automotive"
   roleIds: z.array(Id).default([]),
-  sources: z.array(z.object({ title: z.string(), url: z.string().url() })).default([]),
+  sources: z.array(z.object({ title: z.string(), url: HttpUrl })).default([]),
 });
 export type IndustryExample = z.infer<typeof IndustryExample>;
 
@@ -168,7 +179,7 @@ export const FurtherLink = z.object({
   id: Id,
   kind: z.enum(["youtube", "article", "standard", "other"]),
   title: z.string(),
-  url: z.string().url(),
+  url: HttpUrl,
   channelOrSite: z.string().optional(),
   durationSec: z.number().int().positive().optional(),
   publishedAt: z.string().optional(),
@@ -187,7 +198,7 @@ export const CaseStudy = z.object({
   data: z.string().default(""), // tables or figures as markdown
   questions: z.array(z.string()).min(1),
   teachingNote: z.string(),
-  sources: z.array(z.object({ title: z.string(), url: z.string().url() })).default([]), // required when label = real
+  sources: z.array(z.object({ title: z.string(), url: HttpUrl })).default([]), // required when label = real
   outcomeIds: z.array(Id).default([]),
   provenance: Provenance,
 });

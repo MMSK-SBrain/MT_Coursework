@@ -1,7 +1,14 @@
-import type { Course, HourBlock, Session } from "@cg/core";
+import { isHttpUrl, type Course, type HourBlock, type Session } from "@cg/core";
 import { approvedLinks, blockRange, outcomeText, pad2, sortedBlocks } from "./util.js";
 
 const cell = (s: string) => s.replace(/\|/g, "\\|").replace(/\s*\n\s*/g, " ");
+/** A markdown link that can't inject markup: non-http(s) URLs become plain text, brackets in titles and parentheses/spaces in URLs are escaped. */
+export function mdLink(title: string, url: string): string {
+  const t = title.replace(/([\\[\]])/g, "\\$1");
+  if (!isHttpUrl(url)) return t;
+  const u = url.replace(/[()<> ]/g, (c) => "%" + c.charCodeAt(0).toString(16).toUpperCase());
+  return `[${t}](${u})`;
+}
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 function table(head: string[], rows: string[][]): string {
@@ -95,7 +102,7 @@ function sessionMd(course: Course, planName: string, s: Session): string {
     for (const b of examples) {
       const e = b.industryExample!;
       out.push(`- **${b.title}** (${e.sector}): ${e.text}`);
-      for (const src of e.sources) out.push(`  - Source: [${src.title}](${src.url})`);
+      for (const src of e.sources) out.push(`  - Source: ${mdLink(src.title, src.url)}`);
     }
     out.push("");
   }
@@ -114,7 +121,7 @@ function sessionMd(course: Course, planName: string, s: Session): string {
     for (const l of links) {
       const where = l.channelOrSite ? `, ${l.channelOrSite}` : "";
       const dur = l.durationSec ? `, ${Math.round(l.durationSec / 60)} min` : "";
-      out.push(`- [${l.title}](${l.url}) (${l.kind}${where}${dur}): ${l.why}`);
+      out.push(`- ${mdLink(l.title, l.url)} (${l.kind}${where}${dur}): ${l.why}`);
     }
     out.push("");
   }

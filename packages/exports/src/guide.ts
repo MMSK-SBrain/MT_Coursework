@@ -1,7 +1,7 @@
 import {
   AlignmentType, BorderStyle, Document, ExternalHyperlink, HeadingLevel, Packer, Paragraph, Table, TableCell, TableRow, TextRun, WidthType,
 } from "docx";
-import type { Course } from "@cg/core";
+import { isHttpUrl, type Course } from "@cg/core";
 import { approvedLinks, blockRange, findSession, outcomeText, sortedBlocks } from "./util.js";
 
 const p = (text: string, opts: { bold?: boolean; italics?: boolean } = {}) =>
@@ -9,8 +9,11 @@ const p = (text: string, opts: { bold?: boolean; italics?: boolean } = {}) =>
 const h1 = (text: string) => new Paragraph({ text, heading: HeadingLevel.HEADING_1, spacing: { before: 280, after: 120 } });
 const h2 = (text: string) => new Paragraph({ text, heading: HeadingLevel.HEADING_2, spacing: { before: 200, after: 80 } });
 const bullet = (text: string) => new Paragraph({ text, bullet: { level: 0 } });
+// Only http(s) links become clickable; anything else is shown as plain text.
 const link = (title: string, url: string) =>
-  new Paragraph({ children: [new ExternalHyperlink({ link: url, children: [new TextRun({ text: title, style: "Hyperlink", color: "2563EB", underline: {} })] })] });
+  isHttpUrl(url)
+    ? new Paragraph({ children: [new ExternalHyperlink({ link: url, children: [new TextRun({ text: title, style: "Hyperlink", color: "2563EB", underline: {} })] })] })
+    : new Paragraph({ children: [new TextRun({ text: title })] });
 
 const cell = (text: string, width: number, header = false) =>
   new TableCell({
