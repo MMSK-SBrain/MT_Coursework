@@ -33,8 +33,8 @@ export interface Stages {
   findRoles(brief: CourseBrief, modules: Module[], keywords?: string[]): Promise<Generated<{ keywords: string[]; roles: JobRole[]; postingsRead: number }>>;
   /** Stage 3. Compare modules with the selected roles and propose add/strengthen/trim changes. */
   proposeFit(course: Course): Promise<Generated<FitChange[]>>;
-  /** Stage 4. Draft objectives and outcomes from the confirmed structure. Locked items in `course` are kept. */
-  draftOutcomes(course: Course): Promise<Generated<{ objectives: Objective[]; outcomes: Outcome[] }>>;
+  /** Stage 4. Objectives, course LOs, and the modules with their drafted module outcomes (locked items kept). */
+  draftOutcomes(course: Course): Promise<Generated<{ objectives: Objective[]; outcomes: Outcome[]; modules: Module[] }>>;
   /** Stage 4. One suggested edit to one outcome. */
   suggestOutcomeEdit(course: Course, outcomeId: string, instruction: EditInstruction): Promise<Generated<OutcomeSuggestion>>;
   /** Stage 5. Draft a learning plan (sessions, styles, video kinds) from frozen outcomes. */
