@@ -153,6 +153,27 @@ export function learningOutcomeCoverage(course: Pick<Course, "modules" | "outcom
   });
 }
 
+/** The Bloom level whose verb list starts the text; "understand" when none does. */
+export function bloomOfVerb(text: string): BloomLevel {
+  const t = text.trim().toLowerCase();
+  return BLOOM_ORDER.find((b) => BLOOM_VERBS[b].some((v) => t.startsWith(v + " "))) ?? "understand";
+}
+
+/**
+ * The outcome a suggested edit targets: a course LO, a module outcome or a course objective, viewed as an
+ * Outcome so one prompt and one set of checks serve all three. Throws on an unknown id.
+ */
+export function editTarget(course: Pick<Course, "outcomes" | "modules" | "objectives">, id: string): Outcome {
+  const lo = course.outcomes.find((o) => o.id === id);
+  if (lo) return lo;
+  const mod = course.modules.find((m) => m.outcomes.some((o) => o.id === id));
+  const mo = mod?.outcomes.find((o) => o.id === id);
+  if (mo) return { id, text: mo.text, bloom: mo.bloom, moduleIds: [mod!.id], objectiveIds: [], roleIds: [], origin: "user", locked: mo.locked, provenance: mo.provenance };
+  const co = course.objectives.find((o) => o.id === id);
+  if (co) return { id, text: co.text, bloom: bloomOfVerb(co.text), moduleIds: [], objectiveIds: [id], roleIds: [], origin: "handout", locked: co.locked, provenance: co.provenance };
+  throw new Error(`No outcome, module outcome or objective ${id}`);
+}
+
 export function videoAllowed(path: LearningPath, kind: VideoKind): boolean {
   return VIDEO_BY_PATH[path].includes(kind);
 }

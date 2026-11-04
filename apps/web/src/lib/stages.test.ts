@@ -5,7 +5,7 @@ import {
 import { MockStages, OpenRouterStages } from "@cg/harness";
 import { strToU8, unzipSync, zipSync } from "fflate";
 import { describe, expect, it } from "vitest";
-import { acceptSuggestion, allFitDecided, applyHourPlan, applyOutcomes, confirmStructure, courseForSuggestion, newCourse, setLocked } from "./course-logic";
+import { acceptSuggestion, allFitDecided, applyHourPlan, applyOutcomes, confirmStructure, newCourse, setLocked } from "./course-logic";
 import { createStages, getExporter } from "./stages";
 import { mockStages, sampleCourse } from "./test-fixtures";
 
@@ -71,13 +71,13 @@ describe("the stages return schema-valid data the app can apply", () => {
   it("suggests edits for module outcomes and objectives through the LO-only contract", async () => {
     const { course } = await sampleCourse();
     const mo = course.modules[0]!.outcomes[0]!;
-    const g = await mockStages.suggestOutcomeEdit(courseForSuggestion(course, mo.id), mo.id, { kind: "measurable", note: "" });
+    const g = await mockStages.suggestOutcomeEdit(course, mo.id, { kind: "measurable", note: "" });
     expect(g.value.targetId).toBe(mo.id);
     const after = acceptSuggestion(course, g.value, g.provenance);
     expect(after.modules[0]!.outcomes[0]!.text).toBe(g.value.proposed[0]!.text);
     expect(after.outcomes).toHaveLength(course.outcomes.length); // the shim LO never reaches the stored course
     const co = course.objectives[0]!;
-    const gc = await mockStages.suggestOutcomeEdit(courseForSuggestion(course, co.id), co.id, { kind: "shorten", note: "" });
+    const gc = await mockStages.suggestOutcomeEdit(course, co.id, { kind: "shorten", note: "" });
     expect(acceptSuggestion(course, gc.value, gc.provenance).objectives[0]!.text).toBe(gc.value.proposed[0]!.text);
   });
 

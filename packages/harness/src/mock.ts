@@ -2,7 +2,7 @@
 // Returns schema-valid data based on the AEZC517 Systems Engineering example; for other courses it
 // derives plausible, rule-passing data from the course's own modules and outcomes.
 import {
-  AUTO_STYLE, BLOOM_ORDER, BLOOM_VERBS, VIDEO_BY_PATH,
+  AUTO_STYLE, BLOOM_ORDER, BLOOM_VERBS, VIDEO_BY_PATH, editTarget,
   CaseStudy as CaseStudySchema, FitChange as FitChangeSchema, FurtherLink as FurtherLinkSchema, HourBlock as HourBlockSchema,
   LearningPlan as LearningPlanSchema, Objective as ObjectiveSchema, Outcome as OutcomeSchema,
   type BlockKind, type CaseStudy, type Course, type CourseBrief, type EditInstruction, type FitChange, type FurtherLink,
@@ -117,8 +117,7 @@ export class MockStages implements Stages {
   }
 
   async suggestOutcomeEdit(course: Course, outcomeId: string, instruction: EditInstruction): Promise<Generated<OutcomeSuggestion>> {
-    const o = course.outcomes.find((x) => x.id === outcomeId);
-    if (!o) throw new Error(`Unknown outcome ${outcomeId}`);
+    const o = editTarget(course, outcomeId); // LO, MO or CO
     const prov = this.prov(suggestOutcomeEditPrompt, [o.id]);
     return this.ok({ targetId: o.id, ...mockSuggestion(o, instruction) }, prov);
   }

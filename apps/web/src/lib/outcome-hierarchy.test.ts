@@ -1,6 +1,6 @@
 import { Course, learningOutcomeCoverage, moduleOutcomeCoverage, outcomeVerbProblem, sessionOutcomeProblems } from "@cg/core";
 import { describe, expect, it } from "vitest";
-import { acceptSuggestion, addPlan, applyHourPlan, confirmStructure, courseForSuggestion, editOutcomeText, reopenStructure, setLocked } from "./course-logic";
+import { acceptSuggestion, addPlan, applyHourPlan, confirmStructure, editOutcomeText, reopenStructure, setLocked } from "./course-logic";
 import { mockStages } from "./test-fixtures";
 import { markStale } from "./stale";
 import { sampleCourse } from "./test-fixtures";
@@ -65,7 +65,7 @@ describe("LO > MO > SO hierarchy in the sample course", () => {
     const mo = mod.outcomes[0]!;
     const locked = setLocked(course, mo.id, true);
     expect(editOutcomeText(locked, mo.id, "Changed.").modules.find((m) => m.id === mod.id)!.outcomes[0]!.text).toBe(mo.text);
-    const g = await mockStages.suggestOutcomeEdit(courseForSuggestion(course, mo.id), mo.id, { kind: "split", note: "" });
+    const g = await mockStages.suggestOutcomeEdit(course, mo.id, { kind: "split", note: "" });
     const after = acceptSuggestion(course, g.value, g.provenance);
     const ids = after.modules.find((m) => m.id === mod.id)!.outcomes.map((o) => o.id);
     expect(ids.slice(0, g.value.proposed.length)).toEqual(g.value.proposed.map((_, i) => (i === 0 ? mo.id : `${mo.id}${String.fromCharCode(97 + i)}`)));

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { hourBlockProblems, outcomeVerbProblem, uncoveredOutcomes, videoAllowed } from "./rules.js";
+import { editTarget, hourBlockProblems, outcomeVerbProblem, uncoveredOutcomes, videoAllowed } from "./rules.js";
 import type { HourBlock, LearningPlan, Outcome } from "./model.js";
 
 const prov = { model: "test", promptId: "t", promptVersion: "1", costUsd: 0, createdAt: "2026-11-04T00:00:00Z", builtFrom: [] };
@@ -75,5 +75,20 @@ describe("outcome hierarchy", () => {
       { outcomeId: "LO1", met: true, moduleOutcomeIds: ["M1.MO1"] },
       { outcomeId: "LO2", met: false, moduleOutcomeIds: ["M1.MO2"] },
     ]);
+  });
+});
+
+describe("editTarget", () => {
+  const prov = { model: "m", promptId: "p", promptVersion: "1", costUsd: 0, createdAt: "2026-01-01T00:00:00Z", builtFrom: [] };
+  const c = {
+    outcomes: [{ id: "LO1", text: "Explain x", bloom: "understand" as const, moduleIds: ["M1"], objectiveIds: [], roleIds: [], origin: "user" as const, locked: false, provenance: prov }],
+    modules: [{ id: "M1", title: "M", hours: 2, topics: [], foundIn: "user" as const, outcomes: [{ id: "M1.MO1", text: "Apply y", bloom: "apply" as const, outcomeIds: ["LO1"], locked: true, provenance: prov }] }],
+    objectives: [{ id: "CO1", text: "Design a system", locked: false, provenance: prov }],
+  };
+  it("finds LOs, MOs and objectives, and rejects unknown ids", () => {
+    expect(editTarget(c, "LO1").text).toBe("Explain x");
+    expect(editTarget(c, "M1.MO1")).toMatchObject({ bloom: "apply", moduleIds: ["M1"], locked: true });
+    expect(editTarget(c, "CO1")).toMatchObject({ bloom: "create", objectiveIds: ["CO1"] });
+    expect(() => editTarget(c, "X")).toThrow();
   });
 });

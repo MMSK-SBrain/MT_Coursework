@@ -244,20 +244,3 @@ export function applyCaseStudy(course: Course, planId: string, sessionId: string
  * Stages.suggestOutcomeEdit only looks up course LOs. To suggest edits for a module outcome (MO) or a course
  * objective (CO), the item is presented to it as an LO in a view of the course; the suggestion keeps the item's id.
  */
-export function courseForSuggestion(course: Course, id: string): Course {
-  if (course.outcomes.some((o) => o.id === id)) return course;
-  const mod = course.modules.find((m) => m.outcomes.some((o) => o.id === id));
-  const mo = mod?.outcomes.find((o) => o.id === id);
-  const co = course.objectives.find((o) => o.id === id);
-  if (!mo && !co) throw new Error(`No outcome, module outcome or objective ${id}`);
-  const shim: Outcome = mo
-    ? { id, text: mo.text, bloom: mo.bloom, moduleIds: [mod!.id], objectiveIds: [], roleIds: [], origin: "user", locked: mo.locked, provenance: mo.provenance }
-    : { id, text: co!.text, bloom: bloomOfVerb(co!.text), moduleIds: [], objectiveIds: [id], roleIds: [], origin: "handout", locked: co!.locked, provenance: co!.provenance };
-  return { ...course, outcomes: [...course.outcomes, shim] };
-}
-
-/** The Bloom level whose verb list starts the text; "understand" when none does. */
-export function bloomOfVerb(text: string): Outcome["bloom"] {
-  const t = text.trim().toLowerCase();
-  return BLOOM_ORDER.find((b) => BLOOM_VERBS[b].some((v) => t.startsWith(v + " "))) ?? "understand";
-}

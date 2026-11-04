@@ -35,7 +35,7 @@ export interface Stages {
   proposeFit(course: Course): Promise<Generated<FitChange[]>>;
   /** Stage 4. Objectives, course LOs, and the modules with their drafted module outcomes (locked items kept). */
   draftOutcomes(course: Course): Promise<Generated<{ objectives: Objective[]; outcomes: Outcome[]; modules: Module[] }>>;
-  /** Stage 4. One suggested edit to one outcome. */
+  /** Stage 4. One suggested edit to one course LO, module outcome or objective (see editTarget). */
   suggestOutcomeEdit(course: Course, outcomeId: string, instruction: EditInstruction): Promise<Generated<OutcomeSuggestion>>;
   /** Stage 5. Draft a learning plan (sessions, styles, video kinds) from frozen outcomes. */
   draftPlan(course: Course, spec: PlanSpec): Promise<Generated<LearningPlan>>;
