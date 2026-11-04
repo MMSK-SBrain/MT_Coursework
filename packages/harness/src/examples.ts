@@ -12,9 +12,16 @@ export interface ExampleStoreOptions {
   inline?: Course[];
 }
 
-export function defaultCoursesDir(): string {
-  const env = typeof process !== "undefined" ? process.env.CG_COURSES_DIR : undefined;
-  return env ?? decodeURIComponent(new URL("../../../courses", import.meta.url).pathname);
+/** CG_COURSES_DIR, else the `courses` folder beside the nearest pnpm-workspace.yaml above the working directory. */
+export async function defaultCoursesDir(): Promise<string | undefined> {
+  if (typeof process === "undefined") return undefined;
+  if (process.env.CG_COURSES_DIR) return process.env.CG_COURSES_DIR;
+  const fs = await import("node:fs");
+  const path = await import("node:path");
+  for (let dir = process.cwd(); ; dir = path.dirname(dir)) {
+    if (fs.existsSync(path.join(dir, "pnpm-workspace.yaml"))) return path.join(dir, "courses");
+    if (path.dirname(dir) === dir) return undefined;
+  }
 }
 
 export async function loadCourseFiles(dir: string): Promise<{ courses: Course[]; skipped: string[] }> {
@@ -60,10 +67,12 @@ export class ExampleStore {
   constructor(private readonly opts: ExampleStoreOptions = {}) {}
 
   courses(): Promise<Course[]> {
-    this.cache ??= loadCourseFiles(this.opts.coursesDir ?? defaultCoursesDir()).then(({ courses, skipped }) => {
+    this.cache ??= (async () => this.opts.coursesDir ?? (await defaultCoursesDir()))()
+      .then((dir) => (dir ? loadCourseFiles(dir) : { courses: [], skipped: ["no courses directory found"] }))
+      .then(({ courses, skipped }) => {
       this.skipped = skipped;
-      return courses.length ? courses : this.opts.inline ?? [aezc517Course()];
-    });
+        return courses.length ? courses : this.opts.inline ?? [aezc517Course()];
+      });
     return this.cache;
   }
 
