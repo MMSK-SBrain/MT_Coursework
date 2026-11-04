@@ -1,4 +1,4 @@
-import { hourBlockProblems, outcomeVerbProblem, uncoveredOutcomes, unmappedOutcomes, type Course } from "@cg/core";
+import { hourBlockProblems, learningOutcomeCoverage, moduleOutcomeCoverage, outcomeVerbProblem, sessionOutcomeProblems, uncoveredOutcomes, unmappedOutcomes, type Course } from "@cg/core";
 import type { ImportResult } from "./courses/common.js";
 
 export interface RuleWarnings {
@@ -7,6 +7,10 @@ export interface RuleWarnings {
   sessionsWithBlocks: number;
   sessionsClean: number;
   uncovered: string[];
+  soProblems: { session: string; problem: string }[];
+  mo: ReturnType<typeof moduleOutcomeCoverage>;
+  lo: ReturnType<typeof learningOutcomeCoverage>;
+  moVerb: { id: string; problem: string }[];
 }
 
 export function runRules(course: Course): RuleWarnings {
@@ -20,7 +24,9 @@ export function runRules(course: Course): RuleWarnings {
     const problems = hourBlockProblems(s.blocks, s.minutes);
     if (problems.length) hours.push({ session: `${s.id} ${s.title}`, problems });
   }
-  return { verb, hours, sessionsWithBlocks: withBlocks, sessionsClean: withBlocks - hours.length, uncovered: plan ? uncoveredOutcomes(course, plan) : [] };
+  const soProblems = (plan?.sessions ?? []).flatMap((s) => sessionOutcomeProblems(s).map((problem) => ({ session: s.id, problem })));
+  const moVerb = course.modules.flatMap((m) => m.outcomes.flatMap((o) => { const p = outcomeVerbProblem(o); return p ? [{ id: o.id, problem: p }] : []; }));
+  return { verb, hours, soProblems, moVerb, mo: plan ? moduleOutcomeCoverage(course, plan) : [], lo: plan ? learningOutcomeCoverage(course, plan) : [], sessionsWithBlocks: withBlocks, sessionsClean: withBlocks - hours.length, uncovered: plan ? uncoveredOutcomes(course, plan) : [] };
 }
 
 const MAX = 12;
@@ -51,5 +57,35 @@ export function renderReport(r: ImportResult, w: RuleWarnings): string {
   const unmapped = unmappedOutcomes(c);
   L.push(`- Mapping (\`unmappedOutcomes\`): ${unmapped.length ? `${unmapped.length} outcome(s) not mapped to a module: ${unmapped.join(", ")}` : "every outcome is mapped to a module"}.`);
   L.push(`- Coverage (\`uncoveredOutcomes\`): ${w.uncovered.length ? `${w.uncovered.length} outcome(s) taught by no session: ${w.uncovered.slice(0, 20).join(", ")}` : "every outcome is taught by at least one session"}.`, "");
+  L.push("", "## Session outcomes", "");
+  const sos = c.plans[0]?.sessions.flatMap((x) => x.sessionOutcomes) ?? [];
+  const kinds: [string, RegExp][] = [
+    ["session has no session outcomes", /has no session outcomes/], ["SO verb not measurable or not in the core list", /(unmeasurable verb|does not start with)/],
+    ["SO not served by any block", /is not served by any block/], ["teaching block serves no SO", /serves no session outcome/], ["block names an unknown SO", /unknown session outcome/],
+  ];
+  L.push(`- ${sos.length} session outcomes; \`sessionOutcomeProblems\` found ${w.soProblems.length} problem(s).`);
+  for (const [label, re] of kinds) {
+    const hit = w.soProblems.filter((p) => re.test(p.problem));
+    if (!hit.length) continue;
+    L.push(`  - ${hit.length} x ${label}${hit.slice(0, 2).map((p) => `; e.g. ${p.session}: ${clip(p.problem, 90)}`).join("")}`);
+  }
+  const linked = (c.plans[0]?.sessions.flatMap((x) => x.blocks) ?? []).filter((b) => b.sessionOutcomeIds.length).length;
+  L.push(`- Blocks linked to a session outcome: ${linked}. The sources do not tie blocks to outcomes, so links are left empty rather than guessed.`);
+  L.push("", "## Module roll-up", "");
+  const total = w.mo.length;
+  if (!total) L.push("- No module outcomes exist in the sources, so there is nothing to roll up (all outcome coverage checks that need MOs are empty).");
+  else {
+    const met = w.mo.filter((m) => m.met);
+    const noSo = w.mo.filter((m) => !m.sessionOutcomeIds.length);
+    const notMet = w.mo.filter((m) => !m.met && m.sessionOutcomeIds.length);
+    L.push(`- ${total} module outcomes: ${met.length} met, ${notMet.length} not met, ${noSo.length} with no serving session outcome.`);
+    for (const m of notMet) L.push(`  - not met: ${m.moduleOutcomeId} (${m.moduleId}): ${m.problem}`);
+    for (const m of noSo.slice(0, 20)) L.push(`  - no serving SO: ${m.moduleOutcomeId} (${m.moduleId})`);
+    if (noSo.length > 20) L.push(`  - ... and ${noSo.length - 20} more`);
+    if (w.moVerb.length) L.push(`- ${w.moVerb.length} module outcome verb problem(s): ${w.moVerb.slice(0, 4).map((v) => v.id).join(", ")}`);
+    const loMet = w.lo.filter((l) => l.met).length;
+    L.push(`- Course LOs met through their module outcomes: ${loMet} of ${w.lo.length}${w.lo.length - loMet ? ` (unmet or unlinked: ${w.lo.filter((l) => !l.met).map((l) => l.outcomeId).join(", ")})` : ""}.`);
+  }
+  L.push("");
   return L.join("\n");
 }

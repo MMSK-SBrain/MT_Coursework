@@ -31,7 +31,7 @@ function place(sessionId: string, spans: Span[], outcomeIds: string[], now: stri
       const m = Math.min(left, 60 - startMin);
       n += 1;
       out.push({
-        id: `${sessionId}-B${n}`, hour, startMin, minutes: m, kind: s.kind, title: s.title, activity: s.activity, outcomeIds: [],
+        id: `${sessionId}-B${n}`, hour, startMin, minutes: m, kind: s.kind, title: s.title, activity: s.activity, outcomeIds: [], sessionOutcomeIds: [],
         style: s.style, check: [], needsSlides: false, provenance: provenance(promptId, now),
       });
       start += m; left -= m;

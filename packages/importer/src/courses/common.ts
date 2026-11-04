@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import type { Course, LearningPlan, Outcome, TeachingStyle } from "@cg/core";
+import type { Course, LearningPlan, ModuleOutcome, Outcome, SessionOutcome, TeachingStyle } from "@cg/core";
 import { blocksFromFramework } from "../blocks.js";
 import { parseFramework, type Framework } from "../parsers/framework.js";
 import { inferBloom, normBloom, provenance } from "../util.js";
@@ -69,4 +69,34 @@ export function classroomPlan(sessions: LearningPlan["sessions"], name: string, 
 
 export function blocksFor(sessionId: string, fw: Framework | undefined, style: TeachingStyle, now: string) {
   return fw ? blocksFromFramework(sessionId, fw, style, now) : [];
+}
+
+export interface Tally { statedMismatch: string[]; defaulted: string[] }
+
+function bloomOf(id: string, text: string, stated: string | undefined, tally: Tally) {
+  const g = inferBloom(text, stated);
+  if (g.how === "default") tally.defaulted.push(id);
+  const st = normBloom(stated);
+  if (g.how === "verb" && st && st !== g.bloom) tally.statedMismatch.push(id);
+  return g.bloom;
+}
+
+/** Module outcome (MO). `outcomeIds` are the parent course LOs, only where a source states the link. */
+export function makeMO(p: { id: string; text: string; stated?: string; outcomeIds?: string[]; now: string; promptId: string }, tally: Tally): ModuleOutcome {
+  return { id: p.id, text: p.text, bloom: bloomOf(p.id, p.text, p.stated, tally), outcomeIds: p.outcomeIds ?? [], locked: false, provenance: provenance(p.promptId, p.now) };
+}
+
+/** Session outcome (SO). `moduleOutcomeIds` are the parent MOs, only where a source states the link. */
+export function makeSO(p: { id: string; text: string; stated?: string; moduleOutcomeIds?: string[]; now: string; promptId: string }, tally: Tally): SessionOutcome {
+  return { id: p.id, text: p.text, bloom: bloomOf(p.id, p.text, p.stated, tally), moduleOutcomeIds: p.moduleOutcomeIds ?? [], locked: false, provenance: provenance(p.promptId, p.now) };
+}
+
+export function summarize(c: Course): string[] {
+  const sessions = c.plans[0]?.sessions ?? [];
+  const blocks = sessions.flatMap((s) => s.blocks);
+  return [
+    `${c.modules.length} modules`, `${c.objectives.length} objectives (CO)`, `${c.outcomes.length} course outcomes (LO)`,
+    `${c.modules.reduce((a, m) => a + m.outcomes.length, 0)} module outcomes (MO)`, `${sessions.reduce((a, s) => a + s.sessionOutcomes.length, 0)} session outcomes (SO)`,
+    `${sessions.length} sessions`, `${blocks.length} hour blocks (${blocks.filter((b) => b.sessionOutcomeIds.length).length} linked to a session outcome)`,
+  ];
 }
