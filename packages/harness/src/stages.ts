@@ -18,7 +18,7 @@ import {
 } from "./checks.js";
 import { checkSessionContent, repairBlocks, toCheckInput, type ContentCheckResult } from "./contentCheck.js";
 import { sessionOutcomeId } from "./hierarchy.js";
-import { outcomeVerbProblem } from "@cg/core";
+import { editTarget, outcomeVerbProblem } from "@cg/core";
 import { FIT_RUBRIC, OUTCOMES_RUBRIC } from "./prompts/review.js";
 import { parseInputsPrompt } from "./prompts/parseInputs.js";
 import { roleClusterPrompt, roleKeywordsPrompt } from "./prompts/findRoles.js";
@@ -29,20 +29,11 @@ import { draftPlanPrompt } from "./prompts/draftPlan.js";
 import { draftHourPlanPrompt, type EvidenceItem } from "./prompts/draftHourPlan.js";
 import { findFurtherLearningPrompt } from "./prompts/findFurtherLearning.js";
 import { draftCaseStudyPrompt } from "./prompts/draftCaseStudy.js";
+import { extractText } from "./extract.js";
 
-/** Turns an uploaded file into text. The default handles text formats only (see TEXT_MIMES). */
+/** Turns an uploaded file into text. The default reads text, .docx, .pdf and .xlsx (see extract.ts). */
 export type TextExtractor = (f: InputFile) => Promise<string>;
-
-const TEXT_EXT = /\.(txt|md|markdown|csv|tsv|json)$/i;
-
-export const defaultTextExtractor: TextExtractor = async (f) => {
-  if (f.meta.mime.startsWith("text/") || f.meta.mime === "application/json" || TEXT_EXT.test(f.meta.filename)) {
-    return new TextDecoder("utf-8").decode(f.bytes);
-  }
-  throw new Error(
-    `${f.meta.filename}: ${f.meta.mime} needs a text extractor (docx/pdf/xlsx). Pass extractText to OpenRouterStages, or upload .txt/.csv.`,
-  );
-};
+export const defaultTextExtractor: TextExtractor = extractText;
 
 export interface OpenRouterStagesOptions {
   jobs: JobSource;
@@ -275,8 +266,7 @@ export class OpenRouterStages implements Stages {
   }
 
   async suggestOutcomeEdit(course: Course, outcomeId: string, instruction: EditInstruction): Promise<Generated<OutcomeSuggestion>> {
-    const outcome = course.outcomes.find((o) => o.id === outcomeId);
-    if (!outcome) throw new Error(`Unknown outcome ${outcomeId}`);
+    const outcome = editTarget(course, outcomeId); // LO, MO or CO
     const r = await this.run({
       stage: "suggestOutcomeEdit",
       prompt: suggestOutcomeEditPrompt,

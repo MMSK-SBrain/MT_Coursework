@@ -133,7 +133,7 @@ describe("OpenRouterStages", () => {
     const r = await make(c).parseInputs([file("h", "handout.txt", "text/plain", "HANDOUT TEXT"), file("d", "h.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "")]);
     expect(c.requests[0]!.messages[1]!.content).toContain("HANDOUT TEXT");
     expect(r.value.outcomes[0]).toMatchObject({ origin: "handout", moduleIds: [] }); // no longer every module
-    expect(r.warnings.some((w) => /needs a text extractor/.test(w))).toBe(true);
+    expect(r.warnings.some((w) => /h\.docx/.test(w))).toBe(true);
     expect(r.warnings.some((w) => /Handout LO1 starts with the unmeasurable verb/.test(w))).toBe(true);
     expect(r.provenance.builtFrom).toEqual(["h", "d"]);
   });
