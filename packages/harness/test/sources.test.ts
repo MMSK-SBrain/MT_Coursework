@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { FixtureJobSource, FixtureLinkSource } from "../src/sources/fixture.js";
 import { YouTubeLinkSource, parseIsoDuration } from "../src/sources/youtube.js";
 import { WebSearchJobSource, isBlockedDomain } from "../src/sources/websearch.js";
-import { checkAlive } from "../src/sources/alive.js";
+import { checkAlive, isBlockedAddress } from "../src/sources/alive.js";
 import { jsonResponse } from "./helpers.js";
 
 describe("fixture sources", () => {
@@ -71,13 +71,32 @@ describe("WebSearchJobSource (stub)", () => {
 });
 
 describe("checkAlive", () => {
+  const pub = async () => [{ address: "93.184.216.34", family: 4 }];
   it("uses HEAD, falls back to GET on 405, and treats errors as dead", async () => {
-    expect(await checkAlive("https://a.example", { fetch: async () => new Response(null, { status: 200 }) })).toBe(true);
+    expect(await checkAlive("https://a.example", { lookup: pub, fetch: async () => new Response(null, { status: 200 }) })).toBe(true);
     const f = vi.fn().mockResolvedValueOnce(new Response(null, { status: 405 })).mockResolvedValueOnce(new Response("ok", { status: 200 }));
-    expect(await checkAlive("https://b.example", { fetch: f })).toBe(true);
+    expect(await checkAlive("https://b.example", { lookup: pub, fetch: f })).toBe(true);
     expect(f.mock.calls.map((c) => (c[1] as RequestInit).method)).toEqual(["HEAD", "GET"]);
-    expect(await checkAlive("https://c.example", { fetch: async () => new Response(null, { status: 404 }) })).toBe(false);
-    expect(await checkAlive("https://d.example", { fetch: async () => { throw new Error("timeout"); } })).toBe(false);
+    expect(await checkAlive("https://c.example", { lookup: pub, fetch: async () => new Response(null, { status: 404 }) })).toBe(false);
+    expect(await checkAlive("https://d.example", { lookup: pub, fetch: async () => { throw new Error("timeout"); } })).toBe(false);
     expect(await checkAlive("not a url")).toBe(false);
+  });
+
+  it("refuses internal hosts, unsafe schemes and redirects into internal hosts", async () => {
+    const ok = vi.fn(async () => new Response(null, { status: 200 }));
+    expect(await checkAlive("http://169.254.169.254/latest/meta-data", { fetch: ok })).toBe(false);
+    expect(await checkAlive("http://127.0.0.1:5432", { fetch: ok })).toBe(false);
+    expect(await checkAlive("http://[::1]/", { fetch: ok })).toBe(false);
+    expect(await checkAlive("javascript:alert(1)", { fetch: ok })).toBe(false);
+    expect(await checkAlive("https://internal.example", { lookup: async () => [{ address: "10.0.0.5", family: 4 }], fetch: ok })).toBe(false);
+    expect(ok).not.toHaveBeenCalled();
+    const redirect = vi.fn(async () => new Response(null, { status: 302, headers: { location: "http://192.168.1.1/admin" } }));
+    expect(await checkAlive("https://e.example", { lookup: async (h) => (h === "e.example" ? pub() : [{ address: h, family: 4 }]), fetch: redirect })).toBe(false);
+    expect(redirect).toHaveBeenCalledTimes(1);
+  });
+
+  it("classifies addresses", () => {
+    for (const a of ["10.1.2.3", "172.20.0.1", "192.168.0.1", "127.0.0.1", "169.254.169.254", "100.64.0.1", "0.0.0.0", "::1", "fd00::1", "fe80::1", "::ffff:10.0.0.1"]) expect(isBlockedAddress(a)).toBe(true);
+    for (const a of ["93.184.216.34", "8.8.8.8", "2606:4700::1111"]) expect(isBlockedAddress(a)).toBe(false);
   });
 });
