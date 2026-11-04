@@ -2,7 +2,7 @@
 import {
   CaseStudy as CaseStudySchema, FitChange as FitChangeSchema, FurtherLink as FurtherLinkSchema,
   HourBlock as HourBlockSchema, JobRole as JobRoleSchema, LearningPlan as LearningPlanSchema,
-  Objective as ObjectiveSchema, Outcome as OutcomeSchema, OutcomeSuggestion as OutcomeSuggestionSchema,
+  ModuleOutcome as ModuleOutcomeSchema, Objective as ObjectiveSchema, Outcome as OutcomeSchema, OutcomeSuggestion as OutcomeSuggestionSchema,
   PATH_FAMILY, VIDEO_BY_PATH,
   type CaseStudy, type Course, type CourseBrief, type EditInstruction, type FitChange, type FurtherLink, type Generated,
   type HourBlock, type InputFile, type JobRole, type JobSource, type LearningPath, type LearningPlan, type LinkSource,
@@ -12,7 +12,12 @@ import { loadConfig, type HarnessConfig, type StageName } from "./config.js";
 import { OpenRouterClient, type ChatClient } from "./openrouter.js";
 import { mergeProvenance, runStage, type StageCall, type StageResult } from "./runner.js";
 import { ExampleStore } from "./examples.js";
-import { fitProblems, hourPlanProblems, indexProblems, outcomeSetProblems, planProblems, suggestionProblems } from "./checks.js";
+import {
+  fitProblems, hourPlanProblems, hourPlanSoProblems, indexProblems, outcomeSetProblems, planProblems, rollUp,
+  sessionOutcomeDraftProblems, suggestionProblems,
+} from "./checks.js";
+import { checkSessionContent, repairBlocks, toCheckInput, type ContentCheckResult } from "./contentCheck.js";
+import { sessionOutcomeId } from "./hierarchy.js";
 import { outcomeVerbProblem } from "@cg/core";
 import { FIT_RUBRIC, OUTCOMES_RUBRIC } from "./prompts/review.js";
 import { parseInputsPrompt } from "./prompts/parseInputs.js";
@@ -70,6 +75,8 @@ export class OpenRouterStages implements Stages {
   private readonly now: () => Date;
   /** Trace of the most recent runner call per stage (for the eval CLI and debugging). */
   readonly lastTrace = new Map<StageName, StageResult<unknown>["trace"]>();
+  /** Content check of the most recent hour plan per session id: the verdicts before repair and the repaired blocks. */
+  readonly lastContentCheck = new Map<string, { check: ContentCheckResult; repaired: number[] }>();
 
   constructor(private readonly opts: OpenRouterStagesOptions) {
     this.client = opts.client ?? new OpenRouterClient();
@@ -117,7 +124,6 @@ export class OpenRouterStages implements Stages {
         for (const o of d.outcomes) {
           const bad = o.moduleIds.filter((m) => !known.has(m));
           if (bad.length) p.push(`${o.id} names unknown module(s) ${bad.join(", ")}`);
-          if (!o.moduleIds.length) p.push(`${o.id} is not mapped to any module; map it to the modules that teach it`);
         }
         return p;
       },
@@ -125,13 +131,12 @@ export class OpenRouterStages implements Stages {
       advisories: (d) => d.outcomes.map((o) => { const v = outcomeVerbProblem(o); return v ? `Handout ${o.id} ${v}` : null; }).filter((x): x is string => !!x),
     });
     const prov = r.provenance;
-    const allModules = r.value.modules.map((m) => m.id);
     const value: ParsedInputs = {
       brief: r.value.brief,
       modules: r.value.modules,
       objectives: r.value.objectives.map((o) => ObjectiveSchema.parse({ ...o, provenance: prov })),
       outcomes: r.value.outcomes.map((o) => OutcomeSchema.parse({
-        ...o, moduleIds: o.moduleIds.length ? o.moduleIds : allModules, origin: "handout", provenance: prov,
+        ...o, origin: "handout", provenance: prov, // moduleIds may stay empty: MOs link LOs to modules in stage 4
       })),
       gaps: r.value.gaps,
     };
@@ -215,7 +220,11 @@ export class OpenRouterStages implements Stages {
 
   // ---- Stage 4 ---------------------------------------------------------------------------------
 
-  async draftOutcomes(course: Course): Promise<Generated<{ objectives: Objective[]; outcomes: Outcome[] }>> {
+  /**
+   * Also drafts module outcomes. The core contract returns { objectives, outcomes }; the modules with
+   * their MOs come back as an extra `modules` field (see DraftOutcomesValue).
+   */
+  async draftOutcomes(course: Course): Promise<Generated<DraftOutcomesValue>> {
     const r = await this.run({
       stage: "draftOutcomes",
       prompt: draftOutcomesPrompt,
@@ -226,6 +235,9 @@ export class OpenRouterStages implements Stages {
         for (const lo of course.outcomes.filter((o) => o.locked)) {
           const got = d.outcomes.find((o) => o.id === lo.id);
           if (!got || got.text !== lo.text) p.push(`locked outcome ${lo.id} must be returned unchanged`);
+        }
+        for (const m of course.modules) for (const mo of m.outcomes.filter((x) => x.locked)) {
+          if (!d.moduleOutcomes.some((x) => x.moduleId === m.id && x.text === mo.text)) p.push(`locked module outcome ${mo.id} must be returned unchanged`);
         }
         return p;
       },
@@ -238,15 +250,28 @@ export class OpenRouterStages implements Stages {
       "CO",
     );
     const roleIds = new Set(course.roles.map((x) => x.id));
+    const loIds = new Set(r.value.outcomes.map((o) => o.id));
+    const modules: Module[] = course.modules.map((m) => {
+      const drafted = r.value.moduleOutcomes.filter((x) => x.moduleId === m.id).map((x, i) => ModuleOutcomeSchema.parse({
+        id: `${m.id}.MO${i + 1}`, text: x.text, bloom: x.bloom, outcomeIds: x.outcomeIds.filter((id) => loIds.has(id)),
+        provenance: { ...prov, builtFrom: [m.id, ...x.outcomeIds] },
+      }));
+      return { ...m, outcomes: mergeLocked(m.outcomes, drafted, `${m.id}.MO`) };
+    });
     const outcomes = mergeLocked(
       course.outcomes,
-      r.value.outcomes.map((o) => OutcomeSchema.parse({
-        ...o, roleIds: o.roleIds.filter((x) => roleIds.has(x)),
-        provenance: { ...prov, builtFrom: [...o.moduleIds, ...o.objectiveIds, ...o.roleIds] },
-      })),
+      r.value.outcomes.map((o) => {
+        // An LO's modules are the ones whose MOs serve it, when the model left moduleIds empty.
+        const viaMos = modules.filter((m) => m.outcomes.some((mo) => mo.outcomeIds.includes(o.id))).map((m) => m.id);
+        const moduleIds = o.moduleIds.length ? o.moduleIds : viaMos;
+        return OutcomeSchema.parse({
+          ...o, moduleIds, roleIds: o.roleIds.filter((x) => roleIds.has(x)),
+          provenance: { ...prov, builtFrom: [...moduleIds, ...o.objectiveIds, ...o.roleIds] },
+        });
+      }),
       "LO",
     );
-    return { value: { objectives, outcomes }, provenance: prov, warnings: r.warnings };
+    return { value: { objectives, outcomes, modules }, provenance: prov, warnings: r.warnings };
   }
 
   async suggestOutcomeEdit(course: Course, outcomeId: string, instruction: EditInstruction): Promise<Generated<OutcomeSuggestion>> {
@@ -268,18 +293,26 @@ export class OpenRouterStages implements Stages {
   async draftPlan(course: Course, spec: PlanSpec): Promise<Generated<LearningPlan>> {
     if (!course.outcomes.length) throw new Error("draftPlan needs outcomes.");
     const shape = sessionShape(spec.path, course.brief.contactHours, course.outcomes.length);
+    const moIds = course.modules.flatMap((m) => m.outcomes.map((o) => o.id));
     const r = await this.run({
       stage: "draftPlan",
       prompt: draftPlanPrompt,
       input: { course, spec, sessionCount: shape.count, sessionMinutes: shape.minutes },
       builtFrom: course.outcomes.map((o) => o.id),
-      rules: (d) => planProblems(d.sessions, course.outcomes, spec.path),
+      // Unmet module outcomes trigger the repair; unmet LOs follow from them and only warn.
+      rules: (d) => [
+        ...planProblems(d.sessions, course.outcomes, spec.path),
+        ...sessionOutcomeDraftProblems(d.sessions, moIds),
+        ...rollUp(course, draftAsPlan(d.sessions)).moProblems,
+      ],
       advisories: (d) => {
         const fam = PATH_FAMILY[spec.path];
         const total = d.sessions.reduce((a, s) => a + s.minutes, 0);
         const target = course.brief.contactHours * 60;
-        return (fam === "live" || fam === "blended") && Math.abs(total - target) > 0.1 * target
+        const hours = (fam === "live" || fam === "blended") && Math.abs(total - target) > 0.1 * target
           ? [`Sessions add up to ${Math.round(total / 60)} h; the brief has ${course.brief.contactHours} contact hours.`] : [];
+        const noMos = moIds.length ? [] : ["The modules have no module outcomes, so the module and course roll-up was skipped. Draft outcomes first."];
+        return [...hours, ...noMos, ...rollUp(course, draftAsPlan(d.sessions)).loProblems];
       },
     }, course);
     const planId = nextId("p", course.plans.map((p) => p.id));
@@ -292,8 +325,12 @@ export class OpenRouterStages implements Stages {
       ...(spec.audienceVariant ? { audienceVariant: spec.audienceVariant } : {}),
       sessions: r.value.sessions.map((s, i) => ({
         id: `${planId}-s${i + 1}`, index: i + 1, ...s,
+        sessionOutcomes: s.sessionOutcomes.map((so, k) => ({
+          id: sessionOutcomeId(i + 1, k + 1), ...so, moduleOutcomeIds: so.moduleOutcomeIds.filter((x) => moIds.includes(x)),
+          provenance: { ...prov, builtFrom: so.moduleOutcomeIds },
+        })),
         video: VIDEO_BY_PATH[spec.path].includes(s.video) ? s.video : VIDEO_BY_PATH[spec.path][0],
-        provenance: { ...prov, builtFrom: s.outcomeIds },
+        provenance: { ...prov, builtFrom: [...s.outcomeIds, ...s.sessionOutcomes.flatMap((so) => so.moduleOutcomeIds)] },
       })),
       provenance: prov,
     });
@@ -313,14 +350,47 @@ export class OpenRouterStages implements Stages {
       builtFrom: session.outcomeIds,
       rules: (d) => [
         ...hourPlanProblems(d.blocks, session.minutes, session.outcomeIds),
+        ...hourPlanSoProblems(session, d.blocks).fixable,
         ...indexProblems("evidence", d.blocks.flatMap((b) => b.industryExample?.evidenceIdx ?? []).filter((v, i, a) => a.indexOf(v) === i), evidence.length),
       ],
+      advisories: (d) => hourPlanSoProblems(session, d.blocks).upstream,
     }, course);
-    const prov = { ...r.provenance, structureVersion: course.structureVersion };
-    const value = r.value.blocks.map((b, i) => {
+
+    // Content check: one reviewer call for the session, one repair call for the blocks below threshold.
+    const blocks = r.value.blocks.map((b) => ({ ...b }));
+    const warnings = [...r.warnings];
+    let extraCost = 0;
+    if (session.sessionOutcomes.length) {
+      const deps = { client: this.client, config: this.config };
+      const input = toCheckInput(session, course.brief.audience, blocks);
+      const check = await checkSessionContent(input, deps);
+      extraCost += check.costUsd;
+      const repaired: number[] = [];
+      if (check.skipped) warnings.push(check.skipped);
+      else if (check.failing.length) {
+        const fix = await repairBlocks(input, check, { primary: r.provenance.model, fallback: this.config.models.draftHourPlan.fallback }, deps);
+        extraCost += fix.costUsd;
+        for (const p of fix.patches) {
+          const b = blocks[p.block];
+          if (!b) continue;
+          Object.assign(b, { title: p.title, activity: p.activity, check: p.check });
+          repaired.push(p.block);
+        }
+        const notFixed = check.failing.filter((n) => !repaired.includes(n));
+        if (notFixed.length) {
+          warnings.push(...notFixed.map((n) => `Block "${blocks[n]!.title}" may not let learners achieve ${blocks[n]!.sessionOutcomeIds.join(", ")}: ${check.verdicts.filter((v) => v.block === n && v.verdict !== "yes").map((v) => v.reason).join(" ")}`));
+        }
+      }
+      this.lastContentCheck.set(session.id, { check, repaired });
+    }
+
+    const soIds = new Set(session.sessionOutcomes.map((so) => so.id));
+    const prov = { ...r.provenance, costUsd: Math.round((r.provenance.costUsd + extraCost) * 1e6) / 1e6, structureVersion: course.structureVersion };
+    const value = blocks.map((b, i) => {
       const { industryExample, ...rest } = b;
       return HourBlockSchema.parse({
         ...rest,
+        sessionOutcomeIds: b.sessionOutcomeIds.filter((x) => soIds.has(x)),
         id: `${session.id}-b${i + 1}`,
         ...(industryExample ? {
           industryExample: {
@@ -328,10 +398,10 @@ export class OpenRouterStages implements Stages {
             sources: industryExample.evidenceIdx.filter((n) => n < evidence.length).map((n) => ({ title: evidence[n]!.title, url: evidence[n]!.url })),
           },
         } : {}),
-        provenance: { ...prov, builtFrom: [...b.outcomeIds, ...(industryExample?.roleIds ?? [])] },
+        provenance: { ...prov, builtFrom: [...b.sessionOutcomeIds, ...b.outcomeIds, ...(industryExample?.roleIds ?? [])] },
       });
     });
-    return { value, provenance: prov, warnings: r.warnings };
+    return { value, provenance: prov, warnings };
   }
 
   async findFurtherLearning(course: Course, planId: string, sessionId: string): Promise<Generated<FurtherLink[]>> {
@@ -426,6 +496,20 @@ export class OpenRouterStages implements Stages {
 }
 
 // ---- helpers ------------------------------------------------------------------------------------
+
+/** draftOutcomes' value: the core contract's { objectives, outcomes } plus the modules with their drafted MOs. */
+export interface DraftOutcomesValue {
+  objectives: Objective[];
+  outcomes: Outcome[];
+  modules: Module[];
+}
+
+/** A drafted session list as a LearningPlan, enough for the core roll-up rules. */
+function draftAsPlan(sessions: { sessionOutcomes: { bloom: Outcome["bloom"]; moduleOutcomeIds: string[] }[] }[]): LearningPlan {
+  return {
+    sessions: sessions.map((s, i) => ({ sessionOutcomes: s.sessionOutcomes.map((so, k) => ({ ...so, id: sessionOutcomeId(i + 1, k + 1) })) })),
+  } as unknown as LearningPlan;
+}
 
 export function findSession(course: Course, planId: string, sessionId: string) {
   const plan = course.plans.find((p) => p.id === planId);

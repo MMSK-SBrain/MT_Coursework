@@ -5,11 +5,15 @@
 //   pnpm --filter @cg/harness eval -- --models qwen/...,z-ai/... --stages draftOutcomes,proposeFit
 //   options: --models a,b   --stages s1,s2   --briefs id1,id2   --judge model   --out dir
 import { pathToFileURL } from "node:url";
-import type { Course } from "@cg/core";
+import type { Course, HourBlock, LearningPlan } from "@cg/core";
+
+const round2 = (n: number) => Math.round(n * 100) / 100;
 import { DEFAULT_CONFIG, loadConfig, type HarnessConfig, type StageName } from "../src/config.js";
 import { OpenRouterClient, type ChatClient } from "../src/openrouter.js";
 import { OpenRouterStages } from "../src/stages.js";
 import { reviewDraft } from "../src/runner.js";
+import { rollUp } from "../src/checks.js";
+import { checkSessionContent, toCheckInput } from "../src/contentCheck.js";
 import { FixtureJobSource, FixtureLinkSource } from "../src/sources/fixture.js";
 import { ExampleStore } from "../src/examples.js";
 import { FIT_RUBRIC, HOURPLAN_RUBRIC, OUTCOMES_RUBRIC, PLAN_RUBRIC, type Rubric } from "../src/prompts/review.js";
@@ -29,6 +33,14 @@ export interface EvalRow {
   ok: boolean;
   error?: string;
   rubricScore: number | null;
+  /** draftHourPlan: share of session outcomes some block fully builds (judge's content check on the final blocks). */
+  soFulfilment: number | null;
+  /** draftHourPlan: mean block score from the judge's content check, 0..1. */
+  contentScore: number | null;
+  /** draftPlan: share of module outcomes met by the plan's session outcomes (core roll-up rule). */
+  moRollup: number | null;
+  /** draftPlan: share of course LOs whose module outcomes are all met. */
+  loRollup: number | null;
   ruleWarnings: number;
   warnings: string[];
   calls: number;
@@ -66,7 +78,7 @@ export function parseArgs(argv: string[], cfg: HarnessConfig = DEFAULT_CONFIG): 
 
 /** Clear the downstream data a stage would produce, so it is generated fresh. */
 function inputFor(stage: EvalStage, c: Course): Course {
-  if (stage === "draftOutcomes") return { ...c, objectives: [], outcomes: [], outcomesFrozenAt: undefined };
+  if (stage === "draftOutcomes") return { ...c, objectives: [], outcomes: [], outcomesFrozenAt: undefined, modules: c.modules.map((m) => ({ ...m, outcomes: [] })) };
   if (stage === "draftPlan") return { ...c, plans: [] };
   return c;
 }
@@ -101,7 +113,7 @@ export async function runEval(args: EvalArgs, deps: { client: ChatClient; env?: 
     for (const c of courses) {
       for (const stage of args.stages) {
         const t0 = Date.now();
-        const row: EvalRow = { brief: c.id, stage, model, ok: false, rubricScore: null, ruleWarnings: 0, warnings: [], calls: 0, costUsd: 0, judgeCostUsd: 0, latencyMs: 0 };
+        const row: EvalRow = { brief: c.id, stage, model, ok: false, rubricScore: null, soFulfilment: null, contentScore: null, moRollup: null, loRollup: null, ruleWarnings: 0, warnings: [], calls: 0, costUsd: 0, judgeCostUsd: 0, latencyMs: 0 };
         try {
           const { r, course } = await runOne(stages, stage, c);
           row.latencyMs = Date.now() - t0;
@@ -110,12 +122,27 @@ export async function runEval(args: EvalArgs, deps: { client: ChatClient; env?: 
           row.ruleWarnings = r.warnings.length;
           row.costUsd = r.provenance.costUsd;
           row.calls = stages.lastTrace.get(stage as StageName)?.calls ?? 0;
+          if (stage === "draftPlan") {
+            const ru = rollUp(course, r.value as LearningPlan);
+            row.moRollup = ru.moTotal ? round2(ru.moMet / ru.moTotal) : null;
+            row.loRollup = ru.loTotal ? round2(ru.loMet / ru.loTotal) : null;
+          }
+          if (stage === "draftHourPlan") {
+            const p = course.plans[0]!;
+            const session = p.sessions[Math.min(2, p.sessions.length - 1)]!;
+            const check = await checkSessionContent(toCheckInput(session, course.brief.audience, r.value as HourBlock[]), { client: deps.client, config });
+            row.judgeCostUsd += check.costUsd;
+            if (!check.skipped) {
+              row.contentScore = round2(check.score);
+              row.soFulfilment = check.soFulfilment.length ? round2(check.soFulfilment.filter((x) => x.fulfilled).length / check.soFulfilment.length) : null;
+            }
+          }
           const rubric = RUBRICS[stage];
           if (rubric) {
             const ctx = `Course: ${course.brief.title} (${course.brief.level}, ${course.brief.contactHours} h)\nModules: ${course.modules.map((m) => `${m.id} ${m.title}`).join("; ")}\nOutcomes: ${course.outcomes.map((o) => `${o.id} ${o.text}`).join("; ")}\nRoles: ${course.roles.filter((x) => x.selected).map((x) => x.title).join("; ")}`;
             const review = await reviewDraft(rubric, ctx, r.value, { client: deps.client, config });
             row.rubricScore = Math.round(review.score * 100) / 100;
-            row.judgeCostUsd = review.costUsd;
+            row.judgeCostUsd += review.costUsd;
           }
         } catch (e) {
           row.latencyMs = Date.now() - t0;
@@ -144,8 +171,8 @@ export function toMarkdown(rows: EvalRow[], args: EvalArgs, at: string): string 
     "",
     "## Summary (per stage and model)",
     "",
-    "| Stage | Model | OK | Rubric (0-1) | Rule warnings | Cost USD (total) | Score per cent | Mean latency s |",
-    "|---|---|---|---|---|---|---|---|",
+    "| Stage | Model | OK | Rubric (0-1) | SO fulfilment | Block content | MO roll-up | LO roll-up | Rule warnings | Cost USD (total) | Rubric per cent | Mean latency s |",
+    "|---|---|---|---|---|---|---|---|---|---|---|---|",
   ];
   for (const [k, rs] of [...groups].sort()) {
     const [stage, model] = k.split("\u0000");
@@ -153,11 +180,12 @@ export function toMarkdown(rows: EvalRow[], args: EvalArgs, at: string): string 
     const score = mean(okRows.filter((r) => r.rubricScore !== null).map((r) => r.rubricScore!));
     const cost = rs.reduce((a, r) => a + r.costUsd, 0);
     const perCent = cost > 0 && Number.isFinite(score) ? score / (cost * 100 / rs.length) : NaN;
-    lines.push(`| ${stage} | \`${model}\` | ${okRows.length}/${rs.length} | ${fmt(score)} | ${fmt(mean(okRows.map((r) => r.ruleWarnings)), 1)} | ${cost.toFixed(4)} | ${fmt(perCent)} | ${fmt(mean(rs.map((r) => r.latencyMs / 1000)), 1)} |`);
+    const m = (k: "soFulfilment" | "contentScore" | "moRollup" | "loRollup") => fmt(mean(okRows.filter((r) => r[k] !== null).map((r) => r[k]!)));
+    lines.push(`| ${stage} | \`${model}\` | ${okRows.length}/${rs.length} | ${fmt(score)} | ${m("soFulfilment")} | ${m("contentScore")} | ${m("moRollup")} | ${m("loRollup")} | ${fmt(mean(okRows.map((r) => r.ruleWarnings)), 1)} | ${cost.toFixed(4)} | ${fmt(perCent)} | ${fmt(mean(rs.map((r) => r.latencyMs / 1000)), 1)} |`);
   }
-  lines.push("", "## Detail", "", "| Brief | Stage | Model | OK | Rubric | Warnings | Calls | Cost USD | Error |", "|---|---|---|---|---|---|---|---|---|");
+  lines.push("", "## Detail", "", "| Brief | Stage | Model | OK | Rubric | SO fulfilment | MO roll-up | Warnings | Calls | Cost USD | Error |", "|---|---|---|---|---|---|---|---|---|---|---|");
   for (const r of rows) {
-    lines.push(`| ${r.brief} | ${r.stage} | \`${r.model}\` | ${r.ok ? "yes" : "no"} | ${r.rubricScore ?? "-"} | ${r.ruleWarnings} | ${r.calls} | ${r.costUsd.toFixed(5)} | ${(r.error ?? "").replace(/\|/g, "/")} |`);
+    lines.push(`| ${r.brief} | ${r.stage} | \`${r.model}\` | ${r.ok ? "yes" : "no"} | ${r.rubricScore ?? "-"} | ${r.soFulfilment ?? "-"} | ${r.moRollup ?? "-"} | ${r.ruleWarnings} | ${r.calls} | ${r.costUsd.toFixed(5)} | ${(r.error ?? "").replace(/\|/g, "/")} |`);
   }
   lines.push("", "Human review is still required: read a sample of outputs for each winning model before changing `src/config.ts`.");
   return lines.join("\n") + "\n";

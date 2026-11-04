@@ -70,9 +70,9 @@ export function zodErrors(e: z.ZodError): string[] {
   return e.issues.map((i) => `${i.path.length ? i.path.join(".") : "(root)"}: ${i.message}`);
 }
 
-type Parsed<O> = { ok: true; value: O } | { ok: false; errors: string[] };
+export type Parsed<O> = { ok: true; value: O } | { ok: false; errors: string[] };
 
-function parseWith<O>(schema: z.ZodType<O, z.ZodTypeDef, unknown>, raw: string): Parsed<O> {
+export function parseWith<O>(schema: z.ZodType<O, z.ZodTypeDef, unknown>, raw: string): Parsed<O> {
   let data: unknown;
   try {
     data = extractJson(raw);
@@ -83,7 +83,7 @@ function parseWith<O>(schema: z.ZodType<O, z.ZodTypeDef, unknown>, raw: string):
   return r.success ? { ok: true, value: r.data } : { ok: false, errors: zodErrors(r.error) };
 }
 
-const fixMessage = (errors: string[]) =>
+export const fixMessage = (errors: string[]) =>
   `Your JSON did not match the required shape. Errors:\n${errors.map((e) => `- ${e}`).join("\n")}\nReturn the complete corrected JSON object only.`;
 
 const repairMessage = (problems: string[], what: string) =>

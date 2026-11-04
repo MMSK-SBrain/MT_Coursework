@@ -34,6 +34,7 @@ describe("eval CLI", () => {
           ? JSON.stringify(goodReview(OUTCOMES_RUBRIC.criteria.map((c) => c.id)))
           : JSON.stringify({
             objectives: course.objectives.map(({ id, text }) => ({ id, text })),
+            moduleOutcomes: course.modules.flatMap((m) => m.outcomes.map(({ text, bloom, outcomeIds }) => ({ moduleId: m.id, text, bloom, outcomeIds }))),
             outcomes: course.outcomes.map(({ id, text, bloom, moduleIds, objectiveIds, roleIds, origin }) => ({ id, text, bloom, moduleIds, objectiveIds, roleIds, origin })),
           });
         return { content, model: req.model, costUsd: 0.0005, promptTokens: 1, completionTokens: 1 };

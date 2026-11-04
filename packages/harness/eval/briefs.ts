@@ -2,6 +2,7 @@
 // selected roles, frozen outcomes, one plan). Re-run the eval whenever a prompt changes.
 import { Course as CourseSchema, type BloomLevel, type Course, type CourseBrief } from "@cg/core";
 import { aezc517Course } from "../src/fixtures/aezc517.js";
+import { deriveModuleOutcomes, deriveSessionOutcomes } from "../src/hierarchy.js";
 
 const T = "2026-11-04T00:00:00.000Z";
 const prov = (promptId: string) => ({ model: "eval-seed", promptId, promptVersion: "0", costUsd: 0, createdAt: T, builtFrom: [] });
@@ -22,15 +23,22 @@ function build(s: Seed): Course {
   const outcomes = s.outcomes.map(([text, bloom, idx], i) => ({
     id: `LO${i + 1}`, text, bloom, moduleIds: idx.map((n) => `M${n + 1}`), objectiveIds: ["CO1"], roleIds: [], origin: "handout", locked: true, provenance: prov("seed"),
   }));
+  const modules = deriveModuleOutcomes(
+    s.modules.map(([title, hours], i) => ({ id: `M${i + 1}`, title, hours, topics: [], outcomes: [], foundIn: "handout" as const })),
+    outcomes.map((o) => ({ ...o, bloom: o.bloom as BloomLevel, origin: "handout" as const })),
+    prov("seed"),
+  );
+  const sessions = outcomes.map((o, i) => ({ index: i + 1, title: o.text.split(/[,.]/)[0]!, outcomeIds: [o.id] }));
+  const sos = deriveSessionOutcomes({ modules, outcomes: outcomes as never }, sessions, prov("seed"));
   return CourseSchema.parse({
     id: s.id, slug: s.id, brief: s.brief,
-    modules: s.modules.map(([title, hours], i) => ({ id: `M${i + 1}`, title, hours, topics: [], foundIn: "handout" })),
+    modules,
     roles,
     objectives: [{ id: "CO1", text: `Prepare learners for ${s.brief.industry} work in ${s.brief.title}.`, provenance: prov("seed") }],
     outcomes,
     plans: [{
       id: "p1", name: "Classroom", path: "classroom", defaultStyle: "auto", provenance: prov("seed"),
-      sessions: outcomes.map((o, i) => ({ id: `s${i + 1}`, index: i + 1, title: o.text.split(/[,.]/)[0], outcomeIds: [o.id], style: "worked", minutes: 120, video: "none", provenance: prov("seed") })),
+      sessions: sessions.map((x, i) => ({ id: `s${i + 1}`, ...x, sessionOutcomes: sos[i], style: "worked", minutes: 120, video: "none", provenance: prov("seed") })),
     }],
     createdAt: T, updatedAt: T,
   });

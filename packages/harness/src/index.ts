@@ -11,3 +11,5 @@ export * from "./sources/websearch.js";
 export * from "./sources/alive.js";
 export * as prompts from "./prompts/index.js";
 export { aezc517Course } from "./fixtures/aezc517.js";
+export * from "./hierarchy.js";
+export * from "./contentCheck.js";

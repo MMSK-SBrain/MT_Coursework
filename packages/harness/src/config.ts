@@ -9,6 +9,7 @@
 //   CG_MODEL_DEFAULT="primary[,fallback]"        applies to every stage without its own override
 //   CG_MODEL_<STAGE>="primary[,fallback]"        e.g. CG_MODEL_DRAFT_OUTCOMES, CG_MODEL_REVIEW
 //   CG_RUBRIC_THRESHOLD=0.75                     reviewer score (0..1) below which one repair runs
+//   CG_CONTENT_THRESHOLD=0.75                    content-check score (0..1) below which a block gets one repair
 //   CG_TEMPERATURE=0.3
 
 export type StageName =
@@ -31,6 +32,8 @@ export interface HarnessConfig {
   models: Record<StageName, ModelPair>;
   /** Score in [0, 1]; below it, a reviewed stage gets one automatic repair. */
   rubricThreshold: number;
+  /** Content check: a block scoring below this (0..1, mean verdict over its SOs) gets one repair. */
+  contentThreshold: number;
   temperature: number;
   /** Ask OpenRouter for `response_format: json_object`. Turn off for models that reject it. */
   jsonMode: boolean;
@@ -56,6 +59,7 @@ export const DEFAULT_CONFIG: HarnessConfig = {
     review: { primary: CANDIDATE_GLM, fallback: CANDIDATE_QWEN },
   },
   rubricThreshold: 0.75,
+  contentThreshold: 0.75,
   temperature: 0.3,
   jsonMode: true,
   maxTokens: 4096,
@@ -87,6 +91,7 @@ export function loadConfig(
     if (v) cfg.models[s] = parseModelPair(v);
   }
   if (env.CG_RUBRIC_THRESHOLD) cfg.rubricThreshold = Number(env.CG_RUBRIC_THRESHOLD);
+  if (env.CG_CONTENT_THRESHOLD) cfg.contentThreshold = Number(env.CG_CONTENT_THRESHOLD);
   if (env.CG_TEMPERATURE) cfg.temperature = Number(env.CG_TEMPERATURE);
   if (env.CG_JSON_MODE) cfg.jsonMode = env.CG_JSON_MODE !== "0" && env.CG_JSON_MODE !== "false";
   return cfg;

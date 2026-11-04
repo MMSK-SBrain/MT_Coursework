@@ -21,9 +21,11 @@ import { draftHourPlanPrompt } from "./draftHourPlan.js";
 import { findFurtherLearningPrompt } from "./findFurtherLearning.js";
 import { draftCaseStudyPrompt } from "./draftCaseStudy.js";
 import { reviewPrompt } from "./review.js";
+import { blockRepairPrompt, contentCheckPrompt } from "./contentCheck.js";
 
 /** Every prompt id -> version, for feedback grouping and change tracking. */
 export const PROMPT_VERSIONS: Record<string, string> = Object.fromEntries(
   [parseInputsPrompt, roleKeywordsPrompt, roleClusterPrompt, proposeFitPrompt, draftOutcomesPrompt, suggestOutcomeEditPrompt,
-    draftPlanPrompt, draftHourPlanPrompt, findFurtherLearningPrompt, draftCaseStudyPrompt, reviewPrompt].map((p) => [p.id, p.version]),
+    draftPlanPrompt, draftHourPlanPrompt, findFurtherLearningPrompt, draftCaseStudyPrompt, reviewPrompt, contentCheckPrompt, blockRepairPrompt].map((p) => [p.id, p.version]),
 );
+export { contentCheckPrompt, blockRepairPrompt } from "./contentCheck.js";

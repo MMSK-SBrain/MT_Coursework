@@ -1,8 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
   CaseStudy, Course as CourseSchema, FitChange, FurtherLink, HourBlock, JobRole, LearningPlan, Objective, Outcome, OutcomeSuggestion,
-  hourBlockProblems, outcomeVerbProblem, uncoveredOutcomes, videoAllowed, type LearningPath,
+  hourBlockProblems, outcomeVerbProblem, sessionOutcomeProblems, uncoveredOutcomes, videoAllowed, type LearningPath,
 } from "@cg/core";
+import { moduleOutcomeDraftProblems, rollUp, sessionOutcomeDraftProblems } from "../src/checks.js";
 import { MockStages } from "../src/mock.js";
 import { aezc517Course, MODULES } from "../src/fixtures/aezc517.js";
 import { EVAL_COURSES } from "../eval/briefs.js";
@@ -71,6 +72,40 @@ describe("MockStages", () => {
       expect(cs.label).toBe(label);
       if (label === "real") expect(cs.sources.length).toBeGreaterThan(0);
     }
+  });
+
+  it("passes the outcome-hierarchy rules: MOs, SO roll-up and hour blocks, for every eval course", async () => {
+    for (const c0 of [course, ...EVAL_COURSES]) {
+      // Stage 4 from scratch, then plans and hour plans built on its MOs.
+      const fresh = CourseSchema.parse({ ...c0, outcomes: [], objectives: [], modules: c0.modules.map((x) => ({ ...x, outcomes: [] })), plans: [] });
+      const oc = (await m.draftOutcomes(fresh)).value;
+      const drafted = oc.modules.flatMap((x) => x.outcomes.map((mo) => ({ moduleId: x.id, text: mo.text, bloom: mo.bloom, outcomeIds: mo.outcomeIds })));
+      expect(moduleOutcomeDraftProblems(drafted, oc.modules, oc.outcomes.map((o) => o.id)), c0.id).toEqual([]);
+      const withOutcomes = CourseSchema.parse({ ...fresh, modules: oc.modules, outcomes: oc.outcomes, objectives: oc.objectives });
+      for (const path of ["classroom", "youtube", "micro"] as LearningPath[]) {
+        const plan = (await m.draftPlan(withOutcomes, { path, style: "auto" })).value;
+        const ru = rollUp(withOutcomes, plan);
+        expect(ru.moProblems, `${c0.id} ${path}`).toEqual([]);
+        expect(ru.loProblems, `${c0.id} ${path}`).toEqual([]);
+        expect(sessionOutcomeDraftProblems(plan.sessions, oc.modules.flatMap((x) => x.outcomes.map((o) => o.id))), `${c0.id} ${path}`).toEqual([]);
+        const withPlan = CourseSchema.parse({ ...withOutcomes, plans: [plan] });
+        for (const s of plan.sessions.slice(0, 4)) {
+          const blocks = (await m.draftHourPlan(withPlan, plan.id, s.id)).value;
+          expect(sessionOutcomeProblems({ ...s, blocks }), `${c0.id} ${path} ${s.id}`).toEqual([]);
+        }
+      }
+    }
+    // The fixture course itself (hand-written s3) is consistent too.
+    expect(rollUp(course, course.plans[0]!).moProblems).toEqual([]);
+    const s3 = course.plans[0]!.sessions[2]!;
+    expect(sessionOutcomeProblems({ ...s3, blocks: (await m.draftHourPlan(course, "p1", "s3")).value })).toEqual([]);
+  });
+
+  it("keeps locked module outcomes", async () => {
+    const locked = { ...course.modules[0]!.outcomes[0]!, text: "Describe a locked thing the teacher wrote.", locked: true };
+    const c = CourseSchema.parse({ ...course, modules: course.modules.map((x, i) => (i === 0 ? { ...x, outcomes: [locked] } : x)) });
+    const r = await m.draftOutcomes(c);
+    expect(r.value.modules[0]!.outcomes[0]).toEqual(locked);
   });
 
   it("is deterministic and costs nothing", async () => {

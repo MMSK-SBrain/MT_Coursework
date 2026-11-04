@@ -3,7 +3,7 @@ import { Course as CourseSchema, FurtherLink, HourBlock, hourBlockProblems, type
 import { OpenRouterStages } from "../src/stages.js";
 import { ExampleStore } from "../src/examples.js";
 import { FixtureJobSource, FixtureLinkSource } from "../src/sources/fixture.js";
-import { aezc517Course, MODULES, S3_BLOCKS, VIDEOS, PAGES } from "../src/fixtures/aezc517.js";
+import { aezc517Course, MODULES, MODULE_OUTCOMES, S3_BLOCKS, VIDEOS, PAGES } from "../src/fixtures/aezc517.js";
 import { FIT_RUBRIC, OUTCOMES_RUBRIC } from "../src/prompts/review.js";
 import { ScriptedClient, fixedNow, goodReview, testConfig } from "./helpers.js";
 
@@ -15,26 +15,33 @@ const draftBlocks = () => S3_BLOCKS.map(({ industryExample, ...b }) => ({
   ...b, ...(industryExample ? { industryExample: { text: industryExample.text, sector: industryExample.sector, roleIds: industryExample.roleIds, evidenceIdx: [0] } } : {}),
 }));
 
+/** A content-check reply judging every (block, SO) pair "yes". */
+export const allYes = (blocks: { sessionOutcomeIds: string[] }[]) => ({
+  verdicts: blocks.flatMap((b, block) => b.sessionOutcomeIds.map((so) => ({ block, so, verdict: "yes", reason: "Learners practise it." }))),
+});
+
 describe("OpenRouterStages", () => {
   const course = aezc517Course();
 
   it("draftHourPlan: assigns ids, maps evidence to sources, attaches provenance", async () => {
-    const c = new ScriptedClient([{ blocks: draftBlocks() }]);
+    const c = new ScriptedClient([{ blocks: draftBlocks() }, allYes(draftBlocks())]);
     const r = await make(c).draftHourPlan(course, "p1", "s3");
     expect(r.warnings).toEqual([]);
+    expect(r.value.every((b) => b.kind === "break" || b.sessionOutcomeIds.length > 0)).toBe(true);
+    expect(c.requests[1]!.model).toBe("test/review"); // the content check
     expect(r.value.map((b) => b.id)[0]).toBe("s3-b1");
     expect(r.value.every((b) => HourBlock.safeParse(b).success)).toBe(true);
     expect(hourBlockProblems(r.value, 120)).toEqual([]);
     const ex = r.value.find((b) => b.industryExample)!.industryExample!;
     expect(ex.sources[0]!.url).toBe(course.roles.find((x) => x.selected)!.evidence[0]!.url);
-    expect(r.provenance).toMatchObject({ model: "test/draftHourPlan", promptId: "session.hourPlan", promptVersion: "1", structureVersion: 2 });
+    expect(r.provenance).toMatchObject({ model: "test/draftHourPlan", promptId: "session.hourPlan", promptVersion: "2", structureVersion: 2 });
     // facts supplied: the evidence list is in the prompt
     expect(c.requests[0]!.messages[1]!.content).toContain("job-posting evidence");
   });
 
   it("draftHourPlan: a timing error triggers one repair", async () => {
     const broken = draftBlocks().map((b, i) => (i === 2 ? { ...b, minutes: 20 } : b));
-    const c = new ScriptedClient([{ blocks: broken }, { blocks: draftBlocks() }]);
+    const c = new ScriptedClient([{ blocks: broken }, { blocks: draftBlocks() }, allYes(draftBlocks())]);
     const r = await make(c).draftHourPlan(course, "p1", "s3");
     expect(c.requests[1]!.messages.at(-1)!.content).toMatch(/hour 1: blocks add up to 55 min, expected 60/);
     expect(r.warnings).toEqual([]);
@@ -54,6 +61,7 @@ describe("OpenRouterStages", () => {
     const locked = course.outcomes[0]!;
     const input: Course = CourseSchema.parse({ ...course, outcomes: [locked], objectives: course.objectives });
     const draft = {
+      moduleOutcomes: Object.entries(MODULE_OUTCOMES).flatMap(([moduleId, mos]) => mos.map(({ text, bloom, outcomeIds }) => ({ moduleId, text, bloom, outcomeIds }))),
       objectives: course.objectives.map(({ id, text }) => ({ id, text })),
       outcomes: [
         { id: "LO1", text: "Rewritten by model, should be ignored.", bloom: "apply", moduleIds: ["M1"], objectiveIds: ["CO1"], roleIds: [], origin: "new" },
@@ -67,6 +75,7 @@ describe("OpenRouterStages", () => {
     expect(r.value.outcomes[0]).toEqual(locked);
     expect(r.value.outcomes).toHaveLength(6);
     expect(r.value.outcomes.every((o) => !o.roleIds.includes("rX"))).toBe(true);
+    expect(r.value.modules.find((m) => m.id === "M7")!.outcomes.map((o) => o.id)).toEqual(["M7.MO1", "M7.MO2"]);
     expect(c.requests[2]!.model).toBe("test/review");
     expect(r.warnings).toEqual([]);
   });
@@ -120,10 +129,10 @@ describe("OpenRouterStages", () => {
       outcomes: [{ id: "LO1", text: "Understand systems thinking.", bloom: "understand", moduleIds: [] }],
       gaps: ["CO4 is empty"],
     };
-    const c = new ScriptedClient([parsed, parsed]); // the unmapped LO1 triggers one (unsuccessful) repair
+    const c = new ScriptedClient([parsed]);
     const r = await make(c).parseInputs([file("h", "handout.txt", "text/plain", "HANDOUT TEXT"), file("d", "h.docx", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "")]);
     expect(c.requests[0]!.messages[1]!.content).toContain("HANDOUT TEXT");
-    expect(r.value.outcomes[0]).toMatchObject({ origin: "handout", moduleIds: ["M1"] });
+    expect(r.value.outcomes[0]).toMatchObject({ origin: "handout", moduleIds: [] }); // no longer every module
     expect(r.warnings.some((w) => /needs a text extractor/.test(w))).toBe(true);
     expect(r.warnings.some((w) => /Handout LO1 starts with the unmeasurable verb/.test(w))).toBe(true);
     expect(r.provenance.builtFrom).toEqual(["h", "d"]);

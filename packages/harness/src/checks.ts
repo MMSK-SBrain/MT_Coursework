@@ -1,14 +1,20 @@
 // Code-checked rules per stage, built on the shared rules in @cg/core.
 // Each returns human-readable problems; the runner feeds them back to the model for one repair.
 import {
-  BLOOM_ORDER, hourBlockProblems, outcomeVerbProblem, uncoveredOutcomes, videoAllowed,
-  type BloomLevel, type EditInstruction, type HourBlock, type LearningPath, type LearningPlan, type Module, type Outcome,
+  BLOOM_ORDER, hourBlockProblems, learningOutcomeCoverage, moduleOutcomeCoverage, outcomeVerbProblem, sessionOutcomeProblems,
+  uncoveredOutcomes, videoAllowed,
+  type BloomLevel, type Course, type EditInstruction, type HourBlock, type LearningPath, type LearningPlan, type Module, type Outcome,
 } from "@cg/core";
+import { bloomRank, maxBloomForHours } from "./hierarchy.js";
 
 const dupes = (ids: string[]) => [...new Set(ids.filter((id, i) => ids.indexOf(id) !== i))];
 
 export function outcomeSetProblems(
-  d: { objectives: { id: string }[]; outcomes: { id: string; text: string; bloom: BloomLevel; moduleIds: string[]; objectiveIds: string[] }[] },
+  d: {
+    objectives: { id: string }[];
+    outcomes: { id: string; text: string; bloom: BloomLevel; moduleIds: string[]; objectiveIds: string[] }[];
+    moduleOutcomes?: MoDraft[];
+  },
   modules: Module[],
 ): string[] {
   const p: string[] = [];
@@ -25,7 +31,9 @@ export function outcomeSetProblems(
   }
   const covered = new Set(d.outcomes.flatMap((o) => o.moduleIds));
   const uncovered = modules.filter((m) => !covered.has(m.id)).map((m) => m.id);
-  if (uncovered.length) p.push(`module(s) ${uncovered.join(", ")} are not covered by any outcome`);
+  // With module outcomes, modules are covered through their MOs (checked below), so LOs may leave moduleIds empty.
+  if (uncovered.length && !d.moduleOutcomes) p.push(`module(s) ${uncovered.join(", ")} are not covered by any outcome`);
+  if (d.moduleOutcomes) p.push(...moduleOutcomeDraftProblems(d.moduleOutcomes, modules, d.outcomes.map((o) => o.id)));
   for (const id of dupes(d.outcomes.map((o) => o.id))) p.push(`duplicate outcome id ${id}`);
   for (const id of dupes(d.objectives.map((o) => o.id))) p.push(`duplicate objective id ${id}`);
   return p;
@@ -103,4 +111,88 @@ export function indexProblems(label: string, idx: number[], size: number): strin
   const p = bad.length ? [`${label} index(es) ${bad.join(", ")} do not exist (there are ${size})`] : [];
   for (const d of dupes(idx.map(String))) p.push(`${label} index ${d} is used more than once`);
   return p;
+}
+
+// ---- Outcome hierarchy --------------------------------------------------------------------------
+
+export interface MoDraft {
+  moduleId: string;
+  text: string;
+  bloom: BloomLevel;
+  outcomeIds: string[];
+}
+
+/** Module outcomes: every module has 1-4, each serves known LOs at a level its hours support; every LO is served. */
+export function moduleOutcomeDraftProblems(mos: MoDraft[], modules: Module[], loIds: string[]): string[] {
+  const p: string[] = [];
+  const los = new Set(loIds);
+  for (const m of modules) {
+    const mine = mos.filter((x) => x.moduleId === m.id);
+    if (!mine.length) p.push(`module ${m.id} has no module outcomes`);
+    if (mine.length > 4) p.push(`module ${m.id} has ${mine.length} module outcomes; keep it to 1-4`);
+    const capB = maxBloomForHours(m.hours);
+    mine.forEach((mo, i) => {
+      const n = `${m.id} module outcome ${i + 1}`;
+      const v = outcomeVerbProblem(mo);
+      if (v) p.push(`${n} ${v}`);
+      if (bloomRank(mo.bloom) > bloomRank(capB)) p.push(`${n} is at ${mo.bloom}, but ${m.hours} h can support at most ${capB}`);
+      if (!mo.outcomeIds.length) p.push(`${n} serves no learning outcome`);
+      const bad = mo.outcomeIds.filter((x) => !los.has(x));
+      if (bad.length) p.push(`${n} names unknown learning outcome(s) ${bad.join(", ")}`);
+    });
+  }
+  const known = new Set(modules.map((m) => m.id));
+  for (const mo of mos) if (!known.has(mo.moduleId)) p.push(`module outcome "${mo.text.slice(0, 40)}" names unknown module ${mo.moduleId}`);
+  const served = new Set(mos.flatMap((m) => m.outcomeIds));
+  const orphan = loIds.filter((id) => !served.has(id));
+  if (orphan.length) p.push(`learning outcome(s) ${orphan.join(", ")} are served by no module outcome`);
+  return p;
+}
+
+/** Session outcomes in a drafted plan: each session has some, with measurable verbs and known parent MOs. */
+export function sessionOutcomeDraftProblems(
+  sessions: { title: string; sessionOutcomes: { text: string; bloom: BloomLevel; moduleOutcomeIds: string[] }[] }[],
+  moIds: string[],
+): string[] {
+  const p: string[] = [];
+  const known = new Set(moIds);
+  sessions.forEach((s, i) => {
+    if (!s.sessionOutcomes.length) p.push(`session ${i + 1} "${s.title}" has no session outcomes`);
+    s.sessionOutcomes.forEach((so, k) => {
+      const n = `session ${i + 1} outcome ${k + 1}`;
+      const v = outcomeVerbProblem(so);
+      if (v) p.push(`${n} ${v}`);
+      const bad = so.moduleOutcomeIds.filter((x) => !known.has(x));
+      if (bad.length) p.push(`${n} names unknown module outcome(s) ${bad.join(", ")}`);
+      if (known.size && !so.moduleOutcomeIds.length) p.push(`${n} serves no module outcome`);
+    });
+  });
+  return p;
+}
+
+/** Roll-up: unmet module outcomes in a plan (repairable) and unmet course LOs (warnings). */
+export function rollUp(course: Pick<Course, "modules" | "outcomes">, plan: LearningPlan): { moProblems: string[]; loProblems: string[]; moMet: number; moTotal: number; loMet: number; loTotal: number } {
+  const mo = moduleOutcomeCoverage(course, plan);
+  const hasMos = mo.length > 0;
+  const lo = hasMos ? learningOutcomeCoverage(course, plan) : [];
+  return {
+    moProblems: mo.filter((s) => !s.met).map((s) => `module outcome ${s.moduleOutcomeId} is not met: ${s.problem}`),
+    loProblems: lo.filter((s) => !s.met).map((s) => `learning outcome ${s.outcomeId} is not met by the plan (${s.moduleOutcomeIds.length ? "some of its module outcomes are unmet" : "it has no module outcomes"})`),
+    moMet: mo.filter((s) => s.met).length, moTotal: mo.length,
+    loMet: lo.filter((s) => s.met).length, loTotal: lo.length,
+  };
+}
+
+/**
+ * Hour-plan check against the session outcomes, split into what the hour-plan call can fix
+ * (blocks) and what it cannot (the SOs themselves, which come from the plan).
+ */
+export function hourPlanSoProblems(
+  session: { title: string; sessionOutcomes: { id: string; text: string; bloom: BloomLevel }[] },
+  blocks: { title: string; kind: HourBlock["kind"]; sessionOutcomeIds: string[] }[],
+): { fixable: string[]; upstream: string[] } {
+  if (!session.sessionOutcomes.length) return { fixable: [], upstream: [`session "${session.title}" has no session outcomes; redraft the plan`] };
+  const all = sessionOutcomeProblems({ title: session.title, sessionOutcomes: session.sessionOutcomes, blocks } as never);
+  const verbProblem = (x: string) => session.sessionOutcomes.some((so) => x.startsWith(`${so.id} `) && !x.endsWith("is not served by any block"));
+  return { fixable: all.filter((x) => !verbProblem(x)), upstream: all.filter(verbProblem) };
 }

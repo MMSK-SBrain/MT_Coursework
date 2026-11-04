@@ -3,8 +3,9 @@
 import {
   Course as CourseSchema,
   type Course, type CourseBrief, type FitChange, type HourBlock, type JobPosting, type JobRole, type Module,
-  type Objective, type Outcome, type Provenance, type VideoCandidate,
+  type ModuleOutcome, type Objective, type Outcome, type Provenance, type SessionOutcome, type VideoCandidate,
 } from "@cg/core";
+import { deriveSessionOutcomes } from "../hierarchy.js";
 
 export const FIXTURE_TIME = "2026-11-04T00:00:00.000Z";
 
@@ -25,15 +26,36 @@ export const BRIEF: CourseBrief = {
 };
 
 export const MODULES: Module[] = [
-  { id: "M1", title: "Systems thinking and the role of the systems engineer", hours: 4, topics: ["systems thinking", "soft skills"], foundIn: "both" },
-  { id: "M2", title: "Life cycle models: V-model, agile and hybrids", hours: 4, topics: ["V-model", "agile", "ASPICE"], foundIn: "both" },
-  { id: "M3", title: "Stakeholder needs and requirements engineering", hours: 6, topics: ["stakeholder analysis", "requirements", "traceability"], foundIn: "both" },
-  { id: "M4", title: "Functional and physical architecture, MBSE with SysML", hours: 6, topics: ["SysML", "MBSE"], foundIn: "moduleSheet", note: "Not in handout" },
-  { id: "M5", title: "Interface management and system integration", hours: 4, topics: ["interfaces", "integration"], foundIn: "both" },
-  { id: "M6", title: "Verification and validation", hours: 4, topics: ["V&V", "HIL", "SIL"], foundIn: "both" },
-  { id: "M7", title: "Technical management: risk, configuration, trade studies", hours: 4, topics: ["risk", "configuration", "trade study"], foundIn: "handout", note: "Not in sheet" },
-  { id: "M8", title: "Capstone: EV battery management system", hours: 4, topics: ["BMS"], foundIn: "moduleSheet" },
+  { id: "M1", title: "Systems thinking and the role of the systems engineer", hours: 4, topics: ["systems thinking", "soft skills"], outcomes: [], foundIn: "both" },
+  { id: "M2", title: "Life cycle models: V-model, agile and hybrids", hours: 4, topics: ["V-model", "agile", "ASPICE"], outcomes: [], foundIn: "both" },
+  { id: "M3", title: "Stakeholder needs and requirements engineering", hours: 6, topics: ["stakeholder analysis", "requirements", "traceability"], outcomes: [], foundIn: "both" },
+  { id: "M4", title: "Functional and physical architecture, MBSE with SysML", hours: 6, topics: ["SysML", "MBSE"], outcomes: [], foundIn: "moduleSheet", note: "Not in handout" },
+  { id: "M5", title: "Interface management and system integration", hours: 4, topics: ["interfaces", "integration"], outcomes: [], foundIn: "both" },
+  { id: "M6", title: "Verification and validation", hours: 4, topics: ["V&V", "HIL", "SIL"], outcomes: [], foundIn: "both" },
+  { id: "M7", title: "Technical management: risk, configuration, trade studies", hours: 4, topics: ["risk", "configuration", "trade study"], outcomes: [], foundIn: "handout", note: "Not in sheet" },
+  { id: "M8", title: "Capstone: EV battery management system", hours: 4, topics: ["BMS"], outcomes: [], foundIn: "moduleSheet" },
 ];
+
+const mo = (moduleId: string, n: number, text: string, bloom: ModuleOutcome["bloom"], outcomeIds: string[]): ModuleOutcome => ({
+  id: `${moduleId}.MO${n}`, text, bloom, outcomeIds, locked: false, provenance: fixtureProv("outcomes.draft", [moduleId, ...outcomeIds]),
+});
+
+/** Module outcomes (MOs) per module, each serving course LOs at a level the module's hours support. */
+export const MODULE_OUTCOMES: Record<string, ModuleOutcome[]> = {
+  M1: [mo("M1", 1, "Describe the role of a systems engineer on a cross-functional vehicle programme.", "understand", ["LO1"])],
+  M2: [mo("M2", 1, "Compare the V-model, agile and hybrid life cycles for an automotive programme.", "understand", ["LO1"])],
+  M3: [mo("M3", 1, "Write verifiable system requirements traced to stakeholder needs.", "apply", ["LO2"])],
+  M4: [mo("M4", 1, "Model the functional and physical architecture of a subsystem in SysML.", "apply", ["LO3"])],
+  M5: [mo("M5", 1, "Plan the integration of a subsystem from its interface definitions.", "analyse", ["LO4"])],
+  M6: [mo("M6", 1, "Plan verification and validation activities for a subsystem's requirements.", "analyse", ["LO4"])],
+  M7: [
+    mo("M7", 1, "Perform a hazard analysis and derive safety goals for a vehicle function.", "apply", ["LO5"]),
+    mo("M7", 2, "Evaluate design alternatives with a weighted trade study.", "evaluate", ["LO6"]),
+  ],
+  M8: [mo("M8", 1, "Evaluate battery management system design options for an EV with a structured trade study.", "evaluate", ["LO6"])],
+};
+
+export const MODULES_WITH_MOS: Module[] = MODULES.map((m) => ({ ...m, outcomes: MODULE_OUTCOMES[m.id] ?? [] }));
 
 export const KEYWORDS = [
   "systems engineering", "requirements engineering", "V-model", "SysML / MBSE", "interface management",
@@ -137,17 +159,30 @@ export const PAGES: { title: string; url: string; snippet: string }[] = [
   { title: "Trade study method (fixture)", url: "https://docs.example.org/se/trade-studies", snippet: "Criteria, weights, sensitivity analysis and how to present a recommendation." },
 ];
 
+/** Hand-written session outcomes for s3, serving M3.MO1 (apply). */
+export const S3_OUTCOMES: SessionOutcome[] = [
+  { id: "S3.SO1", text: "Explain why a stakeholder need must be rewritten before it can be verified.", bloom: "understand", moduleOutcomeIds: ["M3.MO1"], locked: false, provenance: fixtureProv("plan.draft", ["M3.MO1"]) },
+  { id: "S3.SO2", text: "Write verifiable system requirements for a BMS from stakeholder needs.", bloom: "apply", moduleOutcomeIds: ["M3.MO1"], locked: false, provenance: fixtureProv("plan.draft", ["M3.MO1"]) },
+];
+
 /** Hand-written hour plan for session s3 ("From stakeholder needs to system requirements", 120 min). */
 export const S3_BLOCKS: Omit<HourBlock, "id" | "provenance">[] = [
-  { hour: 1, startMin: 0, minutes: 10, kind: "hook", title: "The pack that must never overheat", activity: "Show the stakeholder need \"The battery shall not overheat\". Ask pairs: how would you test this? Collect answers on the board.", outcomeIds: ["LO2"], style: "worked", check: [], needsSlides: true },
-  { hour: 1, startMin: 10, minutes: 25, kind: "teach", title: "From needs to verifiable requirements", activity: "Walk through stakeholder needs -> system requirements -> subsystem requirements for a BMS. Introduce the properties of a good requirement: necessary, unambiguous, verifiable, traceable.", outcomeIds: ["LO2"], style: "worked", check: [], needsSlides: true,
+  { hour: 1, startMin: 0, minutes: 10, kind: "hook", title: "The pack that must never overheat", activity: "Show the stakeholder need \"The battery shall not overheat\". Ask pairs: how would you test this? Collect answers on the board.", outcomeIds: ["LO2"], sessionOutcomeIds: ["S3.SO1"], style: "worked", check: [], needsSlides: true },
+  { hour: 1, startMin: 10, minutes: 25, kind: "teach", title: "From needs to verifiable requirements", activity: "Walk through stakeholder needs -> system requirements -> subsystem requirements for a BMS. Introduce the properties of a good requirement: necessary, unambiguous, verifiable, traceable.", outcomeIds: ["LO2"], sessionOutcomeIds: ["S3.SO1"], style: "worked", check: [], needsSlides: true,
     industryExample: { text: "Requirements Engineer postings ask for traceability in Polarion or DOORS and ASPICE SYS.2 work products; show how one BMS need becomes three traced system requirements.", sector: "automotive", roleIds: ["r2"], sources: [{ title: "Requirements Engineer (sample posting)", url: "https://jobs.example.org/aezc517/r2-1" }] } },
-  { hour: 1, startMin: 35, minutes: 25, kind: "activity", title: "Rewrite five bad requirements", activity: "Groups of three get five flawed BMS requirements and rewrite each to be verifiable, naming the test that would verify it. Two groups present.", outcomeIds: ["LO2"], style: "worked", check: [], needsSlides: false },
-  { hour: 2, startMin: 0, minutes: 10, kind: "break", title: "Break", activity: "Break.", outcomeIds: [], style: "worked", check: [], needsSlides: false },
-  { hour: 2, startMin: 10, minutes: 30, kind: "activity", title: "Trace a need to a test", activity: "Each group takes one stakeholder need, derives two system requirements, and links each to a test case in a shared traceability table.", outcomeIds: ["LO2"], style: "worked", check: [], needsSlides: false },
-  { hour: 2, startMin: 40, minutes: 10, kind: "check", title: "Quick check", activity: "Three-question quiz on requirement quality, answered on cards.", outcomeIds: ["LO2"], style: "retrieval", check: ["Which word makes \"The BMS shall respond quickly\" unverifiable?", "What links a system requirement to its stakeholder need?", "Name one test method for a thermal derating requirement."], needsSlides: false },
-  { hour: 2, startMin: 50, minutes: 10, kind: "wrap", title: "Wrap and bridge to the tool lab", activity: "Summarise the three rules for a verifiable requirement; preview next session's Polarion lab.", outcomeIds: ["LO2"], style: "worked", check: ["What will you check first in a requirement you review at work?"], needsSlides: false },
+  { hour: 1, startMin: 35, minutes: 25, kind: "activity", title: "Rewrite five bad requirements", activity: "Groups of three get five flawed BMS requirements and rewrite each to be verifiable, naming the test that would verify it. Two groups present.", outcomeIds: ["LO2"], sessionOutcomeIds: ["S3.SO2"], style: "worked", check: [], needsSlides: false },
+  { hour: 2, startMin: 0, minutes: 10, kind: "break", title: "Break", activity: "Break.", outcomeIds: [], sessionOutcomeIds: [], style: "worked", check: [], needsSlides: false },
+  { hour: 2, startMin: 10, minutes: 30, kind: "activity", title: "Trace a need to a test", activity: "Each group takes one stakeholder need, derives two system requirements, and links each to a test case in a shared traceability table.", outcomeIds: ["LO2"], sessionOutcomeIds: ["S3.SO2"], style: "worked", check: [], needsSlides: false },
+  { hour: 2, startMin: 40, minutes: 10, kind: "check", title: "Quick check", activity: "Three-question quiz on requirement quality, answered on cards.", outcomeIds: ["LO2"], sessionOutcomeIds: ["S3.SO1", "S3.SO2"], style: "retrieval", check: ["Which word makes \"The BMS shall respond quickly\" unverifiable?", "What links a system requirement to its stakeholder need?", "Name one test method for a thermal derating requirement."], needsSlides: false },
+  { hour: 2, startMin: 50, minutes: 10, kind: "wrap", title: "Wrap and bridge to the tool lab", activity: "Summarise the three rules for a verifiable requirement; preview next session's Polarion lab.", outcomeIds: ["LO2"], sessionOutcomeIds: ["S3.SO1"], style: "worked", check: ["What will you check first in a requirement you review at work?"], needsSlides: false },
 ];
+
+/** Session outcomes for the classroom plan: derived so every MO is met, with s3 hand-written. */
+const CLASSROOM_SOS: SessionOutcome[][] = deriveSessionOutcomes(
+  { modules: MODULES_WITH_MOS, outcomes: OUTCOMES },
+  CLASSROOM_SESSIONS.map((s, i) => ({ index: i + 1, title: s.title, outcomeIds: s.outcomeIds })),
+  fixtureProv("plan.draft"),
+);
 
 /** A complete AEZC517 course, outcomes frozen, with one classroom plan (session s3 has an hour plan). */
 export function aezc517Course(): Course {
@@ -155,7 +190,7 @@ export function aezc517Course(): Course {
     id: "aezc517",
     slug: "aezc517-systems-engineering",
     brief: BRIEF,
-    modules: MODULES,
+    modules: MODULES_WITH_MOS,
     structureVersion: 2,
     structureConfirmedAt: FIXTURE_TIME,
     roles: ROLES,
@@ -170,6 +205,7 @@ export function aezc517Course(): Course {
       defaultStyle: "teaching",
       sessions: CLASSROOM_SESSIONS.map((s, i) => ({
         id: `s${i + 1}`, index: i + 1, ...s,
+        sessionOutcomes: i === 2 ? S3_OUTCOMES : CLASSROOM_SOS[i]!,
         blocks: i === 2 ? S3_BLOCKS.map((b, n) => ({ ...b, id: `s3-b${n + 1}`, provenance: fixtureProv("session.hourPlan", ["LO2"]) })) : [],
         links: [], caseStudies: [], assets: [], stale: false,
         provenance: fixtureProv("plan.draft", s.outcomeIds),

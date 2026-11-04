@@ -103,17 +103,18 @@ export function renderExample(stage: StageName, c: Course): string | null {
       return `${head}\nModules: ${mods(c)}\nOutput: ${JSON.stringify({
         objectives: c.objectives.map(({ id, text }) => ({ id, text })),
         outcomes: c.outcomes.slice(0, 8).map(({ id, text, bloom, moduleIds, objectiveIds, roleIds, origin }) => ({ id, text, bloom, moduleIds, objectiveIds, roleIds, origin })),
+        moduleOutcomes: c.modules.flatMap((m) => m.outcomes.slice(0, 2).map((mo) => ({ moduleId: m.id, text: mo.text, bloom: mo.bloom, outcomeIds: mo.outcomeIds }))).slice(0, 10),
       })}`;
     }
     case "draftPlan": {
       const p = c.plans[0];
       if (!p) return null;
-      return `${head}\nPath: ${p.path}, default style ${p.defaultStyle}\nOutput: ${JSON.stringify({ name: p.name, sessions: p.sessions.slice(0, 8).map(({ title, outcomeIds, style, minutes, video }) => ({ title, outcomeIds, style, minutes, video })) })}`;
+      return `${head}\nPath: ${p.path}, default style ${p.defaultStyle}\nOutput: ${JSON.stringify({ name: p.name, sessions: p.sessions.slice(0, 8).map(({ title, outcomeIds, style, minutes, video, sessionOutcomes }) => ({ title, outcomeIds, style, minutes, video, sessionOutcomes: sessionOutcomes.map(({ text, bloom, moduleOutcomeIds }) => ({ text, bloom, moduleOutcomeIds })) })) })}`;
     }
     case "draftHourPlan": {
       const s = c.plans.flatMap((p) => p.sessions).find((x) => x.blocks.length);
       if (!s) return null;
-      return `${head}\nSession: ${s.title} (${s.minutes} min, style ${s.style})\nOutput: ${JSON.stringify({ blocks: s.blocks.map(({ hour, startMin, minutes, kind, title, activity, outcomeIds, style, check, needsSlides, industryExample }) => ({ hour, startMin, minutes, kind, title, activity, outcomeIds, style, check, needsSlides, ...(industryExample ? { industryExample: { text: industryExample.text, sector: industryExample.sector, roleIds: industryExample.roleIds } } : {}) })) })}`;
+      return `${head}\nSession: ${s.title} (${s.minutes} min, style ${s.style})\nSession outcomes: ${s.sessionOutcomes.map((o) => `${o.id} [${o.bloom}] ${o.text}`).join("; ") || "(none)"}\nOutput: ${JSON.stringify({ blocks: s.blocks.map(({ hour, startMin, minutes, kind, title, activity, outcomeIds, sessionOutcomeIds, style, check, needsSlides, industryExample }) => ({ hour, startMin, minutes, kind, title, activity, outcomeIds, sessionOutcomeIds, style, check, needsSlides, ...(industryExample ? { industryExample: { text: industryExample.text, sector: industryExample.sector, roleIds: industryExample.roleIds } } : {}) })) })}`;
     }
     case "draftCaseStudy": {
       const cs = c.plans.flatMap((p) => p.sessions).flatMap((s) => s.caseStudies)[0];

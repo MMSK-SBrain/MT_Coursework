@@ -11,9 +11,11 @@ import {
 } from "@cg/core";
 import type { z } from "zod";
 import {
-  BRIEF, CLASSROOM_SESSIONS, FIT, FIXTURE_TIME, KEYWORDS, MODULES, OBJECTIVES, OUTCOMES, PAGES, ROLES, S3_BLOCKS, VIDEOS, YOUTUBE_SESSIONS,
+  BRIEF, CLASSROOM_SESSIONS, FIT, FIXTURE_TIME, KEYWORDS, MODULES, MODULES_WITH_MOS, OBJECTIVES, OUTCOMES, PAGES, ROLES, S3_BLOCKS,
+  S3_OUTCOMES, VIDEOS, YOUTUBE_SESSIONS,
 } from "./fixtures/aezc517.js";
-import { findSession, mergeLocked, sessionShape } from "./stages.js";
+import { findSession, mergeLocked, sessionShape, type DraftOutcomesValue } from "./stages.js";
+import { deriveModuleOutcomes, deriveSessionOutcomes } from "./hierarchy.js";
 import { parseInputsPrompt } from "./prompts/parseInputs.js";
 import { roleClusterPrompt } from "./prompts/findRoles.js";
 import { proposeFitPrompt } from "./prompts/proposeFit.js";
@@ -87,10 +89,9 @@ export class MockStages implements Stages {
     return this.ok(value, prov);
   }
 
-  async draftOutcomes(course: Course): Promise<Generated<{ objectives: Objective[]; outcomes: Outcome[] }>> {
+  async draftOutcomes(course: Course): Promise<Generated<DraftOutcomesValue>> {
     const prov = { ...this.prov(draftOutcomesPrompt, course.modules.map((m) => m.id)), structureVersion: course.structureVersion };
-    const modIds = new Set(course.modules.map((m) => m.id));
-    const isFixture = MODULES.every((m) => modIds.has(m.id)) && course.modules.length === MODULES.length;
+    const isFixture = isFixtureCourse(course);
     const roleIds = new Set(course.roles.map((r) => r.id));
     const objectives: Objective[] = isFixture
       ? OBJECTIVES.map((o) => ({ ...o, locked: false, provenance: prov }))
@@ -103,10 +104,16 @@ export class MockStages implements Stages {
         bloom: "apply", moduleIds: [m.id], objectiveIds: ["CO1"], origin: "new",
         provenance: { ...prov, builtFrom: [m.id] },
       }));
-    return this.ok({
-      objectives: mergeLocked(course.objectives, objectives, "CO"),
-      outcomes: mergeLocked(course.outcomes, outcomes, "LO"),
-    }, prov);
+    const finalOutcomes = mergeLocked(course.outcomes, outcomes, "LO");
+    const drafted = isFixture
+      ? MODULES_WITH_MOS.map((m) => ({ ...m, outcomes: m.outcomes.map((mo) => ({ ...mo, provenance: { ...prov, builtFrom: [m.id, ...mo.outcomeIds] } })) }))
+      : deriveModuleOutcomes(course.modules.map((m) => ({ ...m, outcomes: [] })), finalOutcomes, prov);
+    // Locked MOs are kept; drafted ones fill in around them.
+    const modules = course.modules.map((m) => {
+      const fresh = drafted.find((d) => d.id === m.id)?.outcomes ?? [];
+      return { ...m, outcomes: mergeLocked(m.outcomes, fresh, `${m.id}.MO`) };
+    });
+    return this.ok({ objectives: mergeLocked(course.objectives, objectives, "CO"), outcomes: finalOutcomes, modules }, prov);
   }
 
   async suggestOutcomeEdit(course: Course, outcomeId: string, instruction: EditInstruction): Promise<Generated<OutcomeSuggestion>> {
@@ -119,7 +126,7 @@ export class MockStages implements Stages {
   async draftPlan(course: Course, spec: PlanSpec): Promise<Generated<LearningPlan>> {
     const prov = { ...this.prov(draftPlanPrompt, course.outcomes.map((o) => o.id)), structureVersion: course.structureVersion };
     const known = new Set(course.outcomes.map((o) => o.id));
-    const fixture = spec.path === "classroom" ? CLASSROOM_SESSIONS : spec.path === "youtube" ? YOUTUBE_SESSIONS : null;
+    const fixture = !isFixtureCourse(course) ? null : spec.path === "classroom" ? CLASSROOM_SESSIONS : spec.path === "youtube" ? YOUTUBE_SESSIONS : null;
     const covers = (ss: { outcomeIds: string[] }[]) => {
       const taught = new Set(ss.flatMap((s) => s.outcomeIds));
       return course.outcomes.every((o) => taught.has(o.id)) && ss.every((s) => s.outcomeIds.every((x) => known.has(x)));
@@ -135,6 +142,14 @@ export class MockStages implements Stages {
         video: VIDEO_BY_PATH[spec.path][0]!,
       }));
     const planId = `p${course.plans.length + 1}`;
+    const indexed = sessions.map((s, i) => ({ ...s, index: i + 1 }));
+    const sos = deriveSessionOutcomes(course, indexed, prov);
+    // The classroom fixture uses the hand-written s3 outcomes when the course has the fixture's MOs.
+    const moIds = new Set(course.modules.flatMap((m) => m.outcomes.map((o) => o.id)));
+    const usedFixture = spec.path === "classroom" && !!fixture && covers(fixture);
+    if (usedFixture && S3_OUTCOMES.every((so) => so.moduleOutcomeIds.every((id) => moIds.has(id))) && /requirement/i.test(indexed[2]?.title ?? "")) {
+      sos[2] = S3_OUTCOMES.map((so) => ({ ...so, provenance: { ...prov, builtFrom: so.moduleOutcomeIds } }));
+    }
     const value = LearningPlanSchema.parse({
       id: planId,
       name: spec.name ?? (spec.path === "classroom" && fixture ? "BITS WILP classroom" : `${course.brief.title}: ${spec.path} plan`),
@@ -142,7 +157,7 @@ export class MockStages implements Stages {
       defaultStyle: spec.style,
       ...(spec.audienceVariant ? { audienceVariant: spec.audienceVariant } : {}),
       sessions: sessions.map((s, i) => ({
-        id: `${planId}-s${i + 1}`, index: i + 1, ...s,
+        id: `${planId}-s${i + 1}`, index: i + 1, ...s, sessionOutcomes: sos[i] ?? [],
         video: VIDEO_BY_PATH[spec.path].includes(s.video) ? s.video : VIDEO_BY_PATH[spec.path][0],
         provenance: { ...prov, builtFrom: s.outcomeIds },
       })),
@@ -154,10 +169,11 @@ export class MockStages implements Stages {
   async draftHourPlan(course: Course, planId: string, sessionId: string): Promise<Generated<HourBlock[]>> {
     const { session } = findSession(course, planId, sessionId);
     const prov = { ...this.prov(draftHourPlanPrompt, session.outcomeIds), structureVersion: course.structureVersion };
-    const useFixture = session.minutes === 120 && session.outcomeIds.includes("LO2") && /requirement/i.test(session.title);
+    const soIds = session.sessionOutcomes.map((so) => so.id);
+    const useFixture = session.minutes === 120 && S3_OUTCOMES.every((so) => soIds.includes(so.id)) && /requirement/i.test(session.title);
     const drafts = useFixture
       ? S3_BLOCKS.map((b) => ({ ...b, outcomeIds: b.outcomeIds.filter((x) => session.outcomeIds.includes(x)) }))
-      : genericBlocks(session.minutes, session.outcomeIds, session.style, session.title, course);
+      : genericBlocks(session.minutes, session.outcomeIds, soIds, session.style, session.title, course);
     const value = drafts.map((b, i) => HourBlockSchema.parse({ ...b, id: `${session.id}-b${i + 1}`, provenance: { ...prov, builtFrom: b.outcomeIds } }));
     return this.ok(value, prov);
   }
@@ -207,6 +223,11 @@ export class MockStages implements Stages {
   }
 }
 
+/** The AEZC517 fixture course (same modules), whose hand-written data the mock may reuse. */
+function isFixtureCourse(course: Pick<Course, "modules">): boolean {
+  return course.modules.length === MODULES.length && course.modules.every((m, i) => m.id === MODULES[i]!.id && m.title === MODULES[i]!.title);
+}
+
 function lowerFirst(s: string) {
   return s.charAt(0).toLowerCase() + s.slice(1);
 }
@@ -251,7 +272,7 @@ function cap(s: string) {
 type BlockDraft = Omit<HourBlock, "id" | "provenance">;
 
 /** Blocks that satisfy hourBlockProblems for any session length. */
-export function genericBlocks(minutes: number, outcomeIds: string[], style: TeachingStyle, title: string, course: Course): BlockDraft[] {
+export function genericBlocks(minutes: number, outcomeIds: string[], sessionOutcomeIds: string[], style: TeachingStyle, title: string, course: Course): BlockDraft[] {
   const hours = Math.ceil(minutes / 60);
   const out: BlockDraft[] = [];
   const role = course.roles.find((r) => r.selected);
@@ -272,6 +293,7 @@ export function genericBlocks(minutes: number, outcomeIds: string[], style: Teac
         hour: h, startMin: cursor, minutes: len, kind, title: blockTitle(kind, title),
         activity: blockActivity(kind, title),
         outcomeIds: kind === "break" ? [] : [...outcomeIds],
+        sessionOutcomeIds: kind === "break" ? [] : [...sessionOutcomeIds],
         style, check: kind === "check" || kind === "wrap" ? [`What is the one idea from "${title}" you would use at work?`] : [],
         needsSlides: kind === "teach",
         ...(kind === "teach" && role && h === 1 ? { industryExample: { text: `${role.title} postings ask for ${role.skills.slice(0, 2).join(" and ")}; show where this session's idea appears in that work.`, sector: course.brief.industry, roleIds: [role.id], sources: role.evidence.slice(0, 1).map((e) => ({ title: e.title, url: e.url })) } } : {}),
