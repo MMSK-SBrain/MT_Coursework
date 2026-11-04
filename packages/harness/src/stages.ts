@@ -5,7 +5,7 @@ import {
   ModuleOutcome as ModuleOutcomeSchema, Objective as ObjectiveSchema, Outcome as OutcomeSchema, OutcomeSuggestion as OutcomeSuggestionSchema,
   PATH_FAMILY, VIDEO_BY_PATH,
   type CaseStudy, type Course, type CourseBrief, type EditInstruction, type FitChange, type FurtherLink, type Generated,
-  type HourBlock, type InputFile, type JobRole, type JobSource, type LearningPath, type LearningPlan, type LinkSource,
+  type HourBlock, type InputFile, type JobRole, type OccupationSource, type LearningPath, type LearningPlan, type LinkSource,
   type Module, type Objective, type Outcome, type OutcomeSuggestion, type ParsedInputs, type PlanSpec, type Provenance, type Stages,
 } from "@cg/core";
 import { loadConfig, type HarnessConfig, type StageName } from "./config.js";
@@ -21,7 +21,7 @@ import { sessionOutcomeId } from "./hierarchy.js";
 import { editTarget, outcomeVerbProblem } from "@cg/core";
 import { FIT_RUBRIC, OUTCOMES_RUBRIC } from "./prompts/review.js";
 import { parseInputsPrompt } from "./prompts/parseInputs.js";
-import { roleClusterPrompt, roleKeywordsPrompt } from "./prompts/findRoles.js";
+import { roleMatchPrompt, roleKeywordsPrompt } from "./prompts/findRoles.js";
 import { proposeFitPrompt } from "./prompts/proposeFit.js";
 import { draftOutcomesPrompt } from "./prompts/draftOutcomes.js";
 import { suggestOutcomeEditPrompt } from "./prompts/suggestOutcomeEdit.js";
@@ -36,7 +36,8 @@ export type TextExtractor = (f: InputFile) => Promise<string>;
 export const defaultTextExtractor: TextExtractor = extractText;
 
 export interface OpenRouterStagesOptions {
-  jobs: JobSource;
+  /** Where roles come from: ESCO occupations (EscoOccupationSource) or a fixture. */
+  roles: OccupationSource;
   links: LinkSource;
   client?: ChatClient;
   config?: HarnessConfig;
@@ -147,43 +148,50 @@ export class OpenRouterStages implements Stages {
       kwProv = k.provenance;
       warnings.push(...k.warnings);
     }
-    const postings = await this.opts.jobs.search({ keywords, markets: brief.markets, days: 90, limit: 200 });
-    if (!postings.length) {
+    const occupations = await this.opts.roles.search({ keywords, limit: 30 });
+    if (!occupations.length) {
       return {
-        value: { keywords, roles: [], postingsRead: 0 },
-        provenance: kwProv ?? this.emptyProvenance(roleClusterPrompt.id, modules.map((m) => m.id)),
-        warnings: [...warnings, "No job postings found for these keywords and markets. Try broader keywords."],
+        value: { keywords, roles: [], occupationsRead: 0 },
+        provenance: kwProv ?? this.emptyProvenance(roleMatchPrompt.id, modules.map((m) => m.id)),
+        warnings: [...warnings, "No ESCO occupations found for these keywords. Try broader keywords."],
       };
     }
-    const sample = postings.slice(0, 80); // keep the call narrow
     const r = await this.run({
       stage: "findRoles",
-      prompt: roleClusterPrompt,
-      input: { brief, modules, postings: sample },
+      prompt: roleMatchPrompt,
+      input: { brief, modules, occupations },
       builtFrom: modules.map((m) => m.id),
       rules: (d) => {
-        const idx = d.roles.flatMap((x) => x.postingIdx);
-        const p = indexProblems("posting", idx, sample.length);
-        if (!d.roles.length) p.push("no roles returned although postings were supplied");
+        const p = indexProblems("occupation", d.roles.map((x) => x.occIdx), occupations.length);
+        d.roles.forEach((x) => {
+          const o = occupations[x.occIdx];
+          if (o) p.push(...indexProblems(`skill of occupation ${x.occIdx}`, x.coveredSkillIdx, o.essentialSkills.length));
+        });
+        if (!d.roles.length) p.push("no roles returned although occupations were supplied");
         return p;
       },
     }, brief);
-    const roles: JobRole[] = r.value.roles.map((x, i) => {
-      const idx = [...new Set(x.postingIdx.filter((n) => n < sample.length))];
-      const ps = idx.map((n) => sample[n]!);
-      return JobRoleSchema.parse({
-        id: `r${i + 1}`,
-        title: x.title,
-        postings: ps.length, // counted in code, never taken from the model
-        ...(x.experience ? { experience: x.experience } : {}),
-        skills: x.skills,
-        moduleMatch: Math.round(x.moduleMatch),
-        evidence: ps.slice(0, 5).map((p) => ({ title: `${p.title}${p.company ? `, ${p.company}` : ""} (${p.location})`, url: p.url, source: p.source })),
-      });
-    }).filter((x) => x.postings > 0).sort((a, b) => b.postings - a.postings).map((x, i) => ({ ...x, id: `r${i + 1}` }));
-    if (postings.length > sample.length) warnings.push(`Grouped the first ${sample.length} of ${postings.length} postings into roles.`);
+    // Titles, skills and the match are taken from ESCO and computed here; the model only picks indexes.
+    const seen = new Set<number>();
+    const roles: JobRole[] = r.value.roles
+      .filter((x) => occupations[x.occIdx] && !seen.has(x.occIdx) && seen.add(x.occIdx))
+      .map((x) => {
+        const o = occupations[x.occIdx]!;
+        const covered = [...new Set(x.coveredSkillIdx.filter((n) => n < o.essentialSkills.length))].sort((a, b) => a - b);
+        return JobRoleSchema.parse({
+          id: "r",
+          title: o.title,
+          description: o.description,
+          skills: o.essentialSkills,
+          matchedSkills: covered.map((n) => o.essentialSkills[n]!),
+          moduleMatch: Math.round((covered.length / o.essentialSkills.length) * 100),
+          evidence: [{ title: `${o.title} (ESCO)`, url: o.url, source: o.source }],
+        });
+      })
+      .sort((a, b) => b.moduleMatch - a.moduleMatch)
+      .map((x, i) => ({ ...x, id: `r${i + 1}` }));
     return {
-      value: { keywords, roles, postingsRead: postings.length },
+      value: { keywords, roles, occupationsRead: occupations.length },
       provenance: kwProv ? mergeProvenance(r.provenance, kwProv) : r.provenance,
       warnings: [...warnings, ...r.warnings],
     };
@@ -561,6 +569,6 @@ function fitContext(c: Course, roles: JobRole[]): string {
     `Course: ${c.brief.title} (${c.brief.contactHours} contact hours)`,
     `Modules: ${c.modules.map((m) => `${m.id} ${m.title} (${m.hours} h)`).join("; ")}`,
     `Handout objectives: ${c.objectives.map((o) => `${o.id} ${o.text}`).join("; ") || "none"}`,
-    `Selected roles: ${roles.map((r) => `${r.id} ${r.title}, ${r.postings} postings, skills ${r.skills.join(", ")}`).join("; ")}`,
+    `Selected roles: ${roles.map((r) => `${r.id} ${r.title}, match ${r.moduleMatch}%, missing ${r.skills.filter((k) => !r.matchedSkills.includes(k)).join(", ") || "none"}`).join("; ")}`,
   ].join("\n");
 }

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { CourseBrief, JobPosting, Module } from "@cg/core";
+import type { CourseBrief, Module, Occupation } from "@cg/core";
 import type { PromptModule } from "./types.js";
 import { JSON_RULES, FACTS_RULES, clip, context, examplesBlock, json } from "./shared.js";
 
@@ -14,11 +14,11 @@ export const keywordsOutput = z.object({ keywords: z.array(z.string().min(2)).mi
 
 export const roleKeywordsPrompt: PromptModule<KeywordsInput, z.infer<typeof keywordsOutput>> = {
   id: "roles.keywords",
-  version: "1",
+  version: "2",
   system: [
-    "You turn a course's modules into job-search keywords.",
+    "You turn a course's modules into search terms for an occupation classification (ESCO).",
     "Stay broad: include the core discipline, the methods and tools the modules teach, and neighbouring roles a graduate could move into.",
-    "Use terms that appear in real job postings (e.g. \"requirements engineering\", \"HIL testing\"), 2-4 words each, 6-12 keywords.",
+    "Mix occupation names (e.g. \"systems engineer\", \"automotive engineer\") with discipline terms (e.g. \"requirements engineering\", \"battery\"), 1-3 plain words each, 6-12 keywords. Avoid acronyms and brand names.",
     JSON_RULES,
   ].join("\n"),
   user: (i) => [
@@ -29,44 +29,40 @@ export const roleKeywordsPrompt: PromptModule<KeywordsInput, z.infer<typeof keyw
   output: keywordsOutput,
 };
 
-// ---- Cluster: postings -> roles -------------------------------------------------------------
+// ---- Match: ESCO occupations -> roles ---------------------------------------------------------
 
-export interface ClusterInput {
+export interface MatchInput {
   brief: CourseBrief;
   modules: Module[];
-  postings: JobPosting[];
+  occupations: Occupation[];
 }
 
-export const clusterOutput = z.object({
+export const matchOutput = z.object({
   roles: z.array(z.object({
-    title: z.string().min(2),
-    postingIdx: z.array(z.number().int().nonnegative()).min(1),
-    experience: z.string().optional(),
-    skills: z.array(z.string()).min(1).max(8),
-    moduleMatch: z.number().min(0).max(100),
+    occIdx: z.number().int().nonnegative(),
+    coveredSkillIdx: z.array(z.number().int().nonnegative()),
   })).max(15),
 });
-export type ClusterOutput = z.infer<typeof clusterOutput>;
+export type MatchOutput = z.infer<typeof matchOutput>;
 
-export const roleClusterPrompt: PromptModule<ClusterInput, ClusterOutput> = {
-  id: "roles.cluster",
+export const roleMatchPrompt: PromptModule<MatchInput, MatchOutput> = {
+  id: "roles.match",
   version: "1",
   system: [
-    "You group job postings into distinct job roles for a teacher deciding what a course should prepare learners for.",
-    "Each posting has an index [n]. A role lists the indexes of the postings that belong to it (postingIdx). A posting belongs to at most one role.",
-    "skills: the 3-6 skills most often asked for across that role's postings, using the postings' own words.",
-    "experience: the typical range stated in the postings, e.g. \"2-8 yrs\"; leave it out if the postings do not say.",
-    "moduleMatch: 0-100, how much of what the role asks for the listed modules teach. Be honest; neighbouring roles score low.",
-    "Order roles by number of postings, most first. Skip postings unrelated to the course.",
+    "You pick the occupations a course could prepare learners for, and say which of each occupation's essential skills the modules teach.",
+    "Each occupation has an index [n]; its essential skills are numbered s0, s1, ... A role is {occIdx, coveredSkillIdx}.",
+    "coveredSkillIdx: the skill numbers a module clearly teaches (by title or topics). Be strict: related is not covered.",
+    "Keep occupations a graduate of this course could realistically hold, up to 12. Skip unrelated ones.",
     FACTS_RULES,
     JSON_RULES,
   ].join("\n"),
   user: (i, ctx) => [
     examplesBlock(ctx.examples),
-    context("modules", i.modules.map((m) => `${m.id}: ${m.title}`).join("\n")),
-    context("postings", i.postings.map((p, n) =>
-      `[${n}] ${p.title} | ${p.location} | skills: ${p.skills.join(", ")} | ${clip(p.description.replace(/\s+/g, " "), 280)}`).join("\n")),
-    'Return {"roles":[{"title":"","postingIdx":[0,3],"experience":"2-8 yrs","skills":[""],"moduleMatch":0}]}.',
+    context("course", json({ title: i.brief.title, level: i.brief.level, industry: i.brief.industry })),
+    context("modules", i.modules.map((m) => `${m.id}: ${m.title}${m.topics.length ? ` (${m.topics.join(", ")})` : ""}`).join("\n")),
+    context("occupations", i.occupations.map((o, n) =>
+      `[${n}] ${o.title}: ${clip(o.description.replace(/\s+/g, " "), 200)}\n  essential: ${o.essentialSkills.map((s, k) => `s${k} ${s}`).join("; ")}`).join("\n")),
+    'Return {"roles":[{"occIdx":0,"coveredSkillIdx":[0,3]}]}.',
   ].join("\n"),
-  output: clusterOutput,
+  output: matchOutput,
 };

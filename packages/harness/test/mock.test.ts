@@ -19,7 +19,7 @@ describe("MockStages", () => {
     p.value.outcomes.forEach((o) => Outcome.parse(o));
     const roles = await m.findRoles(course.brief, MODULES);
     roles.value.roles.forEach((r) => JobRole.parse(r));
-    expect(roles.value.postingsRead).toBe(412);
+    expect(roles.value.occupationsRead).toBe(12);
     const fit = await m.proposeFit(course);
     fit.value.forEach((f) => FitChange.parse(f));
     expect(fit.value.some((f) => f.academicConflict)).toBe(true);

@@ -15,7 +15,7 @@ export interface DraftHourPlanInput {
   course: Course;
   plan: LearningPlan;
   session: Session;
-  /** Job-posting evidence from the selected roles, citable by index. */
+  /** Role evidence (ESCO occupation pages) for the selected roles, citable by index. */
   evidence: EvidenceItem[];
 }
 
@@ -44,14 +44,14 @@ export type DraftHourPlanOutput = z.infer<typeof output>;
 
 export const draftHourPlanPrompt: PromptModule<DraftHourPlanInput, DraftHourPlanOutput> = {
   id: "session.hourPlan",
-  version: "2",
+  version: "3",
   system: [
     "You plan one session hour by hour, in timed blocks a teacher can run as written.",
     "Timing rules (checked in code): hours are numbered from 1. Within each hour, blocks start at minute 0 and follow each other with no gaps or overlaps (startMin of the next block = startMin + minutes of the previous one).",
     "Every full hour adds up to exactly 60 minutes; the last hour adds up to the remaining minutes of the session.",
     "Block kinds: hook, teach, activity, case, check, wrap, break. Open with a hook, state the outcomes, end with a wrap. Insert a 10-minute break in sessions over 90 minutes.",
     "activity says what the teacher and the learners do, concretely (materials, prompts, grouping, output).",
-    "Give at least one block an industryExample tied to the selected roles. Cite job-posting evidence by index (evidenceIdx) when you use it. Never name a company or figure that is not in the context.",
+    "Give at least one block an industryExample tied to the selected roles. Cite role evidence by index (evidenceIdx) when you use it. Never name a company or figure that is not in the context.",
     "check: 1-3 quick-check questions on check and wrap blocks. needsSlides: true for teach blocks that need visuals.",
     "outcomeIds may only use the session's course outcomes (LO ids).",
     "sessionOutcomeIds: the session outcomes (SO ids) each block serves. Every SO must be served by at least one block; every block except break and wrap serves at least one SO.",
@@ -74,7 +74,7 @@ export const draftHourPlanPrompt: PromptModule<DraftHourPlanInput, DraftHourPlan
       context("course outcomes for this session", los.map((o) => `${o.id} [${o.bloom}]: ${o.text}`).join("\n")),
       context("session outcomes (SOs)", i.session.sessionOutcomes.map((o) => `${o.id} [${o.bloom}]: ${o.text}`).join("\n") || "(none)"),
       context("selected roles", i.course.roles.filter((r) => r.selected).map((r) => `${r.id}: ${r.title} | ${r.skills.join(", ")}`).join("\n") || "(none)"),
-      context("job-posting evidence", i.evidence.map((e, n) => `[${n}] (${e.roleId}) ${e.title} - ${e.source}`).join("\n") || "(none)"),
+      context("role evidence", i.evidence.map((e, n) => `[${n}] (${e.roleId}) ${e.title} - ${e.source}`).join("\n") || "(none)"),
       context("standards", standardsContext()),
       'Return {"blocks":[{"hour":1,"startMin":0,"minutes":10,"kind":"hook","title":"","activity":"","outcomeIds":["LO1"],"sessionOutcomeIds":["S1.SO1"],"style":"teaching","industryExample":{"text":"","sector":"","roleIds":["r1"],"evidenceIdx":[0]},"check":[""],"needsSlides":false}]}.',
     ].join("\n");

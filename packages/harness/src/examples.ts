@@ -100,7 +100,7 @@ export function renderExample(stage: StageName, c: Course): string | null {
   switch (stage) {
     case "findRoles": {
       if (!c.roles.length) return null;
-      return `${head}\nModules: ${mods(c)}\nRoles: ${JSON.stringify(c.roles.slice(0, 5).map((r) => ({ title: r.title, experience: r.experience, skills: r.skills, moduleMatch: r.moduleMatch })))}`;
+      return `${head}\nModules: ${mods(c)}\nRoles: ${JSON.stringify(c.roles.slice(0, 5).map((r) => ({ title: r.title, skills: r.skills, matchedSkills: r.matchedSkills, moduleMatch: r.moduleMatch })))}`;
     }
     case "proposeFit": {
       if (!c.fit.length) return null;

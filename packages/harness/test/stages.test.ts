@@ -2,14 +2,14 @@ import { describe, expect, it } from "vitest";
 import { Course as CourseSchema, FurtherLink, HourBlock, hourBlockProblems, type Course, type InputFile } from "@cg/core";
 import { OpenRouterStages } from "../src/stages.js";
 import { ExampleStore } from "../src/examples.js";
-import { FixtureJobSource, FixtureLinkSource } from "../src/sources/fixture.js";
+import { FixtureOccupationSource, FixtureLinkSource } from "../src/sources/fixture.js";
 import { aezc517Course, MODULES, MODULE_OUTCOMES, S3_BLOCKS, VIDEOS, PAGES } from "../src/fixtures/aezc517.js";
 import { FIT_RUBRIC, OUTCOMES_RUBRIC } from "../src/prompts/review.js";
 import { ScriptedClient, fixedNow, goodReview, testConfig } from "./helpers.js";
 
 const noExamples = new ExampleStore({ coursesDir: "/nonexistent/courses", inline: [] });
 const make = (client: ScriptedClient, links = new FixtureLinkSource()) =>
-  new OpenRouterStages({ client, config: testConfig, jobs: new FixtureJobSource(), links, examples: noExamples, now: fixedNow });
+  new OpenRouterStages({ client, config: testConfig, roles: new FixtureOccupationSource(), links, examples: noExamples, now: fixedNow });
 
 const draftBlocks = () => S3_BLOCKS.map(({ industryExample, ...b }) => ({
   ...b, ...(industryExample ? { industryExample: { text: industryExample.text, sector: industryExample.sector, roleIds: industryExample.roleIds, evidenceIdx: [0] } } : {}),
@@ -34,9 +34,9 @@ describe("OpenRouterStages", () => {
     expect(hourBlockProblems(r.value, 120)).toEqual([]);
     const ex = r.value.find((b) => b.industryExample)!.industryExample!;
     expect(ex.sources[0]!.url).toBe(course.roles.find((x) => x.selected)!.evidence[0]!.url);
-    expect(r.provenance).toMatchObject({ model: "test/draftHourPlan", promptId: "session.hourPlan", promptVersion: "2", structureVersion: 2 });
+    expect(r.provenance).toMatchObject({ model: "test/draftHourPlan", promptId: "session.hourPlan", promptVersion: "3", structureVersion: 2 });
     // facts supplied: the evidence list is in the prompt
-    expect(c.requests[0]!.messages[1]!.content).toContain("job-posting evidence");
+    expect(c.requests[0]!.messages[1]!.content).toContain("role evidence");
   });
 
   it("draftHourPlan: a timing error triggers one repair", async () => {
@@ -80,24 +80,27 @@ describe("OpenRouterStages", () => {
     expect(r.warnings).toEqual([]);
   });
 
-  it("findRoles: counts postings in code from supplied postings", async () => {
+  it("findRoles: takes titles and skills from ESCO, computes the match in code", async () => {
     const c = new ScriptedClient([
       { keywords: ["systems engineering", "requirements engineering", "battery management system"] },
-      { roles: [{ title: "Requirements Engineer", postingIdx: [0, 1, 1], skills: ["Traceability"], moduleMatch: 80 }, { title: "Ghost", postingIdx: [999], skills: ["x"], moduleMatch: 10 }] },
-      { roles: [{ title: "Requirements Engineer", postingIdx: [0, 1], skills: ["Traceability"], moduleMatch: 80 }] },
+      { roles: [{ occIdx: 0, coveredSkillIdx: [0, 1, 1] }, { occIdx: 999, coveredSkillIdx: [] }] },
+      { roles: [{ occIdx: 0, coveredSkillIdx: [0, 1, 1] }] },
     ]);
     const r = await make(c).findRoles(course.brief, MODULES);
     expect(r.value.keywords).toHaveLength(3);
     expect(r.value.roles).toHaveLength(1);
-    expect(r.value.roles[0]).toMatchObject({ id: "r1", postings: 2, selected: false });
-    expect(r.value.roles[0]!.evidence[0]!.url).toMatch(/^https:\/\/jobs\.example\.org\//);
-    expect(r.value.postingsRead).toBeGreaterThan(0);
+    // Title, skills and match come from the occupation and are computed in code, not by the model.
+    const [occ] = await new FixtureOccupationSource().search({ keywords: r.value.keywords, limit: 30 });
+    expect(r.value.roles[0]).toMatchObject({ id: "r1", title: occ!.title, skills: occ!.essentialSkills, matchedSkills: occ!.essentialSkills.slice(0, 2), selected: false });
+    expect(r.value.roles[0]!.moduleMatch).toBe(Math.round((2 / occ!.essentialSkills.length) * 100));
+    expect(r.value.roles[0]!.evidence[0]!.url).toBe(occ!.url);
+    expect(r.value.occupationsRead).toBeGreaterThan(0);
     expect(r.provenance.costUsd).toBeCloseTo(0.003);
   });
 
   it("proposeFit: validates targets and roles, reviews with the fit rubric", async () => {
     const changes = [
-      { kind: "add", text: "Hazard analysis (HARA) and safety goals", reason: "3 of 4 roles, 241 postings", targetModuleId: "M7", hoursDelta: 2, roleIds: ["r3"] },
+      { kind: "add", text: "Hazard analysis (HARA) and safety goals", reason: "3 of 4 roles need HARA", targetModuleId: "M7", hoursDelta: 2, roleIds: ["r3"] },
       { kind: "trim", text: "Soft-skills content in M1", reason: "Rarely asked for", targetModuleId: "M1", hoursDelta: -2, roleIds: ["r1"], academicConflict: "CO1 requires soft skills" },
     ];
     const c = new ScriptedClient([{ changes }, goodReview(FIT_RUBRIC.criteria.map((x) => x.id))]);

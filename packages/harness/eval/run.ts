@@ -14,7 +14,7 @@ import { OpenRouterStages } from "../src/stages.js";
 import { reviewDraft } from "../src/runner.js";
 import { rollUp } from "../src/checks.js";
 import { checkSessionContent, toCheckInput } from "../src/contentCheck.js";
-import { FixtureJobSource, FixtureLinkSource } from "../src/sources/fixture.js";
+import { FixtureOccupationSource, FixtureLinkSource } from "../src/sources/fixture.js";
 import { ExampleStore } from "../src/examples.js";
 import { FIT_RUBRIC, HOURPLAN_RUBRIC, OUTCOMES_RUBRIC, PLAN_RUBRIC, type Rubric } from "../src/prompts/review.js";
 import { EVAL_COURSES } from "./briefs.js";
@@ -109,7 +109,7 @@ export async function runEval(args: EvalArgs, deps: { client: ChatClient; env?: 
       ...base,
       models: Object.fromEntries(Object.keys(base.models).map((k) => [k, k === "review" ? { primary: args.judge } : { primary: model }])) as HarnessConfig["models"],
     };
-    const stages = new OpenRouterStages({ client: deps.client, config, jobs: new FixtureJobSource(), links: new FixtureLinkSource(), examples });
+    const stages = new OpenRouterStages({ client: deps.client, config, roles: new FixtureOccupationSource(), links: new FixtureLinkSource(), examples });
     for (const c of courses) {
       for (const stage of args.stages) {
         const t0 = Date.now();

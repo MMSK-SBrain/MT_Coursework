@@ -29,14 +29,14 @@ const raw = {
   structureVersion: 1,
   structureConfirmedAt: "2026-11-04T09:10:00Z",
   roles: [
-    { id: "r1", title: "Automotive Systems Engineer", postings: 312, experience: "2-8 yrs", skills: ["Requirements", "V-model", "System architecture"], moduleMatch: 86, selected: true },
-    { id: "r2", title: "Requirements Engineer", postings: 247, experience: "1-6 yrs", skills: ["Polarion / DOORS", "Traceability", "ASPICE SYS.2"], moduleMatch: 81, selected: true },
-    { id: "r6", title: "BMS Systems Engineer", postings: 176, experience: "2-8 yrs", skills: ["SOC / SOH", "Cell monitoring", "Thermal limits"], moduleMatch: 72, selected: true },
-    { id: "r10", title: "Automotive Cybersecurity Engineer", postings: 109, experience: "3-8 yrs", skills: ["ISO/SAE 21434", "TARA"], moduleMatch: 29, selected: false },
+    { id: "r1", title: "Automotive Systems Engineer", skills: ["Requirements", "V-model", "System architecture"], matchedSkills: ["Requirements", "V-model", "System architecture"].slice(0, 2), moduleMatch: 86, selected: true, evidence: [{ title: "ESCO occupation", url: "https://esco.ec.europa.eu/en/classification/occupation_main", source: "esco" }] },
+    { id: "r2", title: "Requirements Engineer", skills: ["Polarion / DOORS", "Traceability", "ASPICE SYS.2"], matchedSkills: ["Polarion / DOORS", "Traceability", "ASPICE SYS.2"].slice(0, 2), moduleMatch: 81, selected: true, evidence: [{ title: "ESCO occupation", url: "https://esco.ec.europa.eu/en/classification/occupation_main", source: "esco" }] },
+    { id: "r6", title: "BMS Systems Engineer", skills: ["SOC / SOH", "Cell monitoring", "Thermal limits"], matchedSkills: ["SOC / SOH", "Cell monitoring", "Thermal limits"].slice(0, 2), moduleMatch: 72, selected: true, evidence: [{ title: "ESCO occupation", url: "https://esco.ec.europa.eu/en/classification/occupation_main", source: "esco" }] },
+    { id: "r10", title: "Automotive Cybersecurity Engineer", skills: ["ISO/SAE 21434", "TARA"], matchedSkills: ["ISO/SAE 21434", "TARA"].slice(0, 2), moduleMatch: 29, selected: false, evidence: [{ title: "ESCO occupation", url: "https://esco.ec.europa.eu/en/classification/occupation_main", source: "esco" }] },
   ],
   fit: [
-    { id: "f3", kind: "strengthen", text: "Hands-on requirements tool lab (Polarion or DOORS)", reason: "M3 is theory only; tools named in 64% of Requirements Engineer postings.", targetModuleId: "M3", hoursDelta: 2, roleIds: ["r2"], decision: "accepted", provenance: prov("fit.propose") },
-    { id: "f4", kind: "add", text: "BMS requirements: cell monitoring, SOC/SOH, thermal derating", reason: "BMS Systems Engineer, 176 postings.", targetModuleId: "M8", hoursDelta: 2, roleIds: ["r6"], decision: "changed", provenance: prov("fit.propose") },
+    { id: "f3", kind: "strengthen", text: "Hands-on requirements tool lab (Polarion or DOORS)", reason: "M3 is theory only; requirements tools are essential for Requirements Engineers.", targetModuleId: "M3", hoursDelta: 2, roleIds: ["r2"], decision: "accepted", provenance: prov("fit.propose") },
+    { id: "f4", kind: "add", text: "BMS requirements: cell monitoring, SOC/SOH, thermal derating", reason: "BMS Systems Engineer: cell monitoring is an essential skill.", targetModuleId: "M8", hoursDelta: 2, roleIds: ["r6"], decision: "changed", provenance: prov("fit.propose") },
     { id: "f6", kind: "trim", text: "Soft-skills content in M1 (4 h to 2 h)", reason: "Kept by default: CO1 in the handout requires it.", targetModuleId: "M1", hoursDelta: -2, roleIds: [], academicConflict: "CO1 requires soft skills", decision: "rejected", provenance: prov("fit.propose") },
   ],
   objectives: [

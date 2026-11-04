@@ -37,7 +37,7 @@ export function applyParsed(course: Course, meta: CourseMeta, p: ParsedInputs, p
 // ---- Stage 2 ------------------------------------------------------------------
 
 export function applyRoles(
-  course: Course, meta: CourseMeta, r: { keywords: string[]; roles: JobRole[]; postingsRead: number }, prov: Provenance,
+  course: Course, meta: CourseMeta, r: { keywords: string[]; roles: JobRole[]; occupationsRead: number }, prov: Provenance,
 ): [Course, CourseMeta] {
   // Keep the teacher's own roles and earlier selections.
   const wasSelected = new Set(course.roles.filter((x) => x.selected).map((x) => x.title.toLowerCase()));
@@ -45,7 +45,7 @@ export function applyRoles(
   const found = r.roles.map((x) => (wasSelected.has(x.title.toLowerCase()) ? { ...x, selected: true } : x));
   return [
     { ...course, roles: [...found, ...own] },
-    { ...meta, keywords: r.keywords, postingsRead: r.postingsRead, provenance: { ...meta.provenance, roles: prov } },
+    { ...meta, keywords: r.keywords, occupationsRead: r.occupationsRead, provenance: { ...meta.provenance, roles: prov } },
   ];
 }
 
@@ -53,7 +53,7 @@ export function addOwnRole(course: Course, title: string): Course {
   const t = title.trim();
   if (!t) return course;
   const id = `u${course.roles.filter((r) => r.addedByUser).length + 1}-${Date.now().toString(36)}`;
-  const role: JobRole = { id, title: t, postings: 0, skills: [], moduleMatch: 0, evidence: [], selected: true, addedByUser: true };
+  const role: JobRole = { id, title: t, skills: [], matchedSkills: [], moduleMatch: 0, evidence: [], selected: true, addedByUser: true };
   return reopenStructure({ ...course, roles: [...course.roles, role] });
 }
 

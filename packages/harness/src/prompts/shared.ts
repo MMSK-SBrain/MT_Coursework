@@ -7,7 +7,7 @@ export const JSON_RULES = [
 ].join("\n");
 
 export const FACTS_RULES = [
-  "Facts are supplied, never recalled. Use only the facts inside <context>: job postings, handout text, search results, standards list.",
+  "Facts are supplied, never recalled. Use only the facts inside <context>: occupation and skill data (ESCO), handout text, search results, standards list.",
   "Do not invent companies, posting counts, statistics, URLs, standard clause numbers or quotes. If a fact you need is not in the context, write around it in general terms.",
 ].join("\n");
 

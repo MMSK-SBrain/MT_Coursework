@@ -29,9 +29,9 @@ export const OUTCOMES_RUBRIC: Rubric = {
 
 export const FIT_RUBRIC: Rubric = {
   id: "rubric.fit",
-  version: "1",
+  version: "2",
   criteria: [
-    { id: "evidence", description: "Each change is justified by the selected roles' skills and posting counts as given; no invented numbers." },
+    { id: "evidence", description: "Each change is justified by the selected roles' ESCO skills (covered or missing) as given; no invented numbers or demand claims." },
     { id: "specific", description: "Change text is a concrete topic or activity, not a generic theme." },
     { id: "targeted", description: "Each change targets the right module and its kind (add/strengthen/trim) fits what the module already teaches." },
     { id: "balance", description: "Hours stay realistic: additions are balanced by trims; the course still fits its contact hours." },

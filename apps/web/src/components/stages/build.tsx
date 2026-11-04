@@ -1,16 +1,14 @@
 "use client";
-import { FREE_TIER, hourBlockProblems, isHttpUrl, sessionOutcomeProblems, VIDEO_BY_PATH, type CaseStudy, type VideoKind } from "@cg/core";
+import { FREE_TIER, hourBlockProblems, sessionOutcomeProblems, VIDEO_BY_PATH, type CaseStudy, type VideoKind } from "@cg/core";
 import { useState } from "react";
 import { MODES, SCENES, sceneSeconds, STYLES, VDESC, VIDEO } from "@/lib/catalog";
 import { updateSession } from "@/lib/course-logic";
 import { freeVideoSecondsLeft } from "@/lib/quota";
 import { useCourse } from "../course-context";
 import { FeedbackWidget } from "../feedback-widget";
-import { Busy, Head, pad2 } from "../ui";
+import { Busy, Head, pad2, safeHref } from "../ui";
 import { PlansStage, RollUp } from "./plans";
 
-// Defense in depth: the schema already rejects non-http(s) URLs.
-const safeHref = (u: string) => (isHttpUrl(u) ? u : "#");
 
 const paidChip = <span className="chip seal">Paid</span>;
 

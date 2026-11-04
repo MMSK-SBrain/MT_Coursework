@@ -4,7 +4,7 @@
 // Exports always come from @cg/exports (markdown, .pptx, .docx).
 import type { Exporter, Stages } from "@cg/core";
 import { exporter } from "@cg/exports";
-import { FixtureJobSource, FixtureLinkSource, MockStages, OpenRouterClient, OpenRouterStages, YouTubeLinkSource, loadConfig } from "@cg/harness";
+import { EscoOccupationSource, FixtureLinkSource, MockStages, OpenRouterClient, OpenRouterStages, YouTubeLinkSource, loadConfig } from "@cg/harness";
 
 let stages: Stages | undefined;
 
@@ -15,8 +15,8 @@ export function createStages(env: Record<string, string | undefined> = process.e
   return new OpenRouterStages({
     client: new OpenRouterClient({ apiKey: env.OPENROUTER_API_KEY, appTitle: "Course Generator" }),
     config: loadConfig(env),
-    // The job-listing source is still an open decision; postings come from the harness fixture until it is chosen.
-    jobs: new FixtureJobSource(),
+    // Roles come from ESCO occupations and their essential skills (public API, no key). No job postings, no demand figures.
+    roles: new EscoOccupationSource(),
     links: env.YOUTUBE_API_KEY ? new YouTubeLinkSource({ apiKey: env.YOUTUBE_API_KEY }) : new FixtureLinkSource(),
   });
 }

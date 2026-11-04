@@ -1,4 +1,4 @@
-import { isHttpUrl, learningOutcomeCoverage, moduleOutcomeCoverage, type Course, type HourBlock, type Session } from "@cg/core";
+import { ESCO_ATTRIBUTION, isHttpUrl, learningOutcomeCoverage, moduleOutcomeCoverage, type Course, type HourBlock, type Session } from "@cg/core";
 import { approvedLinks, blockRange, outcomeText, pad2, sortedBlocks } from "./util.js";
 
 const cell = (s: string) => s.replace(/\|/g, "\\|").replace(/\s*\n\s*/g, " ");
@@ -38,7 +38,10 @@ function readme(course: Course): string {
   const roles = course.roles.filter((r) => r.selected);
   out.push("", "## Target job roles", "");
   if (roles.length) {
-    out.push(table(["Role", "Postings read", "Experience", "Module match", "Key skills"], roles.map((r) => [r.title, String(r.postings), r.experience ?? "", `${r.moduleMatch}%`, r.skills.join(", ")])));
+    out.push(table(["Role", "Module match", "Skills the modules teach", "Skills not covered"], roles.map((r) => [
+      r.evidence[0] ? mdLink(r.title, r.evidence[0].url) : r.title, `${r.moduleMatch}%`, r.matchedSkills.join(", "), r.skills.filter((k) => !r.matchedSkills.includes(k)).join(", "),
+    ])));
+    if (roles.some((r) => r.evidence.some((e) => e.source === "esco"))) out.push("", `_${ESCO_ATTRIBUTION}_`);
   } else out.push("No roles selected.");
   const fit = course.fit.filter((f) => f.decision === "accepted" || f.decision === "changed");
   out.push("", "## Confirmed changes from job-fit review", "");

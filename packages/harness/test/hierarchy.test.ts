@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { Course as CourseSchema, sessionOutcomeProblems } from "@cg/core";
 import { OpenRouterStages } from "../src/stages.js";
 import { ExampleStore } from "../src/examples.js";
-import { FixtureJobSource, FixtureLinkSource } from "../src/sources/fixture.js";
+import { FixtureOccupationSource, FixtureLinkSource } from "../src/sources/fixture.js";
 import { aezc517Course, S3_BLOCKS } from "../src/fixtures/aezc517.js";
 import { scoreVerdicts } from "../src/contentCheck.js";
 import { maxBloomForHours } from "../src/hierarchy.js";
@@ -13,7 +13,7 @@ import { ScriptedClient, fixedNow, testConfig } from "./helpers.js";
 
 const noExamples = new ExampleStore({ coursesDir: "/nonexistent/courses", inline: [] });
 const make = (client: ScriptedClient) =>
-  new OpenRouterStages({ client, config: testConfig, jobs: new FixtureJobSource(), links: new FixtureLinkSource(), examples: noExamples, now: fixedNow });
+  new OpenRouterStages({ client, config: testConfig, roles: new FixtureOccupationSource(), links: new FixtureLinkSource(), examples: noExamples, now: fixedNow });
 
 const draftBlocks = () => S3_BLOCKS.map(({ industryExample: _x, ...b }) => ({ ...b }));
 const allYes = (blocks: { sessionOutcomeIds: string[] }[]) => ({

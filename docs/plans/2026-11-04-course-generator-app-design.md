@@ -26,7 +26,7 @@ A free web utility on the Reynlab website that helps teachers design courses tha
 ## User flow
 
 1. **Inputs.** The teacher uploads a course handout (`.docx`, `.pdf` or `.txt`), a module sheet (`.xlsx`), or both. The app combines them into one module list and flags where they disagree. A course brief (audience, hours, industry, job market) is filled in from the files, and the teacher can edit it.
-2. **Job roles.** A broad search starts from the module keywords. It returns roles with posting counts, skills, experience level and a module-match %. The teacher picks the relevant roles or adds their own.
+2. **Job roles.** A broad search starts from the module keywords. It returns ESCO occupations (European Commission skills classification, attributed) with their essential skills and a module-match % (how many of those skills the modules teach). No job postings are read and no demand figures are shown. The teacher picks the relevant roles or adds their own.
 3. **Course–job fit.** The app compares the modules with the selected roles and proposes changes labelled Add, Strengthen or Trim, each with the reason, target module and hours. The teacher accepts, changes or rejects each one. Changes that conflict with the handout are marked as academic requirements. The teacher then confirms the course structure, which becomes v2.
 4. **Outcomes.** Course objectives and learning outcomes are drafted from the confirmed structure. Each one can be edited inline or given a suggested edit: quick options (raise Bloom level, make it measurable, add industry context, shorten, split, match handout wording) or a free-text instruction. Suggestions are shown next to the original before anything is replaced. The teacher locks outcomes one by one, then freezes the set.
 5. **Learning plans.** One course can have several plans. Each plan has:
@@ -114,7 +114,7 @@ The aim is flagship-level quality from cheap models. The approach:
 
 ## Open decisions
 
-- **Jobs data source.** A job-listing API with India coverage, or a web-search API. No scraping of LinkedIn or Naukri.
+- **Jobs data source.** Decided: ESCO occupations and skills (attributed). Lightcast Open Skills needs a commercial licence; job postings and search-count demand are out for now. Confirm the ESCO licence wording before launch.
 - **Payment provider and pricing for paid items.** Razorpay is the likely choice for India.
 - **Whether saved role selections and fit decisions allow a "market changed since you confirmed" re-check later.**
 - **Hosting:** Vercel plus a separate worker host, or one VPS.

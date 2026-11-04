@@ -3,7 +3,8 @@
 import type { LinkSource, VideoCandidate } from "@cg/core";
 import type { FetchLike } from "../openrouter.js";
 import { checkAlive } from "./alive.js";
-import type { WebSearchProvider } from "./websearch.js";
+/** Any web-search API, for further-learning pages (not jobs). */
+export type WebSearchProvider = (q: { query: string; limit: number }) => Promise<{ title: string; url: string; snippet: string }[]>;
 
 const API = "https://www.googleapis.com/youtube/v3";
 

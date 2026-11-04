@@ -1,6 +1,6 @@
 // Deterministic, network-free data sources for tests and dev.
-import type { JobPosting, JobSource, LinkSource, VideoCandidate } from "@cg/core";
-import { PAGES, POSTINGS, VIDEOS } from "../fixtures/aezc517.js";
+import type { LinkSource, Occupation, OccupationSource, VideoCandidate } from "@cg/core";
+import { OCCUPATIONS, PAGES, VIDEOS } from "../fixtures/aezc517.js";
 
 const words = (s: string) => s.toLowerCase().split(/[^a-z0-9&]+/).filter((w) => w.length > 2);
 
@@ -9,18 +9,15 @@ function score(text: string, query: string[]): number {
   return query.reduce((n, w) => n + (t.has(w) ? 1 : 0), 0);
 }
 
-export class FixtureJobSource implements JobSource {
-  constructor(private readonly postings: JobPosting[] = POSTINGS) {}
+export class FixtureOccupationSource implements OccupationSource {
+  constructor(private readonly occupations: Occupation[] = OCCUPATIONS) {}
 
-  async search(q: { keywords: string[]; markets: string[]; days: number; limit: number }): Promise<JobPosting[]> {
+  async search(q: { keywords: string[]; limit: number }): Promise<Occupation[]> {
     const qw = q.keywords.flatMap(words);
-    const markets = new Set(q.markets.map((m) => m.toLowerCase()));
-    const hits = this.postings
-      .filter((p) => !markets.size || markets.has(p.location.toLowerCase()))
-      .map((p, i) => ({ p, i, s: score(`${p.title} ${p.skills.join(" ")} ${p.description}`, qw) }));
+    const hits = this.occupations.map((o, i) => ({ o, i, s: score(`${o.title} ${o.essentialSkills.join(" ")} ${o.description}`, qw) }));
     // Broad search: keep everything that matches; if nothing does, return all (still deterministic).
     const matched = hits.some((h) => h.s > 0) ? hits.filter((h) => h.s > 0) : hits;
-    return matched.sort((a, b) => b.s - a.s || a.i - b.i).slice(0, q.limit).map((h) => h.p);
+    return matched.sort((a, b) => b.s - a.s || a.i - b.i).slice(0, q.limit).map((h) => h.o);
   }
 }
 

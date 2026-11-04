@@ -184,3 +184,6 @@ export const FREE_TIER = {
   videoSecondsPerMonth: 300,
   paidFeatures: ["caseStudy", "slides", "instructorGuideDocx", "extraVideo", "extraCourse"] as const,
 };
+
+/** Shown wherever ESCO roles or skills appear (UI and exports). */
+export const ESCO_ATTRIBUTION = "Occupations and skills: ESCO classification, European Commission (https://esco.ec.europa.eu).";

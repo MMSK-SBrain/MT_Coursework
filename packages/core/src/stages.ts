@@ -30,7 +30,7 @@ export interface Stages {
   /** Stage 1. Extract brief and modules from a handout and/or a module sheet and merge them. */
   parseInputs(files: InputFile[]): Promise<Generated<ParsedInputs>>;
   /** Stage 2. Broad role search from module keywords. Keywords are returned so the UI can show and edit them. */
-  findRoles(brief: CourseBrief, modules: Module[], keywords?: string[]): Promise<Generated<{ keywords: string[]; roles: JobRole[]; postingsRead: number }>>;
+  findRoles(brief: CourseBrief, modules: Module[], keywords?: string[]): Promise<Generated<{ keywords: string[]; roles: JobRole[]; occupationsRead: number }>>;
   /** Stage 3. Compare modules with the selected roles and propose add/strengthen/trim changes. */
   proposeFit(course: Course): Promise<Generated<FitChange[]>>;
   /** Stage 4. Objectives, course LOs, and the modules with their drafted module outcomes (locked items kept). */
@@ -49,19 +49,20 @@ export interface Stages {
 
 // ---- Data sources the harness depends on (swappable; job source is still an open decision) ----
 
-export interface JobPosting {
+/** An occupation from a skills classification (ESCO). Roles come from these, not from job postings. */
+export interface Occupation {
+  uri: string; // stable classification id
+  url: string; // human-readable page, used as evidence
   title: string;
-  company?: string; // may be withheld
-  location: string;
-  postedAt: string;
-  skills: string[];
   description: string;
-  url: string;
-  source: string; // e.g. "adzuna", "websearch", "fixture"
+  essentialSkills: string[];
+  optionalSkills: string[];
+  source: string; // e.g. "esco", "fixture"
 }
 
-export interface JobSource {
-  search(q: { keywords: string[]; markets: string[]; days: number; limit: number }): Promise<JobPosting[]>;
+export interface OccupationSource {
+  /** Occupations matching any of the keywords, best first, without duplicates. */
+  search(q: { keywords: string[]; limit: number }): Promise<Occupation[]>;
 }
 
 export interface VideoCandidate {

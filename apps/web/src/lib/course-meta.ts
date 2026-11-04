@@ -8,9 +8,9 @@ export const CourseMeta = z.object({
   startMode: z.enum(["handout", "moduleSheet", "both"]).optional(),
   /** Stage 1: gaps found while reading the inputs, e.g. "CO4 and CO5 are empty in the handout". */
   inputGaps: z.array(z.string()).optional(),
-  /** Stage 2: the role-search keywords and how many postings were read. */
+  /** Stage 2: the role-search keywords and how many ESCO occupations were read. */
   keywords: z.array(z.string()).optional(),
-  postingsRead: z.number().optional(),
+  occupationsRead: z.number().optional(),
   /** Stage 3: modules as they were before the first structure confirmation; confirmations re-apply decisions onto these. */
   baseModules: z.array(Module).optional(),
   /** Stage 4: the structure version the current outcome draft was made from. */

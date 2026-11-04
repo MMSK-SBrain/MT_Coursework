@@ -17,7 +17,7 @@ import {
 import { findSession, mergeLocked, sessionShape, type DraftOutcomesValue } from "./stages.js";
 import { deriveModuleOutcomes, deriveSessionOutcomes } from "./hierarchy.js";
 import { parseInputsPrompt } from "./prompts/parseInputs.js";
-import { roleClusterPrompt } from "./prompts/findRoles.js";
+import { roleMatchPrompt } from "./prompts/findRoles.js";
 import { proposeFitPrompt } from "./prompts/proposeFit.js";
 import { draftOutcomesPrompt } from "./prompts/draftOutcomes.js";
 import { suggestOutcomeEditPrompt } from "./prompts/suggestOutcomeEdit.js";
@@ -63,9 +63,9 @@ export class MockStages implements Stages {
   }
 
   async findRoles(_brief: CourseBrief, modules: Module[], keywords?: string[]) {
-    const prov = this.prov(roleClusterPrompt, modules.map((m) => m.id));
+    const prov = this.prov(roleMatchPrompt, modules.map((m) => m.id));
     const roles: JobRole[] = ROLES.map((r) => ({ ...r }));
-    return this.ok({ keywords: keywords?.length ? keywords : KEYWORDS, roles, postingsRead: 412 }, prov);
+    return this.ok({ keywords: keywords?.length ? keywords : KEYWORDS, roles, occupationsRead: ROLES.length }, prov);
   }
 
   async proposeFit(course: Course): Promise<Generated<FitChange[]>> {
@@ -80,7 +80,7 @@ export class MockStages implements Stages {
         id: `f${i + 1}`,
         kind: i === 0 ? "add" : "strengthen",
         text: `${r.skills[0] ?? r.title} applied to ${course.modules[i % course.modules.length]?.title ?? "the course"}`,
-        reason: `${r.title} · ${r.postings} postings ask for ${r.skills.slice(0, 2).join(" and ") || "this skill"}`,
+        reason: `${r.title} needs ${r.skills.filter((k) => !r.matchedSkills.includes(k)).slice(0, 2).join(" and ") || r.skills[0] || "this skill"} (ESCO essential skills)`,
         targetModuleId: course.modules[i % course.modules.length]?.id ?? "new",
         hoursDelta: 1,
         roleIds: [r.id],
@@ -245,7 +245,7 @@ export function mockSuggestion(o: Outcome, ins: EditInstruction): Omit<OutcomeSu
     case "measurable":
       return { proposed: [{ text: `${o.text.replace(/\.$/, "")}, given a real programme document, scored against the session rubric.`, bloom: o.bloom }], reason: "Added a condition and a criterion so it can be assessed." };
     case "industryContext":
-      return { proposed: [{ text: `${o.text.replace(/\.$/, "")}, using templates and tools from an OEM or Tier-1 programme.`, bloom: o.bloom }], reason: "Linked to what the selected roles' postings ask for." };
+      return { proposed: [{ text: `${o.text.replace(/\.$/, "")}, using templates and tools from an OEM or Tier-1 programme.`, bloom: o.bloom }], reason: "Linked to the essential skills of the selected roles." };
     case "shorten": {
       const cut = o.text.split(",")[0]!.replace(/\.$/, "");
       const short = cut.length < o.text.length - 1 ? cut : words.slice(0, Math.max(3, words.length - 3)).join(" ").replace(/\.$/, "");
@@ -295,7 +295,7 @@ export function genericBlocks(minutes: number, outcomeIds: string[], sessionOutc
         sessionOutcomeIds: kind === "break" ? [] : [...sessionOutcomeIds],
         style, check: kind === "check" || kind === "wrap" ? [`What is the one idea from "${title}" you would use at work?`] : [],
         needsSlides: kind === "teach",
-        ...(kind === "teach" && role && h === 1 ? { industryExample: { text: `${role.title} postings ask for ${role.skills.slice(0, 2).join(" and ")}; show where this session's idea appears in that work.`, sector: course.brief.industry, roleIds: [role.id], sources: role.evidence.slice(0, 1).map((e) => ({ title: e.title, url: e.url })) } } : {}),
+        ...(kind === "teach" && role && h === 1 ? { industryExample: { text: `${role.title}s need ${role.skills.slice(0, 2).join(" and ")}; show where this session's idea appears in that work.`, sector: course.brief.industry, roleIds: [role.id], sources: role.evidence.slice(0, 1).map((e) => ({ title: e.title, url: e.url })) } } : {}),
       };
       out.push(b);
       cursor += len;

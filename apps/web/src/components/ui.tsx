@@ -1,5 +1,9 @@
 "use client";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { isHttpUrl } from "@cg/core";
+
+/** Defense in depth: the schema already rejects non-http(s) URLs. */
+export const safeHref = (u: string) => (isHttpUrl(u) ? u : "#");
 
 export function Head({ n, title, children, right }: { n: number | string; title: string; children?: ReactNode; right?: ReactNode }) {
   return (

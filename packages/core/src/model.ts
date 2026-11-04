@@ -76,12 +76,12 @@ export type Module = z.infer<typeof Module>;
 
 export const JobRole = z.object({
   id: Id,
-  title: z.string(),
-  postings: z.number().int().nonnegative(),
-  experience: z.string().optional(), // "2–8 yrs"
-  skills: z.array(z.string()),
-  moduleMatch: z.number().min(0).max(100), // % overlap with the modules
-  evidence: z.array(z.object({ title: z.string(), url: HttpUrl, source: z.string() })).default([]),
+  title: z.string(), // the ESCO occupation's preferred label (or the teacher's own title)
+  description: z.string().optional(),
+  skills: z.array(z.string()), // the occupation's essential skills, as ESCO words them
+  matchedSkills: z.array(z.string()).default([]), // the subset of `skills` the modules teach
+  moduleMatch: z.number().min(0).max(100), // matchedSkills / skills, computed in code
+  evidence: z.array(z.object({ title: z.string(), url: HttpUrl, source: z.string() })).default([]), // the ESCO occupation page
   selected: z.boolean().default(false),
   addedByUser: z.boolean().default(false),
 });

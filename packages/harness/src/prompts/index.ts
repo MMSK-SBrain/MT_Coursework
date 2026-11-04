@@ -1,6 +1,6 @@
 export type { PromptModule, PromptContext } from "./types.js";
 export { parseInputsPrompt } from "./parseInputs.js";
-export { roleKeywordsPrompt, roleClusterPrompt } from "./findRoles.js";
+export { roleKeywordsPrompt, roleMatchPrompt } from "./findRoles.js";
 export { proposeFitPrompt } from "./proposeFit.js";
 export { draftOutcomesPrompt } from "./draftOutcomes.js";
 export { suggestOutcomeEditPrompt } from "./suggestOutcomeEdit.js";
@@ -12,7 +12,7 @@ export { reviewPrompt, rubricScore, OUTCOMES_RUBRIC, FIT_RUBRIC, type Rubric } f
 export { STANDARDS } from "./standards.js";
 
 import { parseInputsPrompt } from "./parseInputs.js";
-import { roleClusterPrompt, roleKeywordsPrompt } from "./findRoles.js";
+import { roleMatchPrompt, roleKeywordsPrompt } from "./findRoles.js";
 import { proposeFitPrompt } from "./proposeFit.js";
 import { draftOutcomesPrompt } from "./draftOutcomes.js";
 import { suggestOutcomeEditPrompt } from "./suggestOutcomeEdit.js";
@@ -25,7 +25,7 @@ import { blockRepairPrompt, contentCheckPrompt } from "./contentCheck.js";
 
 /** Every prompt id -> version, for feedback grouping and change tracking. */
 export const PROMPT_VERSIONS: Record<string, string> = Object.fromEntries(
-  [parseInputsPrompt, roleKeywordsPrompt, roleClusterPrompt, proposeFitPrompt, draftOutcomesPrompt, suggestOutcomeEditPrompt,
+  [parseInputsPrompt, roleKeywordsPrompt, roleMatchPrompt, proposeFitPrompt, draftOutcomesPrompt, suggestOutcomeEditPrompt,
     draftPlanPrompt, draftHourPlanPrompt, findFurtherLearningPrompt, draftCaseStudyPrompt, reviewPrompt, contentCheckPrompt, blockRepairPrompt].map((p) => [p.id, p.version]),
 );
 export { contentCheckPrompt, blockRepairPrompt } from "./contentCheck.js";

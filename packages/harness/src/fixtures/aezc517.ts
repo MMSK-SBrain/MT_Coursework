@@ -2,7 +2,7 @@
 // (coursesmith.html). Used by MockStages, the fixture sources, the inline worked example and tests.
 import {
   Course as CourseSchema,
-  type Course, type CourseBrief, type FitChange, type HourBlock, type JobPosting, type JobRole, type Module,
+  type Course, type CourseBrief, type FitChange, type HourBlock, type Occupation, type JobRole, type Module,
   type ModuleOutcome, type Objective, type Outcome, type Provenance, type SessionOutcome, type VideoCandidate,
 } from "@cg/core";
 import { deriveSessionOutcomes } from "../hierarchy.js";
@@ -62,36 +62,37 @@ export const KEYWORDS = [
   "verification and validation", "HIL / SIL", "DFMEA", "trade study", "battery management system",
 ];
 
-const role = (id: string, title: string, postings: number, moduleMatch: number, experience: string, skills: string[], selected: boolean): JobRole => ({
-  id, title, postings, moduleMatch, experience, skills, selected, addedByUser: false,
-  evidence: [{ title: `${title} (sample posting)`, url: `https://jobs.example.org/aezc517/${id}-1`, source: "fixture" }],
+const role = (id: string, title: string, moduleMatch: number, skills: string[], selected: boolean): JobRole => ({
+  id, title, moduleMatch, skills, selected, addedByUser: false,
+  matchedSkills: skills.slice(0, Math.round((skills.length * moduleMatch) / 100)),
+  evidence: [{ title: `${title} (sample ESCO occupation)`, url: `https://esco.example.org/occupation/aezc517-${id}`, source: "fixture" }],
 });
 
 export const ROLES: JobRole[] = [
-  role("r1", "Automotive Systems Engineer", 312, 86, "2–8 yrs", ["Requirements", "V-model", "System architecture"], true),
-  role("r2", "Requirements Engineer", 247, 81, "1–6 yrs", ["Polarion / DOORS", "Traceability", "ASPICE SYS.2"], true),
-  role("r3", "Functional Safety Engineer (ISO 26262)", 241, 58, "3–10 yrs", ["HARA", "Safety goals", "FMEA / FTA"], true),
-  role("r4", "MBSE / SysML Architect", 133, 74, "5–12 yrs", ["SysML", "Cameo / Capella", "Variant modelling"], false),
-  role("r5", "V&V Engineer (HIL / SIL)", 198, 69, "1–6 yrs", ["Test planning", "dSPACE / NI HIL", "Test automation"], false),
-  role("r6", "BMS Systems Engineer", 176, 72, "2–8 yrs", ["SOC / SOH", "Cell monitoring", "Thermal limits"], true),
-  role("r7", "ECU Integration Engineer", 119, 63, "1–5 yrs", ["CAN / UDS", "Integration testing", "Flashing"], false),
-  role("r8", "ADAS Systems Engineer", 204, 55, "2–8 yrs", ["SOTIF", "Sensor fusion", "Scenario testing"], false),
-  role("r9", "ASPICE Process Consultant", 88, 52, "6–15 yrs", ["ASPICE assessments", "Process improvement"], false),
-  role("r10", "Automotive Cybersecurity Engineer", 109, 29, "3–8 yrs", ["ISO/SAE 21434", "TARA"], false),
-  role("r11", "Product Owner, Vehicle Software", 142, 41, "5–12 yrs", ["Backlog", "SAFe", "Stakeholder management"], false),
-  role("r12", "NPD Programme Engineer", 160, 38, "3–10 yrs", ["Gateways", "APQP", "Risk tracking"], false),
+  role("r1", "Automotive Systems Engineer", 86, ["Requirements", "V-model", "System architecture"], true),
+  role("r2", "Requirements Engineer", 81, ["Polarion / DOORS", "Traceability", "ASPICE SYS.2"], true),
+  role("r3", "Functional Safety Engineer (ISO 26262)", 58, ["HARA", "Safety goals", "FMEA / FTA"], true),
+  role("r4", "MBSE / SysML Architect", 74, ["SysML", "Cameo / Capella", "Variant modelling"], false),
+  role("r5", "V&V Engineer (HIL / SIL)", 69, ["Test planning", "dSPACE / NI HIL", "Test automation"], false),
+  role("r6", "BMS Systems Engineer", 72, ["SOC / SOH", "Cell monitoring", "Thermal limits"], true),
+  role("r7", "ECU Integration Engineer", 63, ["CAN / UDS", "Integration testing", "Flashing"], false),
+  role("r8", "ADAS Systems Engineer", 55, ["SOTIF", "Sensor fusion", "Scenario testing"], false),
+  role("r9", "ASPICE Process Consultant", 52, ["ASPICE assessments", "Process improvement"], false),
+  role("r10", "Automotive Cybersecurity Engineer", 29, ["ISO/SAE 21434", "TARA"], false),
+  role("r11", "Product Owner, Vehicle Software", 41, ["Backlog", "SAFe", "Stakeholder management"], false),
+  role("r12", "NPD Programme Engineer", 38, ["Gateways", "APQP", "Risk tracking"], false),
 ];
 
-/** Two synthetic postings per role, deterministic. */
-export const POSTINGS: JobPosting[] = ROLES.flatMap((r, i) => [0, 1].map((k): JobPosting => ({
+/** One synthetic ESCO-style occupation per role, deterministic. */
+export const OCCUPATIONS: Occupation[] = ROLES.map((r) => ({
+  uri: `fixture:${r.id}`,
+  url: r.evidence[0]!.url,
   title: r.title,
-  location: BRIEF.markets[(i + k) % BRIEF.markets.length]!,
-  postedAt: `2026-10-${String(10 + ((i * 2 + k) % 18)).padStart(2, "0")}`,
-  skills: r.skills,
-  description: `${r.title} (${r.experience}). Work on vehicle programmes with ${r.skills.join(", ")}. Sample posting for tests and dev.`,
-  url: `https://jobs.example.org/aezc517/${r.id}-${k + 1}`,
+  description: `${r.title}: works on vehicle programmes using ${r.skills.join(", ")}. Sample occupation for tests and dev.`,
+  essentialSkills: r.skills,
+  optionalSkills: ["technical documentation", "teamwork principles"],
   source: "fixture",
-})));
+}));
 
 const fit = (id: string, kind: FitChange["kind"], text: string, reason: string, targetModuleId: string, hoursDelta: number, roleIds: string[], academicConflict?: string): FitChange => ({
   id, kind, text, reason, targetModuleId, hoursDelta, roleIds, decision: "pending",
@@ -100,10 +101,10 @@ const fit = (id: string, kind: FitChange["kind"], text: string, reason: string, 
 });
 
 export const FIT: FitChange[] = [
-  fit("f1", "add", "Hazard analysis (HARA) and safety goals under ISO 26262", "Asked for by 3 of 4 selected roles · 241 postings", "M7", 2, ["r1", "r3", "r6"]),
-  fit("f2", "add", "ASPICE SYS.1–SYS.5 work products and how assessors read them", "Requirements Engineer, Systems Engineer · 188 postings", "M2", 1, ["r1", "r2"]),
-  fit("f3", "strengthen", "Hands-on requirements tool lab (Polarion or DOORS)", "M3 is theory only; tools named in 64% of Requirements Engineer postings", "M3", 2, ["r2"]),
-  fit("f4", "add", "BMS requirements: cell monitoring, SOC/SOH, thermal derating", "BMS Systems Engineer · 176 postings", "M8", 2, ["r6"]),
+  fit("f1", "add", "Hazard analysis (HARA) and safety goals under ISO 26262", "Asked for by 3 of 4 selected roles", "M7", 2, ["r1", "r3", "r6"]),
+  fit("f2", "add", "ASPICE SYS.1–SYS.5 work products and how assessors read them", "Requirements Engineer, Systems Engineer", "M2", 1, ["r1", "r2"]),
+  fit("f3", "strengthen", "Hands-on requirements tool lab (Polarion or DOORS)", "M3 is theory only; Requirements Engineer lists requirements tools as essential", "M3", 2, ["r2"]),
+  fit("f4", "add", "BMS requirements: cell monitoring, SOC/SOH, thermal derating", "BMS Systems Engineer", "M8", 2, ["r6"]),
   fit("f5", "strengthen", "HIL test-case design from requirements", "Systems Engineer, BMS Systems Engineer", "M6", 1, ["r1", "r6"]),
   fit("f6", "trim", "Soft-skills content in M1 (4 h → 2 h)", "Rarely asked for by the selected roles. Kept by default: CO1 in the handout requires it.", "M1", -2, ["r1", "r2", "r3", "r6"], "CO1 requires soft skills"),
 ];
@@ -169,7 +170,7 @@ export const S3_OUTCOMES: SessionOutcome[] = [
 export const S3_BLOCKS: Omit<HourBlock, "id" | "provenance">[] = [
   { hour: 1, startMin: 0, minutes: 10, kind: "hook", title: "The pack that must never overheat", activity: "Show the stakeholder need \"The battery shall not overheat\". Ask pairs: how would you test this? Collect answers on the board.", outcomeIds: ["LO2"], sessionOutcomeIds: ["S3.SO1"], style: "worked", check: [], needsSlides: true },
   { hour: 1, startMin: 10, minutes: 25, kind: "teach", title: "From needs to verifiable requirements", activity: "Walk through stakeholder needs -> system requirements -> subsystem requirements for a BMS. Introduce the properties of a good requirement: necessary, unambiguous, verifiable, traceable.", outcomeIds: ["LO2"], sessionOutcomeIds: ["S3.SO1"], style: "worked", check: [], needsSlides: true,
-    industryExample: { text: "Requirements Engineer postings ask for traceability in Polarion or DOORS and ASPICE SYS.2 work products; show how one BMS need becomes three traced system requirements.", sector: "automotive", roleIds: ["r2"], sources: [{ title: "Requirements Engineer (sample posting)", url: "https://jobs.example.org/aezc517/r2-1" }] } },
+    industryExample: { text: "Requirements Engineers need traceability in tools such as Polarion or DOORS and ASPICE SYS.2 work products; show how one BMS need becomes three traced system requirements.", sector: "automotive", roleIds: ["r2"], sources: [{ title: "Requirements Engineer (sample ESCO occupation)", url: "https://esco.example.org/occupation/aezc517-r2" }] } },
   { hour: 1, startMin: 35, minutes: 25, kind: "activity", title: "Rewrite five bad requirements", activity: "Groups of three get five flawed BMS requirements and rewrite each to be verifiable, naming the test that would verify it. Two groups present.", outcomeIds: ["LO2"], sessionOutcomeIds: ["S3.SO2"], style: "worked", check: [], needsSlides: false },
   { hour: 2, startMin: 0, minutes: 10, kind: "break", title: "Break", activity: "Break.", outcomeIds: [], sessionOutcomeIds: [], style: "worked", check: [], needsSlides: false },
   { hour: 2, startMin: 10, minutes: 30, kind: "activity", title: "Trace a need to a test", activity: "Each group takes one stakeholder need, derives two system requirements, and links each to a test case in a shared traceability table.", outcomeIds: ["LO2"], sessionOutcomeIds: ["S3.SO2"], style: "worked", check: [], needsSlides: false },

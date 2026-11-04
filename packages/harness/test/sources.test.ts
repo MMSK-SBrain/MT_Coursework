@@ -1,18 +1,17 @@
 import { describe, expect, it, vi } from "vitest";
-import { FixtureJobSource, FixtureLinkSource } from "../src/sources/fixture.js";
+import { FixtureOccupationSource, FixtureLinkSource } from "../src/sources/fixture.js";
 import { YouTubeLinkSource, parseIsoDuration } from "../src/sources/youtube.js";
-import { WebSearchJobSource, isBlockedDomain } from "../src/sources/websearch.js";
+import { EscoOccupationSource } from "../src/sources/esco.js";
 import { checkAlive, isBlockedAddress, pinnedTransport, safeLookup, type Transport } from "../src/sources/alive.js";
 import { jsonResponse } from "./helpers.js";
 
 describe("fixture sources", () => {
   it("are deterministic", async () => {
-    const j = new FixtureJobSource();
-    const q = { keywords: ["requirements", "traceability"], markets: ["India"], days: 90, limit: 5 };
+    const j = new FixtureOccupationSource();
+    const q = { keywords: ["requirements", "traceability"], limit: 5 };
     const a = await j.search(q);
     expect(a).toEqual(await j.search(q));
-    expect(a.length).toBeGreaterThan(0);
-    expect(a.every((p) => p.location === "India")).toBe(true);
+    expect(a[0]!.title).toBe("Requirements Engineer");
     const l = new FixtureLinkSource();
     expect((await l.youtube({ query: "HIL battery", limit: 1 }))[0]!.title).toMatch(/HIL/);
     expect((await l.youtube({ query: "x", maxDurationSec: 600, limit: 10 })).every((v) => v.durationSec <= 600)).toBe(true);
@@ -53,20 +52,30 @@ describe("YouTubeLinkSource", () => {
   });
 });
 
-describe("WebSearchJobSource (stub)", () => {
-  it("drops LinkedIn and Naukri results", async () => {
-    const provider = vi.fn(async () => [
-      { title: "SE job", url: "https://www.linkedin.com/jobs/1", snippet: "" },
-      { title: "SE job", url: "https://www.naukri.com/job/2", snippet: "" },
-      { title: "SE job", url: "https://careers.example.com/3", snippet: "requirements" },
-    ]);
-    const r = await new WebSearchJobSource(provider).search({ keywords: ["systems engineering"], markets: ["India"], days: 30, limit: 10 });
-    expect(r.map((p) => p.url)).toEqual(["https://careers.example.com/3"]);
-    expect(isBlockedDomain("https://in.linkedin.com/x")).toBe(true);
+describe("EscoOccupationSource", () => {
+  const occ = (n: number) => `http://data.europa.eu/esco/occupation/${n}`;
+  const fetch = vi.fn(async (url: string) => {
+    const u = new URL(url);
+    expect(u.origin + u.pathname).toMatch(/^https:\/\/ec\.europa\.eu\/esco\/api\//);
+    if (u.pathname.endsWith("/search")) {
+      const t = u.searchParams.get("text");
+      const hits = t === "battery" ? [occ(1), occ(2)] : [occ(2), occ(3)];
+      return { ok: true, status: 200, json: async () => ({ _embedded: { results: hits.map((uri) => ({ uri, title: uri })) } }) };
+    }
+    const uri = u.searchParams.get("uri")!;
+    if (uri === occ(3)) return { ok: false, status: 500, json: async () => ({}) };
+    return { ok: true, status: 200, json: async () => ({ title: `occ ${uri.slice(-1)}`, description: { en: { literal: "d" } }, _links: { hasEssentialSkill: [{ title: "battery chemistry" }], hasOptionalSkill: [] } }) };
   });
 
-  it("fails clearly without a provider", async () => {
-    await expect(new WebSearchJobSource().search({ keywords: ["x"], markets: ["India"], days: 30, limit: 1 })).rejects.toThrow(/open decision/);
+  it("interleaves keywords, dedupes, drops failed lookups and caches details", async () => {
+    const s = new EscoOccupationSource({ fetch });
+    const r = await s.search({ keywords: ["battery", "test"], limit: 10 });
+    expect(r.map((o) => o.title)).toEqual(["occ 1", "occ 2"]); // occ 3 failed
+    expect(r[0]).toMatchObject({ essentialSkills: ["battery chemistry"], source: "esco" });
+    expect(r[0]!.url).toMatch(/^https:\/\/esco\.ec\.europa\.eu\/en\/classification\/occupation\?uri=/);
+    const calls = fetch.mock.calls.length;
+    await s.search({ keywords: ["battery"], limit: 10 });
+    expect(fetch.mock.calls.length).toBe(calls + 1); // only the search call; details came from the cache
   });
 });
 
