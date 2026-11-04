@@ -44,15 +44,18 @@ export type DraftHourPlanOutput = z.infer<typeof output>;
 
 export const draftHourPlanPrompt: PromptModule<DraftHourPlanInput, DraftHourPlanOutput> = {
   id: "session.hourPlan",
-  version: "3",
+  version: "4",
   system: [
     "You plan one session hour by hour, in timed blocks a teacher can run as written.",
     "Timing rules (checked in code): hours are numbered from 1. Within each hour, blocks start at minute 0 and follow each other with no gaps or overlaps (startMin of the next block = startMin + minutes of the previous one).",
     "Every full hour adds up to exactly 60 minutes; the last hour adds up to the remaining minutes of the session.",
-    "Block kinds: hook, teach, activity, case, check, wrap, break. Open with a hook, state the outcomes, end with a wrap. Insert a 10-minute break in sessions over 90 minutes.",
+    "Block kinds: hook, teach, activity, case, check, wrap, break. Open with a hook, state the outcomes, end with a wrap. Insert one break block with minutes: 10 in sessions over 90 minutes.",
+    "Any duration written inside a block's title or activity must agree with that block's minutes. Prefer not to restate durations at all.",
+    "For an apply-level (or higher) SO, follow the worked example with a short individual practice block before any group task, so each learner tries it alone first.",
     "activity says what the teacher and the learners do, concretely (materials, prompts, grouping, output).",
     "Give at least one block an industryExample tied to the selected roles. Cite role evidence by index (evidenceIdx) when you use it. Never name a company or figure that is not in the context.",
-    "check: 1-3 quick-check questions on check and wrap blocks. needsSlides: true for teach blocks that need visuals.",
+    "check: 1-3 quick-check questions on check and wrap blocks. Write each as \"Question? Expected: <model answer or marking point>\" so the check is diagnostic. needsSlides: true for teach blocks that need visuals.",
+    "Activity text is read by teachers and learners: never paste index tags such as [0] or role ids into it; say the idea in plain words.",
     "outcomeIds may only use the session's course outcomes (LO ids).",
     "sessionOutcomeIds: the session outcomes (SO ids) each block serves. Every SO must be served by at least one block; every block except break and wrap serves at least one SO.",
     "The content of a block must actually let a learner achieve the SOs it names, at their Bloom level: an apply-level SO needs practice, not just explanation. A reviewer checks this block by block.",

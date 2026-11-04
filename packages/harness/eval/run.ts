@@ -43,6 +43,10 @@ export interface EvalRow {
   loRollup: number | null;
   ruleWarnings: number;
   warnings: string[];
+  /** The judge's issues, for reading why a score is low. */
+  issues: string[];
+  /** The stage output itself, for human review. */
+  output?: unknown;
   calls: number;
   costUsd: number;
   judgeCostUsd: number;
@@ -137,11 +141,12 @@ export async function runEval(args: EvalArgs, deps: { client: ChatClient; env?: 
       for (const stage of args.stages) {
         if (deps.stop?.()) { log(`eval: stopping, spending cap of $${args.maxUsd} reached`); return rows; }
         const t0 = Date.now();
-        const row: EvalRow = { brief: c.id, stage, model, ok: false, rubricScore: null, soFulfilment: null, contentScore: null, moRollup: null, loRollup: null, ruleWarnings: 0, warnings: [], calls: 0, costUsd: 0, judgeCostUsd: 0, latencyMs: 0 };
+        const row: EvalRow = { brief: c.id, stage, model, ok: false, rubricScore: null, soFulfilment: null, contentScore: null, moRollup: null, loRollup: null, ruleWarnings: 0, warnings: [], issues: [], calls: 0, costUsd: 0, judgeCostUsd: 0, latencyMs: 0 };
         try {
           const { r, course } = await runOne(stages, stage, c);
           row.latencyMs = Date.now() - t0;
           row.ok = true;
+          row.output = r.value;
           row.warnings = r.warnings;
           row.ruleWarnings = r.warnings.length;
           row.costUsd = r.provenance.costUsd;
@@ -163,9 +168,12 @@ export async function runEval(args: EvalArgs, deps: { client: ChatClient; env?: 
           }
           const rubric = RUBRICS[stage];
           if (rubric) {
-            const ctx = `Course: ${course.brief.title} (${course.brief.level}, ${course.brief.contactHours} h)\nModules: ${course.modules.map((m) => `${m.id} ${m.title}`).join("; ")}\nOutcomes: ${course.outcomes.map((o) => `${o.id} ${o.text}`).join("; ")}\nRoles: ${course.roles.filter((x) => x.selected).map((x) => x.title).join("; ")}`;
+            // Judge against the facts the model was given, so grounded content is not marked as invented.
+            const facts = stages.lastTrace.get(stage as StageName)?.facts;
+            const ctx = facts ?? `Course: ${course.brief.title} (${course.brief.level}, ${course.brief.contactHours} h)\nModules: ${course.modules.map((m) => `${m.id} ${m.title}`).join("; ")}\nOutcomes: ${course.outcomes.map((o) => `${o.id} ${o.text}`).join("; ")}\nRoles: ${course.roles.filter((x) => x.selected).map((x) => x.title).join("; ")}`;
             const review = await reviewDraft(rubric, ctx, r.value, { client: deps.client, config });
             row.rubricScore = Math.round(review.score * 100) / 100;
+            row.issues = review.issues;
             row.judgeCostUsd += review.costUsd;
           }
         } catch (e) {

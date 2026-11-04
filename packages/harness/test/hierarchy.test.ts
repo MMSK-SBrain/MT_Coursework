@@ -115,3 +115,15 @@ describe("module outcome checks", () => {
     expect(p).toContain("learning outcome(s) LO2 are served by no module outcome");
   });
 });
+
+describe("plan text checks", () => {
+  it("flags durations longer than the block and 'no conflict' in academicConflict", async () => {
+    const { hourPlanProblems, fitProblems } = await import("../src/checks.js");
+    const b = { hour: 1, startMin: 0, minutes: 5, title: "Break", activity: "A 10-minute break.", outcomeIds: ["LO1"] };
+    expect(hourPlanProblems([b], 5, ["LO1"]).some((x) => /says 10 minutes/.test(x))).toBe(true);
+    expect(hourPlanProblems([{ ...b, activity: "Take a 5 min break." }], 5, ["LO1"]).some((x) => /says/.test(x))).toBe(false);
+    const ch = { kind: "add" as const, targetModuleId: "M1", hoursDelta: 1, roleIds: ["r1"], academicConflict: "No conflict: LO1 is unaffected." };
+    expect(fitProblems([ch], [{ id: "M1" } as never], ["r1"], 30).some((x) => /academicConflict/.test(x))).toBe(true);
+    expect(fitProblems([{ ...ch, academicConflict: "LO2 requires knock diagnosis" }], [{ id: "M1" } as never], ["r1"], 30).some((x) => /academicConflict/.test(x))).toBe(false);
+  });
+});

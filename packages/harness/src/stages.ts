@@ -208,7 +208,7 @@ export class OpenRouterStages implements Stages {
       input: { course, roles },
       builtFrom: [...roles.map((x) => x.id), ...course.modules.map((m) => m.id)],
       rules: (d) => fitProblems(d.changes, course.modules, roles.map((x) => x.id), course.brief.contactHours),
-      rubric: { rubric: FIT_RUBRIC, contextText: fitContext(course, roles) },
+      rubric: { rubric: FIT_RUBRIC },
     }, course);
     const value = r.value.changes.map((c, i) => FitChangeSchema.parse({
       ...c, id: `f${i + 1}`, decision: "pending",
@@ -240,7 +240,7 @@ export class OpenRouterStages implements Stages {
         }
         return p;
       },
-      rubric: { rubric: OUTCOMES_RUBRIC, contextText: outcomesContext(course) },
+      rubric: { rubric: OUTCOMES_RUBRIC },
     }, course);
     const prov = { ...r.provenance, structureVersion: course.structureVersion };
     const objectives = mergeLocked(
@@ -554,21 +554,3 @@ export function mergeLocked<T extends { id: string; text: string; locked: boolea
   return out.sort((a, b) => num(a.id) - num(b.id));
 }
 
-function outcomesContext(c: Course): string {
-  return [
-    `Course: ${c.brief.title} (${c.brief.level}; ${c.brief.audience}; ${c.brief.contactHours} h; ${c.brief.industry})`,
-    `Modules: ${c.modules.map((m) => `${m.id} ${m.title}`).join("; ")}`,
-    `Selected roles: ${c.roles.filter((r) => r.selected).map((r) => `${r.id} ${r.title} (${r.skills.join(", ")})`).join("; ") || "none"}`,
-    `Accepted fit changes: ${c.fit.filter((f) => f.decision === "accepted" || f.decision === "changed").map((f) => `${f.kind} ${f.text}`).join("; ") || "none"}`,
-    `Locked outcomes: ${c.outcomes.filter((o) => o.locked).map((o) => o.id).join(", ") || "none"}`,
-  ].join("\n");
-}
-
-function fitContext(c: Course, roles: JobRole[]): string {
-  return [
-    `Course: ${c.brief.title} (${c.brief.contactHours} contact hours)`,
-    `Modules: ${c.modules.map((m) => `${m.id} ${m.title} (${m.hours} h)`).join("; ")}`,
-    `Handout objectives: ${c.objectives.map((o) => `${o.id} ${o.text}`).join("; ") || "none"}`,
-    `Selected roles: ${roles.map((r) => `${r.id} ${r.title}, match ${r.moduleMatch}%, missing ${r.skills.filter((k) => !r.matchedSkills.includes(k)).join(", ") || "none"}`).join("; ")}`,
-  ].join("\n");
-}

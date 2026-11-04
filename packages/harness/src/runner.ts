@@ -21,6 +21,8 @@ export interface StageTrace {
   ruleProblemsBefore: string[];
   ruleRepair: "none" | "accepted" | "rejected";
   rubric?: { id: string; score: number; issues: string[]; repaired: boolean };
+  /** The facts the model was given (its user prompt without worked examples). Reviewers judge against these. */
+  facts: string;
 }
 
 export interface StageResult<T> extends Generated<T> {
@@ -37,8 +39,8 @@ export interface StageCall<I, O> {
   rules?: (o: O) => string[];
   /** Checks that only warn (never trigger a repair), e.g. verbatim handout outcomes. */
   advisories?: (o: O) => string[];
-  /** Rubric review for high-stakes stages. */
-  rubric?: { rubric: Rubric; contextText: string };
+  /** Rubric review for high-stakes stages. The reviewer sees the same facts the model saw unless contextText is given. */
+  rubric?: { rubric: Rubric; contextText?: string };
 }
 
 export class StageValidationError extends Error {
@@ -106,6 +108,7 @@ export async function runStage<I, O>(call: StageCall<I, O>, deps: RunnerDeps): P
   const meter = new Meter();
   const chatOpts = { temperature: config.temperature, maxTokens: config.maxTokens, json: config.jsonMode };
   const p = call.prompt;
+  const facts = p.user(call.input, { examples: "" });
   const base: ChatMessage[] = [
     { role: "system", content: p.system },
     { role: "user", content: p.user(call.input, { examples: call.examples ?? "" }) },
@@ -163,7 +166,7 @@ export async function runStage<I, O>(call: StageCall<I, O>, deps: RunnerDeps): P
   const warnings: string[] = [];
   let rubricTrace: StageTrace["rubric"];
   if (call.rubric) {
-    const review = await reviewDraft(call.rubric.rubric, call.rubric.contextText, value, deps, meter);
+    const review = await reviewDraft(call.rubric.rubric, call.rubric.contextText ?? facts, value, deps, meter);
     rubricTrace = { id: call.rubric.rubric.id, score: review.score, issues: review.issues, repaired: false };
     if (review.score < config.rubricThreshold) {
       const issues = review.issues.length ? review.issues : ["The reviewer scored this draft below the quality bar; improve it against the rubric."];
@@ -196,6 +199,7 @@ export async function runStage<I, O>(call: StageCall<I, O>, deps: RunnerDeps): P
       ruleProblemsBefore: problemsBefore,
       ruleRepair,
       ...(rubricTrace ? { rubric: rubricTrace } : {}),
+      facts,
     },
   };
 }

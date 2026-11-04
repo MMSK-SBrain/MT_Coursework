@@ -40,7 +40,7 @@ export function outcomeSetProblems(
 }
 
 export function fitProblems(
-  changes: { kind: "add" | "strengthen" | "trim"; targetModuleId: string; hoursDelta: number; roleIds: string[] }[],
+  changes: { kind: "add" | "strengthen" | "trim"; targetModuleId: string; hoursDelta: number; roleIds: string[]; academicConflict?: string }[],
   modules: Module[],
   roleIds: string[],
   contactHours: number,
@@ -57,6 +57,8 @@ export function fitProblems(
     const bad = c.roleIds.filter((r) => !roles.has(r));
     if (bad.length) p.push(`${n} names unselected or unknown role(s) ${bad.join(", ")}`);
     if (!c.roleIds.length) p.push(`${n} is not linked to any selected role`);
+    if (c.academicConflict && /\b(no|not an?|without)\s+(academic\s+)?conflict|does not conflict|doesn't conflict/i.test(c.academicConflict))
+      p.push(`${n} writes "${c.academicConflict.slice(0, 60)}" in academicConflict; leave the field out when there is no conflict`);
   });
   const net = changes.reduce((a, c) => a + c.hoursDelta, 0);
   if (Math.abs(net) > 0.1 * contactHours) p.push(`net hours change is ${net} h, more than 10% of the ${contactHours} contact hours`);
@@ -81,10 +83,16 @@ export function planProblems(
   return p;
 }
 
-export function hourPlanProblems(blocks: Pick<HourBlock, "hour" | "startMin" | "minutes" | "title" | "outcomeIds">[], sessionMinutes: number, sessionOutcomeIds: string[]): string[] {
+export function hourPlanProblems(blocks: Pick<HourBlock, "hour" | "startMin" | "minutes" | "title" | "outcomeIds" | "activity">[], sessionMinutes: number, sessionOutcomeIds: string[]): string[] {
   const p = hourBlockProblems(blocks as HourBlock[], sessionMinutes);
   const allowed = new Set(sessionOutcomeIds);
   blocks.forEach((b) => {
+    // A stated duration longer than the block itself ("10-minute break" in a 5-minute block) can't be run as written.
+    // ponytail: only catches over-long durations; sums of sub-steps are left to the reviewer.
+    for (const m of `${b.title} ${b.activity}`.matchAll(/\b(\d{1,3})\s*(?:-|–)?\s*(?:min|mins|minutes|minute)\b/gi)) {
+      const n = Number(m[1]);
+      if (n > b.minutes) { p.push(`block "${b.title}" is ${b.minutes} min but its text says ${n} minutes`); break; }
+    }
     const bad = b.outcomeIds.filter((o) => !allowed.has(o));
     if (bad.length) p.push(`block "${b.title}" names outcome(s) ${bad.join(", ")} that this session does not teach`);
   });

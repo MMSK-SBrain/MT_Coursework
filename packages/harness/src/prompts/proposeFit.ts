@@ -24,7 +24,7 @@ export type ProposeFitOutput = z.infer<typeof output>;
 
 export const proposeFitPrompt: PromptModule<ProposeFitInput, ProposeFitOutput> = {
   id: "fit.propose",
-  version: "2",
+  version: "3",
   system: [
     "You are a curriculum designer comparing a course with the job roles a teacher selected.",
     "Propose 3-8 changes, each one of:",
@@ -33,7 +33,11 @@ export const proposeFitPrompt: PromptModule<ProposeFitInput, ProposeFitOutput> =
     "- trim: content the selected roles rarely ask for (hoursDelta < 0)",
     "Every change names its target module id (or \"new\"), the role ids that ask for it, and a reason that cites the role evidence given (the ESCO skills a role needs that the modules miss). Do not invent numbers or demand figures.",
     "Keep the course within its contact hours: additions should be roughly balanced by trims; net hoursDelta should stay within 10% of the contact hours.",
-    "Academic requirements: if a change contradicts the handout's objectives or outcomes (e.g. trimming content an objective requires), set academicConflict explaining which objective, e.g. \"CO1 requires soft skills\". Do not drop such content silently.",
+    "Academic requirements: if a change contradicts a handout objective or outcome (e.g. trimming content it requires), set academicConflict naming that id and why, e.g. \"LO2 requires knock diagnosis from pressure data\". Do not drop such content silently.",
+    "Leave academicConflict out entirely when there is no conflict. Never write \"no conflict\" or a justification there.",
+    "Refer only to objective and outcome ids that appear in the context.",
+    "Order changes by importance: changes that close missing essential skills for the most selected roles first, other additions and strengthens next, trims last (least harmful trim first). Do not duplicate a change.",
+    "Use add for content no module teaches yet and strengthen for content a module already teaches; the reason must not claim a module teaches something unless its title or topics say so.",
     "Write change text as a short, specific topic (\"Hazard analysis (HARA) and safety goals under ISO 26262\"), not a generic theme.",
     "Only name standards from the standards list.",
     FACTS_RULES,

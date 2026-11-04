@@ -34,7 +34,7 @@ describe("OpenRouterStages", () => {
     expect(hourBlockProblems(r.value, 120)).toEqual([]);
     const ex = r.value.find((b) => b.industryExample)!.industryExample!;
     expect(ex.sources[0]!.url).toBe(course.roles.find((x) => x.selected)!.evidence[0]!.url);
-    expect(r.provenance).toMatchObject({ model: "test/draftHourPlan", promptId: "session.hourPlan", promptVersion: "3", structureVersion: 2 });
+    expect(r.provenance).toMatchObject({ model: "test/draftHourPlan", promptId: "session.hourPlan", promptVersion: "4", structureVersion: 2 });
     // facts supplied: the evidence list is in the prompt
     expect(c.requests[0]!.messages[1]!.content).toContain("role evidence");
   });

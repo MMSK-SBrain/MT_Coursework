@@ -31,7 +31,7 @@ export type DraftOutcomesOutput = z.infer<typeof output>;
 
 export const draftOutcomesPrompt: PromptModule<DraftOutcomesInput, DraftOutcomesOutput> = {
   id: "outcomes.draft",
-  version: "2",
+  version: "3",
   system: [
     "You write the outcome hierarchy for a confirmed course structure: course objectives (COs), course learning outcomes (LOs) and module outcomes (MOs).",
     "Objectives: 2-5 broad statements of what the course develops. LOs: 4-10 specific, assessable statements.",
@@ -40,7 +40,9 @@ export const draftOutcomesPrompt: PromptModule<DraftOutcomesInput, DraftOutcomes
     "Items marked LOCKED (objectives, outcomes or module outcomes) must be returned unchanged, with the same id and text.",
     "Every module must be covered by at least one outcome (moduleIds). Every outcome links to at least one objective (objectiveIds) and, where relevant, to the job roles (roleIds) it serves.",
     "origin: \"handout\" if it keeps a handout outcome's intent, \"fit\" if it comes from an accepted course-job fit change, \"new\" otherwise.",
-    "One outcome = one verb + one object (+ condition or standard). No \"and\" chains of unrelated skills.",
+    "One outcome = one verb + one object (+ condition or standard). No \"and\" chains, and no lists of several variables or methods in one outcome; split them or pick the one that matters. Aim for 6-8 LOs.",
+    "Handout outcomes carry the academic requirement: keep each one's intent in some LO (same skill, same or higher Bloom level), even when you reword it.",
+    "Name a tool, method or standard only if it appears in the context (roles' skills, fit changes, standards list, handout); otherwise describe it generically.",
     "Industry context is welcome when it comes from the roles or fit changes given (\"using a requirements tool\", \"following ISO 26262 Part 3\"). Name only standards from the standards list.",
     BLOOM_GUIDE,
     DESIGN_PRINCIPLES,
