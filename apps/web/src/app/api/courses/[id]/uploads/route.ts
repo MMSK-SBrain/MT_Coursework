@@ -32,6 +32,7 @@ export const POST = route(async (req: Request, { params }: Ctx) => {
   await putFile(storageKey, new Uint8Array(await file.arrayBuffer()));
   await db().insert(schema.uploads).values({ storageKey, ownerId: u.id, courseId: course.id, filename: file.name, mime: file.type || "application/octet-stream", bytes: file.size });
   const src: SourceFile = { id: fileId, kind, filename: file.name, mime: file.type || "application/octet-stream", storageKey };
-  const next = await saveCourse(u.id, course, { ...course, sources: [...course.sources.filter((s) => s.kind !== kind), src] }, meta);
+  // The only place sources change: saveCourse ignores `sources` from anywhere else.
+  const next = await saveCourse(u.id, course, course, meta, { sources: [...course.sources.filter((s) => s.kind !== kind), src] });
   return NextResponse.json({ course: next, meta, size: file.size });
 });

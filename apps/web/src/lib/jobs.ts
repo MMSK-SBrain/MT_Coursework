@@ -4,6 +4,9 @@ import { eq, sql } from "drizzle-orm";
 import { db, schema } from "./db";
 import { runJob } from "./job-handlers";
 import type { JobRequest } from "./job-types";
+import type { Exec } from "./repo";
+import { HttpError } from "./errors";
+import { NotAvailableError } from "./mock-exporter";
 
 const { jobs } = schema;
 export type JobRow = typeof jobs.$inferSelect;
@@ -11,11 +14,21 @@ export type JobRow = typeof jobs.$inferSelect;
 export const inlineJobs = () =>
   process.env.INLINE_JOBS === "1" || (process.env.INLINE_JOBS === undefined && process.env.NODE_ENV !== "production");
 
-export async function enqueue(userId: string, courseId: string, req: JobRequest): Promise<string> {
+/** Insert a job row (optionally inside a caller's transaction). Call kick() after the transaction commits. */
+export async function insertJob(x: Exec, userId: string, courseId: string, req: JobRequest): Promise<string> {
   const { type, ...payload } = req;
-  const [row] = await db().insert(jobs).values({ type, userId, courseId, payload }).returning({ id: jobs.id });
-  if (inlineJobs()) void drain();
+  const [row] = await x.insert(jobs).values({ type, userId, courseId, payload }).returning({ id: jobs.id });
   return row!.id;
+}
+
+export function kick(): void {
+  if (inlineJobs()) void drain();
+}
+
+export async function enqueue(userId: string, courseId: string, req: JobRequest): Promise<string> {
+  const id = await insertJob(db(), userId, courseId, req);
+  kick();
+  return id;
 }
 
 /** Claim the oldest runnable job, or null. */
@@ -30,14 +43,19 @@ export async function claimNext(): Promise<JobRow | null> {
   return (await db().query.jobs.findFirst({ where: eq(jobs.id, id) })) ?? null;
 }
 
+/** The job's `error` is shown to the teacher: only messages meant for them, otherwise a generic one with the job id. */
+export function publicJobError(e: unknown, jobId: string): string {
+  if (e instanceof HttpError || e instanceof NotAvailableError) return e.message;
+  return `Generation failed. Reference: ${jobId}`;
+}
+
 export async function processJob(job: JobRow): Promise<void> {
   try {
     const result = await runJob(job);
     await db().update(jobs).set({ status: "done", result: result ?? null, finishedAt: new Date(), error: null }).where(eq(jobs.id, job.id));
   } catch (e) {
-    const msg = e instanceof Error ? e.message : String(e);
-    console.error(`[jobs] ${job.type} ${job.id} failed: ${msg}`);
-    await db().update(jobs).set({ status: "failed", error: msg, finishedAt: new Date() }).where(eq(jobs.id, job.id));
+    console.error(`[jobs] ${job.type} ${job.id} failed`, e);
+    await db().update(jobs).set({ status: "failed", error: publicJobError(e, job.id), finishedAt: new Date() }).where(eq(jobs.id, job.id));
   }
 }
 
