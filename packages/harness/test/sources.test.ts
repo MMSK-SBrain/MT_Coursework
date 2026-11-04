@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { FixtureJobSource, FixtureLinkSource } from "../src/sources/fixture.js";
 import { YouTubeLinkSource, parseIsoDuration } from "../src/sources/youtube.js";
 import { WebSearchJobSource, isBlockedDomain } from "../src/sources/websearch.js";
-import { checkAlive, isBlockedAddress } from "../src/sources/alive.js";
+import { checkAlive, isBlockedAddress, pinnedTransport, safeLookup, type Transport } from "../src/sources/alive.js";
 import { jsonResponse } from "./helpers.js";
 
 describe("fixture sources", () => {
@@ -71,32 +71,42 @@ describe("WebSearchJobSource (stub)", () => {
 });
 
 describe("checkAlive", () => {
-  const pub = async () => [{ address: "93.184.216.34", family: 4 }];
+  const ok: Transport = async () => ({ status: 200, location: null });
   it("uses HEAD, falls back to GET on 405, and treats errors as dead", async () => {
-    expect(await checkAlive("https://a.example", { lookup: pub, fetch: async () => new Response(null, { status: 200 }) })).toBe(true);
-    const f = vi.fn().mockResolvedValueOnce(new Response(null, { status: 405 })).mockResolvedValueOnce(new Response("ok", { status: 200 }));
-    expect(await checkAlive("https://b.example", { lookup: pub, fetch: f })).toBe(true);
-    expect(f.mock.calls.map((c) => (c[1] as RequestInit).method)).toEqual(["HEAD", "GET"]);
-    expect(await checkAlive("https://c.example", { lookup: pub, fetch: async () => new Response(null, { status: 404 }) })).toBe(false);
-    expect(await checkAlive("https://d.example", { lookup: pub, fetch: async () => { throw new Error("timeout"); } })).toBe(false);
+    expect(await checkAlive("https://a.example", { transport: ok })).toBe(true);
+    const t = vi.fn<Transport>().mockResolvedValueOnce({ status: 405, location: null }).mockResolvedValueOnce({ status: 200, location: null });
+    expect(await checkAlive("https://b.example", { transport: t })).toBe(true);
+    expect(t.mock.calls.map((c) => c[1])).toEqual(["HEAD", "GET"]);
+    expect(await checkAlive("https://c.example", { transport: async () => ({ status: 404, location: null }) })).toBe(false);
+    expect(await checkAlive("https://d.example", { transport: async () => { throw new Error("timeout"); } })).toBe(false);
     expect(await checkAlive("not a url")).toBe(false);
   });
 
-  it("refuses internal hosts, unsafe schemes and redirects into internal hosts", async () => {
-    const ok = vi.fn(async () => new Response(null, { status: 200 }));
-    expect(await checkAlive("http://169.254.169.254/latest/meta-data", { fetch: ok })).toBe(false);
-    expect(await checkAlive("http://127.0.0.1:5432", { fetch: ok })).toBe(false);
-    expect(await checkAlive("http://[::1]/", { fetch: ok })).toBe(false);
-    expect(await checkAlive("javascript:alert(1)", { fetch: ok })).toBe(false);
-    expect(await checkAlive("https://internal.example", { lookup: async () => [{ address: "10.0.0.5", family: 4 }], fetch: ok })).toBe(false);
-    expect(ok).not.toHaveBeenCalled();
-    const redirect = vi.fn(async () => new Response(null, { status: 302, headers: { location: "http://192.168.1.1/admin" } }));
-    expect(await checkAlive("https://e.example", { lookup: async (h) => (h === "e.example" ? pub() : [{ address: h, family: 4 }]), fetch: redirect })).toBe(false);
+  it("refuses internal IP literals in every spelling, unsafe schemes, and redirects into internal hosts", async () => {
+    const spy = vi.fn(ok);
+    for (const u of ["http://169.254.169.254/latest/meta-data", "http://127.0.0.1:5432", "http://[::1]/", "http://[::ffff:127.0.0.1]/",
+      "http://[::ffff:7f00:1]/", "http://[64:ff9b::a9fe:a9fe]/", "http://[2002:7f00:1::]/", "http://0.0.0.0/", "javascript:alert(1)"]) {
+      expect(await checkAlive(u, { transport: spy }), u).toBe(false);
+    }
+    expect(spy).not.toHaveBeenCalled();
+    const redirect = vi.fn<Transport>(async () => ({ status: 302, location: "http://192.168.1.1/admin" }));
+    expect(await checkAlive("https://e.example", { transport: redirect })).toBe(false);
     expect(redirect).toHaveBeenCalledTimes(1);
   });
 
+  it("checks resolved addresses at connect time", async () => {
+    const lookup = (addr: string) => safeLookup((_h, cb) => cb(null, [{ address: addr, family: addr.includes(":") ? 6 : 4 }]));
+    const run = (addr: string) => new Promise<unknown>((res) => lookup(addr)("x.example", {}, (err: unknown) => res(err)));
+    expect(await run("10.0.0.5")).toMatchObject({ code: "EBLOCKED" });
+    expect(await run("::ffff:a9fe:a9fe")).toMatchObject({ code: "EBLOCKED" });
+    expect(await run("93.184.216.34")).toBeNull();
+    // The real transport refuses a loopback literal without opening a socket.
+    await expect(pinnedTransport("http://127.0.0.1:9/", "HEAD", 1000)).rejects.toThrow(/blocked/);
+  });
+
   it("classifies addresses", () => {
-    for (const a of ["10.1.2.3", "172.20.0.1", "192.168.0.1", "127.0.0.1", "169.254.169.254", "100.64.0.1", "0.0.0.0", "::1", "fd00::1", "fe80::1", "::ffff:10.0.0.1"]) expect(isBlockedAddress(a)).toBe(true);
-    for (const a of ["93.184.216.34", "8.8.8.8", "2606:4700::1111"]) expect(isBlockedAddress(a)).toBe(false);
+    for (const a of ["10.1.2.3", "172.20.0.1", "192.168.0.1", "127.0.0.1", "169.254.169.254", "100.64.0.1", "0.0.0.0", "::", "::1", "fd00::1", "fe80::1",
+      "::ffff:10.0.0.1", "::ffff:7f00:1", "64:ff9b::7f00:1", "2002:a00:1::", "2001:0:4136::1", "ff02::1", "localhost"]) expect(isBlockedAddress(a), a).toBe(true);
+    for (const a of ["93.184.216.34", "8.8.8.8", "2606:4700::1111"]) expect(isBlockedAddress(a), a).toBe(false);
   });
 });

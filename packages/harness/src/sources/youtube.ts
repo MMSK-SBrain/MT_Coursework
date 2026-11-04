@@ -81,6 +81,6 @@ export class YouTubeLinkSource implements LinkSource {
   }
 
   isAlive(url: string) {
-    return checkAlive(url, { fetch: this.f });
+    return checkAlive(url);
   }
 }
